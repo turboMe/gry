@@ -1,0 +1,869 @@
+{
+    "scenario_id": "glos_w_grupie_przyjaciol",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Głos w grupie",
+        "subtitle": "Przyjacielski plan na wieczór odsłania nierównowagę wpływu i lęk przed wykluczeniem",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 7,
+        "interaction_count": 5
+    },
+    "tags": {
+        "relationship_type": "friends",
+        "theme": [
+            "control",
+            "respect",
+            "conflict_resolution"
+        ],
+        "emotional_intensity": "moderate",
+        "age_rating": "teen",
+        "session_type": "mini_story",
+        "player_role_gender": "neutral",
+        "difficulty": "intermediate"
+    },
+    "characters": {
+        "player": {
+            "name": "Alex",
+            "role_label": "Przyjaciel · Gracz",
+            "age_range": "24-30",
+            "context": "Od dłuższego czasu masz poczucie, że w waszej paczce twoje zdanie znika, gdy Kuba przejmuje inicjatywę. Lubisz tę grupę i nie chcesz ryzykować wykluczenia, ale coraz trudniej ci ignorować frustrację.",
+            "hidden_need": "recognition",
+            "hidden_need_text": "Potrzebujesz wpływu, zauważenia i poczucia, że twoje zdanie waży tyle samo co zdanie innych.",
+            "traits": [
+                {
+                    "text": "Uważny",
+                    "type": "positive"
+                },
+                {
+                    "text": "Lojalny wobec grupy",
+                    "type": "positive"
+                },
+                {
+                    "text": "Powściągliwy w konflikcie",
+                    "type": "neutral"
+                },
+                {
+                    "text": "Wrażliwy na odrzucenie",
+                    "type": "negative"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 4,
+                "patience": 6,
+                "defensiveness": 5,
+                "empathy": 7,
+                "need_for_control": 3,
+                "shame_sensitivity": 7,
+                "directness": 5,
+                "repair_ability": 7
+            }
+        },
+        "npc": {
+            "name": "Kuba",
+            "role_label": "Przyjaciel · NPC",
+            "age_range": "24-30",
+            "context": "Kuba jest naturalnym organizatorem paczki. Często działa szybko i skutecznie, ale z czasem zaczął traktować własną inicjatywę jak domyślny mandat do decydowania za wszystkich.",
+            "hidden_need": "control",
+            "hidden_need_text": "Potrzebuje znaczenia, sprawczości i potwierdzenia, że bez niego grupa się nie rozsypie.",
+            "traits": [
+                {
+                    "text": "Charyzmatyczny",
+                    "type": "positive"
+                },
+                {
+                    "text": "Sprawczy",
+                    "type": "positive"
+                },
+                {
+                    "text": "Dominujący",
+                    "type": "negative"
+                },
+                {
+                    "text": "Źle znosi utratę wpływu",
+                    "type": "negative"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 5,
+                "patience": 4,
+                "defensiveness": 7,
+                "empathy": 5,
+                "need_for_control": 8,
+                "shame_sensitivity": 6,
+                "directness": 8,
+                "repair_ability": 5
+            },
+            "npc_reaction_logic": "Na atak reaguje walką o pozycję i usztywnieniem. Na wycofanie bierze jeszcze więcej przestrzeni. Gdy jego wysiłek organizacyjny zostaje zauważony, a granica nazwana spokojnie i konkretnie, obniża defensywność i jest w stanie przejść od kontroli do współpracy."
+        }
+    },
+    "metrics_start": {
+        "tension": 40,
+        "trust": 60,
+        "openness": 50,
+        "feeling_heard": 50
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Plan już ustalony",
+            "scene": {
+                "description": "Wieczór w zatłoczonej kawiarni. Przy stole siedzi wasza paczka, telefony leżą obok kubków. Kuba pochyla się do przodu z energią człowieka, który właśnie zamknął temat za wszystkich.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": "Super, ogarnąłem piątek. Idziemy wszyscy do escape roomu o 19. Już praktycznie to zaklepałem.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Ty zawsze musisz decydować za wszystkich. Naprawdę nie da się z tobą normalnie funkcjonować.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kuba prostuje się i marszczy brwi. No jasne, najlepiej zrobić ze mnie problem, kiedy ktoś wreszcie coś organizuje.",
+                    "feedback": {
+                        "label": "Atak i uogólnienie",
+                        "psychology": "To komunikat z poziomu II, oparty na ocenie osoby zamiast opisie zachowania. Uruchamia defensywność i walkę o status w grupie.",
+                        "better_alternative_hint": "Nazwij konkretne zachowanie i jego wpływ na ciebie, zamiast oceniać charakter Kuby."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uogólnianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Spoko. Jak wam pasuje, to nieważne.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kuba kiwa głową i od razu przechodzi do szczegółów rezerwacji, jakby temat był zamknięty.",
+                    "feedback": {
+                        "label": "Wycofanie własnego głosu",
+                        "psychology": "Unikasz ryzyka odrzucenia, ale wzmacniasz układ, w którym jedna osoba ma pełnię wpływu. Napięcie nie znika, tylko zostaje schowane.",
+                        "better_alternative_hint": "Spróbuj wnieść sprzeciw krótko i spokojnie, bez tłumienia własnej potrzeby wpływu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie konfliktu",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Niewyrażona potrzeba uznania",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Wolałbym, żebyśmy najpierw sprawdzili, czy wszystkim pasuje, zanim coś ustalimy.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kuba wzrusza ramionami. No dobra, można było napisać, ale przecież i tak ktoś musiał ruszyć temat.",
+                    "feedback": {
+                        "label": "Jasna granica bez pogłębienia",
+                        "psychology": "To zdrowy, rzeczowy sygnał granicy. Zatrzymuje dominację, ale nie odsłania, dlaczego ta sytuacja jest dla ciebie ważna.",
+                        "better_alternative_hint": "Dodaj krótko, jak taki sposób decydowania wpływa na ciebie i na atmosferę w grupie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Stawianie granicy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Widzę, że chcesz to ogarnąć, ale kiedy decyzja już jest podjęta, czuję się pominięty. Chcę też mieć realny głos.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kuba przestaje się uśmiechać i na moment milknie. Okej, nie myślałem o tym w ten sposób.",
+                    "feedback": {
+                        "label": "Uznanie intencji i komunikat Ja",
+                        "psychology": "Łączysz walidację intencji z nazwaniem własnego doświadczenia. To obniża obronę i otwiera drogę do poziomu III.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja intencji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Bez przesady czy ważny sygnał",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Przy stole zapada niezręczna cisza. Dwie osoby uciekają wzrokiem w telefony, a Kuba uśmiecha się krzywo, jakby chciał szybko odzyskać kontrolę nad atmosferą.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Ej, bez przesady. Ktoś musi podejmować decyzje, bo inaczej stoimy w miejscu.",
+            "scene_high": {
+                "description": "Hałas kawiarni dalej miesza się z rozmowami innych stolików, ale przy waszym stole robi się uważniej. Kuba odkłada telefon i patrzy na ciebie już mniej zadaniowo, bardziej serio.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Okej, słyszę że coś cię tu uwiera. Co dokładnie masz na myśli?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Jasne, bo bez ciebie ta grupa by się rozpadła. Dobrze wiedzieć, kto tu rządzi.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kuba parska śmiechem bez cienia humoru. Skoro chcesz sobie dogryzać, to może w ogóle nie rozmawiajmy.",
+                    "feedback": {
+                        "label": "Sarkazm zamiast treści",
+                        "psychology": "Bierna agresja pozwala wyładować napięcie, ale ukrywa właściwą potrzebę. Odbiorca słyszy atak, nie problem do rozwiązania.",
+                        "better_alternative_hint": "Powiedz wprost, czego chcesz mniej i czego chcesz więcej w sposobie podejmowania decyzji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Ukryty atak",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nieważne. Róbmy, co chcesz.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kuba natychmiast wraca do planowania. Dobra, to zamykam temat i piszę reszcie szczegóły.",
+                    "feedback": {
+                        "label": "Kapitulacja pod presją grupy",
+                        "psychology": "Wycofujesz się, żeby zmniejszyć ryzyko napięcia tu i teraz, ale koszt to dalsza niewidzialność i brak korekty wzorca.",
+                        "better_alternative_hint": "Zostań przy rozmowie i nazwij problem jednym spokojnym zdaniem."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Lęk przed wykluczeniem",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Chodzi mi o prostą rzecz: zanim coś zaklepiemy, dobrze byłoby najpierw zapytać grupę.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Kuba wzdycha. Okej, to jest konkret. Tylko powiedz to wprost, a nie po fakcie z napięciem.",
+                    "feedback": {
+                        "label": "Konkretna prośba proceduralna",
+                        "psychology": "To już nie atak, tylko opis oczekiwanej zasady. Nadal jednak mówisz głównie o procesie, nie o relacyjnym skutku dominacji.",
+                        "better_alternative_hint": "Dodaj, jak taki styl decydowania wpływa na twoje poczucie miejsca w grupie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Klarowna prośba",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Doceniam, że pchasz sprawy do przodu, ale kiedy decyzje zapadają bez pytania, czuję się niewidzialnie. Nie chodzi mi o atak, tylko o udział.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kuba unosi brwi i wyraźnie mięknie. Dobra, to brzmi fair. Nie chciałem cię ustawiać pod ścianą.",
+                    "feedback": {
+                        "label": "Nazwanie wpływu bez oskarżenia",
+                        "psychology": "Rozdzielasz intencję od skutku. To klasyczny ruch z NVC: obserwacja, uczucie i potrzeba zamiast oceny osoby.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "NVC — uczucie i potrzeba",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Co naprawdę jest stawką",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Napięcie nie opada. Jedna z osób z grupy rzuca ciche dobra, obojętnie co, byle już skończyć, a Kuba siedzi sztywno, jakby miał za chwilę zamknąć się na dobre.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "To może po prostu jestem jedyną osobą, której zależy, żeby cokolwiek się działo.",
+            "scene_high": {
+                "description": "Przy stole robi się ciszej, ale nie chłodniej. Kilka osób odkłada telefony. Kuba nie brzmi już jak lider wydający polecenia, tylko jak ktoś, kto pierwszy raz słyszy koszt własnego stylu.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Nie chciałem cię pomijać. Myślałem raczej, że wam ulżę, jak to szybko ogarnę.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nie, po prostu lubisz rządzić ludźmi i tyle.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kuba odsuwa się od stołu. Skoro i tak wiesz lepiej, jaki jestem, to nie mamy o czym gadać.",
+                    "feedback": {
+                        "label": "Przypisanie złych intencji",
+                        "psychology": "Wchodzisz w czytanie w myślach i etykietowanie. To eskaluje konflikt, bo odbiera drugiej stronie możliwość pokazania innej motywacji.",
+                        "better_alternative_hint": "Zostań przy skutku zachowania i przy własnym doświadczeniu, bez diagnozowania charakteru."
+                    },
+                    "tags": [
+                        {
+                            "text": "Czytanie w myślach",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Etykietowanie",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Jasne, bohater grupy. Bez ciebie przecież nikt nie potrafi napisać jednej wiadomości.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kuba przewraca oczami. To jest właśnie problem. Zamiast mówić wprost, wbijasz szpilki.",
+                    "feedback": {
+                        "label": "Ironia zamiast kontaktu",
+                        "psychology": "Ironia chwilowo daje poczucie przewagi, ale blokuje bezpieczny dialog. W ujęciu Berne'a to szybki zjazd do gry psychologicznej.",
+                        "better_alternative_hint": "Użyj zdania o swojej potrzebie wpływu i o tym, co chciałbyś zmienić."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ironia",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Gra psychologiczna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "To ustalmy prostą zasadę: plan jest ważny dopiero wtedy, gdy większość go potwierdzi.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kuba kiwa głową, choć nadal wygląda na spiętego. Dobra, przynajmniej to jest konkretna zasada.",
+                    "feedback": {
+                        "label": "Rama proceduralna",
+                        "psychology": "Wprowadzasz strukturę, która ogranicza samowolę. To użyteczne, ale jeszcze nie dotyka emocjonalnej stawki bycia niewidzialnym.",
+                        "better_alternative_hint": "Połącz zasadę z wyjaśnieniem, dlaczego udział każdego jest dla ciebie ważny."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ustalanie zasad",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Wierzę, że chcesz pomóc. Jednocześnie dla mnie ważne jest nie tylko to, żeby plan powstał, ale też żebym czuł, że naprawdę należę do tej decyzji.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kuba wolno przytakuje. Okej. To brzmi bardziej o miejscu w grupie niż o samym escape roomie.",
+                    "feedback": {
+                        "label": "Nazwanie ukrytej potrzeby",
+                        "psychology": "Docierasz do sedna konfliktu: nie chodzi tylko o logistykę, ale o przynależność i uznanie. To przenosi rozmowę z pozycji do relacji.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Ukryta potrzeba — przynależność",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Odsłonięcie emocjonalnej stawki",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Czy grupa może działać inaczej",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Atmosfera przy stole jest już ciężka. Ktoś z boku mruczy, że miało być miło, a wyszła drama. Kuba patrzy wokół, jakby chciał odzyskać twarz przed resztą paczki.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Widzisz? Terax wszystkim jest niezręcznie. Po co to ciągnąć przy stole?",
+            "scene_high": {
+                "description": "Dwie osoby z grupy kiwają głowami, jakby pierwszy raz dostały zgodę, by też coś powiedzieć. Rozmowa wciąż jest delikatna, ale pojawia się przestrzeń na wspólne ustalenie zasad.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Dobra, możemy to poukładać. Jak chcesz, żeby to wyglądało od teraz?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To może niech każdy wreszcie powie, jak bardzo ma już dość twojego rządzenia.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kuba patrzy twardo. Super. Robisz ze mnie kozła ofiarnego przed wszystkimi.",
+                    "feedback": {
+                        "label": "Publiczne zawstydzanie",
+                        "psychology": "Próba zdobycia poparcia grupy przeciw jednej osobie zwiększa wstyd i obronę. To zwykle kończy się walką o twarz, nie zmianą zachowania.",
+                        "better_alternative_hint": "Mów o potrzebach grupy i zasadach na przyszłość, nie o zbieraniu oskarżeń."
+                    },
+                    "tags": [
+                        {
+                            "text": "Publiczne zawstydzanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kozioł ofiarny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Masz rację, nieważne. Zostawmy to.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kuba od razu zamyka temat i wraca do ustaleń, a reszta grupy znów milczy.",
+                    "feedback": {
+                        "label": "Utrwalenie starego wzorca",
+                        "psychology": "Rezygnujesz w kluczowym momencie, gdy grupa mogła zobaczyć i wesprzeć zmianę. To wzmacnia zasadę: głośniejszy głos wygrywa.",
+                        "better_alternative_hint": "Zaproponuj prostą, możliwą do wdrożenia zasadę dla całej grupy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Rezygnacja z granicy",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Dominacja niekwestionowana",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Na przyszłość wystarczy, że wrzucisz kilka opcji i damy szybkie potwierdzenie, zanim coś zaklepiesz.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kuba skinieniem przyjmuje propozycję. To akurat jest do zrobienia.",
+                    "feedback": {
+                        "label": "Praktyczna granica dla grupy",
+                        "psychology": "To dobra interwencja systemowa. Przenosisz rozmowę z pretensji na regułę, choć nadal nie budujesz jeszcze wspólnego sensu tej zmiany.",
+                        "better_alternative_hint": "Dodaj, że nowa zasada ma pomagać wszystkim czuć udział, a nie tylko ograniczać Kubę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Granica grupowa",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Zmiana reguł interakcji",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chcę, żeby każdy miał głos, a ty nie musiał wszystkiego dźwigać. Możemy ustalić prostą zasadę dla całej grupy, zamiast opierać wszystko na jednej osobie.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kuba wypuszcza powietrze i po raz pierwszy wygląda na odciążonego. To akurat brzmi sensownie, nie jak atak na mnie.",
+                    "feedback": {
+                        "label": "Wspólna wizja zamiast starcia",
+                        "psychology": "To ruch transformacyjny: widzisz zarówno swój głos, jak i ciężar niesiony przez drugą stronę. Dzięki temu zmiana nie brzmi jak kara, tylko jak lepszy system dla wszystkich.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Budowanie wspólnej wizji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Odciążenie roli lidera",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Nowa umowa albo stary układ",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Po wyjściu z kawiarni chłodne powietrze nie rozładowuje atmosfery. Część paczki odchodzi kilka kroków przed wami. Kuba zatrzymuje się przy drzwiach z miną kogoś, kto czuje się osaczony i niezrozumiany.",
+                "location": "street",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Dobra, już wiem, że cokolwiek zrobię, będzie źle.",
+            "scene_high": {
+                "description": "Przed kawiarnią grupa zbiera się jeszcze chwilę przy rowerach i telefonach. Ktoś proponuje, żeby zrobić ankietę na czacie. Kuba stoi obok ciebie spokojniej niż wcześniej, jakby naprawdę czekał na domknięcie rozmowy.",
+                "location": "street",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Okej. Chcę to robić inaczej, ale potrzebuję konkretu. Na co się umawiamy?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Po prostu przestań się panoszyć i problem zniknie.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kuba zaciska szczękę. Jasne. Czyli nic się tu nie zmieni, poza tym że mam siedzieć cicho.",
+                    "feedback": {
+                        "label": "Rozkaz zamiast porozumienia",
+                        "psychology": "W finale wracasz do dominującego języka walki. To nie daje drugiej stronie miejsca na współudział ani zachowanie godności.",
+                        "better_alternative_hint": "Sformułuj nową zasadę jako wspólną umowę, a nie jednostronny zakaz."
+                    },
+                    "tags": [
+                        {
+                            "text": "Degradacja rozmówcy",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Walka o kontrolę",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Spokojnie, może następnym razem łaskawie ktoś inny będzie miał głos.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kuba odwraca wzrok. Dobra, nie mam energii na takie szpilki. Róbcie, jak chcecie.",
+                    "feedback": {
+                        "label": "Szpilka na zakończenie",
+                        "psychology": "Nawet gdy pojawia się szansa na umowę, ironia zrywa kontakt. To zostawia po rozmowie smak upokorzenia, nie jasności.",
+                        "better_alternative_hint": "Zamień żal w konkretną umowę na przyszłość i nazwij też swoją odpowiedzialność."
+                    },
+                    "tags": [
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Niedomknięta uraza",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Najprościej: najpierw pytanie na grupie, potem decyzja. Bez rezerwowania czegokolwiek przed potwierdzeniem.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kuba przytakuje. Dobra. To jest jasne i da się tego trzymać.",
+                    "feedback": {
+                        "label": "Czytelna umowa operacyjna",
+                        "psychology": "Domykasz rozmowę konkretem, co jest wartościowe. Brakuje tylko elementu wzajemności, który wzmacnia trwałość zmiany.",
+                        "better_alternative_hint": "Dodaj własne zobowiązanie, żeby nie zostawiać całej odpowiedzialności za zmianę po drugiej stronie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Kontrakt komunikacyjny",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Umawiajmy się tak: ty możesz inicjować, ale decyzja zapada dopiero po krótkim pytaniu grupy. Ja też będę zabierać głos wcześniej, zamiast dusić frustrację do końca.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kuba wyciąga telefon i pokazuje grupowy czat. Dobra. To wrzucam ankietę teraz i od następnego razu jedziemy według tej zasady.",
+                    "feedback": {
+                        "label": "Wzajemna odpowiedzialność",
+                        "psychology": "To najmocniejsze domknięcie. Nie tylko stawiasz granicę, ale tworzysz nowy kontrakt i bierzesz część odpowiedzialności za zmianę wzorca.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Wspólna odpowiedzialność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Naprawa relacji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 2
+            },
+            "color": "red",
+            "title": "UTWARDZENIE FRONTÓW",
+            "emoji": "🔴",
+            "subtitle": "Napięcie wygrywa z rozmową",
+            "narrative": "Wieczór kończy się chłodno. Kuba uznaje, że został zaatakowany, a ty zostajesz z poczuciem, że znowu nie udało się zostać usłyszanym. Grupa rozchodzi się w niezręcznym milczeniu, a stary układ sił właściwie zostaje bez zmian.",
+            "diagnosis": "Dominowały atak, ironia albo wycofanie. Rozmowa ugrzęzła w poziomie II lub rozpadła się zanim dotknęła realnej potrzeby uznania i wpływu. W konflikcie grupowym to szczególnie kosztowne, bo publiczny wstyd szybko wypiera ciekawość.",
+            "post_game": {
+                "communication_style_summary": "Przeważały reakcje obronne i pozycyjne, które zwiększały walkę o twarz zamiast budować kontakt.",
+                "strongest_moment": "Najmocniejszy potencjał pojawiał się wtedy, gdy próbowałeś zatrzymać samowolne decyzje, nawet jeśli forma była jeszcze nieskuteczna.",
+                "growth_tip": "Następnym razem zacznij od konkretnego zachowania i jego wpływu na ciebie. Mniej oceny osoby, więcej komunikatu Ja i prośby o nową zasadę.",
+                "replay_prompt": "Sprawdź, co się zmieni, gdy nazwiesz niewidzialność bez ataku i nie wycofasz się pod presją grupy."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 3,
+                "max": 5
+            },
+            "color": "yellow",
+            "title": "KRUCHY KOMPROMIS",
+            "emoji": "🟡",
+            "subtitle": "Pojawia się zasada, ale bez głębszego zrozumienia",
+            "narrative": "Udaje się zatrzymać najbardziej dominujący wzorzec i pojawia się jakiś roboczy układ na przyszłość. Jednak rozmowa zostawia niedosyt. Ty czujesz, że temat był ważniejszy niż logistyka, a Kuba ma wrażenie, że głównie ograniczono jego swobodę działania.",
+            "diagnosis": "Było tu trochę asertywności i konkretu, ale za mało odsłonięcia emocjonalnej stawki. To wystarcza do częściowej korekty zachowania, lecz nie w pełni odbudowuje wzajemne rozumienie.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl rzeczowy i częściowo asertywny. Rozmowa przesunęła się z chaosu do zasad, ale nie w pełni do relacji.",
+                "strongest_moment": "Najlepiej działały chwile, gdy proponowałeś jasne reguły dla całej grupy zamiast oskarżać Kubę.",
+                "growth_tip": "Spróbuj następnym razem do konkretnej zasady dodać jedno zdanie o tym, co dzieje się w tobie, gdy tracisz głos w grupie.",
+                "replay_prompt": "Zobacz, czy uda ci się dojść nie tylko do reguły, ale też do realnego uznania twojej potrzeby wpływu."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 6,
+                "max": 8
+            },
+            "color": "green",
+            "title": "ODZYSKANY GŁOS",
+            "emoji": "🟢",
+            "subtitle": "Granica została postawiona i usłyszana",
+            "narrative": "Rozmowa nie była łatwa, ale przyniosła efekt. Kuba zaczyna rozumieć, że jego sprawczość miała cenę dla innych, a ty odzyskujesz poczucie, że możesz być w tej grupie sobą, nie znikając. Pojawia się nowa zasada i realna szansa na zdrowszą dynamikę.",
+            "diagnosis": "Udało się połączyć granicę z empatią. Dzięki temu konflikt nie został zredukowany do walki o władzę, lecz stał się rozmową o przynależności, wpływie i odpowiedzialności za grupę.",
+            "post_game": {
+                "communication_style_summary": "Przeważał styl asertywny z elementami empatii, co obniżyło defensywność i pozwoliło budować rozwiązanie.",
+                "strongest_moment": "Kluczowy był moment, w którym nazwałeś własną niewidzialność bez oskarżania intencji Kuby.",
+                "growth_tip": "To działa, bo łączysz szczerość z szacunkiem. W podobnych sytuacjach trzymaj ten sam kierunek: obserwacja, uczucie, potrzeba, prośba.",
+                "replay_prompt": "Przejdź scenariusz jeszcze raz i zobacz, czy potrafisz domknąć go pełną wspólną umową z wzajemną odpowiedzialnością."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 9,
+                "max": 10
+            },
+            "color": "blue",
+            "title": "NOWA RÓWNOWAGA W GRUPIE",
+            "emoji": "🔵",
+            "subtitle": "Konflikt staje się punktem zwrotnym dla całej paczki",
+            "narrative": "To, co zaczęło się od napięcia przy stoliku, kończy się nową jakością relacji. Kuba nie traci twarzy, ty nie tracisz głosu, a grupa dostaje prostszy i zdrowszy sposób wspólnego decydowania. Zamiast kolejnej cichej urazy powstaje dojrzała umowa, która może działać długo po tej jednej rozmowie.",
+            "diagnosis": "To przebieg bliski poziomowi III. Zostały uznane zarówno twoje potrzeby wpływu i widzialności, jak i potrzeba sprawczości po stronie Kuby. Dzięki temu konflikt został przekształcony w lepszy system, a nie tylko chwilowo ugaszony.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl transformacyjny: granice, empatia i wspólna odpowiedzialność połączyły się w trwałe rozwiązanie.",
+                "strongest_moment": "Najmocniejsze było domknięcie rozmowy wspólną umową, w której nie tylko prosisz o zmianę, ale też deklarujesz własny wkład.",
+                "growth_tip": "To jest mistrzowski wzorzec rozmowy grupowej. Stosuj go wszędzie tam, gdzie problemem nie jest zła wola, tylko utrwalony układ ról.",
+                "replay_prompt": "Spróbuj utrzymać ten poziom także w innych scenariuszach, gdzie stawką jest granica bez zerwania więzi."
+            }
+        }
+    ]
+}

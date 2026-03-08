@@ -1,0 +1,983 @@
+{
+    "scenario_id": "sibling_rivalry_for_parent_recognition",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Czyje dziecko bardziej błyszczy",
+        "subtitle": "Rodzinny wieczór uruchamia starą rywalizację między rodzeństwem o uwagę i uznanie matki.",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 8,
+        "interaction_count": 6
+    },
+    "tags": {
+        "relationship_type": "siblings",
+        "theme": [
+            "jealousy",
+            "respect",
+            "support"
+        ],
+        "emotional_intensity": "critical",
+        "age_rating": "teen",
+        "session_type": "what_if",
+        "player_role_gender": "female",
+        "difficulty": "advanced"
+    },
+    "characters": {
+        "player": {
+            "name": "Marta",
+            "role_label": "Starsza siostra · Gracz",
+            "age_range": "29-34",
+            "context": "Przyjechała na rodzinną kolację z poczuciem, że cokolwiek robi, i tak wypada blado przy młodszym bracie. Dzisiejsza pochwała matki uruchamia dawny ból i potrzebę bycia wreszcie zauważoną.",
+            "hidden_need": "recognition",
+            "hidden_need_text": "Potrzebuje uznania własnej wartości bez ciągłego porównywania z rodzeństwem.",
+            "traits": [
+                {
+                    "text": "Ambitna",
+                    "type": "positive"
+                },
+                {
+                    "text": "Czuła na porównania",
+                    "type": "negative"
+                },
+                {
+                    "text": "Samodzielna",
+                    "type": "positive"
+                },
+                {
+                    "text": "Nosi stare urazy",
+                    "type": "negative"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 6,
+                "patience": 4,
+                "defensiveness": 7,
+                "empathy": 6,
+                "need_for_control": 5,
+                "shame_sensitivity": 8,
+                "directness": 7,
+                "repair_ability": 6
+            }
+        },
+        "npc": {
+            "name": "Kamil",
+            "role_label": "Młodszy brat · Rozmówca",
+            "age_range": "26-31",
+            "context": "Przez lata był chwalony za odpowiedzialność i bycie blisko domu, ale nosi też własny ciężar. Czuje, że każda pochwała dla niego zamienia się w atak ze strony siostry.",
+            "hidden_need": "respect",
+            "hidden_need_text": "Potrzebuje, by jego wysiłek był widziany bez oskarżania go o zabieranie komuś miejsca.",
+            "traits": [
+                {
+                    "text": "Odpowiedzialny",
+                    "type": "positive"
+                },
+                {
+                    "text": "Defensywny",
+                    "type": "negative"
+                },
+                {
+                    "text": "Lojalny wobec rodziny",
+                    "type": "positive"
+                },
+                {
+                    "text": "Uparty",
+                    "type": "negative"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 5,
+                "patience": 5,
+                "defensiveness": 8,
+                "empathy": 5,
+                "need_for_control": 6,
+                "shame_sensitivity": 7,
+                "directness": 6,
+                "repair_ability": 5
+            },
+            "npc_reaction_logic": "Na agresję odpowiada kontratakiem i wyciąganiem starych rachunków. Na wycofanie reaguje chłodem lub kpiną, bo odbiera je jako bierne osądzanie. Na jasne komunikaty obniża gardę powoli. Najmocniej otwiera się, gdy słyszy uznanie własnego wysiłku i gdy rozmowa przestaje być licytacją cierpienia."
+        }
+    },
+    "metrics_start": {
+        "tension": 45,
+        "trust": 50,
+        "openness": 45,
+        "feeling_heard": 40
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Pochwała przy stole",
+            "scene": {
+                "description": "W salonie pachnie ciastem i kawą. Matka z dumą opowiada ciotce, że Kamil zawsze był tym, na kim można polegać. Kamil spuszcza wzrok, ale nie protestuje. W tobie narasta znajome ukłucie z dzieciństwa.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": "No co, znowu robisz tę minę. Nie możesz po prostu odpuścić jednego wieczoru?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Jasne, bo przy tobie zawsze trzeba klaskać, nawet jak mama jedzie starym tekstem.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kamil prostuje się i patrzy ostro. Serio? To może powiedz wprost, że nie znosisz, kiedy ktoś mnie docenia.",
+                    "feedback": {
+                        "label": "Atak i uogólnienie",
+                        "psychology": "Wchodzisz w Poziom II — pozycyjny i przypisujesz intencje. W modelu von Thuna druga strona słyszy głównie oskarżenie na płaszczyźnie relacyjnej, więc odpowiada obroną lub kontratakiem.",
+                        "better_alternative_hint": "Nazwij swój ból bez oceniania brata."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uogólnianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nic. Nieważne. Dokończcie sobie ten rodzinny konkurs.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kamil prycha. Właśnie o to chodzi. Rzucasz tekst i zostawiasz cały syf na stole.",
+                    "feedback": {
+                        "label": "Ironia zamiast kontaktu",
+                        "psychology": "Bierna agresja maskuje zranienie, ale nie komunikuje potrzeby. To podnosi napięcie, bo druga strona słyszy pogardę, nie prośbę o zrozumienie.",
+                        "better_alternative_hint": "Powiedz, co cię zabolało i do czego ta sytuacja cię cofa."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Niewyrażona potrzeba",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie chcę sceny. Po prostu źle znoszę, kiedy znowu robi się z nas dwoje dzieci do porównania.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kamil marszczy brwi. Okej, ale ja cię teraz nie porównywałem. To był komentarz mamy.",
+                    "feedback": {
+                        "label": "Granica bez pełnej walidacji",
+                        "psychology": "To bardziej dojrzały ruch, bo mówisz o swoim doświadczeniu zamiast atakować. Nadal jednak brakuje uznania, że brat też może być uwikłany w tę samą dynamikę.",
+                        "better_alternative_hint": "Dodaj uznanie dla jego perspektywy, żeby nie brzmiało to jak ukryty zarzut."
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Analiza transakcyjna Berne'a",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "To nie jest o tobie. Kiedy mama tak mówi, czuję się znowu ustawiona niżej. Chcę powiedzieć to tobie, zamiast dusić w sobie.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kamil bierze oddech. Dobra. To brzmi inaczej. Chodźmy do kuchni, bo przy wszystkich i tak nic z tego nie będzie.",
+                    "feedback": {
+                        "label": "Nazwanie emocji i oddzielenie osoby od wzorca",
+                        "psychology": "To komunikat Ja w duchu NVC. Rozdzielasz osobę od problemu, dzięki czemu brat ma większą szansę usłyszeć twoje uczucia bez konieczności bronienia swojego statusu.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja własnych emocji",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Pierwsze starcie w kuchni",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "W kuchni słychać tylko tykanie zegara i stłumione głosy z salonu. Kamil stoi oparty o blat, spięty i gotowy do odbicia każdego ciosu.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Powiedzmy to jasno. Ty masz problem z tym, że mama czasem widzi też mnie.",
+            "scene_high": {
+                "description": "W kuchni światło jest miękkie, a gwar z salonu tworzy bezpieczny dystans. Kamil nalewa wam wodę i patrzy na ciebie uważniej niż przed chwilą.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Powiedz mi konkretnie, co cię tak uruchomiło. Chcę zrozumieć, a nie zgadywać.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nie odwracaj tego. Od lat grasz idealnego synka i świetnie ci z tym.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kamil zaciska szczękę. Tak, jasne. Wszystko moja wina, że byłem na miejscu, kiedy trzeba było coś ogarnąć.",
+                    "feedback": {
+                        "label": "Przypisanie złych intencji",
+                        "psychology": "Atakujesz charakter zamiast opisać mechanizm rodzinny. To prowokuje obronę tożsamości i wzmacnia starą hierarchię zamiast ją rozbroić.",
+                        "better_alternative_hint": "Mów o wzorcu w rodzinie, nie o rzekomej roli, którą brat rzekomo wybrał z premedytacją."
+                    },
+                    "tags": [
+                        {
+                            "text": "Czytanie w myślach",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, zapomnij. I tak nic z tego nie będzie.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kamil wzrusza ramionami. Właśnie dlatego nic się między nami nie zmienia. Zaczynasz i uciekasz.",
+                    "feedback": {
+                        "label": "Wycofanie z kontaktu",
+                        "psychology": "Wycofanie chwilowo chroni przed wstydem, ale zostawia drugą stronę z napięciem i domysłami. W analizie transakcyjnej to ruch z pozycji bezsilnego Dziecka.",
+                        "better_alternative_hint": "Zostań w rozmowie choćby jednym konkretnym zdaniem o swoim doświadczeniu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna Berne'a",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Uruchamia mnie to, że mama mówi o tobie jak o tym właściwym dziecku. Nie twierdzę, że to planujesz, ale efekt jest taki sam.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kamil kiwa głową, ale ostrożnie. Okej, rozumiem mechanizm. Tylko ja też nie chcę być sprowadzany do jednej roli.",
+                    "feedback": {
+                        "label": "Nazwanie faktu i skutku",
+                        "psychology": "To rzeczowe i czytelne. Daje strukturę problemowi, ale jeszcze nie buduje mostu emocjonalnego między wami.",
+                        "better_alternative_hint": "Dopowiedz, co chciałabyś, żeby między wami było inne od dziś."
+                    },
+                    "tags": [
+                        {
+                            "text": "Oddzielenie osoby od problemu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie mam pretensji o to, że jesteś chwalony. Mam ból, że przy tym znikam. I podejrzewam, że ty też możesz być zmęczony tą rolą.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Kamil opuszcza barki. No właśnie. Ty znikasz, a ja mam być tym niezawodnym. To też potrafi dusić.",
+                    "feedback": {
+                        "label": "Wspólna rama zamiast rywalizacji",
+                        "psychology": "Przechodzisz do Poziomu III — transformacja. Pokazujesz, że problemem nie jest brat, tylko system ról, który rani obie strony na różne sposoby.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Perspektywa obu stron",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Stary rachunek wychodzi na wierzch",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Powietrze w kuchni gęstnieje. Kamil odstawia szklankę z hukiem, jakby wrócił do setek wcześniejszych kłótni, w których każde z was miało swoją teczkę win.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Łatwo ci mówić. Wyjechałaś i żyłaś po swojemu, a ja zostałem tu na każde wezwanie mamy.",
+            "scene_high": {
+                "description": "Kuchnia robi się zaskakująco cicha. Kamil mówi wolniej, bez zaczepki. Bardziej jak ktoś, kto odsłania coś niewygodnego niż szykuje kontratak.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Kiedy wyjechałaś, wszyscy mówili, że ja jestem ten bliski i odpowiedzialny. Czasem miałem wrażenie, że nie wolno mi już być nikim innym.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nikt ci nie kazał zostać. Sam wybrałeś tę świętą rolę, więc teraz nie narzekaj.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kamil śmieje się krótko bez humoru. Jasne. Ty zawsze wolna i odważna, ja zawsze winny temu, że ktoś mnie potrzebował.",
+                    "feedback": {
+                        "label": "Unieważnienie kosztu drugiej strony",
+                        "psychology": "Minimalizujesz jego doświadczenie i zamieniasz złożoną lojalność rodzinną w prosty wybór. To nasila wstyd i potrzebę obrony.",
+                        "better_alternative_hint": "Uznaj cenę, jaką on płacił, nawet jeśli twoja cena była inna."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unieważnianie emocji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Licytacja cierpienia",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, to wychodzi na to, że ja i tak jestem tą złą. Nie ma sensu tego ciągnąć.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kamil przewraca oczami. Widzisz? Znowu robisz z tego tylko osąd siebie albo mnie, a nie rozmowę.",
+                    "feedback": {
+                        "label": "Ucieczka w poczucie winy",
+                        "psychology": "Zamiast zostać przy faktach i uczuciach, wpadasz w czarno-białą narrację o winie. To zamyka przestrzeń na zniuansowanie relacji.",
+                        "better_alternative_hint": "Nie pytaj, kto jest zły. Zapytaj, co każde z was wtedy straciło."
+                    },
+                    "tags": [
+                        {
+                            "text": "Katastrofizacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Czarno-białe myślenie",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Masz rację, zostałeś z czymś, czego ja nie dźwigałam. Nadal jednak boli mnie, że mama robi z tego ranking, a nie dwie różne historie.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kamil oddycha spokojniej. To już brzmi uczciwiej. Ranking jest fatalny, tylko ja też czuję się w nim zamknięty.",
+                    "feedback": {
+                        "label": "Uznanie faktów i powrót do sedna",
+                        "psychology": "To dojrzała odpowiedź, bo walidujesz część jego perspektywy i utrzymujesz własny temat. Nadal jednak rozmowa jest bardziej o diagnozie niż o więzi.",
+                        "better_alternative_hint": "Spróbuj zapytać, jak on naprawdę to przeżywał, zamiast tylko doprecyzować swój punkt."
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja częściowa",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Oddzielenie faktów od oceny",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Widzę, że zapłaciłeś za tę rolę własną swobodą. Ja zapłaciłam poczuciem, że nigdy nie będę dość. Chcę pogadać o tym bez ustalania, komu było gorzej.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kamil milknie na moment. Tak. Chyba pierwszy raz mówimy o cenie, a nie o tym, kto wygrał albo przegrał.",
+                    "feedback": {
+                        "label": "Wyjście z licytacji cierpienia",
+                        "psychology": "To mocny ruch reparacyjny. Uznajesz dwa równoległe cierpienia i nie próbujesz ich porównywać, co otwiera prawdziwy dialog.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Nazwanie rodzinnej reguły",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Słychać, jak w salonie ktoś śmieje się głośno, ale tutaj atmosfera jest ciężka. Kamil trzyma dystans, jakby każdy kolejny temat groził eksplozją.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "No to co teraz? Chcesz, żebym przestał przyjmować od mamy jakiekolwiek uznanie, żeby było sprawiedliwie?",
+            "scene_high": {
+                "description": "Między wami pojawia się odrobina przestrzeni na myślenie, nie tylko reakcję. Kamil przysiada na krześle i pierwszy raz nie brzmi jak przeciwnik.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Może problem jest większy niż my. Mama od lat wkłada nas w role i potem gada, jakby to była prawda o całym człowieku.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Problemem nie są role, tylko to, że tobie one zawsze pasowały, kiedy mnie spychały.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kamil cofa się pół kroku. Czyli wracamy do tego samego. Cokolwiek powiem, i tak kończy się oskarżeniem.",
+                    "feedback": {
+                        "label": "Powrót do personalnego ataku",
+                        "psychology": "Nawet gdy pojawia się szansa na wspólną ramę, zawężasz temat do winy brata. To gasi moment transformacji i przywraca walkę o tożsamość.",
+                        "better_alternative_hint": "Trzymaj się reguły rodzinnej jako problemu wspólnego, a nie dowodu przeciwko niemu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Personalizacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Zrywanie wspólnej ramy",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nieważne. I tak przy mamie nic się nie zmieni, więc po co to rozkładać.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kamil wzrusza ramionami. No właśnie. Zawsze kończy się na tym, że każdy wraca do swojej roli i udaje, że to normalne.",
+                    "feedback": {
+                        "label": "Rezygnacja przed próbą wpływu",
+                        "psychology": "Poddanie się wzmacnia bezradność systemową. Chroni przed rozczarowaniem, ale odbiera wam sprawczość i zamyka możliwość nowego doświadczenia.",
+                        "better_alternative_hint": "Spróbuj nazwać choć jeden mały krok, który możecie zrobić inaczej."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wyuczona bezradność",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak sprawczości",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Może rzeczywiście problemem jest ten schemat. Ja jednak potrzebuję, żebyś wiedział, że kiedy milczysz przy takich tekstach, czuję się z tym sama.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kamil przygryza wargę. To uczciwe. Nie lubię wchodzić mamie w słowo, ale słyszę, że moje milczenie też coś robi.",
+                    "feedback": {
+                        "label": "Nazwanie wpływu bez oskarżenia",
+                        "psychology": "Mówisz o skutku zachowania, nie o złej intencji. To buduje odpowiedzialność, choć jeszcze nie proponuje wspólnej zmiany.",
+                        "better_alternative_hint": "Dodaj konkretną prośbę, żeby rozmowa mogła przejść od diagnozy do działania."
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat wpływu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Odpowiedzialność bez winy",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Tak, to większe niż my. I właśnie dlatego chciałabym, żebyśmy przestali grać przeciw sobie, kiedy mama ustawia nas w tych rolach.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Kamil patrzy na ciebie długo. To by było nowe. Nigdy nie myślałem, że możemy być po tej samej stronie.",
+                    "feedback": {
+                        "label": "Zmiana osi konfliktu",
+                        "psychology": "Przenosisz rozmowę z ja kontra ty na my wobec wzorca. To klasyczny ruch transformacyjny, który obniża defensywność i zwiększa gotowość do współpracy.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Wspólna wizja",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Prośba o nową lojalność",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Ktoś przechodzi obok kuchni i zamyka drzwi. To krótkie zakłócenie tylko podbija napięcie. Kamil wygląda tak, jakby zaraz chciał wrócić do gości i uciąć temat.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Tylko nie każ mi wybierać między tobą a mamą, bo w to nie wejdę.",
+            "scene_high": {
+                "description": "Wasza rozmowa ma już mniej z kłótni, a więcej z ostrożnego układania czegoś kruchego. Kamil nie odrywa wzroku, jakby czekał na pierwszy naprawdę konkretny krok.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Jeśli mamy coś zmienić, to powiedz mi, czego konkretnie ode mnie potrzebujesz w takich momentach.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Potrzebuję, żebyś raz wreszcie stanął po mojej stronie, zamiast zawsze po stronie mamy.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kamil kręci głową. Właśnie to słyszałem. Mam zdradzić jedną relację, żeby uratować drugą.",
+                    "feedback": {
+                        "label": "Fałszywa alternatywa lojalności",
+                        "psychology": "Stawiasz go w pułapce wyboru stron. Taki komunikat budzi opór, bo atakuje jego lojalność zamiast prosić o konkretne zachowanie.",
+                        "better_alternative_hint": "Poproś o mały, obserwowalny gest, nie o deklarację plemienną."
+                    },
+                    "tags": [
+                        {
+                            "text": "Fałszywy dylemat",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Presja lojalności",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nic. Sama sobie poradzę jak zawsze.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kamil wzdycha ciężko. Tego właśnie nie umiem. Mówisz, że nic nie chcesz, ale zostawiasz mnie z poczuciem winy.",
+                    "feedback": {
+                        "label": "Ukryta prośba pod przykrywką samowystarczalności",
+                        "psychology": "To komunikat podwójnie związany: deklarujesz brak potrzeby, ale emocjonalnie wysyłasz pretensję. Druga strona nie ma jak odpowiedzieć dobrze.",
+                        "better_alternative_hint": "Uczyń prośbę prostą i możliwą do wykonania."
+                    },
+                    "tags": [
+                        {
+                            "text": "Podwójny komunikat",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Potrzebuję, żebyś czasem dopowiedział jedno zdanie, że moje wybory też mają wartość. To by już dużo zmieniło.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kamil kiwa głową. To jest konkret. Jedno zdanie dam radę powiedzieć, nawet jeśli będzie niezręcznie.",
+                    "feedback": {
+                        "label": "Konkretna prośba",
+                        "psychology": "To dobra prośba, bo jest mierzalna i nieprzesadzona. Brakuje tylko wzajemności, która pogłębiłaby poczucie sojuszu.",
+                        "better_alternative_hint": "Dodaj, co ty możesz zrobić dla niego, gdy role uderzą w jego stronę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Konkretna prośba",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC — prośba",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie chcę, żebyś wybierał strony. Chcę, żebyśmy oboje nie wzmacniali porównywania. Ja też mogę reagować inaczej, kiedy to pójdzie w ciebie.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kamil lekko się uśmiecha. To brzmi fair. Nie przeciw komuś, tylko za czymś między nami.",
+                    "feedback": {
+                        "label": "Wzajemność i wspólne zasady",
+                        "psychology": "Łączysz prośbę z własną odpowiedzialnością. To buduje dojrzałą współpracę, bo nie żądasz ratunku, tylko proponujesz nową normę relacji.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Wzajemność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Budowanie zasad relacji",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_6",
+            "title": "Powrót do stołu",
+            "score_threshold": 5,
+            "scene_low": {
+                "description": "Z salonu matka woła, że herbata stygnie. Kuchnia znów przestaje być schronieniem, a staje się tylko przystankiem przed powrotem do starego układu. Kamil stoi przy drzwiach, niepewny i spięty.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "cold"
+            },
+            "npc_line_low": "To co, wracamy i udajemy, że nic się nie stało, czy jeszcze chcesz coś dorzucić?",
+            "scene_high": {
+                "description": "Głos matki z salonu wybrzmiewa jak test dla tego, co właśnie między wami powstało. Kamil zatrzymuje się przy drzwiach i daje ci miejsce na ostatnie słowo, już nie z irytacją, tylko z uwagą.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Zanim wrócimy, ustalmy jedno. Jak chcemy to rozegrać następnym razem, kiedy znowu padnie takie porównanie?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Następnym razem powiem to przy wszystkich. Może wtedy wreszcie wszyscy zobaczą, jak to działa.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kamil twardnieje. Super. Czyli robimy publiczną bitwę i wracamy dokładnie tam, skąd próbowaliśmy wyjść.",
+                    "feedback": {
+                        "label": "Groźba eskalacji",
+                        "psychology": "Zapowiadasz konfrontację w formie, która upokarza i uruchamia system obronny całej rodziny. To zwiększa prawdopodobieństwo wojny pozycyjnej.",
+                        "better_alternative_hint": "Zamiast groźby ustal spokojny sygnał albo krótką wspólną reakcję."
+                    },
+                    "tags": [
+                        {
+                            "text": "Eskalacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Pogarda dla bezpieczeństwa relacji",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nieważne. Wracajmy. Po prostu będę rzadziej przyjeżdżać i problem sam się rozwiąże.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kamil patrzy na ciebie smutno. To nie rozwiązanie. To tylko kolejna forma znikania.",
+                    "feedback": {
+                        "label": "Wycofanie jako strategia przetrwania",
+                        "psychology": "Ograniczenie kontaktu może dać ulgę, ale tutaj jest użyte zamiast rozmowy o granicach. System zostaje bez zmian, a więź dalej słabnie.",
+                        "better_alternative_hint": "Ustal jedną małą zasadę, zamiast znikać z relacji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Unikanie zamiast granic",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Następnym razem dam ci znać spojrzeniem, że mnie to rusza. A ty, jeśli możesz, dopowiesz jedno zdanie i wrócimy do tematu później.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kamil przytakuje. To brzmi realnie. Nie idealnie, ale realnie.",
+                    "feedback": {
+                        "label": "Plan minimum",
+                        "psychology": "To sensowna, konkretna strategia naprawcza. Jest praktyczna, choć bardziej zabezpiecza sytuację niż pogłębia wzajemne zrozumienie.",
+                        "better_alternative_hint": "Dodaj jeszcze krótkie uznanie waszej wspólnej intencji, żeby plan był nie tylko techniczny."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ustalanie sygnału",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Rozwiązanie zadaniowe",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chcę, żebyśmy pamiętali, że nie jesteśmy rywalami. Jeśli znowu padnie porównanie, spróbujmy oboje nie karmić tej gry i wrócić do siebie po fakcie.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kamil kiwa głową i otwiera drzwi. Dobra. Nie obiecuję perfekcji, ale nie chcę już z tobą walczyć o miejsce przy tym stole.",
+                    "feedback": {
+                        "label": "Domknięcie wspólnej intencji",
+                        "psychology": "To finalizuje przejście z rywalizacji do sojuszu. Zamiast szukać idealnej reakcji, wzmacniasz wspólną pamięć o celu relacji.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Wspólna intencja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "WRÓT DO STARYCH RÓL",
+            "emoji": "🔴",
+            "subtitle": "Rozmowa zamienia się w kolejną rundę rodzinnej rywalizacji.",
+            "narrative": "Wracacie do salonu osobno. Kamil siada sztywno obok matki, a ty zajmujesz miejsce jak najdalej. Niby nic wielkiego się nie wydarzyło, ale każde kolejne zdanie przy stole brzmi jak przypomnienie, że w tej rodzinie role są ważniejsze niż relacja.",
+            "diagnosis": "Dominuje komunikacja agresywna, bierna lub biernie agresywna. Konflikt pozostał na Poziomie II — pozycyjnym, gdzie stawką jest racja i miejsce w hierarchii. Ukryta potrzeba uznania nie została nazwana w sposób, który mógłby zostać przyjęty.",
+            "post_game": {
+                "communication_style_summary": "Twoja ścieżka była reaktywna i oparta na obronie własnej pozycji.",
+                "strongest_moment": "Pojawiła się próba zatrzymania rozmowy w cztery oczy, ale nie została wykorzystana do prawdziwego kontaktu.",
+                "growth_tip": "Zacznij od jednego komunikatu Ja: co czujesz, co cię uruchamia i czego nie chcesz już wzmacniać. Bez przypisywania winy rodzeństwu.",
+                "replay_prompt": "Spróbuj ponownie przejść z oskarżenia na nazwanie rodzinnego wzorca, który rani was oboje."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "KRUCHY ROZEJM",
+            "emoji": "🟡",
+            "subtitle": "Udaje się uniknąć wybuchu, ale stare napięcie nadal pracuje pod powierzchnią.",
+            "narrative": "Wracacie do stołu już spokojniejsi, choć bez lekkości. Pojawia się kilka ostrożnych spojrzeń i jedno lub dwa drobne gesty wsparcia, ale żadne z was nie ufa jeszcze, że to początek prawdziwej zmiany. Wieczór kończy się bez katastrofy, lecz także bez głębszego przełomu.",
+            "diagnosis": "Pojawiły się elementy asertywności i konkretnej prośby, ale rozmowa nie weszła w pełni na Poziom III — transformacja. Zmniejszono napięcie, jednak nie zbudowano jeszcze stabilnego poczucia bycia po tej samej stronie.",
+            "post_game": {
+                "communication_style_summary": "Przeważała komunikacja poprawna i rzeczowa, momentami zbliżająca do empatii.",
+                "strongest_moment": "Udało się nazwać wpływ rodzinnego porównywania bez pełnego ataku na brata.",
+                "growth_tip": "Następnym razem dołóż walidację jego kosztu i wspólną intencję. Sama poprawność nie wystarczy, jeśli nie pojawi się wzajemne uznanie.",
+                "replay_prompt": "Zagraj jeszcze raz i sprawdź, co się zmieni, gdy przestaniesz pytać, kto miał gorzej, a zaczniesz nazywać cenę obu ról."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 9
+            },
+            "color": "green",
+            "title": "PO TEJ SAMEJ STRONIE",
+            "emoji": "🟢",
+            "subtitle": "Rodzeństwo zaczyna widzieć w sobie nie rywali, lecz sojuszników wobec starego schematu.",
+            "narrative": "Wracacie do salonu razem. Nikt poza wami nie wie, że w kuchni wydarzyło się coś ważnego, ale atmosfera między wami jest wyraźnie mniej lodowata. Gdy matka znów zaczyna mówić o dawnych zasługach, Kamil subtelnie dopowiada, że każde z was wybrało inną drogę i obie miały swoją wartość. To niewielki gest, ale dla ciebie znaczy bardzo dużo.",
+            "diagnosis": "Rozmowa weszła w obszar transformacyjny. Udało się oddzielić problem systemowy od osoby i nazwać ukryte potrzeby bez licytacji cierpienia. Relacja nie jest jeszcze całkowicie naprawiona, ale pojawił się realny punkt zwrotny.",
+            "post_game": {
+                "communication_style_summary": "Dominowały empatia, asertywność i momenty wspólnego definiowania problemu.",
+                "strongest_moment": "Najmocniejszy był moment, w którym uznałaś koszt roli brata i przestałaś walczyć o tytuł bardziej skrzywdzonej osoby.",
+                "growth_tip": "To działa, bo nie unieważniasz siebie ani jego. W realnej rozmowie wzmacniaj dalej konkretne prośby i krótkie gesty wzajemnego wsparcia.",
+                "replay_prompt": "Sprawdź ścieżkę mistrzowską: czy potrafisz nie tylko się dogadać, ale też wspólnie ustalić nową zasadę lojalności między wami."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 10,
+                "max": 12
+            },
+            "color": "blue",
+            "title": "NOWA UMOWA RODZEŃSTWA",
+            "emoji": "🔵",
+            "subtitle": "Stary konflikt zostaje nazwany, a między wami rodzi się dojrzały sojusz.",
+            "narrative": "Wracacie do stołu z poczuciem, że po raz pierwszy od lat nie musicie walczyć o to samo miejsce. Kamil nie tylko rozumie twój ból, ale też mówi spokojnie przy wszystkich, że porównywanie was nie oddaje prawdy o żadnym z was. Ty nie kontrujesz, nie chowasz się, tylko zostajesz obecna. To nie cudowne uzdrowienie rodziny, ale początek nowej umowy między rodzeństwem.",
+            "diagnosis": "Rozmowa osiągnęła Poziom III — transformacja. Zamiast obrony tożsamości pojawiły się walidacja, wzajemność i wspólna wizja relacji. Ukryte potrzeby uznania i szacunku zostały nazwane bez przemocy i bez rezygnacji z własnej prawdy.",
+            "post_game": {
+                "communication_style_summary": "Twoja ścieżka była empatyczna, transformacyjna i konsekwentnie nastawiona na relację zamiast wygranej.",
+                "strongest_moment": "Kluczowy był moment, gdy poprosiłaś o nową zasadę między wami, jednocześnie biorąc odpowiedzialność za własną stronę dynamiki.",
+                "growth_tip": "To jest poziom mistrzowski: uznajesz ból, nie robisz z niego broni i przekuwasz go we wspólne reguły. Takie rozmowy nie kasują historii, ale zmieniają przyszłość.",
+                "replay_prompt": "Wróć do scenariusza i zobacz, które pojedyncze wybory najmocniej decydowały o przejściu z rywalizacji do sojuszu."
+            }
+        }
+    ]
+}

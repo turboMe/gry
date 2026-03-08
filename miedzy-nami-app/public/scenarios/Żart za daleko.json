@@ -1,0 +1,846 @@
+{
+    "scenario_id": "joke_in_front_of_friends",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Żart za daleko",
+        "subtitle": "Po spotkaniu ze znajomymi próbujesz powiedzieć partnerowi, że jego żarty cię zraniły.",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 6,
+        "interaction_count": 5
+    },
+    "tags": {
+        "relationship_type": "romantic_partner",
+        "theme": [
+            "boundaries",
+            "respect",
+            "criticism"
+        ],
+        "emotional_intensity": "moderate",
+        "age_rating": "adult",
+        "session_type": "mini_story",
+        "player_role_gender": "neutral",
+        "difficulty": "intermediate"
+    },
+    "characters": {
+        "player": {
+            "name": "Alex",
+            "role_label": "Partner · Gracz",
+            "age_range": "27-34",
+            "context": "Po wyjściu ze znajomymi czujesz napięcie i wstyd. W trakcie spotkania partner kilka razy żartował twoim kosztem, a inni się śmiali. Nie chcesz robić sceny, ale nie chcesz też udawać, że nic się nie stało.",
+            "hidden_need": "respect",
+            "hidden_need_text": "Potrzebujesz szacunku, lojalności i poczucia, że partner stoi po twojej stronie także w grupie.",
+            "traits": [
+                {
+                    "text": "wrażliwy na upokorzenie",
+                    "type": "negative"
+                },
+                {
+                    "text": "lojalny",
+                    "type": "positive"
+                },
+                {
+                    "text": "powściągliwy przy innych",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 5,
+                "patience": 6,
+                "defensiveness": 7,
+                "empathy": 7,
+                "need_for_control": 4,
+                "shame_sensitivity": 8,
+                "directness": 6,
+                "repair_ability": 7
+            }
+        },
+        "npc": {
+            "name": "Maja",
+            "role_label": "Partnerka · NPC",
+            "age_range": "27-34",
+            "context": "Dla niej żartowanie w grupie jest formą luzu i budowania atmosfery. Nie miała intencji cię zranić, ale gdy słyszy krytykę, szybko przechodzi w obronę i tłumaczenie się.",
+            "hidden_need": "acceptance",
+            "hidden_need_text": "Potrzebuje akceptacji, swobody i poczucia, że nie jest odbierana jako zła osoba za nietrafiony żart.",
+            "traits": [
+                {
+                    "text": "towarzyska",
+                    "type": "positive"
+                },
+                {
+                    "text": "szybko się broni",
+                    "type": "negative"
+                },
+                {
+                    "text": "używa humoru do rozładowania napięcia",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 6,
+                "patience": 5,
+                "defensiveness": 8,
+                "empathy": 6,
+                "need_for_control": 3,
+                "shame_sensitivity": 5,
+                "directness": 7,
+                "repair_ability": 6
+            },
+            "npc_reaction_logic": "Na atak odpowiada obroną, minimalizowaniem lub kontratakiem. Na wycofanie reaguje dezorientacją albo irytacją. Najlepiej otwiera się na spokojny komunikat Ja, konkretne przykłady i jasne nazwanie granicy bez upokarzania jej."
+        }
+    },
+    "metrics_start": {
+        "tension": 40,
+        "trust": 60,
+        "openness": 50,
+        "feeling_heard": 50
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Po powrocie do domu",
+            "scene": {
+                "description": "Wracacie późnym wieczorem do mieszkania. Kurtki lądują w przedpokoju, ale zamiast zwykłej ulgi po wyjściu w powietrzu wisi coś ciężkiego. Maja jeszcze ma w sobie energię spotkania, ty czujesz głównie ukłucie wstydu.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "tense"
+            },
+            "npc_line": "Ale było nawet fajnie, co? Dawno się tak wszyscy nie śmiali.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Tak, szczególnie jak robiłaś ze mnie pośmiewisko. Super ubaw.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maja momentalnie sztywnieje. Marszczy brwi i odpowiada ostrym tonem, że przesadzasz i psujesz wieczór.",
+                    "feedback": {
+                        "label": "Atak i oskarżenie",
+                        "psychology": "To wejście na Poziom II — pozycyjny. Zamiast mówić o swoim przeżyciu, przypisujesz intencję i uderzasz w drugą stronę, co uruchamia defensywność.",
+                        "better_alternative_hint": "Nazwij konkretny moment i swoje emocje, zamiast oceniać partnera jako osobę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Oskarżenie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nieważne. Jestem zmęczony i nie mam siły o tym gadać.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maja patrzy niepewnie, ale po chwili wzrusza ramionami. Czuje dystans, jednak nie rozumie, o co chodzi.",
+                    "feedback": {
+                        "label": "Wycofanie bez ujawnienia potrzeb",
+                        "psychology": "Unikasz konfrontacji, ale napięcie nie znika. W analizie transakcyjnej to ruch, który nie daje partnerowi szansy na korektę, bo komunikat pozostaje ukryty.",
+                        "better_alternative_hint": "Powiedz wprost, że coś cię zabolało i chcesz o tym porozmawiać spokojnie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Ukryty komunikat",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie podobało mi się kilka tekstów przy znajomych. Chcę, żebyśmy o tym pogadali spokojnie.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Maja odkłada telefon i spogląda na ciebie już bardziej uważnie. Nadal jest spięta, ale słucha.",
+                    "feedback": {
+                        "label": "Jasne postawienie tematu",
+                        "psychology": "To asertywne otwarcie rozmowy. Mówisz o problemie bez obelg, ale jeszcze nie odsłaniasz emocji, więc kontakt jest poprawny, lecz niepełny.",
+                        "better_alternative_hint": "Dodaj, jak to konkretnie na ciebie wpłynęło emocjonalnie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granice",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chcę ci coś powiedzieć, bo siedzi to we mnie od powrotu. Kiedy żartowałaś ze mnie przy wszystkich, poczułem wstyd i brak wsparcia.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Maja milknie. Jej twarz łagodnieje, bo słyszy konkret i emocję zamiast ataku.",
+                    "feedback": {
+                        "label": "Komunikat Ja z nazwaniem zranienia",
+                        "psychology": "To podejście zgodne z NVC. Oddzielasz obserwację od oceny i pokazujesz własne przeżycie, dzięki czemu rośnie szansa na autentyczne usłyszenie.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Nazwanie emocji",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Pierwsza reakcja partnerki",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Między wami robi się chłodno. Maja stoi z założonymi rękami, jakby szykowała się do obrony. Ostatnia wymiana słów zostawiła w pokoju szorstki ton.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Serio robisz z tego taki problem? To były tylko żarty.",
+            "scene_high": {
+                "description": "Choć temat jest trudny, Maja nie odwraca wzroku. Atmosfera nadal jest napięta, ale jest w niej też miejsce na rozmowę.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Nie chciałam cię zranić, ale widzę, że to mocno w tobie siedzi.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Jasne, zawsze tak mówisz. Wszystko jest żartem, dopóki to nie dotyczy ciebie.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maja przewraca oczami i odpowiada, że nie będzie rozmawiać, jeśli masz zamiar wbijać szpile.",
+                    "feedback": {
+                        "label": "Sarkazm i ukryty atak",
+                        "psychology": "Bierna agresja obniża bezpieczeństwo rozmowy. Zamiast odsłonić ból, przykrywasz go ironią, co zwykle wywołuje obronę albo kontratak.",
+                        "better_alternative_hint": "Zostań przy jednym konkretnym przykładzie i powiedz, jaki efekt wywołał w tobie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, nieważne. Po prostu następnym razem będę siedzieć cicho.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maja wzdycha ciężko. Słyszy rezygnację, ale nie dostaje jasnej informacji, jak może coś naprawić.",
+                    "feedback": {
+                        "label": "Rezygnacja zamiast dialogu",
+                        "psychology": "To zamknięcie kontaktu. Nie ma tu ani granicy, ani zaproszenia do zrozumienia, więc rozmowa traci potencjał naprawczy.",
+                        "better_alternative_hint": "Powiedz, czego konkretnie potrzebujesz od partnera w podobnych sytuacjach."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak ujawnienia potrzeby",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Może dla ciebie to był żart, ale dla mnie to był nieprzyjemny moment. Chcę, żebyś to potraktowała poważnie.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Maja lekko spuszcza ton. Nie jest jeszcze całkiem otwarta, ale przestaje bagatelizować temat.",
+                    "feedback": {
+                        "label": "Korekta bagatelizowania",
+                        "psychology": "Bronisz swojego doświadczenia bez eskalacji. To ważne, bo oddzielasz intencję partnerki od skutku, choć nadal rozmowa jest bardziej o stanowisku niż o głębszej potrzebie.",
+                        "better_alternative_hint": "Dodaj, czego potrzebujesz od niej w grupie, żeby czuć się bezpiecznie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywna korekta",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Oddzielenie intencji od skutku",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Wierzę, że nie chciałaś mnie zranić. Jednocześnie dla mnie to było upokarzające i chcę, żebyśmy ustalili granicę na takie żarty.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Maja wyraźnie mięknie. Czuje, że nie jest osądzana jako cała osoba, więc łatwiej jej przyjąć odpowiedzialność za sytuację.",
+                    "feedback": {
+                        "label": "Walidacja intencji i nazwanie granicy",
+                        "psychology": "To ruch w stronę Poziomu III — transformacji. Uznajesz perspektywę drugiej strony, ale nie rezygnujesz z własnej granicy i zapraszasz do wspólnego rozwiązania.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja bez kapitulacji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Granice",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Konkret sytuacji",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Rozmowa zaczyna przypominać przepychankę. Maja jest spięta, a każde kolejne zdanie brzmi bardziej jak obrona niż ciekawość.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "No to powiedz konkretnie, co niby było aż tak straszne.",
+            "scene_high": {
+                "description": "Po pierwszym napięciu pojawia się chwila ciszy, która nie jest już tak wroga. Maja wygląda na gotową usłyszeć więcej, choć wciąż jest jej nieswojo.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Dobrze, powiedz mi konkretnie, który moment tak cię zabolał.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Każdy moment był żenujący. Przy tobie człowiek nigdy nie może czuć się bezpiecznie.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maja natychmiast protestuje. Mówi, że przesadzasz i robisz z niej potwora.",
+                    "feedback": {
+                        "label": "Uogólnienie i katastrofizacja",
+                        "psychology": "Słowa każdy i nigdy zwiększają poczucie ataku. W modelu von Thuna na warstwie relacyjnej brzmi to jak osąd całości osoby, nie opis jednej sytuacji.",
+                        "better_alternative_hint": "Wskaż jeden konkretny żart i opisz jego wpływ na ciebie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uogólnianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Katastrofizacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nie wiem. Po prostu głupio wyszło, zapomnijmy.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maja zostaje z poczuciem chaosu. Skoro temat niby znika, to niczego nie da się naprawić.",
+                    "feedback": {
+                        "label": "Rozmycie problemu",
+                        "psychology": "Wycofujesz się w momencie, gdy pojawia się szansa na doprecyzowanie. To utrudnia naprawę, bo druga strona nie dostaje mapy, czego unikać w przyszłości.",
+                        "better_alternative_hint": "Podaj jeden przykład i jedno zdanie o tym, co wtedy poczułeś."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie konkretu",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak informacji zwrotnej",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Kiedy opowiedziałaś wszystkim o tej pomyłce w restauracji, poczułem się wystawiony. Nie lubię, gdy takie rzeczy stają się tematem dla grupy.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Maja kiwa głową. Wreszcie rozumie, o który moment chodzi, choć nadal nie jest pewna, jak głęboko cię to dotknęło.",
+                    "feedback": {
+                        "label": "Konkret i fakt",
+                        "psychology": "To dobry ruch na Poziomie I — transakcji. Porządkujesz fakty i wskazujesz zdarzenie, ale nadal ograniczasz kontakt z emocją, więc efekt jest raczej porządkujący niż zbliżający.",
+                        "better_alternative_hint": "Dodaj, czego w tamtym momencie najbardziej potrzebowałeś od partnerki."
+                    },
+                    "tags": [
+                        {
+                            "text": "Konkretna obserwacja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Najbardziej zabolał mnie moment z restauracją. Wszyscy się śmiali, a ja poczułem się samotny zamiast wspierany. Chcę mieć pewność, że przy innych jesteśmy po jednej stronie.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Maja wyraźnie spuszcza z siebie część napięcia. Mówi ciszej, bo zaczyna rozumieć nie tylko fakt, ale też znaczenie tej sytuacji dla ciebie.",
+                    "feedback": {
+                        "label": "Konkret połączony z potrzebą lojalności",
+                        "psychology": "Łączysz obserwację, emocję i potrzebę. To klasycznie zwiększa szansę na empatię, bo partnerka słyszy nie tylko co zrobiła, ale jaki ważny obszar relacji został naruszony.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "NVC",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Nazwanie potrzeby",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Lojalność w relacji",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Defensywność czy odpowiedzialność",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Maja czuje się przyciśnięta do ściany. W jej głosie miesza się złość z potrzebą obrony własnego obrazu.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "No dobrze, ale ty też czasem żartujesz ze mnie. Czemu teraz wszystko jest na mnie?",
+            "scene_high": {
+                "description": "Choć Mai nadal trudno to przyjąć, nie odcina się od rozmowy. Widać w niej napięcie, ale też gotowość do refleksji.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Rozumiem, że cię to zabolało. Mam tylko w głowie, że czasem oboje tak żartujemy.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nie odwracaj kota ogonem. Teraz rozmawiamy o tym, co ty odwaliłaś.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maja zaciska szczękę. Słyszy pogardę i natychmiast wraca do twardej obrony.",
+                    "feedback": {
+                        "label": "Pogarda i twarde dociśnięcie",
+                        "psychology": "Pogardliwy ton niszczy zaufanie szybciej niż sam spór o fakty. Nawet słuszny temat traci siłę, gdy forma odbiera drugiej stronie godność.",
+                        "better_alternative_hint": "Wracaj do własnego doświadczenia i celu rozmowy, bez poniżania partnerki."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Eskalacja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, może rzeczywiście przesadzam. Zostawmy to.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maja czuje chwilową ulgę, ale temat zostaje zamieciony pod dywan. Prawdziwe napięcie nie znika.",
+                    "feedback": {
+                        "label": "Wycofanie pod presją",
+                        "psychology": "Rezygnujesz z własnej granicy, żeby obniżyć napięcie tu i teraz. To może chwilowo uspokoić sytuację, ale osłabia autentyczność kontaktu i sprzyja późniejszemu żalowi.",
+                        "better_alternative_hint": "Uznaj jej perspektywę, ale nie rezygnuj z nazwania skutku dla siebie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Kapitulacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Tłumienie potrzeb",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Możliwe, że czasem oboje przekraczamy granicę. Teraz chcę jednak zostać przy tym, jak ja to dziś przeżyłem.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Maja przestaje odbijać piłeczkę. Nadal jest ostrożna, ale uznaje kierunek rozmowy.",
+                    "feedback": {
+                        "label": "Powrót do sedna",
+                        "psychology": "To dobra regulacja rozmowy. Uznajesz wątek partnerki, ale nie dajesz się odciągnąć od tematu. Nadal jednak brakuje elementu wspólnej przyszłości.",
+                        "better_alternative_hint": "Dodaj, jak chcecie zachować się następnym razem jako para."
+                    },
+                    "tags": [
+                        {
+                            "text": "Trzymanie ramy rozmowy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Możliwe, że czasem oboje wchodzimy w taki humor. Dla mnie ważne jest jednak, żebyśmy przy innych nie budowali śmiechu moim kosztem. Chcę, żebyśmy byli drużyną.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Maja wyraźnie odpuszcza obronę. Słyszy, że nie próbujesz wygrać, tylko ochronić relację i wspólną zasadę.",
+                    "feedback": {
+                        "label": "Przejście z winy do wspólnej zasady",
+                        "psychology": "To rozmowa na Poziomie III. Zamiast licytować, kto bardziej zawinił, tworzysz wspólną normę relacyjną. To obniża defensywność i wzmacnia więź.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Wspólna perspektywa",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Budowanie zasad relacji",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Ustalenie na przyszłość",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Jesteście już zmęczeni rozmową. Emocje opadły tylko częściowo, a między wami nadal czuć ostrożność i ślad urazy.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "cold"
+            },
+            "npc_line_low": "No dobra, to czego ty właściwie ode mnie chcesz następnym razem?",
+            "scene_high": {
+                "description": "Atmosfera jest bardziej miękka niż na początku. Oboje siedzicie już spokojniej, jakby rozmowa zaczęła wracać na bezpieczniejszy grunt.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Chcę to lepiej zrozumieć. Powiedz mi, co konkretnie byłoby dla ciebie okej przy innych.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Najlepiej w ogóle się do mnie nie odzywaj przy znajomych, skoro nie umiesz inaczej.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maja reaguje frustracją. Taki ultimatywny ton zamyka możliwość rozsądnego porozumienia.",
+                    "feedback": {
+                        "label": "Kara zamiast granicy",
+                        "psychology": "To nie jest granica, tylko sankcja. Druga strona słyszy odrzucenie, a nie informację, jak ma się zachować, by odbudować zaufanie.",
+                        "better_alternative_hint": "Sformułuj konkretną i wykonalną prośbę dotyczącą przyszłych sytuacji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ultimatum",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kontrola przez karę",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nieważne, jakoś sam będę pilnować, żeby nie dawać ci powodów do żartów.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maja robi smutną minę. Bierzesz cały ciężar na siebie, a wspólna odpowiedzialność za relację znika.",
+                    "feedback": {
+                        "label": "Samobiczowanie i brak prośby",
+                        "psychology": "Przenosisz odpowiedzialność z zachowania partnerki na własne dopasowanie się. To osłabia poczucie własnej wartości i nie tworzy zdrowej umowy.",
+                        "better_alternative_hint": "Powiedz wprost, czego potrzebujesz od partnerki w podobnych momentach."
+                    },
+                    "tags": [
+                        {
+                            "text": "Nadmierne branie winy na siebie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak prośby",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Chcę po prostu, żebyś omijała tematy, które mogą mnie zawstydzić. A jeśli przesadzisz, dobrze by było zareagować od razu.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Maja przytakuje. To dla niej zrozumiałe i konkretne, choć rozmowa pozostaje bardziej zadaniowa niż bliska.",
+                    "feedback": {
+                        "label": "Konkretna prośba naprawcza",
+                        "psychology": "Dajesz jasny kierunek zachowania na przyszłość. To skuteczne organizacyjnie, ale nie domyka jeszcze relacyjnego znaczenia tego, co między wami ważne.",
+                        "better_alternative_hint": "Dodaj, jaki wspólny efekt chcesz budować między wami przy innych."
+                    },
+                    "tags": [
+                        {
+                            "text": "Konkretna prośba",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Naprawa relacji",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chcę, żebyśmy przy znajomych dawali sobie poczucie bezpieczeństwa, a nie walczyli o śmiech kosztem siebie. Jeśli coś jest na granicy, wolę żart, który nas łączy, albo szybkie sprawdzenie, czy to jest okej.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -3,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Maja wyraźnie przyjmuje to do siebie. Mówi, że to fair i że chce, żebyś przy niej czuł się bezpiecznie, nie wystawiony.",
+                    "feedback": {
+                        "label": "Wspólna zasada na przyszłość",
+                        "psychology": "To najbardziej dojrzałe domknięcie. Łączysz granicę, konkretną prośbę i wizję relacji, w której obie strony chronią swoją godność. To wzmacnia więź i zwiększa szansę na trwałą zmianę.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Wspólna umowa",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Bezpieczna więź",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Transformacja relacji",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 2
+            },
+            "color": "red",
+            "title": "PĘKNIĘCIE POD POWIERZCHNIĄ",
+            "emoji": "🔴",
+            "subtitle": "Rozmowa zamienia się w obronę, złość albo wycofanie.",
+            "narrative": "Wieczór kończy się chłodno. Niby temat został poruszony, ale nie został naprawdę usłyszany. Między wami zostaje uraza: ty czujesz się jeszcze bardziej samotny, a Maja wychodzi z rozmowy z poczuciem osądu albo chaosu.",
+            "diagnosis": "Dominowały reakcje obronne, atakujące lub unikowe. Zabrakło bezpiecznego nazwania emocji i konkretu, przez co rozmowa ugrzęzła na poziomie winy albo niedopowiedzeń. Wstyd nie został przełożony na jasną potrzebę szacunku i lojalności.",
+            "post_game": {
+                "communication_style_summary": "W tej ścieżce przeważały agresja, bierność lub bierna agresja, które podnosiły napięcie i obniżały poczucie bycia słyszanym.",
+                "strongest_moment": "Najmocniejszym momentem było samo podjęcie tematu zamiast całkowitego udawania, że nic się nie stało.",
+                "growth_tip": "Następnym razem zacznij od jednego konkretnego zdarzenia i jednego uczucia. Zamiast oceniać partnera, powiedz: kiedy to się stało, poczułem wstyd i brak wsparcia.",
+                "replay_prompt": "Spróbuj przejść rozmowę tak, by połączyć granicę z emocją, a nie z oskarżeniem."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 3,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "TEMAT NAZWANY, ALE NIE DO KOŃCA PRZEPRACOWANY",
+            "emoji": "🟡",
+            "subtitle": "Udało się coś wyjaśnić, lecz część napięcia została.",
+            "narrative": "Rozmowa nie wybucha, ale też nie daje pełnej ulgi. Maja rozumie część twojego punktu widzenia, ty z kolei czujesz, że przynajmniej temat wybrzmiał. Nadal jednak czegoś brakuje: głębszego uznania albo wspólnej zasady na przyszłość.",
+            "diagnosis": "Pojawiła się asertywność i trochę konkretu, co obniżyło chaos. Jednocześnie rozmowa często zatrzymywała się na poziomie stanowisk lub faktów. To lepsze niż eskalacja, ale jeszcze nie pełna transformacja relacji.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl asertywny i częściowo transakcyjny: było dość jasno, ale miejscami zabrakło głębszej empatii i wspólnej perspektywy.",
+                "strongest_moment": "Najlepiej zadziałało oddzielenie intencji partnerki od skutku jej zachowania.",
+                "growth_tip": "Asertywność to dobry start, ale nie kończ na samym problemie. Dodaj, czego potrzebujesz od relacji i jaką wspólną zasadę chcecie stworzyć.",
+                "replay_prompt": "Sprawdź, co się stanie, gdy poza stawianiem granicy zaczniesz też budować wspólne myślenie w kategoriach my."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 10
+            },
+            "color": "green",
+            "title": "GRANICA, KTÓRA ZBLIŻA",
+            "emoji": "🟢",
+            "subtitle": "Zranienie zostaje usłyszane, a rozmowa wzmacnia relację.",
+            "narrative": "Pod koniec rozmowy napięcie wyraźnie spada. Maja rozumie już, że nie chodziło o brak dystansu, tylko o poczucie bycia wystawionym zamiast wspieranym. Ustalenie granicy nie oddala was od siebie, tylko daje wam nowy język lojalności przy innych.",
+            "diagnosis": "Udało się przejść od wstydu i defensywności do szczerego kontaktu. Pomogły konkret, komunikat Ja, nazwanie potrzeby szacunku oraz ruch w stronę wspólnej zasady. To właśnie rozmowa, która nie tylko rozwiązuje incydent, ale też buduje bezpieczniejszą więź.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl empatyczny i transformacyjny, który obniżał defensywność i zwiększał wzajemną otwartość.",
+                "strongest_moment": "Najmocniejszy był moment, w którym nazwałeś upokorzenie bez oskarżania i połączyłeś granicę z wizją bycia drużyną.",
+                "growth_tip": "To był dobry kierunek. W realnym życiu wzmacniaj takie rozmowy krótką, konkretną prośbą na przyszłość i wracaj do wspólnych zasad zanim uraza zdąży urosnąć.",
+                "replay_prompt": "Zagraj jeszcze raz i zobacz, jak zmienia się przebieg rozmowy, gdy choć raz wejdziesz w atak albo wycofanie."
+            }
+        }
+    ]
+}

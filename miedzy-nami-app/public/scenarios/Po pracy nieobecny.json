@@ -1,0 +1,999 @@
+{
+    "scenario_id": "after_work_shutdown",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Po pracy nieobecny",
+        "subtitle": "Kiedy zmęczenie jednego partnera uruchamia lęk drugiego",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 9,
+        "interaction_count": 6
+    },
+    "tags": {
+        "relationship_type": "romantic_partner",
+        "theme": [
+            "stress",
+            "intimacy",
+            "support"
+        ],
+        "emotional_intensity": "moderate",
+        "age_rating": "adult",
+        "session_type": "mini_story",
+        "player_role_gender": "neutral",
+        "difficulty": "advanced"
+    },
+    "characters": {
+        "player": {
+            "name": "Alex",
+            "role_label": "Partner · Gracz",
+            "age_range": "29-36",
+            "context": "Alex potrzebuje bliskości i jasnych sygnałów. Gdy druga osoba nagle znika emocjonalnie, szybko uruchamia się niepewność i strach przed odrzuceniem.",
+            "hidden_need": "closeness",
+            "hidden_need_text": "Potrzeba bycia ważnym, zauważonym i bezpiecznym w relacji nawet wtedy, gdy druga strona przeżywa stres.",
+            "traits": [
+                {
+                    "text": "uważność na sygnały relacyjne",
+                    "type": "positive"
+                },
+                {
+                    "text": "skłonność do nadinterpretacji ciszy",
+                    "type": "negative"
+                },
+                {
+                    "text": "gotowość do naprawy",
+                    "type": "positive"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 5,
+                "patience": 6,
+                "defensiveness": 6,
+                "empathy": 8,
+                "need_for_control": 4,
+                "shame_sensitivity": 7,
+                "directness": 6,
+                "repair_ability": 8
+            }
+        },
+        "npc": {
+            "name": "Mika",
+            "role_label": "Partner · Rozmówca",
+            "age_range": "30-38",
+            "context": "Mika wraca z pracy skrajnie przeciążony. Gdy poziom stresu rośnie, odcina kontakt, żeby nie wybuchnąć i odzyskać minimum kontroli nad sobą.",
+            "hidden_need": "recovery",
+            "hidden_need_text": "Potrzeba regeneracji, ciszy i poczucia, że bliskość nie oznacza natychmiastowego nacisku.",
+            "traits": [
+                {
+                    "text": "wysoka odpowiedzialność zawodowa",
+                    "type": "positive"
+                },
+                {
+                    "text": "uciekanie w wycofanie pod stresem",
+                    "type": "negative"
+                },
+                {
+                    "text": "trudność w nazywaniu przeciążenia",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 3,
+                "patience": 4,
+                "defensiveness": 7,
+                "empathy": 6,
+                "need_for_control": 6,
+                "shame_sensitivity": 5,
+                "directness": 3,
+                "repair_ability": 5
+            },
+            "npc_reaction_logic": "Mika zamyka się jeszcze bardziej przy presji, ironii i oskarżeniach. Na konkret bez empatii reaguje częściową współpracą, ale dopiero przy walidacji stresu i jasnych granicach zaczyna odsłaniać, co naprawdę przeżywa i współtworzyć rozwiązanie."
+        }
+    },
+    "metrics_start": {
+        "tension": 40,
+        "trust": 58,
+        "openness": 46,
+        "feeling_heard": 48
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Próg mieszkania",
+            "scene": {
+                "description": "Wieczór. Mika wchodzi do mieszkania, zrzuca torbę przy kanapie i przez chwilę stoi bez ruchu, jakby samo oddychanie kosztowało wysiłek.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "cold"
+            },
+            "npc_line": "Jestem kompletnie wyczerpany. Nie mam teraz siły gadać.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Znowu to samo. Wracasz i zachowujesz się, jakbym nie istniał/a.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Mika zaciska szczękę, odwraca wzrok i rzuca tylko: Serio? Nawet pięciu minut spokoju nie mogę mieć?",
+                    "feedback": {
+                        "label": "Uogólnienie i atak",
+                        "psychology": "To wejście w Poziom II — pozycyjny. Z perspektywy kwadratu von Thuna komunikat o zmęczeniu zostaje odczytany wyłącznie jako odrzucenie, więc odpowiedź brzmi jak oskarżenie, nie jak prośba o kontakt.",
+                        "better_alternative_hint": "Nazwij swój niepokój bez przypisywania złych intencji i zostaw miejsce na stan partnera."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uogólnianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Jasne. Nie przeszkadzam. Jak zwykle lepiej rozmawia ci się ze ścianą niż ze mną.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Mika wzdycha ciężko i mówi: Nie mam siły na uszczypliwości. Po czym znika w łazience.",
+                    "feedback": {
+                        "label": "Sarkazm zamiast odsłonięcia",
+                        "psychology": "Bierna agresja maskuje potrzebę bliskości ironią. W NVC taka forma utrudnia usłyszenie prawdziwej potrzeby, bo druga strona słyszy przede wszystkim ukryty atak.",
+                        "better_alternative_hint": "Powiedz wprost, że cisza uruchamia w tobie lęk, zamiast wbijać szpilę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "NVC Rosenberga",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Widzę, że ledwo stoisz. Potrzebuję tylko wiedzieć, czy wrócimy do tego dziś czy jutro.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Mika opiera się o framugę i odpowiada: Nie wiem. Może jutro. Po prostu teraz mnie nie ciśnij.",
+                    "feedback": {
+                        "label": "Granica i konkret",
+                        "psychology": "To bardziej dojrzała odpowiedź, bo prosi o ramę czasową zamiast eskalować. Nadal jednak zostaje głównie na poziomie ustalenia logistycznego, bez nazwania własnego zranienia i bez pełnej walidacji stresu partnera.",
+                        "better_alternative_hint": "Dodaj krótko, co dzieje się w tobie, gdy kontakt nagle znika. To pogłębi rozmowę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Widzę, że jesteś na granicy. Chcę być blisko, ale nie chcę cię dociskać. Powiedz, czego teraz najbardziej potrzebujesz i kiedy możemy wrócić do rozmowy.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Mika mięknie odrobinę w twarzy. Potrzebuję ciszy i prysznica. Daj mi chwilę, dobrze? Jutro rano mogę powiedzieć więcej.",
+                    "feedback": {
+                        "label": "Empatia z jasną prośbą",
+                        "psychology": "To łączy walidację stanu partnera z ochroną własnej potrzeby kontaktu. W duchu NVC i aktywnego słuchania nie wybierasz między sobą a nim, tylko próbujesz pomieścić obie potrzeby naraz.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Aktywne słuchanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC Rosenberga",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Poranek po ciszy",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Rano kuchnia jest cicha i sztywna. Kubek stoi między wami jak znak rozejmu, który nikogo nie uspokaja. Wczorajszy wieczór zostawił ciężar w powietrzu.",
+                "location": "kitchen",
+                "time_of_day": "morning",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Naprawdę nie mam dziś głowy do tej rozmowy.",
+            "scene_high": {
+                "description": "Rano w kuchni nadal czuć zmęczenie, ale Mika nie ucieka wzrokiem. Obok czajnika stoi drugi kubek, jak mały gest, że nie chce całkiem zniknąć.",
+                "location": "kitchen",
+                "time_of_day": "morning",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Wczoraj odciąłem się za mocno. Nadal jestem zmęczony, ale nie chcę cię zostawiać w niepewności.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To może po prostu przestań wracać do domu, skoro i tak cię tutaj nie ma.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Mika zastyga i odpowiada lodowato: Skoro tak to widzisz, to może faktycznie lepiej nic nie mówić.",
+                    "feedback": {
+                        "label": "Atak w miejsce lęku",
+                        "psychology": "To gwałtowny skrót od zranienia do odrzucenia. W analizie transakcyjnej przechodzisz do pozycji oskarżającego Rodzica, co wywołuje obronne wycofanie zamiast kontaktu.",
+                        "better_alternative_hint": "Zamiast groźby nazwij, że brak sygnału uruchamia w tobie poczucie porzucenia."
+                    },
+                    "tags": [
+                        {
+                            "text": "Groźba relacyjna",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna Berne'a",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nieważne. Poradzę sobie sam/a. Nie musisz nic tłumaczyć.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Mika kiwa głową, jakby dostał/a zgodę na dalsze schowanie się, i wraca do telefonu.",
+                    "feedback": {
+                        "label": "Wycofanie bez ujawnienia potrzeby",
+                        "psychology": "Pozornie obniża napięcie, ale w praktyce wzmacnia dystans. Druga strona nie ma szansy usłyszeć, że za wycofaniem stoi ból i potrzeba więzi.",
+                        "better_alternative_hint": "Zostań w kontakcie z tematem i poproś o mały, realny sygnał zamiast zamykać rozmowę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Potrzebuję konkretu. Dziś wieczorem dwadzieścia minut rozmowy albo jutro rano. Która opcja jest realna?",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Mika marszczy czoło, ale odpowiada: Jutro rano. Dziś po pracy znowu mogę być nie do życia.",
+                    "feedback": {
+                        "label": "Ramy bez pogłębienia",
+                        "psychology": "To porządkuje sytuację i zmniejsza chaos. Nadal jednak zostaje głównie na poziomie organizacji kontaktu, bez mostu do emocjonalnego znaczenia tej ciszy.",
+                        "better_alternative_hint": "Dodaj jedno zdanie o tym, co w tobie uruchamia przeciągające się odcięcie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Kontraktowanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Słyszę, że jesteś przeciążony, ale ja też zaczynam się bać tego dystansu. Ustalmy chociaż mały sygnał, żebym wiedział/a, że to stres, a nie odpychanie mnie.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Mika po chwili milczenia mówi: To uczciwe. Mogę napisać albo powiedzieć jedno zdanie, że to nie o tobie, tylko o pracy.",
+                    "feedback": {
+                        "label": "Most między dwiema potrzebami",
+                        "psychology": "To odpowiedź z Poziomu III — transformacja. Nie walczysz o to, czyja potrzeba jest ważniejsza, tylko tworzysz wspólny mechanizm, który chroni i regenerację, i więź.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Wspólne rozwiązywanie problemu",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Drugi wieczór",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Drugi wieczór wygląda podobnie. W salonie świeci tylko lampa przy kanapie, a Mika siedzi z telefonem, jakby ekran był bezpieczniejszy niż twoja twarz.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Nie chcę kolejnej awantury. Naprawdę nie mam siły.",
+            "scene_high": {
+                "description": "Drugi wieczór jest nadal ciężki, ale Mika nie ucieka od razu. Siada obok, zostawiając między wami trochę przestrzeni, lecz nie mur.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Dzięki, że mnie nie docisnąłeś/aś. Nadal mam niski poziom baterii, ale mogę chwilę pogadać.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Masz niski poziom baterii od kilku dni. Może problemem nie jest praca, tylko nasz związek.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Mika prostuje się i odpowiada ostro: Świetnie, czyli znowu mam się tłumaczyć z wszystkiego.",
+                    "feedback": {
+                        "label": "Katastrofizacja relacji",
+                        "psychology": "To klasyczny skok do najgorszej interpretacji. Zamiast badać zjawisko, zamieniasz zmęczenie w oskarżenie o kryzys związku, co podnosi defensywność i obcina gotowość do szczerości.",
+                        "better_alternative_hint": "Zostań przy obserwacji wzorca i przy swoim przeżyciu, bez dopisywania wyroku o relacji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Katastrofizacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Defensywność",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Spokojnie, nie będę ci przeszkadzać. Odezwij się do mnie, jak sobie o mnie przypomnisz.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Mika zamyka oczy i mówi: Właśnie dlatego nie mam siły rozmawiać, bo każdy kontakt kończy się szpilą.",
+                    "feedback": {
+                        "label": "Szpila zamiast kontaktu",
+                        "psychology": "Bierna agresja daje chwilowe poczucie kontroli, ale nie odsłania prawdziwej potrzeby. W kwadracie von Thuna warstwa relacyjna dominuje nad treścią i brzmi jak kara.",
+                        "better_alternative_hint": "Nazwij wprost, że długie odcięcie budzi w tobie lęk i potrzebę wyjaśnienia."
+                    },
+                    "tags": [
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Kiedy znikasz bez słowa, robi się we mnie dużo napięcia. Chcę wiedzieć, czego realnie mogę się spodziewać.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Mika przytakuje niechętnie. To uczciwe. Tylko sam/a jeszcze nie wiem, ile mnie to kosztuje.",
+                    "feedback": {
+                        "label": "Nazwanie wpływu",
+                        "psychology": "To już nie atak, tylko komunikat o własnym doświadczeniu. Nadal jednak brakuje zaproszenia do wspólnego zrozumienia, co dzieje się po stronie partnera.",
+                        "better_alternative_hint": "Dopytaj, co dokładnie dzieje się w nim, zanim zaproponujesz rozwiązanie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Kiedy się odcinasz, uruchamia mi się lęk, że cię tracę. Czy możesz mi powiedzieć, co dzieje się w tobie, zanim całkiem znikniesz?",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Mika długo milczy, potem mówi ciszej: Czuję, jakbym po pracy był/a pusty/a i każdy kontakt był kolejnym zadaniem. To nie jest o tobie.",
+                    "feedback": {
+                        "label": "Odsłonięcie siebie i zaproszenie partnera",
+                        "psychology": "To mocny ruch naprawczy. Ujawnienie własnej podatności obniża walkę o rację, a pytanie o wewnętrzny stan partnera otwiera drogę do mentalizacji zamiast domysłów.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Podatność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Mentalizacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Aktywne słuchanie",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Nazwanie wzorca",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "W kuchni pachnie odgrzewanym jedzeniem, ale atmosfera jest zimna. Oboje jesteście już bardziej zmęczeni samym wzorcem niż dzisiejszym dniem.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Mam dość analizowania mnie po pracy.",
+            "scene_high": {
+                "description": "Wieczór w kuchni jest spokojniejszy. Mika siada przy stole zamiast krążyć po mieszkaniu i pierwszy raz wygląda tak, jakby próbował/a zostać w rozmowie mimo dyskomfortu.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Chyba naprawdę uciekam w ciszę, bo boję się, że jak otworzę usta, to tylko wybuchnę.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Czyli mam płacić za to, że nie umiesz ogarniać swoich emocji?",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Mika gwałtownie odsuwa krzesło. Super. To właśnie dlatego wolę milczeć.",
+                    "feedback": {
+                        "label": "Zawstydzenie partnera",
+                        "psychology": "Atak na kompetencję emocjonalną włącza wstyd i obronę. Zawstydzony partner zwykle nie staje się bardziej dostępny, tylko jeszcze bardziej się zamyka albo kontratakuje.",
+                        "better_alternative_hint": "Oddziel problem od osoby. Krytykuj wzorzec, nie wartość partnera."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Wstyd relacyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra. To już nic nie mów. Ja też przestaję próbować.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Mika patrzy w bok i milknie. Między wami zapada cisza, która nie uspokaja, tylko oddala.",
+                    "feedback": {
+                        "label": "Rezygnacja z wpływu",
+                        "psychology": "Wycofanie bywa ochronne, ale tutaj utrwala układ samotności obok siebie. Nie pojawia się ani granica, ani prośba, ani szansa na nowy wzorzec.",
+                        "better_alternative_hint": "Zamiast kapitulować, zaproponuj minimalny, realny eksperyment na trudne dni."
+                    },
+                    "tags": [
+                        {
+                            "text": "Kapitulacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Unikanie naprawy",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "W porządku. To potrzebujemy zasad. Ile czasu ciszy po pracy naprawdę potrzebujesz, żebym nie zgadywał/a?",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Mika odpowiada po namyśle: Może czterdzieści minut. Ale sam/a nie wiem, czy zawsze dam radę to nazwać.",
+                    "feedback": {
+                        "label": "Porządkowanie chaosu",
+                        "psychology": "To użyteczne, bo przekłada mglisty problem na mierzalny parametr. Nadal jednak istnieje ryzyko, że rozmowa stanie się tylko regulaminem, bez dotknięcia emocjonalnego sensu po obu stronach.",
+                        "better_alternative_hint": "Połącz zasady z uznaniem, że za ciszą i lękiem stoją konkretne potrzeby."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ustalanie granic",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie chcę cię naprawiać ani ścigać. Chcę, żebyśmy mieli rytuał przejścia: trochę przestrzeni dla ciebie i mały most dla nas. Co byłoby realne?",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Mika wypuszcza powietrze. To brzmi lepiej niż presja albo cisza. Może wejście, jedno zdanie i potem chwila samotności?",
+                    "feedback": {
+                        "label": "Wspólna architektura bezpieczeństwa",
+                        "psychology": "To czysty Poziom III — transformacja. Nie próbujesz wygrać sporu, tylko projektujesz warunki, w których obie osoby mogą regulować się bez utraty więzi.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Wspólne rozwiązywanie problemu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Regulacja relacyjna",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Ustalenie konkretu",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "W sypialni rozmowa schodzi z emocji na technikalia, ale napięcie nadal siedzi pod skórą. Każda propozycja brzmi trochę jak nowy obowiązek, a nie ulga.",
+                "location": "bedroom",
+                "time_of_day": "night",
+                "visual_mood": "cold"
+            },
+            "npc_line_low": "Brzmi to trochę jak procedura. Boję się, że i tak cię zawiodę.",
+            "scene_high": {
+                "description": "W sypialni jest cicho, ale po raz pierwszy to nie jest martwa cisza. Oboje próbujecie przełożyć trudną emocję na coś, co da się naprawdę zrobić.",
+                "location": "bedroom",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "To mogłoby działać. Potrzebuję chwili po wejściu do domu, ale nie chcę cię zamykać za drzwiami.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nie potrzebuję rytuałów. Potrzebuję normalnego partnera, a nie projektu do zarządzania.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Mika sztywnieje i odpowiada: Skoro tak mnie widzisz, to naprawdę nie mam już nic do dodania.",
+                    "feedback": {
+                        "label": "Dewaluacja partnera",
+                        "psychology": "To atak na tożsamość, nie na problem. Kiedy druga osoba słyszy, że sama jest wadą, szanse na współpracę dramatycznie spadają.",
+                        "better_alternative_hint": "Zostań przy tym, czego potrzebujesz w trudnym momencie, bez odmawiania partnerowi wartości."
+                    },
+                    "tags": [
+                        {
+                            "text": "Dewaluacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Atak na tożsamość",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Świetnie. Będę czekać jak aplikacja na powiadomienie, aż łaskawie wrócisz do świata żywych.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Mika odwraca się plecami. I właśnie dlatego każde takie ustalenie od razu brzmi jak pułapka.",
+                    "feedback": {
+                        "label": "Ironiczne podważenie ustaleń",
+                        "psychology": "Ironia rozładowuje bezradność, ale niszczy zaufanie do świeżo tworzonego porozumienia. Partner słyszy, że żaden jego wysiłek nie będzie potraktowany serio.",
+                        "better_alternative_hint": "Sprawdź, co w planie jest dla ciebie za mało, i nazwij to wprost bez kpiny."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Podważanie naprawy",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Dobrze. Po pracy bierzesz godzinę dla siebie, ale potem sprawdzasz, co u mnie. Potrzebuję, żeby to było przewidywalne.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Mika kiwa głową. Godzina to może za dużo, ale przewidywalność faktycznie by pomogła.",
+                    "feedback": {
+                        "label": "Jasna prośba o przewidywalność",
+                        "psychology": "To sensowna granica i czytelna potrzeba. Nadal jednak plan jest trochę jednostronnie ustawiony pod rozwiązanie, a mniej pod wspólne sprawdzenie, co jest realne dla obu stron.",
+                        "better_alternative_hint": "Dopytaj, jaki czas i jaki sygnał są wykonalne także z perspektywy partnera."
+                    },
+                    "tags": [
+                        {
+                            "text": "Jasna prośba",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Ustalmy to konkretnie: po wejściu mówisz jedno zdanie, że to stres, bierzesz czterdzieści pięć minut na reset, a potem mamy dziesięć minut kontaktu. To nie musi być wielka rozmowa, tylko sygnał, że jesteśmy po tej samej stronie.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Mika przytakuje z ulgą. Tak. Jedno zdanie, czterdzieści pięć minut i potem wracam. To brzmi do zrobienia.",
+                    "feedback": {
+                        "label": "Konkretny rytuał naprawczy",
+                        "psychology": "To dojrzałe połączenie regulacji emocji z więzią. Tworzysz mały, powtarzalny most, który zmniejsza pole dla domysłów i wzmacnia poczucie bezpieczeństwa u obu osób.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Rytuał naprawczy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Bezpieczna więź",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_6",
+            "title": "Pierwszy test nowego układu",
+            "score_threshold": 5,
+            "scene_low": {
+                "description": "Kilka dni później znów wraca trudny wieczór. W przedpokoju wisi znajome napięcie, bo stary wzorzec jest bliżej niż świeże ustalenia.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Nie mam teraz zasobów na żadną procedurę.",
+            "scene_high": {
+                "description": "Kilka dni później wraca kolejny ciężki wieczór, ale tym razem Mika zatrzymuje się już w drzwiach, jakby pamięć o waszej rozmowie była realnym hamulcem dla starego odruchu.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Jest ciężko, ale pamiętam, co ustaliliśmy. Daj mi czterdzieści pięć minut i wrócę do ciebie.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nie wierzę w te twoje deklaracje. I tak zaraz znikniesz jak zawsze.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Mika spuszcza torbę na podłogę i mówi ostro: Skoro i tak jestem skreślony/a, to po co mam próbować?",
+                    "feedback": {
+                        "label": "Proroctwo samospełniające",
+                        "psychology": "Podważenie zanim partner zdąży cokolwiek zrobić niszczy dopiero budowane zaufanie. To test z tezą, że druga strona zawiedzie, więc niemal zapraszasz stary wzorzec z powrotem.",
+                        "better_alternative_hint": "Oceń zachowanie po fakcie, nie zanim partner dostanie szansę je wykonać."
+                    },
+                    "tags": [
+                        {
+                            "text": "Proroctwo samospełniające",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak zaufania",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Jasne. Rób co chcesz.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Mika słyszy chłód w twoim głosie i tylko kiwa głową. Kontakt zostaje formalnie zachowany, ale emocjonalnie znów się rwie.",
+                    "feedback": {
+                        "label": "Zgoda bez obecności",
+                        "psychology": "To nie jest otwarty konflikt, ale też nie jest współregulacja. Z zewnątrz wygląda spokojnie, a wewnątrz utrwala poczucie samotności i rezygnacji.",
+                        "better_alternative_hint": "Potwierdź ustalenie i nazwij, co ty zrobisz w tym czasie, żeby obie strony czuły się w układzie obecne."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie emocjonalne",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Pozorna zgoda",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Dobrze. Liczę, że wrócisz za czterdzieści pięć minut, bo tego potrzebuję.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Mika odpowiada krótko: W porządku. Wrócę. To nie jest ciepłe, ale brzmi jak realne zobowiązanie.",
+                    "feedback": {
+                        "label": "Sprawdzenie kontraktu",
+                        "psychology": "To zdrowa kontrola rzeczywistości. Nadal jednak ciężar rozmowy pozostaje głównie na egzekwowaniu ustalenia, a mniej na współpracy i wzajemnej regulacji napięcia.",
+                        "better_alternative_hint": "Dodaj sygnał współpracy, a nie tylko oczekiwania. To wzmacnia więź zamiast samej odpowiedzialności."
+                    },
+                    "tags": [
+                        {
+                            "text": "Konsekwencja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Dzięki, że to powiedziałeś/aś. Ja też zadbam teraz o siebie i wróćmy za czterdzieści pięć minut do krótkiej rozmowy. To nam obojgu pomoże.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Mika patrzy z ulgą i mówi: Dziękuję. Właśnie o to mi chodziło. Nie znikam, tylko się resetuję.",
+                    "feedback": {
+                        "label": "Współregulacja zamiast kontroli",
+                        "psychology": "To finał na poziomie dojrzałej więzi. Uznajesz wysiłek partnera, bierzesz odpowiedzialność za własną regulację i wzmacniasz wspólny rytm, zamiast czekać biernie albo rozliczać.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Współregulacja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Bezpieczna więź",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "RÓWNOLEGŁE SAMOTNOŚCI",
+            "emoji": "🔴",
+            "subtitle": "Zmęczenie i lęk zamieniły się w dwa osobne okopy.",
+            "narrative": "Wieczorem mieszkanie jest ciche, ale to nie cisza ulgi. Mika zamyka się w sobie jeszcze mocniej, a Alex przestaje wierzyć, że próba kontaktu ma sens. Oboje zostają obok siebie, lecz nie razem.",
+            "diagnosis": "Ta ścieżka ugrzęzła w defensywności, ironii albo wycofaniu. Zamiast nazwać ukryte potrzeby, rozmowa krążyła wokół winy, przewidywań i ochronnych reakcji. Brakowało bezpiecznej ramy, która pozwoliłaby oddzielić stres od odrzucenia.",
+            "post_game": {
+                "communication_style_summary": "Dominowały reakcje obronne: agresja, bierna agresja albo kapitulacja. Kontakt był bardziej walką o przetrwanie niż próbą zrozumienia.",
+                "strongest_moment": "Pojawiły się przebłyski potrzeby bliskości, ale nie zostały wypowiedziane w sposób, który druga strona mogła usłyszeć bez obrony.",
+                "growth_tip": "Zanim ocenisz partnera, nazwij obserwację, własne uczucie i potrzebę. W tym scenariuszu kluczowe było oddzielenie ciszy od intencji odrzucenia.",
+                "replay_prompt": "Spróbuj następnym razem budować komunikaty wokół lęku i potrzeby kontaktu, a nie wokół oskarżeń albo ironii."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "KRUCHY ROZEJM",
+            "emoji": "🟡",
+            "subtitle": "Udało się ograniczyć chaos, ale więź nadal łatwo się rwie.",
+            "narrative": "Alex i Mika dochodzą do kilku ustaleń, które chwilowo porządkują wieczory po pracy. Napięcie jest mniejsze niż wcześniej, lecz wrażliwe miejsca nadal są tylko częściowo nazwane. Układ działa, ale jeszcze nie daje pełnego bezpieczeństwa.",
+            "diagnosis": "Ta ścieżka weszła w stronę asertywności i porządkowania sytuacji, ale nie zawsze przekroczyła próg głębszej empatii. Pojawiły się granice i konkrety, jednak nie wszystkie wybory wzmacniały poczucie bycia naprawdę rozumianym po obu stronach.",
+            "post_game": {
+                "communication_style_summary": "Przeważała asertywność i podejście zadaniowe. To ograniczyło eskalację, ale miejscami zabrakło odsłonięcia podatności i walidacji.",
+                "strongest_moment": "Najmocniejsze były chwile, w których rozmowa przechodziła z chaosu w konkret i przewidywalność.",
+                "growth_tip": "Następnym krokiem jest dołożenie empatii do granic. Sam plan nie wystarczy, jeśli nie padnie też zdanie o tym, co cisza robi z tobą i co stres robi z partnerem.",
+                "replay_prompt": "Zagraj jeszcze raz i zobacz, co się zmieni, gdy obok konkretu pojawi się więcej walidacji i wspólnego języka dla trudnych dni."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 9
+            },
+            "color": "green",
+            "title": "MOST PO CIĘŻKIM DNIU",
+            "emoji": "🟢",
+            "subtitle": "Bliskość i regeneracja przestały się wzajemnie wykluczać.",
+            "narrative": "Po kilku trudnych rozmowach Alex i Mika znajdują sposób, by nie mylić przeciążenia z odrzuceniem. Pojawia się prosty rytuał: sygnał, chwila samotności i powrót do kontaktu. Nie wszystko jest idealne, ale relacja odzyskuje grunt.",
+            "diagnosis": "Ta ścieżka wykorzystała empatię, komunikat Ja i wspólne rozwiązywanie problemu. Dzięki temu stres przestał być interpretowany wyłącznie jako komunikat o relacji, a obie strony zyskały więcej bezpieczeństwa i przewidywalności.",
+            "post_game": {
+                "communication_style_summary": "Dominowały wybory empatyczne i transformacyjne. Rozmowa przesuwała się od reagowania na ból do budowania wspólnego rytmu regulacji.",
+                "strongest_moment": "Najlepszy moment pojawił się wtedy, gdy potrzeba przestrzeni została połączona z małym, konkretnym mostem do bliskości.",
+                "growth_tip": "To dobry kierunek. Utrwalaj ten wzorzec przez konsekwencję i wracaj do niego także w mniej kryzysowe dni, żeby stał się naturalny.",
+                "replay_prompt": "Spróbuj ścieżki perfekcyjnej i zobacz, jak wygląda relacja, gdy każde trudne miejsce staje się okazją do jeszcze głębszego współdziałania."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 10,
+                "max": 12
+            },
+            "color": "blue",
+            "title": "NOWY RYTUAŁ BLISKOŚCI",
+            "emoji": "🔵",
+            "subtitle": "Z przeciążenia powstał język, który chroni was oboje.",
+            "narrative": "Mika wraca po ciężkim dniu, daje umówiony sygnał, bierze czas na reset i rzeczywiście wraca do krótkiego kontaktu. Alex nie ściga, ale też nie znika. Zamiast starego schematu samotności pojawia się dojrzała współregulacja i poczucie, że jesteście po tej samej stronie.",
+            "diagnosis": "To ścieżka mistrzowska, bo łączy empatię, samoujawnienie, jasne granice i wspólne projektowanie rozwiązania. Rozmowa nie zatrzymała się na transakcji ani walce o rację, tylko weszła w pełny Poziom III — transformacja.",
+            "post_game": {
+                "communication_style_summary": "Dominowały wybory transformacyjne. Kontakt był jednocześnie ciepły, konkretny i oparty na wzajemnej odpowiedzialności za regulację napięcia.",
+                "strongest_moment": "Najmocniejszy był moment, w którym obie strony uznały swoje potrzeby bez wzajemnego unieważniania i zamieniły je w realny rytuał.",
+                "growth_tip": "To poziom, który warto przenosić do życia: nie czytaj ciszy automatycznie jako odrzucenia i nie traktuj bliskości jak ataku. Buduj małe, powtarzalne mosty.",
+                "replay_prompt": "Wróć do scenariusza i sprawdź, jak szybko relacja zbacza z kursu, gdy zabraknie jednego elementu tej współregulacji."
+            }
+        }
+    ]
+}

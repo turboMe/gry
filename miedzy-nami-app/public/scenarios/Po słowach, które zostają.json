@@ -1,0 +1,881 @@
+{
+    "scenario_id": "returning_after_hurtful_words",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Po słowach, które zostają",
+        "subtitle": "Wracasz do rozmowy po zdaniu, którego żałujesz, i próbujesz naprawić to, co pękło.",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 7,
+        "interaction_count": 5
+    },
+    "tags": {
+        "relationship_type": "friends",
+        "theme": [
+            "apology",
+            "forgiveness",
+            "conflict_resolution"
+        ],
+        "emotional_intensity": "moderate",
+        "age_rating": "teen",
+        "session_type": "mini_story",
+        "player_role_gender": "neutral",
+        "difficulty": "intermediate"
+    },
+    "characters": {
+        "player": {
+            "name": "Alex",
+            "role_label": "Przyjaciel · Gracz",
+            "age_range": "27-34",
+            "context": "Wczoraj, w silnych emocjach, powiedziałeś coś raniącego. Dziś wracasz do rozmowy z mieszaniną wstydu, napięcia i potrzeby naprawy.",
+            "hidden_need": "acceptance",
+            "hidden_need_text": "Potrzeba, by mimo błędu nadal być kimś, z kim da się rozmawiać i odbudować kontakt.",
+            "traits": [
+                {
+                    "text": "impulsywny pod stresem",
+                    "type": "negative"
+                },
+                {
+                    "text": "zdolny do refleksji",
+                    "type": "positive"
+                },
+                {
+                    "text": "wrażliwy na odrzucenie",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 7,
+                "patience": 5,
+                "defensiveness": 6,
+                "empathy": 7,
+                "need_for_control": 4,
+                "shame_sensitivity": 8,
+                "directness": 6,
+                "repair_ability": 7
+            }
+        },
+        "npc": {
+            "name": "Maja",
+            "role_label": "Przyjaciółka · NPC",
+            "age_range": "27-34",
+            "context": "Wczoraj usłyszała od ciebie słowa, które podważyły jej poczucie szacunku i bezpieczeństwa w relacji. Jest ostrożna i chce sprawdzić, czy naprawdę bierzesz odpowiedzialność.",
+            "hidden_need": "respect",
+            "hidden_need_text": "Potrzeba szacunku, emocjonalnego bezpieczeństwa i pewności, że jej ból nie zostanie pomniejszony.",
+            "traits": [
+                {
+                    "text": "lojalna",
+                    "type": "positive"
+                },
+                {
+                    "text": "ostrożna po zranieniu",
+                    "type": "neutral"
+                },
+                {
+                    "text": "łatwo zamyka się przy defensywie drugiej strony",
+                    "type": "negative"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 4,
+                "patience": 6,
+                "defensiveness": 7,
+                "empathy": 6,
+                "need_for_control": 5,
+                "shame_sensitivity": 7,
+                "directness": 5,
+                "repair_ability": 6
+            },
+            "npc_reaction_logic": "Maja mięknie, gdy słyszy konkretne wzięcie odpowiedzialności bez usprawiedliwień. Na defensywę, minimalizowanie i przerzucanie winy reaguje dystansem albo kontratakiem."
+        }
+    },
+    "metrics_start": {
+        "tension": 40,
+        "trust": 60,
+        "openness": 50,
+        "feeling_heard": 50
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Powrót do tematu",
+            "scene": {
+                "description": "Siedzicie naprzeciwko siebie w cichej kawiarni. W powietrzu nadal wisi wczorajsza kłótnia. Maja nie wygląda na gotową, by udawać, że nic się nie stało.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": "Napisałeś, że chcesz wrócić do tego, co powiedziałeś wczoraj. To mów.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "No dobra, przesadziłem, ale ty też mnie wtedy mocno sprowokowałaś.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "conversation_level": "Poziom II — pozycyjny",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maja prostuje się i zaciska szczękę. Słyszę przeprosiny z dopiskiem, że to jednak moja wina. To nie są przeprosiny.",
+                    "feedback": {
+                        "label": "Przerzucenie winy",
+                        "psychology": "Dodanie ale unieważnia odpowiedzialność i przenosi rozmowę w walkę o rację. W analizie transakcyjnej to szybki powrót do starcia pozycyjnego.",
+                        "better_alternative_hint": "Zatrzymaj się na własnym zachowaniu, bez dokładania winy drugiej stronie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Przerzucanie winy",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Obrona ego",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "W sumie nieważne. Lepiej po prostu o tym zapomnijmy.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "conversation_level": "Poziom I — transakcja",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maja patrzy na ciebie z niedowierzaniem. Czyli mam po prostu udawać, że tego nie słyszałam?",
+                    "feedback": {
+                        "label": "Unik zamiast naprawy",
+                        "psychology": "Wycofanie chwilowo obniża dyskomfort mówiącego, ale zostawia zranienie bez uznania. To blokuje proces repair i obniża poczucie bezpieczeństwa drugiej strony.",
+                        "better_alternative_hint": "Nazwij, że wracasz do rozmowy właśnie dlatego, że nie chcesz zamiatać sprawy pod dywan."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Naprawa relacji",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Chciałem przeprosić za to, co powiedziałem. Nie powinienem był tak mówić.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "conversation_level": "Poziom I — transakcja",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Maja lekko kiwa głową. Dobrze, że to mówisz. Ale ja nadal nie wiem, czy rozumiesz, co we mnie zostało.",
+                    "feedback": {
+                        "label": "Poprawne przeprosiny, ale jeszcze płytkie",
+                        "psychology": "To jest dobry start: bierzesz odpowiedzialność za formę. Brakuje jednak odniesienia do wpływu twoich słów na drugą osobę, więc rozmowa zostaje na poziomie faktów.",
+                        "better_alternative_hint": "Dodaj uznanie emocjonalnego skutku swoich słów i zostaw miejsce na reakcję drugiej strony."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wzięcie odpowiedzialności",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Wracam do tego, bo żałuję tego, co powiedziałem. Widzę, że mogłem cię tym zranić i chcę wziąć za to odpowiedzialność.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "conversation_level": "Poziom III — transformacja",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Maja bierze spokojniejszy oddech. Dobrze. To powiedz to dalej, bez bronienia się.",
+                    "feedback": {
+                        "label": "Odpowiedzialność z uznaniem bólu",
+                        "psychology": "To łączy komunikat Ja z walidacją możliwego wpływu na drugą osobę. W NVC to otwarcie drogi do kontaktu, a nie do samoobrony.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Pierwszy opór",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Przy stoliku robi się chłodno. Maja siedzi sztywno, z rękami skrzyżowanymi, jakby sprawdzała, czy zaraz znowu uderzysz słowem.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Teraz ci się przypomniało? Wczoraj mówiłeś to z pełnym przekonaniem.",
+            "scene_high": {
+                "description": "Maja nadal jest spięta, ale nie odwraca wzroku. Odkłada kubek i daje ci kilka sekund ciszy, żebyś mógł mówić dalej.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Dobrze, że wracasz. Nadal mnie to boli, ale słucham.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Jasne, najlepiej zrób ze mnie potwora, to będzie najprościej.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "conversation_level": "Poziom II — pozycyjny",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maja cofa się emocjonalnie. Nie robię z ciebie potwora. Mówię ci, co to ze mną zrobiło.",
+                    "feedback": {
+                        "label": "Sarkazm i odwrócenie ról",
+                        "psychology": "Bierna agresja zmienia rozmowę o zranieniu w rozmowę o twoim urażonym obrazie siebie. To rozbija kontakt i uruchamia defensywność po obu stronach.",
+                        "better_alternative_hint": "Nie odpowiadaj ironią na ból. Uznaj, że druga strona ma prawo być nieufna."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Odwrócenie uwagi od wpływu",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Przesadzasz. To były tylko słowa rzucone w nerwach.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "conversation_level": "Poziom II — pozycyjny",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maja patrzy na ciebie twardo. Właśnie pokazałeś, że nadal nie rozumiesz problemu.",
+                    "feedback": {
+                        "label": "Minimalizowanie szkody",
+                        "psychology": "Pomniejszenie skutku słów odbiera drugiej stronie prawo do własnego przeżycia. W modelu von Thuna ignorujesz warstwę relacyjną komunikatu i zostajesz przy gołych faktach.",
+                        "better_alternative_hint": "Zamiast oceniać, czy to było duże czy małe, zapytaj, jak to zostało odebrane."
+                    },
+                    "tags": [
+                        {
+                            "text": "Minimalizowanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Rozumiem, że możesz tak to widzieć. Chcę tylko wyjaśnić, co miałem na myśli.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "conversation_level": "Poziom I — transakcja",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Maja wzdycha. Możesz wyjaśniać, ale najpierw dobrze byłoby usłyszeć, co to zrobiło ze mną.",
+                    "feedback": {
+                        "label": "Wyjaśnienie przed kontaktem",
+                        "psychology": "Wyjaśnianie intencji bywa potrzebne, ale zbyt szybkie przejście do własnego znaczenia może brzmieć jak obrona. Emocjonalna naprawa zwykle wymaga najpierw usłyszenia skutku.",
+                        "better_alternative_hint": "Zanim wyjaśnisz intencję, zaproś drugą stronę do powiedzenia, co ją najbardziej zabolało."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wyjaśnianie intencji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Masz prawo być zła. Nie chcę się wybielać. Chcę zrozumieć, co w tym najbardziej cię zabolało.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "conversation_level": "Poziom III — transformacja",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Maja po raz pierwszy trochę odpuszcza w ramionach. Najbardziej? To, jak powiedziałeś, że przy mnie wszystko ci siada.",
+                    "feedback": {
+                        "label": "Zaproszenie do nazwania rany",
+                        "psychology": "To ruch naprawczy wysokiej jakości: nie bronisz obrazu siebie, tylko robisz miejsce na doświadczenie drugiej strony. Tak buduje się poczucie bycia słyszanym.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Aktywne słuchanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Usłyszeć to, co naprawdę zabolało",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Napięcie nie schodzi. Kawiarnia robi się głośniejsza, ale między wami jest martwa cisza. Maja mówi już bardziej z ochrony niż z otwartości.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Najbardziej zabolało mnie to, że zabrzmiało, jakbym była dla ciebie ciężarem. Jakbyś widział we mnie problem, a nie człowieka.",
+            "scene_high": {
+                "description": "Choć atmosfera nadal jest delikatna, rozmowa staje się bardziej szczera. Maja nie chowa już wzroku za kubkiem i mówi ciszej, ale wprost.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "cold"
+            },
+            "npc_line_high": "Najbardziej zabolało mnie to, że poczułam się przy tobie jak problem do zniesienia, nie jak bliska osoba.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "No bo czasem naprawdę tak jest i też mam prawo być tym zmęczony.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "conversation_level": "Poziom II — pozycyjny",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maja milknie i odsuwa się od stolika. Czyli wróciłeś tu po to, żeby powiedzieć to drugi raz, tylko spokojniej.",
+                    "feedback": {
+                        "label": "Powtórne ugodzenie",
+                        "psychology": "Gdy druga strona odsłania ranę, kontrargument działa jak ponowne jej zadanie. To niszczy fundament bezpieczeństwa potrzebny do naprawy.",
+                        "better_alternative_hint": "Nie oceniaj prawdziwości jej odczuć. Najpierw pokaż, że rozumiesz, co usłyszała."
+                    },
+                    "tags": [
+                        {
+                            "text": "Brak walidacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Eskalacja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nie wiem, co mam teraz powiedzieć.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "conversation_level": "Poziom I — transakcja",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maja patrzy w bok. To ja odważyłam się to nazwać, a ty znikasz dokładnie w tym momencie.",
+                    "feedback": {
+                        "label": "Wycofanie w kluczowym momencie",
+                        "psychology": "Bezradność bywa autentyczna, ale gdy pojawia się zaraz po odsłonięciu bólu przez drugą stronę, może zostać odebrana jako brak gotowości do udźwignięcia odpowiedzialności.",
+                        "better_alternative_hint": "Nie musisz mieć idealnej odpowiedzi. Wystarczy nazwać, co właśnie usłyszałeś i uznać to."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Regulacja emocji",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie to chciałem powiedzieć. Byłem wściekły i fatalnie to ubrałem.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "conversation_level": "Poziom I — transakcja",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Maja przyjmuje to, ale nadal jest czujna. Okej. Tylko że ja nadal potrzebuję usłyszeć, że rozumiesz, czemu to tak weszło.",
+                    "feedback": {
+                        "label": "Dobra korekta intencji",
+                        "psychology": "Korygujesz znaczenie i przyznajesz błąd, co jest wartościowe. Nadal jednak bardziej opisujesz siebie niż doświadczenie drugiej osoby.",
+                        "better_alternative_hint": "Powtórz własnymi słowami, co ona usłyszała i jaki mogło to mieć dla niej sens."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wzięcie odpowiedzialności",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Doprecyzowanie komunikatu",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Słyszę, że odebrałaś to jak: jesteś ciężarem. Rozumiem, czemu to boli. To nie było fair z mojej strony.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "conversation_level": "Poziom III — transformacja",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Maja powoli kiwa głową. Właśnie tego potrzebowałam. Żebyś nie tłumaczył się od razu, tylko to usłyszał.",
+                    "feedback": {
+                        "label": "Nazwanie wpływu bez obrony",
+                        "psychology": "Parafraza uczuć i znaczenia to rdzeń aktywnego słuchania. Pokazujesz, że kontakt jest ważniejszy niż natychmiastowe oczyszczenie siebie.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Parafraza",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Co ma się zmienić dalej",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Choć rozmowa trwa, Maja nadal siedzi jak na granicy wyjścia. Nie chodzi już tylko o wczorajsze zdanie, ale o to, czy ono było wypadkiem czy wzorem.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Problem w tym, że teraz nie wiem, czy następnym razem znowu mnie tak nie trafisz.",
+            "scene_high": {
+                "description": "Napięcie opadło na tyle, że rozmowa schodzi z samego bólu na pytanie o przyszłość. Maja nadal uważa, ale jest w niej miejsce na konkret.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Doceniam, że nie uciekasz. Tylko ja muszę wiedzieć, co się zmieni, a nie usłyszeć samo przepraszam.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Super, czyli mam teraz dożywotnio płacić za jeden błąd.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "conversation_level": "Poziom II — pozycyjny",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maja marszczy brwi. Nie o karę chodzi. Chodzi o to, czy przy tobie mogę czuć się bezpiecznie.",
+                    "feedback": {
+                        "label": "Użalanie się zamiast naprawy",
+                        "psychology": "Przesunięcie rozmowy na własną krzywdę odcina dostęp do realnego problemu. To klasyczny sposób na zerwanie odpowiedzialności bez otwartego odmówienia jej.",
+                        "better_alternative_hint": "Nie pytaj, czy jesteś potępiony. Pokaż, jaki konkretny krok podejmiesz następnym razem."
+                    },
+                    "tags": [
+                        {
+                            "text": "Odwrócenie ról",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Bierna agresja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "To może dajmy sobie kilka dni i już nie drążmy tego bardziej.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "conversation_level": "Poziom I — transakcja",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maja kręci głową. Czyli znowu mam zostać z tym sama i liczyć, że jakoś samo się ułoży?",
+                    "feedback": {
+                        "label": "Przedwczesne zamknięcie",
+                        "psychology": "Czasem przerwa pomaga, ale użyta tu staje się ucieczką od najważniejszego elementu naprawy: przewidywalności przyszłego zachowania.",
+                        "better_alternative_hint": "Zamiast kończyć rozmowę, zaproponuj konkretny plan działania na przyszłość."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie odpowiedzialności",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Naprawa relacji",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Postaram się bardziej pilnować słów następnym razem.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "conversation_level": "Poziom I — transakcja",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Maja przyjmuje to bez sprzeciwu, ale widać, że to dla niej za mało. Dobrze, tylko co to konkretnie znaczy?",
+                    "feedback": {
+                        "label": "Deklaracja bez mechanizmu",
+                        "psychology": "Intencja poprawy jest cenna, ale mało wiarygodna bez konkretu. Zaufanie odbudowuje się przez przewidywalny plan, nie przez ogólne obietnice.",
+                        "better_alternative_hint": "Nazwij, co zrobisz, gdy znów wzrośnie napięcie: pauza, sygnał, zmiana tonu, powrót do rozmowy później."
+                    },
+                    "tags": [
+                        {
+                            "text": "Intencja zmiany",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Konkretyzacja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Masz rację, samo przepraszam nie wystarczy. Kiedy znowu poczuję, że mnie zalewa, zrobię przerwę zamiast ataku. Chcę też, żebyś mogła mnie zatrzymać jednym sygnałem.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "conversation_level": "Poziom III — transformacja",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Maja patrzy na ciebie uważnie. To brzmi pierwszy raz jak coś, na czym da się oprzeć, a nie tylko ładne słowa.",
+                    "feedback": {
+                        "label": "Plan naprawy i wspólny sygnał",
+                        "psychology": "To wyjście poza przeprosiny w stronę nowej umowy relacyjnej. Budujesz poczucie bezpieczeństwa przez konkret i współodpowiedzialność za przyszłą dynamikę.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Plan naprawy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Wspólna regulacja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Domknięcie rozmowy",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Rozmowa zbliża się do końca, ale między wami nadal stoi ostrożność. Maja nie jest już w otwartej złości, za to mocno pilnuje granic.",
+                "location": "cafe",
+                "time_of_day": "night",
+                "visual_mood": "cold"
+            },
+            "npc_line_low": "Nie wiem, czy umiem ci teraz zaufać. To jeszcze we mnie siedzi.",
+            "scene_high": {
+                "description": "Wieczór przycichł. Nie ma pełnej lekkości, ale jest wyraźna ulga. To jeden z tych momentów, w których relacja jeszcze nie wróciła, ale przestała się osuwać.",
+                "location": "cafe",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Nie jestem jeszcze całkiem spokojna, ale czuję, że naprawdę bierzesz to na siebie.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To zdecyduj się wreszcie, bo ja zrobiłem już swoje.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "conversation_level": "Poziom II — pozycyjny",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maja natychmiast zamyka twarz. Właśnie pokazałeś, że to było bardziej o twojej uldze niż o mnie.",
+                    "feedback": {
+                        "label": "Presja na szybkie rozgrzeszenie",
+                        "psychology": "Żądanie natychmiastowego efektu po przeprosinach traktuje relację jak transakcję. Naprawa nie daje prawa do wymuszenia przebaczenia w określonym tempie.",
+                        "better_alternative_hint": "Uszanuj, że druga strona może jeszcze nie ufać, i nie zamieniaj przeprosin w rachunek do spłaty."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wymuszanie przebaczenia",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Okej. To chyba tyle.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "conversation_level": "Poziom I — transakcja",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maja zostaje z niedosytem. Rozmowa się kończy, ale bez prawdziwego domknięcia.",
+                    "feedback": {
+                        "label": "Zbyt szybkie wyjście",
+                        "psychology": "Milczące wycofanie urywa rozmowę w miejscu, gdzie można jeszcze zbudować poczucie bezpieczeństwa. Brak nacisku jest dobry, ale brak kontaktu już nie.",
+                        "better_alternative_hint": "Zamknij rozmowę tak, by uszanować granice i jednocześnie potwierdzić gotowość do dalszej odbudowy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Domknięcie rozmowy",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Rozumiem. Mogę dać ci czas i wrócić do tego później.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "conversation_level": "Poziom I — transakcja",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Maja kiwa głową. To uczciwe. Dobrze, że mnie nie dociskasz.",
+                    "feedback": {
+                        "label": "Szacunek dla tempa drugiej strony",
+                        "psychology": "Dajesz przestrzeń i nie wymuszasz rozgrzeszenia, co buduje bezpieczeństwo. To dobre, choć można jeszcze mocniej podkreślić, że naprawdę ją usłyszałeś.",
+                        "better_alternative_hint": "Dodaj jedno zdanie pokazujące, co konkretnie zabierasz z tej rozmowy i jak chcesz odbudowywać zaufanie czynami."
+                    },
+                    "tags": [
+                        {
+                            "text": "Szacunek dla granic",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Uszanuję, że zaufanie nie wraca od razu. Chcę je odbudować czynami. Na dziś zależy mi, żebyś wyszła z tej rozmowy z poczuciem, że cię usłyszałem.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "conversation_level": "Poziom III — transformacja",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Maja patrzy na ciebie długo, ale już bez obrony. Jeszcze nie wszystko wróciło, ale teraz wierzę, że ta rozmowa miała sens.",
+                    "feedback": {
+                        "label": "Naprawa bez nacisku",
+                        "psychology": "To dojrzałe domknięcie: uznajesz tempo odbudowy zaufania, bierzesz odpowiedzialność za przyszłe działania i wracasz do potrzeby bycia usłyszanym po stronie drugiej osoby.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Naprawa relacji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 2
+            },
+            "color": "red",
+            "title": "ROZMOWA ZNOWU PĘKŁA",
+            "emoji": "🔴",
+            "subtitle": "Przeprosiny nie dotarły, bo zostały przykryte obroną, naciskiem albo ucieczką.",
+            "narrative": "Maja kończy spotkanie szybciej, niż planowaliście. Nie ma krzyku, ale jest twardy chłód. To nie jest moment pojednania, tylko kolejny ślad po tym, że w ważnej chwili znowu zabrakło bezpiecznego kontaktu.",
+            "diagnosis": "Dominował styl agresywny, bierny albo biernie agresywny. Zamiast realnej naprawy pojawiły się minimalizowanie szkody, przerzucanie winy lub nacisk na szybkie rozgrzeszenie. Rozmowa została na Poziomie II — walce o rację albo ochronę siebie.",
+            "post_game": {
+                "communication_style_summary": "Ścieżka zdominowana przez obronę ego, unikanie albo kontratak.",
+                "strongest_moment": "Przynajmniej wróciłeś do rozmowy, co samo w sobie było szansą na naprawę.",
+                "growth_tip": "W naprawie relacji nie zaczynaj od wyjaśniania siebie. Najpierw nazwij swój błąd, uznaj wpływ na drugą osobę i nie dodawaj żadnego ale.",
+                "replay_prompt": "Spróbuj jeszcze raz, skupiając się na walidacji bólu i konkretnym wzięciu odpowiedzialności."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 3,
+                "max": 5
+            },
+            "color": "yellow",
+            "title": "PRZEPRASZAM, ALE JESZCZE NIE CZUJĘ ULGI",
+            "emoji": "🟡",
+            "subtitle": "Rozmowa nie rozpadła się, ale została bardziej na poziomie korekty niż prawdziwej naprawy.",
+            "narrative": "Spotkanie kończy się spokojniej, niż się zaczęło. Maja nie odcina kontaktu, ale też nie wychodzi z poczuciem pełnego usłyszenia. Coś zostało naprawione, lecz bardziej w warstwie deklaracji niż głębokiego porozumienia.",
+            "diagnosis": "Pojawiły się poprawne elementy asertywności i częściowe wzięcie odpowiedzialności, ale za mało było walidacji emocji i wspólnego myślenia o zmianie. Rozmowa krążyła między Poziomem I a początkiem Poziomu III.",
+            "post_game": {
+                "communication_style_summary": "Rzeczowo i dość dojrzale, ale z ograniczonym kontaktem z emocjami drugiej strony.",
+                "strongest_moment": "Zatrzymałeś eskalację i nie wszedłeś w pełny kontratak.",
+                "growth_tip": "Następnym razem mniej tłumacz, a więcej odzwierciedlaj. Jedno dobrze wypowiedziane rozumiem, co to z tobą zrobiło może otworzyć więcej niż trzy dobre wyjaśnienia.",
+                "replay_prompt": "Zagraj ponownie i sprawdź, co się stanie, gdy najpierw usłyszysz ból, a dopiero potem powiesz o swoich intencjach."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 6,
+                "max": 8
+            },
+            "color": "green",
+            "title": "PĘKNIĘCIE ZOSTAŁO NAZWANE",
+            "emoji": "🟢",
+            "subtitle": "Nie wszystko wróciło od razu, ale relacja dostała realną szansę na odbudowę.",
+            "narrative": "Maja nie wychodzi z tej rozmowy całkiem lekka, ale wychodzi spokojniejsza. Wie, że nie próbowałeś się wybielić i że usłyszałeś, co ją zabolało. Między wami nie ma jeszcze pełnej miękkości, ale jest znowu grunt pod dalszy kontakt.",
+            "diagnosis": "Dominowały wybory empatyczne i asertywne. Udało ci się połączyć odpowiedzialność za własne słowa z uznaniem wpływu na drugą osobę. Rozmowa weszła w Poziom III — transformację, choć bez perfekcyjnego domknięcia.",
+            "post_game": {
+                "communication_style_summary": "Dojrzała, empatyczna ścieżka z realną gotowością do naprawy.",
+                "strongest_moment": "Najmocniejsze było nazwanie tego, co druga strona usłyszała, bez bronienia się.",
+                "growth_tip": "To działa, bo nie walczysz o czysty wizerunek, tylko o kontakt. W realnym życiu wzmacniaj to jeszcze konkretnym planem na przyszłe trudne momenty.",
+                "replay_prompt": "Spróbuj ścieżki niebieskiej i zobacz, jak wygląda rozmowa, w której naprawa staje się wspólną umową, a nie tylko przeprosinami."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 9,
+                "max": 10
+            },
+            "color": "blue",
+            "title": "USŁYSZANE I NAPRAWIANE",
+            "emoji": "🔵",
+            "subtitle": "Przeprosiny stały się początkiem głębszego porozumienia, nie tylko próbą zamknięcia tematu.",
+            "narrative": "Rozstajecie się bez taniej ulgi, ale z czymś cenniejszym: z poczuciem, że prawda została uniesiona bez dalszego ranienia. Maja nadal pamięta wczorajsze słowa, lecz już nie są one jedyną definicją tej relacji. Zamiast obrony pojawił się kontakt, a zamiast presji wspólna zgoda na odbudowę.",
+            "diagnosis": "To wzorcowa ścieżka repair. Wziąłeś odpowiedzialność, uznałeś emocjonalny skutek swoich słów, nie wymuszałeś szybkiego przebaczenia i zaproponowałeś konkretny plan zmiany. Rozmowa była prowadzona na Poziomie III z wysoką spójnością między komunikatem Ja, walidacją i transformacją relacji.",
+            "post_game": {
+                "communication_style_summary": "Empatyczny i transformacyjny styl komunikacji z bardzo wysoką zdolnością naprawy relacji.",
+                "strongest_moment": "Najlepszy moment to połączenie walidacji bólu z konkretnym planem, co zrobisz następnym razem zamiast ataku.",
+                "growth_tip": "To mistrzowski poziom: nie szukasz szybkiego rozgrzeszenia, tylko odbudowujesz bezpieczeństwo krok po kroku. W realnych rozmowach trzymaj ten sam porządek: odpowiedzialność, usłyszenie, konkret, brak nacisku.",
+                "replay_prompt": "Przetestuj inne odpowiedzi i zobacz, jak łatwo nawet dobre intencje tracą siłę, gdy wkrada się obrona albo pośpiech."
+            }
+        }
+    ]
+}

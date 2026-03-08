@@ -1,0 +1,849 @@
+{
+    "scenario_id": "forgotten_anniversary_romantic_partner",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Zapomniana rocznica",
+        "subtitle": "Nie chodzi tylko o datę, ale o to, czy nadal jesteście dla siebie ważni",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 8,
+        "interaction_count": 5
+    },
+    "tags": {
+        "relationship_type": "romantic_partner",
+        "theme": [
+            "romance",
+            "expectations",
+            "neglect"
+        ],
+        "emotional_intensity": "moderate",
+        "age_rating": "teen",
+        "session_type": "mini_story",
+        "player_role_gender": "female",
+        "difficulty": "intermediate"
+    },
+    "characters": {
+        "player": {
+            "name": "Anna",
+            "role_label": "Partnerka · Gracz",
+            "age_range": "28-35",
+            "context": "Anna liczyła, że wspólna rocznica będzie potwierdzeniem bliskości. Gdy Michał wraca do domu i zachowuje się tak, jakby to był zwykły dzień, czuje ukłucie zawodu i samotności.",
+            "hidden_need": "recognition",
+            "hidden_need_text": "Potrzeba bycia ważną, zauważoną i noszoną w pamięci drugiej osoby.",
+            "traits": [
+                {
+                    "text": "wrażliwa na sygnały bliskości",
+                    "type": "neutral"
+                },
+                {
+                    "text": "lojalna",
+                    "type": "positive"
+                },
+                {
+                    "text": "łatwo interpretuje pominięcie jako odrzucenie",
+                    "type": "negative"
+                },
+                {
+                    "text": "potrafi mówić szczerze, gdy czuje się bezpiecznie",
+                    "type": "positive"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 5,
+                "patience": 6,
+                "defensiveness": 6,
+                "empathy": 7,
+                "need_for_control": 4,
+                "shame_sensitivity": 7,
+                "directness": 6,
+                "repair_ability": 7
+            }
+        },
+        "npc": {
+            "name": "Michał",
+            "role_label": "Partner",
+            "age_range": "29-36",
+            "context": "Michał wraca zmęczony po ciężkim dniu i naprawdę zapomniał o rocznicy. Wstyd miesza się u niego z odruchem bronienia się, bo nie chce wyjść na kogoś obojętnego.",
+            "hidden_need": "acceptance",
+            "hidden_need_text": "Potrzeba, by nie być od razu skreślonym i mieć szansę naprawić błąd bez całkowitej utraty twarzy.",
+            "traits": [
+                {
+                    "text": "odpowiedzialny w praktycznych sprawach",
+                    "type": "positive"
+                },
+                {
+                    "text": "pod presją staje się defensywny",
+                    "type": "negative"
+                },
+                {
+                    "text": "nie zawsze zauważa znaczenie symbolicznych gestów",
+                    "type": "neutral"
+                },
+                {
+                    "text": "umie przepraszać, gdy czuje się wysłuchany",
+                    "type": "positive"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 4,
+                "patience": 5,
+                "defensiveness": 7,
+                "empathy": 6,
+                "need_for_control": 5,
+                "shame_sensitivity": 6,
+                "directness": 5,
+                "repair_ability": 6
+            },
+            "npc_reaction_logic": "Na oskarżenia i uogólnienia reaguje obroną, tłumaczeniem się albo zamknięciem. Na wycofanie reaguje dezorientacją i emocjonalnym dystansem. Gdy słyszy jasny komunikat o zranieniu bez ataku, szybciej schodzi z pozycji obronnej i wchodzi w tryb naprawy."
+        }
+    },
+    "metrics_start": {
+        "tension": 40,
+        "trust": 60,
+        "openness": 50,
+        "feeling_heard": 50
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Wieczór, który miał być ważny",
+            "scene": {
+                "description": "Wieczór w salonie. Na stole stoi torba z jedzeniem na wynos, a telefon Michała wciąż świeci powiadomieniami z pracy. Anna patrzy na niego i rozumie, że zapomniał o rocznicy.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "neutral"
+            },
+            "npc_line": "Przyniosłem sushi. Masz ochotę obejrzeć coś lekkiego? Dziś naprawdę nie mam już siły na nic więcej.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Serio? Nawet dziś nie pamiętałeś. Niesamowite, jak mało dla ciebie znaczę.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Michał sztywnieje i od razu przechodzi do obrony. Jego twarz mówi bardziej o wstydzie niż o zrozumieniu.",
+                    "feedback": {
+                        "label": "Uogólnienie i atak",
+                        "psychology": "To szybkie przejście na Poziom II — pozycyjny. Zamiast opisu bólu pojawia się ocena wartości drugiej osoby, co aktywuje defensywność i utrudnia naprawę.",
+                        "better_alternative_hint": "Nazwij konkretny fakt i swoje uczucie, zamiast wnioskować o całym jego stosunku do ciebie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uogólnianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nic. Nieważne.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Michał marszczy brwi, ale nie rozumie, co się dzieje. Między wami pojawia się chłód i domysły.",
+                    "feedback": {
+                        "label": "Wycofanie zamiast kontaktu",
+                        "psychology": "Unikanie konfrontacji chwilowo chroni przed odsłonięciem, ale jednocześnie odbiera drugiej stronie szansę na korektę zachowania. To klasyczny wzorzec pasywny.",
+                        "better_alternative_hint": "Powiedz wprost, co się wydarzyło i dlaczego to cię zabolało."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Dziś była nasza rocznica. Chciałam, żebyś o tym pamiętał.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 0,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Michał zamiera i dopiero teraz łączy fakty. Widać, że dotarło do niego, co przeoczył.",
+                    "feedback": {
+                        "label": "Nazwanie faktu",
+                        "psychology": "To komunikat z Poziomu I — transakcja. Jest klarowny i lepszy od ataku, ale nie odsłania jeszcze emocjonalnego znaczenia sytuacji.",
+                        "better_alternative_hint": "Dodaj, co to dla ciebie znaczyło i jak się z tym czujesz."
+                    },
+                    "tags": [
+                        {
+                            "text": "Nazwanie faktu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Jest mi naprawdę przykro, bo dziś liczyłam, że ten dzień będzie dla nas ważny.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Michał patrzy na ciebie uważniej. Zawstydzenie zostaje, ale pojawia się też gotowość, by cię usłyszeć.",
+                    "feedback": {
+                        "label": "Komunikat Ja i odsłonięcie zranienia",
+                        "psychology": "Zamiast oskarżenia pojawia się własne przeżycie. To obniża zagrożenie i zwiększa szansę, że rozmowa przejdzie w kierunku naprawy relacji.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Odsłonięcie emocji",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Pierwsza obrona albo pierwsze zatrzymanie",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Michał odkłada torbę trochę zbyt mocno. W powietrzu czuć napięcie, a jego zawstydzenie szybko zamienia się w defensywę.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "No świetnie, czyli cokolwiek robię, i tak jest źle. Miałem straszny dzień.",
+            "scene_high": {
+                "description": "Michał siada i wycisza telefon. Widać, że wstydzi się swojego błędu, ale nie ucieka wzrokiem.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "O kurczę... Masz rację. Wypadło mi to z głowy i widzę, że cię zraniłem.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Tak, jasne. Twój dzień zawsze jest ważniejszy niż ja.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Michał zaciska szczękę. Słyszy przytyk, nie prośbę o kontakt.",
+                    "feedback": {
+                        "label": "Sarkazm zamiast prawdy",
+                        "psychology": "Bierna agresja przekazuje złość w sposób pośredni, więc druga strona skupia się na tonie, a nie na sednie zranienia. To utrudnia walidację emocji.",
+                        "better_alternative_hint": "Powiedz wprost, że czujesz się odsunięta, bez ironii i ukrytego ataku."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nie zasłaniaj się pracą. Kto kocha, ten pamięta.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Michał czuje się osądzony i zaczyna bronić własnej wartości, zamiast słuchać twojego bólu.",
+                    "feedback": {
+                        "label": "Moralny wyrok",
+                        "psychology": "To komunikat oceniający człowieka, a nie zachowanie. W analizie transakcyjnej uruchamia relację Rodzic krytyczny kontra Dziecko broniące się.",
+                        "better_alternative_hint": "Oddziel błąd od osoby i wróć do tego, co dla ciebie było ważne."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ocenianie osoby",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna Berne’a",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Rozumiem, że miałeś ciężko, ale dla mnie to dalej było ważne.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Michał słyszy granicę i trochę zwalnia. Nadal czuje się winny, ale mniej walczy.",
+                    "feedback": {
+                        "label": "Granica bez pełnego odsłonięcia",
+                        "psychology": "To dobra asertywność: uznajesz jego kontekst, nie unieważniając własnego. Nadal jednak mówisz bardziej o ważności sytuacji niż o swoim przeżyciu.",
+                        "better_alternative_hint": "Dodaj, jak zapomnienie uderzyło w twoje poczucie bliskości."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Uznanie perspektywy drugiej strony",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Słyszę, że jesteś wyczerpany, ale chcę też, żeby było miejsce na to, jak bardzo mnie to zabolało.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Michał wyraźnie mięknie. Przestaje się tłumaczyć i zaczyna być obecny w rozmowie.",
+                    "feedback": {
+                        "label": "Podwójna walidacja",
+                        "psychology": "Uznajesz jego stan i jednocześnie nie rezygnujesz z własnej prawdy. To przesuwa rozmowę w stronę Poziomu III — transformacja.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "O co tu naprawdę chodzi",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Siedzicie już dalej od siebie. W pokoju robi się cicho, ale to nie jest dobra cisza. Michał bardziej broni się przed osądem, niż szuka zrozumienia.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Już nie wiem, czego ode mnie chcesz. Chodzi o datę czy o kolejną awanturę?",
+            "scene_high": {
+                "description": "Telefon leży odłożony ekranem do dołu. Michał patrzy na ciebie z większą uwagą niż wcześniej, jakby wreszcie dotarło, że tu nie chodzi o sam kalendarz.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Wiem, że to nie tylko o datę. Powiedz mi, co to dla ciebie znaczyło.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nieważne. Widocznie przesadzam.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Michał nie dostaje dostępu do prawdziwego sensu sytuacji. Rozmowa robi się płaska i urwana.",
+                    "feedback": {
+                        "label": "Unieważnienie samej siebie",
+                        "psychology": "To nie jest pokora, tylko wycofanie. Kiedy minimalizujesz własne przeżycie, relacja traci szansę na autentyczny kontakt.",
+                        "better_alternative_hint": "Nazwij, co dokładnie zabolało pod powierzchnią zapomnianej daty."
+                    },
+                    "tags": [
+                        {
+                            "text": "Minimalizowanie własnych uczuć",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Chodzi o to, że nigdy nie jesteś naprawdę obecny.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Michał słyszy zarzut o całej relacji i wraca do obrony. Pojawia się licytacja, kto zawiódł bardziej.",
+                    "feedback": {
+                        "label": "Globalny zarzut",
+                        "psychology": "Z jednego błędu robisz obraz całej osoby i całej relacji. To zwiększa poczucie zagrożenia i spycha rozmowę z powrotem na Poziom II.",
+                        "better_alternative_hint": "Zamiast słowa nigdy opisz pojedyncze doświadczenie i jego znaczenie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Generalizacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Chodzi o to, że chciałam, żeby ten dzień był zauważony.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Michał kiwa głową. Rozumie sens zdania, ale jeszcze nie dotyka waszej głębszej więzi.",
+                    "feedback": {
+                        "label": "Nazwanie potrzeby w skrócie",
+                        "psychology": "To krok do przodu, bo wskazujesz istotę sprawy. Nadal jednak komunikat jest dość oszczędny emocjonalnie i może pozostać na poziomie rozumienia poznawczego.",
+                        "better_alternative_hint": "Dodaj, jakie uczucie pojawiło się, gdy tego zabrakło."
+                    },
+                    "tags": [
+                        {
+                            "text": "Doprecyzowanie potrzeby",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Kiedy zapomniałeś, poczułam się nieważna. Nie potrzebowałam perfekcji, tylko znaku, że masz mnie w głowie i sercu.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Michał milknie na chwilę, ale tym razem to cisza pełna docierania, nie obrony. Naprawdę zaczyna rozumieć, o co chodzi.",
+                    "feedback": {
+                        "label": "Ujawnienie ukrytej potrzeby",
+                        "psychology": "To komunikat docierający pod warstwę faktu do potrzeby uznania i bliskości. W języku NVC właśnie tam najłatwiej o realną zmianę perspektywy.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Ukryta potrzeba",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Naprawa czy rozliczanie",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Emocje trochę opadły, ale między wami został ciężar. Michał mówi znużonym tonem, jakby chciał jak najszybciej zakończyć trudny temat.",
+                "location": "bedroom",
+                "time_of_day": "night",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "To powiedz od razu, co mam zrobić, żeby to zakończyć.",
+            "scene_high": {
+                "description": "Jesteście już spokojniejsi. Michał siedzi bliżej i nie ucieka od odpowiedzialności. Widać, że nie szuka wymówki, tylko sposobu na naprawę.",
+                "location": "bedroom",
+                "time_of_day": "night",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Nie cofnę tego wieczoru, ale chcę to naprawić. Czego teraz najbardziej potrzebujesz?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nic nie rób. I tak byłoby wymuszone.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Michał słyszy karę bez możliwości naprawy. Zaczyna czuć, że cokolwiek zrobi, i tak będzie źle.",
+                    "feedback": {
+                        "label": "Odrzucenie naprawy",
+                        "psychology": "To sposób na utrzymanie moralnej przewagi i ukaranie drugiej strony, ale nie na odbudowę więzi. Blokujesz reparację zanim się zacznie.",
+                        "better_alternative_hint": "Powiedz, czego realnie potrzebujesz teraz, nawet jeśli to tylko szczerego przeproszenia."
+                    },
+                    "tags": [
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Odrzucenie naprawy",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Powinieneś sam wiedzieć, co zrobić, a nie jeszcze mnie o to pytać.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Michał znowu czuje się testowany zamiast zaproszony do bliskości. Rozmowa skręca w stronę oceny kompetencji.",
+                    "feedback": {
+                        "label": "Czytanie w myślach jako wymóg",
+                        "psychology": "Oczekiwanie, że partner sam odgadnie właściwą naprawę, brzmi jak sprawdzian. To zwiększa lęk przed porażką i osłabia współpracę.",
+                        "better_alternative_hint": "Nazwij wprost, jaka forma zadośćuczynienia byłaby dla ciebie znacząca."
+                    },
+                    "tags": [
+                        {
+                            "text": "Czytanie w myślach",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Ukryte oczekiwania",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Chcę, żebyśmy przełożyli świętowanie i lepiej to zaplanowali.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Michał łapie konkret. Ma poczucie, że jest jakieś rozwiązanie, choć emocjonalny ślad sytuacji nie znika całkiem.",
+                    "feedback": {
+                        "label": "Praktyczne rozwiązanie",
+                        "psychology": "To skuteczny ruch zadaniowy. Naprawia logistykę, ale jeszcze nie buduje głębszego zrozumienia tego, co wydarzyło się między wami.",
+                        "better_alternative_hint": "Połącz plan działania z krótkim nazwaniem emocjonalnej potrzeby."
+                    },
+                    "tags": [
+                        {
+                            "text": "Orientacja na rozwiązanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chcę dwóch rzeczy: szczerego przeproszenia teraz i tego, żebyśmy ustalili, jak dbać o ważne dla nas momenty.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Michał wyraźnie oddycha z ulgą. Wreszcie wie, jak może odpowiedzieć dojrzale i konkretnie.",
+                    "feedback": {
+                        "label": "Naprawa połączona z wizją na przyszłość",
+                        "psychology": "To nie jest już tylko reakcja na błąd, ale budowanie wspólnego systemu dbania o relację. Taki ruch wzmacnia więź zamiast jedynie gasić pożar.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Prośba o naprawę",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Co zostanie po tej rozmowie",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Jest późno. Oboje jesteście zmęczeni, a napięcie nie zostało naprawdę rozładowane. Słychać tylko cichy szum ulicy za oknem.",
+                "location": "bedroom",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Nie wiem, czy da się to jeszcze dobrze domknąć dziś.",
+            "scene_high": {
+                "description": "Noc nadal jest ciężka, ale między wami pojawiło się trochę miękkości. Rozmowa nie była łatwa, jednak jest w niej miejsce na domknięcie i sens.",
+                "location": "bedroom",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Chcę, żeby ten wieczór nie skończył się tylko poczuciem winy. Jak chcesz, żebyśmy z tego wyszli?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Po prostu idź spać. Jutro udawajmy, że nic się nie stało.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Michał wycofuje się, ale bez poczucia, że coś zostało naprawdę rozwiązane. Niedomknięcie zostaje między wami.",
+                    "feedback": {
+                        "label": "Pozorne zamknięcie",
+                        "psychology": "Unik zdejmuje presję z chwili, lecz nie leczy naruszenia więzi. Niewyrażone emocje mają tendencję do wracania w kolejnych konfliktach.",
+                        "better_alternative_hint": "Nawet jeśli potrzebujesz przerwy, nazwij ją wprost i zapowiedz powrót do rozmowy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie domknięcia",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nie chcę już nic słyszeć. Zapamiętam to sobie.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Michał zamyka się całkiem. Zamiast naprawy zostaje zapis krzywdy i groźba przyszłego rozliczenia.",
+                    "feedback": {
+                        "label": "Magazynowanie urazy",
+                        "psychology": "To komunikat nastawiony na karanie i pamiętanie winy, nie na odbudowę kontaktu. Wzmacnia dystans i lęk przed kolejnym błędem.",
+                        "better_alternative_hint": "Nazwij, czego potrzebujesz dalej, zamiast ogłaszać emocjonalny wyrok."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pielęgnowanie urazy",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Groźba emocjonalna",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Potrzebuję czasu do jutra, ale chcę wrócić do tej rozmowy spokojnie.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Michał przyjmuje to z ulgą. Nie jest to pełne pojednanie, ale pojawia się bezpieczny most do dalszej rozmowy.",
+                    "feedback": {
+                        "label": "Regulacja zamiast ucieczki",
+                        "psychology": "Stawiasz granicę czasową bez zrywania kontaktu. To dojrzały ruch, choć emocjonalne pojednanie zostaje odłożone.",
+                        "better_alternative_hint": "Dodaj krótki sygnał, że widzisz jego gotowość lub że zależy ci na relacji mimo bólu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Regulacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chcę zakończyć ten dzień z prawdą: boli mnie to, ale widzę też twoją gotowość do naprawy. Spróbujmy jutro zrobić dla nas nowy początek.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Michał mięknie całkiem i podchodzi bliżej. Błąd nie znika, ale między wami wraca poczucie, że jesteście po tej samej stronie.",
+                    "feedback": {
+                        "label": "Domknięcie z nadzieją i realizmem",
+                        "psychology": "Łączysz prawdę o zranieniu z uznaniem dobrej intencji i wspólnego kierunku. To najpełniejsza forma naprawy relacyjnej w tej scenie.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Naprawa relacji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 2
+            },
+            "color": "red",
+            "title": "PAMIĘĆ ZAMIENIONA W BROŃ",
+            "emoji": "🔴",
+            "subtitle": "Zapomniana rocznica staje się dowodem oddalenia, nie okazją do spotkania",
+            "narrative": "Wieczór kończy się w chłodzie. Jedno z was odwraca się do ściany, drugie zostaje z poczuciem winy i złości. Rocznica nie została przeżyta, a rozmowa zamieniła błąd w kolejny kamień między wami.",
+            "diagnosis": "Dominowały atak, wycofanie albo bierna agresja. Zamiast nazwać zranienie i potrzebę uznania, rozmowa weszła w obronę, ocenę i magazynowanie urazy. Napięcie wzrosło, a zaufanie i poczucie bycia słyszanym spadły.",
+            "post_game": {
+                "communication_style_summary": "Przeważał styl agresywny, pasywny lub biernie agresywny, który zwiększał defensywność i dystans.",
+                "strongest_moment": "Najbliżej zmiany było wtedy, gdy pojawiała się choćby próba nazwania faktu bez ataku.",
+                "growth_tip": "W podobnej sytuacji zacznij od prostego komunikatu Ja: powiedz, co się stało, co poczułaś i co to dla ciebie znaczy, bez oceniania osoby.",
+                "replay_prompt": "Sprawdź, co się zmieni, gdy zamiast rozliczać błąd, pokażesz zranienie i zaprosisz do naprawy."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 3,
+                "max": 5
+            },
+            "color": "yellow",
+            "title": "NAPRAWA BEZ GŁĘBI",
+            "emoji": "🟡",
+            "subtitle": "Udaje się nie wybuchnąć, ale sedno bólu nie zostaje w pełni dotknięte",
+            "narrative": "Wieczór kończy się względnym spokojem. Pojawia się plan, może przełożone świętowanie, może rozmowa jutro. Jednak pod spodem zostaje cień pytania, czy druga osoba naprawdę zrozumiała, dlaczego to tak zabolało.",
+            "diagnosis": "W rozmowie pojawiła się pewna asertywność i odrobina współpracy, ale było za mało pełnego odsłonięcia emocji lub wspólnego sensu. Relacja nie pękła, lecz też nie dostała silnego momentu odbudowy.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl rzeczowy lub umiarkowanie asertywny, który ograniczył szkody, ale nie wprowadził pełnej bliskości.",
+                "strongest_moment": "Najlepiej działały momenty, w których pojawiał się konkret zamiast oskarżeń.",
+                "growth_tip": "Następnym razem połącz fakt i rozwiązanie z głębszym zdaniem o emocji: nie tylko czego chcesz, ale też co ta sytuacja uruchomiła w tobie.",
+                "replay_prompt": "Zagraj jeszcze raz i sprawdź, czy potrafisz przejść z samego ogarniania sytuacji do realnego porozumienia."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 6,
+                "max": 8
+            },
+            "color": "green",
+            "title": "BÓL ZOSTAŁ USŁYSZANY",
+            "emoji": "🟢",
+            "subtitle": "Zapomnienie nie znika, ale staje się początkiem lepszego rozumienia",
+            "narrative": "Nie był to wymarzony wieczór, ale stał się prawdziwy. Michał przeprasza nie tylko za datę, ale za to, jak mogłaś się poczuć. Ustalamy nowy termin świętowania i jeszcze ważniejsze: nowy sposób dbania o to, co dla was ważne.",
+            "diagnosis": "W rozmowie udało się przejść od faktu do emocji i potrzeb. Pojawiła się walidacja, mniej defensywności i więcej współpracy. Dzięki temu relacja odzyskała poczucie bezpieczeństwa i kierunku.",
+            "post_game": {
+                "communication_style_summary": "Przeważał styl empatyczny i częściowo transformacyjny, który obniżał napięcie i wzmacniał więź.",
+                "strongest_moment": "Kluczowy był moment nazwania, że chodzi nie tylko o datę, lecz o potrzebę bycia ważną i pamiętaną.",
+                "growth_tip": "To dobry kierunek. W realnym życiu warto po takim konflikcie tworzyć wspólne rytuały i jasne ustalenia, które wspierają bliskość bez testowania się nawzajem.",
+                "replay_prompt": "Spróbuj dojść jeszcze dalej i zobacz, jak wygląda rozmowa, gdy obie strony nie tylko naprawiają błąd, ale budują nową jakość relacji."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 9,
+                "max": 10
+            },
+            "color": "blue",
+            "title": "NOWY RYTUAŁ BLISKOŚCI",
+            "emoji": "🔵",
+            "subtitle": "Trudny wieczór staje się punktem zwrotnym w waszym sposobie bycia razem",
+            "narrative": "Rocznica została zapomniana, ale nie zmarnowana. Oboje mówicie szczerze: ty o zranieniu, Michał o wstydzie i chęci naprawy. Zamiast zostać przy przeprosinach, tworzycie wspólny sposób pamiętania o tym, co was łączy. Wieczór kończy się nie perfekcją, tylko głębokim porozumieniem.",
+            "diagnosis": "Rozmowa weszła na Poziom III — transformacja. Zranienie zostało nazwane bez oskarżenia, a błąd stał się okazją do lepszego poznania swoich potrzeb i budowania wspólnej wizji relacji.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl transformacyjny: empatia, szczerość, konkret i wspólne tworzenie przyszłości.",
+                "strongest_moment": "Najmocniejszy był moment, gdy uznałaś własny ból i jednocześnie zauważyłaś gotowość partnera do naprawy.",
+                "growth_tip": "To mistrzowski poziom komunikacji: łączysz granice, emocje i wizję wspólnego działania. Przenoś ten wzorzec także na mniejsze codzienne napięcia.",
+                "replay_prompt": "Wróć do scenariusza i sprawdź, jak małe zmiany w tonie potrafią przesunąć rozmowę z konfliktu do realnej bliskości."
+            }
+        }
+    ]
+}

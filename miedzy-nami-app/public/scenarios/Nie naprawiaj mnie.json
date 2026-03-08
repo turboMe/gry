@@ -1,0 +1,857 @@
+{
+    "scenario_id": "wanted_only_listening",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Nie naprawiaj mnie",
+        "subtitle": "Po ciężkim dniu jedna osoba szuka obecności, a druga odruchowo szuka rozwiązań",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 8,
+        "interaction_count": 5
+    },
+    "tags": {
+        "relationship_type": "romantic_partner",
+        "theme": [
+            "support",
+            "communication_breakdown",
+            "expectations"
+        ],
+        "emotional_intensity": "moderate",
+        "age_rating": "adult",
+        "session_type": "training",
+        "player_role_gender": "neutral",
+        "difficulty": "intermediate"
+    },
+    "characters": {
+        "player": {
+            "name": "Alex",
+            "role_label": "Osoba partnerska · Gracz",
+            "age_range": "27-34",
+            "context": "Wracasz po trudnym dniu i masz w sobie napięcie. Nie szukasz instrukcji ani planu działania. Chcesz poczuć, że ktoś jest obok i naprawdę słyszy, co przeżywasz.",
+            "hidden_need": "support",
+            "hidden_need_text": "Potrzebujesz emocjonalnego wsparcia, obecności i wysłuchania bez natychmiastowego poprawiania sytuacji.",
+            "traits": [
+                {
+                    "text": "Wrażliwy na ton rozmowy",
+                    "type": "neutral"
+                },
+                {
+                    "text": "Szybko czuje się niezrozumiany",
+                    "type": "negative"
+                },
+                {
+                    "text": "Umie mówić o emocjach, gdy czuje się bezpiecznie",
+                    "type": "positive"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 5,
+                "patience": 4,
+                "defensiveness": 6,
+                "empathy": 7,
+                "need_for_control": 3,
+                "shame_sensitivity": 6,
+                "directness": 5,
+                "repair_ability": 7
+            }
+        },
+        "npc": {
+            "name": "Marta",
+            "role_label": "Partnerka · NPC",
+            "age_range": "27-34",
+            "context": "Słysząc czyjś problem, automatycznie przechodzi w tryb działania. Kojarzy pomoc z dawaniem rad i konkretów. Gdy słyszy, że to nie pomaga, łatwo odbiera to jako krytykę swojej troski.",
+            "hidden_need": "recognition",
+            "hidden_need_text": "Potrzebuje poczucia, że jej intencje są widziane i że jej troska nie jest odrzucana.",
+            "traits": [
+                {
+                    "text": "Praktyczna",
+                    "type": "positive"
+                },
+                {
+                    "text": "Szybko przechodzi do rozwiązań",
+                    "type": "neutral"
+                },
+                {
+                    "text": "W defensywie bywa sztywna",
+                    "type": "negative"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 4,
+                "patience": 6,
+                "defensiveness": 7,
+                "empathy": 6,
+                "need_for_control": 6,
+                "shame_sensitivity": 5,
+                "directness": 7,
+                "repair_ability": 6
+            },
+            "npc_reaction_logic": "Na agresję i sarkazm reaguje obroną albo kontratakiem. Na chłodny styl transakcyjny chwilowo się uspokaja, ale emocjonalnie się nie otwiera. Na jasne nazwanie potrzeby i walidację intencji mięknie, zwalnia i zaczyna słuchać."
+        }
+    },
+    "metrics_start": {
+        "tension": 40,
+        "trust": 60,
+        "openness": 50,
+        "feeling_heard": 50
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Pierwszy zgrzyt po ciężkim dniu",
+            "scene": {
+                "description": "Wieczór w salonie. Odkładasz torbę, siadasz ciężko na kanapie i przecierasz twarz. Marta patrzy na ciebie z troską, ale od razu przechodzi do konkretów.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": "To może po prostu powiedz jutro szefowi, że bierzesz mniej tematów. I serio, przestań się tym tak przejmować.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Ty w ogóle umiesz słuchać, czy tylko zawsze musisz się wymądrzać",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marta prostuje się i marszczy brwi. Super, próbuję pomóc, a dostaję po głowie.",
+                    "feedback": {
+                        "label": "Atak na osobę",
+                        "psychology": "Zamiast nazwać własną potrzebę, uderzasz w tożsamość rozmówcy. To uruchamia obronę i przenosi rozmowę na Poziom II, czyli walkę o rację.",
+                        "better_alternative_hint": "Nazwij, czego ci teraz potrzeba, zamiast oceniać Martę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uogólnianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, nieważne",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Marta milknie i patrzy niepewnie. No okej... skoro nie chcesz gadać.",
+                    "feedback": {
+                        "label": "Wycofanie",
+                        "psychology": "Milczenie zatrzymuje eskalację tylko pozornie. Potrzeba wsparcia zostaje niewidoczna, więc rośnie dystans i spada poczucie bycia usłyszanym.",
+                        "better_alternative_hint": "Powiedz wprost, że potrzebujesz wysłuchania, nie rozwiązania."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Niewyrażona potrzeba",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Doceniam, że chcesz pomóc, ale teraz bardziej potrzebuję chwili, żeby to z siebie wyrzucić",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Marta na moment zwalnia. Okej... czyli mam na razie tylko posłuchać?",
+                    "feedback": {
+                        "label": "Jasna granica",
+                        "psychology": "To asertywne postawienie granicy bez ataku. Daje kierunek rozmowie, ale jeszcze nie dotyka głębiej emocji stojących za twoją prośbą.",
+                        "better_alternative_hint": "Dodaj krótko, jak się czujesz i co daje ci samo wysłuchanie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granice",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Wiem, że chcesz dobrze. Jestem teraz przebodźcowany i zanim pomyślę o rozwiązaniach, potrzebuję po prostu, żebyś mnie chwilę wysłuchała",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Marta siada bliżej i łagodnieje. Dobra, rozumiem. Mów, jestem obok.",
+                    "feedback": {
+                        "label": "Nazwanie potrzeby i walidacja intencji",
+                        "psychology": "Łączysz komunikat Ja z uznaniem dobrej intencji drugiej strony. To klasyczny ruch NVC, który obniża obronność i otwiera przestrzeń na realny kontakt.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC Rosenberg",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Czy twoja potrzeba wybrzmi jasno",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Marta opiera się o fotel z napiętą twarzą. W powietrzu wisi wrażenie, że jej pomoc została odrzucona.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Naprawdę nie rozumiem, co mam powiedzieć. Jak nic nie doradzę, to też jest źle.",
+            "scene_high": {
+                "description": "Marta siedzi obok ciebie i patrzy uważniej niż przed chwilą. Widać, że powstrzymuje odruch dawania kolejnych rad.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Dobra, próbuję to złapać. Powiedz mi, co jest teraz dla ciebie najtrudniejsze.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Najtrudniejsze jest to, że muszę jeszcze tłumaczyć oczywiste rzeczy",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marta przewraca oczami. Okej, skoro mam się domyślać, to chyba bez sensu ta rozmowa.",
+                    "feedback": {
+                        "label": "Sarkazm zamiast kontaktu",
+                        "psychology": "Bierna agresja maskuje zranienie, ale dla rozmówcy brzmi jak pogarda. To zamyka kanał emocjonalny i nasila defensywę.",
+                        "better_alternative_hint": "Zamiast ironii opisz własny stan i konkretną potrzebę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nic, zapomnij. Sam to ogarnę",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Marta cofa się emocjonalnie. No dobra. Jak chcesz.",
+                    "feedback": {
+                        "label": "Samotne zamknięcie",
+                        "psychology": "Wycofanie daje chwilową kontrolę, ale wzmacnia samotność. Potrzeba wsparcia zostaje odcięta, więc relacja nie ma jak odpowiedzieć.",
+                        "better_alternative_hint": "Powiedz, jaki rodzaj obecności jest dla ciebie pomocny."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Potrzeba wsparcia",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Najtrudniejsze jest to, że jestem zmęczony i nie mam siły teraz niczego analizować",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 0,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Marta kiwa głową. Okej, czyli dziś bez planu działania.",
+                    "feedback": {
+                        "label": "Konkret bez mostu emocjonalnego",
+                        "psychology": "To porządkuje sytuację i ogranicza chaos, ale wciąż zostaje na Poziomie I. Jest czytelnie, lecz jeszcze bez głębszego spotkania emocjonalnego.",
+                        "better_alternative_hint": "Dodaj, co da ci samo bycie wysłuchanym."
+                    },
+                    "tags": [
+                        {
+                            "text": "Doprecyzowanie potrzeby",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Najtrudniejsze jest to, że cały dzień czułem się przytłoczony, a kiedy od razu słyszę rady, mam wrażenie, że znowu muszę coś udźwignąć. Pomaga mi, kiedy ktoś po prostu pobędzie ze mną w tym napięciu",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Marta wyraźnie mięknie. Okej, to już rozumiem dużo lepiej. Nie muszę cię naprawiać, tylko być obok.",
+                    "feedback": {
+                        "label": "Ujawnienie przeżycia",
+                        "psychology": "Nazwanie emocji, skutku i prośby zmniejsza ryzyko błędnego odczytania komunikatu. To rdzeń aktywnego słuchania i NVC w praktyce.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Aktywne słuchanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC Rosenberg",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Defensywa czy zaciekawienie",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Rozmowa grzęźnie. Marta siedzi sztywno, a między wami pojawia się chłód i wzajemna ostrożność.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "cold"
+            },
+            "npc_line_low": "Tylko że ja naprawdę próbuję dobrze. Mam wrażenie, że cokolwiek zrobię, i tak będzie źle.",
+            "scene_high": {
+                "description": "Napięcie lekko opada. Marta wygląda na poruszoną, ale nie zamkniętą. W jej tonie pojawia się więcej ciekawości niż obrony.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Nie wiedziałam, że tak to na ciebie działa. Chcę lepiej rozumieć, serio.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "No to może w końcu zacznij, bo to naprawdę nie jest skomplikowane",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marta zaciska szczękę. Dobra, to już brzmi jak atak, nie rozmowa.",
+                    "feedback": {
+                        "label": "Dewaluacja rozmówcy",
+                        "psychology": "Umniejszasz zdolności drugiej osoby, co aktywuje wstyd i opór. Z perspektywy analizy transakcyjnej to przejście w układ Rodzic krytyczny kontra Dziecko zbuntowane.",
+                        "better_alternative_hint": "Uznaj intencję Marty, a dopiero potem doprecyzuj, czego potrzebujesz."
+                    },
+                    "tags": [
+                        {
+                            "text": "Krytyczny Rodzic",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Dewaluacja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Spoko, nieważne, już nie chcę o tym gadać",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marta wzdycha i odsuwa się na kanapie. Okej. To chyba tyle.",
+                    "feedback": {
+                        "label": "Zamknięcie kontaktu",
+                        "psychology": "Przerywasz proces w momencie, w którym mogłoby pojawić się dopiero realne zrozumienie. Unik chroni przed dyskomfortem, ale też odbiera szansę na naprawę relacji.",
+                        "better_alternative_hint": "Powiedz jeden prosty przykład tego, jak chcesz być wsparty."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unik",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Przerwana naprawa",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Wiem, że chcesz dobrze. Po prostu kiedy od razu pojawia się plan, czuję presję. Lepiej działa na mnie najpierw krótkie wysłuchanie",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Marta kiwa głową wolniej niż wcześniej. Czyli najpierw słucham, a dopiero potem pytam, czy chcesz radę?",
+                    "feedback": {
+                        "label": "Asertywne doprecyzowanie",
+                        "psychology": "To już buduje most. Nadal jednak koncentruje się głównie na procedurze wsparcia, a mniej na wspólnym rozumieniu doświadczenia.",
+                        "better_alternative_hint": "Dodaj, co wtedy dzieje się w tobie i dlaczego to jest dla ciebie ważne."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Doprecyzowanie oczekiwań",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Widzę, że chcesz dobrze i nie chcę tego odrzucać. Chciałbym tylko, żebyśmy rozróżniali dwie rzeczy: czasem potrzebuję pomocy w rozwiązaniu, a czasem pomocy w uniesieniu emocji",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Marta bierze oddech i przytakuje. To ma sens. Jakbyśmy mieli dwa różne tryby wsparcia.",
+                    "feedback": {
+                        "label": "Wspólna mapa rozmowy",
+                        "psychology": "Przechodzisz od sporu o to, kto ma rację, do wspólnego modelu relacji. To ruch na Poziom III, gdzie zamiast wygrywać rozmowę, budujesz nowe rozumienie.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Przeformułowanie konfliktu",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Ustalenie nowego sposobu wsparcia",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Atmosfera jest już ciężka i każde słowo brzmi ostrożnie. Oboje macie poczucie, że stoicie po przeciwnych stronach.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "To co ja mam w takim razie robić, żeby znowu nie było źle",
+            "scene_high": {
+                "description": "Między wami pojawia się trochę ulgi. Marta jest skupiona i gotowa spróbować inaczej niż zwykle.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Dobra, to ustalmy to. Jak mogę cię wspierać tak, żeby to naprawdę pomagało",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Najlepiej po prostu nic nie mów, bo tylko pogarszasz",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marta zamiera. To brzmi tak, jakby moje bycie obok też było problemem.",
+                    "feedback": {
+                        "label": "Odrzucenie osoby zamiast zachowania",
+                        "psychology": "Nie krytykujesz już samej rady, tylko całe uczestnictwo drugiej osoby. To silnie uderza w więź i poczucie bezpieczeństwa.",
+                        "better_alternative_hint": "Oddziel zachowanie, które ci szkodzi, od wartości osoby i jej intencji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Globalna krytyka",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak rozróżnienia osoba-zachowanie",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nie wiem. Rób, co chcesz",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marta patrzy z frustracją. To nie jest odpowiedź. Jak mam się nie domyślać?",
+                    "feedback": {
+                        "label": "Pozorna zgoda",
+                        "psychology": "To komunikat niejednoznaczny. Na powierzchni oddajesz decyzję, ale pod spodem zostaje pretensja. Taki przekaz zwykle nasila chaos relacyjny.",
+                        "better_alternative_hint": "Daj prostą, wykonalną instrukcję dotyczącą wsparcia."
+                    },
+                    "tags": [
+                        {
+                            "text": "Niejasny komunikat",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Pomaga mi, kiedy najpierw pytasz, czy chcę wysłuchania czy rozwiązania",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Marta przytakuje. Okej, to jest konkret. Mogę o to pytać.",
+                    "feedback": {
+                        "label": "Czytelna instrukcja",
+                        "psychology": "To praktyczne i wdrażalne. Dobrze ustawia zachowanie, choć jeszcze nie wzmacnia szczególnie więzi ani wzajemnego rozumienia emocji.",
+                        "better_alternative_hint": "Możesz dodać, co chcesz zrobić razem, gdy już emocje opadną."
+                    },
+                    "tags": [
+                        {
+                            "text": "Kontrakt rozmowy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Jasna prośba",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Pomaga mi, kiedy najpierw pytasz, czego teraz potrzebuję. A kiedy już poczuję się spokojniej, możemy razem wejść w rozwiązania. Wtedy czuję, że jesteśmy po tej samej stronie",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Marta uśmiecha się lekko. To jest dobre. Najpierw obecność, potem wspólne szukanie wyjścia.",
+                    "feedback": {
+                        "label": "Wspólny rytm wsparcia",
+                        "psychology": "Łączysz konkretną prośbę z wizją współpracy. Dzięki temu nie tylko gasisz bieżące napięcie, ale budujesz nowy wzorzec relacyjny na przyszłość.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Wspólna perspektywa",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Jasna prośba",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Domknięcie rozmowy",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Wieczór jest już późny. Oboje jesteście zmęczeni, a między wami czuć niedopowiedzenie i przeciążenie.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "cold"
+            },
+            "npc_line_low": "Chciałam pomóc, ale mam wrażenie, że tylko wszystko popsułam.",
+            "scene_high": {
+                "description": "W pokoju robi się ciszej i spokojniej. Po raz pierwszy od początku rozmowy oboje wyglądacie tak, jakbyście naprawdę się spotkali.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Dziękuję, że mi to powiedziałeś. Czuję, że lepiej rozumiem, jak być przy tobie w takich momentach.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "No to następnym razem po prostu niczego nie zepsuj",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marta zamyka się natychmiast. Jasne. To sobie już darujmy dalszą rozmowę.",
+                    "feedback": {
+                        "label": "Ostatni cios",
+                        "psychology": "Nawet po częściowym zbliżeniu wracasz do zawstydzania. To niszczy świeżo budowane bezpieczeństwo i zostawia rozmowę w gorzkim finale.",
+                        "better_alternative_hint": "Domknij rozmowę uznaniem wysiłku albo prostą prośbą na przyszłość."
+                    },
+                    "tags": [
+                        {
+                            "text": "Zawstydzanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Eskalacja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, nieważne, chodźmy spać",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marta kiwa głową, ale w jej twarzy zostaje niedosyt. Jasne. Dobranoc.",
+                    "feedback": {
+                        "label": "Ucięcie bez domknięcia",
+                        "psychology": "Kończysz rozmowę bez integracji tego, co właśnie się wydarzyło. Relacja zostaje bez jasnego sensu i bez wzmocnienia nowego wzorca.",
+                        "better_alternative_hint": "Podsumuj jednym zdaniem, co było pomocne i co warto powtórzyć."
+                    },
+                    "tags": [
+                        {
+                            "text": "Niedomknięcie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Unik emocjonalny",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Doceniam, że próbowałaś zostać przy mnie inaczej niż zwykle. To mi pomogło",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Marta odpuszcza barki. Dobrze to słyszeć. Chcę się tego uczyć.",
+                    "feedback": {
+                        "label": "Uznanie wysiłku",
+                        "psychology": "To wzmacnia zachowanie, które chcesz widzieć częściej. Brakuje jeszcze wspólnego spojrzenia w przyszłość, ale relacyjnie to już dobry finisz.",
+                        "better_alternative_hint": "Dodaj, jak możecie korzystać z tego ustalenia następnym razem."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wzmocnienie pozytywne",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Uznanie intencji",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Dziękuję, że zostałaś przy mnie. Myślę, że ten prosty podział bardzo nam pomoże: najpierw pytanie, czy chcę być wysłuchany, a dopiero potem ewentualne rady. To daje mi poczucie, że gramy do jednej bramki",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Marta wyciąga rękę i ściska twoją dłoń. To zapamiętam. I naprawdę chcę tak z tobą być.",
+                    "feedback": {
+                        "label": "Nowa umowa relacyjna",
+                        "psychology": "Domykasz rozmowę wdzięcznością, konkretem i wspólną perspektywą. To utrwala bezpieczny wzorzec kontaktu i wzmacnia więź zamiast jedynie gasić konflikt.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Naprawa relacji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Wspólna perspektywa",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 2
+            },
+            "color": "red",
+            "title": "ROZMOWA ZATRZAŚNIĘTA",
+            "emoji": "🔴",
+            "subtitle": "Pomoc zamieniła się w walkę o rację",
+            "narrative": "Wieczór kończy się chłodno. Oboje zostajecie z poczuciem, że intencja była dobra, ale sposób rozmowy zepchnął was w krytykę, obronę i wycofanie. Problem dnia nie został uniesiony, a do tego pojawił się nowy problem między wami.",
+            "diagnosis": "Dominowały reakcje obronne, oceny i uniki. Z perspektywy NVC nie została jasno nazwana ani potrzeba wsparcia, ani intencja drugiej strony. Rozmowa utknęła na Poziomie II i nie doszło do naprawy kontaktu.",
+            "post_game": {
+                "communication_style_summary": "W tej ścieżce przeważały agresja, bierna agresja albo wycofanie. Zabrakło jasnego komunikatu o emocjach i potrzebie.",
+                "strongest_moment": "Pojawiały się krótkie próby zatrzymania eskalacji, ale nie zostały rozwinięte w realny dialog.",
+                "growth_tip": "Kiedy nie chcesz rady, nie atakuj i nie znikaj. Nazwij prostym zdaniem: jestem przeciążony i potrzebuję, żebyś mnie teraz tylko wysłuchała.",
+                "replay_prompt": "Spróbuj przejść scenę tak, by od początku oddzielić intencję troski od formy, która ci nie pomaga."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 3,
+                "max": 5
+            },
+            "color": "yellow",
+            "title": "CHWILOWY ROZEJM",
+            "emoji": "🟡",
+            "subtitle": "Udało się ograniczyć szkody, ale bez pełnego zrozumienia",
+            "narrative": "Rozmowa nie wybucha do końca, ale też nie daje pełnej ulgi. Ustalenia są częściowo jasne, jednak emocjonalny sens sytuacji pozostaje tylko częściowo uchwycony. Jest mniej tarcia, lecz wciąż trochę obcości.",
+            "diagnosis": "Przeważała asertywność i porządkowanie faktów, co pomogło obniżyć chaos. Nadal jednak brakowało głębszej walidacji przeżyć i wspólnego modelu wsparcia, więc dialog zatrzymał się między Poziomem I a II.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl rzeczowy i częściowo asertywny. Było czytelniej, ale jeszcze nie dość miękko i kontaktowo.",
+                "strongest_moment": "Najlepiej działały momenty, w których padała konkretna prośba zamiast pretensji.",
+                "growth_tip": "Sama instrukcja to za mało. Dodaj jedno zdanie o swoim przeżyciu i jedno zdanie uznające intencję drugiej osoby.",
+                "replay_prompt": "Zagraj jeszcze raz i spróbuj przejść z samego tłumaczenia zasad do wspólnego rozumienia, po co wam te zasady."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 6,
+                "max": 8
+            },
+            "color": "green",
+            "title": "USŁYSZENI NAPRAWDĘ",
+            "emoji": "🟢",
+            "subtitle": "Pojawiło się realne zrozumienie i nowy sposób bycia razem",
+            "narrative": "Wieczór kończy się spokojniej, niż się zaczął. Marta rozumie już, że wsparcie nie zawsze oznacza rozwiązania, a ty czujesz, że nie musisz walczyć o samo prawo do przeżywania emocji. Między wami pojawia się więcej miękkości i współpracy.",
+            "diagnosis": "Udało się nazwać emocje, potrzebę i prośbę bez dewaluowania intencji rozmówcy. Dzięki temu rozmowa przeszła na Poziom III i zaczęła budować nowy, bezpieczniejszy wzorzec komunikacji.",
+            "post_game": {
+                "communication_style_summary": "Dominowały empatia, asertywność i transformacyjne budowanie wspólnego rozwiązania.",
+                "strongest_moment": "Kluczowy był moment, w którym rozróżniłeś potrzebę wysłuchania od potrzeby rozwiązania i zaprosiłeś Martę do wspólnej perspektywy.",
+                "growth_tip": "To dobry kierunek. W prawdziwych rozmowach wzmacniaj go, nazywając nie tylko czego nie chcesz, ale też co konkretnie pomaga ci wrócić do równowagi.",
+                "replay_prompt": "Sprawdź jeszcze wersję perfekcyjną i zobacz, jak wygląda domknięcie rozmowy, gdy nowy wzorzec zostaje jasno nazwany."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 9,
+                "max": 10
+            },
+            "color": "blue",
+            "title": "WSPÓLNY JĘZYK WSPARCIA",
+            "emoji": "🔵",
+            "subtitle": "Z kryzysu powstała dojrzała umowa relacyjna",
+            "narrative": "Nie tylko gasicie napięcie. Tworzycie wspólny język na przyszłość. Marta nie czuje się odrzucona, ty nie czujesz się naprawiany. Zamiast kolejnej kłótni powstaje praktyczny i czuły sposób bycia ze sobą w trudnych momentach.",
+            "diagnosis": "To ścieżka mistrzowska: dobra intencja została uznana, potrzeba wsparcia jasno nazwana, a konflikt przeformułowany w nowy kontrakt relacyjny. W kategoriach NVC i transformacji to pełne przejście od reaktywności do współtworzenia więzi.",
+            "post_game": {
+                "communication_style_summary": "Przeważały empatia, komunikat Ja i styl transformacyjny. Rozmowa nie tylko uniknęła szkód, ale stworzyła nową jakość kontaktu.",
+                "strongest_moment": "Najmocniejszy był moment zbudowania dwóch trybów wsparcia oraz domknięcia rozmowy wspólną zasadą na przyszłość.",
+                "growth_tip": "To wzorzec wart przeniesienia do życia: najpierw rozpoznanie potrzeby, potem dopiero dobór działania. Tak buduje się dojrzałe bezpieczeństwo w relacji.",
+                "replay_prompt": "Spróbuj teraz zagrać bardziej ostro i zobacz, jak niewielka zmiana tonu potrafi zepchnąć rozmowę z transformacji z powrotem w obronę."
+            }
+        }
+    ]
+}

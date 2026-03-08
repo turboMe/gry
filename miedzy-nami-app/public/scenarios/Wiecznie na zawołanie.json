@@ -1,0 +1,902 @@
+{
+    "scenario_id": "repeated_favor_no_reciprocity",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Wiecznie na zawołanie",
+        "subtitle": "Przyjacielska przysługa zaczyna ciążyć, gdy działa tylko w jedną stronę.",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 6,
+        "interaction_count": 5
+    },
+    "tags": {
+        "relationship_type": "friends",
+        "theme": [
+            "boundaries",
+            "support",
+            "respect"
+        ],
+        "emotional_intensity": "moderate",
+        "age_rating": "all",
+        "session_type": "mini_story",
+        "player_role_gender": "neutral",
+        "difficulty": "intermediate"
+    },
+    "characters": {
+        "player": {
+            "name": "Alex",
+            "role_label": "Przyjaciel · Gracz",
+            "age_range": "27-34",
+            "context": "Od miesięcy pomagasz Michałowi w drobnych i większych sprawach. Ostatnio coraz mocniej czujesz, że ta relacja działa jednostronnie, ale boisz się, że odmowa zostanie odebrana jako nielojalność.",
+            "hidden_need": "respect",
+            "hidden_need_text": "Potrzebujesz wzajemności, uznania swojego czasu i poczucia, że przyjaźń nie opiera się tylko na twojej dostępności.",
+            "traits": [
+                {
+                    "text": "Lojalny",
+                    "type": "positive"
+                },
+                {
+                    "text": "Ma trudność z odmawianiem",
+                    "type": "negative"
+                },
+                {
+                    "text": "Uważny na napięcie w relacji",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 4,
+                "patience": 7,
+                "defensiveness": 5,
+                "empathy": 7,
+                "need_for_control": 4,
+                "shame_sensitivity": 6,
+                "directness": 5,
+                "repair_ability": 7
+            }
+        },
+        "npc": {
+            "name": "Michał",
+            "role_label": "Przyjaciel · NPC",
+            "age_range": "27-34",
+            "context": "Michał przywykł, że można na ciebie liczyć. Nie uważa się za osobę wykorzystującą innych, ale rzadko zauważa, ile bierze, a jak mało daje w zamian.",
+            "hidden_need": "support",
+            "hidden_need_text": "Potrzebuje wsparcia i poczucia, że nie zostanie sam z codziennymi problemami, ale nie umie dobrze dbać o wzajemność.",
+            "traits": [
+                {
+                    "text": "Towarzyski",
+                    "type": "positive"
+                },
+                {
+                    "text": "Roszczeniowy pod presją",
+                    "type": "negative"
+                },
+                {
+                    "text": "Spontaniczny",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 6,
+                "patience": 4,
+                "defensiveness": 7,
+                "empathy": 5,
+                "need_for_control": 5,
+                "shame_sensitivity": 5,
+                "directness": 6,
+                "repair_ability": 5
+            },
+            "npc_reaction_logic": "Na agresję reaguje obronnie i kontratakiem. Na bierność bierze więcej przestrzeni dla siebie. Na rzeczową asertywność początkowo się usztywnia, ale zaczyna słuchać. Na empatię połączoną z jasną granicą szybciej obniża defensywność i jest gotów rozmawiać o wzajemności."
+        }
+    },
+    "metrics_start": {
+        "tension": 40,
+        "trust": 60,
+        "openness": 50,
+        "feeling_heard": 50
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Kolejna prośba",
+            "scene": {
+                "description": "Siedzicie przy stoliku w kawiarni po pracy. Michał miesza kawę i mówi to tonem, jakby chodziło o drobiazg, choć ty od razu czujesz znajome ukłucie zmęczenia.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "neutral"
+            },
+            "npc_line": "Słuchaj, mam jutro rano przewieźć kilka rzeczy do nowego mieszkania. Dasz radę znowu mi pomóc autem?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Serio? Ty tylko umiesz brać. Jak zwykle przypominasz sobie o mnie, kiedy czegoś chcesz.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Michał prostuje się i marszczy brwi. To trochę mocne. Nie musisz od razu mnie atakować.",
+                    "feedback": {
+                        "label": "Uogólnienie i atak",
+                        "psychology": "To wejście na Poziom II — pozycyjny. Zamiast opisać konkretny problem, używasz uogólnienia i przypisujesz intencje, co uruchamia defensywność.",
+                        "better_alternative_hint": "Nazwij fakt i swój stan bez oskarżania całej osoby."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uogólnianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Defensywność",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Tak, jasne. Jakoś to ogarnę.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Michał uśmiecha się z ulgą. Wiedziałem, że mogę na ciebie liczyć.",
+                    "feedback": {
+                        "label": "Zgoda wbrew sobie",
+                        "psychology": "Bierność chwilowo obniża ryzyko konfliktu, ale nie rozwiązuje napięcia. W modelu NVC pomijasz własną potrzebę i wzmacniasz nierówny układ.",
+                        "better_alternative_hint": "Spróbuj powiedzieć, co cię zatrzymuje, zanim automatycznie się zgodzisz."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Niewyrażona potrzeba",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Bierność",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Jutro nie bardzo mi pasuje. Zanim odpowiem, chcę powiedzieć, że mam już trochę zmęczenia tym, jak często prosisz mnie o pomoc.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Michał patrzy uważniej. Okej... nie spodziewałem się tego. O co dokładnie ci chodzi?",
+                    "feedback": {
+                        "label": "Jasna granica bez pełnej walidacji",
+                        "psychology": "To ruch w stronę asertywności. Mówisz wprost o swoim stanie, ale jeszcze nie budujesz mostu do wspólnego rozwiązania.",
+                        "better_alternative_hint": "Dodaj, że zależy ci na relacji, a nie tylko na odmowie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granice",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Zatrzymuję się, bo chcę powiedzieć coś szczerze. Lubię ci pomagać, ale zaczynam czuć, że to działa głównie w jedną stronę i robi mi się z tym trudno.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Michał odkłada łyżeczkę. Okej... to brzmi poważniej, niż myślałem. Powiedz mi, co masz na myśli.",
+                    "feedback": {
+                        "label": "Szczerość połączona z troską o relację",
+                        "psychology": "To dobry komunikat Ja w duchu NVC: opisujesz własne doświadczenie, nie atakujesz i jednocześnie zostawiasz przestrzeń na dialog.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Odsłonięcie emocji",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Pierwsza defensywa",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Przy stoliku robi się sztywno. Michał odsuwa kubek i patrzy na ciebie z mieszaniną irytacji i zaskoczenia.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Czyli co, teraz będziemy rozliczać każdą przysługę?",
+            "scene_high": {
+                "description": "Michał nie wygląda na zadowolonego, ale nie zamyka się. W jego twarzy pojawia się raczej zakłopotanie niż złość.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Nie patrzyłem na to tak. Chcesz powiedzieć, że przesadzam z proszeniem?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Tak, dokładnie. Z tobą trzeba wszystko liczyć, bo inaczej wejdziesz komuś na głowę.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Michał prycha i odchyla się na krześle. Skoro tak o mnie myślisz, to może w ogóle nie ma o czym gadać.",
+                    "feedback": {
+                        "label": "Etykietowanie osoby",
+                        "psychology": "Atakujesz tożsamość zamiast zachowania. W kwadracie von Thuna mocno wybrzmiewa warstwa relacyjna: jesteś problemem, co blokuje słuchanie treści.",
+                        "better_alternative_hint": "Oddziel zachowanie od oceny charakteru."
+                    },
+                    "tags": [
+                        {
+                            "text": "Etykietowanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Atak na relację",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nie, nieważne. Po prostu zapomnij, że coś mówiłem.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Michał wzrusza ramionami. No dobra, ale brzmisz tak, jakby jednak było ważne.",
+                    "feedback": {
+                        "label": "Wycofanie po odsłonięciu",
+                        "psychology": "Robisz krok do przodu i od razu go cofasz. To zwiększa niejasność i zostawia obie strony bez kontaktu z rzeczywistą potrzebą.",
+                        "better_alternative_hint": "Zostań przy temacie i doprecyzuj, co chcesz zmienić."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Niejasny komunikat",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Unik",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie chcę cię rozliczać. Chcę tylko uczciwie powiedzieć, że kiedy prośby są częste, a z drugiej strony nie ma podobnego wsparcia, zaczynam czuć dyskomfort.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Michał wzdycha. Dobra, to już brzmi konkretniej. Masz jakiś przykład?",
+                    "feedback": {
+                        "label": "Porządkowanie faktów",
+                        "psychology": "To rzeczowy ruch na Poziomie I z elementem granicy. Daje strukturę, ale jeszcze nie dotyka lęku ani znaczenia tej relacji.",
+                        "better_alternative_hint": "Dodaj, dlaczego mówisz o tym właśnie teraz i czemu ta przyjaźń jest dla ciebie ważna."
+                    },
+                    "tags": [
+                        {
+                            "text": "Porządkowanie faktów",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Jasność komunikatu",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie chodzi mi o liczenie punktów. Bardziej o to, że boję się mówić nie, bo nie chcę cię stracić, a jednocześnie czuję, że moje tak coraz mniej jest z wyboru.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Michał mięknie. Okej, tego się nie spodziewałem. Nie wiedziałem, że aż tak to w tobie siedzi.",
+                    "feedback": {
+                        "label": "Nazwanie lęku i granicy",
+                        "psychology": "To przesuwa rozmowę ku Poziomowi III — transformacji. Pokazujesz nie tylko problem, ale też stawkę emocjonalną, co obniża chęć do kontrataku.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Wrażliwość",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Nazwanie lęku",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Nazwanie wzorca",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Powietrze między wami gęstnieje. Michał zerka na telefon, jakby chciał uciec z rozmowy, ale jeszcze zostaje przy stoliku.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "No dobra, to dawaj konkrety, bo brzmi to tak, jakbym był jakimś pasożytem.",
+            "scene_high": {
+                "description": "Michał siedzi już spokojniej. Nadal jest spięty, ale słucha bez przerywania i wyraźnie czeka na konkretny przykład.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Dobra, chcę zrozumieć. Kiedy najbardziej poczułeś, że to idzie za daleko?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Na przykład wtedy, gdy zniknąłeś, kiedy ja potrzebowałem pomocy. Ale w sumie to ty zawsze znikasz, kiedy nie jesteś w centrum.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Michał kręci głową. No i znowu jedziesz po mnie zamiast powiedzieć normalnie, o co chodzi.",
+                    "feedback": {
+                        "label": "Przytyk zamiast konkretu",
+                        "psychology": "Bierna agresja miesza fakt z ukrytym atakiem. To utrudnia naprawę, bo druga strona słyszy głównie pogardę, nie potrzebę.",
+                        "better_alternative_hint": "Podaj jeden konkretny przykład i nazwij jego wpływ na ciebie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Ukryty atak",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nie wiem. Może przesadzam. Nieważne, pomogę ci jutro i zamknijmy temat.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Michał marszczy czoło. Teraz już sam nie wiem, czy masz problem, czy nie masz.",
+                    "feedback": {
+                        "label": "Unieważnienie siebie",
+                        "psychology": "Minimalizujesz własne doświadczenie, żeby szybko wrócić do pozornego spokoju. To utrwala stary wzorzec i odbiera rozmowie autentyczność.",
+                        "better_alternative_hint": "Zostań przy swoim odczuciu bez cofania go w pół zdania."
+                    },
+                    "tags": [
+                        {
+                            "text": "Minimalizowanie siebie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Lęk przed odrzuceniem",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Brak granicy",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Najbardziej wtedy, gdy prosiłem cię ostatnio o pomoc przy dokumentach i odpisałeś dopiero po kilku dniach. Chcę, żebyśmy mieli bardziej równy układ.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Michał kiwa głową powoli. Okej, to już rozumiem lepiej. Faktycznie wtedy zawaliłem.",
+                    "feedback": {
+                        "label": "Konkretny przykład i oczekiwanie",
+                        "psychology": "To dobra asertywność: opisujesz fakt, wpływ i kierunek zmiany. Brakuje jeszcze pogłębienia, co ta nierówność robi z relacją między wami.",
+                        "better_alternative_hint": "Dodaj, co chciałbyś budować między wami, nie tylko czego chcesz mniej."
+                    },
+                    "tags": [
+                        {
+                            "text": "Konkretyzacja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granice relacyjne",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Najmocniej poczułem to wtedy, gdy sam potrzebowałem wsparcia i zostałem z tym sam. Nie chodzi o jeden incydent, tylko o to, że wtedy poczułem się mniej ważny w tej przyjaźni.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Michał opuszcza wzrok. To akurat boli słyszeć, ale rozumiem, czemu tak to odebrałeś.",
+                    "feedback": {
+                        "label": "Fakt połączony ze znaczeniem",
+                        "psychology": "Nie zatrzymujesz się na rachunku krzywd. Pokazujesz emocjonalne znaczenie zdarzenia, dzięki czemu rozmowa wychodzi poza samą transakcję.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja własnych uczuć",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Znaczenie relacyjne",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Nowa zasada albo stary układ",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Rozmowa utknęła między pretensją a zniechęceniem. Michał mówi szybciej i trochę głośniej, jakby chciał mieć to już za sobą.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "To czego ty w ogóle ode mnie teraz chcesz? Instrukcji obsługi przyjaźni?",
+            "scene_high": {
+                "description": "Napięcie nie zniknęło, ale zrobiło się bardziej robocze niż wrogie. Michał opiera przedramiona o stół i czeka na konkret.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Dobra. To powiedz konkretnie, co byłoby dla ciebie fair.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Chcę, żebyś wreszcie przestał zachowywać się jak rozpieszczony dzieciak i zaczął coś dawać od siebie.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Michał zaciska szczękę. Dobra, starczy. Nie będziesz mnie tutaj obrażać.",
+                    "feedback": {
+                        "label": "Upokorzenie zamiast granicy",
+                        "psychology": "Poniżenie drugiej strony może dać chwilowe poczucie siły, ale prawie zawsze zamyka dialog. W analizie transakcyjnej wchodzisz w krytycznego Rodzica.",
+                        "better_alternative_hint": "Mów o zasadzie, nie o wyższości nad drugą osobą."
+                    },
+                    "tags": [
+                        {
+                            "text": "Krytyczny Rodzic",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Obraźliwy język",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Eskalacja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nic. Sam powinieneś wiedzieć, jak się zachowuje normalny przyjaciel.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Michał rozkłada ręce. Skoro mam się domyślać, to powodzenia.",
+                    "feedback": {
+                        "label": "Czytanie w myślach",
+                        "psychology": "Zakładasz, że druga osoba powinna sama odgadnąć twoją potrzebę. To klasyczny błąd komunikacyjny, który utrzymuje frustrację zamiast ją rozwiązywać.",
+                        "better_alternative_hint": "Powiedz wprost, jaka zasada lub zachowanie byłoby dla ciebie fair."
+                    },
+                    "tags": [
+                        {
+                            "text": "Czytanie w myślach",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Ukryte oczekiwanie",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Chcę prostszej zasady: jeśli prosimy się o pomoc, to obie strony też reagują, kiedy druga czegoś potrzebuje. Bez znikania i bez zakładania, że zawsze będę dostępny.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Michał kiwa głową. To akurat brzmi uczciwie. Mogłem wcześniej zobaczyć, że tak to wygląda.",
+                    "feedback": {
+                        "label": "Jasna zasada współpracy",
+                        "psychology": "To sensowny kontrakt relacyjny. Nadal jednak jest bardziej o regule niż o więzi, więc może zatrzymać się na poziomie poprawności.",
+                        "better_alternative_hint": "Dopowiedz, że zależy ci na przyjaźni, nie tylko na lepszym systemie przysług."
+                    },
+                    "tags": [
+                        {
+                            "text": "Kontrakt relacyjny",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Rzeczowość",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chcę, żebyśmy obaj mogli prosić i obaj mogli czasem odmówić bez obrażania się. Wtedy pomoc naprawdę będzie z życzliwości, a nie z presji.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Michał wyraźnie odpuszcza. To ma sens. Chyba serio przyzwyczaiłem się, że zawsze jesteś dostępny.",
+                    "feedback": {
+                        "label": "Wspólna zasada zamiast walki o rację",
+                        "psychology": "Przechodzisz do logiki my. To sedno komunikacji transformacyjnej: nie wygrywasz sporu, tylko projektujesz zdrowszy sposób bycia w relacji.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikacja transformacyjna",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Wspólna perspektywa",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Decyzja na teraz",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Wieczór zbliża się do końca, a napięcie wciąż siedzi między wami. Michał spogląda na zegarek i wygląda, jakby chciał dostać szybką odpowiedź bez dalszego wracania do tematu.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "cold"
+            },
+            "npc_line_low": "Dobra, ale ja dalej nie wiem, czy jutro mi pomożesz, czy nie.",
+            "scene_high": {
+                "description": "Po raz pierwszy od początku rozmowy oboje brzmicie spokojniej. Michał nie naciska już tak mocno, tylko czeka na twoją decyzję.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Rozumiem już więcej. To jak chcesz to rozwiązać z jutrem i na przyszłość?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nie pomogę ci. Radź sobie sam, może wreszcie nauczysz się nie żerować na ludziach.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Michał wstaje od stolika. Okej. To sobie radźmy sami, skoro tak stawiasz sprawę.",
+                    "feedback": {
+                        "label": "Granica podana jako kara",
+                        "psychology": "Sama odmowa może być zdrowa, ale tutaj staje się ciosem. Gdy granica jest opakowana pogardą, przestaje chronić relację i zaczyna ją niszczyć.",
+                        "better_alternative_hint": "Możesz odmówić bez upokarzania drugiej osoby."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Granica jako kara",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Eskalacja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, pomogę ci jutro. Nieważne. Po prostu już nic nie będę mówić.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Michał siada z ulgą, ale patrzy na ciebie niepewnie. Brzmisz tak, jakbyś miał mi to potem długo pamiętać.",
+                    "feedback": {
+                        "label": "Pozorna zgoda, realny żal",
+                        "psychology": "To nie jest naprawa, tylko odłożenie konfliktu. Niewypowiedziany żal zwykle wraca silniej przy kolejnej podobnej sytuacji.",
+                        "better_alternative_hint": "Powiedz jasno, na co się zgadzasz, a na co już nie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Tłumienie złości",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak domknięcia",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Bierność",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Jutro mogę pomóc tylko przez godzinę, a dalej musisz ogarnąć resztę. I chcę, żebyśmy od teraz bardziej pilnowali wzajemności, bo inaczej będę częściej odmawiać.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Michał przytakuje. Okej, to uczciwe. Nie jest super miło to słyszeć, ale przynajmniej wiem, na czym stoję.",
+                    "feedback": {
+                        "label": "Zdrowa granica i warunek",
+                        "psychology": "To dobra końcówka pod kątem granic. Jest czytelnie i uczciwie, choć nadal bardziej pilnujesz balansu niż pogłębiasz wzajemne zrozumienie.",
+                        "better_alternative_hint": "Dodaj krótko, że zależy ci na tej relacji mimo stawiania granicy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Stawianie granic",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Konsekwencja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Jutro nie chcę pomagać z poczucia obowiązku, więc odpuszczę. Ale chcę, żebyśmy po tej rozmowie mieli prostszą zasadę: prosimy otwarcie, szanujemy odmowę i pamiętamy, że wsparcie działa w dwie strony.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Michał po chwili kiwa głową. Dobra. Nie podoba mi się ta odmowa, ale rozumiem ją i chyba potrzebowaliśmy tej rozmowy.",
+                    "feedback": {
+                        "label": "Granica bez zerwania więzi",
+                        "psychology": "To dojrzałe połączenie autonomii i relacji. Odmawiasz bez odwetu i proponujesz nowy model kontaktu, co wzmacnia zarówno szacunek, jak i przyszłą współpracę.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Szacunek dla granic",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Komunikacja transformacyjna",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Wzajemność",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "PĘKNIĘCIE ZAMIAST GRANICY",
+            "emoji": "🔴",
+            "subtitle": "Rozmowa kończy się wzajemnym urazem i jeszcze większym dystansem.",
+            "narrative": "Wychodzicie z kawiarni osobno. Formalnie temat przysługi został zamknięty, ale w praktyce relacja dostała mocne pęknięcie. Zamiast jasnej granicy zostaje wrażenie ataku, żalu albo cichego wycofania.",
+            "diagnosis": "Dominował Poziom II — pozycyjny albo chaos między odsłonięciem a wycofaniem. Granice nie zostały zakomunikowane w sposób bezpieczny, więc rozmowa przerodziła się w obronę, atak lub tłumienie siebie.",
+            "post_game": {
+                "communication_style_summary": "W tej ścieżce dominowały agresja, bierność lub bierna agresja. Zamiast nazwania potrzeby pojawiło się oskarżanie albo cofanie własnych słów.",
+                "strongest_moment": "Najmocniejszy był każdy moment, w którym próbowałeś nazwać problem, nawet jeśli potem zabrakło konsekwencji.",
+                "growth_tip": "Ćwicz prosty komunikat Ja: co widzę, co czuję, czego potrzebuję. Sama odmowa nie szkodzi relacji tak bardzo jak pogarda albo niejasność.",
+                "replay_prompt": "Spróbuj jeszcze raz przejść rozmowę tak, by postawić granicę bez ataku i bez wycofywania się."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "UCZCIWOŚĆ BEZ PEŁNEJ BLISKOŚCI",
+            "emoji": "🟡",
+            "subtitle": "Pojawia się większa jasność, ale relacja pozostaje ostrożna.",
+            "narrative": "Rozmowa nie kończy się kłótnią, ale też nie daje pełnego poczucia ulgi. Michał rozumie część twojego punktu widzenia, a ty wreszcie przestajesz automatycznie się zgadzać. To ważny krok, choć jeszcze nie ma między wami pełnej miękkości ani zaufania.",
+            "diagnosis": "Pojawiła się asertywność i trochę konkretu, ale rozmowa często zatrzymywała się na poziomie reguł lub rozliczenia faktów. To poprawia strukturę, lecz nie zawsze odbudowuje więź.",
+            "post_game": {
+                "communication_style_summary": "Dominowała rzeczowa asertywność. Potrafiłeś nazwać problem i postawić częściową granicę, ale mniej było walidacji emocji i wspólnej perspektywy.",
+                "strongest_moment": "Najlepsze były momenty, w których podałeś konkretny przykład zamiast rzucać ogólnikami.",
+                "growth_tip": "Następnym razem dodaj do granicy zdanie o znaczeniu relacji. To często przenosi rozmowę z samej poprawności do realnego porozumienia.",
+                "replay_prompt": "Sprawdź, co się zmieni, gdy poza faktami pokażesz też swój lęk, zranienie albo troskę o przyjaźń."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 10
+            },
+            "color": "green",
+            "title": "GRANICA, KTÓRA CZYŚCI RELACJĘ",
+            "emoji": "🟢",
+            "subtitle": "Szczerość prowadzi do większej wzajemności zamiast do zerwania.",
+            "narrative": "Po wyjściu z kawiarni nie wszystko jest idealne, ale ciężar wyraźnie spadł. Michał nie dostał tylko odmowy albo pretensji — dostał prawdę o tym, jak działa wasza relacja. Ty z kolei po raz pierwszy od dawna nie zdradziłeś siebie dla świętego spokoju. Jest szansa na przyjaźń bardziej równą i dojrzalszą.",
+            "diagnosis": "Rozmowa weszła na Poziom III — transformację. Granica została postawiona bez odwetu, a problem nazwany razem z jego znaczeniem emocjonalnym. Dzięki temu wzrosły zaufanie, otwartość i poczucie bycia usłyszanym.",
+            "post_game": {
+                "communication_style_summary": "Dominowały empatia, asertywność i momenty komunikacji transformacyjnej. Łączyłeś szczerość z dbałością o relację.",
+                "strongest_moment": "Najmocniejszy był moment, gdy nazwałeś nie tylko wzorzec proszenia, ale też to, że czujesz się mniej ważny i nie chcesz pomagać z presji.",
+                "growth_tip": "To dobry kierunek. W realnym życiu pamiętaj, że zdrowa granica działa najlepiej wtedy, gdy jest jasna, spokojna i konsekwentnie powtarzana.",
+                "replay_prompt": "Możesz zagrać ponownie i sprawdzić, jak zmienia się rozmowa, gdy postawisz granicę wcześniej albo bardziej rzeczowo."
+            }
+        }
+    ]
+}

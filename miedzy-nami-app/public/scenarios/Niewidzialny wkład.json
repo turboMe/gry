@@ -1,0 +1,842 @@
+{
+    "scenario_id": "effort_ignored_at_work",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Niewidzialny wkład",
+        "subtitle": "Po spotkaniu zostaje ci poczucie, że twój wysiłek właśnie zniknął z pola widzenia.",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 7,
+        "interaction_count": 5
+    },
+    "tags": {
+        "relationship_type": "coworkers",
+        "theme": [
+            "respect",
+            "support",
+            "expectations"
+        ],
+        "emotional_intensity": "moderate",
+        "age_rating": "adult",
+        "session_type": "mini_story",
+        "player_role_gender": "neutral",
+        "difficulty": "intermediate"
+    },
+    "characters": {
+        "player": {
+            "name": "Patryk",
+            "role_label": "Analityk projektu · Gracz",
+            "age_range": "28-35",
+            "context": "Przez dwa dni poprawiałeś prezentację, zebrałeś dane i ratowałeś termin. Na spotkaniu szef pochwalił efekt, ale twoja współpracowniczka podsumowała wszystko tak, jakby zrobiła to sama.",
+            "hidden_need": "recognition",
+            "hidden_need_text": "Potrzebujesz uznania i poczucia, że twój wkład jest widziany, nazwany i doceniony.",
+            "traits": [
+                {
+                    "text": "Sumienny",
+                    "type": "positive"
+                },
+                {
+                    "text": "Wrażliwy na pomijanie",
+                    "type": "negative"
+                },
+                {
+                    "text": "Raczej opanowany",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 4,
+                "patience": 6,
+                "defensiveness": 5,
+                "empathy": 7,
+                "need_for_control": 4,
+                "shame_sensitivity": 7,
+                "directness": 6,
+                "repair_ability": 7
+            }
+        },
+        "npc": {
+            "name": "Marta",
+            "role_label": "Koordynatorka projektu · Rozmówczyni",
+            "age_range": "30-38",
+            "context": "Jest pod presją terminu i ma nawyk szybkiego podsumowywania wyników bez zatrzymania się przy wkładzie innych osób. Nie planowała cię zranić, ale łatwo wpada w defensywę, gdy słyszy zarzut.",
+            "hidden_need": "competence",
+            "hidden_need_text": "Potrzebuje czuć się skuteczna i mieć wrażenie, że dowozi wynik bez chaosu i zbędnych konfliktów.",
+            "traits": [
+                {
+                    "text": "Zadaniowa",
+                    "type": "neutral"
+                },
+                {
+                    "text": "Sprawcza",
+                    "type": "positive"
+                },
+                {
+                    "text": "Defensywna pod presją",
+                    "type": "negative"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 5,
+                "patience": 5,
+                "defensiveness": 7,
+                "empathy": 5,
+                "need_for_control": 7,
+                "shame_sensitivity": 6,
+                "directness": 7,
+                "repair_ability": 6
+            },
+            "npc_reaction_logic": "Marta zamyka się lub kontratakuje, gdy słyszy uogólnienia, oskarżenia albo ironię. Lepiej reaguje na konkret, opis wpływu sytuacji i spokojne nazwanie potrzeby uznania. Gdy poczuje się wysłuchana, potrafi przyznać się do błędu i wejść w tryb naprawczy."
+        }
+    },
+    "metrics_start": {
+        "tension": 40,
+        "trust": 60,
+        "openness": 50,
+        "feeling_heard": 50
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Po spotkaniu",
+            "scene": {
+                "description": "Sala konferencyjna prawie opustoszała. Na ekranie wciąż wisi ostatni slajd z podsumowaniem wyników. Marta zbiera laptop i notatki w pośpiechu.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "neutral"
+            },
+            "npc_line": "Dobra robota, prezentacja poszła sprawnie. Lecę już na kolejny call.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Jasne, bo przecież najłatwiej było powiedzieć wszystko tak, jakbyś zrobiła to sama.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marta prostuje się i marszczy brwi. Mówi chłodno, że to nie jest moment na takie teksty.",
+                    "feedback": {
+                        "label": "Atak i przypisanie intencji",
+                        "psychology": "Wchodzisz na Poziom II rozmowy i zakładasz złą wolę rozmówczyni. To uruchamia obronę zamiast refleksji. W modelu NVC pomijasz obserwację i od razu przechodzisz do oskarżenia.",
+                        "better_alternative_hint": "Nazwij konkretną sytuację i jej wpływ na ciebie, zamiast oceniać intencje Marty."
+                    },
+                    "tags": [
+                        {
+                            "text": "Przypisywanie intencji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Spoko, nieważne.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Marta kiwa głową i wychodzi z poczuciem, że wszystko jest w porządku, a ty zostajesz z rosnącą frustracją.",
+                    "feedback": {
+                        "label": "Wycofanie i tłumienie",
+                        "psychology": "Unikasz konfrontacji, ale koszt trafia do środka. W analizie transakcyjnej to ruch, który pozornie chroni relację, a realnie utrwala nierównowagę i poczucie niewidzialności.",
+                        "better_alternative_hint": "Spróbuj powiedzieć krótko, co konkretnie cię ukuło i czego potrzebujesz."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Tłumienie emocji",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Chcę coś doprecyzować. Miałem wrażenie, że mój wkład w przygotowanie danych w ogóle nie wybrzmiał.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Marta zatrzymuje się i patrzy uważniej. Nie jest jeszcze miękka, ale słucha.",
+                    "feedback": {
+                        "label": "Jasne nazwanie problemu",
+                        "psychology": "To asertywny komunikat oparty na własnym odbiorze sytuacji. Działa lepiej niż atak, ale nadal jest dość faktograficzny i nie odsłania głębiej emocji ani potrzeby.",
+                        "better_alternative_hint": "Dodaj, jak to na ciebie wpłynęło i dlaczego to było dla ciebie ważne."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Zatrzymam cię na chwilę. Włożyłem w to dużo pracy i kiedy na spotkaniu to nie wybrzmiało, poczułem się pominięty.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Marta zwalnia ruch, odkłada notatnik i mówi ciszej, że nie wiedziała, że tak to odebrałeś.",
+                    "feedback": {
+                        "label": "Nazwanie emocji i wpływu",
+                        "psychology": "Łączysz obserwację z uczuciem, bez ataku na drugą stronę. To klasyczny ruch NVC, który zmniejsza obronność i zwiększa szansę na przejście z pozycji do kontaktu.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "NVC",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Nazwanie emocji",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Pierwsza reakcja Marty",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Między biurkami robi się niezręcznie. Marta trzyma torbę na ramieniu i zerka na zegarek, jakby chciała już zamknąć temat.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Serio teraz? Przecież wszyscy wiedzą, że pracowaliśmy nad tym razem.",
+            "scene_high": {
+                "description": "Marta odkłada torbę na krzesło i zostaje przy stole. W jej twarzy jest zaskoczenie, ale też gotowość, żeby nie uciekać od rozmowy.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Nie miałam takiej intencji. Powiedz mi, co dokładnie tak zabrzmiało.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "No jasne, wszystkim się tylko wydaje, że wszystko robisz sama. To już standard.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marta przewraca oczami i mówi, że nie będzie rozmawiać, jeśli masz zamiar wbijać szpilki.",
+                    "feedback": {
+                        "label": "Ironia i ukryty atak",
+                        "psychology": "Bierna agresja daje chwilowe poczucie przewagi, ale nie niesie jasnej informacji o potrzebie. W kwadracie von Thuna silnie wybrzmiewa apel ukryty pod atakiem relacyjnym.",
+                        "better_alternative_hint": "Zamiast ironii podaj konkretny moment i jego znaczenie dla ciebie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nieważne. I tak nie ma sensu do tego wracać.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Marta wzrusza ramionami i zamyka temat, ale napięcie zostaje między wami.",
+                    "feedback": {
+                        "label": "Zamykanie rozmowy",
+                        "psychology": "Wycofanie chwilowo obniża ryzyko konfliktu, ale blokuje szansę na korektę relacji. Druga strona nie dostaje danych, co mogłaby zrobić inaczej.",
+                        "better_alternative_hint": "Podaj jeden konkretny przykład, zamiast zamykać temat z rezygnacją."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak ujawnienia potrzeby",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Kiedy podsumowałaś wyniki i pominęłaś część o analizie danych, odebrałem to tak, jakby mój wkład był drugorzędny.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Marta kiwa głową i mówi, że rozumie, o który moment chodzi, choć nadal brzmi ostrożnie.",
+                    "feedback": {
+                        "label": "Konkret i obserwacja",
+                        "psychology": "Dobrze oddzielasz fakt od interpretacji. To porządkuje rozmowę i zmniejsza chaos, ale nadal jest mało kontaktu z emocją i potrzebą uznania.",
+                        "better_alternative_hint": "Dodaj, dlaczego to było dla ciebie istotne i czego oczekujesz na przyszłość."
+                    },
+                    "tags": [
+                        {
+                            "text": "Oddzielenie obserwacji od oceny",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chodzi o ten moment z końcówki spotkania. Potrzebowałem, żeby przy takim wysiłku było jasne, że to był wspólny wynik, a nie tylko twoje dowiezienie tematu.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Marta bierze oddech i przyznaje, że mogła to nazwać inaczej. Po raz pierwszy słychać mniej obrony, a więcej namysłu.",
+                    "feedback": {
+                        "label": "Uznanie wkładu bez rozbijania relacji",
+                        "psychology": "Mówisz o potrzebie uznania, ale nie rozstawiasz rozmowy w osi ja kontra ty. To zbliża was do Poziomu III, gdzie można naprawić zarówno fakt, jak i relację.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Nazwanie potrzeby",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Wspólna perspektywa",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Defensywa czy kontakt",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Powietrze gęstnieje. Kilka osób przechodzi korytarzem obok sali, a Marta mówi ciszej, ale z napiętym głosem.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Naprawdę nie rozumiem, czemu robisz z tego taki problem. Mieliśmy mało czasu.",
+            "scene_high": {
+                "description": "Rozmowa zwalnia. Marta opiera dłonie o stół i próbuje poskładać w głowie to, co usłyszała.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Okej, widzę, że to nie jest tylko o jednym zdaniu. Chyba nie zauważyłam, jak to mogło zabrzmieć.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Bo ty zawsze wszystko spłycasz i potem człowiek ma się domyślać, czy w ogóle coś znaczy.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marta zaciska szczękę i odpowiada, że skoro tak ją widzisz, to nie ma o czym rozmawiać.",
+                    "feedback": {
+                        "label": "Uogólnienie i etykietowanie",
+                        "psychology": "Słowo zawsze zamienia pojedynczy incydent w ocenę całej osoby. To klasyczny błąd eskalacyjny, który uruchamia obronę tożsamości zamiast refleksji nad zachowaniem.",
+                        "better_alternative_hint": "Zostań przy tej sytuacji i opisz jej skutek, nie charakter Marty."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uogólnianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Etykietowanie",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, zapomnijmy o tym.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Marta przyjmuje to szybko, ale temat zostaje nierozwiązany i ciężar rozmowy nie znika.",
+                    "feedback": {
+                        "label": "Rezygnacja zamiast domknięcia",
+                        "psychology": "To nie jest naprawa, tylko odcięcie kontaktu. Twoja potrzeba uznania pozostaje niewypowiedziana do końca, więc emocja wróci przy kolejnej podobnej sytuacji.",
+                        "better_alternative_hint": "Nie wycofuj się całkiem. Zostań przy jednym zdaniu o tym, co było dla ciebie najtrudniejsze."
+                    },
+                    "tags": [
+                        {
+                            "text": "Rezygnacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Niedomknięty konflikt",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Rozumiem, że był pośpiech. Jednocześnie chcę zaznaczyć, że dla mnie to nie był drobiazg.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Marta trochę mięknie. Słyszy, że nie negujesz presji, ale nadal stawiasz granicę.",
+                    "feedback": {
+                        "label": "Uznanie kontekstu i granicy",
+                        "psychology": "Walidujesz część perspektywy Marty, nie kasując własnej. To dobry krok regulacyjny, choć nadal nie prowadzisz rozmowy do konkretnej zmiany.",
+                        "better_alternative_hint": "Dodaj, czego potrzebujesz od Marty teraz albo następnym razem."
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja częściowa",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywna granica",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Wierzę, że nie zrobiłaś tego celowo. Chodzi bardziej o to, że kiedy mój wkład znika z opowieści, tracę poczucie, że to naprawdę wspólna praca.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Marta wyraźnie odpuszcza obronę. Przyznaje, że z perspektywy pośpiechu nie pomyślała o tym w taki sposób.",
+                    "feedback": {
+                        "label": "Oddzielenie intencji od skutku",
+                        "psychology": "To bardzo skuteczny ruch naprawczy. Nie musisz udowadniać złej intencji, żeby nazwać realny skutek. Dzięki temu druga strona może usłyszeć wpływ bez utraty twarzy.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Oddzielenie intencji od wpływu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Prośba o naprawę",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Rozmowa trwa już dłużej, niż oboje planowaliście. Marta stoi pół kroku od wyjścia i widać, że chce ją domknąć szybko.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "No dobrze, to co konkretnie mam teraz zrobić?",
+            "scene_high": {
+                "description": "Marta siada z powrotem przy stole. Ton robi się bardziej roboczy, ale nie chłodny. Widać gotowość do konkretu.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Masz rację, warto to naprawić. Co byłoby dla ciebie teraz fair?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Najlepiej przy wszystkich powiedz, że beze mnie nic byś nie dowiozła.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marta odbiera to jak żądanie upokorzenia i natychmiast się usztywnia.",
+                    "feedback": {
+                        "label": "Żądanie rewanżu",
+                        "psychology": "To przestaje być prośbą o uznanie, a staje się próbą odzyskania statusu kosztem drugiej strony. Taki ruch zwykle budzi opór i lęk przed zawstydzeniem.",
+                        "better_alternative_hint": "Poproś o proporcjonalną korektę, a nie o demonstracyjne odwrócenie hierarchii."
+                    },
+                    "tags": [
+                        {
+                            "text": "Walka o status",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Licytacja racji",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nic. Już trudno, jakoś to przeżyję.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Marta słyszy rozgoryczenie, ale nie dostaje jasnej wskazówki, co mogłaby naprawić.",
+                    "feedback": {
+                        "label": "Zaszyta pretensja",
+                        "psychology": "Formalnie rezygnujesz, ale emocjonalnie zostawiasz rachunek. To utrudnia domknięcie konfliktu, bo apel jest ukryty i obciążony pretensją.",
+                        "better_alternative_hint": "Powiedz wprost, jaka mała korekta byłaby dla ciebie wystarczająca."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ukryta pretensja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Niejasny apel",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Wystarczy, jeśli przy następnym podsumowaniu jasno powiesz, kto odpowiadał za analizę i przygotowanie danych.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Marta przytakuje. To jest dla niej konkret, który potrafi przyjąć.",
+                    "feedback": {
+                        "label": "Konkretna prośba",
+                        "psychology": "Formułujesz mierzalny apel, co zwiększa szanse wykonania. Nadal jednak rozmowa jest bardziej proceduralna niż relacyjna.",
+                        "better_alternative_hint": "Dodaj jedno zdanie o tym, co taka zmiana buduje między wami."
+                    },
+                    "tags": [
+                        {
+                            "text": "Konkretna prośba",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chciałbym, żebyś przy najbliższej okazji nazwała mój wkład wprost. To nie chodzi o wielki gest, tylko o poczucie, że naprawdę gramy do jednej bramki.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Marta wyraźnie rozumie sens prośby. Mówi, że to jest fair i że może to naprawić bez robienia z tego teatru.",
+                    "feedback": {
+                        "label": "Prośba osadzona w relacji",
+                        "psychology": "To nie tylko instrukcja, ale też nazwanie wartości współpracy. Wprowadzasz wspólny cel i budujesz poczucie partnerstwa, co jest istotą rozmowy transformacyjnej.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Wspólna wizja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Konkretna prośba",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Domknięcie rozmowy",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Rozmowa dobiega końca, ale w powietrzu nadal czuć szorstkość. Marta chce wyjść z sali bez dalszego roztrząsania.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "cold"
+            },
+            "npc_line_low": "Dobra, zapamiętam. Muszę już lecieć.",
+            "scene_high": {
+                "description": "Między wami pojawia się wyraźne rozluźnienie. Marta bierze laptop, ale nie ucieka wzrokiem i czeka na ostatnie słowo.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Dzięki, że powiedziałeś to wprost. Następnym razem lepiej to zaznaczę.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Oby, bo drugi raz takiego numeru nie odpuszczę.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marta sztywnieje i wychodzi z poczuciem, że rozmowa była groźbą, nie naprawą.",
+                    "feedback": {
+                        "label": "Groźba na koniec",
+                        "psychology": "Nawet po częściowym zbliżeniu wracasz do siłowego domknięcia. To niszczy efekt naprawy i zostawia relację w stanie czujności.",
+                        "better_alternative_hint": "Zamknij rozmowę potwierdzeniem ustalenia albo uznaniem wysiłku drugiej strony."
+                    },
+                    "tags": [
+                        {
+                            "text": "Groźba",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Eskalacja końcowa",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Jasne. Jak zwykle wyjdzie w praniu.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marta słyszy brak zaufania i kończy rozmowę z dystansem.",
+                    "feedback": {
+                        "label": "Podważenie po ustaleniu",
+                        "psychology": "Ironia po porozumieniu podkopuje wiarygodność całej rozmowy. Zamiast wzmacniać nowy kontrakt relacyjny, wracasz do ukrytego ataku.",
+                        "better_alternative_hint": "Jeśli chcesz zaznaczyć ostrożność, zrób to wprost i spokojnie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Podkopywanie zaufania",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Dzięki. Dla mnie ważne było po prostu to wyjaśnić.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Marta przyjmuje to spokojnie i kończy rozmowę bez dalszego oporu.",
+                    "feedback": {
+                        "label": "Spokojne domknięcie",
+                        "psychology": "To zdrowe zamknięcie rozmowy. Potwierdzasz znaczenie kontaktu, ale nie wzmacniasz jeszcze szerzej jakości współpracy między wami.",
+                        "better_alternative_hint": "Możesz dodać krótkie zdanie budujące wspólny standard na przyszłość."
+                    },
+                    "tags": [
+                        {
+                            "text": "Domknięcie rozmowy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Doceniam, że się na to zatrzymałaś. Chcę, żebyśmy mogli mówić o takich rzeczach wcześniej, zanim zrobi się z tego żal.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Marta przytakuje i mówi, że też tego chce. Rozchodzicie się z poczuciem, że udało się nie tylko wyjaśnić sytuację, ale też ustawić lepszy sposób współpracy.",
+                    "feedback": {
+                        "label": "Naprawa i standard na przyszłość",
+                        "psychology": "To domknięcie łączy wdzięczność, refleksję i wspólny kierunek. Wzmacniasz relację zamiast tylko zamknąć incydent, co jest najtrwalszą formą naprawy.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Naprawa relacji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Aktywne budowanie zaufania",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "PĘKNIĘCIE WE WSPÓŁPRACY",
+            "emoji": "🔴",
+            "subtitle": "Temat uznania nie został naprawdę usłyszany, a rozmowa zostawiła po sobie dystans.",
+            "narrative": "Wychodzicie z sali osobno. Formalnie temat się kończy, ale napięcie zostaje pod skórą. Następne wspólne zadanie będzie już obciążone pamięcią tej wymiany.",
+            "diagnosis": "Dominowały reakcje obronne, ukryte ataki albo wycofanie. Zabrakło rozdzielenia faktu od oceny oraz nazwania realnej potrzeby uznania. Konflikt przesunął się w stronę walki o rację albo cichego urazu.",
+            "post_game": {
+                "communication_style_summary": "Przeważał styl agresywny, biernie agresywny albo wycofany. Rozmowa nie stworzyła bezpiecznego kanału do usłyszenia wpływu sytuacji.",
+                "strongest_moment": "Najmocniejszy był sam fakt, że temat w ogóle został poruszony zamiast całkowicie przemilczany.",
+                "growth_tip": "Zacznij od konkretnej obserwacji, potem nazwij emocję i potrzebę. Nie przypisuj intencji i nie uciekaj w ironię.",
+                "replay_prompt": "Zagraj jeszcze raz i spróbuj oddzielić skutek od oskarżenia. Sprawdź, jak zmienia się reakcja Marty, gdy mówisz o wpływie sytuacji."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "CZĘŚCIOWE WYJAŚNIENIE",
+            "emoji": "🟡",
+            "subtitle": "Udało się nazwać problem, ale rozmowa pozostała głównie na poziomie korekty zachowania.",
+            "narrative": "Marta przyjmuje część twoich uwag i deklaruje ostrożność na przyszłość. Napięcie spada, ale pełne poczucie bycia zobaczonym nie wraca całkowicie.",
+            "diagnosis": "W rozmowie pojawił się konkret i pewna asertywność, co pozwoliło ograniczyć eskalację. Zabrakło jednak głębszego wejścia w emocję, wzajemne uznanie i wspólną definicję dobrej współpracy.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl asertywny lub transakcyjny. Problem został nazwany, ale więź została odbudowana tylko częściowo.",
+                "strongest_moment": "Najlepiej zadziałały momenty, w których trzymałeś się faktów i prosiłeś o jasną korektę na przyszłość.",
+                "growth_tip": "Następnym razem dołóż jedno zdanie o tym, jak dana sytuacja wpłynęła na twoje poczucie współpracy. To otwiera drogę z transakcji do empatii.",
+                "replay_prompt": "Spróbuj ponownie i zobacz, co się stanie, gdy obok konkretu pojawi się też uznanie intencji Marty i nazwanie twojej potrzeby."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 10
+            },
+            "color": "green",
+            "title": "UZNANIE I NAPRAWA",
+            "emoji": "🟢",
+            "subtitle": "Trudny moment został wykorzystany do poprawy relacji i standardu współpracy.",
+            "narrative": "Rozchodzicie się z poczuciem ulgi. Marta rozumie, co poszło nie tak, a ty nie musisz już nosić w sobie poczucia bycia niewidzialnym. Z jednego przykrego momentu powstaje lepsza umowa na przyszłość.",
+            "diagnosis": "Udało ci się nazwać wpływ sytuacji bez ataku, oddzielić intencję od skutku i sformułować konkretną prośbę. Rozmowa przeszła z poziomu obrony do poziomu naprawy, co zwiększyło szansę na trwałą zmianę.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl empatyczny i transformacyjny. Rozmowa nie tylko rozwiązała incydent, ale też wzmocniła zaufanie.",
+                "strongest_moment": "Najmocniejsze było nazwanie potrzeby uznania bez oskarżania oraz zamknięcie rozmowy wspólnym standardem na przyszłość.",
+                "growth_tip": "To jest dobry wzorzec na realne rozmowy: konkret, emocja, potrzeba i prośba. Zachowaj tę kolejność, bo obniża obronność i podnosi jakość kontaktu.",
+                "replay_prompt": "Możesz zagrać jeszcze raz i sprawdzić, jak niewielka zmiana tonu potrafi przesunąć rozmowę z napięcia do współpracy."
+            }
+        }
+    ]
+}

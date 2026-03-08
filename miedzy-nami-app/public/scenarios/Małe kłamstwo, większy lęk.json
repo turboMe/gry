@@ -1,0 +1,842 @@
+{
+    "scenario_id": "small_lie_bigger_fear",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Małe kłamstwo, większy lęk",
+        "subtitle": "Wieczorna rozmowa po wiadomości, która podważa spokój i zaufanie",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 9,
+        "interaction_count": 5
+    },
+    "tags": {
+        "relationship_type": "romantic_partner",
+        "theme": [
+            "trust",
+            "jealousy",
+            "communication_breakdown"
+        ],
+        "emotional_intensity": "critical",
+        "age_rating": "teen",
+        "session_type": "mini_story",
+        "player_role_gender": "neutral",
+        "difficulty": "advanced"
+    },
+    "characters": {
+        "player": {
+            "name": "Alex",
+            "role_label": "Partner · Gracz",
+            "age_range": "27-34",
+            "context": "Wracasz do kuchni po krótkiej przerwie i widzisz na ekranie telefonu partnera wiadomość od byłej partnerki. Chwilę wcześniej słyszałeś, że partner siedział po pracy dłużej w biurze. Teraz wszystko przestaje się zgadzać.",
+            "hidden_need": "safety",
+            "hidden_need_text": "Potrzebujesz poczucia bezpieczeństwa i pewności, że nie ma pod spodem większego sekretu.",
+            "traits": [
+                {
+                    "text": "uważny",
+                    "type": "positive"
+                },
+                {
+                    "text": "reaktywny pod presją",
+                    "type": "negative"
+                },
+                {
+                    "text": "szuka jasności",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 7,
+                "patience": 4,
+                "defensiveness": 6,
+                "empathy": 6,
+                "need_for_control": 7,
+                "shame_sensitivity": 5,
+                "directness": 8,
+                "repair_ability": 6
+            }
+        },
+        "npc": {
+            "name": "Marek",
+            "role_label": "Partner · NPC",
+            "age_range": "28-35",
+            "context": "Marek właśnie odkłada telefon. Wie, że wiadomość od byłej partnerki wygląda źle, bo wcześniej podał inną wersję wieczoru. Czuje mieszankę wstydu, napięcia i lęku przed oceną.",
+            "hidden_need": "acceptance",
+            "hidden_need_text": "Potrzebuje zostać wysłuchany bez natychmiastowego osądzenia i zachować twarz, kiedy mówi niewygodną prawdę.",
+            "traits": [
+                {
+                    "text": "opiekuńczy",
+                    "type": "positive"
+                },
+                {
+                    "text": "unika trudnych rozmów",
+                    "type": "negative"
+                },
+                {
+                    "text": "lojalny wobec bliskich",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 4,
+                "patience": 5,
+                "defensiveness": 8,
+                "empathy": 5,
+                "need_for_control": 4,
+                "shame_sensitivity": 8,
+                "directness": 3,
+                "repair_ability": 5
+            },
+            "npc_reaction_logic": "Na atak reaguje kontratakiem albo zamknięciem. Na chłód reaguje większym dystansem i półprawdami. Na jasne, spokojne komunikaty zaczyna podawać fakty. Na empatię i nazwanie emocji szybciej przechodzi z obrony do szczerości."
+        }
+    },
+    "metrics_start": {
+        "tension": 40,
+        "trust": 60,
+        "openness": 50,
+        "feeling_heard": 50
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Wiadomość na ekranie",
+            "scene": {
+                "description": "Wieczór w kuchni. Na blacie stygnie herbata, a ekran telefonu Marka rozświetla krótkie powiadomienie od byłej partnerki. Jedno zdanie wystarcza, żeby poprzednia wersja wydarzeń zaczęła się sypać.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": null,
+            "npc_stage_direction": "Marek odwraca telefon ekranem do dołu i nieruchomieje, jakby właśnie zrozumiał, że coś zobaczyłeś.",
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Czyli jednak mnie okłamałeś. Zawsze coś przede mną chowasz.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marek prostuje się i odpowiada ostrym tonem, że nie będzie rozmawiał pod oskarżeniem.",
+                    "feedback": {
+                        "label": "Uogólnienie i atak",
+                        "psychology": "Wchodzisz od razu na Poziom II i używasz generalizacji. W modelu von Thuna druga strona słyszy przede wszystkim atak na siebie, nie prośbę o wyjaśnienie.",
+                        "better_alternative_hint": "Oddziel fakt od interpretacji i nazwij własny niepokój zamiast przypisywać intencje."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uogólnianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Spokojnie. Nic nie mów. Widzę, że najwyraźniej i tak nie mam wiedzieć.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Marek marszczy brwi i pyta chłodno, czy znowu zaczynasz mówić półsłówkami zamiast wprost.",
+                    "feedback": {
+                        "label": "Ukryty atak",
+                        "psychology": "To bierna agresja. Niby unikasz wybuchu, ale przekazujesz pogardę i karzesz dystansem. To obniża szansę na szczere ujawnienie motywu.",
+                        "better_alternative_hint": "Powiedz wprost, co zauważyłeś i czego teraz potrzebujesz."
+                    },
+                    "tags": [
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Powiedziałeś, że byłeś w pracy, a ta wiadomość pokazuje coś innego. Chcę wiedzieć, co się wydarzyło.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": 0,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Marek bierze wdech i mówi, że to nie wygląda dobrze, ale może to wyjaśnić.",
+                    "feedback": {
+                        "label": "Jasne nazwanie sprzeczności",
+                        "psychology": "To asertywne otwarcie. Oddzielasz fakt od oceny i domagasz się wyjaśnienia, ale nie odsłaniasz jeszcze własnych emocji, więc rozmowa zostaje na granicy Poziomu I i II.",
+                        "better_alternative_hint": "Dodaj, co w tobie uruchamia ta sprzeczność, aby zwiększyć szansę na szczerość."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Oddzielenie faktów od interpretacji",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Zobaczyłem tę wiadomość i zrobiło mi się naprawdę niespokojnie. Nie chcę cię od razu oskarżać, ale chcę zrozumieć, dlaczego to ukryłeś.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Marek opuszcza ramiona i przyznaje, że to wygląda źle, a on sam spanikował, zanim jeszcze zdążył cokolwiek powiedzieć.",
+                    "feedback": {
+                        "label": "Niepokój nazwany bez ataku",
+                        "psychology": "To komunikat Ja połączony z otwartym pytaniem o motyw. W duchu NVC zmniejszasz zagrożenie i zwiększasz szansę, że druga strona pokaże, co stało za kłamstwem.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC Rosenberga",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Walidacja napięcia",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Pierwsza defensywa",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Powietrze gęstnieje. Marek stoi przy blacie ze skrzyżowanymi rękami i patrzy bardziej na drzwi niż na ciebie. Widać, że czuje się przyłapany i szykuje się do obrony.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Serio chcesz robić z jednej wiadomości przesłuchanie?",
+            "scene_high": {
+                "description": "Napięcie nie znika, ale Marek nie ucieka wzrokiem. Telefon leży już na blacie, a jego ton jest ostrożniejszy niż przed chwilą.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "cold"
+            },
+            "npc_line_high": "Widzę, że cię to ruszyło. To nie wygląda dobrze i rozumiem, że masz pytania.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Bo wygląda jak coś obrzydliwego. Powiedz prawdę albo skończmy tę rozmowę.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marek odbija piłkę i mówi, że przy takim tonie nie zamierza niczego tłumaczyć.",
+                    "feedback": {
+                        "label": "Ultimatum pod wpływem lęku",
+                        "psychology": "Ultimatum daje iluzję kontroli, ale zwiększa obronność. Z perspektywy analizy transakcyjnej wchodzisz w krytycznego Rodzica, a druga strona reaguje buntem albo wycofaniem.",
+                        "better_alternative_hint": "Zamiast groźby nazwij, czego potrzebujesz, aby móc zostać w rozmowie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ultimatum",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna Berne'a",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nieważne. Widocznie i tak usłyszę tylko kolejną wersję.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marek wzrusza ramionami i korzysta z okazji, żeby zamknąć temat jednym zdaniem.",
+                    "feedback": {
+                        "label": "Wycofanie z domieszką rezygnacji",
+                        "psychology": "Wycofanie chwilowo chroni przed bólem, ale nie naprawia naruszonego zaufania. To wzmacnia niepewność i zostawia miejsce na katastroficzne dopowiedzenia.",
+                        "better_alternative_hint": "Powiedz, że trudno ci ufać, ale nadal chcesz usłyszeć spójną odpowiedź."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Katastrofizacja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie chcę awantury. Potrzebuję prostego wyjaśnienia, bo ta sprzeczność podkopuje moje zaufanie.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Marek kiwa głową i mówi, że to dotyczy wczorajszego wieczoru, a on źle rozegrał sam fakt ukrycia.",
+                    "feedback": {
+                        "label": "Konkret bez pogłębienia",
+                        "psychology": "To rzeczowe ustawienie celu rozmowy. Działa lepiej niż atak, ale nadal skupia się głównie na treści i procedurze, nie na emocjonalnym tle kłamstwa.",
+                        "better_alternative_hint": "Dodaj, że chcesz zrozumieć nie tylko fakty, ale też jego obawę przed mówieniem prawdy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Rzeczowe porządkowanie rozmowy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Rozumiem, że możesz czuć się osaczony, ale ja też się boję. Potrzebuję teraz wersji bez ściemniania.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Marek mięknie i przyznaje, że skłamał z góry, bo przewidział zły scenariusz, zanim jeszcze wydarzyła się rozmowa.",
+                    "feedback": {
+                        "label": "Empatia bez utraty granicy",
+                        "psychology": "Walidujesz jego stan, ale nie rezygnujesz z własnej granicy. To zwiększa bezpieczeństwo relacyjne i przesuwa rozmowę w stronę Poziomu III.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granica bez ataku",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Fakty czy motyw",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Marek chodzi dwa kroki w bok i wraca, jakby szukał najlepszego półwyjścia. W głosie ma irytację, a każde słowo brzmi jak próba ograniczenia szkód.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "To nie było nic wielkiego. Po prostu nie chciałem kolejnej sceny.",
+            "scene_high": {
+                "description": "Marek opiera dłonie o blat i przestaje krążyć. Nadal jest spięty, ale wygląda na gotowego powiedzieć więcej, jeśli poczuje, że nie zostanie natychmiast rozstrzelany oceną.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "To dotyczyło mojej byłej, ale to nie jest historia, którą sobie pewnie dopowiadasz.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To zacznij od tego, ile jeszcze razy mnie okłamałeś, tylko o tym nie wiem.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marek natychmiast przechodzi do obrony i mówi, że taka rozmowa nie ma sensu.",
+                    "feedback": {
+                        "label": "Skok do najgorszego scenariusza",
+                        "psychology": "To klasyczna katastrofizacja. Zamiast badać konkretny incydent, rozszerzasz go na cały związek, co prowokuje zamknięcie i walkę o obraz siebie.",
+                        "better_alternative_hint": "Zostań przy tym jednym zdarzeniu i zapytaj o motyw zamiast o domniemany ciąg zdrad."
+                    },
+                    "tags": [
+                        {
+                            "text": "Katastrofizacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Czytanie w myślach",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Jasne. Była partnerka, tajemnica, kłamstwo. Brzmi bardzo niewinnie.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Marek przewraca oczami i mówi, że przy takim sarkazmie nie będzie się odsłaniał bardziej.",
+                    "feedback": {
+                        "label": "Sarkazm zamiast ciekawości",
+                        "psychology": "Sarkazm daje chwilowe poczucie przewagi, ale odbiera drugiej stronie przestrzeń do przyznania się do wstydu. Wstyd i sarkazm prawie zawsze wzajemnie się napędzają.",
+                        "better_alternative_hint": "Zadaj jedno precyzyjne pytanie, które oddzieli fakty od twoich obaw."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Powiedz konkretnie, kiedy się z nią widziałeś, gdzie i po co. Potrzebuję faktów.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Marek odpowiada, że zatrzymał się przy niej na krótko po pracy, bo zadzwoniła w awaryjnej sprawie z samochodem.",
+                    "feedback": {
+                        "label": "Porządkowanie danych",
+                        "psychology": "Zbierasz fakty i zmniejszasz chaos poznawczy. To pomocne, ale samo w sobie nie dotyka sedna, czyli dlaczego uznał kłamstwo za bezpieczniejsze niż prawdę.",
+                        "better_alternative_hint": "Po faktach zapytaj jeszcze, czego się tak bał w rozmowie z tobą."
+                    },
+                    "tags": [
+                        {
+                            "text": "Dopytywanie o fakty",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Fakty są ważne, ale bardziej chcę zrozumieć, co sprawiło, że łatwiej było ci skłamać niż powiedzieć to wprost.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Marek po dłuższej ciszy przyznaje, że spodziewał się natychmiastowej zazdrości i wolał ukryć temat, niż wejść w trudną rozmowę o granicach z przeszłością.",
+                    "feedback": {
+                        "label": "Pytanie o mechanizm, nie tylko czyn",
+                        "psychology": "To pytanie otwiera przestrzeń na przyczynę, a nie tylko obronę. Przesuwasz rozmowę z rozliczania faktów do rozumienia wzorca i potrzeb obu stron.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Dociekanie motywu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Aktywne słuchanie",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Prawda wychodzi na wierzch",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Marek mówi szybko i szorstko, jakby chciał zamknąć temat jednym pakietem informacji. W kuchni robi się duszno od niewypowiedzianego żalu i domysłów.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Zadzwoniła, bo stanęło jej auto. Podjechałem, pomogłem i tyle. Skłamałem, bo wiedziałem, że i tak będzie dramat.",
+            "scene_high": {
+                "description": "Marek siada przy stole i pierwszy raz odkłada obronny ton. Widać, że sam nie jest dumny z tego, co zrobił, ale chce już mówić bez skrótów.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Jej auto stanęło niedaleko mojej pracy. Podjechałem na chwilę i pomogłem, a potem skłamałem, bo przestraszyłem się rozmowy o niej i o tym, że uznasz to za coś więcej.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Czyli jednak ona dalej jest dla ciebie ważniejsza niż ja.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marek zaprzecza gwałtownie i mówi, że właśnie dlatego nie da się z tobą rozmawiać o niczym trudnym.",
+                    "feedback": {
+                        "label": "Personalizacja i polaryzacja",
+                        "psychology": "Robisz z jednego zdarzenia hierarchię uczuć i wartości. To zniekształcenie zamienia rozmowę o zaufaniu w walkę o lojalność i zwykle podbija defensywność.",
+                        "better_alternative_hint": "Nazwij wpływ kłamstwa na ciebie, zamiast od razu oceniać jego priorytety."
+                    },
+                    "tags": [
+                        {
+                            "text": "Personalizacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Polaryzacja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Okej. Rób, co chcesz. Ja już nie mam siły tego ciągnąć.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marek milknie i oboje zostajecie z prawdą, która padła, ale niczego nie naprawiła.",
+                    "feedback": {
+                        "label": "Zamrożenie po odsłonięciu",
+                        "psychology": "Wycofanie po usłyszeniu trudnej prawdy jest zrozumiałe, ale zatrzymuje proces naprawy dokładnie w momencie, kiedy pojawiła się szansa na przepracowanie motywu.",
+                        "better_alternative_hint": "Powiedz, że potrzebujesz chwili, ale chcesz jeszcze ustalić, co z tym robicie dalej."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Unikanie naprawy",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Pomoc komuś rozumiem, ale kłamstwo było nie do przyjęcia. Potrzebuję chwili, żeby to poukładać.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 0,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Marek przyjmuje to bez sprzeciwu i mówi, że rozumie twoją potrzebę dystansu.",
+                    "feedback": {
+                        "label": "Granica z odroczoną rozmową",
+                        "psychology": "To zdrowe zatrzymanie eskalacji. Uznajesz fakt pomocy, ale jasno nazywasz koszt kłamstwa. Nadal jednak nie pracujecie wspólnie nad nową zasadą na przyszłość.",
+                        "better_alternative_hint": "Po nazwaniu granicy zaproponuj, do czego chcecie wrócić, gdy emocje opadną."
+                    },
+                    "tags": [
+                        {
+                            "text": "Stawianie granicy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Regulacja napięcia",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Rozumiem, że bałeś się mojej reakcji, ale kłamstwo uruchomiło we mnie jeszcze większy lęk. Ustalmy, jak mówić o takich kontaktach, żeby nie wracać do ukrywania.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Marek kiwa głową z ulgą i przyznaje, że bardziej niż samej sytuacji bał się rozmowy o niej, a to właśnie rozmowę rozwaliło.",
+                    "feedback": {
+                        "label": "Naprawa przez wspólną zasadę",
+                        "psychology": "Łączysz walidację lęku z jasnym nazwaniem szkody i przenosisz rozmowę na poziom wspólnego systemu. To klasyczny ruch z Poziomu II do III.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Budowanie wspólnej zasady",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Co dalej z zaufaniem",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Po ujawnieniu prawdy w mieszkaniu zostaje ciężka cisza. Marek mówi ciszej, ale bardziej z rezygnacji niż z otwartości. Oboje stoicie już po dwóch stronach tej samej kuchni jak po dwóch stronach sporu.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Nie wiem, czy cokolwiek teraz powiem, i tak mi nie uwierzysz.",
+            "scene_high": {
+                "description": "Napięcie nie znika całkiem, ale rozmowa nie jest już pojedynkiem. Marek patrzy wprost i wygląda na gotowego usłyszeć także twoje warunki odbudowy zaufania.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Nie chcę, żeby jedna tchórzliwa decyzja zrobiła z nas ludzi, którzy wszystko chowają. Powiedz, czego teraz potrzebujesz ode mnie.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Masz natychmiast zerwać każdy kontakt z nią i pokazać mi wszystko, inaczej nie ma o czym mówić.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marek usztywnia się i odpowiada, że kontrola nie jest tym samym co zaufanie.",
+                    "feedback": {
+                        "label": "Kontrola zamiast naprawy",
+                        "psychology": "Pod wpływem zranienia próbujesz odzyskać bezpieczeństwo przez pełną kontrolę. To może dać chwilową ulgę, ale nie odbudowuje dobrowolnej szczerości ani partnerstwa.",
+                        "better_alternative_hint": "Zamiast totalnego zakazu ustal przejrzyste zasady informowania i granice kontaktu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Kontrola",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Mylenie kontroli z bezpieczeństwem",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Jasne, zaufam ci. Tak jak dzisiaj. Wszystko świetnie działa.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Marek odczytuje ironię natychmiast i wycofuje się z gotowości do wspólnego ustalenia czegokolwiek.",
+                    "feedback": {
+                        "label": "Ironia w miejscu porozumienia",
+                        "psychology": "Ironia rozładowuje ból tylko pozornie. W praktyce przywraca walkę o rację i odbiera poczucie bezpieczeństwa obu stronom dokładnie wtedy, gdy trzeba budować nową umowę.",
+                        "better_alternative_hint": "Powiedz, że zaufanie jest nadwyrężone, ale chcesz zobaczyć konkretne zachowania naprawcze."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ironia",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Na teraz potrzebuję jednego konkretu. Jeśli wydarzy się podobna sytuacja, mówisz mi od razu albo zaraz po niej.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Marek zgadza się bez zwlekania i przyjmuje tę zasadę jako minimum na najbliższy czas.",
+                    "feedback": {
+                        "label": "Jedna praktyczna zasada",
+                        "psychology": "To sensowny krok proceduralny. Zmniejsza chaos i daje jasny kontrakt, ale nie dotyka jeszcze głębiej lęku, zazdrości i wstydu, które doprowadziły do kłamstwa.",
+                        "better_alternative_hint": "Dodaj jeszcze rozmowę o tym, czego każde z was bało się w tej sytuacji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Kontrakt behawioralny",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chcę odzyskać zaufanie krok po kroku. Ustalmy dwie zasady na przyszłość i nazwijmy też, czego każde z nas najbardziej się tu bało.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Marek wyraźnie mięknie i mówi, że jego lękiem był osąd i kłótnia, a twoim była wizja większego sekretu. Oboje zaczynacie mówić o tym samym problemie, a nie przeciw sobie.",
+                    "feedback": {
+                        "label": "Wspólna mapa lęków i zasad",
+                        "psychology": "To najbardziej naprawcza odpowiedź. Łączysz konkretną umowę na przyszłość z ujawnieniem ukrytych potrzeb, więc odbudowa zaufania nie opiera się tylko na kontroli, ale na rozumieniu mechanizmu.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Wspólne ustalanie zasad",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Ujawnienie ukrytych potrzeb",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "PĘKNIĘCIE POD POWIERZCHNIĄ",
+            "emoji": "🔴",
+            "subtitle": "Prawda padła, ale rozmowa rozpadła się pod ciężarem lęku i kontroli.",
+            "narrative": "Noc kończy się osobno. Formalnie wiesz już więcej niż na początku, ale emocjonalnie czujesz jeszcze mniej gruntu pod nogami. Marek zamyka się w sobie, a ty zostajesz z mieszanką złości, zazdrości i podejrzeń, że to wcale nie był koniec historii.",
+            "diagnosis": "Ścieżka została zdominowana przez atak, sarkazm albo wycofanie. Rozmowa nie przeszła z pozycyjnej walki do wspólnego rozumienia motywu kłamstwa. W efekcie naruszenie zaufania zostało przykryte walką o rację i kontrolę.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl agresywny, biernie agresywny albo wycofany. Zamiast bezpieczeństwa pojawiła się presja i domysły.",
+                "strongest_moment": "Najmocniejszym ruchem było samo nazwanie sprzeczności między wiadomością a wcześniejszą wersją wydarzeń.",
+                "growth_tip": "Przy naruszonym zaufaniu zacznij od faktu i własnej reakcji emocjonalnej. Nie przeskakuj od razu do osądu całej relacji ani do prób pełnej kontroli.",
+                "replay_prompt": "Spróbuj poprowadzić rozmowę tak, by odkryć motyw kłamstwa, zanim ocenisz jego znaczenie."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "PRAWDA BEZ PEŁNEJ ULGI",
+            "emoji": "🟡",
+            "subtitle": "Wyjaśnienie padło, ale zaufanie pozostaje kruche i częściowo niedomknięte.",
+            "narrative": "Rozmowa nie eksplodowała, lecz też nie przyniosła pełnego oddechu. Wiesz już, że nie chodziło o romans, tylko o tchórzliwe uniknięcie trudnego tematu. Ustala się jakiś tymczasowy porządek, ale między wami nadal wisi pytanie, czy następnym razem prawda znowu przegra z lękiem.",
+            "diagnosis": "Pojawiła się asertywność i częściowe porządkowanie faktów, ale zabrakło pełnego wejścia w ukryte potrzeby obu stron. To utrzymało rozmowę głównie na poziomie procedury i doraźnego zarządzania kryzysem.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl asertywny albo transakcyjny. Było mniej szkód, ale też ograniczona głębia kontaktu.",
+                "strongest_moment": "Najlepszym momentem było oddzielenie samej pomocy od kosztu kłamstwa i nazwanie granicy bez wybuchu.",
+                "growth_tip": "Kolejny krok to nie tylko ustalić zasadę, ale też nazwać, czego każde z was bało się w tej sytuacji. Bez tego łatwo wrócić do tego samego wzorca unikania.",
+                "replay_prompt": "Zagraj jeszcze raz i spróbuj częściej pytać o motyw, wstyd i lęk, a nie tylko o fakty."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 10
+            },
+            "color": "green",
+            "title": "ZROZUMIENIE ZAMIAST DOMYSŁÓW",
+            "emoji": "🟢",
+            "subtitle": "Kłamstwo zostało nazwane jako błąd, a nie jako wyrok na całą relację.",
+            "narrative": "Rozmowa kończy się późno, ale już nie w trybie walki. Marek przyznaje, że skłamał z lęku przed twoją reakcją, a ty jasno mówisz, że właśnie to kłamstwo uruchomiło najgorsze scenariusze. Ustalacie konkretne zasady na przyszłość i po raz pierwszy tego wieczoru odzyskujecie poczucie, że jesteście po tej samej stronie problemu.",
+            "diagnosis": "Ścieżka była zdominowana przez empatię, komunikat Ja i ruch transformacyjny. Dzięki temu rozmowa objęła zarówno fakty, jak i mechanizm unikania, co pozwoliło przejść od napięcia do realnej naprawy zaufania.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl empatyczny i transformacyjny. Pojawiła się granica, ale bez upokarzania i bez rozmywania problemu.",
+                "strongest_moment": "Najlepszy moment nastąpił wtedy, gdy zapytałeś, co sprawiło, że kłamstwo wydało się łatwiejsze niż prawda, i zamieniłeś konflikt w rozmowę o mechanizmie.",
+                "growth_tip": "To był dobry kierunek. W realnej relacji utrwal go przez jasne zasady informowania o trudnych kontaktach i regularne wracanie do rozmów o lęku zanim przerodzi się w unikanie.",
+                "replay_prompt": "Możesz sprawdzić, jak zmieniłaby się dynamika, gdybyś częściej wybierał odpowiedzi rzeczowe zamiast transformacyjnych."
+            }
+        }
+    ]
+}

@@ -5,6 +5,8 @@ import { useRouter, useParams } from 'next/navigation';
 import type { Scenario, Interaction, Scene, Choice, Metrics, CommunicationStyle } from '@/lib/types';
 import { applyMetricEffects } from '@/lib/engine/metrics-engine';
 import { findEnding, STYLE_LABELS } from '@/lib/engine/game-engine';
+import { useAuthStore } from '@/store/game-store';
+import { getIdToken } from '@/lib/firebase/auth';
 
 // ═══════════════════════════════════════════════════════════
 //  PLAY PAGE — Main gameplay loop
@@ -510,10 +512,16 @@ function EndingScreen({ scenario, totalScore, metrics, choicesMade, onReplay, on
   onReplay: () => void;
   onMenu: () => void;
 }) {
+  const user = useAuthStore((s) => s.user);
   const maxScore = scenario.interactions.length * 2;
   const ending = findEnding(scenario, totalScore);
 
-  // Save session to localStorage
+  // Dominant style (needed for cloud save)
+  const styleCounts: Record<string, number> = {};
+  choicesMade.forEach(c => { styleCounts[c.style] = (styleCounts[c.style] || 0) + 1; });
+  const dominantStyle = Object.entries(styleCounts).sort((a, b) => b[1] - a[1])[0]?.[0] as CommunicationStyle;
+
+  // Save session to localStorage + Firestore
   useEffect(() => {
     if (!ending) return;
     try {
@@ -529,7 +537,27 @@ function EndingScreen({ scenario, totalScore, metrics, choicesMade, onReplay, on
       });
       localStorage.setItem('mn_session_history', JSON.stringify(history.slice(-100)));
     } catch { /* ignore */ }
-  }, [ending, scenario, totalScore, maxScore, choicesMade]);
+
+    // Sync to Firestore if logged in
+    if (user) {
+      getIdToken().then(token => {
+        if (!token) return;
+        fetch('/api/sessions/save-result', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+          body: JSON.stringify({
+            scenario_id: scenario.scenario_id,
+            total_score: totalScore,
+            max_possible_score: maxScore,
+            ending_id: ending.ending_id,
+            ending_color: ending.color,
+            dominant_style: dominantStyle,
+            metrics_final: metrics,
+          }),
+        }).catch(() => { /* non-critical */ });
+      });
+    }
+  }, [ending, scenario, totalScore, maxScore, choicesMade, user, dominantStyle, metrics]);
 
   // Update profile
   useEffect(() => {
@@ -553,8 +581,20 @@ function EndingScreen({ scenario, totalScore, metrics, choicesMade, onReplay, on
         profile[k] = Math.round(profile[k] * 10) / 10;
       }
       localStorage.setItem('mn_player_profile', JSON.stringify(profile));
+
+      // Sync updated profile to Firestore
+      if (user) {
+        getIdToken().then(token => {
+          if (!token) return;
+          fetch('/api/profile', {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ traits: profile }),
+          }).catch(() => { /* non-critical */ });
+        });
+      }
     } catch { /* ignore */ }
-  }, [choicesMade]);
+  }, [choicesMade, user]);
 
   // Confetti for green ending
   useEffect(() => {
@@ -587,11 +627,6 @@ function EndingScreen({ scenario, totalScore, metrics, choicesMade, onReplay, on
   }, [ending]);
 
   if (!ending) return null;
-
-  // Dominant style
-  const styleCounts: Record<string, number> = {};
-  choicesMade.forEach(c => { styleCounts[c.style] = (styleCounts[c.style] || 0) + 1; });
-  const dominantStyle = Object.entries(styleCounts).sort((a, b) => b[1] - a[1])[0]?.[0] as CommunicationStyle;
 
   // Check new best
   let isNewBest = false;

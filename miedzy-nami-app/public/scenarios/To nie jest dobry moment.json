@@ -1,0 +1,929 @@
+{
+    "scenario_id": "salary_raise_evasive_reply",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "To nie jest dobry moment",
+        "subtitle": "Prosisz o podwyżkę, ale zamiast odpowiedzi dostajesz unik",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 7,
+        "interaction_count": 5
+    },
+    "tags": {
+        "relationship_type": "coworkers",
+        "theme": [
+            "money",
+            "respect",
+            "expectations"
+        ],
+        "emotional_intensity": "moderate",
+        "age_rating": "adult",
+        "session_type": "training",
+        "player_role_gender": "neutral",
+        "difficulty": "intermediate"
+    },
+    "characters": {
+        "player": {
+            "name": "Kamil",
+            "role_label": "Specjalista ds. projektów · Gracz",
+            "age_range": "29-35",
+            "context": "Od kilku miesięcy bierzesz na siebie więcej odpowiedzialności, dowozisz wyniki i liczysz, że firma to zauważy. Wchodzisz w rozmowę z napięciem, bo boisz się, że wymijająca odpowiedź będzie ukrytą odmową.",
+            "hidden_need": "recognition",
+            "hidden_need_text": "Potrzebujesz uznania swojej wartości i jasnego sygnału, że dodatkowy wysiłek ma znaczenie.",
+            "traits": [
+                {
+                    "text": "sumienny",
+                    "type": "positive"
+                },
+                {
+                    "text": "ambitny",
+                    "type": "positive"
+                },
+                {
+                    "text": "napięty przed oceną",
+                    "type": "neutral"
+                },
+                {
+                    "text": "wrażliwy na lekceważenie",
+                    "type": "negative"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 5,
+                "patience": 6,
+                "defensiveness": 6,
+                "empathy": 6,
+                "need_for_control": 7,
+                "shame_sensitivity": 7,
+                "directness": 7,
+                "repair_ability": 6
+            }
+        },
+        "npc": {
+            "name": "Anna",
+            "role_label": "Team leaderka · NPC",
+            "age_range": "38-45",
+            "context": "Masz presję budżetową z góry i kilka trudnych rozmów kadrowych za sobą. Chcesz uniknąć obietnic, których nie możesz dowieźć, ale twoje uniki bywają odbierane jak brak uznania.",
+            "hidden_need": "safety",
+            "hidden_need_text": "Potrzebujesz przewidywalności, kontroli nad zobowiązaniami i bezpiecznego pola do rozmowy bez presji.",
+            "traits": [
+                {
+                    "text": "rzeczowa",
+                    "type": "positive"
+                },
+                {
+                    "text": "ostrożna budżetowo",
+                    "type": "neutral"
+                },
+                {
+                    "text": "unika trudnych deklaracji",
+                    "type": "negative"
+                },
+                {
+                    "text": "docenia wyniki, ale mówi o tym zbyt oszczędnie",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 3,
+                "patience": 7,
+                "defensiveness": 6,
+                "empathy": 5,
+                "need_for_control": 8,
+                "shame_sensitivity": 4,
+                "directness": 5,
+                "repair_ability": 5
+            },
+            "npc_reaction_logic": "Anna zamyka się przy oskarżeniach, porównaniach i presji czasowej. Lepiej reaguje na spokojne nazwanie stawki rozmowy, konkretne dane, pytania o kryteria oraz propozycję wspólnych, mierzalnych kroków."
+        }
+    },
+    "metrics_start": {
+        "tension": 40,
+        "trust": 60,
+        "openness": 50,
+        "feeling_heard": 50
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Wymijający początek",
+            "scene": {
+                "description": "Mała salką konferencyjna po krótkim spotkaniu statusowym. Na stole leży twój notes z wypisanymi osiągnięciami z ostatnich miesięcy. Anna zamyka laptop, ale nie wygląda na gotową do konkretów.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "tense"
+            },
+            "npc_line": "Widzę twoje zaangażowanie, ale z podwyżkami jest teraz trudno. Wróćmy do tego później.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Od miesięcy słyszę później. To brzmi jak elegancka odmowa.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Anna prostuje się i chłodnieje. Mówi, że jeśli rozmowa ma wyglądać w ten sposób, to nie będzie w nią wchodzić.",
+                    "feedback": {
+                        "label": "Oskarżenie zamiast celu",
+                        "psychology": "Wchodzisz na Poziom II i ustawiasz rozmowę jako starcie racji. W kwadracie von Thuna na warstwie relacji słychać zarzut, więc szefowa słyszy atak zamiast prośby o jasność.",
+                        "better_alternative_hint": "Nazwij, czego potrzebujesz teraz: kryteriów, terminu albo decyzji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Oskarżenie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Uogólnianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Rozumiem. Nie ma sprawy.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Anna kiwa głową z ulgą i zaczyna zbierać rzeczy, jakby temat został definitywnie zamknięty.",
+                    "feedback": {
+                        "label": "Wycofanie swojej potrzeby",
+                        "psychology": "Na powierzchni robi się spokojniej, ale potrzeba uznania zostaje schowana. W analizie transakcyjnej przechodzisz do pozycji uległej, przez co druga strona nie dostaje szansy na realną odpowiedź.",
+                        "better_alternative_hint": "Zostań przy temacie i poproś o konkret, nawet jeśli robisz to spokojnie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Niewyrażona potrzeba",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Chciałbym wiedzieć, co dokładnie musi się wydarzyć, żebyśmy wrócili do tej rozmowy w konkretnym terminie.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Anna zatrzymuje się i mówi, że może wskazać formalne kryteria, choć nie obieca dziś decyzji.",
+                    "feedback": {
+                        "label": "Krok w stronę konkretu",
+                        "psychology": "Przenosisz rozmowę z emocjonalnego domysłu na poziom faktów i procedury. To dobre na start, ale jeszcze nie odsłaniasz, dlaczego ten temat jest dla ciebie ważny.",
+                        "better_alternative_hint": "Połącz prośbę o kryteria z krótkim komunikatem o znaczeniu tej rozmowy dla ciebie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Dopytanie o kryteria",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Konkret zamiast domysłu",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Słyszę, że budżet jest napięty, ale dla mnie ta rozmowa jest ważna. Chcę zrozumieć, jak moja wartość jest dziś oceniana i co realnie może prowadzić do podwyżki.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Anna odkłada telefon i patrzy na ciebie uważniej. Mówi, że to fair i że możecie przejść do konkretów.",
+                    "feedback": {
+                        "label": "Uznanie realiów i własnej stawki",
+                        "psychology": "To bliskie NVC: uznajesz kontekst drugiej strony i jednocześnie jasno mówisz o swojej potrzebie uznania. Dzięki temu nie atakujesz osoby, tylko otwierasz przestrzeń do rozmowy o kryteriach i wartości.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja perspektywy drugiej strony",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Czy ten moment jest uzasadniony",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Anna opiera się o krzesło i zerka na ekran laptopa. Między wami pojawia się chłód po pierwszej wymianie zdań, a rozmowa wygląda bardziej jak przeszkoda niż priorytet.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "cold"
+            },
+            "npc_line_low": "Mam dziś serię spotkań. Naprawdę nie mam przestrzeni na długą dyskusję o odczuciach.",
+            "scene_high": {
+                "description": "Anna zamyka laptop i odsuwa go na bok. Atmosfera jest napięta, ale bardziej robocza niż wroga. Widać, że daje tej rozmowie chwilę prawdziwej uwagi.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Dobrze, porozmawiajmy konkretnie. Co sprawia, że uważasz ten moment za właściwy?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Skoro nie ma czasu, to pewnie łatwiej udawać, że problem nie istnieje.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Anna wzdycha i mówi, że taka sugestia tylko utrudnia rozmowę. Jej ton staje się formalny i zdystansowany.",
+                    "feedback": {
+                        "label": "Ukryty atak",
+                        "psychology": "Bierna agresja pozwala rozładować frustrację, ale nie niesie jasnej prośby. Na poziomie relacji brzmi to jak przytyk, więc druga strona zaczyna się bronić zamiast odpowiadać.",
+                        "better_alternative_hint": "Zamiast wbijać szpilkę, podaj fakty i powiedz, czego chcesz od tej rozmowy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Ironia",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nieważne. Nie chcę się narzucać.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Anna przyjmuje to bez sprzeciwu i mówi, że wrócicie do tematu kiedy indziej. Brzmi to bardziej jak odsunięcie niż ustalenie.",
+                    "feedback": {
+                        "label": "Samoodrzucenie",
+                        "psychology": "Odrzucasz własną potrzebę, zanim druga strona naprawdę się do niej odniesie. To obniża twoje poczucie wpływu i utrwala asymetrię w rozmowie.",
+                        "better_alternative_hint": "Możesz być spokojny i jednocześnie poprosić o minimum konkretu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Lęk przed odmową",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Brak granicy",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "W ostatnich sześciu miesiącach dowiozłem trzy projekty przed terminem. Chciałbym oprzeć tę rozmowę na wynikach i zakresie odpowiedzialności.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Anna kiwa głową i prosi, żebyś rozwinął, które elementy twojej roli najbardziej się zmieniły.",
+                    "feedback": {
+                        "label": "Dane zamiast domysłów",
+                        "psychology": "To wzmacnia twoją pozycję merytoryczną i wyciąga rozmowę z mgły. Nadal jednak operujesz głównie na poziomie transakcji, bez nazwania znaczenia tej sprawy dla relacji i motywacji.",
+                        "better_alternative_hint": "Do faktów dodaj krótkie zdanie o tym, czemu jasność jest dla ciebie ważna."
+                    },
+                    "tags": [
+                        {
+                            "text": "Argument oparty na faktach",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Konkret",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chcę oprzeć to na faktach, nie na presji. Zależy mi na jasnej informacji, czy moja obecna odpowiedzialność i wyniki uzasadniają rozmowę o zmianie wynagrodzenia.",
+                    "points": 2,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Anna wyraźnie mięknie. Mówi, że to uczciwe postawienie sprawy i że może odnieść się do twojej roli oraz procesu decyzyjnego.",
+                    "feedback": {
+                        "label": "Jasna prośba bez nacisku",
+                        "psychology": "To asertywne ustawienie ram rozmowy: mówisz, czego chcesz, bez szantażu i bez rozmywania. Taki komunikat obniża defensywność, bo nie atakuje osoby, tylko porządkuje temat.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Jasna prośba",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granice bez agresji",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Budżet kontra wartość",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Anna odwraca ekran laptopa w swoją stronę i mówi bardziej proceduralnie niż wcześniej. Masz poczucie, że zasłania się systemem, a nie rozmawia o twojej pracy.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Nawet jeśli robisz dobrą robotę, budżet jest zamknięty do kolejnego kwartału.",
+            "scene_high": {
+                "description": "Anna mówi spokojniej i wyraźniej oddziela ocenę twojej pracy od ograniczeń firmy. Nie wygląda na zachwyconą sytuacją, ale nie ucieka już od rozmowy.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Masz mocne argumenty. Problemem nie jest twoja praca, tylko procedura i budżet na ten kwartał.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Czyli mam robić więcej za te same pieniądze i jeszcze udawać, że to uczciwe.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Anna mówi, że przekręcasz jej słowa i że w takim tonie nie będzie dalej rozmawiać o wynagrodzeniu.",
+                    "feedback": {
+                        "label": "Zaostrzenie przez interpretację",
+                        "psychology": "Przeskakujesz z faktu o budżecie do moralnego osądu o niesprawiedliwości. To podnosi temperaturę, ale nie przybliża cię do wpływu na decyzję ani do ustalenia dalszych kroków.",
+                        "better_alternative_hint": "Oddziel emocję od interpretacji i zapytaj, co jest realnie możliwe dalej."
+                    },
+                    "tags": [
+                        {
+                            "text": "Eskalacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Czytanie intencji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Jasne, procedura. Zawsze jest jakaś procedura, kiedy trzeba kogoś docenić.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Anna zaciska usta i odpowiada, że jeśli podważasz jej dobrą wolę, to trudno będzie znaleźć wspólny grunt.",
+                    "feedback": {
+                        "label": "Sarkazm zamiast wpływu",
+                        "psychology": "Sarkazm daje chwilowe poczucie przewagi, ale nie tworzy pola do negocjacji. Z perspektywy NVC nie nazywasz potrzeby, tylko maskujesz ją ukrytą krytyką.",
+                        "better_alternative_hint": "Powiedz wprost, że trudno ci przyjąć brak decyzji bez planu i poproś o konkretną ścieżkę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Ukryta krytyka",
+                            "type": "error"
+                        },
+                        {
+                            "text": "NVC",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Rozumiem ograniczenie budżetowe, ale trudno mi zostać z samym odroczeniem. Potrzebuję wiedzieć, czy jest realna perspektywa decyzji i od czego zależy.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Anna przyznaje, że to uczciwe pytanie i mówi, że może opisać proces oraz moment, w którym temat wraca na stół.",
+                    "feedback": {
+                        "label": "Nacisk na klarowność",
+                        "psychology": "To dobra asertywność: nie negujesz realiów, ale nie bierzesz też mgły za odpowiedź. Brakuje jeszcze wspólnego myślenia o rozwiązaniu, więc rozmowa pozostaje głównie negocjacją stanowisk.",
+                        "better_alternative_hint": "Zaproponuj wspólny plan: termin, kryteria i sposób sprawdzenia postępu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Nazwanie potrzeby jasności",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granice",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Jeśli decyzja nie może zapaść dziś, ustalmy ścieżkę, która będzie uczciwa dla obu stron: konkretny termin, kryteria i sposób oceny mojego wkładu.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Anna notuje coś w kalendarzu i mówi, że taka rama ma sens. Po raz pierwszy brzmi jak ktoś, kto chce ten temat domknąć, a nie odsunąć.",
+                    "feedback": {
+                        "label": "Wspólna rama zamiast przeciągania liny",
+                        "psychology": "Przechodzisz na Poziom III: nie pytasz tylko kto ma rację, ale jak zbudować uczciwy proces. To zmienia układ z ja kontra ty na wspólne rozwiązanie problemu.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Wspólne rozwiązywanie problemu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Orientacja na proces",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Co zamiast pustego później",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Rozmowa zaczyna przypominać przeciąganie liny. Anna krzyżuje ręce, a każde kolejne zdanie brzmi bardziej jak obrona zasad niż szukanie rozwiązania.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Nie mogę robić wyjątków, bo każdy w zespole uważa, że pracuje ponad zakres.",
+            "scene_high": {
+                "description": "Mimo napięcia widać, że rozmowa weszła na bardziej partnerski tor. Anna nie składa obietnic, ale nie zasłania się już samym systemem.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Nie chcę składać pustych obietnic, ale mogę rozważyć alternatywy i termin decyzji.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To może czas, żebym też zaczął robić tylko minimum, skoro wysiłek nic nie daje.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Anna natychmiast twardnieje i mówi, że brzmi to jak groźba, a nie rozmowa o wynagrodzeniu.",
+                    "feedback": {
+                        "label": "Groźba zamiast negocjacji",
+                        "psychology": "Kiedy nacisk przybiera formę odwetu, druga strona skupia się na ochronie granic i autorytetu. Wtedy temat uznania znika pod konfliktem o lojalność i postawę.",
+                        "better_alternative_hint": "Mów o potrzebie przewidywalności i o tym, czego potrzebujesz, by utrzymać zaangażowanie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Groźba",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Eskalacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Walka o władzę",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobrze, zostawmy to. Po prostu już wiem, na czym stoję.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Anna przyjmuje to bez doprecyzowania, a rozmowa zaczyna gasnąć w niedopowiedzeniu i urazie.",
+                    "feedback": {
+                        "label": "Wyjście z urazą",
+                        "psychology": "To brzmi jak zamknięcie, ale bez realnego uzgodnienia czegokolwiek. Zostajesz z interpretacją, a nie z informacją, więc napięcie przenosi się poza pokój.",
+                        "better_alternative_hint": "Nawet na finiszu możesz poprosić o jedną rzecz: termin, alternatywę albo warunki."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Domysł zamiast ustalenia",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Niedomknięta rozmowa",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Jakie alternatywy wchodzą w grę do czasu decyzji o podwyżce: premia, zmiana zakresu albo data przeglądu?",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Anna mówi, że premia i formalny przegląd wynagrodzenia mogą być realniejsze niż natychmiastowa podwyżka.",
+                    "feedback": {
+                        "label": "Przesunięcie na opcje",
+                        "psychology": "To dobry ruch negocjacyjny, bo poszerza pole rozmowy. Nadal jednak temat jest głównie proceduralny, a mniej osadzony w tym, czego potrzebujesz, by czuć uczciwe traktowanie.",
+                        "better_alternative_hint": "Dodaj jedno zdanie o tym, dlaczego przewidywalność i uznanie są dla ciebie ważne."
+                    },
+                    "tags": [
+                        {
+                            "text": "Szukanie opcji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Negocjacja rozwiązań",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chcę zostać i rozwijać się tutaj, ale potrzebuję też poczucia, że dodatkowa odpowiedzialność prowadzi do realnego uznania. Poszukajmy rozwiązania, które będzie przewidywalne dla firmy i uczciwe wobec mnie.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Anna przytakuje i mówi, że w takim ujęciu łatwiej jej szukać rozwiązania, a nie tylko odpowiadać na presję.",
+                    "feedback": {
+                        "label": "Wspólny interes nazwany wprost",
+                        "psychology": "Łączysz własną potrzebę uznania z potrzebą firmy dotyczącą przewidywalności. To wzmacnia współpracę i obniża lęk przed przegraną po obu stronach.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Nazwanie wspólnego celu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Uznanie potrzeb obu stron",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Domknięcie albo kolejny unik",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Anna spogląda na zegarek i chwyta telefon. Rozmowa jest już na krawędzi rozpadu. Jeszcze jedno zdanie może albo domknąć minimum konkretu, albo zostawić po sobie tylko frustrację.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Muszę iść na kolejne spotkanie. Wyślij mi maila, a zobaczymy.",
+            "scene_high": {
+                "description": "Anna otwiera kalendarz i zostawia laptop zamknięty. Nie ma jeszcze decyzji o pieniądzach, ale jest miejsce na jasne podsumowanie i ustalenia.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Zróbmy tak: podsumujmy ustalenia i wpiszmy termin powrotu do tematu.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nie będę pisał kolejnego maila, który zignorujesz. Albo decyzja teraz, albo uznam, że to nie ma sensu.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Anna kończy rozmowę natychmiast. Mówi, że ultimatum tylko potwierdza, że temat wymaga przerwy.",
+                    "feedback": {
+                        "label": "Ultimatum pod koniec",
+                        "psychology": "Ultimatum daje pozór kontroli, ale zwykle zamyka kanał wpływu. Przy wysokim napięciu druga strona wybiera obronę granic zamiast domykania sprawy.",
+                        "better_alternative_hint": "Poproś o konkretny termin i odpowiedzialność za następny krok."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ultimatum",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Presja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Eskalacja końcowa",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Pewnie, wyślę. Będzie do kolekcji tych wszystkich wiadomości bez odpowiedzi.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Anna odpowiada chłodno, że skoro zakładasz złą wolę, to trudno o konstruktywne zakończenie rozmowy.",
+                    "feedback": {
+                        "label": "Złośliwy finał",
+                        "psychology": "Przytyk na końcu rozmowy niszczy to, co mogło jeszcze zostać domknięte. Zamiast ustalenia powstaje relacyjny rachunek krzywd.",
+                        "better_alternative_hint": "Zostaw emocjonalną ocenę i zamknij rozmowę jednym konkretnym ustaleniem."
+                    },
+                    "tags": [
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Przytyk",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Psucie domknięcia",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Wyślę podsumowanie. Chciałbym jednak, żebyśmy od razu wpisali orientacyjny termin powrotu do decyzji.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Anna zgadza się na orientacyjny termin i mówi, że odpowie po rozmowie z działem HR.",
+                    "feedback": {
+                        "label": "Minimum konkretu",
+                        "psychology": "To rozsądne, bo zamieniasz mgłę na choćby częściowo mierzalny krok. Nadal jednak kończysz głównie organizacyjnie, a mniej na wspólnym zrozumieniu sensu tych ustaleń.",
+                        "better_alternative_hint": "Doprecyzuj jeszcze kryteria, osoby decyzyjne i oczekiwany zakres informacji zwrotnej."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywne domknięcie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Prośba o termin",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granice",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Podsumujmy konkretnie: jakie warunki mam spełnić, kto podejmuje decyzję i kiedy wracamy do rozmowy. To pomoże mnie pracować spokojnie, a tobie zamknąć temat w jasnych ramach.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Anna wpisuje termin do kalendarza, wskazuje ścieżkę decyzyjną i proponuje, byś wysłał podsumowanie z uzgodnionymi kryteriami.",
+                    "feedback": {
+                        "label": "Domknięcie z odpowiedzialnością po obu stronach",
+                        "psychology": "To najmocniejszy finał, bo łączysz klarowność, spokój i wspólną strukturę działania. Nie próbujesz wygrać ostatniego słowa, tylko budujesz przewidywalny proces.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Wspólne domknięcie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Odpowiedzialność po obu stronach",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 2
+            },
+            "color": "red",
+            "title": "ROZMOWA ZAMKNIĘTA",
+            "emoji": "🔴",
+            "subtitle": "Napięcie przykryło sedno sprawy",
+            "narrative": "Kończysz spotkanie z poczuciem niedosytu i złości. Anna wychodzi z rozmowy bardziej skupiona na tonie i presji niż na twojej wartości. Temat podwyżki nie zostaje uporządkowany, a w powietrzu zostaje uraza.",
+            "diagnosis": "Dominowały reakcje obronne, oskarżenia albo wycofanie. Z perspektywy psychologii komunikacji rozmowa utknęła na Poziomie II lub rozpadła się przez unikanie, więc potrzeba uznania nie została usłyszana w formie, na którą druga strona mogła odpowiedzieć.",
+            "post_game": {
+                "communication_style_summary": "Ścieżka była głównie agresywna, biernie agresywna albo wycofana. Treść o wartości pracy została zagubiona przez formę.",
+                "strongest_moment": "Miałeś kontakt z tym, że sytuacja jest dla ciebie ważna, ale zabrakło sposobu, by to bezpiecznie wyrazić.",
+                "growth_tip": "Zanim nazwiesz niesprawiedliwość, nazwij potrzebę: jasność, uznanie, termin albo kryteria. To obniża defensywność i zwiększa wpływ.",
+                "replay_prompt": "Spróbuj ponownie przejść od frustracji do konkretu i zbudować choć minimalny wspólny plan."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 3,
+                "max": 5
+            },
+            "color": "yellow",
+            "title": "TEMAT ODŁOŻONY",
+            "emoji": "🟡",
+            "subtitle": "Jest mniej mgły, ale wciąż za mało pewności",
+            "narrative": "Rozmowa nie kończy się wybuchem, ale też nie daje pełnej jasności. Udało ci się zatrzymać część uników i wydobyć kilka konkretów, jednak temat podwyżki nadal jest bardziej odłożony niż naprawdę uporządkowany.",
+            "diagnosis": "Było sporo rzeczowości i częściowa asertywność, ale za mało transformacji. Rozmowa przesunęła się z chaosu do procedury, lecz nie do końca zbudowała wspólną odpowiedzialność za następny krok.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl transakcyjny i częściowo asertywny. Rozmowa była poprawna, ale emocjonalnie dość płaska.",
+                "strongest_moment": "Najlepiej działało dopytywanie o kryteria, terminy i realne opcje.",
+                "growth_tip": "Następnym razem połącz konkret z krótkim komunikatem o znaczeniu sprawy dla ciebie. To pomaga przejść z samej procedury do prawdziwego dialogu.",
+                "replay_prompt": "Zagraj jeszcze raz i sprawdź, czy potrafisz nie tylko pytać o warunki, ale też zbudować wspólną ramę rozwiązania."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 6,
+                "max": 8
+            },
+            "color": "green",
+            "title": "JASNA ŚCIEŻKA",
+            "emoji": "🟢",
+            "subtitle": "Nie ma jeszcze podwyżki, ale są konkretne ustalenia",
+            "narrative": "Nie wymuszasz natychmiastowej decyzji, ale wychodzisz z rozmowy z czymś realnym: kryteriami, terminem i większym poczuciem, że twoja wartość została zauważona. Anna nie ucieka już od tematu, tylko bierze udział w jego porządkowaniu.",
+            "diagnosis": "Przeważyła asertywność, empatia i momenty transformacyjne. To pozwoliło utrzymać godność bez eskalacji i przenieść rozmowę z obrony stanowisk na wspólne ustalenie procesu.",
+            "post_game": {
+                "communication_style_summary": "Ścieżka była głównie asertywna i empatyczna, z dobrym ruchem w stronę wspólnego rozwiązania.",
+                "strongest_moment": "Najmocniej zadziałało nazwanie jednocześnie swojej potrzeby uznania i ograniczeń drugiej strony.",
+                "growth_tip": "Utrzymuj ten styl także po rozmowie: podsumuj ustalenia na piśmie i wróć do nich bez pretensji, ale konsekwentnie.",
+                "replay_prompt": "Spróbuj zagrać jeszcze raz i zobacz, czy uda ci się osiągnąć poziom mistrzowski z pełnym partnerskim domknięciem."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 9,
+                "max": 10
+            },
+            "color": "blue",
+            "title": "PARTNERSKIE UZNANIE",
+            "emoji": "🔵",
+            "subtitle": "Rozmowa staje się wspólnym procesem, nie walką o rację",
+            "narrative": "Kończycie spotkanie bez pozorów i bez przeciągania liny. Anna jasno oddziela ograniczenia firmy od oceny twojej pracy, a ty wychodzisz z konkretnym terminem, kryteriami i poczuciem, że zostałeś potraktowany serio. Nawet bez natychmiastowej podwyżki masz wpływ i przejrzystość.",
+            "diagnosis": "To ścieżka Poziomu III. Zamiast walczyć o natychmiastowe zwycięstwo, stworzyłeś wspólną ramę uczciwego procesu. Dzięki temu relacja i temat wynagrodzenia nie zostały ustawione przeciw sobie.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl transformacyjny wsparty asertywnością i empatią. Rozmowa była i ludzka, i skuteczna.",
+                "strongest_moment": "Najlepszy był moment, w którym zamieniłeś pytanie czy dostanę podwyżkę teraz na wspólne ustalenie jak i kiedy zapadnie uczciwa decyzja.",
+                "growth_tip": "To jest poziom, który warto przenosić do życia zawodowego: uznawaj realia, ale nie rezygnuj z jasności, kryteriów i szacunku dla własnej wartości.",
+                "replay_prompt": "Zagraj inną ścieżkę i zobacz, jak szybko rozmowa o pieniądzach rozpada się, gdy zabraknie konkretu albo szacunku."
+            }
+        }
+    ]
+}

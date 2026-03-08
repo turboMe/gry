@@ -1,0 +1,910 @@
+{
+    "scenario_id": "grandmother_criticizes_parenting_in_front_of_children",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Przy dzieciach nie",
+        "subtitle": "Babcia podważa twoje decyzje wychowawcze przy wnukach, a ty próbujesz ochronić autorytet bez wojny rodzinnej.",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 8,
+        "interaction_count": 5
+    },
+    "tags": {
+        "relationship_type": "parent_child",
+        "theme": [
+            "parenting",
+            "boundaries",
+            "respect"
+        ],
+        "emotional_intensity": "critical",
+        "age_rating": "all",
+        "session_type": "training",
+        "player_role_gender": "female",
+        "difficulty": "advanced"
+    },
+    "characters": {
+        "player": {
+            "name": "Maja",
+            "role_label": "Matka · Gracz",
+            "age_range": "32-38",
+            "context": "Podczas rodzinnego obiadu próbuje utrzymać spokój i autorytet wobec dzieci, ale przy własnej matce łatwo wpada w dawną rolę tej, którą się poprawia.",
+            "hidden_need": "autonomy",
+            "hidden_need_text": "Potrzeba bycia uznaną za kompetentną matkę i traktowaną jak dorosła osoba.",
+            "traits": [
+                {
+                    "text": "opiekuńcza",
+                    "type": "positive"
+                },
+                {
+                    "text": "wrażliwa na krytykę",
+                    "type": "negative"
+                },
+                {
+                    "text": "odpowiedzialna",
+                    "type": "positive"
+                },
+                {
+                    "text": "powściągliwa",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 5,
+                "patience": 6,
+                "defensiveness": 7,
+                "empathy": 7,
+                "need_for_control": 6,
+                "shame_sensitivity": 8,
+                "directness": 6,
+                "repair_ability": 7
+            }
+        },
+        "npc": {
+            "name": "Danuta",
+            "role_label": "Babcia",
+            "age_range": "60-68",
+            "context": "Kocha wnuki i szczerze chce pomóc, ale ma silną potrzebę bycia autorytetem. Kiedy widzi coś, czego nie pochwala, reaguje odruchowo i publicznie.",
+            "hidden_need": "recognition",
+            "hidden_need_text": "Potrzeba bycia nadal ważną, potrzebną i słuchaną w rodzinie.",
+            "traits": [
+                {
+                    "text": "troskliwa",
+                    "type": "positive"
+                },
+                {
+                    "text": "kontrolująca",
+                    "type": "negative"
+                },
+                {
+                    "text": "bezpośrednia",
+                    "type": "neutral"
+                },
+                {
+                    "text": "dumna",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 6,
+                "patience": 5,
+                "defensiveness": 8,
+                "empathy": 5,
+                "need_for_control": 8,
+                "shame_sensitivity": 6,
+                "directness": 8,
+                "repair_ability": 5
+            },
+            "npc_reaction_logic": "Na agresję odpowiada usztywnieniem i walką o rację. Na wycofanie wchodzi mocniej w rolę autorytetu. Na spokojną granicę początkowo protestuje, ale zaczyna słuchać. Na empatię połączoną z konsekwentną granicą mięknie i jest bardziej gotowa współtworzyć nowe zasady."
+        }
+    },
+    "metrics_start": {
+        "tension": 45,
+        "trust": 58,
+        "openness": 48,
+        "feeling_heard": 46
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Komentarz przy stole",
+            "scene": {
+                "description": "Rodzinny obiad trwa w salonie. Olek siedzi z tabletem, Zosia marudzi przy talerzu. Danuta patrzy na ciebie, potem na dzieci, i mówi to tonem, który wszyscy słyszą.",
+                "location": "living_room",
+                "time_of_day": "afternoon",
+                "visual_mood": "tense"
+            },
+            "npc_line": "Maja, naprawdę pozwalasz im na to przy stole? Potem się dziwisz, że dzieci nie słuchają.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Mamo, przestań się wtrącać. To nie twoje dzieci.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Danuta prostuje się i milknie na sekundę, po czym mówi chłodno, że chciała tylko pomóc.",
+                    "feedback": {
+                        "label": "Atak i odcięcie",
+                        "psychology": "To twarda kontra, która szybko przenosi rozmowę na Poziom II i uruchamia w analizie transakcyjnej układ Rodzic kontra zbuntowane Dziecko.",
+                        "better_alternative_hint": "Oddziel intencję od formy i nazwij granicę bez ataku."
+                    },
+                    "tags": [
+                        {
+                            "text": "Atak personalny",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Analiza transakcyjna Berne'a",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Tak, jasne. Bo ty przecież wszystko robiłaś idealnie.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Danuta zaciska usta. Dzieci patrzą raz na nią, raz na ciebie, wyczuwając napięcie.",
+                    "feedback": {
+                        "label": "Sarkazm zamiast granicy",
+                        "psychology": "Ironia daje chwilowe rozładowanie napięcia, ale nie mówi wprost, co jest problemem. W kwadracie von Thuna warstwa relacyjna dominuje nad rzeczową i odbiorca słyszy pogardę.",
+                        "better_alternative_hint": "Powiedz wprost, co ci przeszkadza i kiedy chcesz o tym rozmawiać."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Porozmawiajmy o tym później. Teraz chcę spokojnie dokończyć obiad.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Danuta wzdycha, ale nie ciągnie tematu dalej przy dzieciach.",
+                    "feedback": {
+                        "label": "Granica bez pogłębienia",
+                        "psychology": "To ruch dorosły i porządkujący sytuację. Chroni ramę rozmowy, ale nie nazywa jeszcze wpływu komentarza na ciebie i na dzieci.",
+                        "better_alternative_hint": "Dodaj komunikat Ja, żeby granica była mniej chłodna i bardziej czytelna emocjonalnie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ustawienie ramy rozmowy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Wiem, że chcesz dobrze, ale kiedy poprawiasz mnie przy dzieciach, tracę autorytet. Wróćmy do tego później, bez nich.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Danuta patrzy na ciebie z zaskoczeniem. Nie odpowiada od razu, ale wyraźnie hamuje kolejny komentarz.",
+                    "feedback": {
+                        "label": "Empatia plus granica",
+                        "psychology": "Uznajesz intencję i jednocześnie nazywasz wpływ zachowania. To klasyczny komunikat Ja, który zmniejsza wstyd i zwiększa szansę na wejście w dialog dorosły z dorosłym.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja intencji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Analiza transakcyjna Berne'a",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Po obiedzie w kuchni",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Talerze brzęczą trochę za głośno. Dzieci poszły do pokoju, ale napięcie zostało w ścianach. Danuta stoi przy blacie z obrażoną miną.",
+                "location": "kitchen",
+                "time_of_day": "afternoon",
+                "visual_mood": "cold"
+            },
+            "npc_line_low": "No proszę. Teraz nawet słowa powiedzieć nie mogę.",
+            "scene_high": {
+                "description": "W kuchni robi się ciszej niż przy stole. Dzieci zniknęły z pola widzenia, a Danuta podchodzi bliżej już bez publicznego tonu.",
+                "location": "kitchen",
+                "time_of_day": "afternoon",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Nie chciałam cię ośmieszyć. Po prostu martwię się o dzieci.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Dobra, nieważne. Zostawmy to.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Danuta przytakuje, ale w jej twarzy nie ma ulgi. Temat zostaje zamieciony pod dywan.",
+                    "feedback": {
+                        "label": "Wycofanie z lęku",
+                        "psychology": "Unik chwilowo obniża ryzyko starcia, ale wzmacnia stary układ, w którym twoje granice nie wybrzmiewają. Niewypowiedziane napięcie wróci przy kolejnej okazji.",
+                        "better_alternative_hint": "Zostań przy rozmowie i nazwij jedną konkretną granicę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Milczenie obronne",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Tak było całe moje dzieciństwo. Zawsze musiałaś mnie poprawiać.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Danuta natychmiast się usztywnia i mówi, że przesadzasz oraz robisz z niej potwora.",
+                    "feedback": {
+                        "label": "Uogólnienie i rozliczenie",
+                        "psychology": "Odwołanie do całej historii relacji bez przygotowania gruntu uruchamia obronę i wstyd. Słowo zawsze jest typowym wzmacniaczem konfliktu.",
+                        "better_alternative_hint": "Zamiast rozliczać całą przeszłość, opisz jedno konkretne zachowanie z dzisiaj i jego skutek."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uogólnianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Katastrofizacja relacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Jeśli masz uwagi, mów mi je na osobności, nie przy dzieciach.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 0,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Danuta kiwa głową, choć wygląda tak, jakby nadal uważała, że ma rację.",
+                    "feedback": {
+                        "label": "Jasna zasada",
+                        "psychology": "To konkretne i użyteczne. Ustalasz procedurę, ale bez nazwania głębszego znaczenia dla ciebie i dzieci rozmowa może pozostać czysto techniczna.",
+                        "better_alternative_hint": "Dodaj, dlaczego ta granica jest ważna dla relacji, nie tylko dla porządku."
+                    },
+                    "tags": [
+                        {
+                            "text": "Kontrakt granic",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Komunikat rzeczowy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Wierzę, że chcesz dla nich dobrze. Ja też. Potrzebuję jednak, żebyś przy dzieciach mnie wspierała, a nie korygowała.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Danuta oddycha wolniej. Jej twarz łagodnieje, choć nadal ma w sobie opór.",
+                    "feedback": {
+                        "label": "Wspólny cel i granica",
+                        "psychology": "Najpierw budujesz wspólnotę intencji, potem stawiasz granicę. To przesuwa rozmowę z walki o rację w stronę współpracy i zmniejsza ryzyko walki o władzę.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Budowanie wspólnego celu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granice bez agresji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Stare role wracają",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Danuta opiera dłonie o blat i patrzy na ciebie z góry, jakby znów rozmawiała z nastolatką. W powietrzu miesza się uraza i poczucie winy.",
+                "location": "kitchen",
+                "time_of_day": "afternoon",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Jesteś przewrażliwiona. Gdybyś była bardziej konsekwentna, nie musiałabym reagować.",
+            "scene_high": {
+                "description": "Danuta nadal jest spięta, ale jej głos nie tnie już tak ostro. Widać, że zaczęła słuchać, choć broni swojego punktu.",
+                "location": "kitchen",
+                "time_of_day": "afternoon",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Może powiedziałam to źle, ale trudno mi patrzeć, kiedy im odpuszczasz.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To nie patrz. Możesz po prostu rzadziej do nas przychodzić.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Danuta blednie i mówi, że skoro tak, to nie będzie się narzucać.",
+                    "feedback": {
+                        "label": "Groźba odcięcia",
+                        "psychology": "Uderzasz w więź zamiast w problem. To bardzo silny sygnał odrzucenia, który często aktywuje kontratak albo zamrożenie relacji.",
+                        "better_alternative_hint": "Broń swojej pozycji rodzica, ale nie używaj kontaktu z wnukami jako karty przetargowej."
+                    },
+                    "tags": [
+                        {
+                            "text": "Groźba zerwania",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Eskalacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Super. Czyli dalej jestem dla ciebie małą dziewczynką, która nic nie umie.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Danuta przewraca oczami i odpowiada, że z tobą nie da się normalnie rozmawiać.",
+                    "feedback": {
+                        "label": "Ironia wokół starej roli",
+                        "psychology": "Rozpoznajesz ważny temat, ale podajesz go w formie oskarżającej ironii. Treść jest cenna, forma zamyka drugą stronę.",
+                        "better_alternative_hint": "Nazwij starą dynamikę wprost i spokojnie, bez wkładania intencji w usta drugiej osoby."
+                    },
+                    "tags": [
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Stara rola dziecka",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "To ja podejmuję decyzje wychowawcze. Możesz się nie zgadzać, ale proszę to uszanować.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Danuta marszczy czoło, ale pierwszy raz nie wchodzi ci od razu w słowo.",
+                    "feedback": {
+                        "label": "Mocna pozycja dorosłego",
+                        "psychology": "Przerywasz regres do starego układu i ustawiasz relację dorosły z dorosłym. Nadal jednak nie tworzysz mostu do jej troski i lęku.",
+                        "better_alternative_hint": "Po granicy dołóż zaproszenie do wspólnego celu albo nazwij to, co dla niej ważne."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywna granica",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Dorosły do Dorosłego",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Analiza transakcyjna Berne'a",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Słyszę, że zależy ci na konsekwencji. Mnie zależy też na tym, by dzieci widziały między nami szacunek. Jak możemy to pogodzić?",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Danuta przestaje mówić z góry. Po raz pierwszy naprawdę się zastanawia, zamiast tylko ripostować.",
+                    "feedback": {
+                        "label": "Przejście do wspólnego rozwiązania",
+                        "psychology": "Nie oddajesz swojej pozycji rodzica, ale zapraszasz do współodpowiedzialności za klimat relacji. To ruch typowy dla Poziomu III.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Aktywne słuchanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Wspólna perspektywa",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Czyje dzieci, czyja strona",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Z korytarza słychać dzieci. Ktoś uchyla drzwi pokoju i zaraz je zamyka. Oboje czujecie, że to napięcie nie dzieje się już tylko między wami.",
+                "location": "kitchen",
+                "time_of_day": "afternoon",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Wnuki same widzą, że czasem cię nie słuchają. Ktoś musi zareagować.",
+            "scene_high": {
+                "description": "W domu robi się ciszej. Dociera do was, że dzieci słyszały więcej, niż powinny. To nadaje rozmowie większy ciężar, ale też więcej szczerości.",
+                "location": "kitchen",
+                "time_of_day": "afternoon",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Nie pomyślałam, że one mogą to odbierać tak, jakbym stawała przeciwko tobie.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Może masz rację. Może faktycznie sobie nie radzę.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Danuta mięknie na chwilę, ale jeszcze mocniej wchodzi w rolę tej, która wie lepiej.",
+                    "feedback": {
+                        "label": "Oddanie własnej pozycji",
+                        "psychology": "To nie jest pokora, tylko samoosłabienie. Dzieci potrzebują widzieć, że ich rodzic umie utrzymać swoją rolę bez poniżania siebie.",
+                        "better_alternative_hint": "Możesz uznać trudność sytuacji, nie rezygnując z własnego autorytetu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Samoumniejszanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak granicy",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Stara rola dziecka",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "To ty robisz z nich publiczność przeciwko mnie.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Danuta oburza się i mówi, że to absurdalne oskarżenie.",
+                    "feedback": {
+                        "label": "Przypisanie złej intencji",
+                        "psychology": "Wkładasz drugiej stronie motyw, którego sama nie uzna. To przyspiesza obronę i odsuwa rozmowę od realnego wpływu zachowania.",
+                        "better_alternative_hint": "Opisz skutek jej działań dla ciebie i dzieci bez zgadywania intencji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Czytanie intencji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Oskarżenie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie komentuj moich decyzji przy nich. Tyle.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 0,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Danuta zaciska usta, ale tym razem przyjmuje zasadę bez dalszej kłótni.",
+                    "feedback": {
+                        "label": "Krótka i skuteczna granica",
+                        "psychology": "To chroni porządek i nie zostawia wiele miejsca na obejścia. Jednocześnie brak tu nazwania więzi i kosztu emocjonalnego, więc pojednanie może pozostać płytkie.",
+                        "better_alternative_hint": "Dodaj, czego potrzebujesz od niej jako babci i sojuszniczki."
+                    },
+                    "tags": [
+                        {
+                            "text": "Granica",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Stanowczość",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Kiedy stajesz po stronie dzieci przeciwko mnie, ja zostaję sama. Potrzebuję, żebyś była babcią obok mnie, nie nade mną.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -3,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Danuta spuszcza wzrok. Widać, że to zdanie naprawdę do niej dociera.",
+                    "feedback": {
+                        "label": "Nazwanie lojalności i potrzeby",
+                        "psychology": "To bardzo mocny komunikat Ja. Odsłaniasz samotność i potrzebę wsparcia, zamiast walczyć o dominację. Dzięki temu druga strona może zobaczyć skutek, nie tylko usłyszeć zarzut.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Ujawnienie potrzeby",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC Rosenberga",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Nowa umowa rodzinna",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Wieczór zapada szybciej, niż się spodziewałaś. Danuta stoi już przy torebce. Między wami jest zmęczenie i chłód po rozmowie, która bardziej poraniła niż zbliżyła.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Nie wiem, po co przyszłam. Cokolwiek powiem, i tak będzie źle.",
+            "scene_high": {
+                "description": "Dzieci bawią się już spokojniej w drugim pokoju. W salonie nadal czuć ciężar rozmowy, ale po raz pierwszy pojawia się miejsce na konkretną zmianę.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Chcę być dla was wsparciem, tylko nie chcę czuć się odsunięta.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To może po prostu nic nie mów. Będzie najbezpieczniej.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Danuta uśmiecha się krzywo i odpowiada, że skoro tak, to faktycznie lepiej milczeć.",
+                    "feedback": {
+                        "label": "Karząca ironia",
+                        "psychology": "Sarkazm udaje rozwiązanie, ale w praktyce upokarza i zamyka drogę do współpracy. To ruch, po którym druga strona raczej pamięta ton niż treść.",
+                        "better_alternative_hint": "Zaproponuj zasadę, która chroni ciebie i jednocześnie zostawia jej godne miejsce w rodzinie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Pasywna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dopóki nie nauczysz się swoich granic, nie będziesz się wtrącać do dzieci.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Danuta czerwienieje i mówi, że nie będzie przyjeżdżać, żeby słuchać rozkazów.",
+                    "feedback": {
+                        "label": "Granica zamieniona w karę",
+                        "psychology": "Treść dotyczy granic, ale forma jest dominująca i zawstydzająca. W relacjach rodzinnych to zwykle odtwarza walkę o władzę, a nie buduje nowy porządek.",
+                        "better_alternative_hint": "Oddziel zasadę od kary i pokaż, że chodzi ci o dobro dzieci oraz relacji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Dominacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Zawstydzanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna Berne'a",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Umówmy się tak: przy dzieciach bez komentarzy, a jeśli coś cię niepokoi, mówisz mi o tym później, na osobności.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Danuta kiwa głową. To brzmi rozsądnie, choć nadal trochę formalnie.",
+                    "feedback": {
+                        "label": "Konkretny kontrakt",
+                        "psychology": "To dobre domknięcie rozmowy na poziomie zasad. Tworzysz czytelny układ, ale bez silniejszego gestu odbudowy więzi porozumienie może pozostać kruche.",
+                        "better_alternative_hint": "Do kontraktu dodaj miejsce dla jej roli babci, żeby nie czuła się tylko ograniczona."
+                    },
+                    "tags": [
+                        {
+                            "text": "Kontrakt",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Rozwiązanie proceduralne",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chcę, żeby dzieci miały bliską babcię i jednocześnie widziały, że to rodzice prowadzą. Ustalmy sygnał na osobności, gdy coś cię niepokoi.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Danuta przytakuje powoli. W jej oczach nadal jest wzruszenie, ale pierwszy raz brzmi jak partnerka w ustalaniu zasad, nie jak kontroler.",
+                    "feedback": {
+                        "label": "Nowa umowa bez upokorzenia",
+                        "psychology": "Łączysz granicę, rolę rodziców i godne miejsce dla babci. To domknięcie jest transformacyjne, bo nie tylko zatrzymuje problem, ale buduje nowy model relacji.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Wspólne ustalenia",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Ochrona roli rodzica",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "PĘKNIĘCIE PRZY STOLE",
+            "emoji": "🔴",
+            "subtitle": "Granice nie zostały postawione w sposób, który dałby szansę na dialog.",
+            "narrative": "Danuta wychodzi wcześniej, trzaskając drzwiami mocniej, niż trzeba. Dzieci czują, że wydarzyło się coś ważnego i niepokojącego. Ty zostajesz z poczuciem wstydu, złości i samotności. Formalnie obroniłaś swoje terytorium albo wycofałaś się z bólu, ale rodzinny układ stał się jeszcze bardziej poszarpany.",
+            "diagnosis": "Ta ścieżka była zdominowana przez eskalację, bierną agresję albo zamilknięcie. Konflikt kręcił się wokół racji i pozycji, nie wokół wpływu zachowań na relację i dzieci. Z perspektywy analizy transakcyjnej rozmowa wielokrotnie wpadała w stary układ Rodzic kontra Dziecko, a nie Dorosły z Dorosłym.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl agresywny, pasywny albo pasywno agresywny. Granice pojawiały się jako atak, kara lub wcale.",
+                "strongest_moment": "Dostrzegłaś, że problemem nie jest tylko uwaga o wychowaniu, ale publiczne podważenie twojej roli przy dzieciach.",
+                "growth_tip": "Następnym razem zacznij od komunikatu Ja i jednej konkretnej granicy. Nie rozliczaj całej historii relacji w chwili wysokiego napięcia.",
+                "replay_prompt": "Spróbuj przejść rozmowę tak, by uznać intencję babci, a jednocześnie jasno ochronić autorytet rodzica."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "KRUCHY ROZEJM",
+            "emoji": "🟡",
+            "subtitle": "Udało się zatrzymać otwartą eskalację, ale zaufanie nadal jest ostrożne.",
+            "narrative": "Wieczór kończy się spokojniej, niż się zapowiadał. Pada kilka konkretnych ustaleń, jednak pod spodem wciąż zostaje napięcie. Danuta ogranicza komentarze, lecz nie do końca rozumie, jak bardzo podważyła cię przy dzieciach. Ty obroniłaś granicę, ale nie wszystko zostało naprawdę usłyszane.",
+            "diagnosis": "W tej ścieżce pojawiła się asertywność i pewien porządek, lecz rozmowa często zatrzymywała się na poziomie zasad. To wystarcza, by uniknąć katastrofy, ale nie zawsze odbudowuje więź. Psychologicznie to przejście z chaosu do zarządzania konfliktem, jeszcze nie do transformacji relacji.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl asertywny lub rzeczowy. Granice były czytelne, ale emocje i ukryte potrzeby tylko częściowo nazwane.",
+                "strongest_moment": "Najlepiej działały chwile, gdy oddzielałaś publiczne komentarze od prywatnej rozmowy i nie dawałaś się wciągnąć w dawną rolę dziecka.",
+                "growth_tip": "Aby przejść dalej, po granicy dołóż empatię i nazwij koszt emocjonalny sytuacji. Sama zasada to za mało, jeśli chcesz też naprawić więź.",
+                "replay_prompt": "Rozegraj scenę jeszcze raz, celując nie tylko w porządek, ale w wspólny cel i lojalność wobec rodziny."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 10
+            },
+            "color": "green",
+            "title": "GRANICA Z SZACUNKIEM",
+            "emoji": "🟢",
+            "subtitle": "Autorytet rodzica został obroniony, a relacja z babcią nie musiała za to zapłacić zerwaniem.",
+            "narrative": "Danuta zostaje jeszcze chwilę i rozmawiacie już ciszej. Dzieci nie widzą pełnego konfliktu, ale mogą zobaczyć coś cenniejszego: dorosłych, którzy potrafią naprawiać napięcie bez upokarzania siebie nawzajem. Pojawia się nowa umowa. Babcia ma miejsce w rodzinie, ale nie ponad tobą. Ty nie wracasz do roli małej dziewczynki, tylko zostajesz w roli dorosłej matki.",
+            "diagnosis": "Ta ścieżka łączyła komunikat Ja, empatię i konsekwentne granice. Rozmowa stopniowo przesuwała się z walki o autorytet w stronę wspólnej odpowiedzialności za dzieci i klimat relacji. To przykład transformacji, w której nie trzeba wybierać między bliskością a autonomią.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl empatyczny i transformacyjny. Granice były jasne, ale nie zamieniały się w atak ani karę.",
+                "strongest_moment": "Najmocniej zadziałało nazwanie, że przy dzieciach potrzebujesz babci obok siebie, a nie nad sobą. To odsłoniło prawdziwy rdzeń konfliktu.",
+                "growth_tip": "W realnym życiu wzmacniaj takie rozmowy konkretnym ustaleniem na przyszłość. Dobra granica działa najlepiej, gdy od razu przekłada się na wspólną praktykę.",
+                "replay_prompt": "Możesz wrócić do sceny i sprawdzić, jak niewielka zmiana tonu potrafi przesunąć rozmowę z obrony do współpracy."
+            }
+        }
+    ]
+}

@@ -3,7 +3,8 @@
 import { useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import { PROFILE_QUIZ, calculateProfileFromQuiz, TRAIT_NAMES } from '@/lib/engine/profile-quiz';
-import { useProfileStore } from '@/store/game-store';
+import { useProfileStore, useAuthStore } from '@/store/game-store';
+import { getIdToken } from '@/lib/firebase/auth';
 
 /**
  * Profile Quiz — 8 questions to build player's psychological profile.
@@ -11,6 +12,7 @@ import { useProfileStore } from '@/store/game-store';
 export default function QuizPage() {
   const router = useRouter();
   const setTraits = useProfileStore((s) => s.setTraits);
+  const user = useAuthStore((s) => s.user);
   const [currentQ, setCurrentQ] = useState(0);
   const [answers, setAnswers] = useState<number[]>([]);
   const [selectedIdx, setSelectedIdx] = useState<number | null>(null);
@@ -30,6 +32,19 @@ export default function QuizPage() {
         const profile = calculateProfileFromQuiz(newAnswers);
         localStorage.setItem('mn_player_profile', JSON.stringify(profile));
         setTraits(profile);
+
+        // Sync to Firestore if logged in
+        if (user) {
+          getIdToken().then(token => {
+            if (!token) return;
+            fetch('/api/profile', {
+              method: 'PUT',
+              headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+              body: JSON.stringify({ traits: profile }),
+            }).catch(() => { /* non-critical */ });
+          });
+        }
+
         router.push('/scenarios');
       } else {
         setAnswers(newAnswers);
@@ -37,7 +52,7 @@ export default function QuizPage() {
         setSelectedIdx(null);
       }
     }, 350);
-  }, [selectedIdx, answers, currentQ, router, setTraits]);
+  }, [selectedIdx, answers, currentQ, router, setTraits, user]);
 
   return (
     <div className="screen fade-in">

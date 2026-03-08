@@ -1,0 +1,822 @@
+{
+    "scenario_id": "nothing_happened_after_argument",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Nic się nie stało",
+        "subtitle": "Po kłótni cisza mówi więcej niż słowa",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 7,
+        "interaction_count": 5
+    },
+    "tags": {
+        "relationship_type": "romantic_partner",
+        "theme": [
+            "communication_breakdown",
+            "trust",
+            "conflict_resolution"
+        ],
+        "emotional_intensity": "moderate",
+        "age_rating": "adult",
+        "session_type": "mini_story",
+        "player_role_gender": "neutral",
+        "difficulty": "intermediate"
+    },
+    "characters": {
+        "player": {
+            "name": "Alex",
+            "role_label": "Partner · Gracz",
+            "age_range": "27-34",
+            "context": "Po ostrej wymianie zdań chcesz wrócić do rozmowy, ale nie wiesz, czy cisnąć, czy odpuścić. Zależy ci na naprawie, a jednocześnie boisz się kolejnej eskalacji.",
+            "hidden_need": "connection",
+            "hidden_need_text": "Potrzebujesz poczucia więzi i jasności, zamiast chłodu i domysłów.",
+            "traits": [
+                {
+                    "text": "zaangażowany",
+                    "type": "positive"
+                },
+                {
+                    "text": "niecierpliwy pod presją",
+                    "type": "negative"
+                },
+                {
+                    "text": "uważny na relację",
+                    "type": "positive"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 5,
+                "patience": 6,
+                "defensiveness": 4,
+                "empathy": 7,
+                "need_for_control": 5,
+                "shame_sensitivity": 4,
+                "directness": 7,
+                "repair_ability": 7
+            }
+        },
+        "npc": {
+            "name": "Pat",
+            "role_label": "Partner · Rozmówca",
+            "age_range": "27-34",
+            "context": "Po kłótni wycofujesz się i minimalizujesz problem. Nie chcesz dolewać oliwy do ognia, ale pod spodem czujesz zranienie i napięcie.",
+            "hidden_need": "safety",
+            "hidden_need_text": "Potrzebujesz bezpieczeństwa emocjonalnego i pewności, że twoje uczucia nie zostaną zlekceważone.",
+            "traits": [
+                {
+                    "text": "wrażliwy na ton",
+                    "type": "neutral"
+                },
+                {
+                    "text": "wycofujący się przy napięciu",
+                    "type": "negative"
+                },
+                {
+                    "text": "lojalny",
+                    "type": "positive"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 3,
+                "patience": 5,
+                "defensiveness": 7,
+                "empathy": 6,
+                "need_for_control": 4,
+                "shame_sensitivity": 8,
+                "directness": 3,
+                "repair_ability": 5
+            },
+            "npc_reaction_logic": "Pat zamyka się pod presją, przyspieszaniu i ironii. Otwiera się, gdy słyszy spokojne nazwanie emocji, brak ataku i konkretne pytania, które nie brzmią jak przesłuchanie."
+        }
+    },
+    "metrics_start": {
+        "tension": 40,
+        "trust": 60,
+        "openness": 50,
+        "feeling_heard": 50
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Mur po kłótni",
+            "scene": {
+                "description": "Wieczór po ostrej wymianie zdań. W salonie jest cicho, słychać tylko ekran telefonu. Pat siedzi obok, ale jakby daleko.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": "Nic się nie stało.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Jasne. To siedź obrażony dalej.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Pat zaciska szczękę i odwraca wzrok. Cisza robi się jeszcze cięższa.",
+                    "feedback": {
+                        "label": "Ironia zamiast kontaktu",
+                        "psychology": "To bierna agresja. Zamiast otworzyć dialog, komunikujesz karę i pogardę. W analizie transakcyjnej to ruch z pozycji krytycznego Rodzica, który zwykle wywołuje obronę albo wycofanie.",
+                        "better_alternative_hint": "Nazwij to, co widzisz, bez ironii i bez przypisywania intencji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna Berne'a",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Okej, skoro nic się nie stało, to nie wracajmy do tego.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Pat tylko kiwa głową, ale napięcie nie znika. Między wami zostaje niedopowiedzenie.",
+                    "feedback": {
+                        "label": "Pozorny spokój",
+                        "psychology": "To unikanie konfrontacji. Napięcie chwilowo nie rośnie, ale relacja traci na otwartości. Problem nie znika, tylko schodzi pod powierzchnię.",
+                        "better_alternative_hint": "Daj przestrzeń, ale pokaż, że widzisz emocje i jesteś gotów wrócić do rozmowy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie brzmi to wiarygodnie. Wolałbym wiedzieć, o co chodzi, bo inaczej tego nie naprawimy.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Pat unosi wzrok, ale nadal trzyma dystans. Widać, że słyszy twoją intencję, choć jeszcze się nie otwiera.",
+                    "feedback": {
+                        "label": "Jasność bez pełnej walidacji",
+                        "psychology": "To asertywne i konkretne, ale nadal mocno zadaniowe. Dajesz kierunek rozmowie, jednak nie nazywasz emocji drugiej strony, więc bezpieczeństwo rośnie tylko częściowo.",
+                        "better_alternative_hint": "Połącz jasność z uznaniem, że drugiej osobie może być trudno o tym mówić."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Widzę, że jednak coś zostało. Nie chcę cię cisnąć, ale zależy mi, żeby zrozumieć, co cię zabolało.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Pat odkłada telefon i bierze oddech. Mur nie znika, ale pojawia się szczelina.",
+                    "feedback": {
+                        "label": "Empatyczne otwarcie",
+                        "psychology": "Łączysz obserwację, intencję i zaproszenie do rozmowy. To zgodne z NVC: bez oceny, z uznaniem emocji i bez przymusu. Taki ruch obniża obronność.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC Rosenberga",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Pierwsza szczelina",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Pat nie patrzy ci w oczy i nerwowo przewija ekran. Powietrze jest ciężkie, a każde słowo brzmi jak ryzyko kolejnej kłótni.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Naprawdę nie mam teraz siły tego rozkładać.",
+            "scene_high": {
+                "description": "Pat odkłada telefon na stolik i choć nadal jest spięty, zostaje w rozmowie. W powietrzu pojawia się ostrożna gotowość.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Nie wiem, jak to powiedzieć, żeby znowu nie wyszła z tego awantura.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To dziecinne. Albo mówisz normalnie, albo kończymy ten temat.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Pat sztywnieje i cofa się jeszcze bardziej. Rozmowa zaczyna przypominać przeciąganie liny.",
+                    "feedback": {
+                        "label": "Presja i zawstydzenie",
+                        "psychology": "Atakujesz formę zamiast zrozumieć trudność drugiej strony. To podbija wstyd i obronność, więc maleje szansa na szczerość.",
+                        "better_alternative_hint": "Zamiast wymuszać tempo, obniż presję i zawęź pytanie do jednego konkretu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Zawstydzanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Spoko. Jak zwykle mam się domyślać.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Pat marszczy brwi i milknie. Zamiast bliskości pojawia się poczucie bycia osądzonym.",
+                    "feedback": {
+                        "label": "Ukryty atak",
+                        "psychology": "To komunikat z pretensją ukrytą pod pozornym odpuszczeniem. Kwadrat von Thuna pokazuje, że warstwa relacyjna dominuje nad treścią, więc druga strona słyszy głównie zarzut.",
+                        "better_alternative_hint": "Powiedz wprost, czego potrzebujesz, bez sarkazmu i testowania."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Potrzebuję chociaż jednego konkretu. Inaczej będziemy się tylko kręcić w kółko.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Pat wzdycha i waha się, ale wygląda na to, że szuka słów.",
+                    "feedback": {
+                        "label": "Porządkowanie rozmowy",
+                        "psychology": "To pomaga uporządkować chaos i zawęża temat, ale nadal skupia się bardziej na rozwiązaniu niż na stanie emocjonalnym rozmówcy. Dobre, lecz niepełne.",
+                        "better_alternative_hint": "Do konkretu dodaj sygnał bezpieczeństwa, że druga osoba nie musi się bronić."
+                    },
+                    "tags": [
+                        {
+                            "text": "Dopytanie o konkret",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie musimy tego rozwiązać od razu. Powiedz tylko, czy bardziej zabolały cię moje słowa, czy sposób, w jaki je powiedziałem.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Pat wypuszcza powietrze i pierwszy raz mówi bez zasłony. Widać ulgę, że nie musi tłumaczyć wszystkiego naraz.",
+                    "feedback": {
+                        "label": "Obniżenie presji",
+                        "psychology": "Dajesz wybór, zawężasz temat i zdejmujesz przymus natychmiastowego rozwiązania. To tworzy bezpieczeństwo i pomaga przejść od obrony do kontaktu.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Bezpieczne pytanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Co naprawdę zabolało",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Pat mówi cicho i urywa zdania w połowie. Napięcie nadal wisi wysoko, jakby każde przyznanie się do emocji było ryzykowne.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Nie chodzi o jedną rzecz. Po prostu przy tobie czasem nie mam miejsca na swoje emocje.",
+            "scene_high": {
+                "description": "Pat siedzi bliżej i mówi wolniej. Nadal jest ostrożnie, ale pojawia się konkret zamiast samego uniku.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Najgorsze było to, że gdy próbowałem powiedzieć, co czuję, od razu wszedłeś w ripostę.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To przesada. Nie możesz robić ze mnie winnego wszystkiego.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Pat zamyka się natychmiast. W oczach pojawia się chłód zamiast kontaktu.",
+                    "feedback": {
+                        "label": "Obrona przez kontratak",
+                        "psychology": "Bronisz obrazu siebie kosztem relacji. To klasyczne przejście z rozmowy o doświadczeniu drugiej osoby do walki o rację. Efekt to wzrost napięcia i zerwanie bezpieczeństwa.",
+                        "better_alternative_hint": "Zatrzymaj potrzebę natychmiastowego bronienia się i najpierw odzwierciedl to, co usłyszałeś."
+                    },
+                    "tags": [
+                        {
+                            "text": "Defensywność",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, to wszystko moja wina. Przepraszam za wszystko.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -1,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Pat kręci głową. Taka odpowiedź nie przynosi ulgi, tylko spłaszcza rozmowę.",
+                    "feedback": {
+                        "label": "Kapitulacja zamiast zrozumienia",
+                        "psychology": "To nie jest prawdziwe wzięcie odpowiedzialności, tylko szybkie zamknięcie napięcia. Druga strona nadal nie czuje się usłyszana, bo jej doświadczenie nie zostało nazwane.",
+                        "better_alternative_hint": "Nie przepraszaj hurtowo. Najpierw nazwij konkretny moment i jego wpływ."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pseudo-przeprosiny",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "To nie było moją intencją. Powiedz konkretnie, w którym momencie to poczułeś.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Pat kiwa głową. Jeszcze ostrożnie, ale zaczyna ufać, że da się to doprecyzować.",
+                    "feedback": {
+                        "label": "Dopytanie o moment",
+                        "psychology": "Nie uciekasz z rozmowy i prosisz o konkret, co jest pomocne. Minusem jest to, że zaczynasz od własnej intencji, więc część uwagi wraca na ciebie.",
+                        "better_alternative_hint": "Najpierw odzwierciedl wpływ, a dopiero potem doprecyzuj szczegół."
+                    },
+                    "tags": [
+                        {
+                            "text": "Dopytanie o konkret",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Komunikacja asertywna",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Słyszę, że poczułeś się zepchnięty na bok. To ma sens, bo wszedłem od razu w ripostę zamiast cię wysłuchać.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Pat mięknie w ramionach. Po raz pierwszy wygląda, jakby naprawdę poczuł się zrozumiany.",
+                    "feedback": {
+                        "label": "Nazwanie wpływu",
+                        "psychology": "Odzwierciedlasz doświadczenie drugiej osoby i bierzesz odpowiedzialność za swój wkład bez samobiczowania. To wzmacnia poczucie bycia słyszanym i obniża defensywność.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Aktywne słuchanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Wzięcie odpowiedzialności",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Pod spodem jest potrzeba",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Rozmowa idzie naprzód, ale ciężko. Pat mówi, jakby testował, czy znowu nie zostanie zgaszony.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "cold"
+            },
+            "npc_line_low": "Nie chodzi tylko o tę jedną kłótnię. Ostatnio często czuję, że przy tobie muszę się pilnować.",
+            "scene_high": {
+                "description": "W salonie nadal jest spokojnie. Pat mówi ciszej, ale bardziej szczerze, jakby dotarliście pod warstwę obrony.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Chyba najbardziej boli mnie to, że kiedy jest trudno, bardziej walczymy o rację niż o kontakt.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Zawsze wszystko odbierasz w najgorszy możliwy sposób.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Pat prostuje się i wraca mur. Znowu robi się o winie, a nie o potrzebach.",
+                    "feedback": {
+                        "label": "Uogólnienie i obwinienie",
+                        "psychology": "Słowo zawsze jest klasycznym wyzwalaczem obrony. Zamiast rozmawiać o doświadczeniu i potrzebie, wracacie do oceny charakteru.",
+                        "better_alternative_hint": "Zostań przy tym, co słyszysz o potrzebie bliskości albo bezpieczeństwa, nie przy etykietowaniu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uogólnianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Krytyka",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "No to może zróbmy listę moich błędów, skoro o to chodzi.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Pat zaciska usta. Sarkazm odcina resztki otwartości.",
+                    "feedback": {
+                        "label": "Sarkastyczna obrona",
+                        "psychology": "To sposób na uniknięcie bezbronności pod przykrywką dowcipu. Problem w tym, że druga strona słyszy szyderstwo, a nie gotowość do spotkania się w połowie drogi.",
+                        "better_alternative_hint": "Powiedz wprost, co z tego rozumiesz, zamiast odbijać napięcie ironią."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Unikanie bezbronności",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Dobrze, to ustalmy jedną zasadę: kiedy robi się ostro, nie przerywamy sobie nawzajem.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Pat przyjmuje to z ostrożną ulgą. To sensowne, ale jeszcze nie dotyka sedna.",
+                    "feedback": {
+                        "label": "Zasada zamiast głębi",
+                        "psychology": "To dobry ruch porządkujący i może pomóc na przyszłość, ale w tym momencie omija emocjonalny rdzeń rozmowy. Naprawa relacji potrzebuje jeszcze uznania potrzeby pod spodem.",
+                        "better_alternative_hint": "Najpierw nazwij, czego druga osoba potrzebuje od ciebie w takich momentach."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ustalanie zasad",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Słyszę w tym potrzebę większego bezpieczeństwa i kontaktu między nami. Nie chcę wygrywać rozmów kosztem ciebie.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Pat patrzy na ciebie dłużej i wreszcie przestaje się bronić. Między wami pojawia się wspólna perspektywa, nie tylko spór.",
+                    "feedback": {
+                        "label": "Wejście na poziom relacji",
+                        "psychology": "Nazywasz ukrytą potrzebę i przesuwasz rozmowę z ja kontra ty do my. To poziom III transformacji: nie tylko gasisz konflikt, ale budujesz nowy sposób bycia w nim razem.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Nazwanie ukrytej potrzeby",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Jak domknąć i nie zamieść",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Napięcie trochę opadło, ale Pat nadal wygląda na zmęczonego i niepewnego. To moment, w którym rozmowę można jeszcze spłaszczyć albo naprawdę domknąć.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "neutral"
+            },
+            "npc_line_low": "Nie wiem, czy coś się realnie zmieni, ale dobrze, że w końcu o tym mówimy.",
+            "scene_high": {
+                "description": "W pokoju zrobiło się ciszej i lżej. Pat nie wygląda już na zamkniętego, tylko ostrożnie obecnego.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Dziękuję, że nie próbujesz tego zamknąć na siłę. Czuję, że naprawdę rozmawiamy.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "No widzisz, dało się od razu normalnie, bez tego całego teatru.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Pat cofa się emocjonalnie w jednej chwili. Cała wcześniejsza praca traci grunt.",
+                    "feedback": {
+                        "label": "Unieważnienie po naprawie",
+                        "psychology": "Gdy druga strona właśnie się otwiera, nazwanie jej reakcji teatrem jest formą pogardy. To niszczy bezpieczeństwo i uczy, że szczerość kończy się upokorzeniem.",
+                        "better_alternative_hint": "Zamiast oceniać wcześniejszą reakcję, doceń wysiłek rozmowy i powiedz, co bierzesz na siebie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Unieważnianie",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, zostawmy to już. Najważniejsze, żeby był spokój.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": -1,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Pat milknie. Rozmowa nie wybucha, ale też nie daje prawdziwego domknięcia.",
+                    "feedback": {
+                        "label": "Zamiecenie pod dywan",
+                        "psychology": "Spokój bez integracji wniosków jest kruchy. To typowe wygaszenie napięcia kosztem długofalowej bliskości.",
+                        "better_alternative_hint": "Domknij rozmowę jednym konkretem: co rozumiesz i co zrobisz inaczej."
+                    },
+                    "tags": [
+                        {
+                            "text": "Zamiatanie problemu",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "To ustalmy, że następnym razem wrócimy do tematu szybciej, zanim zrobi się z tego mur.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Pat przytakuje. To praktyczne i pomocne, choć trochę bardziej organizuje przyszłość niż domyka teraźniejszość.",
+                    "feedback": {
+                        "label": "Praktyczne domknięcie",
+                        "psychology": "To sensowna propozycja naprawcza i krok w stronę lepszych nawyków. Nadal jednak brakuje pełnego uznania wysiłku emocjonalnego, który właśnie się wydarzył.",
+                        "better_alternative_hint": "Dodaj wdzięczność i własną odpowiedzialność, żeby domknięcie było też relacyjne, nie tylko organizacyjne."
+                    },
+                    "tags": [
+                        {
+                            "text": "Naprawa relacji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Dziękuję, że to powiedziałeś. Biorę na siebie to, że wszedłem w ripostę. Następnym razem chcę najpierw zrozumieć, a dopiero potem odpowiadać.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Pat wyraźnie mięknie i zostaje blisko. To nie jest idealna rozmowa, ale staje się prawdziwym punktem zwrotnym.",
+                    "feedback": {
+                        "label": "Odpowiedzialność i kierunek",
+                        "psychology": "Łączysz wdzięczność, odpowiedzialność i konkretną zmianę zachowania. To wzmacnia zaufanie, bo pokazuje, że rozmowa coś realnie zmienia w waszym sposobie bycia razem.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Wzięcie odpowiedzialności",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 2
+            },
+            "color": "red",
+            "title": "ROZMOWA ZATRZAŚNIĘTA",
+            "emoji": "🔴",
+            "subtitle": "Mur zostaje na miejscu",
+            "narrative": "Rozmowa formalnie się kończy, ale napięcie zostaje w ciele i między wami. Pat wycofuje się jeszcze mocniej, a ty zostajesz z poczuciem, że kontakt znowu przegrał z obroną.",
+            "diagnosis": "W tej ścieżce dominowały presja, unieważnianie albo unikanie. Konflikt nie został nazwany na poziomie potrzeb, więc rozmowa utknęła na obronie i pozycyjnym starciu.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl agresywny, bierny albo biernie agresywny, przez co bezpieczeństwo rozmowy szybko się skurczyło.",
+                "strongest_moment": "Najmocniejszym momentem było samo podjęcie próby rozmowy zamiast całkowitego zerwania kontaktu.",
+                "growth_tip": "Gdy druga strona mówi, że nic się nie stało, zacznij od obserwacji i walidacji, a nie od nacisku albo ironii. Najpierw bezpieczeństwo, potem konkret.",
+                "replay_prompt": "Spróbuj ponownie, tym razem otwierając rozmowę bez przypisywania intencji i bez pośpiechu."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 3,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "KRUCHY ROZEJM",
+            "emoji": "🟡",
+            "subtitle": "Jest trochę lepiej, ale sedno wciąż wymaga pracy",
+            "narrative": "Udało się zmniejszyć napięcie i wydobyć część prawdy, ale rozmowa zatrzymała się między porządkowaniem a ostrożnym odsłonięciem. Jest szansa na zmianę, jednak bliskość nie została jeszcze w pełni odbudowana.",
+            "diagnosis": "W tej ścieżce pojawiła się asertywność i trochę struktury, ale za mało pełnej walidacji i wspólnej perspektywy. Rozmowa przesunęła się do kontaktu, lecz nie weszła w pełną transformację.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl asertywny i transakcyjny, który pomaga porządkować konflikt, ale nie zawsze dociera do ukrytych potrzeb.",
+                "strongest_moment": "Najlepszy moment pojawił się wtedy, gdy rozmowa przestała być zgadywanką i padł pierwszy konkret.",
+                "growth_tip": "Następnym razem połącz jasność z empatią. Nie zatrzymuj się na ustaleniu zasad, nazwij też emocję i potrzebę pod spodem.",
+                "replay_prompt": "Zagraj jeszcze raz i sprawdź, co się stanie, gdy przejdziesz z naprawiania rozmowy do budowania poczucia bycia rozumianym."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 10
+            },
+            "color": "green",
+            "title": "PRAWDZIWE OTWARCIE",
+            "emoji": "🟢",
+            "subtitle": "Z obrony do kontaktu",
+            "narrative": "Pat nie musi już chować się za zdaniem, że nic się nie stało. Rozmowa nie cofa kłótni, ale zmienia jej znaczenie: z pola walki staje się miejscem, w którym można powiedzieć prawdę i zostać przyjętym.",
+            "diagnosis": "W tej ścieżce udało się obniżyć defensywność, nazwać wpływ, a potem dotrzeć do ukrytej potrzeby bezpieczeństwa i kontaktu. To właśnie przesunęło rozmowę z napięcia do odbudowy więzi.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl empatyczny i transformacyjny, który buduje zaufanie, otwartość i poczucie bycia usłyszanym.",
+                "strongest_moment": "Najmocniejszy moment nastąpił wtedy, gdy nazwałeś nie tylko problem, ale też potrzebę pod spodem i własny wkład w sytuację.",
+                "growth_tip": "To dobry kierunek. Utrwalaj go, zaczynając trudne rozmowy od obserwacji, wpływu i ciekawości, zamiast od interpretacji albo obrony.",
+                "replay_prompt": "Spróbuj innych wariantów, żeby zobaczyć, jak szybko nawet dobra rozmowa może utknąć, gdy zabraknie walidacji albo odpowiedzialności."
+            }
+        }
+    ]
+}

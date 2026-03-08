@@ -1,0 +1,853 @@
+{
+    "scenario_id": "adult_child_returns_old_roles",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Z powrotem w starym domu",
+        "subtitle": "Powrót do domu uruchamia dawny układ matka-córka i walkę o dorosłość",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 8,
+        "interaction_count": 5
+    },
+    "tags": {
+        "relationship_type": "parent_child",
+        "theme": [
+            "independence",
+            "control",
+            "respect"
+        ],
+        "emotional_intensity": "moderate",
+        "age_rating": "teen",
+        "session_type": "training",
+        "player_role_gender": "female",
+        "difficulty": "intermediate"
+    },
+    "characters": {
+        "player": {
+            "name": "Maja",
+            "role_label": "Córka · Gracz",
+            "age_range": "29-34",
+            "context": "Po zmianie pracy i krótkim kryzysie mieszkaniowym Maja wróciła na kilka tygodni do domu rodzinnego. Chce odpocząć, ale nie chce zapłacić za to utratą autonomii.",
+            "hidden_need": "autonomy",
+            "hidden_need_text": "Potrzeba bycia traktowaną jak dorosła osoba, która sama decyduje o swoim czasie, przestrzeni i wyborach.",
+            "traits": [
+                {
+                    "text": "samodzielna",
+                    "type": "positive"
+                },
+                {
+                    "text": "wyczulona na kontrolę",
+                    "type": "negative"
+                },
+                {
+                    "text": "lojalna wobec bliskich",
+                    "type": "positive"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 5,
+                "patience": 6,
+                "defensiveness": 6,
+                "empathy": 7,
+                "need_for_control": 4,
+                "shame_sensitivity": 7,
+                "directness": 6,
+                "repair_ability": 7
+            }
+        },
+        "npc": {
+            "name": "Ewa",
+            "role_label": "Matka · NPC",
+            "age_range": "56-62",
+            "context": "Ewa cieszy się, że córka znów jest w domu, ale jej troska szybko zamienia się w zarządzanie. Gdy czuje niepewność, wraca do roli matki, która wie lepiej.",
+            "hidden_need": "safety",
+            "hidden_need_text": "Potrzeba poczucia bezpieczeństwa i wpływu, szczególnie wtedy, gdy martwi się o córkę i nie wie, jak okazać to bez kontroli.",
+            "traits": [
+                {
+                    "text": "opiekuńcza",
+                    "type": "positive"
+                },
+                {
+                    "text": "kontrolująca pod wpływem lęku",
+                    "type": "negative"
+                },
+                {
+                    "text": "praktyczna",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 4,
+                "patience": 5,
+                "defensiveness": 7,
+                "empathy": 6,
+                "need_for_control": 8,
+                "shame_sensitivity": 6,
+                "directness": 7,
+                "repair_ability": 5
+            },
+            "npc_reaction_logic": "Na agresję odpowiada usztywnieniem i jeszcze większą kontrolą. Na wycofanie reaguje przejęciem sterów. Na jasne granice słyszy treść, ale dopiero po połączeniu granic z uznaniem jej intencji przechodzi z trybu Rodzic do trybu Dorosły."
+        }
+    },
+    "metrics_start": {
+        "tension": 45,
+        "trust": 58,
+        "openness": 48,
+        "feeling_heard": 45
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Próg starego układu",
+            "scene": {
+                "description": "Przedpokój i kuchnia pachną tak samo jak kiedyś. Twoja torba stoi jeszcze nierozpakowana, a mama już układa plan za ciebie.",
+                "location": "kitchen",
+                "time_of_day": "afternoon",
+                "visual_mood": "neutral"
+            },
+            "npc_line": "Rozpakuj się od razu, a potem pokażę ci, gdzie położyłam twoje rzeczy. I postaraj się dziś nie siedzieć długo, dobrze?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Mamo, przestań mną zarządzać. Nie mam piętnastu lat.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Ewa zaciska usta. No proszę. Jeszcze dobrze nie weszłaś, a już robisz awanturę.",
+                    "feedback": {
+                        "label": "Atak na starcie",
+                        "psychology": "W analizie transakcyjnej to wejście z pozycji Zbuntowanego Dziecka przeciwko Krytycznemu Rodzicowi. Treść granicy ginie, bo forma brzmi jak atak.",
+                        "better_alternative_hint": "Nazwij wpływ jej słów na ciebie bez podważania jej intencji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Krytyka",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Stan Ja: Zbuntowane Dziecko",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra. Jak chcesz.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Ewa od razu bierze twoją torbę. Wiedziałam, że sama byś to odkładała do nocy.",
+                    "feedback": {
+                        "label": "Oddanie pola",
+                        "psychology": "Wycofanie zmniejsza konflikt tylko pozornie. W praktyce wzmacnia dawny układ, w którym druga strona przejmuje kontrolę, bo nie słyszy twojej dorosłej granicy.",
+                        "better_alternative_hint": "Powiedz jasno, co zrobisz sama, zamiast biernie się dostosowywać."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Stan Ja: Uległe Dziecko",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Dzięki, ale sama ogarnę swoje rzeczy.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Ewa cofa rękę od torby. Dobrze, skoro tak wolisz.",
+                    "feedback": {
+                        "label": "Granica bez mostu",
+                        "psychology": "To komunikat z pozycji Dorosły, ale jeszcze bez odsłonięcia emocji i bez uznania jej troski. Działa, choć łatwo zostawia chłód.",
+                        "better_alternative_hint": "Dodaj, że widzisz jej intencję i powiedz, czego potrzebujesz jako dorosła."
+                    },
+                    "tags": [
+                        {
+                            "text": "Stawianie granic",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Stan Ja: Dorosły",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Widzę, że chcesz mi pomóc. Jednocześnie potrzebuję, żebyś od początku traktowała mnie jak dorosłą. Sama się rozpakuję.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Ewa patrzy na ciebie uważniej. Dobrze. Muszę się chyba przestawić.",
+                    "feedback": {
+                        "label": "Granica z uznaniem intencji",
+                        "psychology": "Łączysz walidację z komunikatem Ja, więc obniżasz potrzebę obrony po drugiej stronie. To otwiera przejście z układu Rodzic-Dziecko do Dorosły-Dorosły.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja intencji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Analiza transakcyjna Berne'a",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Pytanie, które brzmi jak kontrola",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "W kuchni słychać trzask odkładanych naczyń. Poprzednia wymiana słów zostawiła sztywność i czujność po obu stronach.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Skoro chcesz być taka niezależna, to chociaż mów, gdzie wychodzisz i o której wrócisz. W tym domu trzeba coś wiedzieć.",
+            "scene_high": {
+                "description": "Atmosfera jest ostrożna, ale mniej spięta. Ewa opiera się o blat i próbuje zapytać spokojniej niż zwykle.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Powiedz tylko, jak chcesz to między nami ustalić, żebym nie wchodziła ci w drogę, a jednocześnie wiedziała, że wszystko okej.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Świetnie. To jeszcze rozpisz mi plan dnia na lodówce.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Ewa marszczy czoło. Nie musisz być bezczelna. Pytam normalnie.",
+                    "feedback": {
+                        "label": "Sarkazm zamiast granicy",
+                        "psychology": "Bierna agresja daje chwilową ulgę, ale nie ujawnia prawdziwej potrzeby. Druga strona słyszy pogardę, nie słyszy granicy.",
+                        "better_alternative_hint": "Powiedz wprost, jakie informacje jesteś gotowa dawać, a jakie brzmią dla ciebie jak kontrola."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nie będę ci się z niczego meldować.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Ewa prostuje się. To może trzeba było nie wracać, skoro wszystko cię tutaj tak uwiera.",
+                    "feedback": {
+                        "label": "Obrona przez odcięcie",
+                        "psychology": "To radykalna kontrkontrola. Gdy jedna strona odcina kontakt, druga zwykle zwiększa nacisk, bo zagrożone jest jej poczucie wpływu i bezpieczeństwa.",
+                        "better_alternative_hint": "Oddziel informowanie o bezpieczeństwie od podporządkowania się."
+                    },
+                    "tags": [
+                        {
+                            "text": "Kontrkontrola",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Stan Ja: Zbuntowane Dziecko",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Mogę dawać znać, jeśli wrócę bardzo późno, ale nie chcę codziennych pytań o każdy ruch.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Ewa kiwa głową, choć bez większego przekonania. Dobrze. To już coś konkretnego.",
+                    "feedback": {
+                        "label": "Umowa techniczna",
+                        "psychology": "To rzeczowe wyznaczenie zasad. Dobrze porządkuje fakty, ale nie dotyka emocjonalnego rdzenia, czyli jej lęku i twojej potrzeby autonomii.",
+                        "better_alternative_hint": "Nazwij także, że rozumiesz jej troskę i czego potrzebujesz w zamian."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ustalanie zasad",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Rozumiem, że chcesz wiedzieć, czy jestem bezpieczna. Mogę dawać znać przy późnych powrotach, ale nie chcę być codziennie odpytywana jak nastolatka.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Ewa wzdycha, ale mięknie. Dobrze. Chodzi mi bardziej o spokój niż o kontrolę.",
+                    "feedback": {
+                        "label": "Granica połączona z potrzebą",
+                        "psychology": "Łączysz perspektywy obu stron i proponujesz zasadę, która chroni relację zamiast ustawiać zwycięzcę i przegranego. To ruch w stronę Poziomu III.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Drzwi do twojego pokoju",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Rano budzi cię skrzypnięcie drzwi. Mama weszła bez pukania i właśnie poprawia rzeczy na krześle, jakby pokój znowu należał bardziej do niej niż do ciebie.",
+                "location": "bedroom",
+                "time_of_day": "morning",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Nie mogłam na to patrzeć. Wszystko tu było porozrzucane.",
+            "scene_high": {
+                "description": "Słyszysz dwa ostrożne stuknięcia w drzwi. Ewa stoi w progu z kubkiem herbaty i wyraźnie hamuje odruch wejścia bez pytania.",
+                "location": "bedroom",
+                "time_of_day": "morning",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Mogę wejść? Chciałam tylko zostawić ci herbatę, ale nie wiedziałam, czy śpisz.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Wyjdź stąd. To chore, że grzebiesz w moich rzeczach.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Ewa cofa się, ale po chwili sztywnieje. Chore to jest twoje podejście do zwykłej pomocy.",
+                    "feedback": {
+                        "label": "Eskaluje naruszenie",
+                        "psychology": "Naruszenie granicy było realne, ale etykietowanie drugiej osoby natychmiast przenosi rozmowę z granic na obronę godności. Konflikt wchodzi na poziom pozycyjny.",
+                        "better_alternative_hint": "Nazwij konkretny problem i prośbę bez obrażania."
+                    },
+                    "tags": [
+                        {
+                            "text": "Etykietowanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nieważne. Rób, co chcesz.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Ewa odbiera to jako zgodę i zaczyna składać twoje ubrania jeszcze dokładniej.",
+                    "feedback": {
+                        "label": "Milcząca zgoda",
+                        "psychology": "Pasywność chroni przed spięciem tu i teraz, ale wzmacnia wzorzec naruszania granic. Druga strona nie dostaje informacji, że przekroczyła ważną linię.",
+                        "better_alternative_hint": "Powiedz wyraźnie, czego nie chcesz i jaka forma kontaktu będzie dla ciebie w porządku."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak granicy",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Proszę, pukaj zanim wejdziesz. To dla mnie ważne.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Ewa patrzy zaskoczona, ale odkłada kubek. Dobrze. Mogę się tego nauczyć.",
+                    "feedback": {
+                        "label": "Jasna granica",
+                        "psychology": "To poprawny komunikat graniczny. Daje drugiej stronie konkretną instrukcję, choć jeszcze nie oswaja emocji związanych z dawnym układem.",
+                        "better_alternative_hint": "Dodaj, że wiesz, iż dawniej było inaczej, ale teraz potrzebujesz innej zasady."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Stawianie granic",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Wiem, że kiedyś po prostu wpadałaś do mojego pokoju, ale teraz bardzo potrzebuję prywatności. Pukaj proszę i nie przekładaj moich rzeczy bez pytania.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Ewa bierze to do siebie, ale bez walki. Masz rację. Dla mnie to nadal odruch, ale będę pytać.",
+                    "feedback": {
+                        "label": "Aktualizacja starej zasady",
+                        "psychology": "Uznajesz historię relacji, a jednocześnie aktualizujesz reguły do obecnej rzeczywistości. To zmniejsza opór, bo nie unieważniasz przeszłości, tylko ją przekraczasz.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Rekontraktowanie relacji",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Co naprawdę dzieje się pod spodem",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "W salonie jest ciężko i duszno. Kolejne drobne spięcia z całego dnia złożyły się w jedno duże napięcie.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Od kiedy wróciłaś, wszystko jest jakieś trudne. Ja tylko próbuję utrzymać tu porządek.",
+            "scene_high": {
+                "description": "Wieczorem siadacie naprzeciwko siebie z herbatą. Nie ma jeszcze pełnej lekkości, ale pierwszy raz obie wyhamowałyście na tyle, by naprawdę usłyszeć, co jest pod spodem.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Mam wrażenie, że obie wpadamy w coś starego. Jakbyś znowu miała siedemnaście lat, a ja musiała wszystkim sterować.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Bo ty naprawdę nie umiesz odpuścić ani na chwilę.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Ewa natychmiast się zamyka. Czyli znowu wszystko moja wina. Wspaniale.",
+                    "feedback": {
+                        "label": "Uogólnienie i oskarżenie",
+                        "psychology": "Słowo zawsze nie pada, ale komunikat ma tę samą funkcję: przypisuje całej osobie wadę zamiast opisać konkretny wzorzec. To uruchamia obronę, nie refleksję.",
+                        "better_alternative_hint": "Mów o schemacie między wami, a nie o rzekomej wadzie charakteru."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uogólnianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Obwinianie",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Spokojnie. Możemy po prostu udawać, że mnie tu nie ma.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Ewa wzdycha z irytacją. No i znowu ta ironia. Jak mam z tobą normalnie rozmawiać?",
+                    "feedback": {
+                        "label": "Ukryty atak",
+                        "psychology": "Pozorna rezygnacja połączona z uszczypliwością nie buduje bezpieczeństwa. W modelu NVC to komunikat bez odsłonięcia uczucia i bez jasnej prośby.",
+                        "better_alternative_hint": "Powiedz wprost, co cię rani i do jakiej zmiany zapraszasz."
+                    },
+                    "tags": [
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak jasnej prośby",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie chcę kolejnej kłótni. Ustalmy po prostu kilka zasad na ten czas.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Ewa kiwa głową. Dobrze. Konkret brzmi lepiej niż wzajemne pretensje.",
+                    "feedback": {
+                        "label": "Rozsądny ruch, ale płytko",
+                        "psychology": "To pomaga przerwać spiralę, ale nadal omija prawdziwy temat: lęk po jednej stronie i potrzebę uznania dorosłości po drugiej. Bez tego stare role łatwo wrócą.",
+                        "better_alternative_hint": "Nazwij wprost, że problemem nie są tylko zasady, ale dawny układ między wami."
+                    },
+                    "tags": [
+                        {
+                            "text": "Rozwiązywanie problemu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Mam wrażenie, że obie reagujemy bardziej na dawny układ niż na to, co jest teraz. Chcę z tobą ustalić zasady jak dorosła z dorosłą, a nie walczyć o władzę.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -3,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Ewa długo milczy, ale tym razem nie z gniewu. To chyba prawda. Ja też od razu wchodzę w ten dawny ton.",
+                    "feedback": {
+                        "label": "Nazwanie schematu",
+                        "psychology": "To moment przejścia do Poziomu III. Zamiast walczyć o rację, opisujesz system relacyjny i zapraszasz do wspólnej zmiany wzorca.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Metakomunikacja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Analiza transakcyjna Berne'a",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Nowa umowa na starym gruncie",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Stoisz już przy drzwiach z kluczami w ręce. Zamiast ulgi czujesz napięcie, bo każda zwykła czynność znowu grozi powrotem do starej walki.",
+                "location": "street",
+                "time_of_day": "night",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Ubierz się porządnie i nie wracaj za późno. W tym domu są jakieś zasady.",
+            "scene_high": {
+                "description": "Przy wyjściu zatrzymujecie się na chwilę. W powietrzu nadal jest ostrożność, ale pojawiło się też miejsce na nowy sposób bycia razem.",
+                "location": "street",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Chcesz porady, czy wystarczy, że po prostu będę trzymała kciuki?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nie będziesz mi mówić, jak mam żyć.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Ewa odwraca wzrok. Rób, co chcesz. Widocznie nie da się z tobą normalnie być.",
+                    "feedback": {
+                        "label": "Granica zamieniona w wojnę",
+                        "psychology": "Treść dotyczy autonomii, ale forma brzmi jak odrzucenie więzi. To zwykle kończy się albo kontratakiem, albo emocjonalnym wycofaniem drugiej strony.",
+                        "better_alternative_hint": "Powiedz, jaka forma troski jest dla ciebie pomocna, a jaka przekracza twoją granicę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Odrzucenie więzi",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Eskalacja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobrze. Mogę znowu robić wszystko po twojemu, skoro tak jest prościej.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Ewa słyszy tylko gorycz. Nie chcę, żebyś robiła coś na pokaz albo z pretensją.",
+                    "feedback": {
+                        "label": "Uległość z żalem",
+                        "psychology": "To pozorna zgoda, która przenosi konflikt do podziemia. Relacja nie zyskuje bezpieczeństwa, bo nie ma ani szczerości, ani sprawczości.",
+                        "better_alternative_hint": "Nie poddawaj się i nie kłuj. Zaproponuj nową, konkretną formę kontaktu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Fałszywa zgoda",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Sama zdecyduję, ale dzięki za troskę.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Ewa przyjmuje to bez komentarza. Dobrze. To miłego wieczoru.",
+                    "feedback": {
+                        "label": "Dobra granica",
+                        "psychology": "To zdrowe i zwięzłe. Daje autonomię, ale nie tworzy jeszcze wspólnego języka, który utrzyma zmianę przy kolejnym napięciu.",
+                        "better_alternative_hint": "Powiedz też, co konkretnie pomaga ci czuć wsparcie zamiast kontroli."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Szacunek do siebie",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Doceniam troskę. Najbardziej pomoże mi, jeśli zamiast rad zapytasz czasem, czego potrzebuję. Ja z kolei będę mówić wprost, kiedy chcę wsparcia, a kiedy tylko zaufania.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Ewa lekko się uśmiecha. To uczciwe. Spróbujmy tak robić.",
+                    "feedback": {
+                        "label": "Nowy kontrakt relacyjny",
+                        "psychology": "Nie tylko bronisz granicy, ale tworzysz wspólną instrukcję obsługi relacji. To domyka transformację, bo obie strony wiedzą, jak nie wracać do starego schematu.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Jasna prośba",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Wspólne zasady",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 2
+            },
+            "color": "red",
+            "title": "POWRÓT DO STAREJ WOJNY",
+            "emoji": "🔴",
+            "subtitle": "Granice zostały zamienione w walkę o władzę",
+            "narrative": "Wieczór kończy się chłodem i zatrzaśniętymi emocjami. Każda kolejna próba kontaktu brzmi jak atak albo kontrola, więc obie strony coraz bardziej okopują się na swoich pozycjach.",
+            "diagnosis": "Rozmowa utknęła w układzie Krytyczny Rodzic kontra Zbuntowane lub Uległe Dziecko. Zamiast nazwać potrzeby i zaktualizować zasady relacji, obie strony walczyły o to, kto ma rację i kto ma władzę.",
+            "post_game": {
+                "communication_style_summary": "Dominowały reakcje obronne, sarkazm albo ostre odcinanie się.",
+                "strongest_moment": "Pojawiały się przebłyski potrzeby autonomii, ale były podawane w formie, która budziła opór.",
+                "growth_tip": "Zanim postawisz granicę, nazwij intencję drugiej strony i swój stan. To nie osłabia granicy, tylko zwiększa szansę, że zostanie usłyszana.",
+                "replay_prompt": "Spróbuj przejść z walki o niezależność do rozmowy o tym, jaka forma troski jest pomocna, a jaka odbiera dorosłość."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 3,
+                "max": 5
+            },
+            "color": "yellow",
+            "title": "ROZEJM BEZ PEŁNEJ ZMIANY",
+            "emoji": "🟡",
+            "subtitle": "Udało się ograniczyć spięcia, ale stary wzorzec nadal czai się pod spodem",
+            "narrative": "Atmosfera trochę siada, bo pojawiają się pierwsze zasady i mniej otwartej uszczypliwości. Mimo to obie strony wciąż łatwo wpadają w dawny ton przy kolejnej drobnej sytuacji.",
+            "diagnosis": "Pojawiła się asertywność i trochę konkretów, ale zabrakło pełnego przejścia na poziom transformacji. Relacja została uporządkowana praktycznie, nie do końca psychologicznie.",
+            "post_game": {
+                "communication_style_summary": "Przeważała rzeczowość i częściowo zdrowe granice, ale bez głębszego przepracowania starej dynamiki.",
+                "strongest_moment": "Najlepiej działały chwile, gdy granica była jasno nazwana bez ataku.",
+                "growth_tip": "Następnym razem nazwij nie tylko zasadę, ale też schemat między wami. Sam konkret uspokaja sytuację, lecz nie zawsze zmienia relację.",
+                "replay_prompt": "Sprawdź, co się stanie, gdy oprócz stawiania granic zaczniesz metakomunikować o dawnych rolach i ukrytych potrzebach."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 6,
+                "max": 8
+            },
+            "color": "green",
+            "title": "DOROSŁA ROZMOWA W STARYM DOMU",
+            "emoji": "🟢",
+            "subtitle": "Pojawia się wzajemne zrozumienie i realna korekta relacji",
+            "narrative": "Nie wszystko staje się łatwe od razu, ale ton rozmowy wyraźnie się zmienia. Zamiast kolejnej wojny o kontrolę pojawia się ostrożne partnerstwo i kilka nowych zasad, które obie strony chcą respektować.",
+            "diagnosis": "Gracz skutecznie łączył granice z walidacją intencji, dzięki czemu matka mogła wyjść z obrony. To uruchomiło stan Dorosły po obu stronach i pozwoliło zaktualizować relację do obecnego etapu życia.",
+            "post_game": {
+                "communication_style_summary": "Dominowały wybory empatyczne i transformacyjne, wspierane przez konkretną asertywność.",
+                "strongest_moment": "Najmocniejsze było nazwanie, że problemem nie jest tylko konkretna uwaga, ale dawny układ matka-córka.",
+                "growth_tip": "Utrzymuj ten kierunek przez konsekwencję. Jedna dobra rozmowa otwiera drzwi, ale nowy wzorzec utrwala się dopiero przez powtarzalne mikroreakcje.",
+                "replay_prompt": "Zagraj jeszcze raz i zobacz, czy potrafisz doprowadzić nie tylko do poprawy atmosfery, ale do wspólnego kontraktu, który obie strony umieją nazwać."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 9,
+                "max": 10
+            },
+            "color": "blue",
+            "title": "NOWY KONTRAKT BLISKOŚCI",
+            "emoji": "🔵",
+            "subtitle": "Troska i autonomia przestają się wykluczać",
+            "narrative": "Przy starych drzwiach domu wydarza się coś nowego: nie tylko milknie konflikt, ale rodzi się język, w którym troska nie brzmi już jak kontrola, a dorosłość nie brzmi jak odrzucenie więzi.",
+            "diagnosis": "To mistrzowska ścieżka przejścia z układu Rodzic-Dziecko do Dorosły-Dorosły. Gracz nie walczył o wygraną, tylko zaprojektował nowy sposób kontaktu, uwzględniający bezpieczeństwo matki i autonomię córki.",
+            "post_game": {
+                "communication_style_summary": "Przeważały wybory transformacyjne: walidacja, metakomunikacja i wspólne projektowanie zasad relacji.",
+                "strongest_moment": "Kluczowy był moment, w którym troska matki została uznana, a jednocześnie jasno określono, jaka forma wsparcia jest naprawdę pomocna.",
+                "growth_tip": "To poziom, który działa także poza rodziną. Kiedy czujesz stary schemat, nazwij go spokojnie i zaproponuj nową umowę zamiast kolejnej rundy walki.",
+                "replay_prompt": "Spróbuj ponownie przejść tę ścieżkę, zwracając uwagę, jak wcześnie warto rozpoznać dawny schemat, zanim zdąży przejąć rozmowę."
+            }
+        }
+    ]
+}

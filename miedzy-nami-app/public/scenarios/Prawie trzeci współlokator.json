@@ -1,0 +1,822 @@
+{
+    "scenario_id": "roommate_partner_practically_moves_in",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Prawie trzeci współlokator",
+        "subtitle": "Nowy partner jednej osoby zaczyna zajmować wspólną przestrzeń bez nowej umowy",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 9,
+        "interaction_count": 5
+    },
+    "tags": {
+        "relationship_type": "roommates",
+        "theme": [
+            "boundaries",
+            "change",
+            "respect"
+        ],
+        "emotional_intensity": "moderate",
+        "age_rating": "adult",
+        "session_type": "training",
+        "player_role_gender": "neutral",
+        "difficulty": "advanced"
+    },
+    "characters": {
+        "player": {
+            "name": "Alex",
+            "role_label": "Współlokator · Gracz",
+            "age_range": "24-31",
+            "context": "Od kilku tygodni czujesz, że tracisz prywatność i wpływ na zasady mieszkania. Nie chcesz kontrolować cudzego związku, ale nie zgadzasz się na cichą zmianę umowy.",
+            "hidden_need": "autonomy",
+            "hidden_need_text": "Potrzeba wpływu na własną przestrzeń, przewidywalności i bycia traktowanym jak równy współgospodarz mieszkania.",
+            "traits": [
+                {
+                    "text": "uważny obserwator",
+                    "type": "positive"
+                },
+                {
+                    "text": "narastająca frustracja",
+                    "type": "negative"
+                },
+                {
+                    "text": "silna potrzeba porządku",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 5,
+                "patience": 6,
+                "defensiveness": 6,
+                "empathy": 7,
+                "need_for_control": 7,
+                "shame_sensitivity": 5,
+                "directness": 7,
+                "repair_ability": 6
+            }
+        },
+        "npc": {
+            "name": "Kasia",
+            "role_label": "Współlokatorka · NPC",
+            "age_range": "24-30",
+            "context": "Jesteś świeżo w intensywnej relacji z Olą. Cieszy cię bliskość, a częste nocowanie partnerki wydaje ci się naturalne. Nie zauważyłaś, kiedy tymczasowość zaczęła przypominać nowy układ.",
+            "hidden_need": "closeness",
+            "hidden_need_text": "Potrzeba bliskości, swobody w budowaniu relacji i braku poczucia, że ktoś ocenia jej życie prywatne.",
+            "traits": [
+                {
+                    "text": "towarzyska",
+                    "type": "positive"
+                },
+                {
+                    "text": "defensywna pod presją",
+                    "type": "negative"
+                },
+                {
+                    "text": "spontaniczna",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 6,
+                "patience": 5,
+                "defensiveness": 8,
+                "empathy": 6,
+                "need_for_control": 4,
+                "shame_sensitivity": 7,
+                "directness": 5,
+                "repair_ability": 5
+            },
+            "npc_reaction_logic": "Na atak reaguje obroną i kontratakiem. Na bierność testuje granice dalej, bo nie widzi realnego sprzeciwu. Na komunikat jasny, ale chłodny, przechodzi w negocjacje. Na empatię połączoną z konkretem obniża defensywność i jest skłonna uznać, że zasady trzeba wspólnie odnowić."
+        }
+    },
+    "metrics_start": {
+        "tension": 40,
+        "trust": 60,
+        "openness": 50,
+        "feeling_heard": 50
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Pierwsze postawienie sprawy",
+            "scene": {
+                "description": "W salonie stoją dodatkowe buty, kosmetyczka przy łazience i torba z laptopem przy kanapie. Kasia odkłada kubek na stół, jakby ten widok był już czymś zwyczajnym.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": "Ola pewnie znowu zostanie na noc. Ostatnio jest tu częściej, ale chyba to nie problem?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To już nie są odwiedziny. Zrobiłaś z naszego mieszkania hotel bez pytania mnie o zgodę.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kasia sztywnieje. Mówi, że przesadzasz i że nie będzie rozliczana za to, z kim śpi.",
+                    "feedback": {
+                        "label": "Atak i oskarżenie",
+                        "psychology": "Zaczynasz od zarzutu i generalizacji, więc rozmowa wchodzi na Poziom II — walkę o rację. W analizie transakcyjnej uruchamiasz krytycznego Rodzica, co łatwo wywołuje bunt u drugiej strony.",
+                        "better_alternative_hint": "Nazwij wpływ sytuacji na ciebie i granice, zamiast przypisywać złe intencje."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uogólnianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Jasne, super. Może od razu dopiszemy trzecią osobę do lodówki i rachunków.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kasia przewraca oczami i odpowiada, że twoja ironia niczego nie wnosi.",
+                    "feedback": {
+                        "label": "Sarkazm zamiast granicy",
+                        "psychology": "Bierna agresja ukrywa właściwy komunikat. Według kwadratu von Thuna druga strona słyszy głównie atak relacyjny, a nie twoją realną potrzebę prywatności.",
+                        "better_alternative_hint": "Powiedz wprost, że czujesz zmianę zasad i chcesz ją omówić."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "To zaczyna wyglądać jak stała zmiana, a nie kilka noclegów. Musimy ustalić, co to znaczy dla mieszkania.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Kasia marszczy brwi, ale nie odcina rozmowy. Pyta, co dokładnie masz na myśli.",
+                    "feedback": {
+                        "label": "Jasna granica bez miękkiego wejścia",
+                        "psychology": "To asertywne i konkretne, więc zatrzymuje chaos. Brakuje jednak walidacji, przez co druga strona może szybciej wejść w obronę.",
+                        "better_alternative_hint": "Dodaj uznanie, że jej relacja jest ważna, a problem dotyczy wspólnych zasad."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Widzę, że ta relacja jest dla ciebie ważna. Dla mnie to jednak wygląda jak zmiana zasad mieszkania bez wspólnej zgody i chcę znaleźć uczciwe rozwiązanie.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kasia trochę mięknie. Przyznaje, że mogła cię to postawić przed faktem dokonanym.",
+                    "feedback": {
+                        "label": "Uznanie relacji i nazwanie granicy",
+                        "psychology": "Łączysz empatię z konkretem, więc nie negujesz jej potrzeb, ale też nie porzucasz własnych. To wejście w Poziom III — próbę wspólnego rozwiązania.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Obrona czy doprecyzowanie",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "W kuchni panuje bałagan po wspólnym śniadaniu, którego nie jadłeś z nimi. Dodatkowy kubek i talerz zostają na blacie jak cichy dowód, że twoje wcześniejsze słowa nie wyhamowały napięcia.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Naprawdę przesadzasz. To tylko kilka rzeczy i parę noclegów, a mówisz, jakbym sprowadziła tu lokatora.",
+            "scene_high": {
+                "description": "W kuchni jest ciszej niż chwilę wcześniej. Kasia opiera się o blat i patrzy uważniej, jakby pierwszy raz naprawdę próbowała uchwycić, o co ci chodzi.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Okej, słyszę, że dla ciebie to już wygląda inaczej niż zwykłe odwiedziny. Co konkretnie najbardziej cię w tym obciąża?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nie wciskaj mi, że to nic. Po prostu liczysz, że się przyzwyczaję i przestanę reagować.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kasia odpowiada ostrym tonem, że nie jesteś od oceniania jej intencji.",
+                    "feedback": {
+                        "label": "Czytanie w myślach",
+                        "psychology": "Przypisujesz drugiej stronie ukryty plan, zamiast sprawdzić fakty. To poznawcza pułapka, która eskaluje defensywność i zamyka rozmowę.",
+                        "better_alternative_hint": "Zadaj pytanie o skalę sytuacji albo nazwij swój konkretny koszt."
+                    },
+                    "tags": [
+                        {
+                            "text": "Czytanie intencji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Defensywność",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, nieważne. I tak nie ma sensu o tym gadać.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kasia wzrusza ramionami. Temat formalnie gaśnie, ale napięcie zostaje między wami.",
+                    "feedback": {
+                        "label": "Wycofanie z rozmowy",
+                        "psychology": "Unikanie obniża chwilowy dyskomfort, ale nie rozwiązuje konfliktu granic. Druga strona nie dostaje jasnego sygnału, więc stary wzorzec prawdopodobnie się utrzyma.",
+                        "better_alternative_hint": "Nie rezygnuj z rozmowy. Zawęź temat do jednego konkretu, który chcesz ustalić."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Potrzebuję konkretu. Ile nocy w tygodniu Ola tu śpi i czy planujecie, żeby to był regularny układ?",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 0,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kasia odpowiada mniej emocjonalnie i zaczyna mówić o tym, że to dzieje się częściej od dwóch tygodni.",
+                    "feedback": {
+                        "label": "Dopytanie o fakty",
+                        "psychology": "Schodzisz z domysłów do danych, co porządkuje sytuację. To pomaga, ale bez nazwania emocjonalnego kosztu możesz brzmieć jak administrator zamiast współlokatora.",
+                        "better_alternative_hint": "Po faktach dodaj, jaki wpływ ma to na twoje poczucie przestrzeni i bezpieczeństwa."
+                    },
+                    "tags": [
+                        {
+                            "text": "Porządkowanie faktów",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie chcę atakować twojego związku. Chcę zrozumieć, czy to jest chwilowe, czy faktycznie zmienia naszą codzienność i zasady mieszkania.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kasia przestaje się bronić tak ostro. Przyznaje, że sama nie nazwała tego wprost i że to już nie wygląda na pojedyncze noclegi.",
+                    "feedback": {
+                        "label": "Oddzielenie osoby od problemu",
+                        "psychology": "Rozdzielasz jej relację od wspólnej umowy mieszkaniowej. To zmniejsza zagrożenie dla tożsamości i otwiera miejsce na szczerość.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Nazwanie realnego kosztu",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "W przedpokoju stoją dwie kurtki więcej niż zwykle, a z łazienki dobiega dźwięk suszarki należącej do Oli. Masz wrażenie, że twoje mieszkanie powoli stało się czyjąś strefą przejściową.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Mam wrażenie, że przeszkadza ci po prostu sama obecność Oli. Ona nic złego ci nie zrobiła.",
+            "scene_high": {
+                "description": "Usiedliście przy stole w salonie. Kasia nie stoi już w drzwiach gotowa do wyjścia, tylko czeka na doprecyzowanie, jak dokładnie ta sytuacja narusza twoją przestrzeń.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Rozumiem, że to nie jest tylko o niej jako osobie. Powiedz mi, co dokładnie najbardziej narusza twoje granice.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Najbardziej narusza mnie to, że rano mam obcą osobę pod prysznicem i wieczorem cudze rzeczy wszędzie. Naprawdę mam dość tego cyrku.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kasia słyszy pogardliwy ton i wbija wzrok w stół. Mówi, że robisz z Oli intruza.",
+                    "feedback": {
+                        "label": "Prawda podana z pogardą",
+                        "psychology": "Opisujesz realny problem, ale dodajesz odbarwienie pogardliwe. Pogarda jest jednym z najsilniejszych predyktorów zerwania dialogu, bo uderza w godność drugiej strony.",
+                        "better_alternative_hint": "Zachowaj konkret, usuń deprecjonujący ton i nazwij potrzebę prywatności."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Granice osobiste",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "To moje mieszkanie tak samo jak twoje, więc przestań zachowywać się, jakbyś mogła sama zmieniać zasady dla wszystkich.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kasia prostuje się i odpowiada, że ty też nie będziesz jej dyktować, jak ma żyć.",
+                    "feedback": {
+                        "label": "Walka o władzę",
+                        "psychology": "Przechodzisz z opisu wpływu na walkę o dominację. To przesuwa konflikt z granic na status i zwiększa opór, zamiast budować wspólne reguły.",
+                        "better_alternative_hint": "Mów o tym, czego potrzebujesz w przestrzeni wspólnej, nie o tym, kto ma wyższą pozycję."
+                    },
+                    "tags": [
+                        {
+                            "text": "Walka o władzę",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Potrzebuję prywatności i przewidywalności. Nie zgadzam się na stałą obecność trzeciej osoby bez wspólnych ustaleń.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kasia kiwa głową, choć nadal jest spięta. Mówi, że rozumie słowo stała, ale nie wie jeszcze, jak to poukładać.",
+                    "feedback": {
+                        "label": "Granica nazwana wprost",
+                        "psychology": "To dobry komunikat graniczny: jasny, własnościowy i bez obwiniania. Nadal jednak koncentruje się głównie na twoim sprzeciwie, a mniej na wspólnym interesie.",
+                        "better_alternative_hint": "Dołóż propozycję ram, które chronią obie strony."
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chcę, żebyś mogła budować swój związek, a jednocześnie żeby nasze mieszkanie dalej było bezpieczne i przewidywalne dla nas obu. Ustalmy granice, które ochronią jedno i drugie.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Kasia wyraźnie odpuszcza obronę. Mówi, że w takiej formie jest gotowa usiąść do konkretnych zasad.",
+                    "feedback": {
+                        "label": "Wspólna rama zamiast starcia",
+                        "psychology": "Nie musisz wybierać między granicą a relacją. Ten wybór łączy obie potrzeby i przenosi rozmowę na poziom współprojektowania rozwiązania.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Budowanie wspólnej perspektywy",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Zasady, noclegi i koszty",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Lodówka jest pełniejsza niż zwykle, a na blacie leży rachunek za media. Rozmowa zeszła z emocji na konkrety, ale w powietrzu czuć irytację i podejrzliwość.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "To co teraz? Będziesz liczyć jej prysznice i każdą herbatę? To brzmi absurdalnie.",
+            "scene_high": {
+                "description": "W kuchni pojawia się notes i długopis. Ton jest ostrożny, ale już bardziej roboczy niż obronny, jakby obie strony zaczęły uznawać, że spontaniczność też potrzebuje ram.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Dobra, jeśli to robi się regularne, to fair będzie ustalić jakieś zasady. Co według ciebie powinno się znaleźć w takim układzie?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Tak, najlepiej liczmy wszystko co do grosza, skoro najwyraźniej inaczej się nie da.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kasia prycha i mówi, że próbujesz ją upokorzyć, a nie ustalić zasady.",
+                    "feedback": {
+                        "label": "Rozliczanie jako broń",
+                        "psychology": "Ironiczne rozliczanie nie buduje sprawiedliwości, tylko poczucie kary. Problem przestaje być wspólnym ustaleniem zasad, a staje się wojną o to, kto kogo bardziej zawstydzi.",
+                        "better_alternative_hint": "Mów o uczciwości i przewidywalności, nie o karaniu drugiej strony."
+                    },
+                    "tags": [
+                        {
+                            "text": "Zawstydzanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Pasywna agresja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, odpuszczę temat pieniędzy. Byle tylko nie robić z tego większej awantury.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kasia natychmiast łapie ulgę, ale nie proponuje niczego w zamian. Nierównowaga zostaje nietknięta.",
+                    "feedback": {
+                        "label": "Fałszywy spokój",
+                        "psychology": "Pozornie obniżasz napięcie, ale robisz to kosztem własnej granicy. Niewypowiedziany żal wróci później w silniejszej formie.",
+                        "better_alternative_hint": "Nie musisz być twardy, ale nie rezygnuj z tego, co ma realny wpływ na wspólne życie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie potrzeb",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Unikanie konfliktu",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Jeśli Ola nocuje częściej niż ustalony limit, potrzebujemy zasad dotyczących gości, kosztów i korzystania ze wspólnych przestrzeni.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Kasia pyta, jaki limit masz na myśli i które koszty uważałbyś za uczciwe do współdzielenia.",
+                    "feedback": {
+                        "label": "Ramowanie zasad",
+                        "psychology": "To konkret i dobra podstawa do umowy. Nadal jednak brzmi jak regulamin, więc warto dodać sens tych reguł: ochronę prywatności i poczucia równości.",
+                        "better_alternative_hint": "Po propozycji zasad wyjaśnij, czemu mają służyć obu stronom."
+                    },
+                    "tags": [
+                        {
+                            "text": "Negocjacja zasad",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie chodzi mi o rozliczanie twojego związku. Chodzi o uczciwość wobec wspólnej umowy: liczba noclegów, informowanie z wyprzedzeniem i udział w kosztach, jeśli to staje się regularne.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kasia wzdycha, ale przyjmuje to jako rozsądne. Zaczyna sama proponować limit noclegów i wcześniejsze uprzedzanie.",
+                    "feedback": {
+                        "label": "Konkret bez poniżania",
+                        "psychology": "Łączysz strukturę z poszanowaniem godności. To obniża wstyd po drugiej stronie i zwiększa szansę, że zasady będą wynikiem zgody, a nie wymuszenia.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Sprawiedliwość proceduralna",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Nowa umowa albo otwarty konflikt",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Atmosfera gęstnieje. Kasia stoi przy drzwiach z rękami skrzyżowanymi na piersi, jakby bardziej szykowała się do obrony niż do ustaleń. Zwykłe mieszkanie zaczyna przypominać pole wpływów.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Nie będę prosić o pozwolenie na swoje życie. Jeśli ci to aż tak nie pasuje, to może w ogóle nie powinniśmy razem mieszkać.",
+            "scene_high": {
+                "description": "Choć rozmowa była trudna, oboje siedzicie już spokojniej. Na stole leży kartka z kilkoma punktami, które da się doprecyzować zamiast zgadywać intencje.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Mogę to uszanować. Chcę być fair wobec ciebie i jednocześnie nie udawać, że Ola nie jest ważną częścią mojego życia. Jak to domknąć sensownie?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Świetnie. To jutro pogadam z właścicielem i zobaczymy, jak szybko skończy się ta samowolka.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kasia reaguje gniewem i mówi, że skoro chcesz wojny formalnej, to ją dostaniesz.",
+                    "feedback": {
+                        "label": "Groźba zamiast domknięcia",
+                        "psychology": "Groźba może dać chwilowe poczucie kontroli, ale prawie zawsze niszczy zaufanie. Rozmowa przestaje dotyczyć problemu, a zaczyna bezpieczeństwa przed tobą.",
+                        "better_alternative_hint": "Formalne kroki zostaw jako ostateczność. Najpierw zamknij rozmowę próbą jasnej umowy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Groźba",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Eskalacja konfliktu",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nic nie muszę mówić. Po prostu zacznę robić wam tak samo niewygodnie, to może zrozumiesz.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kasia patrzy z niedowierzaniem. Odpowiada, że właśnie potwierdzasz, że problemem nie są zasady, tylko chęć odwetu.",
+                    "feedback": {
+                        "label": "Odwet zamiast rozwiązania",
+                        "psychology": "Gdy celem staje się nauczenie drugiej strony lekcji, relacja przechodzi w logikę kary. To klasyczny skręt z naprawy w rewanż.",
+                        "better_alternative_hint": "Domykaj konflikt przez zasadę, termin i sprawdzenie działania, nie przez zemstę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Odwet",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Pasywna agresja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Jeśli od dziś nie ustalimy zasad, wrócę do zapisów umowy i będę działać formalnie. Wolę tego uniknąć, ale potrzebuję jasności.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 0,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kasia słyszy granicę i rozumie, że temat nie zniknie. Nadal jednak czuje presję bardziej niż współpracę.",
+                    "feedback": {
+                        "label": "Twarda granica",
+                        "psychology": "To uczciwe postawienie konsekwencji, więc chronisz siebie. Brakuje jednak elementu wspólnotowego, dlatego rozwiązanie może być kruche i czysto techniczne.",
+                        "better_alternative_hint": "Dodaj propozycję prostej umowy i moment sprawdzenia, czy działa dla obu stron."
+                    },
+                    "tags": [
+                        {
+                            "text": "Konsekwencja granicy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chcę zostać przy rozwiązaniu, które chroni naszą relację i mieszkanie. Spiszmy prostą zasadę na gości, limit noclegów i wróćmy do tego za tydzień, żeby sprawdzić, czy działa.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -3,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kasia wyraźnie się rozluźnia. Zgadza się spisać zasady i proponuje, że sama porozmawia z Olą o granicach oraz kosztach.",
+                    "feedback": {
+                        "label": "Domknięcie przez wspólną umowę",
+                        "psychology": "To ruch naprawczy najwyższej jakości: granica jest konkretna, relacja nie jest upokorzona, a rozwiązanie ma mechanizm przeglądu. Dzięki temu konflikt staje się procesem uczenia się, a nie zwycięstwa jednej strony.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Naprawa relacji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "CICHA WOJNA W MIESZKANIU",
+            "emoji": "🔴",
+            "subtitle": "Granice nie zostały ustalone, a konflikt przeszedł w walkę o teren.",
+            "narrative": "Po rozmowie mieszkanie staje się emocjonalnie mniejsze. Kasia i Ola funkcjonują po swojemu, ty zaczynasz liczyć każdy sygnał naruszenia i interpretować go jako kolejne lekceważenie. Zamiast nowej umowy powstaje zimny front.",
+            "diagnosis": "Dominowały atak, ironia albo wycofanie. Konflikt przesunął się z realnego problemu granic na wojnę o intencje, status i odwet. Niska walidacja oraz wysoka defensywność zablokowały przejście do wspólnego rozwiązania.",
+            "post_game": {
+                "communication_style_summary": "W tej ścieżce dominował styl agresywny, bierny albo biernie agresywny, co zwiększało napięcie szybciej niż pojawiały się konkrety.",
+                "strongest_moment": "Najmocniejszy moment pojawiał się wtedy, gdy próbowałeś nazwać, że problem dotyczy zasad mieszkania, a nie samej osoby.",
+                "growth_tip": "Najpierw oddziel człowieka od problemu. Zamiast oceniać partnerkę współlokatorki albo jej intencje, nazwij wpływ sytuacji na prywatność, przewidywalność i poczucie równości.",
+                "replay_prompt": "Spróbuj przejść tę scenę tak, jakby twoim celem nie było wygrać, tylko wspólnie stworzyć nową umowę."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "KRUCHY UKŁAD",
+            "emoji": "🟡",
+            "subtitle": "Padły konkrety, ale porozumienie bardziej zarządza problemem, niż go naprawdę leczy.",
+            "narrative": "Udaje się ustalić kilka zasad: wcześniejsze informowanie, mniej improwizacji, może jakiś limit noclegów. Problem w tym, że pod spodem nadal zostaje sporo niewypowiedzianego żalu. Mieszkanie działa, ale bardziej na ostrożności niż na zaufaniu.",
+            "diagnosis": "Pojawiła się asertywność i momenty rzeczowego porządkowania, lecz brakowało pełniejszej walidacji oraz wspólnej perspektywy. To pozwoliło przejść z chaosu do regulaminu, ale nie do realnej ulgi po obu stronach.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl asertywny i transakcyjny: skuteczny w porządkowaniu faktów, ale jeszcze nie do końca transformujący relację.",
+                "strongest_moment": "Najlepiej działało jasne nazwaniem twoich granic bez obwiniania drugiej strony.",
+                "growth_tip": "Masz już strukturę. Następny krok to dodać więcej uznania dla potrzeb drugiej osoby, bez rezygnowania z własnych. To właśnie tam zaczyna się Poziom III.",
+                "replay_prompt": "Zagraj jeszcze raz i zobacz, co się stanie, gdy do konkretu dołożysz walidację i wspólne projektowanie zasad."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 10
+            },
+            "color": "green",
+            "title": "NOWE ZASADY, MNIEJ NAPIĘCIA",
+            "emoji": "🟢",
+            "subtitle": "Rozmowa nie była łatwa, ale zmieniła konflikt w wspólne ustalenie.",
+            "narrative": "Kasia uznaje, że obecność Oli przestała być zwykłym odwiedzaniem i zaczęła realnie zmieniać mieszkanie. Wspólnie spisujecie prostą zasadę: limit noclegów, wcześniejsze uprzedzanie i udział w kosztach, jeśli układ staje się regularny. Nie wszystko znika od razu, ale znika poczucie, że jedno z was przepycha rzeczy po cichu.",
+            "diagnosis": "Udało się połączyć granice z szacunkiem. Dzięki temu defensywność NPC spadła, a konflikt został przedefiniowany z walki o rację na rozmowę o uczciwości i przewidywalności. To klasyczny ruch w stronę komunikacji transformacyjnej.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl empatyczny i transformacyjny: najpierw uznanie potrzeb obu stron, potem konkretna struktura rozwiązania.",
+                "strongest_moment": "Najmocniejszy był moment, w którym potrafiłeś powiedzieć, że nie atakujesz związku Kasi, tylko chcesz ochronić wspólną przestrzeń i ustalić nowe zasady.",
+                "growth_tip": "W realnym życiu warto utrzymać ten sam wzorzec: uznanie, konkretny wpływ, wspólna umowa i termin sprawdzenia, czy działa.",
+                "replay_prompt": "Spróbuj ponownie i sprawdź, jak szybko rozmowa się psuje, gdy z transformacji zsuniesz się w ironię albo walkę o władzę."
+            }
+        }
+    ]
+}

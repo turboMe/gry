@@ -1,0 +1,975 @@
+{
+    "scenario_id": "silent_purchase_shared_savings",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Za drogi rower",
+        "subtitle": "Duży zakup odsłania lęk o bezpieczeństwo i walkę o autonomię w związku",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 12,
+        "interaction_count": 6
+    },
+    "tags": {
+        "relationship_type": "romantic_partner",
+        "theme": [
+            "money",
+            "trust",
+            "boundaries"
+        ],
+        "emotional_intensity": "critical",
+        "age_rating": "adult",
+        "session_type": "training",
+        "player_role_gender": "neutral",
+        "difficulty": "advanced"
+    },
+    "characters": {
+        "player": {
+            "name": "Alex",
+            "role_label": "Partner · Gracz",
+            "age_range": "29-36",
+            "context": "Wracasz do domu po długim dniu. Od miesięcy odkładacie pieniądze na poduszkę finansową i wakacje. Nagle dowiadujesz się, że partnerka wpłaciła zaliczkę za bardzo drogi rower bez rozmowy z tobą.",
+            "hidden_need": "safety",
+            "hidden_need_text": "Potrzebujesz przewidywalności, wpływu na wspólne decyzje i poczucia, że wasze finanse nie wymkną się spod kontroli.",
+            "traits": [
+                {
+                    "text": "odpowiedzialny finansowo",
+                    "type": "positive"
+                },
+                {
+                    "text": "napięty przy niepewności",
+                    "type": "negative"
+                },
+                {
+                    "text": "bezpośredni",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 4,
+                "patience": 6,
+                "defensiveness": 6,
+                "empathy": 6,
+                "need_for_control": 8,
+                "shame_sensitivity": 5,
+                "directness": 8,
+                "repair_ability": 6
+            }
+        },
+        "npc": {
+            "name": "Mika",
+            "role_label": "Partnerka · NPC",
+            "age_range": "28-35",
+            "context": "Od dawna marzy o profesjonalnym rowerze i trafiła na ograniczoną czasowo ofertę. Bała się, że rozmowa skończy się automatycznym zakazem, więc wpłaciła zaliczkę ze wspólnych oszczędności i dopiero potem o tym mówi.",
+            "hidden_need": "autonomy",
+            "hidden_need_text": "Potrzebuje sprawczości, traktowania po partnersku i przestrzeni na własne decyzje bez poczucia, że musi prosić o pozwolenie.",
+            "traits": [
+                {
+                    "text": "ambitna",
+                    "type": "positive"
+                },
+                {
+                    "text": "defensywna pod presją",
+                    "type": "negative"
+                },
+                {
+                    "text": "wrażliwa na ocenę",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 7,
+                "patience": 5,
+                "defensiveness": 8,
+                "empathy": 5,
+                "need_for_control": 5,
+                "shame_sensitivity": 7,
+                "directness": 6,
+                "repair_ability": 5
+            },
+            "npc_reaction_logic": "Mika szybko zamyka się lub kontratakuje, gdy słyszy ocenę, wyższość albo sugestię, że jest nieodpowiedzialna. Otwiera się, gdy rozmowa rozdziela zachowanie od jej wartości jako osoby, uznaje jej potrzebę autonomii i jednocześnie proponuje konkretne zasady dla wspólnych pieniędzy."
+        }
+    },
+    "metrics_start": {
+        "tension": 45,
+        "trust": 55,
+        "openness": 48,
+        "feeling_heard": 47
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Zaskoczenie przy drzwiach",
+            "scene": {
+                "description": "Przedpokój i salon są jeszcze rozświetlone wieczorną lampą. Mika stoi z telefonem w dłoni, wyraźnie podekscytowana i spięta jednocześnie. Na ekranie widać potwierdzenie przelewu za zaliczkę na rower.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": "Wpłaciłam dziś zaliczkę na ten rower, o którym ci mówiłam. To była dobra okazja i nie chciałam jej stracić.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Serio? Zachowujesz się jak ktoś kompletnie niegotowy do wspólnych finansów.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Mika momentalnie twardnieje. Odkłada telefon i mówi, że nie będzie słuchać traktowania z góry.",
+                    "feedback": {
+                        "label": "Atak na osobę",
+                        "psychology": "Zamiast nazwać problem, oceniasz charakter partnerki. W ujęciu Berne'a wchodzisz z pozycji krytycznego Rodzica, co zwykle wywołuje bunt albo obronę. Taki start prawie od razu przenosi rozmowę na Poziom II.",
+                        "better_alternative_hint": "Nazwij konkretny wpływ tej decyzji na ciebie i na wspólne finanse, bez etykietowania partnerki."
+                    },
+                    "tags": [
+                        {
+                            "text": "Etykietowanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "No jasne. Po co w ogóle coś ze mną ustalać, skoro najwyraźniej jestem tu tylko dodatkiem.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Mika przewraca oczami i odpowiada, że ironia niczego nie wyjaśnia.",
+                    "feedback": {
+                        "label": "Ironia zamiast ujawnienia zranienia",
+                        "psychology": "Bierna agresja ukrywa właściwą emocję pod sarkazmem. W modelu NVC nie pokazujesz swojej potrzeby bezpieczeństwa ani wpływu, więc druga strona słyszy głównie pretensję. To osłabia szansę na empatyczną odpowiedź.",
+                        "better_alternative_hint": "Powiedz wprost, że poczułeś się pominięty i zaniepokojony, zamiast wbijać szpilę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Ukryty komunikat relacyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "To duży wydatek ze wspólnych oszczędności. Takie decyzje powinny być konsultowane wcześniej.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Mika zaciska usta, ale słucha. Mówi, że rozumie skalę wydatku, tylko nie chciała stracić okazji.",
+                    "feedback": {
+                        "label": "Granica bez odsłonięcia emocji",
+                        "psychology": "To asertywne postawienie sprawy i czytelny komunikat o zasadzie. Brakuje jednak warstwy emocjonalnej. Według kwadratu von Thuna mówisz głównie z poziomu rzeczowego i apelowego, a mało z poziomu ujawniania siebie.",
+                        "better_alternative_hint": "Dodaj, jak ta sytuacja na ciebie wpływa i dlaczego rozmowa wcześniej była dla ciebie ważna."
+                    },
+                    "tags": [
+                        {
+                            "text": "Stawianie granic",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Zatkało mnie. Martwię się o nasze bezpieczeństwo finansowe i boli mnie, że dowiaduję się po fakcie. Chcę zrozumieć, co za tym stało.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Mika spuszcza wzrok i przyznaje, że wiedziała, iż to duża sprawa. Mówi ciszej i mniej bojowo.",
+                    "feedback": {
+                        "label": "Komunikat Ja z zaproszeniem do dialogu",
+                        "psychology": "Łączysz trzy kluczowe elementy NVC: obserwację, emocję i potrzebę. Nie unikasz granicy, ale nie robisz z niej oskarżenia. To zwiększa szansę na przejście w stronę Poziomu III.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Pierwsza defensywa",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Atmosfera gęstnieje. Mika stoi przy stole z założonymi rękami i unika kontaktu wzrokowego. W powietrzu czuć, że kilka pierwszych zdań ustawiło rozmowę jak pojedynek.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Super. Nawet nie zdążyłam nic wyjaśnić, a już brzmi to tak, jakbym zrobiła coś niewybaczalnego.",
+            "scene_high": {
+                "description": "Mika siada na skraju kanapy i odkłada telefon ekranem do dołu. Wciąż jest napięta, ale w jej głosie słychać mniej walki, a więcej wahania.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "cold"
+            },
+            "npc_line_high": "Wiem, że to duży wydatek. Pewnie powinnam była powiedzieć ci wcześniej, ale spanikowałam, że od razu będzie nie.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nie chodzi tylko o wydatek. Chodzi o to, że przy wspólnych pieniądzach zachowujesz się niepoważnie.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Mika od razu odpowiada, że nie zamierza dalej rozmawiać, jeśli ma być obrażana.",
+                    "feedback": {
+                        "label": "Moralizowanie",
+                        "psychology": "Znowu oceniasz osobę zamiast zachowania. W analizie transakcyjnej to nacisk z krytycznego Rodzica, który spycha drugą stronę do buntu albo wycofania. Zaufanie spada szybciej niż rośnie poczucie wpływu.",
+                        "better_alternative_hint": "Trzymaj się faktów i skutku decyzji, zamiast przypisywać partnerce niedojrzałość."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna Berne'a",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, nieważne. Zróbmy, jak chcesz. I tak po fakcie nie mam już nic do powiedzenia.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Mika milknie, ale napięcie nie znika. Między wami zostaje chłód i poczucie niedopowiedzenia.",
+                    "feedback": {
+                        "label": "Wycofanie z ukrytą urazą",
+                        "psychology": "To pozorne wygaszenie konfliktu. Emocje nie zostają nazwane ani przetworzone. W praktyce rozmowa urywa się na poziomie urazy, co często wraca później z większą siłą.",
+                        "better_alternative_hint": "Nie zamykaj tematu tylko dlatego, że jest trudno. Powiedz, czego potrzebujesz, żeby móc rozmawiać dalej."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Odłóżmy na chwilę emocje. Chcę wiedzieć dokładnie, ile poszło, z którego konta i co jeszcze jest do dopłaty.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 0,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Mika podaje liczby i mówi konkretnie, choć nadal trzyma dystans.",
+                    "feedback": {
+                        "label": "Porządkowanie faktów",
+                        "psychology": "To dobry ruch, kiedy chaos zagraża rozmowie. Przenosisz ją na Poziom I i odzyskujesz orientację. Minusem jest to, że pomijasz relacyjny wymiar naruszenia zaufania, więc kontakt pozostaje chłodny.",
+                        "better_alternative_hint": "Po ustaleniu faktów wróć do tego, co was oboje uruchomiło emocjonalnie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Doprecyzowanie faktów",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Widzę, że od razu się bronisz. Ja nie chcę cię upokorzyć, tylko zrozumieć, czemu zdecydowałaś sama.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Mika bierze oddech i przyznaje, że bała się twojej reakcji bardziej niż samego wydatku.",
+                    "feedback": {
+                        "label": "Rozbrojenie obrony",
+                        "psychology": "Najpierw nazywasz dynamikę rozmowy, potem obniżasz zagrożenie relacyjne. To ważne, bo wstyd i lęk przed oceną często blokują szczerość. Taki ruch otwiera drogę do autentycznej informacji, a nie tylko do tłumaczeń.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Aktywne słuchanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Redukcja defensywności",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Co było pod spodem",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Rozmowa przeszła z ekscytacji w twarde ścieranie się racji. Mika opiera się o blat kuchenny i mówi szybko, jakby chciała wyprzedzić kolejny atak.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Bałam się, że i tak usłyszę nie. Przy większych wydatkach zawsze czuję się, jakbym musiała zdawać egzamin.",
+            "scene_high": {
+                "description": "Przenosicie się do kuchni. Mika nalewa sobie wody i mówi wolniej. Widać, że jest zawstydzona, ale już nie tak usztywniona.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Chyba najbardziej bałam się tego, że z góry uznasz ten zakup za fanaberię i po prostu zamkniesz temat.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Czyli sama wiedziałaś, że robisz coś głupiego, więc postanowiłaś to ukryć.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Mika reaguje natychmiastowym sprzeciwem i mówi, że właśnie o takim ocenianiu mówiła.",
+                    "feedback": {
+                        "label": "Fałszywe odczytanie intencji",
+                        "psychology": "Przepisujesz partnerce wstydliwą motywację zamiast sprawdzić jej doświadczenie. To klasyczny błąd interpretacji. W kwadracie von Thuna ignorujesz warstwę ujawniania siebie i słyszysz wyłącznie potwierdzenie własnej tezy.",
+                        "better_alternative_hint": "Oddziel to, co partnerka zrobiła, od tego, co sobie dopowiadasz o jej motywach."
+                    },
+                    "tags": [
+                        {
+                            "text": "Czytanie w myślach",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Super, to może jeszcze mam ci pogratulować sprytu, że ominęłaś rozmowę.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Mika prycha i odwraca wzrok. Kontakt jeszcze bardziej się rwie.",
+                    "feedback": {
+                        "label": "Ukryty atak",
+                        "psychology": "Sarkazm daje chwilowe poczucie przewagi, ale nie przekazuje potrzeby ani granicy. Zamiast kontaktu tworzy pogardę. To utrudnia przejście z walki o rację do wspólnego rozumienia sytuacji.",
+                        "better_alternative_hint": "Powiedz wprost, że ominęcie rozmowy uderzyło w twoje zaufanie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Ograniczona oferta nie daje prawa omijać wspólnych zasad. To nadal był wydatek, który dotyczył nas obojga.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 0,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Mika kiwa głową, choć widać, że nadal czuje się oceniana. Przyznaje, że z perspektywy czasu powinna była napisać chociaż wiadomość.",
+                    "feedback": {
+                        "label": "Czytelna zasada",
+                        "psychology": "Bronisz granicy i porządkujesz odpowiedzialność. To ważne, bo bez tego rozmowa rozpływa się w emocjach. Nadal jednak bardziej korygujesz niż próbujesz zrozumieć, co uruchamia wasz schemat kontroli i unikania.",
+                        "better_alternative_hint": "Dodaj zdanie o tym, co jej lęk mówi o waszej dotychczasowej dynamice."
+                    },
+                    "tags": [
+                        {
+                            "text": "Granice finansowe",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Odpowiedzialność we wspólnym systemie",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Słyszę, że bałaś się, że od razu to zablokuję. Jednocześnie ja potrzebuję wpływu na to, co dzieje się z naszymi oszczędnościami.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Mika przytakuje i pierwszy raz mówi wprost, że czasem odbiera twoją ostrożność jako brak zaufania do jej rozsądku.",
+                    "feedback": {
+                        "label": "Uznanie dwóch perspektyw naraz",
+                        "psychology": "Nie rezygnujesz z własnej potrzeby, ale też uznajesz lęk drugiej strony. To rdzeń dojrzałej asertywności i bardzo bliskie językowi NVC. Dzięki temu rozmowa przesuwa się od oskarżeń do rozpoznania wzajemnych wyzwalaczy.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Granica czy kontrola",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Napięcie robi się bardziej osobiste. Każde z was zaczyna odwoływać się do wcześniejszych sytuacji i starych urazów. Kuchnia staje się za mała na ten ciężar.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Bo przy każdym większym wydatku mam wrażenie, że muszę cię najpierw przekonać, że nie jestem dzieckiem.",
+            "scene_high": {
+                "description": "Między złością pojawia się więcej refleksji. Oboje mówicie już ciszej. Nie zniknęło napięcie, ale pojawiło się miejsce na nazwane potrzeby.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "cold"
+            },
+            "npc_line_high": "Chyba naprawdę odbierasz to jako brak szacunku, a ja odbieram twoją ostrożność jak próbę sterowania mną.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Bo ktoś musi tu być dorosły i najwyraźniej padło na mnie.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Mika wybucha i mówi, że nie zamierza być pouczana we własnym związku.",
+                    "feedback": {
+                        "label": "Wyższość i upokorzenie",
+                        "psychology": "To komunikat dominacyjny. Nie tylko bronisz granicy, ale ustawiasz hierarchię. W relacji partnerskiej taki ruch mocno uruchamia walkę o godność i odcina drogę do współpracy.",
+                        "better_alternative_hint": "Mów o swoim lęku i o regułach, nie o tym, kto jest bardziej dorosły."
+                    },
+                    "tags": [
+                        {
+                            "text": "Poniżanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Walka o status",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra. Od dziś każdy robi co chce ze swoimi pieniędzmi i nie ma tematu.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Mika milknie, ale w jej twarzy widać rozczarowanie. Brzmi to jak odcięcie się, nie jak rozwiązanie.",
+                    "feedback": {
+                        "label": "Fałszywe rozwiązanie przez odcięcie",
+                        "psychology": "Wycofujesz się z trudnej negocjacji i zrywasz wspólnotowy wymiar problemu. To pozornie chroni przed konfliktem, ale niszczy poczucie bycia drużyną. W tle zostaje lęk i brak jasnych zasad.",
+                        "better_alternative_hint": "Szukaj takich granic, które jednocześnie chronią wspólne zasoby i zostawiają przestrzeń na autonomię."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ucieczka od negocjacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Unikanie bliskości",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Ustalmy limit kwoty, od której trzeba dać znać, i wtedy przestaniemy się domyślać.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Mika przyjmuje ten pomysł, ale pyta, czy za samą liczbą nie ukrywa się dalej to samo napięcie między wami.",
+                    "feedback": {
+                        "label": "Krok w stronę struktury",
+                        "psychology": "Dajesz konkret, co może realnie obniżyć chaos. To dobry most do późniejszych ustaleń. Sam limit nie wystarczy jednak, jeśli nie nazwiecie, kiedy ostrożność staje się kontrolą, a autonomia omijaniem partnera.",
+                        "better_alternative_hint": "Połącz zasadę finansową z nazwaniem tego, czego każde z was chce uniknąć w przyszłości."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ustalanie zasad",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie chcę być twoim kontrolerem ani być stawiany przed faktem dokonanym. Potrzebujemy zasad, które dadzą tobie autonomię, a mnie poczucie bezpieczeństwa.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Mika wyraźnie mięknie. Mówi, że właśnie o takie partnerstwo jej chodziło, tylko nie umiała tego dobrze nazwać.",
+                    "feedback": {
+                        "label": "Wspólna rama zamiast walki o rację",
+                        "psychology": "To pełny ruch transformacyjny. Przestajesz pytać, kto ma rację, i zaczynasz budować system, który ma chronić was oboje. Właśnie tu rozmowa przechodzi na Poziom III i staje się projektowaniem relacji, a nie tylko gaszeniem konfliktu.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Wspólna wizja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Naprawa czy rozliczanie",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Oboje jesteście już zmęczeni. W głosach słychać bardziej rozliczanie niż ciekawość. Każde kolejne zdanie grozi powrotem do początku konfliktu.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Brzmi to wszystko bardziej jak regulamin niż związek. Nie wiem, czy da się tu oddychać.",
+            "scene_high": {
+                "description": "Wracacie do salonu z kartką i długopisem. Napięcie nie zniknęło całkiem, ale jest już konkretna gotowość, żeby coś po tej rozmowie zostało.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Dobra. To spróbujmy to rozpisać tak, żeby żadne z nas nie czuło się ani prowadzone za rękę, ani pomijane.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Najpierw oddasz te pieniądze na konto, a potem dopiero możemy gadać o zaufaniu.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Mika odpowiada, że właśnie dlatego bała się rozmowy, bo wszystko kończy się ultimatum.",
+                    "feedback": {
+                        "label": "Ultimatum",
+                        "psychology": "Narzucone rozwiązanie może dać ci chwilowe poczucie porządku, ale niszczy współautorstwo ustaleń. W praktyce wzmacnia narrację, że jedna strona rządzi, a druga ma się podporządkować.",
+                        "better_alternative_hint": "Zamiast stawiać warunek, zaproponuj proces naprawy i wspólnego ustalenia zasad."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ultimatum",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kontrola przez przymus",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Spoko. Wpiszę sobie do kalendarza, kiedy następnym razem zniknie kilka tysięcy.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Mika zamyka się i mówi, że skoro rozmowa znów ma być złośliwa, to nie ma siły jej ciągnąć.",
+                    "feedback": {
+                        "label": "Złośliwość zamiast naprawy",
+                        "psychology": "Bierna agresja odbiera bezpieczeństwo psychiczne dokładnie wtedy, gdy potrzeba go najbardziej. Zamiast budować zasady, wprowadzasz klimat kary i przewidywanej porażki.",
+                        "better_alternative_hint": "Powiedz, czego konkretnie potrzebujesz, żeby odzyskać zaufanie po tej sytuacji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Złośliwość",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Podważanie zaufania",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Chcę, żebyśmy od teraz uprzedzali się o wydatkach powyżej tysiąca złotych i odkładali osobno część pieniędzy tylko dla siebie.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Mika mówi, że to brzmi sensownie, choć chce jeszcze doprecyzować, co uznajecie za wspólny cel, a co za prywatną decyzję.",
+                    "feedback": {
+                        "label": "Konkretna propozycja",
+                        "psychology": "To dobra baza do realnej zmiany. Wprowadzasz zasadę i zostawiasz trochę autonomii. Brakuje tylko jawnego uznania, że naprawiacie coś więcej niż sam budżet — także zranione zaufanie.",
+                        "better_alternative_hint": "Dołóż zdanie o tym, po co te zasady są wam jako parze, nie tylko jako systemowi finansowemu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Propozycja rozwiązania",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Równowaga granic i swobody",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chcę razem z tobą ustalić trzy rzeczy: co jest wspólne, co osobiste i jak konsultujemy większe decyzje, żeby żadne z nas nie musiało zgadywać.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Mika zgadza się od razu i dodaje, że potrzebuje też własnego budżetu bez konieczności tłumaczenia każdego zakupu.",
+                    "feedback": {
+                        "label": "Projektowanie wspólnego systemu",
+                        "psychology": "To dojrzałe przejście od reakcji na incydent do ustalania zasad relacji. Dajesz strukturę, ale bez dominacji. W praktyce budujesz bezpieczeństwo przez przejrzystość, a nie przez kontrolę.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Wspólne ustalanie reguł",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Naprawa relacji",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_6",
+            "title": "Nowa umowa albo stary schemat",
+            "score_threshold": 5,
+            "scene_low": {
+                "description": "Jest późno. Zmęczenie odbiera wam cierpliwość. Na stole leży niedokończona kartka z chaotycznymi notatkami, ale bardziej przypomina dowód sporu niż plan.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Nie wiem, czy my w ogóle umiemy o pieniądzach rozmawiać bez walki o to, kto ma rację.",
+            "scene_high": {
+                "description": "Kartka na stole zaczyna wyglądać jak robocza mapa, a nie pole bitwy. Oboje jesteście zmęczeni, ale ton rozmowy stał się spokojniejszy i bardziej partnerski.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Dobrze. To zróbmy to sensownie i sprawdźmy za tydzień, czy oboje czujemy się z tym fair.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Albo zgadzasz się na moje zasady, albo kończymy wspólne konto. Inaczej to nie ma sensu.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Mika odpowiada lodowato, że skoro to ma być dyktat, to nie ma tu już rozmowy.",
+                    "feedback": {
+                        "label": "Przymus zamiast porozumienia",
+                        "psychology": "To próba odzyskania bezpieczeństwa przez siłę. Problem w tym, że narusza autonomię i niszczy poczucie partnerstwa. Nawet jeśli przynosi formalne ustępstwo, relacyjnie zostawia głębszą ranę.",
+                        "better_alternative_hint": "Domykaj rozmowę wspólną decyzją albo czytelną prośbą, nie groźbą."
+                    },
+                    "tags": [
+                        {
+                            "text": "Groźba",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Eskalacja konfliktu",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nieważne. Po prostu będę pilnować swoich pieniędzy i nie liczyć już na wspólne ustalenia.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Mika cichnie i kiwa głową bez przekonania. Między wami zostaje dystans zamiast zamknięcia sprawy.",
+                    "feedback": {
+                        "label": "Rezygnacja ze wspólnoty",
+                        "psychology": "Wycofujesz zaangażowanie, by nie czuć dalszego zranienia. To zrozumiałe, ale relacyjnie kosztowne. Zamiast umowy pojawia się oddalenie i życie obok siebie.",
+                        "better_alternative_hint": "Nawet jeśli potrzebujesz czasu, nazwij to wprost i zaproponuj moment powrotu do tematu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Zamykanie się",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Wycofanie więzi",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Zapiszmy ustalenia i wróćmy do tego za miesiąc, żeby sprawdzić, czy działają.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Mika przyjmuje plan i zgadza się na test nowych zasad, choć emocjonalnie nadal zostaje trochę napięcia.",
+                    "feedback": {
+                        "label": "Rozsądne domknięcie",
+                        "psychology": "To solidny finał na poziomie operacyjnym. Ustalenia mają szansę zadziałać, bo są konkretne i sprawdzalne. Nie domykasz jednak w pełni warstwy relacyjnej, więc odbudowa zaufania może być wolniejsza.",
+                        "better_alternative_hint": "Dodaj krótkie uznanie, czego oboje potrzebujecie, żeby te zasady były naprawdę wspólne."
+                    },
+                    "tags": [
+                        {
+                            "text": "Kontrakt",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Uzgodnienie procesu",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Ustalmy dziś zasady i wróćmy do tej rozmowy za tydzień już bez napięcia, żeby sprawdzić, czy oboje czujemy się bezpiecznie i wolno.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Mika wyraźnie się rozluźnia. Mówi, że pierwszy raz ma poczucie, że nie chodzi o wygranie, tylko o znalezienie wspólnego języka.",
+                    "feedback": {
+                        "label": "Domknięcie z troską o relację",
+                        "psychology": "To finał, który łączy strukturę z więzią. Nie tylko ustalasz reguły, ale też tworzysz rytm dalszego dialogu. Dzięki temu bezpieczeństwo i autonomia przestają być wrogami, a stają się wspólnym celem.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Naprawczy follow up",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "OSOBNE TWIERDZE",
+            "emoji": "🔴",
+            "subtitle": "Rozmowa zamienia się w walkę o rację i kontrolę",
+            "narrative": "Wieczór kończy się bez porozumienia. Jedno z was odchodzi do drugiego pokoju, drugie zostaje przy stole z poczuciem, że wspólne pieniądze stały się symbolem braku szacunku. Formalnie temat nie jest zamknięty, ale relacyjnie zostaje pęknięcie.",
+            "diagnosis": "W tej ścieżce dominowały atak, ironia albo wycofanie. Konflikt przesunął się na Poziom II, gdzie stawką nie było już rozwiązanie problemu, lecz obrona własnej pozycji. Potrzeba bezpieczeństwa zamieniła się w kontrolę, a potrzeba autonomii w opór i ukrywanie.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl agresywny, biernie agresywny albo wycofany. Zabrakło rozdzielenia zachowania od oceny osoby.",
+                "strongest_moment": "Najmocniejszym momentem była sama próba zatrzymania tematu zamiast udawania, że nic się nie stało.",
+                "growth_tip": "Przy kolejnym podejściu zacznij od komunikatu Ja: co się wydarzyło, co poczułeś i czego potrzebujesz. Bez tego druga strona najczęściej słyszy tylko atak.",
+                "replay_prompt": "Spróbuj poprowadzić rozmowę tak, by nazwać jednocześnie swój lęk o finanse i jej potrzebę autonomii."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "KRUCHY ROZEJM",
+            "emoji": "🟡",
+            "subtitle": "Ustalenia padają, ale więź pozostaje napięta",
+            "narrative": "Udaje się dojść do częściowych zasad dotyczących wydatków, ale atmosfera nadal jest chłodna. Oboje wiedziecie już, o co poszło, jednak nie do końca czujecie się zrozumiani. Konflikt nie eksplodował, ale też nie został naprawdę przepracowany.",
+            "diagnosis": "Ta ścieżka opierała się głównie na asertywności i transakcji. To wystarczyło, by ograniczyć chaos i częściowo ochronić finanse, ale nie w pełni odbudowało zaufanie. Rozmowa zatrzymała się pomiędzy Poziomem I a Poziomem II.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl rzeczowy i asertywny. Było więcej struktury niż empatii.",
+                "strongest_moment": "Najlepszy moment pojawił się wtedy, gdy zacząłeś porządkować zasady zamiast tylko rozliczać sam wydatek.",
+                "growth_tip": "Następnym razem dołóż warstwę relacyjną: nazwij zranienie i uznaj lęk drugiej strony. Same reguły nie wystarczą, jeśli zaufanie nadal jest nadwyrężone.",
+                "replay_prompt": "Sprawdź, co się zmieni, gdy poza granicami finansowymi zaczniesz też walidować obie potrzeby."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 9
+            },
+            "color": "green",
+            "title": "NOWE ZASADY, MNIEJ LĘKU",
+            "emoji": "🟢",
+            "subtitle": "Powstaje realna szansa na odbudowę zaufania",
+            "narrative": "Wieczór kończy się konkretnymi ustaleniami i wyraźnie spokojniejszym tonem. Nadal jest ślad po zranieniu, ale oboje wychodzicie z rozmowy z poczuciem, że problem został nazwany uczciwie, a nie przykryty lub wygrany siłą.",
+            "diagnosis": "W tej ścieżce udało się połączyć granice z empatią. Rozmowa przesunęła się w stronę Poziomu III: nie tylko rozwiązaliście incydent, ale zaczęliście projektować bezpieczniejszy system bycia razem. Zaufanie nie wraca automatycznie, ale ma na czym się odbudować.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl empatyczny i transformacyjny, wspierany czytelną asertywnością.",
+                "strongest_moment": "Najmocniejszy moment pojawił się wtedy, gdy przestałeś pytać, kto zawinił bardziej, a zacząłeś szukać zasad chroniących was oboje.",
+                "growth_tip": "To dobry kierunek. W realnym życiu warto wracać do ustaleń po czasie, bo zaufanie odbudowuje się przez powtarzalność, nie jedną udaną rozmowę.",
+                "replay_prompt": "Zagraj jeszcze raz i zobacz, czy potrafisz dojść do porozumienia bez zostawiania resztek chłodu."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 10,
+                "max": 12
+            },
+            "color": "blue",
+            "title": "WSPÓLNY JĘZYK PIENIĘDZY",
+            "emoji": "🔵",
+            "subtitle": "Bezpieczeństwo i autonomia przestają się wykluczać",
+            "narrative": "Kończycie rozmowę z realnym poczuciem ulgi. Powstały nie tylko zasady dotyczące wydatków, ale też nowy sposób rozmawiania o pieniądzach bez zawstydzania i bez omijania partnera. Konflikt stał się punktem zwrotnym zamiast rysą.",
+            "diagnosis": "To ścieżka wysokiej dojrzałości komunikacyjnej. Udało się rozpoznać ukryte potrzeby obu stron i zbudować wspólne reguły bez relacyjnego zwycięzcy i przegranego. Rozmowa była nie tylko skuteczna, ale też naprawcza.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl transformacyjny: dużo empatii, jasne granice i wspólne projektowanie rozwiązań.",
+                "strongest_moment": "Najsilniejszy był moment, w którym nazwałeś, że nie chcesz ani kontrolować, ani być stawiany przed faktem dokonanym.",
+                "growth_tip": "To mistrzowski poziom rozmowy o trudnych sprawach. Przenoś ten sam wzorzec na inne obszary związku: czas, obowiązki, plany i granice prywatności.",
+                "replay_prompt": "Sprawdź, czy potrafisz utrzymać taki poziom również wtedy, gdy druga strona od początku reaguje mocno defensywnie."
+            }
+        }
+    ]
+}

@@ -1,0 +1,1283 @@
+{
+    "scenario_id": "future_children_uncertainty",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Nie to samo jutro",
+        "subtitle": "Wieczorna rozmowa o dzieciach otwiera pytanie, czy nadal idziecie w tę samą stronę.",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 12,
+        "interaction_count": 8
+    },
+    "tags": {
+        "relationship_type": "romantic_partner",
+        "theme": [
+            "parenting",
+            "expectations",
+            "change"
+        ],
+        "emotional_intensity": "critical",
+        "age_rating": "adult",
+        "session_type": "what_if",
+        "player_role_gender": "neutral",
+        "difficulty": "advanced"
+    },
+    "characters": {
+        "player": {
+            "name": "Alex",
+            "role_label": "Partner · Gracz",
+            "age_range": "30-36",
+            "context": "Od dłuższego czasu myślisz o wspólnej przyszłości i coraz mocniej czujesz, że chcesz mieć dzieci. Najbardziej męczy cię nie sama różnica zdań, tylko życie w zawieszeniu.",
+            "hidden_need": "clarity",
+            "hidden_need_text": "Potrzeba jasności, stabilnego kierunku i poczucia, że wasz związek rozwija się w zgodzie z ważnymi wartościami.",
+            "traits": [
+                {
+                    "text": "wierny relacji",
+                    "type": "positive"
+                },
+                {
+                    "text": "wrażliwy na sygnały dystansu",
+                    "type": "neutral"
+                },
+                {
+                    "text": "skłonny do nacisku pod stresem",
+                    "type": "negative"
+                },
+                {
+                    "text": "gotowy do szczerej rozmowy",
+                    "type": "positive"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 5,
+                "patience": 6,
+                "defensiveness": 6,
+                "empathy": 7,
+                "need_for_control": 7,
+                "shame_sensitivity": 5,
+                "directness": 8,
+                "repair_ability": 7
+            }
+        },
+        "npc": {
+            "name": "Maja",
+            "role_label": "Partnerka · Rozmówczyni",
+            "age_range": "29-35",
+            "context": "Kochasz Alexa i nie chcesz go stracić, ale temat dzieci budzi w tobie lęk. Nie wiesz, czy nie jesteś gotowa jeszcze, czy po prostu chcesz innego życia niż on.",
+            "hidden_need": "autonomy",
+            "hidden_need_text": "Potrzeba autonomii, bezpieczeństwa emocjonalnego i prawa do dojrzewania do decyzji bez przymusu.",
+            "traits": [
+                {
+                    "text": "refleksyjna",
+                    "type": "positive"
+                },
+                {
+                    "text": "unika presji",
+                    "type": "neutral"
+                },
+                {
+                    "text": "wycofuje się, gdy czuje nacisk",
+                    "type": "negative"
+                },
+                {
+                    "text": "uczciwa wobec siebie",
+                    "type": "positive"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 3,
+                "patience": 7,
+                "defensiveness": 7,
+                "empathy": 6,
+                "need_for_control": 5,
+                "shame_sensitivity": 7,
+                "directness": 4,
+                "repair_ability": 6
+            },
+            "npc_reaction_logic": "Maja zamyka się, gdy słyszy presję, ultimatum albo interpretacje jej uczuć. Otwiera się, gdy rozmowa oddziela fakty od lęku, uznaje wagę tematu i daje jej przestrzeń na nazwanie tego, czego sama jeszcze nie rozumie."
+        }
+    },
+    "metrics_start": {
+        "tension": 40,
+        "trust": 60,
+        "openness": 50,
+        "feeling_heard": 50
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Wieczór po odwiedzinach",
+            "scene": {
+                "description": "Wracacie do mieszkania po odwiedzinach u znajomych z noworodkiem. W przedpokoju jeszcze stoją nierozpakowane torby, a w salonie pali się tylko mała lampka. Maja odkłada klucze i na moment nieruchomieje, jakby wiedziała, że ten temat właśnie wróci.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": null,
+            "npc_stage_direction": "Maja siada na brzegu kanapy i splata dłonie, unikając twojego wzroku.",
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "No to powiedz wreszcie jasno, ile mam jeszcze czekać na twoją decyzję.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maja prostuje się i od razu sztywnieje. Mówi, że nie chce zaczynać rozmowy od rozliczania.",
+                    "feedback": {
+                        "label": "Presja i rozliczenie",
+                        "psychology": "Wchodzisz od razu na Poziom II i ustawiasz rozmowę jako proces przeciwko drugiej osobie. To uruchamia defensywność zamiast szczerości.",
+                        "better_alternative_hint": "Zacznij od tego, co przeżywasz i dlaczego ten temat jest dla ciebie ważny."
+                    },
+                    "tags": [
+                        {
+                            "text": "Presja czasu jako broń",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Defensywność",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nieważne. I tak pewnie usłyszę to samo co zawsze.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maja marszczy brwi i pyta, czy znowu masz zamiar karać ją ciszą albo ironią.",
+                    "feedback": {
+                        "label": "Ironia i wycofany atak",
+                        "psychology": "Bierna agresja ukrywa realną potrzebę pod sarkazmem. Z perspektywy kwadratu von Thuna druga strona słyszy głównie wyrzut relacyjny.",
+                        "better_alternative_hint": "Powiedz wprost, że temat wrócił i że trudno ci go już odkładać."
+                    },
+                    "tags": [
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Chciałbym porozmawiać o tym, co dzisiaj we mnie wróciło po tych odwiedzinach. Ten temat z dziećmi znowu mocno we mnie siedzi.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Maja bierze oddech i kiwa głową. Mówi, że też czuła, że ten wieczór może do tego doprowadzić.",
+                    "feedback": {
+                        "label": "Jasne otwarcie rozmowy",
+                        "psychology": "To asertywne wejście w temat bez ataku. Dajesz kierunek rozmowie, ale jeszcze nie nazywasz głębszej emocji ani nie robisz miejsca na perspektywę Mai.",
+                        "better_alternative_hint": "Dodaj, co dokładnie czujesz i czego potrzebujesz od tej rozmowy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Dzisiaj bardzo poczułem, że ten temat jest dla mnie ważny i że odkładanie go zaczyna mnie boleć. Nie chcę cię przyciskać, ale chcę być z tobą uczciwy.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Maja patrzy na ciebie uważniej. Mówi ciszej, że docenia ten ton i że sama też się tego tematu boi.",
+                    "feedback": {
+                        "label": "Komunikat Ja bez nacisku",
+                        "psychology": "Nazywasz własne uczucie i potrzebę bez wchodzenia w oskarżenie. To klasyczny ruch NVC, który obniża napięcie i zwiększa szansę na autentyczny kontakt.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC Rosenberga",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Walidacja granic",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Pierwsze wyznanie niepewności",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Między wami zostaje wyraźny chłód. Maja siedzi dalej od ciebie niż zwykle, z rękami skrzyżowanymi na piersi. Słychać tylko lodówkę w kuchni i tykanie zegara.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "cold"
+            },
+            "npc_line_low": "Nie wiem, czy dam radę rozmawiać, jeśli to znowu ma być rozmowa o tym, że jestem spóźniona albo niewystarczająca.",
+            "scene_high": {
+                "description": "Napięcie nie znika, ale pojawia się więcej uwagi. Maja obraca się w twoją stronę i opuszcza ramiona, jakby decydowała się nie uciekać od tego, co trudne.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Ja naprawdę nie wiem. I najgorsze jest to, że boję się, że sama odpowiedź kogokolwiek z nas zrani.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To może po prostu nie jesteś osobą, z którą da się budować rodzinę.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maja zamiera, potem mówi lodowato, że właśnie zrobiłeś z jej lęku wadę charakteru.",
+                    "feedback": {
+                        "label": "Atak na tożsamość",
+                        "psychology": "Zamiast rozmawiać o dylemacie, oceniasz osobę. To eskaluje wstyd i obronę, co w analizie transakcyjnej przerzuca rozmowę w układ Rodzic kontra Dziecko.",
+                        "better_alternative_hint": "Oddziel niepewność Mai od jej wartości jako partnerki."
+                    },
+                    "tags": [
+                        {
+                            "text": "Atak personalny",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna Berne'a",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, zapomnijmy. Udawajmy dalej, że jakoś to samo się rozwiąże.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maja spuszcza wzrok i mówi, że właśnie tego się boi najbardziej, bo milczenie niczego nie naprawia.",
+                    "feedback": {
+                        "label": "Unikanie sedna",
+                        "psychology": "Wycofanie chwilowo zmniejsza ryzyko konfliktu, ale wzmacnia niepewność i frustrację. To pozorny spokój kosztem kontaktu.",
+                        "better_alternative_hint": "Zostań przy rozmowie, ale bez wymuszania natychmiastowej deklaracji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Tolerowanie napięcia",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Rozumiem, że się boisz. Ale ja też nie mogę tkwić w wiecznym nie wiem. Potrzebuję przynajmniej wiedzieć, co dokładnie za tym stoi.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Maja przyznaje, że to uczciwe pytanie. Mówi, że sama od dawna odpycha je od siebie.",
+                    "feedback": {
+                        "label": "Granica połączona z ciekawością",
+                        "psychology": "To nadal mocno stoi po stronie potrzeby jasności, ale zawiera uznanie dla lęku drugiej osoby. Rozmowa może iść dalej bez całkowitego zrywu.",
+                        "better_alternative_hint": "Najpierw pomóż jej nazwać lęk, zanim przejdziesz do potrzeby decyzji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Stawianie granic",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Słyszę, że boisz się nie tylko samej decyzji, ale też tego, co ona zrobi z nami. Chcę zrozumieć, czego konkretnie się boisz, zanim będziemy mówić o wnioskach.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Maja wyraźnie mięknie. Mówi, że właśnie o to chodzi i że sama dawno nie czuła się tak słuchana w tym temacie.",
+                    "feedback": {
+                        "label": "Nazwanie lęku pod spodem",
+                        "psychology": "Walidujesz emocję i oddzielasz eksplorację od decyzji. To przesuwa rozmowę w stronę Poziomu III, gdzie można badać znaczenia zamiast tylko ustalać stanowiska.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Aktywne słuchanie",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Co naprawdę znaczy nie wiem",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Maja wstaje i podchodzi do okna. Mówi przez ramię, jakby każdy kolejny wyraz kosztował ją więcej niż chce pokazać. Atmosfera robi się ciężka i sztywna.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Czasem mam wrażenie, że dla ciebie moje nie wiem już samo w sobie jest zdradą.",
+            "scene_high": {
+                "description": "Maja zostaje na kanapie, ale podciąga nogi i obejmuje kolana. Wygląda na odsłoniętą, nie na zamkniętą. Mówi wolniej niż zwykle.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "To nie jest tak, że ja cię zwodzę. Ja naprawdę nie wiem, czy boję się macierzyństwa, czy utraty siebie.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Każdy się czegoś boi. Dorośli ludzie po prostu podejmują decyzje i idą dalej.",
+                    "points": 0,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maja prycha krótko i mówi, że właśnie zredukowałeś jej złożony lęk do sloganu motywacyjnego.",
+                    "feedback": {
+                        "label": "Minimalizowanie złożoności",
+                        "psychology": "Racjonalizacja bywa próbą odzyskania kontroli, ale dla drugiej strony brzmi jak unieważnienie. Brakuje tu uznania emocjonalnego ciężaru decyzji.",
+                        "better_alternative_hint": "Nie naprawiaj od razu. Najpierw doprecyzuj, co oznacza utrata siebie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Minimalizowanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Naprawianie zamiast słuchania",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Czyli co, mam czekać, aż może kiedyś dojrzejesz?",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maja odwraca się gwałtownie i mówi, że to okrutne, bo używasz jej niepewności przeciwko niej.",
+                    "feedback": {
+                        "label": "Pogarda ukryta w pytaniu",
+                        "psychology": "Sarkastyczne pytanie niesie pogardę i stawia drugą osobę niżej. To jeden z najszybciej eskalujących wzorców w rozmowach o wartościach.",
+                        "better_alternative_hint": "Zamiast szydzić, zapytaj, jak rozumie swoją obawę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Pomóż mi to rozróżnić. Kiedy mówisz o utracie siebie, chodzi bardziej o zmianę życia, odpowiedzialność czy o to, że nie czujesz tego pragnienia?",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Maja mówi, że to blisko sedna i że chyba najbardziej boi się, że zniknie jako osoba, a nie tylko że będzie zmęczona.",
+                    "feedback": {
+                        "label": "Porządkowanie tematu",
+                        "psychology": "To dobry ruch poznawczy. Pomagasz rozłożyć problem na części, choć wciąż bardziej analizujesz niż współodczuwasz.",
+                        "better_alternative_hint": "Dodaj uznanie, że to może być dla niej trudne do wypowiedzenia."
+                    },
+                    "tags": [
+                        {
+                            "text": "Doprecyzowanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "To brzmi tak, jakbyś nie bała się tylko dzieci, ale też tego, że przestaniesz być sobą i że już nie będzie odwrotu. To musi być przerażające.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Maja przytakuje z wyraźną ulgą. Mówi, że dokładnie o to chodzi i że rzadko ktoś słyszy to bez natychmiastowego oceniania.",
+                    "feedback": {
+                        "label": "Empatyczna parafraza",
+                        "psychology": "Parafraza z nazwaniem stanu wewnętrznego zwiększa poczucie bycia rozumianym. Dzięki temu druga osoba może zejść głębiej, zamiast tylko bronić stanowiska.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Parafraza",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Feeling heard",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Mój lęk też tu jest",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "W powietrzu wisi już nie tylko temat dzieci, ale też temat winy. Maja wraca na kanapę, lecz siada na jej skraju. Między wami jest sporo fizycznego dystansu.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Tylko że kiedy ja mówię o swoim lęku, ty słyszysz chyba wyłącznie opóźnienie własnego planu.",
+            "scene_high": {
+                "description": "Oboje milkniecie na chwilę. Ta cisza nie jest już obronna, raczej gęsta od znaczeń. Maja zerka na ciebie, jakby sprawdzała, czy też pokażesz coś prawdziwego o sobie.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "A ty? Gdy o tym mówisz, to oprócz chęci posiadania dzieci co jest w tobie jeszcze?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Jest we mnie to, że nie chcę zmarnować życia z kimś, kto nie potrafi się określić.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maja cofa się i mówi, że właśnie zamieniłeś rozmowę o przyszłości w ocenę jej przydatności do związku.",
+                    "feedback": {
+                        "label": "Groźba porzucenia w tle",
+                        "psychology": "To wypowiedź obciążona szantażem relacyjnym. Zamiast odsłonić własny lęk, używasz go jako ciosu, co zamyka możliwość wspólnego myślenia.",
+                        "better_alternative_hint": "Powiedz o swoim strachu bez robienia z niego wyroku na drugą osobę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Szantaż emocjonalny",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Lęk przed stratą",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nie wiem, nieważne. Po prostu róbmy swoje i nie rozgrzebujmy tego bardziej.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -1
+                    },
+                    "npc_reaction": "Maja patrzy na ciebie z niedowierzaniem i mówi, że prosisz ją o szczerość, ale sam chowasz się w mgłę.",
+                    "feedback": {
+                        "label": "Ukrycie własnej stawki",
+                        "psychology": "Autentyczny dialog wymaga wzajemności. Kiedy wycofujesz własne wnętrze, rozmowa staje się nierówna i traci zaufanie.",
+                        "better_alternative_hint": "Pokaż swój lęk wprost, nawet jeśli brzmi nieporadnie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Wzajemność",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Boję się, że jeśli będziemy długo trwać w zawieszeniu, to obudzimy się za parę lat z żalem do siebie. Nie chcę tego.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Maja przyjmuje to poważnie. Mówi, że rozumie ten lęk, choć sama od razu czuje przez to większą presję.",
+                    "feedback": {
+                        "label": "Ujawnienie własnej stawki",
+                        "psychology": "To ważny komunikat Ja. Dajesz dostęp do swojej motywacji, ale bez dołożenia opieki nad tym, jak ten komunikat może wybrzmieć dla drugiej strony.",
+                        "better_alternative_hint": "Dodaj, że nie chcesz używać tego lęku jako nacisku, tylko jako prawdy o sobie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Autentyczność",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Boję się stracić coś bardzo ważnego. Nie tylko możliwość bycia rodzicem, ale też poczucie, że budujemy jedno wspólne jutro. I nie chcę, żeby ten lęk zamienił mnie w osobę, która cię przyciska.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Maja wzdycha z wyraźnym wzruszeniem. Mówi, że pierwszy raz słyszy twój lęk bez poczucia, że ma za niego zapłacić natychmiastową deklaracją.",
+                    "feedback": {
+                        "label": "Odsłonięcie lęku bez żądania",
+                        "psychology": "Łączysz szczerość z odpowiedzialnością za własny ton. To tworzy przestrzeń na wspólne widzenie problemu, a nie konkurs, czyj strach jest ważniejszy.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Transformacja perspektywy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Odpowiedzialność za wpływ",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Czy to kwestia czasu, czy kierunku",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Noc zrobiła się późna. Rozmowa toczy się już bardziej siłą rozpędu niż zaufania. Maja przeciera twarz i wygląda, jakby szykowała się do powiedzenia czegoś, co może was zaboleć.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Może najgorsze jest to, że nie wiem, czy potrzebuję czasu, czy po prostu innego życia niż ty.",
+            "scene_high": {
+                "description": "Przenosicie się do kuchni po herbatę. Zmiana miejsca trochę rozluźnia ciało, choć nie temat. Maja opiera się o blat i mówi już bardziej do ciebie niż przeciwko tobie.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Ja chyba naprawdę nie wiem, czy jestem jeszcze w drodze do tej decyzji, czy uczciwa odpowiedź jest dla mnie inna niż dla ciebie.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To zdecyduj teraz. Albo jesteśmy normalną parą z planem, albo kończmy to od razu.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maja odkłada kubek z głośnym stukiem i mówi, że właśnie dostała ultimatum zamiast rozmowy.",
+                    "feedback": {
+                        "label": "Ultimatum",
+                        "psychology": "Ultimatum daje iluzję jasności, ale zwykle produkuje decyzje obronne, a nie prawdziwe. Zamyka eksplorację i zwiększa prawdopodobieństwo fałszywego tak albo gwałtownego nie.",
+                        "better_alternative_hint": "Szanuj wagę własnej granicy, ale nie wymuszaj decyzji pod przymusem chwili."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ultimatum",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Fałszywa alternatywa",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "W sumie może to nie ma znaczenia. Jakoś się dopasuję, najwyżej potem zobaczymy.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maja patrzy na ciebie smutno i mówi, że słyszy w tym rezygnację, a nie prawdziwe porozumienie.",
+                    "feedback": {
+                        "label": "Rezygnacja zamiast granicy",
+                        "psychology": "Pozorne odpuszczenie może brzmieć spokojnie, ale pod spodem odkłada przyszły żal. To nie rozwiązuje konfliktu wartości, tylko go zamraża.",
+                        "better_alternative_hint": "Nie rezygnuj z siebie. Spróbuj nazwać, czego potrzebujesz, jednocześnie zostawiając przestrzeń na prawdę drugiej osoby."
+                    },
+                    "tags": [
+                        {
+                            "text": "Samozanegowanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Unikanie konfliktu wartości",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "To ważne rozróżnienie. Moglibyśmy spróbować ustalić, po czym poznamy, czy to jest jeszcze niegotowość, czy już inna wizja życia.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Maja mówi, że to brzmi rozsądnie, choć trochę formalnie. Przyznaje jednak, że taka mapa mogłaby jej pomóc.",
+                    "feedback": {
+                        "label": "Struktura dla chaosu",
+                        "psychology": "Wprowadzasz porządek i kryteria, co pomaga w sytuacji mglistej niepewności. Nadal jednak mówisz bardziej o procesie niż o kontakcie emocjonalnym.",
+                        "better_alternative_hint": "Dodaj, że niezależnie od wyniku chcesz, by była w tym uczciwość i wzajemny szacunek."
+                    },
+                    "tags": [
+                        {
+                            "text": "Kontrakt rozmowy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Metakomunikacja",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "To chyba moment, w którym musimy odróżnić dwie rzeczy: prawo do niepewności i prawo drugiej osoby do jasności. Nie chcę odbierać ci pierwszego, ale nie chcę też zdradzić drugiego.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Maja długo milczy, po czym mówi, że to bardzo uczciwe. Czuje się jednocześnie wolna i potraktowana serio.",
+                    "feedback": {
+                        "label": "Dwie prawdy naraz",
+                        "psychology": "Utrzymujesz napięcie między autonomią a granicą bez upraszczania go do zwycięzcy i przegranego. To dojrzała rama dla konfliktu wartości w bliskiej relacji.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Myślenie dialektyczne",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Granice i autonomia",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_6",
+            "title": "Jak długo można być w zawieszeniu",
+            "score_threshold": 5,
+            "scene_low": {
+                "description": "Zmęczenie zaczyna wyciągać na wierzch stare urazy. Maja miesza herbatę już dawno rozpuszczoną łyżeczką. Oboje brzmicie bardziej ostro niż chcecie.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Tylko nie wiem, czy cokolwiek ci wystarczy, jeśli nie dam ci szybkiej odpowiedzi.",
+            "scene_high": {
+                "description": "Choć rozmowa jest ciężka, w waszych głosach pojawia się więcej konkretu niż chaosu. Napięcie nie znikło, ale przestało rządzić każdą sekundą.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Jeśli mam być fair, to chyba potrzebuję jakiegoś czasu, ale nie nieskończoności. Tylko boję się, że każdy termin będzie brzmiał jak sąd.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "No to trzy miesiące. Po tym albo mówisz tak, albo uznam, że powiedziałaś nie.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maja odpowiada, że to nie termin, tylko kara ubrana w kalendarz.",
+                    "feedback": {
+                        "label": "Kalendarz jako przemoc",
+                        "psychology": "Granice czasu są potrzebne, ale narzucone jednostronnie stają się formą kontroli. Brakuje współtworzenia warunków i uznania realnej złożoności decyzji.",
+                        "better_alternative_hint": "Jeśli chcesz rozmawiać o czasie, rób to jako wspólne ustalenie, nie dekret."
+                    },
+                    "tags": [
+                        {
+                            "text": "Kontrola",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Jednostronny kontrakt",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, to nie ustalajmy nic. Poczekam, ile trzeba, nawet jeśli mnie to zjada.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -1,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maja mówi cicho, że taka obietnica brzmi jak przyszły rachunek, nie jak ulga.",
+                    "feedback": {
+                        "label": "Poświęcenie z ukrytym kosztem",
+                        "psychology": "Rezygnacja z własnej granicy w imię spokoju często wraca później jako żal i pretensja. To nie jest prawdziwa zgoda, tylko odroczenie konfliktu.",
+                        "better_alternative_hint": "Szukaj terminu, który chroni obie strony, a nie tylko unika napięcia dziś."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ukryty rachunek",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Granice",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Potrzebuję, żeby to zawieszenie miało jakiś kształt. Moglibyśmy umówić się, że wrócimy do rozmowy w konkretnym czasie i zobaczymy, co się przez ten czas w tobie wydarzy.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Maja mówi, że to już brzmi bardziej jak wspólna umowa niż nacisk. Nadal się boi, ale nie czuje się przyparta do ściany.",
+                    "feedback": {
+                        "label": "Ramowanie czasu",
+                        "psychology": "Wyrażasz potrzebę struktury i proponujesz termin powrotu do rozmowy. To dobry krok, choć wciąż brakuje wspólnego sensu tego czasu i tego, co ma w nim pomóc.",
+                        "better_alternative_hint": "Ustalcie nie tylko kiedy, ale też po co i jak będziecie ten czas wykorzystywać."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywna granica",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Kontrakt relacyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie chcę nieskończonego czekania, ale nie chcę też wyroku wydanego ze strachu. Czy możemy wspólnie ustalić czas, który będzie uczciwy dla nas obojga, i nazwać, co ma ci pomóc lepiej usłyszeć siebie?",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Maja przytakuje i mówi, że tak postawione pytanie daje jej odpowiedzialność, a nie tylko presję. Widać, że wraca jej oddech.",
+                    "feedback": {
+                        "label": "Granica współtworzona",
+                        "psychology": "Łączysz własną potrzebę jasności z troską o jakość decyzji. To model budowania granic bez przemocy i bez samozaparcia.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Wspólne ustalanie ram",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Autonomia",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_7",
+            "title": "Najtrudniejsze pytanie",
+            "score_threshold": 6,
+            "scene_low": {
+                "description": "Jesteście zmęczeni i przeciążeni. Maja odstawia kubek i ściska dłonie tak mocno, że bieleją jej knykcie. To już nie jest rozmowa o abstrakcji, tylko o waszym dalszym byciu razem.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "A jeśli okaże się, że ja jednak tego nie chcę? Czy ty wtedy będziesz mnie jeszcze widzieć, czy już tylko swoje stracone życie?",
+            "scene_high": {
+                "description": "Wracacie do salonu. Cisza jest trudna, ale nie wroga. Maja zadaje pytanie, które brzmi jak prośba o prawdę, nie jak test.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Muszę cię o coś zapytać naprawdę wprost. Jeśli okaże się, że moja odpowiedź będzie inna niż twoja, co to dla ciebie znaczy o nas?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To znaczy, że zmarnowałaś mi lata i nie wiem, czy kiedykolwiek bym ci to wybaczył.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maja zamyka oczy i mówi, że właśnie usłyszała wyrok zanim jeszcze zna własną odpowiedź.",
+                    "feedback": {
+                        "label": "Wyrok i obwinienie",
+                        "psychology": "To komunikat z pozycji krzywdy absolutnej. Zawiera obwinienie za przyszłość, która jeszcze się nie wydarzyła, i niszczy resztki bezpieczeństwa w rozmowie.",
+                        "better_alternative_hint": "Powiedz prawdę o bólu możliwej niezgodności bez przypisywania winy za samą różnicę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Obwinianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Katastrofizacja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nie wiem. Chyba wtedy po prostu będziemy udawać, że to nie ma znaczenia, aż wszystko samo się rozpadnie.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maja patrzy na ciebie z bólem i mówi, że taka ironia brzmi jak ciche pożegnanie.",
+                    "feedback": {
+                        "label": "Czarne proroctwo",
+                        "psychology": "Używasz cynizmu, by nie powiedzieć wprost o lęku przed stratą. To odbiera rozmowie sprawczość i obniża zaufanie.",
+                        "better_alternative_hint": "Zamiast przepowiadać katastrofę, nazwij, czego byś potrzebował, gdyby wizje się rozeszły."
+                    },
+                    "tags": [
+                        {
+                            "text": "Cynizm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Lęk przed odrzuceniem",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "To znaczyłoby dla mnie bardzo trudną decyzję. Nie wiem, czy umiałbym zostać, jeśli nasze wizje byłyby trwale różne, ale nie chcę odpowiadać z gniewu.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Maja przyjmuje to z powagą. Mówi, że boli ją to słyszeć, ale woli taką prawdę niż mgłę.",
+                    "feedback": {
+                        "label": "Trudna prawda bez ataku",
+                        "psychology": "Mówisz o realnej granicy i nie uciekasz od konsekwencji. To dojrzałe, choć jeszcze mało jest w tym uznania, że różnica wartości nie czyni nikogo złym.",
+                        "better_alternative_hint": "Dodaj, że brak zgodności nie byłby zdradą, tylko bolesną prawdą o waszej drodze."
+                    },
+                    "tags": [
+                        {
+                            "text": "Trudna granica",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Autentyczność",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "To znaczyłoby dla mnie ból, nie winę. Mogłoby się okazać, że bardzo się kochamy, a jednak chcemy innego życia. Nie chcę cię za to karać, tylko chcę, żebyśmy byli wobec siebie uczciwi, zanim zrani nas coś większego.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Maja ma łzy w oczach, ale nie odwraca wzroku. Mówi, że to jedna z najuczciwszych rzeczy, jakie od ciebie usłyszała.",
+                    "feedback": {
+                        "label": "Rozdzielenie bólu od winy",
+                        "psychology": "Oddzielasz cierpienie od oskarżenia. To kluczowe w konfliktach wartości, gdzie dojrzałość polega nie na wymuszeniu zgodności, ale na ochronie godności obu stron.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Rozdzielenie bólu od winy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Godność relacyjna",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_8",
+            "title": "Co robicie dalej",
+            "score_threshold": 7,
+            "scene_low": {
+                "description": "Jest już bardzo późno. Powietrze w salonie jest ciężkie, a wasze twarze zmęczone. Każde słowo ma teraz wagę decyzji, nawet jeśli formalnie żadna jeszcze nie zapadła.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Nie wiem, czy po tej rozmowie czuję się bliżej ciebie, czy bardziej samotna obok ciebie.",
+            "scene_high": {
+                "description": "Noc się nie skróciła, ale coś w was się uporządkowało. Nie ma łatwej odpowiedzi, jednak w pokoju jest więcej prawdy niż walki. Maja patrzy na ciebie z ostrożną nadzieją.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Nie mamy jeszcze jednej odpowiedzi, ale chyba pierwszy raz czuję, że możemy nie kłamać ani sobie, ani sobie nawzajem. Co teraz z tym zrobimy?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Teraz to ty się zastanów, czy w ogóle zasługujesz na ten związek po tylu miesiącach zwlekania.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maja odsuwa się i kończy rozmowę. Mówi, że nie będzie dalej siedzieć w miejscu, gdzie jej lęk jest traktowany jak moralna wada.",
+                    "feedback": {
+                        "label": "Upokorzenie na finiszu",
+                        "psychology": "To ruch dominacyjny, który zamyka relację przez wstyd i pogardę. Nawet jeśli wcześniej było lepiej, taki finał potrafi zniszczyć poczucie bezpieczeństwa.",
+                        "better_alternative_hint": "Na końcu rozmowy wybierz kierunek, nie odwet."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Upokorzenie",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nic. Prześpijmy się z tym i wróćmy do codzienności, jakby nic się nie stało.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maja mówi, że po takiej rozmowie udawanie normalności byłoby kolejną formą samotności.",
+                    "feedback": {
+                        "label": "Zamrożenie po odsłonięciu",
+                        "psychology": "Po głębokiej rozmowie brak domknięcia zwiększa chaos. Potrzebna jest choć minimalna struktura dalszego kroku, inaczej wraca unikanie.",
+                        "better_alternative_hint": "Nazwij jeden konkretny następny krok, nawet jeśli mały."
+                    },
+                    "tags": [
+                        {
+                            "text": "Zamrożenie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak domknięcia",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Ustalmy konkretny moment powrotu do tej rozmowy i spróbujmy do tego czasu każdy osobno uczciwie sprawdzić siebie. Nie chcę już uciekać od tego tematu.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Maja zgadza się i mówi, że to daje jej oparcie. Nadal nie wie, jaka będzie odpowiedź, ale wie, że temat nie zniknie pod dywanem.",
+                    "feedback": {
+                        "label": "Konkretny kolejny krok",
+                        "psychology": "To sensowne domknięcie procesu. Jest w nim odpowiedzialność i kierunek, choć mniej akcentujesz więź i sposób wzajemnego wspierania się w tym czasie.",
+                        "better_alternative_hint": "Dodaj, jak chcecie zadbać o relację pomiędzy dziś a kolejną rozmową."
+                    },
+                    "tags": [
+                        {
+                            "text": "Plan działania",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Metakomunikacja",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chcę, żebyśmy zrobili dwa kroki naraz: umówili termin powrotu do tej rozmowy i jednocześnie zadbali o to, żeby ten czas nie był cichą karą. Możemy być wobec siebie czuli i uczciwi nawet wtedy, gdy nie mamy jeszcze tej samej odpowiedzi.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Maja podchodzi bliżej i mówi, że właśnie tego potrzebowała usłyszeć. Nie obietnicy wyniku, tylko obietnicy jakości drogi.",
+                    "feedback": {
+                        "label": "Relacja i proces jednocześnie",
+                        "psychology": "Budujesz wspólną ramę na czas niepewności. To najbardziej dojrzała odpowiedź, bo nie poświęca ani prawdy, ani więzi, ani granic.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Wspólna wizja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Naprawa relacji",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 4
+            },
+            "color": "red",
+            "title": "PĘKNIĘCIE POD PRESJĄ",
+            "emoji": "🔴",
+            "subtitle": "Rozmowa zamieniła się w próbę wymuszenia bezpieczeństwa przez nacisk albo odwrót.",
+            "narrative": "Noc kończy się bez bliskości i bez planu. Zamiast usłyszeć swoje lęki, oboje bardziej pilnujecie ran. Temat dzieci nie został nazwany dojrzale, tylko stał się nośnikiem winy, pogardy albo bezradności. To nie różnica zdań zniszczyła rozmowę, lecz sposób, w jaki została uniesiona.",
+            "diagnosis": "Dominował styl agresywny, biernie agresywny albo wycofany. Rozmowa utknęła na Poziomie II lub rozpadła się jeszcze wcześniej. Pojawiły się błędy takie jak ultimatum, obwinianie, minimalizowanie i unikanie, przez co potrzeba jasności zderzyła się z potrzebą autonomii jak dwa wrogie roszczenia.",
+            "post_game": {
+                "communication_style_summary": "Ta ścieżka była zdominowana przez presję, obronę i brak bezpiecznej przestrzeni na niepewność.",
+                "strongest_moment": "Najmocniejsze były te momenty, w których próbowałeś w ogóle zatrzymać temat zamiast całkiem od niego uciec.",
+                "growth_tip": "W tak gęstych rozmowach najpierw oddziel ból od oskarżenia. Zanim postawisz granicę, nazwij własny lęk i pokaż, że druga osoba ma prawo do emocji nawet wtedy, gdy jej odpowiedź może cię zaboleć.",
+                "replay_prompt": "Spróbuj przejść tę rozmowę jeszcze raz, skupiając się na walidacji lęku Mai i mówieniu o własnej stawce bez ultimatum."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 5,
+                "max": 8
+            },
+            "color": "yellow",
+            "title": "KRUCHY ROZEJM",
+            "emoji": "🟡",
+            "subtitle": "Pojawiło się trochę prawdy, ale za mało kontaktu, by temat naprawdę unieść razem.",
+            "narrative": "Rozmowa nie wybuchła, ale też nie przyniosła głębokiego ukojenia. Oboje lepiej wiecie, że problem jest poważny, jednak nadal łatwo wam zamieniać go w zarządzanie terminami albo ostrożne omijanie najboleśniejszego pytania. To wynik, który daje szansę, ale nie daje jeszcze gruntu.",
+            "diagnosis": "Dominował styl asertywny lub rzeczowy. Pojawiły się granice i próby porządkowania chaosu, ale zabrakło wystarczającej ilości walidacji i transformacji perspektywy. Rozmowa chwilami wchodziła na Poziom III, lecz częściej cofała się do transakcji i obrony pozycji.",
+            "post_game": {
+                "communication_style_summary": "Ta ścieżka opierała się głównie na sensownych granicach i porządkowaniu tematu, ale z ograniczoną empatią.",
+                "strongest_moment": "Najlepiej działały momenty, w których nie uciekałeś od trudnej prawdy o własnych granicach.",
+                "growth_tip": "Kolejnym krokiem jest głębsze słyszenie tego, co pod słowem nie wiem. Gdy druga osoba czuje się rozumiana, łatwiej jej mówić prawdę, a nie tylko bronić się przed twoim lękiem.",
+                "replay_prompt": "Zagraj ponownie i spróbuj częściej parafrazować lęk Mai, zanim przejdziesz do ustalania terminów i konsekwencji."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 9,
+                "max": 12
+            },
+            "color": "green",
+            "title": "TRUDNA UCZCIWOŚĆ",
+            "emoji": "🟢",
+            "subtitle": "Nie pojawiła się prosta odpowiedź, ale pojawiła się dojrzała rozmowa o tym, co naprawdę jest stawką.",
+            "narrative": "Nie wychodzicie z tej nocy z gotowym planem na całe życie, ale z czymś równie ważnym: z poczuciem, że potraficie mówić prawdę bez okrucieństwa. Temat dzieci przestał być tylko polem nacisku. Stał się pytaniem o wartości, tożsamość i wspólne jutro, które oboje potraktowaliście poważnie.",
+            "diagnosis": "Często wybierałeś styl empatyczny i transformacyjny. Rozmowa regularnie przechodziła na Poziom III, bo umiałeś łączyć własną granicę z uznaniem autonomii Mai. Dzięki temu napięcie nie znikło magicznie, ale przestało niszczyć kontakt.",
+            "post_game": {
+                "communication_style_summary": "Ta ścieżka pokazała dojrzałe łączenie szczerości, granic i empatii.",
+                "strongest_moment": "Najsilniejsze były momenty, gdy oddzielałeś ból możliwej różnicy od winy drugiej osoby.",
+                "growth_tip": "To dobry kierunek. W podobnych rozmowach dalej wzmacniaj metakomunikację i wspólne ustalanie kolejnych kroków, aby prawda nie zamieniała się w chaos.",
+                "replay_prompt": "Spróbuj jeszcze raz zagrać tak, by jeszcze konsekwentniej budować wspólną wizję drogi przez niepewność."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 13,
+                "max": 16
+            },
+            "color": "blue",
+            "title": "WSPÓLNA ODWAGA",
+            "emoji": "🔵",
+            "subtitle": "Osiągacie rzadkie porozumienie: nie co do wyniku, lecz co do jakości prawdy i relacji.",
+            "narrative": "Ta rozmowa nie rozwiązała biologii, czasu ani wszystkich konsekwencji waszych wyborów. Zrobiła jednak coś wyjątkowego: pozwoliła wam jednocześnie chronić więź, nie kłamać o różnicach i nie zamieniać lęku w broń. W takich chwilach relacja dojrzewa, nawet jeśli przyszłość nadal pozostaje otwarta.",
+            "diagnosis": "Dominował styl transformacyjny z mocnym komponentem empatycznym. Potrafiłeś walidować lęk Mai, odsłaniać własny bez obwiniania i wspólnie budować ramy dalszej rozmowy. To modelowy przykład przechodzenia z walki o rację do współtworzenia sensu i granic.",
+            "post_game": {
+                "communication_style_summary": "Ta ścieżka była oparta na głębokiej empatii, wspólnym myśleniu i granicach bez przemocy.",
+                "strongest_moment": "Najmocniejsze było konsekwentne rozdzielanie bólu od winy oraz budowanie wspólnej jakości drogi przez niepewność.",
+                "growth_tip": "To poziom mistrzowski. Przenoś ten styl także do innych tematów wysokiej stawki: najpierw rozumienie, potem granice, a na końcu wspólny proces decyzyjny.",
+                "replay_prompt": "Możesz zagrać ponownie, aby sprawdzić, jak niewielkie przesunięcia tonu potrafią zmienić cały klimat tak trudnej rozmowy."
+            }
+        }
+    ]
+}

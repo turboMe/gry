@@ -1,0 +1,902 @@
+{
+    "scenario_id": "rachunek_i_male_klamstwo",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Małe kłamstwo o rachunku",
+        "subtitle": "Wieczorna rozmowa o drobnym kłamstwie, które uderza w zaufanie bardziej niż w portfel",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 8,
+        "interaction_count": 5
+    },
+    "tags": {
+        "relationship_type": "romantic_partner",
+        "theme": [
+            "trust",
+            "responsibility",
+            "apology"
+        ],
+        "emotional_intensity": "moderate",
+        "age_rating": "teen",
+        "session_type": "mini_story",
+        "player_role_gender": "neutral",
+        "difficulty": "intermediate"
+    },
+    "characters": {
+        "player": {
+            "name": "Alex",
+            "role_label": "Partner · Gracz",
+            "age_range": "27-34",
+            "context": "Wczoraj powiedziałeś Mai, że zrobiłeś przelew za wspólny rachunek za internet. Nie zrobiłeś tego. Skłamałeś, bo bałeś się kolejnej rozmowy o swojej niesłowności.",
+            "hidden_need": "safety",
+            "hidden_need_text": "Chcesz uniknąć zawstydzenia i ostrej reakcji, nawet jeśli płacisz za to szczerością.",
+            "traits": [
+                {
+                    "text": "Unika napięcia",
+                    "type": "negative"
+                },
+                {
+                    "text": "Bywa odpowiedzialny po fakcie",
+                    "type": "neutral"
+                },
+                {
+                    "text": "Potrzebuje akceptacji",
+                    "type": "positive"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 4,
+                "patience": 5,
+                "defensiveness": 7,
+                "empathy": 6,
+                "need_for_control": 4,
+                "shame_sensitivity": 8,
+                "directness": 4,
+                "repair_ability": 6
+            }
+        },
+        "npc": {
+            "name": "Maja",
+            "role_label": "Partnerka · Rozmówca",
+            "age_range": "27-34",
+            "context": "Na laptopie zobaczyła ponaglenie za niezapłacony rachunek. Bardziej niż sama opłata boli ją to, że została uspokojona nieprawdą.",
+            "hidden_need": "trust",
+            "hidden_need_text": "Potrzebujesz przewidywalności i poczucia, że możesz oprzeć się na słowach bliskiej osoby.",
+            "traits": [
+                {
+                    "text": "Uważna",
+                    "type": "positive"
+                },
+                {
+                    "text": "Wrażliwa na niespójność",
+                    "type": "neutral"
+                },
+                {
+                    "text": "Szybko się usztywnia, gdy czuje brak szczerości",
+                    "type": "negative"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 5,
+                "patience": 6,
+                "defensiveness": 6,
+                "empathy": 7,
+                "need_for_control": 6,
+                "shame_sensitivity": 5,
+                "directness": 7,
+                "repair_ability": 7
+            },
+            "npc_reaction_logic": "Na unikanie, minimalizowanie i zrzucanie winy reaguje chłodem oraz mocniejszą kontrolą. Na jasne wzięcie odpowiedzialności, nazwanie lęku i konkretne działania naprawcze odpowiada większą otwartością."
+        }
+    },
+    "metrics_start": {
+        "tension": 40,
+        "trust": 60,
+        "openness": 50,
+        "feeling_heard": 50
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Ponaglenie na ekranie",
+            "scene": {
+                "description": "Wieczór. W salonie świeci tylko lampka przy kanapie. Na otwartym laptopie widać mail z ponagleniem za internet. Maja stoi obok stołu i patrzy raz na ekran, raz na ciebie.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": "Przyszło ponaglenie za internet. Wczoraj mówiłeś, że przelew już poszedł. To nie była prawda, prawda?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To tylko jeden rachunek. Nie rób z tego afery.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maja prostuje się i zaciska szczękę. Jej ton robi się chłodniejszy.",
+                    "feedback": {
+                        "label": "Minimalizowanie i atak",
+                        "psychology": "To przesuwa rozmowę na Poziom II, czyli walkę o rację. Z perspektywy NVC pomijasz wpływ swojego działania i od razu bronisz własnego obrazu.",
+                        "better_alternative_hint": "Zamiast oceniać reakcję Mai, nazwij fakt i weź odpowiedzialność za swoje zachowanie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Minimalizowanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Brak odpowiedzialności",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nie wiem, może jeszcze tego nie zaksięgowali. Nie chcę teraz o tym gadać.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maja marszczy brwi. Widzi dalsze unikanie i robi krok do tyłu.",
+                    "feedback": {
+                        "label": "Ucieczka od konfrontacji",
+                        "psychology": "Wycofanie może chwilowo obniżać wstyd, ale u rozmówcy zwykle podnosi niepewność. W analizie transakcyjnej to ruch z pozycji obronnej, który zatrzymuje dialog.",
+                        "better_alternative_hint": "Powiedz wprost, że nie zrobiłeś przelewu, zamiast zostawiać Mai domysły."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna Berne'a",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Brak klarowności",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie zrobiłem przelewu. To mój błąd. Zaraz to opłacę.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Maja nadal jest spięta, ale przestaje zgadywać i skupia się na tym, co mówisz.",
+                    "feedback": {
+                        "label": "Fakt i odpowiedzialność",
+                        "psychology": "To dobry ruch asertywny: jest jasność i brak dalszego kłamstwa. Brakuje jednak odniesienia do emocji Mai, więc naprawa jest dopiero częściowa.",
+                        "better_alternative_hint": "Dodaj uznanie wpływu swojego kłamstwa na zaufanie drugiej strony."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Wzięcie odpowiedzialności",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Tak, skłamałem. Bałem się twojej reakcji i chciałem uniknąć problemu, ale to było nie fair wobec ciebie.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Maja nadal jest poruszona, ale patrzy na ciebie uważniej. Słyszy szczerość zamiast kolejnej zasłony.",
+                    "feedback": {
+                        "label": "Szczerość z uznaniem skutku",
+                        "psychology": "Nazwanie własnego lęku i wpływu na drugą osobę uruchamia empatyczny tor rozmowy. To zbliża was do Poziomu III, bo przestajesz bronić wizerunku i zaczynasz odbudowywać kontakt.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja wpływu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Co naprawdę boli",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Maja odsuwa laptop i krzyżuje ręce. Między wami pojawia się wyraźny dystans. Zamiast rozmowy o rachunku czuć już rozmowę o zaufaniu.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Najgorszy nie jest ten rachunek. Najgorsze jest to, że patrzysz mi w oczy i mówisz nieprawdę.",
+            "scene_high": {
+                "description": "Maja siada na skraju kanapy. Nadal jest spięta, ale nie odwraca wzroku. Jest miejsce na dalszą rozmowę, nie tylko na wymianę pretensji.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_high": "Rachunek to jedno. Bardziej rusza mnie to, że skłamałeś zamiast powiedzieć, że zawaliłeś.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "No świetnie, czyli teraz będziesz mi to wypominać przez miesiąc.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maja prycha bez uśmiechu. Słyszy drwinę zamiast kontaktu.",
+                    "feedback": {
+                        "label": "Ironia zamiast rozmowy",
+                        "psychology": "Bierna agresja maskuje wstyd i lęk, ale dla rozmówcy brzmi jak ukryty atak. W kwadracie von Thuna na poziomie relacji wysyłasz sygnał: twoje uczucia mnie nie obchodzą.",
+                        "better_alternative_hint": "Odpowiedz na sens wypowiedzi Mai, nie na własną obawę przed byciem ocenionym."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ironia",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Masz rację. Nic już nie będę mówić.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maja wzdycha ciężko. Cisza wygląda jak zamknięcie, nie jak odpowiedzialność.",
+                    "feedback": {
+                        "label": "Wycofanie pod presją",
+                        "psychology": "Pozorna zgoda bez treści zamyka proces naprawy. Rozmówca zostaje z problemem sam, a napięcie schodzi pod powierzchnię zamiast naprawdę maleć.",
+                        "better_alternative_hint": "Zostań w rozmowie i nazwij, że rozumiesz, czego dotyczy ból Mai."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Unikanie kontaktu",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Wiem, że to podważa zaufanie. Spanikowałem i wybrałem złą drogę.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Maja lekko rozluźnia ramiona. Nadal jest ostrożna, ale słyszy konkret.",
+                    "feedback": {
+                        "label": "Nazwanie problemu",
+                        "psychology": "To zatrzymuje obronność i przywraca wspólny punkt odniesienia. Nadal jednak mówisz głównie o sobie, a mniej o doświadczeniu Mai.",
+                        "better_alternative_hint": "Dopytaj lub nazwij, co to kłamstwo mogło w niej uruchomić."
+                    },
+                    "tags": [
+                        {
+                            "text": "Nazwanie faktu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Odpowiedzialność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Słyszę, że bardziej zraniło cię samo kłamstwo niż rachunek. Chcę tego nie bagatelizować.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Maja wypuszcza powietrze i siada stabilniej. Czuje, że nie musi walczyć o oczywistość.",
+                    "feedback": {
+                        "label": "Uznanie sedna bólu",
+                        "psychology": "Parafrazujesz znaczenie wypowiedzi i oddzielasz temat rachunku od tematu zaufania. To klasyczna walidacja emocji, która zwiększa poczucie bycia słyszanym.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Aktywne słuchanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC Rosenberg",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Źródło kłamstwa",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "W pokoju robi się chłodniej. Maja siada dalej od ciebie i obraca w dłoni telefon, jakby potrzebowała czegoś pewnego. Jej twarz jest zamknięta.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "cold"
+            },
+            "npc_line_low": "Powiedz wprost. Czemu łatwiej ci było skłamać niż powiedzieć prawdę?",
+            "scene_high": {
+                "description": "Maja opiera łokcie o kolana i patrzy na ciebie bez oskarżycielskiego tonu. Wciąż jest ostrożna, ale ciekawość zaczyna wygrywać z samą złością.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Chcę zrozumieć, co się w tobie dzieje, kiedy wybierasz takie obejście zamiast szczerości.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Bo czasem z tobą nie da się powiedzieć prawdy bez dramatu.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maja sztywnieje natychmiast. Rozmowa skręca w obronę i kontratak.",
+                    "feedback": {
+                        "label": "Obwinianie rozmówcy",
+                        "psychology": "Przerzucasz odpowiedzialność za własne kłamstwo na reakcję drugiej osoby. To klasyczny mechanizm obronny, który rozbija zaufanie jeszcze mocniej.",
+                        "better_alternative_hint": "Opisz swój lęk i wstyd bez robienia z Mai przyczyny swojego zachowania."
+                    },
+                    "tags": [
+                        {
+                            "text": "Obwinianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Mechanizmy obronne",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Przerzucanie odpowiedzialności",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Najwyraźniej cokolwiek robię, i tak jest źle.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maja odwraca wzrok. Słyszy użalanie się, nie wyjaśnienie.",
+                    "feedback": {
+                        "label": "Rola ofiary",
+                        "psychology": "Takie zdanie rozmywa konkretną sytuację w ogólne poczucie krzywdy. Zamiast kontaktu pojawia się licytacja cierpienia, czyli kolejny ruch na Poziomie II.",
+                        "better_alternative_hint": "Pozostań przy tej konkretnej sytuacji i nazwij swój wewnętrzny impuls do kłamstwa."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uogólnianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Pasywna obrona",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie chciałem kolejnej sprzeczki, więc wybrałem najgorszą drogę.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Maja kiwa głową, ale widać, że to jeszcze nie tłumaczy wszystkiego.",
+                    "feedback": {
+                        "label": "Uczciwe, ale skrótowe",
+                        "psychology": "To odsłania motyw unikania konsekwencji, co jest ważne. Brakuje jednak głębszego nazwania emocji, więc rozmowa pozostaje bardziej poznawcza niż relacyjna.",
+                        "better_alternative_hint": "Dodaj, co czułeś wobec własnego błędu i jaki koszt miało to dla relacji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Nazwanie motywu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Konkret",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Wstydziłem się, że znowu zawaliłem, i próbowałem kupić sobie spokój kosztem szczerości. To uderzyło w nasze zaufanie.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Maja mięknie w twarzy. Nadal nie jest spokojna, ale słyszy prawdę głębszą niż sam fakt przelewu.",
+                    "feedback": {
+                        "label": "Odsłonięcie mechanizmu",
+                        "psychology": "Łączysz emocję, zachowanie i koszt relacyjny. To wzmacnia odpowiedzialność bez samooskarżenia i przesuwa rozmowę w stronę wspólnego rozumienia wzorca.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Odsłonięcie emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Naprawa przez szczerość",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Czy będzie inaczej",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Maja patrzy na ekran telefonu, jakby bardziej ufała przypomnieniom niż słowom. W powietrzu czuć sceptycyzm i zmęczenie powtarzalnym schematem.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Słowa są łatwe. Skąd mam wiedzieć, że następnym razem znowu nie wybierzesz wygodnego kłamstwa?",
+            "scene_high": {
+                "description": "Napięcie nie znika, ale robi się bardziej robocze niż wrogie. Maja odkłada telefon i czeka na coś konkretnego, nie na kolejną obietnicę bez planu.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Dobrze, że to mówisz. Tylko potrzebuję czegoś konkretnego, a nie samego przepraszam.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nie możesz po prostu odpuścić? Przecież to nie było nic wielkiego.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maja od razu zamyka się emocjonalnie. Dla niej to dowód, że dalej nie rozumiesz problemu.",
+                    "feedback": {
+                        "label": "Ponowne umniejszenie",
+                        "psychology": "Gdy rozmówca prosi o bezpieczeństwo, a słyszy bagatelizowanie, rośnie dystans i potrzeba kontroli. To blokuje naprawę, bo nie uznajesz skali skutku emocjonalnego.",
+                        "better_alternative_hint": "Odpowiedz planem działania i uznaniem, że zaufanie odbudowuje się czynami."
+                    },
+                    "tags": [
+                        {
+                            "text": "Bagatelizowanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak walidacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "NVC Rosenberg",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, zrobię po prostu wszystko, co chcesz.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -1,
+                        "openness": -2,
+                        "feeling_heard": -1
+                    },
+                    "npc_reaction": "Maja nie wygląda na spokojniejszą. To brzmi jak kapitulacja bez realnej zmiany.",
+                    "feedback": {
+                        "label": "Uległość bez sprawczości",
+                        "psychology": "Z zewnątrz to może brzmieć jak zgoda, ale nie buduje wiarygodności. Brakuje własnej odpowiedzialności i konkretu, więc rozmówca nadal nie ma na czym oprzeć zaufania.",
+                        "better_alternative_hint": "Zaproponuj konkretny krok i własny plan, zamiast oddawać stery w poczuciu winy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uległość",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak sprawczości",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna Berne'a",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Dziś opłacę rachunek i ustawię stałe zlecenie. Pokażę ci potwierdzenie.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Maja przyjmuje to skinieniem głowy. To daje podstawę techniczną, ale emocjonalnie jeszcze nie domyka sprawy.",
+                    "feedback": {
+                        "label": "Konkretne działanie",
+                        "psychology": "Rozwiązujesz część praktyczną i przywracasz przewidywalność. Brakuje jednak rozmowy o tym, jak przerwać sam wzorzec unikania w przyszłości.",
+                        "better_alternative_hint": "Połącz plan techniczny z propozycją, jak rozmawiać o błędach bez kłamstwa."
+                    },
+                    "tags": [
+                        {
+                            "text": "Plan działania",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Przewidywalność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Dziś zrobię przelew i ustawię stałe zlecenie. Chcę też ustalić, jak mówić o takich wpadkach od razu, bez chowania ich za kłamstwem.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Maja pierwszy raz naprawdę mięknie. Słyszy nie tylko naprawę szkody, ale też próbę zmiany schematu między wami.",
+                    "feedback": {
+                        "label": "Naprawa i nowa umowa",
+                        "psychology": "Łączysz konkret z refleksją systemową. To klucz transformacyjny: nie tylko gasisz pożar, ale projektujesz bezpieczniejszy sposób radzenia sobie z błędem w relacji.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Naprawa relacji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Wspólne ustalenia",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Odbudowa albo zamknięcie",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Jest późno. Lampka rzuca wąski krąg światła, ale między wami zostaje chłód. Maja siedzi sztywno, jakby była już bardziej zmęczona niż zła.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "cold"
+            },
+            "npc_line_low": "Nie wiem, czy bardziej męczy mnie ten rachunek, czy to, że zaczynam sprawdzać, czy mówisz prawdę.",
+            "scene_high": {
+                "description": "Wieczór dobiega końca, ale atmosfera jest wyraźnie lżejsza. Nie ma pełnego spokoju, jest za to ostrożna bliskość i poczucie, że rozmowa do czegoś doprowadziła.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Jeszcze mnie to rusza, ale widzę różnicę między tłumaczeniem się a prawdziwym wzięciem odpowiedzialności.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To może po prostu kontroluj każdy mój ruch i będziesz spokojna.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maja patrzy na ciebie z rezygnacją. Słyszy kpinę i rozmowa gaśnie.",
+                    "feedback": {
+                        "label": "Sarkazm na finiszu",
+                        "psychology": "Gdy pojawia się szansa na domknięcie, ironia niszczy kruche poczucie bezpieczeństwa. To odcina możliwość miękkiego zakończenia i zostawia niesmak.",
+                        "better_alternative_hint": "Przyjmij, że zaufanie może wracać stopniowo, bez wyśmiewania obaw drugiej osoby."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Podważanie obaw",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, nieważne. Zamknijmy już ten temat.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maja milknie. Temat cichnie, ale nie zostaje rozwiązany.",
+                    "feedback": {
+                        "label": "Przedwczesne zamknięcie",
+                        "psychology": "Formalny koniec rozmowy bez emocjonalnego domknięcia zostawia nierozładowane napięcie. To może wrócić przy kolejnej drobnej wpadce z większą siłą.",
+                        "better_alternative_hint": "Zostań jeszcze chwilę w odpowiedzialności i nazwij gotowość do odbudowy zaufania w czasie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Przedwczesne zamknięcie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Unikanie domknięcia",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Rozumiem, że zaufanie nie wróci od razu. Mogę je teraz odbudować tylko działaniem.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Maja kiwa głową. To brzmi wiarygodniej niż szybkie przepraszam, choć nadal potrzebuje czasu.",
+                    "feedback": {
+                        "label": "Realistyczna odpowiedzialność",
+                        "psychology": "Uznajesz tempo drugiej strony i nie wymuszasz natychmiastowego przebaczenia. To zdrowe, choć wciąż dość oszczędne emocjonalnie.",
+                        "better_alternative_hint": "Dodaj gotowość do słuchania tego, jak Maja będzie przeżywać skutki tej sytuacji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Realistyczne oczekiwania",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Naprawa przez działanie",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie oczekuję, że od razu mi zaufasz. Chcę cierpliwie to odbudować i wolę usłyszeć trudną prawdę niż znowu chować błąd za kłamstwem.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Maja wyraźnie mięknie. Nie wszystko jest naprawione, ale między wami wraca poczucie, że można iść w jedną stronę.",
+                    "feedback": {
+                        "label": "Dojrzałe domknięcie",
+                        "psychology": "To łączy pokorę, odpowiedzialność i gotowość na trudną szczerość. W relacji buduje to bezpieczniejsze warunki do przyszłych błędów i przyszłych napraw.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Pokora relacyjna",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja tempa zaufania",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "PĘKNIĘCIE PODWOJONE",
+            "emoji": "🔴",
+            "subtitle": "Rachunek został w tle, a głównym problemem stało się bezpieczeństwo w relacji.",
+            "narrative": "Maja kończy rozmowę chłodno i bez ulgi. Nawet jeśli rachunek zostanie później opłacony, między wami zostaje ciężar: nie chodzi już o jedną sprawę, tylko o wzorzec ukrywania problemu i bronienia się za wszelką cenę.",
+            "diagnosis": "Ta ścieżka była zdominowana przez unikanie, minimalizowanie lub kontratak. Psychologicznie rozmowa utknęła na Poziomie II: ważniejsza od kontaktu stała się obrona własnego obrazu. Zaufanie spadło, bo kłamstwo zostało przykryte kolejną niespójnością zamiast nazwane i naprawione.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl obronny: agresywny, bierny albo biernie agresywny. Było dużo ochrony siebie, mało kontaktu z doświadczeniem Mai.",
+                "strongest_moment": "Najmocniejszy moment pojawił się wtedy, gdy choć na chwilę przestałeś zaprzeczać faktom. To był jedyny realny punkt wejścia do naprawy.",
+                "growth_tip": "Przy drobnym kłamstwie nie próbuj najpierw chronić wizerunku. Najpierw nazwij fakt, potem własny lęk, a dopiero później szukaj rozwiązania.",
+                "replay_prompt": "Zagraj jeszcze raz i sprawdź, co się zmieni, gdy od początku uznasz wpływ kłamstwa na zaufanie, a nie tylko sam błąd."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "NAPRAWA TECHNICZNA, EMOCJE W TLE",
+            "emoji": "🟡",
+            "subtitle": "Problem praktyczny został ogarnięty, ale emocjonalne domknięcie pozostało częściowe.",
+            "narrative": "Rozmowa nie wybucha, ale też nie przynosi pełnej ulgi. Maja widzi, że bierzesz część odpowiedzialności i chcesz coś poprawić, jednak nadal zostaje w niej rezerwa. Wie, co zrobisz z rachunkiem, ale jeszcze nie wie, czy może bezpiecznie oprzeć się na twojej szczerości.",
+            "diagnosis": "W tej ścieżce pojawiła się asertywność i konkret, ale mniej empatii oraz mniej pogłębienia motywu kłamstwa. To wystarczyło, by zatrzymać eskalację, jednak rozmowa pozostała częściowo na poziomie transakcji. Relacja dostała plan naprawczy, ale nie pełne poczucie bycia usłyszaną.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl rzeczowy i częściowo asertywny. Było mniej chaosu, ale też za mało walidacji i wspólnego rozumienia tego, co stało się między wami.",
+                "strongest_moment": "Najlepiej zadziałał moment, w którym przestałeś się tłumaczyć i przeszedłeś do konkretnej odpowiedzialności.",
+                "growth_tip": "Następnym razem połącz plan działania z jednym zdaniem o wpływie twojego zachowania na drugą osobę. Sama naprawa techniczna rzadko odbudowuje zaufanie do końca.",
+                "replay_prompt": "Sprawdź ścieżkę, w której nie tylko naprawiasz błąd, ale też pomagasz Mai poczuć, że rozumiesz, dlaczego to kłamstwo zabolało."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 10
+            },
+            "color": "green",
+            "title": "SZCZEROŚĆ PO ZŁYM SKRÓCIE",
+            "emoji": "🟢",
+            "subtitle": "Małe kłamstwo nie zniknęło, ale stało się punktem zwrotnym zamiast kolejną rysą.",
+            "narrative": "Maja nie zapomina od razu, ale przestaje walczyć o oczywistość. Widzi, że nie uciekasz już od wstydu w kolejne zasłony, tylko bierzesz odpowiedzialność za fakt, motyw i naprawę. Wieczór kończy się bez idealnej lekkości, za to z realnym poczuciem, że między wami można rozmawiać prawdziwie nawet o wpadkach.",
+            "diagnosis": "Ta ścieżka łączyła empatię, szczerość i konkret. Rozmowa wyszła poza sam rachunek i dotknęła wzorca unikania konsekwencji. Dzięki temu napięcie spadło nie przez zamknięcie tematu, ale przez odbudowę kontaktu i wspólne ustalenia na przyszłość.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl empatyczny i transformacyjny. Wziąłeś odpowiedzialność bez samoobrony, a jednocześnie uznałeś doświadczenie Mai.",
+                "strongest_moment": "Najmocniejszy był moment, w którym nazwałeś wstyd i koszt relacyjny kłamstwa zamiast tłumaczyć się samym rachunkiem.",
+                "growth_tip": "To działa, bo łączysz trzy rzeczy naraz: fakt, emocję i plan naprawy. W realnej rozmowie trzymaj właśnie tę kolejność.",
+                "replay_prompt": "Zagraj ponownie i zobacz, jak szybko scenariusz się psuje, gdy zabraknie jednego elementu: szczerości, walidacji albo konkretu."
+            }
+        }
+    ]
+}

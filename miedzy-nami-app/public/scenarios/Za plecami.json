@@ -1,0 +1,902 @@
+{
+    "scenario_id": "friend_badmouth_behind_back",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Za plecami",
+        "subtitle": "Przyjaciel mówił o tobie źle i teraz musisz zdecydować, czy uderzyć wprost, czy odsłonić zranienie",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 7,
+        "interaction_count": 5
+    },
+    "tags": {
+        "relationship_type": "friends",
+        "theme": [
+            "trust",
+            "respect",
+            "communication_breakdown"
+        ],
+        "emotional_intensity": "critical",
+        "age_rating": "teen",
+        "session_type": "mini_story",
+        "player_role_gender": "neutral",
+        "difficulty": "advanced"
+    },
+    "characters": {
+        "player": {
+            "name": "Maja",
+            "role_label": "Przyjaciółka · Gracz",
+            "age_range": "27-34",
+            "context": "Od wczoraj nosisz w sobie napięcie. Wspólna znajoma powiedziała ci, że Kuba opowiadał o tobie w nieprzyjemny sposób, sugerując, że jesteś fałszywa i robisz z siebie ofiarę.",
+            "hidden_need": "recognition",
+            "hidden_need_text": "Potrzebujesz lojalności, szacunku i potwierdzenia, że bliska osoba nie podważa twojej wartości, gdy nie ma cię w pokoju.",
+            "traits": [
+                {
+                    "text": "Wrażliwa na nielojalność",
+                    "type": "negative"
+                },
+                {
+                    "text": "Lojalna wobec bliskich",
+                    "type": "positive"
+                },
+                {
+                    "text": "Bezpośrednia pod presją",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 7,
+                "patience": 4,
+                "defensiveness": 6,
+                "empathy": 7,
+                "need_for_control": 5,
+                "shame_sensitivity": 8,
+                "directness": 8,
+                "repair_ability": 6
+            }
+        },
+        "npc": {
+            "name": "Kuba",
+            "role_label": "Przyjaciel · NPC",
+            "age_range": "27-34",
+            "context": "Kuba wie, że ostatnio narastało między wami napięcie. Narzekał na ciebie przy innych, bo czuł się przytłoczony i zraniony, ale nie powiedział ci tego wprost.",
+            "hidden_need": "acceptance",
+            "hidden_need_text": "Potrzebuje być traktowany poważnie i bez oceniania, nawet gdy przyznaje się do błędu.",
+            "traits": [
+                {
+                    "text": "Unika trudnych rozmów",
+                    "type": "negative"
+                },
+                {
+                    "text": "Bywa lojalny w działaniu",
+                    "type": "positive"
+                },
+                {
+                    "text": "Wstydliwy, gdy zostaje przyłapany",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 5,
+                "patience": 5,
+                "defensiveness": 8,
+                "empathy": 6,
+                "need_for_control": 4,
+                "shame_sensitivity": 8,
+                "directness": 3,
+                "repair_ability": 5
+            },
+            "npc_reaction_logic": "Na atak reaguje kontratakiem albo zaprzeczaniem. Na chłodną rzeczowość odpowiada częściowym wyjaśnieniem, ale może unikać odpowiedzialności. Na komunikat oparty na zranieniu i granicy początkowo się spina, lecz ma większą szansę przyznać się do motywów i wejść w naprawę."
+        }
+    },
+    "metrics_start": {
+        "tension": 45,
+        "trust": 55,
+        "openness": 45,
+        "feeling_heard": 40
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Pierwsze uderzenie",
+            "scene": {
+                "description": "Siedzicie naprzeciwko siebie w małej kawiarni. Na stoliku stygną dwie kawy. Kuba patrzy na ciebie uważnie, bo twoja wiadomość brzmiała nienaturalnie chłodno.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": "Brzmisz tak, jakby coś się stało. O co chodzi?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "O co chodzi? O to, że obgadujesz mnie za plecami jak tchórz.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kuba prostuje się i mruży oczy. Serio tak zaczynasz? To może od razu mnie skreśl.",
+                    "feedback": {
+                        "label": "Atak i zawstydzenie",
+                        "psychology": "Wchodzisz w Poziom II i stawiasz rozmowę na osi winny versus niewinny. Oskarżenie uruchamia u rozmówcy obronę zamiast refleksji.",
+                        "better_alternative_hint": "Nazwij fakt i własną reakcję, zamiast od razu oceniać charakter drugiej osoby."
+                    },
+                    "tags": [
+                        {
+                            "text": "Oskarżenie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Zawstydzanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nieważne. Chyba nie ma sensu o tym gadać.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kuba marszczy czoło i odsuwa filiżankę. Skoro nie chcesz mówić, to po co mnie tu ściągać?",
+                    "feedback": {
+                        "label": "Wycofanie pod napięciem",
+                        "psychology": "Unikanie chwilowo chroni przed konfrontacją, ale odbiera ci wpływ. Niewypowiedziany zarzut zostaje w relacji i zwiększa domysły po obu stronach.",
+                        "better_alternative_hint": "Powiedz wprost, czego się dowiedziałaś i jaki to miało na ciebie wpływ."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Niedopowiedzenie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Usłyszałam od Oli, że mówiłeś o mnie źle. Chcę wiedzieć, czy to prawda.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 0,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Kuba odwraca wzrok. Powiedziałem kilka rzeczy, ale to nie wyglądało tak, jak pewnie do ciebie dotarło.",
+                    "feedback": {
+                        "label": "Jasne postawienie sprawy",
+                        "psychology": "To asertywne otwarcie porządkuje fakty i daje punkt zaczepienia do rozmowy. Brakuje jednak odsłonięcia emocji, więc rozmowa może utknąć w sporze o wersje zdarzeń.",
+                        "better_alternative_hint": "Dodaj, co to w tobie uruchomiło, żeby nie zostać wyłącznie na poziomie faktów."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Precyzowanie faktów",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Dowiedziałam się, że mówiłeś o mnie źle. Najbardziej uderzyło mnie to, że nie powiedziałeś tego mnie i czuję się zdradzona.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kuba wyraźnie sztywnieje, ale nie odcina cię. Okej. To fair, że tak to odbierasz. Nie powiedziałem ci tego wprost.",
+                    "feedback": {
+                        "label": "Zranienie nazwane bez ataku",
+                        "psychology": "Komunikat Ja obniża prawdopodobieństwo obrony, bo opisuje wpływ zachowania zamiast przypisywać intencję. To otwiera drogę do Poziomu III, nawet jeśli rozmowa nadal jest trudna.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Nazwanie zranienia",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Obrona albo otwarcie",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "W kawiarni robi się gęsto. Kuba siedzi z założonymi rękami i patrzy gdzieś obok ciebie. Między wami pojawia się chłód i podejrzliwość.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Nie wiem, co dokładnie usłyszałaś, ale brzmi to jak niezły przekładaniec.",
+            "scene_high": {
+                "description": "Kuba nie wygląda komfortowo, ale zostaje w rozmowie. Odkłada telefon ekranem w dół i patrzy na ciebie uważniej niż wcześniej.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_high": "Powiedziałem parę rzeczy z frustracji. Nie powinno to wyjść w taki sposób.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nie kręć. Powiedz dokładnie, co o mnie gadałeś, skoro jesteś taki odważny przy innych.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kuba zaciska szczękę. A ty jesteś odważna tylko wtedy, gdy przychodzisz z oskarżeniem z drugiej ręki.",
+                    "feedback": {
+                        "label": "Presja i prowokacja",
+                        "psychology": "Nacisk połączony z szyderczą etykietą zwiększa wstyd rozmówcy. Wysoka wrażliwość na wstyd zwykle zamienia wtedy rozmowę w walkę o twarz.",
+                        "better_alternative_hint": "Oddziel potrzebę jasności od potrzeby upokorzenia drugiej strony."
+                    },
+                    "tags": [
+                        {
+                            "text": "Prowokowanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna Berne'a",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Jasne, pewnie wszyscy źle zrozumieli. Typowe.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kuba parska krótko. Jak masz wbijać szpilki, to nie wiem, po co tu siedzimy.",
+                    "feedback": {
+                        "label": "Sarkazm zamiast treści",
+                        "psychology": "Bierna agresja ukrywa prawdziwą potrzebę pod ironią. Druga strona słyszy atak, ale nie dostaje jasnej instrukcji, co mogłoby naprawić sytuację.",
+                        "better_alternative_hint": "Powiedz wprost, czego potrzebujesz teraz od rozmowy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Ukryty atak",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Potrzebuję konkretu. Co powiedziałeś i o co wtedy chodziło?",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 0,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Kuba wzdycha. Mówiłem, że ostatnio wszystko filtrujesz przez siebie i że trudno ci coś powiedzieć, bo od razu się zamykasz.",
+                    "feedback": {
+                        "label": "Porządkowanie rozmowy",
+                        "psychology": "Rzeczowe dopytanie obniża chaos i pomaga odsłonić materiał do dalszej pracy. Bez odniesienia do relacji i emocji może jednak zostać na poziomie przesłuchania.",
+                        "better_alternative_hint": "Po wysłuchaniu treści nazwij też, jaki to ma wpływ na zaufanie między wami."
+                    },
+                    "tags": [
+                        {
+                            "text": "Dopytywanie o fakty",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Strukturyzowanie rozmowy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chcę usłyszeć prawdę, nawet jeśli będzie nieprzyjemna. Bardziej boli mnie to, że poszedłeś z tym do innych zamiast do mnie.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Kuba spuszcza wzrok. Bałem się tej rozmowy. Przy innych było łatwiej ponarzekać niż powiedzieć ci, że jestem na ciebie wkurzony.",
+                    "feedback": {
+                        "label": "Twarda prawda bez dehumanizacji",
+                        "psychology": "Łączysz granicę z gotowością do wysłuchania. To redukuje potrzebę obrony i zwiększa szansę, że rozmówca ujawni motyw, a nie tylko będzie spierał się o szczegóły.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja trudności rozmowy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Co było pod spodem",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Za oknem robi się ciemno. Oboje mówicie krócej i ostrzej. Każde kolejne zdanie brzmi jak próba obrony własnej wersji.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Może po prostu też mam prawo być zmęczony tą relacją.",
+            "scene_high": {
+                "description": "Choć nadal jest ciężko, pojawia się pierwszy moment szczerości. Kuba nie ucieka wzrokiem tak często i wyraźnie walczy ze wstydem.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Byłem zły, bo czułem się przy tobie ostatnio oceniany. Ale wiem, że poszedłem z tym nie tam, gdzie trzeba.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Czyli jeszcze będziesz robił z siebie ofiarę? Niesamowite.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kuba cofa się na krześle. Dobra. To nie jest rozmowa, tylko egzekucja.",
+                    "feedback": {
+                        "label": "Unieważnienie perspektywy drugiej strony",
+                        "psychology": "Gdy ktoś zaczyna ujawniać własny ból, a słyszy pogardę, natychmiast wraca do obrony. Relacja traci szansę na przejście od winy do zrozumienia mechanizmu.",
+                        "better_alternative_hint": "Możesz nie zgadzać się z jego zachowaniem i jednocześnie dopuścić informację o jego stanie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Unieważnianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, nieważne. Chyba po prostu nie powinnam była tu przychodzić.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kuba milknie. Jeśli już się zamykasz, to naprawdę nie ma jak tego ruszyć.",
+                    "feedback": {
+                        "label": "Przedwczesne zamknięcie dialogu",
+                        "psychology": "Wycofanie przerywa eskalację, ale też odcina możliwość uzyskania odpowiedzialności i naprawy. W efekcie zostajesz z urazą bez domknięcia.",
+                        "better_alternative_hint": "Zostań przy rozmowie i nazwij, czego potrzebujesz, żeby iść dalej."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Rezygnacja z wpływu",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna Berne'a",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Rozumiem, że coś cię we mnie uwierało. Ale jeśli mamy być dalej blisko, takie rzeczy muszą trafiać do mnie, nie do publiczności.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kuba kiwa głową. To fair. Nie zrobiłem tego dojrzale.",
+                    "feedback": {
+                        "label": "Granica z odrobiną uznania",
+                        "psychology": "To dojrzałe połączenie granicy i normy relacyjnej. Nadal jednak bardziej regulujesz zasady niż pogłębiasz kontakt z emocjami po obu stronach.",
+                        "better_alternative_hint": "Dodaj, co konkretnie pękło w tobie, kiedy to usłyszałaś."
+                    },
+                    "tags": [
+                        {
+                            "text": "Stawianie granic",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Mogę przyjąć, że byłeś zły. Nie mogę przyjąć tego, że zostałam wystawiona i ośmieszona poza rozmową ze mną.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kuba bierze głębszy oddech. Tak. To było nielojalne. I chyba właśnie tego słowa unikałem.",
+                    "feedback": {
+                        "label": "Rozdzielenie emocji od naruszenia granicy",
+                        "psychology": "Uznajesz jego stan, ale nie relatywizujesz szkody. To centralna umiejętność naprawy relacji: można zrozumieć motyw bez usprawiedliwiania zachowania.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Rozróżnienie motywu od zachowania",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Nazwanie naruszenia granicy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Czy jest miejsce na odpowiedzialność",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Rozmowa wisi na włosku. Dźwięki z ekspresu i rozmowy innych ludzi zagłuszają wasze milczenie. Kuba wygląda, jakby zaraz miał wyjść.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Nie wiem, czego ty teraz w ogóle chcesz ode mnie.",
+            "scene_high": {
+                "description": "W powietrzu nadal jest ciężar, ale nie ma już samej walki. Kuba nie broni się tak odruchowo. Czeka na twoją odpowiedź z napięciem, ale też z gotowością.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Powiedz mi konkretnie, co według ciebie powinienem teraz zrobić.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Powinieneś się zastanowić, czy w ogóle zasługujesz na miano przyjaciela.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kuba zaciska usta. Dobra. Skoro tak mnie widzisz, to nie ma o czym mówić.",
+                    "feedback": {
+                        "label": "Atak na tożsamość",
+                        "psychology": "Krytyka charakteru zamiast zachowania zamyka możliwość naprawy. Rozmówca nie słyszy już, co ma zrobić inaczej, tylko że jest kimś wadliwym.",
+                        "better_alternative_hint": "Mów o tym, czego oczekujesz po naruszeniu zaufania, a nie kim ta osoba jest."
+                    },
+                    "tags": [
+                        {
+                            "text": "Atak na charakter",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Etykietowanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nic. Zapomnijmy. I tak już wiem, ile to było warte.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kuba patrzy na ciebie z frustracją. To nie brzmi jak zapomnienie, tylko jak kara bez końca.",
+                    "feedback": {
+                        "label": "Karzące wycofanie",
+                        "psychology": "Pozorna rezygnacja maskuje potrzebę ukarania i pozostawia drugą stronę w niepewności. To zwiększa dystans i nie daje ścieżki naprawczej.",
+                        "better_alternative_hint": "Powiedz jasno, jaki krok naprawczy jest dla ciebie minimalnie potrzebny."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ukryta kara",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Niedomknięcie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Potrzebuję, żebyś przyznał wprost, że to było nie fair, i żeby to się więcej nie powtórzyło.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kuba przytakuje powoli. To było nie fair. I nie chcę tego powtarzać.",
+                    "feedback": {
+                        "label": "Minimalny warunek naprawy",
+                        "psychology": "Jasno określasz warunek odpowiedzialności i to stabilizuje rozmowę. To dobry krok, choć nadal raczej kontraktowy niż relacyjny.",
+                        "better_alternative_hint": "Dodaj, czego potrzebujesz, by realnie zacząć odbudowywać zaufanie, nie tylko zatrzymać szkodę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Jasna prośba",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granica",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Jeśli ta relacja ma przetrwać, potrzebuję od ciebie nie tylko przeprosin, ale też uczciwości następnym razem, kiedy coś między nami zgrzytnie.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Kuba kiwa głową i pierwszy raz brzmi naprawdę miękko. Rozumiem. Chcę umieć przyjść z tym do ciebie, a nie chować się za cudzymi uszami.",
+                    "feedback": {
+                        "label": "Naprawa oparta na przyszłej zasadzie",
+                        "psychology": "Przenosisz rozmowę z kary za przeszłość na wspólną normę na przyszłość. To esencja transformacji: z pojedynczego incydentu tworzysz nową regułę kontaktu.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Budowanie wspólnej zasady",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Naprawa relacji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Co dalej z tą przyjaźnią",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Kawiarnia prawie pustoszeje. Między wami wisi zmęczenie i niedosyt. To moment, w którym jedna decyzja może domknąć rozmowę albo całkiem ją przeciąć.",
+                "location": "cafe",
+                "time_of_day": "night",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Nie wiem, czy po tym wszystkim da się to jeszcze normalnie posklejać.",
+            "scene_high": {
+                "description": "Nie ma jeszcze ulgi, ale jest coś cenniejszego: realna szczerość. Oboje jesteście zmęczeni, jednak rozmowa przestała przypominać pojedynek.",
+                "location": "cafe",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Nie oczekuję, że od razu mi zaufasz. Chcę tylko wiedzieć, czy widzisz jakąkolwiek drogę dalej.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Spokojnie, ja też mogę zacząć mówić o tobie różne rzeczy. Zobaczymy, jak ci się spodoba.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kuba wstaje od stołu. To już nie jest rozmowa o przyjaźni, tylko o odwecie.",
+                    "feedback": {
+                        "label": "Fantazja odwetu",
+                        "psychology": "Groźba symetrycznej szkody może dawać chwilowe poczucie mocy, ale niszczy resztki bezpieczeństwa. Relacja przechodzi z naprawy w logikę rewanżu.",
+                        "better_alternative_hint": "Zdecyduj, czy chcesz stawiać granicę, czy kończyć relację, ale nie buduj jej na zemście."
+                    },
+                    "tags": [
+                        {
+                            "text": "Odwet",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Groźba relacyjna",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nie wiem. Zrób, co chcesz. Ja się wycofuję.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kuba bezradnie rozkłada ręce. Okej. To chyba wszystko na dziś.",
+                    "feedback": {
+                        "label": "Zamrożenie bez decyzji",
+                        "psychology": "Wycofanie bez nazwania granicy daje pozór kontroli, ale zostawia obie strony w niejasności. To często utrwala dystans i domysły.",
+                        "better_alternative_hint": "Jeśli potrzebujesz dystansu, nazwij go jako świadomą przerwę i określ, po co jest."
+                    },
+                    "tags": [
+                        {
+                            "text": "Emocjonalne odcięcie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak domknięcia",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Na razie potrzebuję trochę dystansu. Potem możemy sprawdzić, czy da się to odbudować, ale z większą szczerością.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kuba przyjmuje to skinieniem. Rozumiem. To uczciwe bardziej niż udawanie, że wszystko wraca od razu.",
+                    "feedback": {
+                        "label": "Świadomy dystans",
+                        "psychology": "Nie udajesz pojednania, ale nie palisz mostu. To dojrzałe zarządzanie tempem naprawy, choć jeszcze bez wspólnego konkretu, jak tę naprawę prowadzić.",
+                        "better_alternative_hint": "Dodaj jeden konkretny krok, który pokaże, czy druga strona naprawdę bierze odpowiedzialność."
+                    },
+                    "tags": [
+                        {
+                            "text": "Regulacja dystansu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Widzę drogę dalej, ale powoli. Potrzebuję czasu, szczerości i tego, żebyś następnym razem przyszedł do mnie bezpośrednio. Wtedy możemy odbudować coś prawdziwego.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -3,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kuba wypuszcza powietrze i kiwa głową. To jest uczciwe. Nie oczekuję szybkiego rozgrzeszenia, ale chcę na nie zapracować.",
+                    "feedback": {
+                        "label": "Nadzieja bez naiwności",
+                        "psychology": "To najwyższy poziom naprawy: łączysz realne zranienie, granicę, tempo i warunek przyszłej uczciwości. Nie rozgrzeszasz, ale tworzysz ramę, w której zaufanie może wracać.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Wspólna perspektywa",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Naprawa zaufania",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "PĘKNIĘCIE ZAUFANIA",
+            "emoji": "🔴",
+            "subtitle": "Rozmowa zamienia się w starcie i nie daje miejsca na odpowiedzialność",
+            "narrative": "Wychodzicie z kawiarni osobno. W głowie zostają ci nie fakty, tylko smak upokorzenia i niedokończenia. Kuba czuje się osaczony, ty czujesz się zdradzona jeszcze mocniej niż przed spotkaniem.",
+            "diagnosis": "Dominował styl agresywny, bierny albo biernie agresywny. Rozmowa ugrzęzła w Poziomie II: kto ma rację, kto bardziej zranił, kto powinien się tłumaczyć. Nie pojawiła się wystarczająca przestrzeń na uznanie szkody i wzięcie odpowiedzialności.",
+            "post_game": {
+                "communication_style_summary": "Twoja ścieżka była reaktywna i napędzana bólem. Zranienie nie zostało nazwane w sposób, który dawał drugiej stronie szansę usłyszeć je bez obrony.",
+                "strongest_moment": "Najmocniejszy moment pojawił się wtedy, gdy próbowałaś w ogóle podjąć temat zamiast całkiem go przemilczeć.",
+                "growth_tip": "Przy zdradzie za plecami nie chodzi o miękkość. Chodzi o precyzję: nazwij fakt, wpływ i granicę bez ataku na charakter rozmówcy.",
+                "replay_prompt": "Zagraj jeszcze raz i sprawdź, jak zmienia się rozmowa, gdy mówisz o zdradzie wprost, ale bez odwetu."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "KRUCHE ZAWIESZENIE BRONI",
+            "emoji": "🟡",
+            "subtitle": "Udało się zatrzymać eskalację, ale zaufanie nadal jest naruszone",
+            "narrative": "Rozchodzicie się spokojniej, niż zaczęliście, ale bez prawdziwej ulgi. Padły ważne słowa i częściowe przyznanie się do winy, jednak relacja nadal stoi na niepewnym gruncie. Odbudowa jest możliwa, lecz jeszcze nie zaczęła się naprawdę.",
+            "diagnosis": "Przeważała asertywność i porządkowanie rozmowy. To wystarczyło, by nie dopuścić do pełnej katastrofy, ale zabrakło głębszego wejścia w Poziom III, gdzie obie strony rozumieją nie tylko fakty, ale też emocjonalną cenę zdarzenia i wspólną zasadę na przyszłość.",
+            "post_game": {
+                "communication_style_summary": "Była tu dojrzałość i granice, lecz mniej empatii i transformacji. Rozmowa była poprawna, ale nie całkiem lecząca.",
+                "strongest_moment": "Najlepiej działały momenty, w których prosiłaś o konkrety i nazywałaś minimalne warunki uczciwości.",
+                "growth_tip": "Następnym razem dołóż jedno zdanie o własnym zranieniu i jedną wspólną zasadę na przyszłość. To właśnie przesuwa rozmowę z naprawy szkody do odbudowy więzi.",
+                "replay_prompt": "Sprawdź ścieżkę, w której nie tylko stawiasz granice, ale też pokazujesz, co dokładnie pękło w twoim zaufaniu."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 10
+            },
+            "color": "green",
+            "title": "TRUDNA NAPRAWA",
+            "emoji": "🟢",
+            "subtitle": "Ból został nazwany, odpowiedzialność przyjęta, a relacja dostała realną szansę",
+            "narrative": "Nie wychodzisz z tej rozmowy lekka, ale wychodzisz z czymś prawdziwym. Kuba nie został rozgrzeszony automatycznie, tylko skonfrontowany w sposób, który pozwolił mu uznać szkodę. Między wami nie ma jeszcze pełnego spokoju, za to pojawia się fundament do odbudowy zaufania.",
+            "diagnosis": "Dominował styl empatyczny i transformacyjny. Udało się przejść z pozycyjnej walki do rozmowy o potrzebach, granicach i regule na przyszłość. Zranienie zostało wyrażone bez dehumanizacji, a odpowiedzialność nie została zastąpiona samym wyjaśnieniem.",
+            "post_game": {
+                "communication_style_summary": "Prowadziłaś rozmowę twardo, ale dojrzale. Potrafiłaś jednocześnie nazwać zdradę, postawić granicę i zostawić przestrzeń na naprawę.",
+                "strongest_moment": "Najsilniejszy był moment, w którym oddzieliłaś jego frustrację od nielojalnego zachowania i nie pozwoliłaś, by jedno usprawiedliwiło drugie.",
+                "growth_tip": "To dobry wzorzec na trudne relacje: najpierw fakt i wpływ, potem granica, a na końcu wspólna zasada na przyszłość.",
+                "replay_prompt": "Zagraj ponownie i zobacz, jak szybko rozmowa rozpada się, gdy z tej samej sytuacji usuniesz komunikat Ja albo element granicy."
+            }
+        }
+    ]
+}
