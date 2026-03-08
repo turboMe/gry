@@ -19,9 +19,9 @@
 
 ## 🌐 Graj online
 
-> **Link do aplikacji zostanie dodany wkrótce po wdrożeniu produkcyjnym.**
+> **Link do aplikacji.**
 >
-> `[ 🔗 LINK DO APLIKACJI ]`
+> `[ 🔗 https://miedzy-nami.vercel.app ]`
 
 ---
 
