@@ -1,0 +1,902 @@
+{
+    "scenario_id": "parent_calling_pressure",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Nigdy nie dzwonisz",
+        "subtitle": "Rodzic mówi z tęsknoty, dziecko słyszy wyrzut i presję",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 6,
+        "interaction_count": 5
+    },
+    "tags": {
+        "relationship_type": "parent_child",
+        "theme": [
+            "neglect",
+            "expectations",
+            "independence"
+        ],
+        "emotional_intensity": "moderate",
+        "age_rating": "all",
+        "session_type": "mini_story",
+        "player_role_gender": "neutral",
+        "difficulty": "intermediate"
+    },
+    "characters": {
+        "player": {
+            "name": "Alex",
+            "role_label": "Dorosłe dziecko · Gracz",
+            "age_range": "29-35",
+            "context": "Samodzielne życie, napięty grafik i zmęczenie sprawiają, że kontakt z domem bywa nieregularny. Alex chce mieć bliskość z rodzicem, ale bardzo źle reaguje na presję i wzbudzanie winy.",
+            "hidden_need": "autonomy",
+            "hidden_need_text": "Potrzeba wolności, szacunku do własnego rytmu i prawa do kontaktu bez poczucia bycia kontrolowanym.",
+            "traits": [
+                {
+                    "text": "samodzielny",
+                    "type": "positive"
+                },
+                {
+                    "text": "łatwo się spina przy wyrzutach",
+                    "type": "negative"
+                },
+                {
+                    "text": "chce utrzymać więź",
+                    "type": "positive"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 6,
+                "patience": 5,
+                "defensiveness": 7,
+                "empathy": 6,
+                "need_for_control": 5,
+                "shame_sensitivity": 7,
+                "directness": 6,
+                "repair_ability": 7
+            }
+        },
+        "npc": {
+            "name": "Ewa",
+            "role_label": "Matka",
+            "age_range": "58-65",
+            "context": "Ewa coraz częściej czuje pustkę w domu. Kiedy nie ma kontaktu, interpretuje ciszę jako odsunięcie i brak znaczenia, choć pod spodem kryje się tęsknota.",
+            "hidden_need": "recognition",
+            "hidden_need_text": "Potrzeba bliskości, zauważenia i upewnienia się, że nadal jest ważna w życiu dziecka.",
+            "traits": [
+                {
+                    "text": "opiekuńcza",
+                    "type": "positive"
+                },
+                {
+                    "text": "mówi okrężnie o potrzebach",
+                    "type": "negative"
+                },
+                {
+                    "text": "wrażliwa na dystans",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 5,
+                "patience": 6,
+                "defensiveness": 6,
+                "empathy": 7,
+                "need_for_control": 6,
+                "shame_sensitivity": 6,
+                "directness": 4,
+                "repair_ability": 6
+            },
+            "npc_reaction_logic": "Ewa zaostrza ton, gdy słyszy odbicie winy, ironię albo chłodne odcinanie się. Mięknie, gdy Alex nazwie jej emocję, oddzieli tęsknotę od oskarżenia i zaproponuje realny, konkretny sposób kontaktu."
+        }
+    },
+    "metrics_start": {
+        "tension": 45,
+        "trust": 55,
+        "openness": 45,
+        "feeling_heard": 40
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Pierwszy wyrzut",
+            "scene": {
+                "description": "Wieczór. Alex stoi w kuchni z telefonem przy uchu, obok stygnie herbata. W słuchawce słychać napięcie, jakby ta rozmowa zaczęła się wcześniej niż dziś.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": "Nigdy do mnie nie dzwonisz.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To ty też możesz zadzwonić. Nie jestem twoim dyżurnym.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Ewa milknie na sekundę, potem odpowiada ostrzej, że nie o to chodziło i że z tobą nie da się normalnie porozmawiać.",
+                    "feedback": {
+                        "label": "Odbicie winy i atak",
+                        "psychology": "Z perspektywy analizy transakcyjnej wchodzisz w starcie Rodzic kontra Dziecko. Zamiast usłyszeć ukryty apel o więź, odpowiadasz kontratakiem na poziomie pozycyjnym.",
+                        "better_alternative_hint": "Najpierw nazwij emocję pod wyrzutem, dopiero potem mów o granicach."
+                    },
+                    "tags": [
+                        {
+                            "text": "Odbicie winy",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "No tak, najlepiej żebym meldował się codziennie.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Ewa słyszy kpinę i odpowiada z urazą, że widać, jak bardzo przeszkadza ci zwykły kontakt.",
+                    "feedback": {
+                        "label": "Ironia zamiast kontaktu",
+                        "psychology": "Bierna agresja pozwala upuścić napięcie, ale nie odsłania twojej prawdziwej reakcji. W modelu NVC znika obserwacja i uczucie, zostaje szpilka, która uruchamia defensywę.",
+                        "better_alternative_hint": "Powiedz wprost, że słowo nigdy uruchamia w tobie presję."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ironia obronna",
+                            "type": "error"
+                        },
+                        {
+                            "text": "NVC Rosenberga",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Maskowanie złości",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Mam ostatnio dużo na głowie i nie zawsze mam kiedy dzwonić.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 0,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Ewa słyszy wyjaśnienie, ale nadal czuje dystans. Mówi, że wszyscy są zajęci, a jednak znajdują chwilę dla bliskich.",
+                    "feedback": {
+                        "label": "Wyjaśnienie bez walidacji",
+                        "psychology": "To odpowiedź poprawna, ale niepełna. Bronisz swojej rzeczywistości, lecz nie dotykasz emocjonalnej warstwy komunikatu, więc rozmowa zostaje na poziomie transakcji.",
+                        "better_alternative_hint": "Połącz fakt o braku czasu z uznaniem, że drugiej stronie jest przykro."
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat o faktach",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Asertywność podstawowa",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Słyszę, że bardzo ci tego kontaktu brakuje. Nie chcę, żebyś czuła się pomijana.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Ewa wyraźnie mięknie. Mówi ciszej, że po prostu bywa jej przykro, kiedy długo nie słyszy twojego głosu.",
+                    "feedback": {
+                        "label": "Walidacja bez poddania się",
+                        "psychology": "Rozpoznajesz ukryty komunikat relacyjny i odpowiadasz na emocję, nie na formę ataku. To przesuwa rozmowę z walki o rację w stronę kontaktu i bezpieczeństwa.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Aktywne słuchanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Co naprawdę stoi za tym zdaniem",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "W kuchni robi się duszno. Alex opiera się o blat, szczęka zaciska się coraz mocniej. Po drugiej stronie linii Ewa mówi szybciej, jakby bała się, że zaraz znów zostanie zbyta.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "No właśnie. Zawsze muszę się pierwsza odzywać i czuję, jakbym się narzucała.",
+            "scene_high": {
+                "description": "Alex siada przy stole i odstawia kubek. W słuchawce słychać, że napięcie trochę opadło. Ewa mówi wolniej, już mniej z wyrzutu, bardziej z odsłoniętej tęsknoty.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Czasem po prostu mam wrażenie, że znikam ci z życia i wtedy robi mi się smutno.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Dobra, nieważne. Nie mam siły na takie rozmowy.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Ewa słyszy odcięcie i odpowiada chłodno, że oczywiście, jak zawsze nie ma na nią miejsca.",
+                    "feedback": {
+                        "label": "Wycofanie z kontaktu",
+                        "psychology": "Unik daje chwilową ulgę, ale dla drugiej strony brzmi jak potwierdzenie opuszczenia. W relacji bliskiej cisza często działa mocniej niż otwarty spór.",
+                        "better_alternative_hint": "Zostań w rozmowie choć jednym zdaniem, które nazwie twoją reakcję."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Robisz ze mnie złe dziecko tylko dlatego, że mam własne życie.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Ewa natychmiast się usztywnia. Mówi, że skoro tak to odbierasz, to może rzeczywiście nie ma sensu dzwonić.",
+                    "feedback": {
+                        "label": "Personalizacja i polaryzacja",
+                        "psychology": "Przypisujesz intencję i ustawiasz relację w schemacie ja kontra ty. To wzmacnia wstyd i obronę po obu stronach, zamiast odsłonić realne potrzeby.",
+                        "better_alternative_hint": "Oddziel swoje napięcie od przypisywania rodzicowi złych zamiarów."
+                    },
+                    "tags": [
+                        {
+                            "text": "Personalizacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Polaryzacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie lubię takich zdań, bo brzmią jak wyrzut i od razu się spinam.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Ewa słyszy twoją granicę. Odpowiada, że nie chciała cię atakować, tylko już nie wiedziała, jak o tym powiedzieć.",
+                    "feedback": {
+                        "label": "Granica nazwana wprost",
+                        "psychology": "To dobry komunikat Ja. Mówisz o swoim odbiorze zamiast atakować, ale nadal brakuje aktywnego uznania, co przeżywa druga strona.",
+                        "better_alternative_hint": "Dodaj, że domyślasz się, iż pod wyrzutem stoi tęsknota albo lęk."
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Stawianie granic",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC Rosenberga",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Kiedy słyszę słowo nigdy, od razu czuję presję. Ale domyślam się, że bardziej chodzi ci o tęsknotę niż o sam wyrzut.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Ewa wzdycha z ulgą. Przyznaje, że tak właśnie jest i że czasem nie umie powiedzieć wprost, że po prostu za tobą tęskni.",
+                    "feedback": {
+                        "label": "Nazwanie ukrytej potrzeby",
+                        "psychology": "Łączysz granicę z empatią. W praktyce odpowiadasz na warstwę relacyjną i apel zawarty w komunikacie, co obniża defensywę i zwiększa szansę na szczerość.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Nazwanie potrzeby",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Między tęsknotą a winą",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Napięcie z poprzednich zdań zostaje w ciele. Alex chodzi po kuchni tam i z powrotem. Ewa mówi teraz ciszej, ale w tle jest urażenie i lęk przed odrzuceniem.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Może jestem staroświecka, ale kiedy dziecko nie dzwoni, to człowiek myśli, że przestał być ważny.",
+            "scene_high": {
+                "description": "Atmosfera robi się bardziej ludzka niż bojowa. Alex siada spokojniej, a w słuchawce pojawia się pauza, w której Ewa mówi już bardziej o sobie niż przeciw tobie.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Chyba po prostu boję się, że z każdym rokiem będziemy mieć ze sobą coraz mniej kontaktu.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To może znajdź sobie więcej zajęć, zamiast liczyć moje telefony.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Ewa odbiera to jako pogardę. Jej głos twardnieje i mówi, że nie spodziewała się po tobie takiego chłodu.",
+                    "feedback": {
+                        "label": "Pogarda pod przykrywką rady",
+                        "psychology": "Pozornie dajesz rozwiązanie, ale w rzeczywistości zawstydzasz i deprecjonujesz emocję rozmówcy. Pogarda silnie niszczy poczucie bezpieczeństwa w relacji.",
+                        "better_alternative_hint": "Nie naprawiaj osoby. Uznaj jej uczucie i nazwij, czego sam potrzebujesz."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Minimalizacja emocji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "To twój lęk, nie mój problem.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Po tych słowach Ewa zamyka się emocjonalnie i odpowiada lodowato, że rozumie już, na czym stoi.",
+                    "feedback": {
+                        "label": "Odcięcie od odpowiedzialności relacyjnej",
+                        "psychology": "Masz prawo nie brać na siebie cudzych emocji, ale skrajne odcięcie niszczy więź. To zamienia zdrową separację w relacyjne porzucenie na poziomie odbioru.",
+                        "better_alternative_hint": "Oddziel empatię od poczucia obowiązku. Można uznać lęk, nie biorąc za niego pełnej odpowiedzialności."
+                    },
+                    "tags": [
+                        {
+                            "text": "Chłodne odcięcie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak walidacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Granica bez relacji",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Mogę próbować odzywać się częściej, ale nie chcę składać obietnic, których nie dowiozę.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Ewa docenia uczciwość, ale nadal nie czuje pełnego ukojenia. Pyta, czy w ogóle jest dla ciebie ważna.",
+                    "feedback": {
+                        "label": "Uczciwość bez ukojenia",
+                        "psychology": "To rozsądne i realne, ale nadal bardziej zarządza logistyką niż emocją. Dla osoby w lęku przed odsunięciem sama deklaracja częściej nie wystarcza bez sygnału więzi.",
+                        "better_alternative_hint": "Dodaj zdanie, które potwierdzi znaczenie relacji, nie tylko ograniczenia czasowe."
+                    },
+                    "tags": [
+                        {
+                            "text": "Realistyczna deklaracja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Transparentność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Rozumiem, że możesz czuć się samotna i mniej ważna. Chcę mieć z tobą kontakt, tylko bez presji i bez wchodzenia w poczucie winy.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Ewa słyszy i ból, i twoją granicę. Przyznaje, że nie chce cię przyciskać, tylko boi się milczenia.",
+                    "feedback": {
+                        "label": "Empatia połączona z granicą",
+                        "psychology": "To dojrzała odpowiedź: uznajesz emocję, ale nie przyjmujesz manipulującej formy. Wchodzisz na poziom transformacji, gdzie można jednocześnie chronić siebie i relację.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Stawianie granic",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Ustalenie realnego kontaktu",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Rozmowa nadal balansuje na granicy urazy. Alex czuje zmęczenie, a Ewa łapie się konkretów, bo boi się, że zaraz wszystko znów się rozmyje.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "cold"
+            },
+            "npc_line_low": "To co mam zrobić? Siedzieć i czekać, aż sobie o mnie przypomnisz?",
+            "scene_high": {
+                "description": "W napięciu pojawia się trochę miejsca na współpracę. Alex przechodzi do salonu i siada spokojniej na kanapie. Ewa brzmi tak, jakby była gotowa rozmawiać o rozwiązaniu, a nie tylko o żalu.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "To może ustalmy coś, co będzie dla nas obojga do udźwignięcia.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Dobra, będę dzwonić częściej, byle już nie było tej sceny.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -1,
+                        "openness": -1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Ewa chwilowo się uspokaja, ale wyczuwa pustą obietnicę. W powietrzu zostaje napięcie, że to znów może nie wyjść.",
+                    "feedback": {
+                        "label": "Kapitulacja pod presją",
+                        "psychology": "To nie jest prawdziwe porozumienie, tylko ucieczka od dyskomfortu. Zgoda dana z lęku przed konfliktem często później zamienia się w frustrację i kolejne rozczarowanie.",
+                        "better_alternative_hint": "Proponuj tylko taki kontakt, który naprawdę jesteś w stanie utrzymać."
+                    },
+                    "tags": [
+                        {
+                            "text": "Fuzja z poczuciem winy",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Fałszywa zgoda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Unikanie konfliktu",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Jak chcesz grafik, to mogę ci wysłać formularz zapisów.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Ewa czuje się ośmieszona. Odpowiada, że nie prosi o formalności, tylko o odrobinę serca.",
+                    "feedback": {
+                        "label": "Sarkazm wobec potrzeby bliskości",
+                        "psychology": "Kpina redukuje napięcie po twojej stronie, ale po drugiej stronie brzmi jak wyśmianie potrzeby więzi. To wzmacnia samotność i zawstydzenie.",
+                        "better_alternative_hint": "Zaproponuj prosty rytm kontaktu bez ironii i bez obietnic ponad siły."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Wyśmianie potrzeby",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Będę się odzywać, kiedy będę mieć na to przestrzeń.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 0,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Ewa słyszy granicę, ale plan nadal jest dla niej mglisty. Pyta, skąd ma wiedzieć, czy cisza to zajętość czy odsunięcie.",
+                    "feedback": {
+                        "label": "Granica bez konkretu",
+                        "psychology": "Asertywność działa lepiej, gdy daje drugiej stronie przewidywalność. Sama autonomia bez struktury może nie obniżyć lęku relacyjnego.",
+                        "better_alternative_hint": "Dodaj mały, konkretny rytm albo sygnał, który będzie realny do utrzymania."
+                    },
+                    "tags": [
+                        {
+                            "text": "Stawianie granic",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Przewidywalność relacyjna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Ustalmy coś realnego: krótki telefon raz w tygodniu, a gdy mam cięższy okres, dam ci wcześniej znać wiadomością.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Ewa oddycha wyraźnie lżej. Mówi, że taki układ brzmi uczciwie i daje jej poczucie, że nie musi zgadywać.",
+                    "feedback": {
+                        "label": "Kontrakt relacyjny",
+                        "psychology": "To rozwiązanie łączy potrzebę autonomii z potrzebą bezpieczeństwa po drugiej stronie. Konkret zmniejsza pole do domysłów, a wcześniejsza informacja zapobiega uruchamianiu lęku.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Kontrakt relacyjny",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Wspólne rozwiązanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Domknięcie bez chłodu",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Rozmowa jest już dłuższa niż Alex planował. W salonie robi się ciemniej, a zmęczenie miesza się z chęcią szybkiego zakończenia. Ewa czeka na ostatni sygnał, czy naprawdę została usłyszana.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Nie chcę się prosić o miłość, Alex.",
+            "scene_high": {
+                "description": "Wieczór przechodzi w spokojniejszą noc. Alex opiera się wygodniej o kanapę, a w głosie Ewy jest już mniej lęku. Oboje są blisko miejsca, w którym można zakończyć rozmowę z ulgą.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Dobrze było to wreszcie powiedzieć normalnie.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Tyle mogę dać i koniec tematu.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Ewa zamyka się i odpowiada krótko, że rozumie. W jej głosie słychać zranienie i rezygnację.",
+                    "feedback": {
+                        "label": "Granica podana jak odcięcie",
+                        "psychology": "Treść granicy może być prawomocna, ale forma jest relacyjnie tnąca. Gdy kontakt kończy się chłodem, druga strona zapamięta odrzucenie, nie ustalenie.",
+                        "better_alternative_hint": "Domknij rozmowę sygnałem więzi albo wdzięcznością za szczerość."
+                    },
+                    "tags": [
+                        {
+                            "text": "Chłodna finalizacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak naprawy relacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobrze, nieważne. Róbmy jak chcesz.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -1
+                    },
+                    "npc_reaction": "Ewa wyczuwa zgaszenie zamiast zgody. Nie kłóci się dalej, ale rozmowa kończy się ciężko i bez poczucia porozumienia.",
+                    "feedback": {
+                        "label": "Pozorna zgoda",
+                        "psychology": "Wycofujesz siebie z relacji, żeby dokończyć rozmowę bez dalszego napięcia. To obniża autentyczność i zostawia niedomknięty żal po obu stronach.",
+                        "better_alternative_hint": "Zamiast kapitulować, podsumuj wspólny plan i dodaj jedno szczere zdanie o znaczeniu relacji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pozorna zgoda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Wycofanie siebie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Niedomknięcie rozmowy",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "To na razie tyle. Zobaczymy, jak ten układ nam wyjdzie.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 0,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Ewa przyjmuje to spokojnie, ale końcówka jest rzeczowa. Rozmowa kończy się poprawnie, choć bez większego ciepła.",
+                    "feedback": {
+                        "label": "Poprawne zamknięcie",
+                        "psychology": "To sensowne podsumowanie ustaleń, ale nie daje emocjonalnego domknięcia. W relacjach rodzinnych sama organizacja kontaktu nie zawsze wystarcza, by odbudować poczucie bliskości.",
+                        "better_alternative_hint": "Dodaj jedno zdanie wzmacniające więź albo uznające wartość tej rozmowy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Podsumowanie ustaleń",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Rzeczowe domknięcie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Jesteś dla mnie ważna. Chcę, żeby nasz kontakt był bliższy i jednocześnie lżejszy, bez wyrzutów po obu stronach.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Ewa mówi miękko, że tego właśnie potrzebowała usłyszeć. Kończycie rozmowę spokojniej, z poczuciem większej bliskości i ulgi.",
+                    "feedback": {
+                        "label": "Domknięcie z więzią",
+                        "psychology": "To końcówka, która nie tylko ustala zasady, ale też odbudowuje sens relacji. Łączysz przynależność z autonomią, dzięki czemu obie strony wychodzą z rozmowy mniej samotne.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Wzmocnienie więzi",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Język my",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 2
+            },
+            "color": "red",
+            "title": "ROZMOWA ZAMKNIĘTA W ŻALU",
+            "emoji": "🔴",
+            "subtitle": "Obie strony zostają przy swojej racji i swoim zranieniu.",
+            "narrative": "Po zakończeniu połączenia Alex czuje ulgę pomieszaną z ciężarem, a Ewa odkłada telefon z poczuciem, że została odepchnięta. Cisza po rozmowie nie uspokaja, tylko potwierdza dotychczasowy dystans.",
+            "diagnosis": "Ta ścieżka utrzymała rozmowę na poziomie pozycyjnym. Dominowały obrona, ironia albo wycofanie, przez co ukryte potrzeby bliskości i wolności nie zostały nazwane. W efekcie wyrzut został usłyszany jako atak, a granica zabrzmiała jak odrzucenie.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl agresywny, bierny albo biernie agresywny, który wzmacniał napięcie i samotność po obu stronach.",
+                "strongest_moment": "Najbliżej przełomu było wtedy, gdy pojawiła się choć minimalna próba mówienia o własnej reakcji zamiast o winie drugiej strony.",
+                "growth_tip": "Gdy słyszysz oskarżenie, nie odpowiadaj od razu na jego formę. Najpierw nazwij emocję albo potrzebę pod spodem, a dopiero potem stawiaj granicę.",
+                "replay_prompt": "Spróbuj przejść tę rozmowę jeszcze raz, oddzielając tęsknotę rodzica od presji, którą od razu słyszysz."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 3,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "KRUCHY ROZEJM",
+            "emoji": "🟡",
+            "subtitle": "Pojawia się trochę zrozumienia, ale więź nadal jest delikatna.",
+            "narrative": "Rozmowa kończy się bez wybuchu, lecz z ostrożnością po obu stronach. Ustalacie pewne ramy albo przynajmniej zatrzymujecie eskalację, jednak w tle zostaje niedosyt i ostrożne sprawdzanie, czy to naprawdę coś zmieni.",
+            "diagnosis": "Ta ścieżka przyniosła częściową regulację napięcia. Pojawiła się asertywność i pewna uczciwość, ale empatia nie była konsekwentna, dlatego rozmowa często zatrzymywała się między poziomem transakcji a częściową transformacją. Relacja nie pękła, lecz nie dostała pełnego ukojenia.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl asertywny i rzeczowy, momentami wsparty empatią, ale bez pełnego wejścia w emocjonalną warstwę rozmowy.",
+                "strongest_moment": "Najmocniejszy był moment, w którym udało się powiedzieć, jak działa na ciebie presja, bez bezpośredniego ataku na rodzica.",
+                "growth_tip": "Następnym razem do granicy dodaj walidację. Samo nie lubię tego tonu to za mało, jeśli druga strona boi się, że przestała być ważna.",
+                "replay_prompt": "Spróbuj ponownie i zobacz, co się zmieni, gdy oprócz faktów i granic dasz też rodzicowi jasny sygnał więzi."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 10
+            },
+            "color": "green",
+            "title": "BLISKOŚĆ BEZ PRESJI",
+            "emoji": "🟢",
+            "subtitle": "Udało się połączyć empatię, granice i konkretny plan kontaktu.",
+            "narrative": "Po rozmowie Alex odkłada telefon z poczuciem, że nie zdradził siebie, a jednocześnie naprawdę spotkał się z Ewą. Ewa czuje się ważna i mniej samotna, bo usłyszała nie tylko plan, ale też potwierdzenie więzi.",
+            "diagnosis": "Ta ścieżka przeniosła rozmowę na poziom transformacji. Została nazwana zarówno tęsknota rodzica, jak i potrzeba autonomii dziecka. Dzięki temu granice nie zabrzmiały jak chłód, a bliskość nie została zbudowana na poczuciu winy.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl empatyczny i transformacyjny: uznanie emocji, komunikat Ja, jasna granica i wspólne rozwiązanie.",
+                "strongest_moment": "Najmocniejszy moment to nazwanie, że pod słowem nigdy stoi tęsknota, a potem zamiana wyrzutu w realny kontrakt relacyjny.",
+                "growth_tip": "To był dobry kierunek. W realnych rozmowach utrzymuj tę samą kolejność: walidacja, granica, konkret, domknięcie więzią.",
+                "replay_prompt": "Możesz zagrać jeszcze raz i sprawdzić, jak niewielka zmiana tonu na początku wpływa na cały przebieg rozmowy."
+            }
+        }
+    ]
+}

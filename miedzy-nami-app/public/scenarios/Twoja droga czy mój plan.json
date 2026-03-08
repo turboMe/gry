@@ -1,0 +1,861 @@
+{
+    "scenario_id": "parent_pressure_studies_or_work",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Twoja droga czy mój plan",
+        "subtitle": "Rodzic naciska na bezpieczny wybór przyszłości, a ty próbujesz obronić własną autonomię bez zrywania więzi.",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 8,
+        "interaction_count": 5
+    },
+    "tags": {
+        "relationship_type": "parent_child",
+        "theme": [
+            "control",
+            "expectations",
+            "independence"
+        ],
+        "emotional_intensity": "moderate",
+        "age_rating": "teen",
+        "session_type": "mini_story",
+        "player_role_gender": "neutral",
+        "difficulty": "intermediate"
+    },
+    "characters": {
+        "player": {
+            "name": "Alex",
+            "role_label": "Dziecko · Gracz",
+            "age_range": "18-19",
+            "context": "Kończysz szkołę i czujesz presję, by szybko wybrać studia albo pracę zgodnie z oczekiwaniami rodzica. W środku miesza ci się lęk przed rozczarowaniem bliskiej osoby z silną potrzebą decydowania o sobie.",
+            "hidden_need": "autonomy",
+            "hidden_need_text": "Potrzeba samostanowienia, sprawczości i prawa do własnej ścieżki.",
+            "traits": [
+                {
+                    "text": "ambitny",
+                    "type": "positive"
+                },
+                {
+                    "text": "wrażliwy na ocenę",
+                    "type": "negative"
+                },
+                {
+                    "text": "szuka własnej drogi",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 5,
+                "patience": 6,
+                "defensiveness": 7,
+                "empathy": 6,
+                "need_for_control": 4,
+                "shame_sensitivity": 8,
+                "directness": 6,
+                "repair_ability": 6
+            }
+        },
+        "npc": {
+            "name": "Ewa",
+            "role_label": "Rodzic · NPC",
+            "age_range": "45-52",
+            "context": "Od miesięcy martwisz się o przyszłość dziecka. Widzisz niepewny rynek pracy, rosnące koszty życia i boisz się, że zbyt ryzykowna decyzja zemści się na nim za kilka lat.",
+            "hidden_need": "safety",
+            "hidden_need_text": "Potrzeba bezpieczeństwa, przewidywalności i poczucia, że dziecko sobie poradzi.",
+            "traits": [
+                {
+                    "text": "troskliwa",
+                    "type": "positive"
+                },
+                {
+                    "text": "kontrolująca pod wpływem lęku",
+                    "type": "negative"
+                },
+                {
+                    "text": "zadaniowa",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 4,
+                "patience": 5,
+                "defensiveness": 6,
+                "empathy": 5,
+                "need_for_control": 8,
+                "shame_sensitivity": 5,
+                "directness": 8,
+                "repair_ability": 5
+            },
+            "npc_reaction_logic": "Na agresję odpowiada usztywnieniem i wchodzi w pozycję wiem lepiej. Na wycofanie zwiększa nacisk, bo odczytuje ciszę jako brak dojrzałości. Na rzeczową asertywność chwilowo mięknie, ale nadal trzyma się faktów. Na empatię i uznanie jej lęku przechodzi z trybu kontrolowania do trybu współpracy i łatwiej wchodzi w transakcję Dorosły–Dorosły."
+        }
+    },
+    "metrics_start": {
+        "tension": 40,
+        "trust": 60,
+        "openness": 50,
+        "feeling_heard": 50
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Pierwsze starcie przy stole",
+            "scene": {
+                "description": "W kuchni stygnie herbata. Ewa odkłada wydruk z informatorami o uczelniach i patrzy na ciebie z napięciem, jakby tę rozmowę układała w głowie od dawna.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": "Musisz wreszcie podjąć rozsądną decyzję. Te twoje pomysły są zbyt ryzykowne. Złóż papiery na konkretny kierunek albo poszukaj stabilnej pracy.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To moje życie, więc przestań mną sterować.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Ewa prostuje plecy i marszczy czoło. Skoro tak ze mną rozmawiasz, to chyba naprawdę nie rozumiesz powagi sytuacji.",
+                    "feedback": {
+                        "label": "Atak i kontratak",
+                        "psychology": "Wchodzisz w krytyczny komunikat z pozycji zbuntowanego Dziecka, a Ewa odpowiada z kontrolującego Rodzica. Według analizy transakcyjnej Berne'a taka skrzyżowana wymiana szybko eskaluje konflikt.",
+                        "better_alternative_hint": "Nazwij własną potrzebę bez oskarżania drugiej strony."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uogólnienie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna Berne'a",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, nieważne. I tak powiesz, co chcesz.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Ewa wzdycha ciężko. Właśnie dlatego muszę to za ciebie ogarniać, bo ty ucinasz temat zamiast myśleć o przyszłości.",
+                    "feedback": {
+                        "label": "Wycofanie i oddanie pola",
+                        "psychology": "Milkniesz, ale napięcie nie znika. W modelu von Thuna na poziomie relacji wysyłasz komunikat i tak mnie nie słuchasz, co prowokuje drugą stronę do jeszcze silniejszej kontroli.",
+                        "better_alternative_hint": "Zamiast zamykać rozmowę, powiedz czego chcesz od tej rozmowy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Chcę sam o tym decydować, ale mogę ci powiedzieć, co już przemyślałem.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Ewa nieco zwalnia. To powiedz konkretnie, bo na razie słyszę tylko, że nie chcesz mojej propozycji.",
+                    "feedback": {
+                        "label": "Granica bez uznania emocji",
+                        "psychology": "Bronisz autonomii wprost i nie atakujesz. To ruch w stronę Dorosły–Dorosły, ale bez nazwania lęku Ewy rozmowa nadal zostaje głównie na poziomie stanowisk.",
+                        "better_alternative_hint": "Dodaj uznanie jej intencji albo obawy, żeby obniżyć defensywność."
+                    },
+                    "tags": [
+                        {
+                            "text": "Stawianie granicy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Słyszę, że chcesz mnie zabezpieczyć, ale kiedy mówisz mi, co muszę zrobić, czuję presję. Chcę ci powiedzieć, jaka droga naprawdę mnie pociąga.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Ewa patrzy na ciebie uważniej. Nie chcę cię zniszczyć presją. Po prostu boję się, że wybierzesz coś, po czym zostaniesz bez planu.",
+                    "feedback": {
+                        "label": "Empatia i komunikat Ja",
+                        "psychology": "Najpierw odczytujesz intencję rodzica, potem mówisz o własnym przeżyciu. To klasyczny ruch NVC: obserwacja, uczucie i potrzeba. Dzięki temu Ewa ma mniej powodów, by bronić swojej pozycji siłą.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC Rosenberga",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Co kryje się pod naciskiem",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Ewa opiera dłonie o blat i mówi szybciej niż wcześniej. W powietrzu wisi poczucie, że każde kolejne zdanie będzie walką o rację.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Ja tu próbuję cię uratować przed głupią decyzją, a ty robisz ze mnie wroga.",
+            "scene_high": {
+                "description": "Ewa siada naprzeciwko i przestaje przeglądać wydruki. Widać, że nadal się martwi, ale bardziej słucha niż naciska.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Nie chcę być twoim wrogiem. Ja się zwyczajnie boję, że później będzie ci bardzo ciężko.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To twój lęk, nie mój problem. Przestań go na mnie zrzucać.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Ewa zaciska usta. Czyli mam patrzeć, jak idziesz w ścianę i nic nie mówić. Nie ma mowy.",
+                    "feedback": {
+                        "label": "Odrzucenie emocji rozmówcy",
+                        "psychology": "Masz prawo nie brać odpowiedzialności za cudzy lęk, ale w tej formie dewaluuje on drugą stronę. Odrzucona emocja często wraca jako kontrola albo moralizowanie.",
+                        "better_alternative_hint": "Oddziel cudze emocje od swoich granic bez pogardy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Dewaluacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak walidacji",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "No tak, najlepiej żyć tak, żebyś ty się nie stresowała.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Ewa kręci głową. Znowu ironizujesz zamiast odpowiedzieć normalnie. Jak mam ci zaufać przy takiej postawie.",
+                    "feedback": {
+                        "label": "Ironia zamiast dialogu",
+                        "psychology": "Sarkazm daje chwilową ulgę, ale ukrywa prawdziwą potrzebę. W analizie transakcyjnej to pasywna forma ataku, która utrzymuje relację na poziomie pozycyjnym.",
+                        "better_alternative_hint": "Powiedz wprost, jak wpływa na ciebie jej nacisk."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Rozumiem, że boisz się o moją stabilność. Ja z kolei boję się utknąć w czymś, czego nie chcę.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Ewa wzrusza ramionami, ale ton trochę mięknie. Okej, to brzmi uczciwie. Nadal jednak potrzebuję zobaczyć, że masz konkretny plan.",
+                    "feedback": {
+                        "label": "Dwie perspektywy w jednym zdaniu",
+                        "psychology": "To dobry krok, bo uznajesz obie strony konfliktu autonomia kontra bezpieczeństwo. Nadal jednak mówicie głównie o obawach, nie o wspólnym procesie dochodzenia do decyzji.",
+                        "better_alternative_hint": "Przejdź od obrony stanowiska do rozmowy o kryteriach wyboru."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uznanie perspektywy drugiej strony",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Wierzę, że próbujesz mnie chronić. Potrzebuję jednak, żebyśmy rozdzielili twoją obawę od mojej decyzji i zobaczyli, czego każde z nas naprawdę chce uniknąć.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Ewa wypuszcza powietrze. Dobrze. Ja chcę uniknąć sytuacji, w której za rok będziesz bez pieniędzy i z poczuciem, że zmarnowałeś czas.",
+                    "feedback": {
+                        "label": "Zmiana z ja kontra ty na wspólne badanie problemu",
+                        "psychology": "To odpowiedź transformacyjna. Nie negujesz troski rodzica, ale nie oddajesz sprawczości. Przenosisz rozmowę z poziomu pozycji na poziom wspólnego nazywania ryzyk i potrzeb.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Reframing konfliktu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Analiza transakcyjna Berne'a",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Plan czy marzenie",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Napięcie nie spada. Ewa sięga po telefon i zaczyna wymieniać znajomych, których dzieci wybrały bardziej przewidywalne ścieżki. Czujesz porównanie i presję.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "cold"
+            },
+            "npc_line_low": "Inni jakoś potrafią podejść do życia rozsądnie. Ty mówisz o pasji, ale gdzie tu konkret.",
+            "scene_high": {
+                "description": "Przenosicie się do salonu. Ewa odkłada telefon ekranem do dołu i daje ci przestrzeń, żebyś opowiedział o swoim pomyśle bez przerywania.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Dobrze, opowiedz mi spokojnie, jak to widzisz. Chcę usłyszeć, że za tym stoi coś więcej niż impuls.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Bo ty zawsze musisz mnie porównywać i wbijać, że jestem gorszy.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Ewa natychmiast się broni. Nie powiedziałam, że jesteś gorszy. Ale skoro tak to odbierasz, to może naprawdę nie umiesz przyjąć faktów.",
+                    "feedback": {
+                        "label": "Personalizacja i oskarżenie",
+                        "psychology": "Mówisz z bólu, ale w formie przypisania intencji. W kwadracie von Thuna chwytasz głównie poziom relacji i dopisujesz drugiej stronie atakujący zamiar, co zamyka drogę do konkretu.",
+                        "better_alternative_hint": "Nazwij wpływ porównań na siebie bez stwierdzania, co druga osoba zawsze robi."
+                    },
+                    "tags": [
+                        {
+                            "text": "Personalizacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nieważne. I tak tego nie zrozumiesz.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Ewa rozkłada ręce. Skoro nawet nie umiesz tego wyjaśnić, to skąd mam wiedzieć, że to coś poważnego.",
+                    "feedback": {
+                        "label": "Rezygnacja z bycia zrozumianym",
+                        "psychology": "Wycofujesz się dokładnie w momencie, w którym mógłbyś nadać swojej decyzji strukturę. Druga strona dostaje wtedy potwierdzenie swojego lęku, że działasz bez planu.",
+                        "better_alternative_hint": "Zostań w rozmowie i opisz choć dwa konkretne kroki."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Mam pomysł, ale potrzebuję czasu, żeby go dopracować. Mogę ci pokazać, jakie opcje teraz rozważam i co już sprawdziłem.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Ewa kiwa głową. To już brzmi poważniej. Nadal mam obawy, ale jeśli coś sprawdziłeś, to chcę to zobaczyć.",
+                    "feedback": {
+                        "label": "Konkrety zamiast obrony ego",
+                        "psychology": "To ruch porządkujący. Wprowadzasz fakty i proces decyzyjny, co obniża lęk rodzica. Brakuje jednak zdania o tym, dlaczego ta droga jest dla ciebie ważna osobiście.",
+                        "better_alternative_hint": "Połącz plan działania z własną motywacją."
+                    },
+                    "tags": [
+                        {
+                            "text": "Porządkowanie faktów",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "To nie jest tylko pasja. Spisałem trzy możliwe ścieżki, koszty i plan na najbliższe pół roku. Chcę ci to pokazać, a jednocześnie potrzebuję, żebyś nie porównywała mnie do innych, bo wtedy zamykam się zamiast myśleć.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Ewa wyraźnie mięknie. Dobrze, to uczciwe. Mogę nie porównywać, jeśli zobaczę, że naprawdę to przemyślałeś.",
+                    "feedback": {
+                        "label": "Połączenie konkretu z odsłonięciem wpływu",
+                        "psychology": "To jedna z najsilniejszych odpowiedzi: łączysz dane z komunikatem o wpływie. Nie atakujesz, ale pokazujesz mechanizm obronny, który uruchamiają porównania. To zwiększa szansę na korektę zachowania rodzica bez wstydu.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat o wpływie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Aktywne ujawnienie potrzeb",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC Rosenberga",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Granice i wspólne kryteria",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Ewa wraca do twardego tonu. Na stole ląduje kartka z terminami rekrutacji i listą zawodów, które według niej dają normalne życie. Czujesz, że za chwilę padnie ultimatum.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Nie będę patrzeć, jak marnujesz sobie start. Albo wybierzesz coś rozsądnego, albo licz się z konsekwencjami.",
+            "scene_high": {
+                "description": "Ewa bierze długopis i pustą kartkę. Nadal jest spięta, ale zamiast naciskać, wygląda jak ktoś gotowy ustalić warunki bezpiecznego eksperymentu.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Skoro to ma być twoja decyzja, to pomóż mi zrozumieć, po czym poznamy, że to odpowiedzialny wybór.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Jeśli postawisz mi ultimatum, to zrobię dokładnie odwrotnie.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Ewa uderza dłonią w stół. Czyli mam do czynienia z buntem, a nie z dojrzałą decyzją.",
+                    "feedback": {
+                        "label": "Bunt przeciw buntowi",
+                        "psychology": "Groźba odwetu chwilowo odzyskuje poczucie siły, ale z perspektywy psychologii komunikacji utrwala polaryzację. Rozmowa przestaje dotyczyć przyszłości, a zaczyna dotyczyć dominacji.",
+                        "better_alternative_hint": "Powiedz, jak ultimatum wpływa na rozmowę, i zaproponuj inną ramę ustaleń."
+                    },
+                    "tags": [
+                        {
+                            "text": "Eskalacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Walczące pozycje",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Rób jak chcesz. Widocznie i tak nie mam tu nic do powiedzenia.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Ewa patrzy z frustracją. Właśnie przez takie teksty trudno mi uwierzyć, że bierzesz odpowiedzialność.",
+                    "feedback": {
+                        "label": "Pozorna kapitulacja",
+                        "psychology": "To nie jest prawdziwa zgoda, tylko komunikat ukrytego żalu. Druga strona słyszy bezsilność i oskarżenie jednocześnie, więc zwykle odpowiada jeszcze większą kontrolą.",
+                        "better_alternative_hint": "Nie kapituluj. Ustal, na co się zgadzasz, a na co nie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pasywna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Ukryty atak",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Mogę zaakceptować rozmowę o kryteriach bezpieczeństwa, ale nie zgodzę się na decyzję pod presją. Potrzebuję tygodnia, żeby wrócić z konkretnym planem.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Ewa milknie na chwilę. Tydzień to dużo, ale przynajmniej mówisz konkretnie. Chcę tylko wiedzieć, że to nie będzie odwlekanie.",
+                    "feedback": {
+                        "label": "Granica z propozycją procesu",
+                        "psychology": "Dobrze stawiasz granicę i wprowadzasz ramę czasową. To chroni autonomię bez całkowitego zerwania kontaktu. Nadal jednak mało tu wspólnego języka wokół tego, czego oboje potrzebujecie.",
+                        "better_alternative_hint": "Dodaj, po czym rodzic ma zobaczyć twoją odpowiedzialność."
+                    },
+                    "tags": [
+                        {
+                            "text": "Stawianie granic",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Kontrakt rozmowy",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie chcę wybierać pod strachem, ale też nie chcę ignorować ryzyka. Ustalmy dwa albo trzy kryteria bezpieczeństwa i zobaczmy, czy moja ścieżka może je spełnić bez odbierania mi decyzji.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Ewa powoli kiwa głową. To brzmi rozsądnie. Jeśli zobaczę kryteria i plan awaryjny, łatwiej mi będzie odpuścić nacisk.",
+                    "feedback": {
+                        "label": "Wspólne kryteria zamiast walki o władzę",
+                        "psychology": "Przestawiasz rozmowę z pytania kto ma rację na pytanie jakie warunki muszą być spełnione. To rdzeń dialogu transformacyjnego: wspólna rama pozwala zachować i autonomię, i bezpieczeństwo.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Wspólne kryteria",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Autonomia i bezpieczeństwo",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Ostatni ruch przed decyzją",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Jest późno. Kubki stoją nietknięte, a oboje jesteście zmęczeni. Ewa mówi ciszej, ale w jej głosie słychać twarde rozczarowanie i brak zaufania do twojej samodzielności.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "cold"
+            },
+            "npc_line_low": "Powiedz mi wprost. Czy ty w ogóle jesteś gotów wziąć odpowiedzialność za skutki własnej decyzji.",
+            "scene_high": {
+                "description": "Zmęczenie nadal wisi w powietrzu, ale rozmowa nie jest już walką. Ewa patrzy na ciebie bez przerywania, jakby od tego zdania zależało, czy naprawdę puści kontrolę.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Chcę usłyszeć, jak zamierzasz wziąć odpowiedzialność i jak mamy o tym rozmawiać dalej, żebym nie wracała do nacisku.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Tak, a jeśli się pomylę, to przynajmniej przez ciebie nie będę miał zniszczonego życia.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Ewa cofa się i zamyka emocjonalnie. Skoro wszystko obracasz przeciwko mnie, to nie mamy już o czym rozmawiać.",
+                    "feedback": {
+                        "label": "Obwinienie jako finał",
+                        "psychology": "W końcówce rozmowy obciążasz rodzica odpowiedzialnością za całe swoje życie. To silny cios relacyjny, który usuwa z pola widzenia temat decyzji i zostawia tylko wzajemną krzywdę.",
+                        "better_alternative_hint": "Oddziel odpowiedzialność za wybór od odpowiedzialności za sposób rozmowy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Obwinianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Eskalacja relacyjna",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nie wiem. Zróbmy po twojemu, żeby mieć to z głowy.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Ewa nie wygląda na spokojniejszą. To nie brzmi jak decyzja, tylko jak poddanie się. I właśnie tego się boję.",
+                    "feedback": {
+                        "label": "Uległość bez sprawczości",
+                        "psychology": "Pozornie konflikt gaśnie, ale koszt jest wysoki: tracisz podmiotowość, a rodzic nie dostaje prawdziwego zaufania do twojej dojrzałości. To często prowadzi do późniejszego żalu i biernego oporu.",
+                        "better_alternative_hint": "Powiedz, jaki zakres odpowiedzialności bierzesz realnie na siebie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uległość",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Utrata autonomii",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Wezmę odpowiedzialność za wybór i przygotuję plan z terminami, budżetem oraz opcją awaryjną. Potrzebuję tylko, żebyś nie wracała do straszenia mnie przy każdej rozmowie.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Ewa przytakuje ostrożnie. Jeśli faktycznie to przygotujesz, będę mogła trochę odpuścić. Nadal będzie mi trudno, ale to jest jakiś punkt zaczepienia.",
+                    "feedback": {
+                        "label": "Odpowiedzialność w formie kontraktu",
+                        "psychology": "To dojrzała odpowiedź zadaniowa. Dajesz strukturę i nazywasz granicę. Brakuje jeszcze miękkiego domknięcia relacji, które pomaga rodzicowi wyjść z lęku bez utraty twarzy.",
+                        "better_alternative_hint": "Dodaj jedno zdanie, że widzisz jej troskę, nawet jeśli nie zgadzasz się z formą."
+                    },
+                    "tags": [
+                        {
+                            "text": "Plan działania",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Kontrakt odpowiedzialności",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Tak. Biorę odpowiedzialność za wybór, przygotuję plan i wrócę do ciebie z konkretami. Potrzebuję, żebyś zaufała, że to ja będę żyć z tą decyzją. A ja postaram się nie odcinać cię, kiedy będziesz mówiła z troski zamiast z nacisku.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -3,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Ewa długo milczy, po czym mięknie. Dobrze. Nie obiecuję, że przestanę się martwić, ale mogę spróbować rozmawiać z tobą jak z kimś, kto naprawdę dorasta do własnych decyzji.",
+                    "feedback": {
+                        "label": "Autonomia z uznaniem więzi",
+                        "psychology": "To finał Dorosły–Dorosły. Bierzesz odpowiedzialność, nie oddajesz steru życia i jednocześnie zostawiasz miejsce na relację. Właśnie to najskuteczniej rozbraja pozycję wiem lepiej bez upokarzania rodzica.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Naprawa relacji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Analiza transakcyjna Berne'a",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 2
+            },
+            "color": "red",
+            "title": "PĘKNIĘCIE I OKOPY",
+            "emoji": "🔴",
+            "subtitle": "Rozmowa zamienia się w walkę o władzę.",
+            "narrative": "Wieczór kończy się trzaśnięciem drzwi albo ciężką ciszą. Nikt nikogo nie przekonał. Ewa jeszcze mocniej trzyma się kontroli, a ty jeszcze mocniej bronisz swojej autonomii, ale już bez poczucia bycia w relacji.",
+            "diagnosis": "Dominował styl agresywny, pasywny albo biernie agresywny. Konflikt utkwił na poziomie pozycyjnym i w transakcjach Rodzic–Dziecko. Zamiast mówić o potrzebach bezpieczeństwa i autonomii, obie strony broniły swojej racji i własnego zranienia.",
+            "post_game": {
+                "communication_style_summary": "Przeważała eskalacja, wycofanie albo ukryty atak. Rozmowa była reaktywna i obronna.",
+                "strongest_moment": "Pojawiły się krótkie próby obrony własnego stanowiska, ale bez stabilnego kontaktu z emocjami i potrzebami obu stron.",
+                "growth_tip": "Zacznij od prostego uznania intencji rodzica i dopiero potem nazwij wpływ nacisku na ciebie. To obniża defensywność i otwiera drogę do rozmowy Dorosły–Dorosły.",
+                "replay_prompt": "Spróbuj ponownie i zamiast walczyć o rację, nazwij jednocześnie swoją potrzebę autonomii i jego potrzebę bezpieczeństwa."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 3,
+                "max": 5
+            },
+            "color": "yellow",
+            "title": "ROZEJM BEZ PEŁNEGO ZAUFANIA",
+            "emoji": "🟡",
+            "subtitle": "Udaje się zatrzymać kłótnię, ale napięcie nadal wraca.",
+            "narrative": "Rozmowa nie wybucha do końca, ale też nie przynosi pełnego porozumienia. Pojawia się roboczy plan albo odroczenie decyzji, jednak między wierszami zostaje niepewność, czy to prawdziwy dialog, czy tylko chwilowe zawieszenie broni.",
+            "diagnosis": "Udało się częściowo przejść z ataku do asertywności i konkretu, lecz zabrakło głębszej walidacji emocji. Rozmowa była poprawna, ale głównie transakcyjna. Autonomia została zaznaczona, jednak bezpieczeństwo rodzica nie zostało w pełni zaopiekowane.",
+            "post_game": {
+                "communication_style_summary": "Dominowała rzeczowość i częściowa asertywność. Było mniej walki, ale nadal mało wspólnego rozumienia.",
+                "strongest_moment": "Najmocniejsze były chwile, w których porządkowałeś fakty i stawiałeś granice bez otwartego ataku.",
+                "growth_tip": "Dodaj więcej zdań pokazujących, że słyszysz lęk rodzica, nawet jeśli nie oddajesz mu decyzji. To przesuwa rozmowę z samego kontraktu w stronę prawdziwej współpracy.",
+                "replay_prompt": "Zagraj jeszcze raz i spróbuj częściej łączyć konkret planu z komunikatem o emocjach i wpływie."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 6,
+                "max": 8
+            },
+            "color": "green",
+            "title": "TRUDNE, ALE UCZCIWE POROZUMIENIE",
+            "emoji": "🟢",
+            "subtitle": "Powstaje plan, który chroni relację i sprawczość.",
+            "narrative": "Rozmowa nie była łatwa, ale obie strony schodzą z tonu. Ewa nie przestaje się martwić, lecz zaczyna uznawać, że decyzja należy do ciebie. Ty z kolei bierzesz odpowiedzialność za swój wybór i potrafisz o nim mówić bez buntu albo kapitulacji.",
+            "diagnosis": "Dominował styl asertywny, empatyczny i częściowo transformacyjny. Konflikt przeszedł od walki o rację do negocjowania kryteriów bezpieczeństwa i autonomii. To dobry przykład przejścia z relacji Rodzic–Dziecko do bardziej partnerskiej wymiany.",
+            "post_game": {
+                "communication_style_summary": "Przeważała spokojna obrona granic połączona z uznaniem troski drugiej strony.",
+                "strongest_moment": "Najlepsze były momenty, w których łączyłeś własny plan z odsłonięciem, jak presja i porównania wpływają na twoją gotowość do rozmowy.",
+                "growth_tip": "To działa. W realnej rozmowie wzmacniaj jeszcze wspólne kryteria i regularnie wracaj do konkretów, żeby zaufanie rosło, a nie opierało się tylko na deklaracjach.",
+                "replay_prompt": "Spróbuj ścieżki mistrzowskiej i zobacz, czy potrafisz nie tylko obronić siebie, ale też aktywnie pomóc rodzicowi wyjść z lęku."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 9,
+                "max": 10
+            },
+            "color": "blue",
+            "title": "PARTNERSTWO W ZMIANIE",
+            "emoji": "🔵",
+            "subtitle": "Autonomia i bezpieczeństwo przestają się wykluczać.",
+            "narrative": "Wieczór kończy się spokojnym ustaleniem kolejnych kroków. Ewa nie musi już walczyć o wpływ, bo widzi w tobie odpowiedzialność. Ty nie musisz walczyć o wolność, bo potrafisz ją wyrazić bez odcinania więzi. To nadal trudny etap życia, ale nie musicie przechodzić go przeciwko sobie.",
+            "diagnosis": "Przeważał styl empatyczny i transformacyjny. Udało się nazwać ukryte potrzeby obu stron, utrzymać granice i zbudować wspólne kryteria decyzji. To najwyższy poziom rozmowy: nie tylko rozwiązanie sporu, ale też zmiana wzorca komunikacji.",
+            "post_game": {
+                "communication_style_summary": "Rozmowa miała charakter dojrzały, partnerski i relacyjnie bezpieczny. Pojawiła się sprawczość bez przemocy i troska bez kontroli.",
+                "strongest_moment": "Najmocniejsze było konsekwentne przechodzenie z ja kontra ty do wspólnego badania ryzyka, planu i odpowiedzialności.",
+                "growth_tip": "To mistrzowski poziom. Przenoś ten sam schemat do innych rozmów z bliskimi: uznaj intencję, nazwij wpływ, postaw granicę i zaproponuj wspólne kryteria.",
+                "replay_prompt": "Wróć do scenariusza i sprawdź, jak szybko rozmowa się psuje, gdy zabraknie walidacji albo wspólnej ramy."
+            }
+        }
+    ]
+}

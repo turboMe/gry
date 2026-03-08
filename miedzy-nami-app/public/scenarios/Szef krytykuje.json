@@ -1,0 +1,1023 @@
+{
+    "scenario_id": "cold_feedback_shame",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Zimny feedback",
+        "subtitle": "Szef krytykuje. Niejasno. Chłodno. Jak nie zapaść się pod ziemię?",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 12,
+        "interaction_count": 6
+    },
+    "tags": {
+        "relationship_type": "coworkers",
+        "theme": [
+            "criticism",
+            "expectations",
+            "respect"
+        ],
+        "emotional_intensity": "critical",
+        "age_rating": "adult",
+        "session_type": "training",
+        "player_role_gender": "female",
+        "difficulty": "advanced"
+    },
+    "characters": {
+        "player": {
+            "name": "Marta",
+            "role_label": "Specjalistka · Gracz",
+            "age_range": "28-35",
+            "context": "Marta pracuje w firmie od roku. Włożyła dużo serca w ostatnią prezentację dla zarządu. Teraz siedzi naprzeciwko swojego szefa i słyszy, że coś poszło nie tak — ale nie wie co. Wstyd i niepewność walczą z potrzebą zrozumienia.",
+            "hidden_need": "recognition",
+            "hidden_need_text": "Marta potrzebuje wiedzieć, że jej praca ma wartość i że szef widzi jej starania — nawet gdy coś wymaga poprawy.",
+            "traits": [
+                {
+                    "text": "Sumienna",
+                    "type": "positive"
+                },
+                {
+                    "text": "Wrażliwa na ocenę",
+                    "type": "negative"
+                },
+                {
+                    "text": "Nastawiona na rozwój",
+                    "type": "positive"
+                },
+                {
+                    "text": "Łatwo wpada w spiralę wstydu",
+                    "type": "negative"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 4,
+                "patience": 6,
+                "defensiveness": 7,
+                "empathy": 7,
+                "need_for_control": 4,
+                "shame_sensitivity": 9,
+                "directness": 4,
+                "repair_ability": 6
+            }
+        },
+        "npc": {
+            "name": "Piotr",
+            "role_label": "Dyrektor · NPC",
+            "age_range": "42-52",
+            "context": "Piotr jest precyzyjny i wymagający. Sam nigdy nie prosił o rękę pomocną — uważa, że dobry pracownik sam rozumie, czego się od niego oczekuje. Jego chłodny styl bywa mylony z obojętnością, choć w głębi chodzi mu o wyniki.",
+            "hidden_need": "competence",
+            "hidden_need_text": "Piotr chce mieć pewność, że jego zespół dostarcza pracę na najwyższym poziomie. Jego krytyka wynika z wysokich standardów, nie ze złej woli.",
+            "traits": [
+                {
+                    "text": "Analityczny",
+                    "type": "positive"
+                },
+                {
+                    "text": "Chłodny w komunikacji",
+                    "type": "negative"
+                },
+                {
+                    "text": "Wysoko wymagający",
+                    "type": "neutral"
+                },
+                {
+                    "text": "Niejasny w feedbacku",
+                    "type": "negative"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 3,
+                "patience": 5,
+                "defensiveness": 6,
+                "empathy": 3,
+                "need_for_control": 8,
+                "shame_sensitivity": 4,
+                "directness": 4,
+                "repair_ability": 4
+            },
+            "npc_reaction_logic": "Piotr otwiera się na spokojne, precyzyjne pytania i profesjonalne zaangażowanie. Defensywność i emocjonalność zamykają go lub pogłębiają chłód. Proaktywne propozycje rozwiązań i pytania o kryteria sprawiają, że staje się bardziej konstruktywny i partnerski."
+        }
+    },
+    "metrics_start": {
+        "tension": 55,
+        "trust": 45,
+        "openness": 40,
+        "feeling_heard": 30
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Zostań chwilę",
+            "scene": {
+                "description": "Gabinet Piotra. Cichy, chłodny, pozbawiony osobistych akcentów. Marta usiadła na krześle naprzeciwko biurka. Piotr nie odrywa wzroku od monitora przez kilka sekund, zanim w końcu zwraca się do niej.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "cold"
+            },
+            "npc_line": "Twoja prezentacja z zeszłego tygodnia. Nie spełniła moich oczekiwań.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Przepraszam. Postaram się następnym razem.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Piotr kiwa głową i wraca wzrokiem do monitora. Cisza jest ciężka i dwuznaczna.",
+                    "feedback": {
+                        "label": "Kapitulacja bez zrozumienia",
+                        "psychology": "Odpowiedź bierna wynikająca z aktywacji wstydu. Marta nie pyta o nic, bo samo pytanie wydaje się jej niebezpieczne — jakby przyznawała, że nie rozumie oczywistości. To typowa reakcja przy wysokiej wrażliwości na wstyd: ucieczka przed oceną zamiast poszukiwania informacji. Piotr nie dowiedział się, że jego feedback jest niejasny, a Marta nie wie, co poprawić.",
+                        "better_alternative_hint": "Zamiast przepraszać, spróbuj poprosić o konkrety. Przeprosiny bez zrozumienia przyczyny nie prowadzą do zmiany."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Spirala wstydu",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "A co konkretnie było nie tak? Włożyłam w to naprawdę dużo pracy.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -1
+                    },
+                    "npc_reaction": "Piotr unosi brew. Jego twarz zamknęła się jeszcze bardziej. Odpowiada sucho: Ilość włożonej pracy nie jest kryterium oceny.",
+                    "feedback": {
+                        "label": "Defensywny kontratak",
+                        "psychology": "Stwierdzenie o włożonej pracy to nieświadomy argument emocjonalny — Marta próbuje zmienić kryteria oceny z jakości na wysiłek. W analizie transakcyjnej to reakcja ze stanu Ego Dziecka Zranionego: zamiast pytać co poprawić, szuka sprawiedliwości. Pytanie o konkrety byłoby właściwe, gdyby nie było osadzone w tonie defensywnym.",
+                        "better_alternative_hint": "Pytanie o konkrety jest słuszne — ale bez emocjonalnego kontrargumentu. Pomiń informację o wysiłku i zapytaj tylko o kryteria."
+                    },
+                    "tags": [
+                        {
+                            "text": "Defensywność",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Argument emocjonalny",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Stan Ego Dziecka",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Rozumiem. Czy możesz powiedzieć, co konkretnie wymagało poprawy?",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Piotr odkłada długopis. Przez chwilę się zastanawia. Kilka rzeczy — mówi — zaraz do tego przejdziemy.",
+                    "feedback": {
+                        "label": "Asertywne pytanie o kryteria",
+                        "psychology": "Profesjonalne pytanie o konkrety — Marta nie broni się ani nie kapituluje, lecz pyta o informacje. To dobry krok, ale brakuje elementu relacyjnego: Marta nie sygnalizuje Piotrowi, że zależy jej na współpracy, tylko sprawnie zbiera dane. To poziom I rozmowy — transakcja. Wystarczająco profesjonalne, ale niebudujące więzi.",
+                        "better_alternative_hint": "Spróbuj dodać krótkie zdanie pokazujące, że zależy ci na rozumieniu, a nie tylko na naprawie błędu — zmienia to ton z transakcyjnego na partnerski."
+                    },
+                    "tags": [
+                        {
+                            "text": "Aktywne pytanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Zależy mi na tym, żeby dobrze rozumieć twoje oczekiwania. Czy możesz powiedzieć, co konkretnie nie zadziałało?",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Piotr odchyla się lekko do tyłu. Coś w jego tonie miękknie. Dobrze, że pytasz — mówi — bo jest kilka rzeczy, które chcę omówić.",
+                    "feedback": {
+                        "label": "Komunikat Ja i pytanie o kryteria",
+                        "psychology": "Zdanie zależy mi na tym, żeby dobrze rozumieć twoje oczekiwania sygnalizuje orientację na relację i jakość pracy, nie na obronę ego. To komunikat Ja z NVC Rosenberga: Marta mówi o sobie i swoich intencjach, nie ocenia Piotra. Pytanie o konkrety jest naturalne i otwiera dialog. Połączenie tych elementów to wejście na poziom III rozmowy — transformację.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC Rosenberga",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Brak głębi",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Gabinet wciąż jest cichy. Piotr patrzy na Martę z lekko zmrużonymi oczami — jakby ważył, ile chce powiedzieć. Poprzednia wymiana nie ułatwiła mu otwarcia się.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Generalnie... prezentacji brakowało głębi. Oczekiwałem więcej od kogoś na twoim stanowisku.",
+            "scene_high": {
+                "description": "Piotr otworzył notatki na biurku. Wydaje się nieco bardziej skłonny do rozmowy — Marta stworzyła przestrzeń, której potrzebował.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Jest kilka konkretnych rzeczy. Zacznijmy od struktury — brakowało mi głębszej analizy.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Rozumiem. Postaram się następnym razem być bardziej... głęboka.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Piotr zatrzymuje się. Patrzy na Martę przez chwilę dłużej niż zwykle. Pytanie czy mówisz to ironicznie jest nieobecne w słowach, ale wyraźne w spojrzeniu.",
+                    "feedback": {
+                        "label": "Bierna agresja w masce zgody",
+                        "psychology": "Odpowiedź jest formalnie grzeczna, ale pauza przed słowem głęboka i przesadna uprzejmość zdradzają ukrytą frustrację. To bierna agresja — Marta nie wyraża wprost, że feedback jest niejasny, lecz sygnalizuje irytację w sposób czytelny dla Piotra. W analizie transakcyjnej to komunikacja z pozycji Dziecka Buntowniczego.",
+                        "better_alternative_hint": "Zamiast ukrytej irytacji, nazwij wprost że potrzebujesz konkretu: powiedz, że słowo głębia jest dla ciebie niejednoznaczne i potrzebujesz przykładu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Dziecko Buntownicze",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Okej.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Cisza. Piotr wygląda, jakby czekał na coś więcej. Kiedy nic nie następuje, kontynuuje chłodno: W takim razie porozmawiamy o szczegółach przy kolejnym projekcie.",
+                    "feedback": {
+                        "label": "Milczenie jako wyjście",
+                        "psychology": "Odpowiedź jednosylabowa jest formą wycofania. Marta nie zadaje żadnego pytania, nie prosi o konkrety, nie angażuje się w rozmowę. Takie zachowanie przy wysokiej wrażliwości na wstyd to klasyczna reakcja zamrożenia: system nerwowy reaguje na zagrożenie — ocenę — inaktywacją. Paradoksalnie, milczenie pogłębia niepewność, bo Marta nadal nie wie, co poprawić.",
+                        "better_alternative_hint": "Milczenie niczego nie wyjaśnia i zamyka dialog. Spróbuj poprosić o jeden konkretny przykład — to uruchamia konstruktywny feedback."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Reakcja zamrożenia",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Co konkretnie rozumiesz przez głębię? Jakie elementy wymagały większego rozwinięcia?",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Piotr odczekuje chwilę, potem odpowiada: Na przykład analiza danych rynkowych była powierzchowna. Brakło mi konkretnych liczb i interpretacji trendów.",
+                    "feedback": {
+                        "label": "Precyzyjne pytanie o definicję kryterium",
+                        "psychology": "Marta zadaje właściwe pytanie: prosi o definicję niejasnego terminu i wskazanie konkretnych elementów. To umiejętność aktywnego słuchania — pytanie doprecyzowujące. Na poziomie transakcyjnym działa świetnie; brakuje jednak elementu relacyjnego, który pokazałby Piotrowi, że Marta nie czuje się atakowana, lecz zainteresowana rozwojem.",
+                        "better_alternative_hint": "Dobre pytanie! Możesz je wzmocnić, dodając zdanie o swojej intencji: chcę dobrze rozumieć twoje standardy — to zmienia dynamikę z przesłuchania na współpracę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Aktywne słuchanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Pytanie doprecyzowujące",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chcę dobrze zrozumieć twoje oczekiwania. Czy mógłbyś podać mi konkretny przykład miejsca, w którym brakowało tej głębi?",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Piotr kiwa głową. Weźmy slajd z danymi rynkowymi. Była tam tabela z liczbami, ale brakowało interpretacji — co te liczby oznaczają dla nas jako firmy.",
+                    "feedback": {
+                        "label": "Orientacja na rozumienie, nie na obronę",
+                        "psychology": "Zdanie chcę dobrze zrozumieć twoje oczekiwania to komunikat Ja z NVC: Marta mówi o sobie i swojej intencji, bez defensywności. Prośba o konkretny przykład jest precyzyjna i profesjonalna. Połączenie tych elementów daje Piotrowi sygnał, że ma do czynienia z dojrzałym rozmówcą — co zmniejsza jego potrzebę kontroli i otwiera go na bardziej szczegółowy feedback.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Pytanie doprecyzowujące",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC Rosenberga",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Każdy widział",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Piotr mówi o slajdzie z danymi rynkowymi. Dobiera słowa starannie, ale w tonie jest coś, co pali — jakby mówił, że to było oczywiste dla wszystkich innych w sali.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Ten slajd z danymi. Każdy w sali widział, że analiza była niepełna. To nie powinno się zdarzyć na tym poziomie.",
+            "scene_high": {
+                "description": "Piotr wskazuje konkretne miejsce w swojej notatce. Jego ton jest chłodny, ale sposób, w jaki rozmawia, jest bardziej otwarty niż na początku spotkania.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Weźmy ten slajd z danymi rynkowymi. Brakowało mi interpretacji — nie tylko liczb, ale wniosków: co to dla nas, jako firmy, oznacza.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nie wiedziałam, że taka analiza była wymagana. Nikt mi o tym nie powiedział.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Piotr prostuje się na krześle. Odpowiedź, którą słyszysz, powinna cię zaalarmować, że coś jest nie w porządku z twoim rozumieniem tej roli — mówi chłodno.",
+                    "feedback": {
+                        "label": "Przerzucanie odpowiedzialności",
+                        "psychology": "Sformułowanie nikt mi nie powiedział jest pasywno-agresywnym komunikatem: formalnie to stwierdzenie faktu, ale implicitnie oskarża Piotra o brak właściwego wsparcia. W modelu kwadratu von Thuna, po płaszczyźnie relacji, Marta nieświadomie wysyła komunikat: to ty zawiodłeś, nie ja. Piotr to wyczuwa i reaguje wzmocnieniem kontroli zamiast empatią.",
+                        "better_alternative_hint": "Zamiast przerzucać odpowiedzialność, uznaj lukę w swoim rozumieniu i zapytaj, jak może zostać wypełniona w przyszłości."
+                    },
+                    "tags": [
+                        {
+                            "text": "Eksternalizacja winy",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Masz rację. Przepraszam, to był mój błąd.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -1,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Piotr kiwa głową, ale rozmowa zatrzymuje się w miejscu. Cisza jest nieprzyjemna. Marta nadal nie wie, jak powinna wyglądać poprawna analiza.",
+                    "feedback": {
+                        "label": "Przyjęcie wstydu bez wiedzy",
+                        "psychology": "Przeproszenie bez zrozumienia i bez pytania to przyjęcie kary bez nauki. Marta aktywuje schemat osoby, która zgadza się dla świętego spokoju, nie dla własnego rozwoju. Z perspektywy NVC, potrzeba Marty — rozumienie i uznanie — pozostaje niezaspokojona. Piotr może odczuć, że sprawa jest zamknięta, choć nic się nie zmieniło.",
+                        "better_alternative_hint": "Zamiast samych przeprosin, dodaj pytanie: chcę zrozumieć, jak powinna wyglądać właściwa analiza — to pokazuje chęć zmiany, nie tylko akceptację krytyki."
+                    },
+                    "tags": [
+                        {
+                            "text": "Spirala wstydu",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Rozumiem. Jaki poziom analizy byłby dla ciebie wystarczający w podobnym przypadku?",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Piotr przez chwilę milczy, ale widać, że pytanie go zaskoczyło pozytywnie. Mówi: Chciałbym zobaczyć interpretację danych, nie tylko ich zestawienie. Co z tych liczb wynika dla strategii firmy.",
+                    "feedback": {
+                        "label": "Pytanie o standard przyszłej pracy",
+                        "psychology": "Marta sprawnie prosi o definicję właściwego standardu — to pytanie wyprzedzające, które zamienia krytykę w instrukcję. Działa na poziomie transakcyjnym i to krok we właściwym kierunku. Brakuje tu jednak odniesienia do kontekstu emocjonalnego: Piotr użył sformułowania każdy widział, które ma potencjał wstydzący — Marta je zignorowała zamiast nazwać.",
+                        "better_alternative_hint": "Możesz też odnieść się wprost do sformułowania każdy widział i poprosić o feedback bezpośrednio po spotkaniu — to normalizuje prośbę o informację zwrotną na bieżąco."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pytanie o kryteria",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Aktywne słuchanie",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Dziękuję za konkretny przykład — to dla mnie pomocne. Chcę zrozumieć, jak powinna wyglądać właściwa interpretacja danych. Co byłoby dla ciebie kluczowe przy podobnym slajdzie?",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Piotr odkłada długopis. Po krótkim namyśle mówi: Przede wszystkim — co z danych wynika dla naszej strategii. Liczby to punkt wyjścia, nie konkluzja. I... dobrze, że o to pytasz.",
+                    "feedback": {
+                        "label": "Transformacja krytyki w naukę",
+                        "psychology": "Marta wykonuje ruch transformacyjny: dziękuje za konkret (waliduje wysiłek Piotra jako rozmówcy), wyraża swój cel (zrozumienie standardu) i zadaje otwarte pytanie o kluczowe elementy. To poziom III rozmowy. Zdanie to dla mnie pomocne redukuje defensywność obu stron i pozycjonuje Martę jako osobę nastawioną na rozwój. Ostatnia uwaga Piotra i... dobrze, że o to pytasz sygnalizuje, że jego opór zaczyna opadać.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Po tylu miesiącach",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Atmosfera jest napięta. Piotr patrzy na Martę z wyraźnym oczekiwaniem. Jego słowa mają ciężar nie tylko krytyki, ale i pytania, czy Marta w ogóle nadaje się do tej roli.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Spodziewałem się po tobie więcej. Szczególnie biorąc pod uwagę, ile czasu masz już w tej roli.",
+            "scene_high": {
+                "description": "Piotr zamknął notatki. Jego ton jest nadal chłodny, ale w geście jest coś innego — jakby doceniał, że Marta nie ucieka od rozmowy.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Widzę, że zależy ci na poprawie. To dobrze — bo mam wobec ciebie duże oczekiwania.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Tak, masz rację. Przepraszam za rozczarowanie.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Piotr kiwa głową. Dobrze, że to rozumiesz — mówi krótko i wraca do monitora. Marta czuje, że nic się nie wyjaśniło.",
+                    "feedback": {
+                        "label": "Przyjęcie wstydu jako tożsamości",
+                        "psychology": "Przeproszenie za rozczarowanie to komunikat oparty na tożsamości, nie na zachowaniu: Marta nie mówi co zrobi inaczej, lecz przyjmuje ocenę swojej wartości jako osoby. Z perspektywy analizy transakcyjnej, Marta reaguje z pozycji Dziecka Uległego — akceptuje ocenę bez żadnego zasobu ani planu zmiany. To eskalacja spirali wstydu, nie wyjście z niej.",
+                        "better_alternative_hint": "Nie przepraszaj za to, kim jesteś — skup się na tym, co zamierzasz zrobić inaczej. To przywraca sprawczość."
+                    },
+                    "tags": [
+                        {
+                            "text": "Spirala wstydu",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Dziecko Uległe",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Utrata sprawczości",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nikt mi wcześniej nie mówił, że moje prezentacje są poniżej oczekiwań.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -1
+                    },
+                    "npc_reaction": "Piotr zatrzymuje się. W jego oczach pojawia się chłodna irytacja. Moją rolą nie jest trzymać cię za rękę — mówi — powinieneś sam znać standardy tej roli.",
+                    "feedback": {
+                        "label": "Ukryte oskarżenie o brak wsparcia",
+                        "psychology": "Sformułowanie nikt mi wcześniej nie mówił jest pasywno-agresywnym komunikatem: formalnie to stwierdzenie faktu, ale implicitnie oskarża Piotra o zaniedbanie. Z perspektywy kwadratu von Thuna, po płaszczyźnie relacji Marta wysyła komunikat: to ty zawiodłeś, nie ja. Piotr to wyczuwa i reaguje wzmocnieniem kontroli zamiast empatią.",
+                        "better_alternative_hint": "Jeśli czujesz, że feedback był dotąd niedostępny, powiedz to wprost i bez oskarżenia: wolałabym dostawać feedback na bieżąco — czy możemy to ustalić?"
+                    },
+                    "tags": [
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Rozumiem twoje oczekiwania. Co konkretnie muszę zrobić, żeby następna prezentacja była na właściwym poziomie?",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Piotr kiwa głową z aprobatą. Mówi: Przede wszystkim — interpretacja danych. I sprawdź ze mną szkic przed kolejną prezentacją.",
+                    "feedback": {
+                        "label": "Orientacja na działanie zamiast na obronę",
+                        "psychology": "Marta rezygnuje z reakcji emocjonalnej i od razu przechodzi do planu działania. To asertywna i pragmatyczna odpowiedź — pytanie o kryteria przyszłego sukcesu zamiast obrony przed oceną przeszłości. Piotr daje konkretną i użyteczną odpowiedź. Brakuje jednego elementu: Marta nie sygnalizuje, jak się czuje — przez co rozmowa pozostaje na poziomie transakcyjnym.",
+                        "better_alternative_hint": "Możesz dodać jedno zdanie o tym, że ta rozmowa jest dla ciebie ważna i pomocna — to buduje relację, nie tylko wymianę informacji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Orientacja na rozwiązanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Aktywne pytanie",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Zależy mi na tym, żeby spełniać twoje oczekiwania. Chciałabym zrozumieć, jakie konkretnie standardy powinnam osiągnąć — żebyśmy mieli wspólny punkt odniesienia przed kolejnym projektem.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -3,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Piotr odchyla się do tyłu. To jest właściwe pytanie — mówi — i cieszę się, że je zadajesz. Proponuje krótkie spotkanie przed kolejną prezentacją.",
+                    "feedback": {
+                        "label": "Propozycja wspólnego standardu",
+                        "psychology": "Marta używa języka transformacyjnego: żebyśmy mieli wspólny punkt odniesienia — zamiast walki o to, kto ma rację, proponuje współtworzenie kryteriów. To przenosi rozmowę z poziomu ocena vs obrona na poziom współpracy. Z perspektywy analizy transakcyjnej, Marta wchodzi w stan Ego Dorosłego i zaprasza Piotra do tego samego. Efekt: Piotr przestaje kontrolować, a zaczyna współpracować.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Stan Ego Dorosłego",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Budowanie wspólnej wizji",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Wyciągnij wnioski",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Piotr zaczyna zbierać papiery z biurka — sygnał, że rozmowa dobiega końca. Marta czuje, że wiele zostało niedopowiedziane, ale trudno jej znaleźć właściwe słowa.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Mam nadzieję, że wyciągnęłaś wnioski z tej rozmowy.",
+            "scene_high": {
+                "description": "Napięcie w gabinecie wyraźnie opadło. Piotr siedzi z bardziej otwartą postawą ciała. Marta czuje, że osiągnęła coś ważnego — rozmowa stała się prawdziwym dialogiem.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Cieszę się, że porozmawialiśmy o tym wprost. To rzadkie.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Tak, wyciągnęłam. Będę się bardziej starać.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Piotr kiwa głową i wraca do papierów. Rozmowa się skończyła — ale Marta wychodzi z poczuciem pustki i bez żadnego konkretnego planu.",
+                    "feedback": {
+                        "label": "Pusta deklaracja bez treści",
+                        "psychology": "Stwierdzenie będę się bardziej starać jest deklaracją bez treści — Marta nie wie w jakim kierunku się starać, a Piotr nie wie, co konkretnie zrozumiała. W NVC ta odpowiedź nie zawiera żadnego z elementów konstruktywnej komunikacji: brak obserwacji, uczucia, potrzeby ani prośby. Marta traci szansę na zamknięcie rozmowy z planem działania.",
+                        "better_alternative_hint": "Zamiast deklarować staranie, powiedz co konkretnie zamierzasz zmienić — i zapytaj, czy to jest zgodne z oczekiwaniami szefa."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pusta deklaracja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "NVC Rosenberga",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Byłoby łatwiej wyciągnąć wnioski, gdyby feedback był bardziej konkretny od początku.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -1
+                    },
+                    "npc_reaction": "Piotr patrzy na Martę przez długą chwilę. Chłodnym tonem mówi: Rozumiem twoją frustrację. Ale tu nie chodzi o mój styl feedbacku.",
+                    "feedback": {
+                        "label": "Kontratak w złym momencie",
+                        "psychology": "Marta werbalizuje prawdziwą frustrację — niejasność feedbacku Piotra jest realnym problemem — ale robi to w sposób atakujący i bez otwartości na dialog. Timing jest zły: koniec rozmowy to nie miejsce na konfrontację. Z perspektywy Piotra ta uwaga brzmi jak ucieczka od odpowiedzialności w ostatniej chwili. Nawet słuszna krytyka, wypowiedziana w złym momencie i złym tonie, eskaluje napięcie.",
+                        "better_alternative_hint": "Twoja obserwacja o niejasnym feedbacku jest trafna, ale zasługuje na lepszy moment i formę. Spróbuj zapytać, czy możecie ustalić regularny, strukturyzowany feedback — zamiast oceniać to, co już było."
+                    },
+                    "tags": [
+                        {
+                            "text": "Eskalacja w złym momencie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Słuszna treść, zły ton",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Tak. Czy mogę prosić o regularny feedback po kolejnych prezentacjach? To pomoże mi się rozwijać.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 2,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Piotr przez chwilę milczy, potem kiwa głową. Możemy to ustalić. Wyślij mi zarys przed kolejną prezentacją.",
+                    "feedback": {
+                        "label": "Prośba o strukturę feedbacku",
+                        "psychology": "Marta zadaje konkretną, profesjonalną prośbę: regularne spotkania feedbackowe z uzasadnieniem (to pomoże mi się rozwijać) — komunikat Ja połączony z wyjaśnieniem potrzeby. Piotr reaguje zgodą i kontrpropozycją. To dobry wynik — brakuje jedynie elementu relacyjnego, który zamknąłby rozmowę bardziej ciepło.",
+                        "better_alternative_hint": "Możesz też podziękować Piotrowi za czas i rozmowę — to nie słabość, to profesjonalizm i sygnał, że rozmowa była dla ciebie wartościowa."
+                    },
+                    "tags": [
+                        {
+                            "text": "Prośba z uzasadnieniem",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Tak. I zależy mi na tym, żebyśmy mogli rozmawiać o oczekiwaniach na bieżąco. Czy możemy ustalić krótkie spotkania przed każdą większą prezentacją — żebyśmy byli zgodni co do kierunku wcześniej?",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Piotr milczy przez chwilę, potem mówi: To ma sens. Wyślij mi wiadomość przed kolejnym projektem — ustalimy czas. Jego ton jest wyraźnie cieplejszy.",
+                    "feedback": {
+                        "label": "Propozycja systemowego rozwiązania",
+                        "psychology": "Marta proponuje systemową zmianę: regularne spotkania pre-projektowe. Zamiast reagować na krytykę z przeszłości, projektuje lepszy proces na przyszłość. To poziom III — transformacja: od konfliktu przez dialog do wspólnie zaprojektowanego rozwiązania. Użycie słowa żebyśmy podkreśla partnerstwo, a nie hierarchię. Piotr — który ma wysoką potrzebę kontroli — odbiera to jako propozycję, w której zyska więcej punktów styku z jakością, nie mniej.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Budowanie wspólnej wizji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Orientacja na przyszłość",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_6",
+            "title": "Zanim wyjdziesz",
+            "score_threshold": 5,
+            "scene_low": {
+                "description": "Marta wstaje, żeby wyjść. W gabinecie jest cicho. Czuje się mała i niezrozumiana. Rozmowa pozostawiła więcej pytań niż odpowiedzi.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Zobaczymy jak pójdzie z kolejną prezentacją.",
+            "scene_high": {
+                "description": "Marta wstaje. Piotr też wstaje zza biurka — nieoczekiwany gest. Atmosfera jest inna niż na początku rozmowy. Coś realnie się zmieniło.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Mam projekt za dwa tygodnie. Będę chciał, żebyś wzięła w nim udział.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Dobrze. Będę się starała bardziej.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Piotr kiwa głową bez komentarza. Marta wychodzi z gabinetu z ciężkim sercem.",
+                    "feedback": {
+                        "label": "Powielenie wzorca bierności",
+                        "psychology": "Marta kończy rozmowę dokładnie tak samo, jak ją zaczęła — deklaracją bez treści. Nawet jeśli wcześniej robiła postępy, to końcowe zdanie jest sygnałem, że wzorzec bierności jest głęboko zakorzeniony. W sensie terapeutycznym to regresja — powrót do punktu wyjścia pod wpływem zmęczenia. Piotr nie ma żadnej nowej informacji o tym, jak Marta rozumie swoje zobowiązania.",
+                        "better_alternative_hint": "Zakończ rozmowę konkretnym zobowiązaniem — wyślę ci zarys do końca tygodnia — a nie ogólną deklaracją starania."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pusta deklaracja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Regresja do wzorca",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Pewnie. Dam radę — zobaczysz.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Piotr unosi brew. Jego twarz jest nieprzenikniona. Mam nadzieję — odpowiada krótko.",
+                    "feedback": {
+                        "label": "Defensywna pewność siebie",
+                        "psychology": "Sformułowanie dam radę, zobaczysz zawiera ukryty przekaz: nie ufasz mi, ale jeszcze się przekonasz. To pasywno-agresywna odpowiedź, która pozornie brzmi pozytywnie, ale w istocie jest kontratakiem. Z perspektywy analizy transakcyjnej to komunikat z pozycji Dziecka Buntowniczego: akceptacja krytyki na poziomie słów, przy jednoczesnym buncie na poziomie podtekstu.",
+                        "better_alternative_hint": "Zamień obietnicę w plan: zamiast dam radę, powiedz — wyślę ci zarys przed prezentacją. To samo zaufanie, ale z konkretem."
+                    },
+                    "tags": [
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Dziecko Buntownicze",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Dziękuję za rozmowę. Wyślę ci zarys prezentacji na tydzień przed spotkaniem — żebyś mógł dać mi feedback wcześniej.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 2,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Piotr kiwa głową. Dobrze — mówi — trzymam cię za słowo. W jego tonie pojawia się coś, co brzmi jak aprobata.",
+                    "feedback": {
+                        "label": "Konkretne zobowiązanie z terminem",
+                        "psychology": "Marta wychodzi z rozmowy z mierzalnym planem działania: wyślę zarys na tydzień przed. To asertywne i profesjonalne zamknięcie: zdejmuje z rozmowy ciężar niejasności i tworzy strukturę odpowiadającą potrzebom obu stron. Podziękowanie za rozmowę (nawet trudną) jest gestem dojrzałości emocjonalnej.",
+                        "better_alternative_hint": "Możesz jeszcze wzmocnić to zdanie, dodając element relacyjny: mam nadzieję, że będziemy mogli rozmawiać o tym regularnie. To otwiera drzwi do dalszej współpracy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Konkretne zobowiązanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Orientacja na przyszłość",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Dziękuję za tę rozmowę — naprawdę. Chciałabym zaproponować, że wyślę ci zarys przed każdą większą prezentacją. Żebyśmy mogli wychwycić ewentualne różnice w oczekiwaniach zanim będzie za późno.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -3,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Piotr zatrzymuje się na chwilę. Potem mówi: To dobry pomysł. Zaczynamy od projektu za dwa tygodnie. Jego twarz jest nadal poważna, ale coś w postawie miękknie — pierwszy raz od początku rozmowy.",
+                    "feedback": {
+                        "label": "Wdzięczność i system i partnerstwo",
+                        "psychology": "Marta łączy trzy elementy: wdzięczność za trudną rozmowę (odwaga emocjonalna), konkretna propozycja systemowa (plan zarysów) i uzasadnienie w kategorii wspólnego interesu (zanim będzie za późno). To pełna odpowiedź na poziomie III. Rozmowa nie skończyła się na konflikcie ani nawet na kompromisie, lecz na zaprojektowaniu lepszego procesu. Piotr — którego potrzeba kontroli jest wysoka — dostaje więcej punktów styku z jakością, co paradoksalnie zmniejsza jego potrzebę krytyki z dystansu.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Budowanie wspólnej wizji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Odwaga emocjonalna",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Orientacja na przyszłość",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "SPIRALA WSTYDU",
+            "emoji": "🔴",
+            "subtitle": "Rozmowa zakończyła się — ale nic się nie zmieniło",
+            "narrative": "Marta wychodzi z gabinetu Piotra. Drzwi zamykają się za nią z cichym kliknięciem. W głowie kręci się wstyd i poczucie, że znów zawiodła. Nie wie, co zrobi inaczej. Nie wie, czego dokładnie Piotr oczekiwał. Wie tylko, że następna prezentacja będzie równie stresująca.",
+            "diagnosis": "Dominował wzorzec bierności i wycofania. Marta reagowała na krytykę wstydem i kapitulacją, nie pytaniami i poszukiwaniem konkretów. Rozmowa nie dostarczyła jej żadnej użytecznej informacji zwrotnej, bo Piotr nie był do tego zachęcony. Spirala wstydu działa jak blokada komunikacyjna: zamiast pytać, Marta uciszała siebie — co utwierdza Piotra w przekonaniu, że ona rozumie jego oczekiwania, choć tak nie jest.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl bierny — wycofanie, przepraszanie bez zrozumienia i deklaracje bez treści.",
+                "strongest_moment": "Nawet w trudnych momentach Marta nie uciekła z gabinetu. To punkt wyjścia, od którego można budować.",
+                "growth_tip": "Wstyd blokuje pytania. Następnym razem, gdy poczujesz impuls do przeproszenia — zatrzymaj się i zapytaj zamiast tego: co konkretnie powinnam zrobić inaczej? Pytanie to nie słabość, to odwaga.",
+                "replay_prompt": "Spróbuj od nowa — tym razem zamiast przepraszać, pytaj o konkrety. Obserwuj, jak zmienia się zachowanie Piotra."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "PROFESJONALIZM BEZ KONTAKTU",
+            "emoji": "🟡",
+            "subtitle": "Zadanie wykonane. Relacja — jeszcze nie.",
+            "narrative": "Marta wychodzi z gabinetu z notatką w głowie: analiza trendów, zarys przed prezentacją. Piotr z kolei myśli, że rozmowa przebiegła sprawnie. Coś zostało ustalone. Ale żadne z nich nie jest pewne, czy to był prawdziwy dialog — czy tylko transakcja.",
+            "diagnosis": "Marta sprawnie poruszała się na poziomie transakcyjnym i asertywnym. Zadawała właściwe pytania, prosiła o konkrety, zamknęła rozmowę planem. Brakowało jednak elementu relacyjnego: momentów, w których pozwoliła sobie na autentyczność — przyznała, że zależy jej nie tylko na wynikach, ale na współpracy. Piotr został rozmówcą, ale nie partnerem.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl asertywny i transakcyjny — profesjonalny, ale pozbawiony ciepła relacyjnego.",
+                "strongest_moment": "Pytanie o konkretny przykład zamiast przyjmowania ogólnej krytyki — to był najlepszy ruch w tej rozgrywce.",
+                "growth_tip": "Asertywność to dobry fundament. Następny krok to empatia: pokaż Piotrowi, że zależy ci nie tylko na wynikach, ale na relacji i współpracy. Jedno zdanie wystarczy — i zmienia wszystko.",
+                "replay_prompt": "Co by się stało, gdybyś w kluczowych momentach dodała element relacyjny? Zagraj jeszcze raz i sprawdź."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 9
+            },
+            "color": "green",
+            "title": "DIALOG W MIEJSCU FEEDBACKU",
+            "emoji": "🟢",
+            "subtitle": "Trudna rozmowa zamieniła się w coś więcej",
+            "narrative": "Marta zamknęła drzwi gabinetu z poczuciem, że coś naprawdę się wydarzyło. Piotr nie tylko powiedział co poszło nie tak — Marta aktywnie uczestniczyła w budowaniu planu na przyszłość. Wchodzi do biura z konkretnym krokiem: zarys przed kolejną prezentacją. I z poczuciem, że jej głos w tej rozmowie był słyszalny.",
+            "diagnosis": "Marta skutecznie połączyła asertywność z empatią i orientacją na przyszłość. Pytała o konkrety, walidowała wysiłek Piotra jako rozmówcy, zaproponowała systemowe rozwiązanie. Rozmowa przeszła przez wszystkie trzy poziomy: od transakcji przez pozycyjne napięcie aż do wspólnego projektowania procesu. Piotr — chłodny i kontrolujący — po raz pierwszy stał się partnerem w dialogu, a nie tylko krytykiem.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl empatyczny i transformacyjny — połączenie pytań o konkrety z budowaniem relacji.",
+                "strongest_moment": "Moment, w którym zaproponowałaś wspólny punkt odniesienia przed kolejną prezentacją — to zmieniło dynamikę całej rozmowy.",
+                "growth_tip": "Robisz to dobrze. Kolejny poziom: naucz się rozpoznawać sformułowania z potencjałem wstydzącym (jak każdy widział) i nazywać je wprost, łagodnie: to sformułowanie trochę boli. Prosto, bez ataku — ale autentycznie.",
+                "replay_prompt": "Wypróbuj wersję z niebieskim zakończeniem — czy możesz poprowadzić Piotra jeszcze głębiej w dialog?"
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 10,
+                "max": 12
+            },
+            "color": "blue",
+            "title": "MISTRZYNI TRUDNYCH ROZMÓW",
+            "emoji": "🔵",
+            "subtitle": "Wstyd stał się mostem, nie murem",
+            "narrative": "Kiedy Marta wychodzi z gabinetu, Piotr przez chwilę siedzi bez ruchu. Coś w tej rozmowie było inne. Może to sposób, w jaki ona pytała — jakby naprawdę chciała wiedzieć, a nie tylko się bronić. Marta idzie do swojego biurka i otwiera komputer. Wie co robić. Czuje się usłyszana. I wie, że następna prezentacja będzie innym doświadczeniem — dla obojga.",
+            "diagnosis": "Marta opanowała najtrudniejszą sztukę: prowadzenie dialogu w warunkach asymetrii władzy i wysokiego wstydu. Łączyła empatię z asertywnością, pytania z propozycjami, wdzięczność z odwagą. Nie uciekła ani nie zaatakowała. Zamieniła jednostronny feedback w dwustronny dialog i wyszła z propozycją systemową, która odpowiadała potrzebom obu stron. To nie tylko skuteczna komunikacja — to przywództwo w rozmowie.",
+            "post_game": {
+                "communication_style_summary": "Pełna paleta stylów — empatyczny, asertywny i transformacyjny — stosowane w odpowiednich momentach.",
+                "strongest_moment": "Wdzięczność na końcu trudnej rozmowy połączona z konkretnym planem systemowym — to wymagało zarówno odwagi, jak i dojrzałości.",
+                "growth_tip": "Osiągnęłaś poziom mistrzowski w tej rozmowie. Teraz przenieś to na inne relacje: z osobami równorzędnymi, z bliskimi. Czy ten sam poziom transformacji jest dostępny w bardziej emocjonalnych kontekstach?",
+                "replay_prompt": "Następne wyzwanie: zagraj tę historię z wyłączonymi wskazówkami feedbacku. Czy intuicja wystarczy?"
+            }
+        }
+    ]
+}

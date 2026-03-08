@@ -33,6 +33,15 @@ export default function PlayPage() {
   const [showFeedback, setShowFeedback] = useState(false);
   const [showReaction, setShowReaction] = useState(false);
   const [choiceRevealed, setChoiceRevealed] = useState(false);
+  const [showQuitModal, setShowQuitModal] = useState(false);
+
+  // ── Quit handler ──
+  const handleQuit = useCallback(() => setShowQuitModal(true), []);
+  const confirmQuit = useCallback(() => {
+    sessionStorage.removeItem('mn_active_scenario');
+    router.push('/menu');
+  }, [router]);
+  const cancelQuit = useCallback(() => setShowQuitModal(false), []);
 
   // Load scenario from sessionStorage
   useEffect(() => {
@@ -161,7 +170,16 @@ export default function PlayPage() {
 
   // ═══ CHARACTER INTRO ═══
   if (phase === 'CHARACTER_INTRO') {
-    return <CharacterIntro scenario={game.scenario} onStart={() => setPhase('PLAYING')} />;
+    return (
+      <CharacterIntro
+        scenario={game.scenario}
+        onStart={() => setPhase('PLAYING')}
+        onQuit={handleQuit}
+        showQuitModal={showQuitModal}
+        onConfirmQuit={confirmQuit}
+        onCancelQuit={cancelQuit}
+      />
+    );
   }
 
   // ═══ ENDING ═══
@@ -211,7 +229,11 @@ export default function PlayPage() {
             />
           ))}
         </div>
+        <button className="quit-btn" onClick={handleQuit} title="Przerwij scenariusz" aria-label="Przerwij scenariusz">✕</button>
       </div>
+
+      {/* Quit modal */}
+      {showQuitModal && <QuitModal onConfirm={confirmQuit} onCancel={cancelQuit} />}
 
       {/* Meters */}
       <div className="meters-bar">
@@ -231,7 +253,7 @@ export default function PlayPage() {
           {/* Comic panel */}
           <div className="comic-panel">
             <div className="panel-illustration">
-              <SceneCanvas scene={interaction.scene} metrics={game.metrics} />
+              <SceneIllustration mood={interaction.scene.visual_mood} />
             </div>
             <div className="panel-situation" dangerouslySetInnerHTML={{ __html: interaction.scene.description.replace(/\*(.*?)\*/g, '<em>$1</em>') }} />
 
@@ -327,129 +349,45 @@ function MeterItem({ icon, label, value, fillClass }: { icon: string; label: str
   );
 }
 
-function SceneCanvas({ scene, metrics }: { scene: Scene; metrics: Metrics }) {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+const MOOD_GRADIENTS: Record<string, string> = {
+  warm:    'linear-gradient(135deg, rgba(62,40,22,0.45), rgba(46,26,26,0.45))',
+  cold:    'linear-gradient(135deg, rgba(22,33,64,0.45), rgba(26,26,46,0.45))',
+  tense:   'linear-gradient(135deg, rgba(62,22,32,0.45), rgba(46,26,26,0.45))',
+  neutral: 'linear-gradient(135deg, rgba(22,33,62,0.45), rgba(26,26,46,0.45))',
+  dark:    'linear-gradient(135deg, rgba(16,16,32,0.55), rgba(12,12,20,0.55))',
+  hopeful: 'linear-gradient(135deg, rgba(22,62,32,0.45), rgba(26,46,26,0.45))',
+};
 
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const parent = canvas.parentElement;
-    if (!parent) return;
-
-    const w = parent.clientWidth;
-    const h = parent.clientHeight || (w * 9 / 16);
-    canvas.width = w * 2;
-    canvas.height = h * 2;
-    canvas.style.width = w + 'px';
-    canvas.style.height = h + 'px';
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-    ctx.scale(2, 2);
-
-    const MOODS: Record<string, { bg1: string; bg2: string; accent: string; overlay: string }> = {
-      warm:    { bg1: '#2e1a1a', bg2: '#3e2816', accent: '#ffa726', overlay: 'rgba(255,165,0,0.06)' },
-      cold:    { bg1: '#1a1a2e', bg2: '#162140', accent: '#42a5f5', overlay: 'rgba(66,165,245,0.06)' },
-      tense:   { bg1: '#2e1a1a', bg2: '#3e1620', accent: '#ff5252', overlay: 'rgba(255,82,82,0.08)' },
-      neutral: { bg1: '#1a1a2e', bg2: '#16213e', accent: '#888',    overlay: 'rgba(0,0,0,0)' },
-      dark:    { bg1: '#0c0c14', bg2: '#101020', accent: '#555',    overlay: 'rgba(0,0,0,0.15)' },
-      hopeful: { bg1: '#1a2e1a', bg2: '#163e20', accent: '#66bb6a', overlay: 'rgba(102,187,106,0.06)' },
-    };
-
-    const mood = MOODS[scene.visual_mood] || MOODS.neutral;
-
-    // Background
-    const grad = ctx.createLinearGradient(0, 0, w, h);
-    grad.addColorStop(0, mood.bg1);
-    grad.addColorStop(1, mood.bg2);
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, w, h);
-
-    // Particles
-    ctx.globalAlpha = 0.08;
-    for (let i = 0; i < 30; i++) {
-      ctx.beginPath();
-      ctx.arc(Math.random() * w, Math.random() * h, Math.random() * 3 + 1, 0, Math.PI * 2);
-      ctx.fillStyle = mood.accent;
-      ctx.fill();
-    }
-    ctx.globalAlpha = 1;
-
-    // Floor
-    ctx.fillStyle = 'rgba(0,0,0,0.3)';
-    ctx.fillRect(0, h * 0.72, w, h * 0.28);
-
-    // Window
-    ctx.fillStyle = 'rgba(255,255,200,0.04)';
-    ctx.fillRect(w * 0.6, h * 0.05, w * 0.25, h * 0.35);
-    ctx.strokeStyle = 'rgba(255,255,200,0.08)';
-    ctx.lineWidth = 1;
-    ctx.strokeRect(w * 0.6, h * 0.05, w * 0.25, h * 0.35);
-
-    // Furniture for living_room/kitchen
-    if (scene.location === 'living_room' || scene.location === 'kitchen') {
-      ctx.fillStyle = 'rgba(80,60,40,0.6)';
-      roundRect(ctx, w * 0.35, h * 0.48, w * 0.3, h * 0.08, 4);
-      ctx.fill();
-      ctx.fillStyle = 'rgba(200,200,210,0.4)';
-      ctx.beginPath(); ctx.ellipse(w * 0.43, h * 0.47, 12, 6, 0, 0, Math.PI * 2); ctx.fill();
-      ctx.fillStyle = 'rgba(60,50,80,0.7)';
-      roundRect(ctx, w * 0.05, h * 0.45, w * 0.28, h * 0.22, 8);
-      ctx.fill();
-    }
-
-    // Characters (stick figures)
-    drawStick(ctx, w * 0.18, h * 0.38, 'rgba(100,140,200,0.8)', true);
-    drawStick(ctx, w * 0.52, h * 0.25, 'rgba(230,100,120,0.8)', false);
-
-    // Tension overlay
-    const ta = (metrics.tension || 50) / 500;
-    ctx.fillStyle = `rgba(255,0,0,${ta})`;
-    ctx.fillRect(0, 0, w, h);
-
-    ctx.fillStyle = mood.overlay;
-    ctx.fillRect(0, 0, w, h);
-  }, [scene, metrics]);
+function SceneIllustration({ mood }: { mood: string }) {
+  const gradient = MOOD_GRADIENTS[mood] || MOOD_GRADIENTS.neutral;
 
   return (
-    <div className="scene-art">
-      <canvas ref={canvasRef} />
+    <div className="scene-illustration">
+      <img
+        src="/icons/icon-512.png"
+        alt=""
+        className="scene-icon"
+        draggable={false}
+      />
+      <div className="scene-mood-overlay" style={{ background: gradient }} />
     </div>
   );
 }
 
-function roundRect(ctx: CanvasRenderingContext2D, x: number, y: number, w: number, h: number, r: number) {
-  ctx.beginPath();
-  ctx.moveTo(x + r, y);
-  ctx.lineTo(x + w - r, y);
-  ctx.quadraticCurveTo(x + w, y, x + w, y + r);
-  ctx.lineTo(x + w, y + h - r);
-  ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
-  ctx.lineTo(x + r, y + h);
-  ctx.quadraticCurveTo(x, y + h, x, y + h - r);
-  ctx.lineTo(x, y + r);
-  ctx.quadraticCurveTo(x, y, x + r, y);
-  ctx.closePath();
-}
-
-function drawStick(ctx: CanvasRenderingContext2D, x: number, y: number, color: string, sitting: boolean) {
-  ctx.strokeStyle = color;
-  ctx.lineWidth = 3;
-  ctx.lineCap = 'round';
-  ctx.beginPath();
-  ctx.arc(x, y, 10, 0, Math.PI * 2);
-  ctx.stroke();
-  ctx.beginPath();
-  ctx.moveTo(x, y + 10);
-  ctx.lineTo(x, y + (sitting ? 30 : 38));
-  ctx.stroke();
-  if (sitting) {
-    ctx.beginPath(); ctx.moveTo(x - 12, y + 18); ctx.lineTo(x, y + 16); ctx.lineTo(x + 12, y + 14); ctx.stroke();
-    ctx.beginPath(); ctx.moveTo(x, y + 30); ctx.lineTo(x - 10, y + 40); ctx.moveTo(x, y + 30); ctx.lineTo(x + 10, y + 40); ctx.stroke();
-  } else {
-    ctx.beginPath(); ctx.moveTo(x - 14, y + 22); ctx.lineTo(x, y + 18); ctx.lineTo(x + 14, y + 22); ctx.stroke();
-    ctx.beginPath(); ctx.moveTo(x, y + 38); ctx.lineTo(x - 10, y + 55); ctx.moveTo(x, y + 38); ctx.lineTo(x + 10, y + 55); ctx.stroke();
-  }
+function QuitModal({ onConfirm, onCancel }: { onConfirm: () => void; onCancel: () => void }) {
+  return (
+    <div className="quit-overlay" onClick={onCancel}>
+      <div className="quit-modal" onClick={(e) => e.stopPropagation()}>
+        <div className="quit-modal-icon">⏸️</div>
+        <h3 className="quit-modal-title">Przerwać scenariusz?</h3>
+        <p className="quit-modal-desc">Postęp nie zostanie zapisany. Czy na pewno chcesz wyjść?</p>
+        <div className="quit-modal-actions">
+          <button className="quit-modal-btn quit-modal-btn-cancel" onClick={onCancel}>Graj dalej</button>
+          <button className="quit-modal-btn quit-modal-btn-confirm" onClick={onConfirm}>Wyjdź</button>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 /**
@@ -511,14 +449,21 @@ function FeedbackPanel({ choice, totalScore, maxScore }: { choice: Choice; total
   );
 }
 
-function CharacterIntro({ scenario, onStart }: { scenario: Scenario; onStart: () => void }) {
+function CharacterIntro({ scenario, onStart, onQuit, showQuitModal, onConfirmQuit, onCancelQuit }: {
+  scenario: Scenario; onStart: () => void; onQuit: () => void;
+  showQuitModal: boolean; onConfirmQuit: () => void; onCancelQuit: () => void;
+}) {
   const player = scenario.characters.player;
   const npc = scenario.characters.npc;
 
   return (
     <div className="screen fade-in">
+      <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '12px 16px 0', flexShrink: 0 }}>
+        <button className="quit-btn" onClick={onQuit} title="Przerwij scenariusz" aria-label="Przerwij scenariusz">✕</button>
+      </div>
+      {showQuitModal && <QuitModal onConfirm={onConfirmQuit} onCancel={onCancelQuit} />}
       <div className="scroll-area">
-        <div style={{ textAlign: 'center', padding: '30px 0 20px' }}>
+        <div style={{ textAlign: 'center', padding: '10px 0 20px' }}>
           <h2 className="heading-display" style={{ fontSize: '1.6rem', marginBottom: 6 }}>Profile Postaci</h2>
           <p className="text-secondary" style={{ fontSize: '0.9rem' }}>Poznaj obie strony konfliktu</p>
         </div>

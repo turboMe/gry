@@ -1,0 +1,822 @@
+{
+    "scenario_id": "betrayed_secret_between_friends",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Sekret, który wyszedł poza was",
+        "subtitle": "Przyjaciółka konfrontuje cię po tym, jak zdradziłaś jej prywatną sprawę wspólnej znajomej.",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 8,
+        "interaction_count": 5
+    },
+    "tags": {
+        "relationship_type": "friends",
+        "theme": [
+            "trust",
+            "apology",
+            "communication_breakdown"
+        ],
+        "emotional_intensity": "critical",
+        "age_rating": "teen",
+        "session_type": "mini_story",
+        "player_role_gender": "female",
+        "difficulty": "intermediate"
+    },
+    "characters": {
+        "player": {
+            "name": "Lena",
+            "role_label": "Przyjaciółka · Gracz",
+            "age_range": "24-30",
+            "context": "Po trudnym tygodniu wyrzuciłaś z siebie cudzy sekret w rozmowie z Olą. Nie planowałaś krzywdy, ale uciekłaś od własnego napięcia kosztem zaufania Marty.",
+            "hidden_need": "support",
+            "hidden_need_text": "Chcesz nie zostać odrzucona całkowicie i odzyskać możliwość naprawy relacji.",
+            "traits": [
+                {
+                    "text": "Lojalna w działaniu",
+                    "type": "positive"
+                },
+                {
+                    "text": "Impulsywna pod presją",
+                    "type": "negative"
+                },
+                {
+                    "text": "Wrażliwa na wstyd",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 7,
+                "patience": 4,
+                "defensiveness": 6,
+                "empathy": 6,
+                "need_for_control": 4,
+                "shame_sensitivity": 8,
+                "directness": 5,
+                "repair_ability": 7
+            }
+        },
+        "npc": {
+            "name": "Marta",
+            "role_label": "Przyjaciółka · NPC",
+            "age_range": "24-30",
+            "context": "Dowiedziała się, że bardzo osobista sprawa, którą powiedziała ci w zaufaniu, zaczęła krążyć w waszym gronie. Czuje się odsłonięta i upokorzona.",
+            "hidden_need": "safety",
+            "hidden_need_text": "Potrzebuje odzyskać poczucie bezpieczeństwa, wpływu i szacunku dla swoich granic.",
+            "traits": [
+                {
+                    "text": "Szczera",
+                    "type": "positive"
+                },
+                {
+                    "text": "Wycofuje się po zranieniu",
+                    "type": "negative"
+                },
+                {
+                    "text": "Silnie chroni prywatność",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 5,
+                "patience": 5,
+                "defensiveness": 7,
+                "empathy": 6,
+                "need_for_control": 6,
+                "shame_sensitivity": 9,
+                "directness": 7,
+                "repair_ability": 5
+            },
+            "npc_reaction_logic": "Marta ostro reaguje na zaprzeczanie, umniejszanie i sarkazm. Kiedy słyszy jasne wzięcie odpowiedzialności, walidację emocji i konkretne propozycje naprawy, obniża defensywność i zostawia uchyloną furtkę do odbudowy zaufania."
+        }
+    },
+    "metrics_start": {
+        "tension": 55,
+        "trust": 35,
+        "openness": 40,
+        "feeling_heard": 30
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Pytanie, od którego nie ma ucieczki",
+            "scene": {
+                "description": "Siedzicie przy bocznym stoliku w prawie pustej kawiarni. Marta trzyma kubek obiema dłońmi, ale wcale z niego nie pije. Wzrok ma twardy, jakby ćwiczyła to jedno pytanie całą drogę tutaj.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": "Powiedziałaś Oli o tym, co ci mówiłam w zaufaniu?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Serio chcesz robić z tego taki dramat? To nie była tajemnica państwowa.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Marta prostuje się i cofa krzesło o kilka centymetrów. Jej twarz momentalnie twardnieje.",
+                    "feedback": {
+                        "label": "Umniejszenie i atak",
+                        "psychology": "Zamiast odpowiedzieć na treść zarzutu, obniżasz wagę krzywdy i przerzucasz rozmowę na poziom II — pozycyjny. To zwykle podnosi defensywność i wzmacnia wstyd drugiej osoby.",
+                        "better_alternative_hint": "Najpierw nazwij fakt i uznaj, że dla Marty to była ważna granica."
+                    },
+                    "tags": [
+                        {
+                            "text": "Umniejszanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "No pewnie, najlepiej wszystko zrzucić na mnie. Jak zawsze.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marta marszczy brwi i przestaje na moment mówić, jakby właśnie straciła resztę cierpliwości.",
+                    "feedback": {
+                        "label": "Sarkazm zamiast odpowiedzi",
+                        "psychology": "Bierna agresja omija odpowiedzialność i komunikuje ukryty atak. W modelu von Thuna na warstwie relacyjnej słyszalny staje się przekaz: jesteś problemem, nie ja.",
+                        "better_alternative_hint": "Odpowiedz wprost na pytanie, bez ironii i bez obronnego kontrataku."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Tak, powiedziałam jej. To był błąd i nie przewidziałam, że to wróci do ciebie w taki sposób.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Marta nie mięknie, ale przynajmniej nie musi już wyciągać z ciebie przyznania się.",
+                    "feedback": {
+                        "label": "Uznanie faktu",
+                        "psychology": "To ruch w stronę odpowiedzialności i zejścia z walki o rację. Brakuje jednak kontaktu z emocjami Marty, więc naprawa pozostaje częściowa.",
+                        "better_alternative_hint": "Dodaj walidację uczuć i pokaż gotowość wysłuchania skutków twojego działania."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wzięcie odpowiedzialności",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Tak, powiedziałam jej. Widzę, że cię tym zraniłam i chcę usłyszeć, co to dla ciebie zrobiło.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Marta bierze oddech trochę spokojniej. Nadal jest spięta, ale patrzy na ciebie już nie tylko z gniewem, lecz też z bólem.",
+                    "feedback": {
+                        "label": "Fakt plus walidacja",
+                        "psychology": "Łączysz przyznanie się z uznaniem emocji drugiej strony. To rdzeń komunikatu Ja i walidacji, które obniżają zagrożenie relacyjne i zwiększają szansę na dialog naprawczy.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Prawdziwy ciężar zdrady",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Za oknem zapada zmrok. Między wami stoi niedopita kawa i gęste milczenie. Marta siedzi odchylona, jakby fizycznie zwiększała dystans.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Nie chodzi tylko o plotkę. Zrobiłaś ze mnie kogoś, kto nie może ci ufać.",
+            "scene_high": {
+                "description": "Hałas ekspresu w tle na chwilę zagłusza waszą rozmowę, ale napięcie trochę opada. Marta nadal jest zraniona, jednak zostaje w kontakcie i nie odwraca wzroku.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "cold"
+            },
+            "npc_line_high": "Najgorsze jest to, że sama wybrałaś za mnie, co może wyjść dalej. Chcę zrozumieć, co tobą kierowało.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Przesadzasz. Każdy czasem coś powie i świat się od tego nie kończy.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Marta zaciska szczękę. W jej oczach pojawia się bardziej chłód niż złość.",
+                    "feedback": {
+                        "label": "Normalizowanie naruszenia",
+                        "psychology": "Próba przedstawienia zdrady zaufania jako czegoś zwyczajnego obniża poczucie bezpieczeństwa rozmówcy. W praktyce odbiera jej prawo do własnej oceny szkody.",
+                        "better_alternative_hint": "Uznaj, że dla Marty stawką nie jest sam fakt rozmowy, lecz utrata wpływu nad własną prywatnością."
+                    },
+                    "tags": [
+                        {
+                            "text": "Minimalizowanie szkody",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Granice",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nie wiem, po prostu tak wyszło. Naprawdę nie mam siły tego teraz rozkładać.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marta patrzy na ciebie z niedowierzaniem, jakby właśnie usłyszała, że jej ból jest kłopotliwy logistycznie.",
+                    "feedback": {
+                        "label": "Wycofanie z odpowiedzialności",
+                        "psychology": "Unik osłabia możliwość naprawy, bo pozostawia drugą stronę samą z konsekwencjami. W analizie transakcyjnej to ruch z pozycji dziecka unikającego napięcia, a nie dorosłego biorącego odpowiedzialność.",
+                        "better_alternative_hint": "Nawet krótkie wyjaśnienie motywu i uznanie szkody byłoby lepsze niż znikanie z rozmowy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna Berne'a",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Byłam wtedy rozbita i wyrzuciłam to z siebie złej osobie. To nie było przeciwko tobie, ale i tak zrobiłam ci krzywdę.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Marta słucha, choć wciąż jest ostrożna. Widać, że część złości ustępuje miejsca ocenie, czy to nie tylko dobre tłumaczenie.",
+                    "feedback": {
+                        "label": "Wyjaśnienie bez pełnej empatii",
+                        "psychology": "Dajesz kontekst zachowania, co porządkuje fakty i zmniejsza chaos. Nadal jednak centrum rozmowy jest twoja sytuacja, a nie przeżycie Marty.",
+                        "better_alternative_hint": "Po wyjaśnieniu wróć do tego, jak ona mogła to odczuć i czego teraz potrzebuje."
+                    },
+                    "tags": [
+                        {
+                            "text": "Porządkowanie faktów",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Spanikowałam i szukałam ulgi, ale zrobiłam to twoim kosztem. Rozumiem, że mogłaś poczuć się obnażona i pozbawiona kontroli.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Marta opuszcza ramiona. Nadal boli, ale po raz pierwszy wygląda, jakbyś naprawdę dotknęła sedna.",
+                    "feedback": {
+                        "label": "Nazwanie kosztu po stronie drugiej osoby",
+                        "psychology": "To odpowiedź, która łączy autorefleksję z mentalizacją stanu Marty. Dzięki temu rozmowa przesuwa się z obrony na rozumienie relacyjnej szkody.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Mentalizacja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Czy bierzesz pełną odpowiedzialność",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Kawiarnia prawie opustoszała. Marta siedzi już bokiem do stolika, jakby połową ciała była poza tą rozmową.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "I jeszcze mam ci tłumaczyć, dlaczego to było złe? Naprawdę tego nie widzisz?",
+            "scene_high": {
+                "description": "Obsługa zaczyna sprzątać sąsiednie stoliki. Między wami wciąż jest napięcie, ale rozmowa nie zamienia się w otwartą walkę.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Dobrze, że to nazywasz. Tylko co z tym zrobisz teraz, poza samym przepraszam?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nie jestem jedyną osobą, która kiedyś zawiodła, więc nie rób ze mnie potwora.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marta prycha krótko i patrzy w bok. Twoja obrona brzmi dla niej jak uniewinnianie się cudzym kosztem.",
+                    "feedback": {
+                        "label": "Porównania obronne",
+                        "psychology": "Odwoływanie się do win innych ludzi rozmywa odpowiedzialność. To klasyczna ucieczka od wstydu, ale dla rozmówcy brzmi jak brak skruchy.",
+                        "better_alternative_hint": "Zostań przy własnym działaniu i własnym wpływie na sytuację."
+                    },
+                    "tags": [
+                        {
+                            "text": "Whataboutism",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Unikanie odpowiedzialności",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "To może spiszmy regulamin tajemnic, skoro bez tego się nie da.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Marta patrzy na ciebie już bez cienia miękkości. Ironia ucina resztkę bezpieczeństwa.",
+                    "feedback": {
+                        "label": "Pogarda pod przykrywką żartu",
+                        "psychology": "Sarkazm w sytuacji zranienia jest często odbierany jak pogarda. Zamiast naprawiać relację, potwierdza, że druga strona nie może liczyć na poważne potraktowanie.",
+                        "better_alternative_hint": "Powiedz konkretnie, co chcesz zrobić, bez złośliwego komentarza."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Mogę ci obiecać, że więcej tego nie zrobię i będę ostrożniejsza.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Marta kiwa głową bardzo lekko. To coś, ale jeszcze nie brzmi jak realna naprawa.",
+                    "feedback": {
+                        "label": "Deklaracja bez konkretu",
+                        "psychology": "Obietnica pomaga, ale bez uznania potrzeb drugiej strony i bez planu może wybrzmieć zbyt ogólnie. Relacja po naruszeniu zaufania potrzebuje konkretnej odbudowy przewidywalności.",
+                        "better_alternative_hint": "Dodaj, że chcesz oddać Marcie wpływ i zapytać o jej warunki bezpieczeństwa."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywna deklaracja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Naprawa relacji",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie cofnę tego, ale mogę wziąć pełną odpowiedzialność i zrobić konkretnie to, czego teraz potrzebujesz, żebyś odzyskała choć trochę kontroli.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Marta pierwszy raz nie odpowiada od razu. Zastanawia się, czy naprawdę zostawiasz przestrzeń na jej warunki.",
+                    "feedback": {
+                        "label": "Oddanie wpływu osobie zranionej",
+                        "psychology": "Po naruszeniu granic kluczowe staje się przywrócenie poczucia sprawczości. To ruch na poziom III — transformacja, bo zamiast walczyć o rację, tworzysz warunki do odbudowy relacji.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Przywracanie sprawczości",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Naprawa wymaga konkretu",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Wychodzicie z kawiarni na chłodną ulicę. Marta poprawia pasek torby i wygląda, jakby była gotowa zakończyć rozmowę w każdej sekundzie.",
+                "location": "street",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Szczerze? To brzmi bardziej jak gaszenie pożaru niż troska o mnie.",
+            "scene_high": {
+                "description": "Na ulicy jest cicho i wilgotno po lekkim deszczu. Marta nie jest już tak spięta, choć wciąż trzyma dystans i waży każde twoje słowo.",
+                "location": "street",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Jeszcze ci nie ufam, ale zaczynam wierzyć, że traktujesz to serio. Co chcesz zrobić konkretnie?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To powiedz wreszcie, czego chcesz, bo nie będę zgadywać twoich humorów.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Marta momentalnie zamyka twarz. Słowo humory odcina ją od dalszej rozmowy.",
+                    "feedback": {
+                        "label": "Dyskredytowanie emocji",
+                        "psychology": "Nazywając reakcję drugiej osoby humorami, podważasz zasadność jej przeżyć. To niszczy feeling_heard i wzmacnia przekonanie, że kontakt z tobą nie jest bezpieczny.",
+                        "better_alternative_hint": "Zaproś do określenia potrzeb bez oceniania stanu emocjonalnego Marty."
+                    },
+                    "tags": [
+                        {
+                            "text": "Dewaluacja emocji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak walidacji",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, to daj znać kiedyś, jeśli ci przejdzie.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marta patrzy na ciebie z rezygnacją. Brzmisz tak, jakbyś chciała przeczekać konsekwencje.",
+                    "feedback": {
+                        "label": "Pozorna zgoda bez naprawy",
+                        "psychology": "Wycofanie bywa mylone z daniem przestrzeni, ale tutaj nie ma w nim odpowiedzialności ani troski. Zostawiasz cały ciężar regulacji relacji po stronie Marty.",
+                        "better_alternative_hint": "Uszanuj dystans, ale zaproponuj własny konkretny krok naprawczy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Przerzucenie ciężaru relacji",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Mogę napisać do Oli i poprosić ją, żeby nikomu dalej tego nie powtarzała.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Marta przyjmuje to bez entuzjazmu. To praktyczne, ale jeszcze nie mówi wiele o zrozumieniu szkody.",
+                    "feedback": {
+                        "label": "Praktyczny krok",
+                        "psychology": "Rozwiązanie zadaniowe jest potrzebne, bo zatrzymuje dalsze szkody. Samo w sobie nie odbudowuje jednak więzi, jeśli nie towarzyszy mu uznanie granic i tempa drugiej osoby.",
+                        "better_alternative_hint": "Połącz konkretny krok z oddaniem Marcie decyzji, co dalej będzie dla niej bezpieczne."
+                    },
+                    "tags": [
+                        {
+                            "text": "Rozwiązanie problemu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Napiszę do Oli i wezmę odpowiedzialność bez wciągania ciebie w tłumaczenia. Jeśli będziesz potrzebowała dystansu, uszanuję to. Ty zdecydujesz, co jest teraz dla ciebie bezpieczne.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Marta wyraźnie mięknie, choć nadal ostrożnie. Słyszy w tym i działanie, i szacunek do swoich granic.",
+                    "feedback": {
+                        "label": "Konkret plus respekt dla granic",
+                        "psychology": "To dojrzała naprawa: bierzesz odpowiedzialność za skutek, ograniczasz dalszą szkodę i nie naciskasz na szybkie przebaczenie. Taka kombinacja wzmacnia zaufanie bardziej niż same słowa.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Szacunek dla granic",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Naprawa relacji",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Przyszłość tej relacji",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Stojąc pod lampą uliczną, Marta już jedną ręką sięga po telefon, jakby chciała mieć pretekst do szybkiego wyjścia. Powietrze między wami jest ciężkie i chłodne.",
+                "location": "street",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Nie wiem, czy chcę dalej wpuszczać cię tak blisko. To nie chodzi tylko o dzisiaj.",
+            "scene_high": {
+                "description": "Przed kawiarnią ruch prawie zamarł. Marta nadal jest ostrożna, ale przestała się od ciebie odsuwać i słucha bez przerywania.",
+                "location": "street",
+                "time_of_day": "night",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "To nie wróci od razu do normy, ale chyba jeszcze nie chcę tego przekreślać. Tylko potrzebuję czasu.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Skoro tak, to może ta przyjaźń i tak nie była nic warta.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marta krótko kiwa głową, jakby właśnie dostała ostateczne potwierdzenie, że musi się odciąć.",
+                    "feedback": {
+                        "label": "Dewaluacja relacji",
+                        "psychology": "To obronne zerwanie więzi zanim druga strona zdąży postawić własną granicę. Chroni przed wstydem, ale zamyka wszelką możliwość odbudowy.",
+                        "better_alternative_hint": "Uszanuj niepewność Marty bez ataku na wartość waszej relacji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Czarno-białe myślenie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Eskalacja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Jasne, trzymaj urazę ile chcesz. Widocznie tego potrzebujesz.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Marta spuszcza wzrok i zamyka się całkowicie. Już nie wygląda, jakby czekała na cokolwiek więcej.",
+                    "feedback": {
+                        "label": "Złośliwe zawstydzanie",
+                        "psychology": "Maskujesz złość pozorną zgodą, ale tak naprawdę karzesz drugą osobę za jej granice. To silnie obniża poczucie bycia słyszaną.",
+                        "better_alternative_hint": "Nazwij, że rozumiesz potrzebę czasu, zamiast oceniać ją jako urazę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Zawstydzanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Rozumiem. Dajmy sobie trochę czasu i zobaczymy, co będzie dalej.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Marta przyjmuje to spokojnie. To nie zamyka sprawy, ale też jej nie pogarsza.",
+                    "feedback": {
+                        "label": "Akceptacja bez pogłębienia",
+                        "psychology": "Szanujesz granicę i nie naciskasz, co jest ważne. Brakuje jednak wyraźnego komunikatu o gotowości do cierpliwej, etapowej odbudowy.",
+                        "better_alternative_hint": "Dodaj, że nie będziesz naciskać i chcesz odbudowywać zaufanie na jej warunkach."
+                    },
+                    "tags": [
+                        {
+                            "text": "Szacunek dla tempa drugiej osoby",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Uszanuję twoje tempo i nie będę naciskać. Gdy będziesz gotowa, chciałabym odbudować to krok po kroku, na nowych zasadach, które będą dla ciebie bezpieczne.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Marta przytakuje powoli. Nie przebacza od razu, ale zostawia wyraźnie uchylone drzwi.",
+                    "feedback": {
+                        "label": "Dojrzała zgoda na proces",
+                        "psychology": "Nie żądasz natychmiastowego zamknięcia sprawy, tylko uznajesz, że zaufanie odbudowuje się etapami. To tworzy bezpieczne ramy dla pojednania bez presji.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Cierpliwa naprawa",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "ZAUFANIE PĘKA",
+            "emoji": "🔴",
+            "subtitle": "Rozmowa kończy się odcięciem i chłodem.",
+            "narrative": "Marta kończy spotkanie bez oglądania się za siebie. Nie ma w niej już energii do dalszego tłumaczenia, bo kolejne słowa tylko potwierdziły, że jej zranienie zostało pomniejszone albo obrócone przeciwko niej. Zostajesz z poczuciem straty, ale bez mostu, po którym można byłoby teraz wrócić.",
+            "diagnosis": "W tej ścieżce dominowały obrona, umniejszanie szkody lub bierna agresja. Naruszenie zaufania nie zostało uznane na poziomie emocjonalnym, więc Marta nie odzyskała ani bezpieczeństwa, ani wpływu. Konflikt zatrzymał się na poziomie pozycyjnym i zakończył zerwaniem dialogu.",
+            "post_game": {
+                "communication_style_summary": "Przeważały reakcje obronne, atakujące albo unikowe, które wzmacniały napięcie i wstyd rozmówczyni.",
+                "strongest_moment": "Najmocniejszym momentem było każde choćby częściowe przyznanie faktu, że sekret został zdradzony.",
+                "growth_tip": "Przy naruszeniu zaufania nie zaczynaj od tłumaczenia siebie. Najpierw nazwij szkodę, uznaj emocje drugiej osoby i dopiero potem mów o motywach.",
+                "replay_prompt": "Spróbuj przejść tę rozmowę tak, by oddać Marcie wpływ i nie walczyć o szybkie rozgrzeszenie."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "ROZEJM BEZ PEWNOŚCI",
+            "emoji": "🟡",
+            "subtitle": "Nie dochodzi do zerwania, ale zaufanie pozostaje kruche.",
+            "narrative": "Marta nie zamyka relacji definitywnie, jednak wyraźnie zostawia ją w trybie ostrożności. Przyjmuje część twoich słów i może nawet jeden konkretny krok naprawczy, ale nadal nie ma pewności, czy naprawdę rozumiesz ciężar tego, co zrobiłaś. Kontakt jest możliwy, lecz zdystansowany.",
+            "diagnosis": "Pojawiła się częściowa odpowiedzialność i pewna gotowość do naprawy, ale zabrakło pełnej walidacji oraz konsekwentnego oddania wpływu osobie zranionej. Rozmowa przesunęła się chwilami z poziomu transakcyjnego ku empatii, lecz nie utrzymała tego do końca.",
+            "post_game": {
+                "communication_style_summary": "Dominuje mieszanka poprawnej asertywności i zadaniowych prób naprawy, ale bez wystarczającej głębi emocjonalnej.",
+                "strongest_moment": "Najlepiej działały momenty, w których brałaś odpowiedzialność bez zaprzeczania faktom.",
+                "growth_tip": "Sama obietnica poprawy to za mało. Połącz konkretne działanie z pytaniem o potrzeby, granice i tempo drugiej osoby.",
+                "replay_prompt": "Zagraj jeszcze raz i sprawdź, jak zmienia się rozmowa, gdy obok przeprosin pojawia się walidacja i respekt dla granic."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 10
+            },
+            "color": "green",
+            "title": "PĘKNIĘCIE, KTÓRE MOŻNA NAPRAWIĆ",
+            "emoji": "🟢",
+            "subtitle": "Zaufanie nie wraca od razu, ale pojawia się realna droga odbudowy.",
+            "narrative": "Marta nie udaje, że nic się nie stało, ale po raz pierwszy od początku rozmowy czuje, że nie musi walczyć o uznanie swojej krzywdy. Słyszy odpowiedzialność, konkret i szacunek do własnych granic. Nie ma jeszcze pełnego przebaczenia, za to jest coś cenniejszego na ten moment: warunki, w których relacja może być odbudowywana uczciwie i bez presji.",
+            "diagnosis": "Ta ścieżka opierała się na walidacji emocji, uznaniu szkody oraz przywracaniu sprawczości osobie zranionej. Dzięki temu napięcie spadło, a rozmowa weszła na poziom transformacyjny. Nie naprawiłaś przeszłości, ale stworzyłaś bezpieczne ramy do odbudowy zaufania.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl empatyczny i transformacyjny: odpowiedzialność, słuchanie, konkret i brak nacisku na szybkie przebaczenie.",
+                "strongest_moment": "Najmocniejsze były chwile, w których uznawałaś koszt po stronie Marty i oddawałaś jej wpływ na dalsze kroki.",
+                "growth_tip": "W realnym życiu pamiętaj, że po przeprosinach liczy się konsekwencja. Odbudowa zaufania dzieje się bardziej przez przewidywalne działania niż przez pojedynczą dobrą rozmowę.",
+                "replay_prompt": "Sprawdź inne ścieżki, aby zobaczyć, jak szybko obrona i ironia potrafią zamknąć nawet dobrze rozpoczętą naprawę."
+            }
+        }
+    ]
+}

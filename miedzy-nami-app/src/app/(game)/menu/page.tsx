@@ -11,9 +11,14 @@ export default function MenuPage() {
   const router = useRouter();
   const { quizCompleted } = useProfileStore();
   const [stats, setStats] = useState<{ totalGames: number; avgScore: string } | null>(null);
+  const [hasProfile, setHasProfile] = useState(false);
 
   useEffect(() => {
-    // Load basic stats from localStorage (MVP — will move to API later)
+    // Check for saved profile
+    const saved = localStorage.getItem('mn_player_profile');
+    setHasProfile(!!saved);
+
+    // Load basic stats from localStorage
     try {
       const history = JSON.parse(localStorage.getItem('mn_session_history') || '[]');
       if (history.length > 0) {
@@ -24,20 +29,15 @@ export default function MenuPage() {
   }, []);
 
   const handlePlay = () => {
-    if (!quizCompleted) {
-      // Check localStorage for saved profile (from previous sessions)
-      const saved = localStorage.getItem('mn_player_profile');
-      if (!saved) {
-        router.push('/quiz');
-        return;
-      }
+    if (!quizCompleted && !hasProfile) {
+      router.push('/quiz');
+      return;
     }
     router.push('/scenarios');
   };
 
   const handleProfile = () => {
-    const saved = localStorage.getItem('mn_player_profile');
-    if (saved) {
+    if (hasProfile) {
       router.push('/profile');
     } else {
       router.push('/quiz');
@@ -68,7 +68,7 @@ export default function MenuPage() {
 
           <button className="btn" onClick={handleProfile}>
             <span className="btn-icon">👤</span>
-            <span className="btn-label">{localStorage.getItem('mn_player_profile') ? 'Twój profil' : 'Stwórz profil'}</span>
+            <span className="btn-label">{hasProfile ? 'Twój profil' : 'Stwórz profil'}</span>
             <span className="btn-arrow">→</span>
           </button>
 
@@ -86,3 +86,4 @@ export default function MenuPage() {
     </div>
   );
 }
+

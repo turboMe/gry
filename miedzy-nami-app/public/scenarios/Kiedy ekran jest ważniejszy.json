@@ -1,0 +1,1027 @@
+{
+    "scenario_id": "phone_distance",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Kiedy ekran jest ważniejszy",
+        "subtitle": "Wieczór, który mógł wyglądać zupełnie inaczej",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 12,
+        "interaction_count": 6
+    },
+    "tags": {
+        "relationship_type": "romantic_partner",
+        "theme": [
+            "communication_breakdown",
+            "neglect",
+            "loneliness"
+        ],
+        "emotional_intensity": "moderate",
+        "age_rating": "all",
+        "session_type": "mini_story",
+        "player_role_gender": "female",
+        "difficulty": "intermediate"
+    },
+    "characters": {
+        "player": {
+            "name": "Marta",
+            "role_label": "Partnerka · Gracz",
+            "age_range": "28-35",
+            "context": "Wraca do domu po ciężkim dniu, tęskniąc za bliskością. Czuje się coraz bardziej niewidzialna w związku — jakby Kamil był fizycznie obok, ale emocjonalnie nieobecny. Waha się między wyrażaniem bólu wprost a zamykaniem się w sobie.",
+            "hidden_need": "connection",
+            "hidden_need_text": "Potrzebuje poczuć, że jest ważna — że jej obecność coś dla partnera znaczy.",
+            "traits": [
+                {
+                    "text": "Wrażliwa na odrzucenie",
+                    "type": "negative"
+                },
+                {
+                    "text": "Empatyczna",
+                    "type": "positive"
+                },
+                {
+                    "text": "Szuka bliskości",
+                    "type": "positive"
+                },
+                {
+                    "text": "Skłonna do zamykania się w sobie",
+                    "type": "negative"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 5,
+                "patience": 6,
+                "defensiveness": 5,
+                "empathy": 8,
+                "need_for_control": 4,
+                "shame_sensitivity": 7,
+                "directness": 5,
+                "repair_ability": 7
+            }
+        },
+        "npc": {
+            "name": "Kamil",
+            "role_label": "Partner · NPC",
+            "age_range": "30-38",
+            "context": "Przechodzi trudny okres w pracy. Telefon stał się jego ucieczką od stresu — scrolluje bez celu, bo to jedyne, co daje mu chwilę oddechu. Nie zdaje sobie sprawy, jak bardzo oddala się od Marty i jak bardzo boi się rozczarować jako partner.",
+            "hidden_need": "autonomy",
+            "hidden_need_text": "Potrzebuje przestrzeni do regeneracji bez poczucia winy, ale w głębi obawia się, że zawodzi Martę i sam siebie.",
+            "traits": [
+                {
+                    "text": "Zamknięty emocjonalnie pod presją",
+                    "type": "negative"
+                },
+                {
+                    "text": "Odpowiedzialny",
+                    "type": "positive"
+                },
+                {
+                    "text": "Defensywny gdy czuje się atakowany",
+                    "type": "negative"
+                },
+                {
+                    "text": "Zdolny do refleksji gdy czuje się bezpiecznie",
+                    "type": "positive"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 4,
+                "patience": 5,
+                "defensiveness": 7,
+                "empathy": 5,
+                "need_for_control": 6,
+                "shame_sensitivity": 8,
+                "directness": 4,
+                "repair_ability": 6
+            },
+            "npc_reaction_logic": "Kamil reaguje bardzo defensywnie na krytykę i oskarżenia — zamyka się lub atakuje wzajemnie. Na empatyczne komunikaty otwiera się stopniowo i zaczyna ujawniać prawdziwy stres. Na bierne wycofanie się Marty odczuwa ulgę i ukrytą winę jednocześnie — problem trwa."
+        }
+    },
+    "metrics_start": {
+        "tension": 40,
+        "trust": 60,
+        "openness": 50,
+        "feeling_heard": 50
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Powrót do domu",
+            "scene": {
+                "description": "Wchodzisz do mieszkania po długim dniu. W salonie Kamil siedzi na kanapie, oczy utkwione w ekranie telefonu. Nie podnosi głowy, gdy wchodzisz. Po chwili mruczy <em>Cześć</em>, nie przerywając scrollowania.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "cold"
+            },
+            "npc_line": "Cześć.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "No tak. Jak zawsze — telefon ważniejszy niż ja. Dzięki za to serdeczne powitanie.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kamil unosi wzrok z irytacją. Zaczyna coś mówić, ale urywa. Wzrusza ramionami i wraca do ekranu.",
+                    "feedback": {
+                        "label": "Ukryty atak",
+                        "psychology": "Sarkazm i ukryte pretensje to bierna agresja w czystej postaci. Choć wyraża prawdziwy ból, robi to w sposób, który natychmiast uruchamia u Kamila mechanizm obronny. Zamiast dialogu — eskalacja lub wycofanie.",
+                        "better_alternative_hint": "Powiedz wprost, czego potrzebujesz, zamiast sugerować to ironicznie. Komunikat Ja jest tutaj kluczem."
+                    },
+                    "tags": [
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Uogólnianie",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Tęskniłam za tobą dzisiaj. Masz chwilę, żebyśmy porozmawiali?",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Kamil zatrzymuje scrollowanie. Patrzy na Martę przez chwilę z zaskoczeniem. Odkłada telefon na poduszkę.",
+                    "feedback": {
+                        "label": "Komunikat Ja — zaproszenie",
+                        "psychology": "Wyrażenie tęsknoty to odsłonięcie emocji bez oskarżenia — to serce NVC Rosenberga. Pytanie o chwilę czasu szanuje autonomię Kamila i nie tworzy poczucia winy: zaprasza do kontaktu zamiast go wymagać.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Zaproszenie do kontaktu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC — Porozumienie bez Przemocy",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Odłóż ten telefon, kiedy do ciebie mówię! Cały wieczór tak siedzisz!",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kamil z trzaskiem odkłada telefon na stolik. Krzyżuje ramiona. Jego twarz twardnieje.",
+                    "feedback": {
+                        "label": "Rozkaz i uogólnienie",
+                        "psychology": "Imperatyw i generalizacja (cały wieczór) atakują Kamila zamiast opisywać sytuację. W modelu Gottmana to wzorzec krytyki prowadzącej do defensywności — Kamil zamknie się lub zaatakuje wzajemnie, zamiast wysłuchać.",
+                        "better_alternative_hint": "Zamiast mówić co Kamil ma robić, opisz jak się czujesz z jego nieobecnością."
+                    },
+                    "tags": [
+                        {
+                            "text": "Krytyka osoby",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Uogólnianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Cztery jeźdźcy Gottmana",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Hej. Chciałabym, żebyś odłożył telefon — chcę, żebyśmy porozmawiali.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Kamil odkłada telefon z lekką niechęcią, ale bez oporu. Patrzy na Martę pytająco.",
+                    "feedback": {
+                        "label": "Asertywna prośba",
+                        "psychology": "Jasne wyrażenie potrzeby bez agresji — to asertywność. Działa lepiej niż atak, ale brakuje emocjonalnego odsłonięcia: Kamil wie, czego chcesz, ale nie wie, jak się czujesz. To transakcja, nie zaproszenie do bliskości.",
+                        "better_alternative_hint": "Dodaj do prośby, jak się czujesz — skróci to dystans między wami."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Pierwsza defensywa",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Kamil patrzy na ciebie z wyraźną irytacją. Atmosfera jest ciężka, napięta. Siedzi z telefonem w ręku, jakby gotowy wrócić do scrollowania.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Co znowu? Byłem cały dzień w pracy, chyba mogę chwilę odpocząć?",
+            "scene_high": {
+                "description": "Kamil odkłada telefon na sofę i odwraca się w twoją stronę. Jego twarz jest zmęczona, ale otwarta. Wygląda jak ktoś, kto stara się być obecny.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Dobra, słucham. Co się dzieje?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nic, zapomnij. Widać, że telefon jest dla ciebie ważniejszy.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kamil wzrusza ramionami i sięga po telefon. Na jego twarzy widać mieszaninę ulgi i dyskomfortu.",
+                    "feedback": {
+                        "label": "Wycofanie się",
+                        "psychology": "Wycofanie wygląda jak spokój, ale jest formą kary — Marta komunikuje ból przez zamilknięcie. To wzorzec stonewallingu (Gottman), który buduje dystans emocjonalny. Kamil czuje ulgę, ale temat nie jest rozwiązany, a Marta czuje się jeszcze bardziej niewidoczna.",
+                        "better_alternative_hint": "Powiedz głośno, że ci zależy — nawet jeśli teraz boli."
+                    },
+                    "tags": [
+                        {
+                            "text": "Stonewall",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Wycofanie emocjonalne",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Cztery jeźdźcy Gottmana",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Ty zawsze masz odpowiedź! Praca, zmęczenie — a ja? Kiedy ja jestem na liście?",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kamil stawia się w pozycji obronnej. Jego głos twardnieje: Nie dramatyzuj. Nie jest tak.",
+                    "feedback": {
+                        "label": "Licytacja cierpienia",
+                        "psychology": "Kiedy ja jestem na liście przenosi rozmowę na Poziom II — walka o to, kto cierpi bardziej, kto ma rację. Kamil automatycznie przechodzi w tryb obrony i kontrataku. Prawdziwe potrzeby obu stron zostają zagłuszone.",
+                        "better_alternative_hint": "Zamiast porównywać cierpienie, opisz konkretnie jedną sytuację, w której poczułaś się niewidoczna."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uogólnianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Licytacja cierpienia",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Rozumiem, że jesteś zmęczony. Mam do ciebie pytanie i chcę, żebyś je naprawdę usłyszał: czy tęsknisz za nami?",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Kamil nieruchomieje. Coś w jego postawie się zmienia — ramiona opadają, twarz staje się mniej napięta. Patrzy na Martę inaczej niż chwilę temu.",
+                    "feedback": {
+                        "label": "Walidacja i pytanie transformacyjne",
+                        "psychology": "Walidacja zmęczenia Kamila (empatia) plus odważne pytanie o tęsknotę przenosi rozmowę na Poziom III — z walki o rację do wspólnej przestrzeni emocjonalnej. To technika transformacyjna: zmiana ramy z konfliktu na połączenie.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Zmiana ramy",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie mówię, że nie możesz odpoczywać. Mówię tylko, że chcę spędzić z tobą czas. To jest możliwe?",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kamil kiwa głową. Trochę rozluźnia ramiona. Mruczy: No dobra, co chcesz robić.",
+                    "feedback": {
+                        "label": "Asertywne rozgraniczenie",
+                        "psychology": "Marta rozróżnia prawo Kamila do odpoczynku od swojej potrzeby bliskości — to asertywna korekta ramy. Działa, ale pytanie To jest możliwe? zostawia inicjatywę Kamilowi i nie ujawnia głębszej emocji. Rozmowa toczy się, ale pozostaje na poziomie transakcyjnym.",
+                        "better_alternative_hint": "Powiedz, jak naprawdę czujesz się, gdy wasze wieczory mijają osobno."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Pod powierzchnią",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Kamil siedzi sztywno, twarz zamknięta jak maska. Rozmowa kuleje — każde zdanie Marty odbija się od ściany nieobecności. Cisza między nimi gęstnieje.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Nie wiem, czego ode mnie chcesz. Jestem tutaj, nie?",
+            "scene_high": {
+                "description": "Kamil przesunął się bliżej na kanapie. Telefon leży ekranem w dół na stoliku. Kontakt wzrokowy jest — coś powoli pęka w jego twardej postawie.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Słuchaj... nie wiedziałem, że tak to odbierasz. Myślałem, że po prostu... odpoczywam.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Być tutaj fizycznie to nie wszystko. Chcę czuć, że ci na mnie zależy — że moja obecność coś dla ciebie znaczy.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kamil milknie przez dłuższą chwilę. Pociera twarz dłonią. Mówi cicho: Przepraszam. Naprawdę.",
+                    "feedback": {
+                        "label": "Komunikat Ja — rdzeń potrzeby",
+                        "psychology": "Marta sięga do sedna swojej potrzeby (bycie ważną, widoczną) bez oskarżenia. To NVC Rosenberga w praktyce: obserwacja → uczucie → potrzeba → prośba. Kamil słyszy ból, a nie atak — co otwiera w nim przestrzeń na empatię.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC — Porozumienie bez Przemocy",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Wyrażanie potrzeb",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Oczywiście, że wiem, czego chcę! Chcę partnera, który nie udaje, że mnie nie ma!",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kamil wstaje z kanapy. Mówi zimno: Skoro tak o mnie myślisz, to może daj mi trochę spokoju.",
+                    "feedback": {
+                        "label": "Etykieta i atrybucja intencji",
+                        "psychology": "Który udaje, że mnie nie ma przypisuje Kamilowi złośliwą intencję — to błąd atrybucji. Zamiast opisywać swoje uczucia, Marta osądza charakter partnera. Kamil wchodzi w tryb obrony i odwetu.",
+                        "better_alternative_hint": "Zamiast mówić, co Kamil robi, opisz, co ty czujesz w tych chwilach."
+                    },
+                    "tags": [
+                        {
+                            "text": "Atrybucja intencji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Etykietowanie",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Aha, tak. Siedzisz ze mną. Super.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kamil patrzy na nią z irytacją. Sięga po telefon.",
+                    "feedback": {
+                        "label": "Sarkazm jako broń",
+                        "psychology": "Ironia jest często wyrazem głębokiego bólu, ale w komunikacji działa jak cios — atakuje bez wyrażania potrzeby. Kamil nie wie, co Marta naprawdę czuje, ale czuje się zaatakowany. Reakcja: odwet lub wycofanie.",
+                        "better_alternative_hint": "To, co kryje się za sarkazmem — prawdziwy ból — zasługuje na słowa."
+                    },
+                    "tags": [
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chodzi mi o jakość — chcę, żebyśmy spędzali czas tak, że oboje czujemy kontakt.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kamil kiwa głową ze zrozumieniem, ale bez przełomu. Mówi rzeczowo: No dobra, to co proponujesz?",
+                    "feedback": {
+                        "label": "Precyzja bez emocji",
+                        "psychology": "Marta precyzuje potrzebę jakości kontaktu, co jest krokiem naprzód. Jednak brakuje tu emocjonalnego odsłonięcia — Kamil reaguje jak na zadanie do rozwiązania, nie jak na partnerkę, która jest zraniona. Rozmowa działa, ale nie buduje głębokiego połączenia.",
+                        "better_alternative_hint": "Dodaj, jak się czujesz, gdy tego kontaktu brakuje — to zbuduje empatię Kamila."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Co naprawdę się dzieje",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Kamil wygląda na osobę wciśniętą w narożnik. Jego odpowiedzi są krótkie, urywane. Wyczuwa się, że coś ukrywa — ale ściana między wami jest za gruba, żeby dotrzeć do sedna.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Jestem po prostu zmęczony. Nie wiem, co chcesz, żebym ci powiedział.",
+            "scene_high": {
+                "description": "Kamil bierze głęboki oddech. Coś w nim pęka — bezpieczna przestrzeń, którą stworzyłaś, pozwala mu dotrzeć do własnego wnętrza. Zaczyna mówić wolno, jakby szukając właściwych słów.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Wiesz... jest coś w pracy. Projekt, który może mnie kosztować stanowisko. Nie mówiłem ci, bo nie chciałem cię martwić. I po prostu... uciekam w ten telefon.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Mogłeś mi powiedzieć. Dlatego jestem — żebyśmy razem przez to przechodzili.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -3,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kamil odwraca wzrok, ale widać, że walczy z emocjami. Po chwili mówi cicho: Nie chciałem być ciężarem.",
+                    "feedback": {
+                        "label": "My zamiast ja vs ty",
+                        "psychology": "Dlatego jestem — żebyśmy razem przez to przechodzili tworzy ramę partnerstwa. To komunikat transformacyjny: Marta nie rozlicza Kamila z błędu, lecz zaprasza do wspólnoty. Kamil czuje się akceptowany ze swoim lękiem — otwiera się na głębszy dialog.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat My",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Bezpieczna przestrzeń emocjonalna",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "No widzisz? A nie mówiłam. Wolałeś siedzieć w tym telefonie niż mi powiedzieć.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kamil wyraźnie się cofa — emocjonalnie i dosłownie. Jego twarz zamyka się. Żałuje, że w ogóle zaczął mówić.",
+                    "feedback": {
+                        "label": "Pułapka Mam rację",
+                        "psychology": "A nie mówiłam to triumf zamiast wsparcia — dokładnie w momencie, gdy Kamil zdecydował się otworzyć. To jeden z najbardziej bolesnych błędów: zamiast spotkać partnera w jego wrażliwości, Marta zaspokaja potrzebę racji. Kamil uczy się: otwieranie się jest niebezpieczne.",
+                        "better_alternative_hint": "Kiedy ktoś ci się otworzy — najpierw podziękuj mu za zaufanie. Zawsze."
+                    },
+                    "tags": [
+                        {
+                            "text": "Potrzeba racji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak walidacji",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Okej, to rozumiem. To co teraz? Masz jakiś plan na ten projekt?",
+                    "points": 0,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kamil patrzy na Martę z lekkim rozczarowaniem. Zaczyna mówić o projekcie, ale jego oczy są puste.",
+                    "feedback": {
+                        "label": "Przeskakiwanie do rozwiązania",
+                        "psychology": "Kamil właśnie odsłonił się emocjonalnie — ujawnił lęk i poczucie winy. Marta przeskakuje od razu do poziomu praktycznego, pomijając emocję. To typowy wzorzec rozwiązywania problemu zamiast bycia z partnerem. Kamil czuje, że jego uczucia nie są ważne — tylko problem do naprawienia.",
+                        "better_alternative_hint": "Zanim zaproponujesz rozwiązanie, uznaj uczucie: jak Kamil czuje się z tym lękiem?"
+                    },
+                    "tags": [
+                        {
+                            "text": "Przeskakiwanie do rozwiązania",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak walidacji emocji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Słyszę cię. To brzmi jak spory ciężar. Cieszę się, że mi o tym powiedziałeś.",
+                    "points": 1,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Kamil kiwa głową z wyraźną ulgą. Jego ramiona opadają. Mówi: Tak... trochę tak.",
+                    "feedback": {
+                        "label": "Aktywne słuchanie",
+                        "psychology": "Marta waliduje emocję Kamila i wyraża wdzięczność za jego otwartość — to aktywne słuchanie w czystej postaci. Kamil czuje się wysłuchany. Jednak brakuje tu jeszcze jednego kroku: zaproszenia do wspólnoty — gotowości bycia z nim w tym razem.",
+                        "better_alternative_hint": "Dodaj gotowość bycia z nim razem w tym problemie — to przejście z empatii do transformacji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Aktywne słuchanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Wspólna przestrzeń",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Rozmowa zatrzymała się w martwym punkcie. Jesteście w tym samym pokoju, ale każde z was jest gdzieś indziej. Cisza nie jest kojąca — jest pełna niedokończonych zdań.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "cold"
+            },
+            "npc_line_low": "Nie wiem, jak to naprawić. Nie wiem, czy w ogóle potrafię.",
+            "scene_high": {
+                "description": "Coś się zmieniło w pokoju. Napięcie nie zniknęło, ale zrobiło się w nim miejsce na coś innego — na szczerość. Kamil siedzi blisko ciebie, ramię w ramię, patrząc w podłogę.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Przepraszam, że zamieniłem się w zombie z telefonem. Nie zdawałem sobie sprawy, jak bardzo to raniło.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "I tak zawsze będzie. Nie zmienisz się.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kamil milknie. Wstaje bez słowa. Słyszysz, jak zamykają się drzwi do sypialni.",
+                    "feedback": {
+                        "label": "Katastrofizacja i zamknięcie",
+                        "psychology": "I tak zawsze będzie to przewidywanie przyszłości połączone z uogólnieniem — dwie klasyczne zniekształcenia poznawcze (Beck). W momencie, gdy rozmowa mogła zmierzać ku przełomowi, Marta zamknęła drzwi definitywnie. To wyraz bólu, ale komunikowany jako wyrok.",
+                        "better_alternative_hint": "Powiedz o swoim strachu przed zmianą zamiast przewidywać jej brak."
+                    },
+                    "tags": [
+                        {
+                            "text": "Katastrofizacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Uogólnianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Zamknięcie dialogu",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Zastanawiam się, co możemy zrobić razem, żeby oboje poczuli się lepiej wieczorami. Jakie masz pomysły?",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -3,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kamil prostuje się. W jego oczach pojawia się coś nowego — ulga, może nawet nadzieja. Zaczyna mówić o konkretach, ale tym razem z sercem.",
+                    "feedback": {
+                        "label": "Budowanie wspólnego my",
+                        "psychology": "Marta przenosi ciężar z oskarżenia na wspólne działanie. Pytanie o pomysły Kamila daje mu poczucie sprawczości i zaangażowania — to technika budowania wspólnej wizji (Poziom III). Oboje stają po tej samej stronie problemu, zamiast być po przeciwnych.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Budowanie wspólnej wizji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Pytania otwarte",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Może ustalmy konkretne godziny bez telefonu — na przykład od dziewiątej do dziesiątej?",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 0,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kamil kiwa głową. Mówi: Dobra, mogę spróbować. Jego ton jest szczery, ale też trochę mechaniczny.",
+                    "feedback": {
+                        "label": "Rozwiązanie bez połączenia",
+                        "psychology": "Propozycja zasad jest praktyczna i może działać. Jednak omija emocjonalną warstwę rozmowy — Kamil i Marta ustalili kontrakt, ale nie dotknęli tego, czego oboje naprawdę potrzebują. Reguły bez emocjonalnego zrozumienia często działają tylko chwilowo.",
+                        "better_alternative_hint": "Zanim ustalisz zasady, zapytaj: co oboje chcemy czuć w tych wspólnych wieczorach?"
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Doceniam, że chcesz to naprawić. Chcę w to z tobą wejść — ale najpierw potrzebuję wiedzieć: czy nadal chcesz ze mną być?",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -1,
+                        "feeling_heard": -1
+                    },
+                    "npc_reaction": "Kamil patrzy na nią z wyraźnym bólem. Mówi: No oczywiście... ale to pytanie mnie rani.",
+                    "feedback": {
+                        "label": "Ukryte ultimatum",
+                        "psychology": "Pytanie o wolę bycia razem w momencie naprawy brzmi jak warunek lub test — nawet jeśli Marta naprawdę tego potrzebuje. Podważa budowany właśnie most. Kamil zamiast skupić się na zmianie, musi teraz rozpraszać się na deklaracje intencji.",
+                        "better_alternative_hint": "Powiedz wprost o lęku przed utratą bliskości — to bardziej autentyczne niż pośrednie pytanie o chęć bycia razem."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ukryte ultimatum",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Katastrofizacja",
+                            "type": "error"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_6",
+            "title": "Nowy kontrakt",
+            "score_threshold": 5,
+            "scene_low": {
+                "description": "Siedzicie w odległości, która wydaje się większa niż metr kanapy. Kamil wygląda na wyczerpanego i zdezorientowanego. Nie wie, jak zakończyć tę rozmowę.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Więc co teraz? Co chcesz, żebym zrobił?",
+            "scene_high": {
+                "description": "Siedzicie blisko siebie. W pokoju jest cicho, ale to dobra cisza — taka, w której można oddychać. Kamil trzyma twoje dłonie w swoich. Jego oczy są zmęczone, ale obecne.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Chcę to zmienić. Naprawdę. Masz może jakiś pomysł, jak zacząć?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nie wiem. Chyba po prostu się pogódźmy i zobaczmy, co będzie.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kamil kiwa głową niepewnie. Oboje siedzą w ciszy, która nic nie rozwiązuje.",
+                    "feedback": {
+                        "label": "Pseudo-naprawa",
+                        "psychology": "Pogódźmy się bez ustalenia, co się zmienia, to powrót do punktu wyjścia. Wzorzec zostaje niezmieniony — napięcie opadnie na kilka dni, po czym sytuacja się powtórzy. Gottman nazywa to pseudo-naprawą: pojednanie bez zrozumienia.",
+                        "better_alternative_hint": "Powiedz, co konkretnie zmieni się od teraz — nawet jedna mała rzecz."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pseudo-naprawa",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Unikanie konfliktu",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Chcę, żebyś mi mówił o tym, co cię gryzie — zanim zaczniesz uciekać w ekran. I chcę być kimś, do kogo możesz przyjść.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -3,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kamil patrzy na nią przez długą chwilę. Ściska jej dłonie mocniej. Mówi cicho: Dobra. To mogę spróbować.",
+                    "feedback": {
+                        "label": "Nowy kontrakt emocjonalny",
+                        "psychology": "Marta nie tylko wyraża potrzebę — proponuje nową rolę dla obojga: Kamil może się otwierać, Marta chce być bezpieczną przestrzenią. To transformacja relacji, a nie tylko reguła. Buduje nową architekturę związku opartą na wzajemności i zaufaniu.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Budowanie wspólnej wizji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Kontrakt emocjonalny",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Zacznijmy od małych rzeczy. Godzina razem po kolacji — bez telefonów. Co ty na to?",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kamil uśmiecha się lekko — po raz pierwszy tego wieczoru. Mówi: Brzmi wykonalnie. Dobra.",
+                    "feedback": {
+                        "label": "Mały konkretny krok",
+                        "psychology": "Propozycja jest konkretna, nieinwazyjna i daje Kamilowi poczucie sprawczości. To dobry start — mała zmiana zachowania może zapoczątkować zmianę wzorca. Jednak nie adresuje emocjonalnej głębokości problemu — to fundament bez budynku.",
+                        "better_alternative_hint": "Dobrze! Możesz dodać, dlaczego ta godzina jest dla ciebie ważna — co chcesz wtedy czuć?"
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Małe kroki zmiany",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chcę, żebyś zrozumiał, że jeśli to się nie zmieni, nie wiem, czy będę w stanie tak żyć.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kamil blednie. Milczy przez chwilę. Mówi cicho: To brzmi jak groźba.",
+                    "feedback": {
+                        "label": "Ultimatum zamiast prośby",
+                        "psychology": "Groźba odejścia w momencie, gdy rozmowa zmierzała ku naprawie, niszczy bezpieczną przestrzeń i przenosi Kamila w tryb lęku. Zamiast decyzji o zmianie — walka o przeżycie związku. Może to wyraz prawdziwego bólu, ale komunikowane jako ultimatum zamienia partnera we wroga.",
+                        "better_alternative_hint": "Powiedz o swoim lęku i bólu wprost, zamiast stawiać warunki. Lęk łączy — ultimatum oddziela."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ultimatum",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Groźba",
+                            "type": "error"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "WIECZÓR, KTÓRY WSZYSTKO POGORSZYŁ",
+            "emoji": "🔴",
+            "subtitle": "Słowa raniły zamiast budować",
+            "narrative": "Kamil siedzi w sypialni, ty na kanapie. Telefon leży między wami — już nie wróg, ale świadek. Nic nie zostało powiedziane z tego, co naprawdę boli. Cisza jest zimna jak ściana i żadne z was nie wie, jak ją przebić.",
+            "diagnosis": "Rozmowa utknęła na Poziomie II — licytacji cierpienia i wzajemnych oskarżeń. Zamiast dotrzeć do sedna potrzeb, oboje okopali się w pozycjach. Błędy komunikacyjne (uogólnienia, bierna agresja, ataki) blokowały Kamila i nie pozwoliły na prawdziwy kontakt.",
+            "post_game": {
+                "communication_style_summary": "Dominowała bierna agresja i agresja — ból był prawdziwy, ale wyrażany w sposób, który zamykał zamiast otwierać.",
+                "strongest_moment": "Nawet w trudnych momentach czułaś, że coś jest nie tak — to wrażliwość, z której można budować.",
+                "growth_tip": "Zanim powiesz coś złośliwego lub wybuchniesz, zrób pauzę i zadaj sobie pytanie: czego naprawdę potrzebuję w tej chwili? Następnie wymień tę potrzebę wprost — bez owijania w bawełnę i bez ostrza.",
+                "replay_prompt": "A gdybyś zaczęła od tęsknoty zamiast od pretensji? Spróbuj ponownie — tym razem zaproś zamiast atakować."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 7
+            },
+            "color": "yellow",
+            "title": "KRUCHY ROZEJM",
+            "emoji": "🟡",
+            "subtitle": "Coś zostało powiedziane, ale nie wszystko",
+            "narrative": "Ustaliliście jakieś zasady. Kamil obiecał próbować. Pójdziecie spać trochę mniej naładowani niż godzinę temu. Ale gdzieś głębiej, w tym co najważniejsze, wciąż panuje cisza.",
+            "diagnosis": "Rozmowa dotknęła problemu, ale pozostała głównie na Poziomie I — transakcji i reguł. Brakowało emocjonalnego odsłonięcia, które pozwoliłoby Kamilowi naprawdę zrozumieć, co czuje Marta — i Marcie zrozumieć, co kryje się za jego ucieczką w ekran.",
+            "post_game": {
+                "communication_style_summary": "Dominowała asertywność i komunikacja transakcyjna — skuteczna, ale bez emocjonalnej głębi.",
+                "strongest_moment": "Kiedy postawiłaś granicę bez atakowania — to był moment dojrzałości.",
+                "growth_tip": "Zasady działają, gdy za nimi stoją emocje. Następnym razem zanim zaproponujesz kontrakt, powiedz, jak się czujesz, gdy tego kontaktu brakuje. Emocja otwiera, zasada reguluje — potrzebujesz obojga.",
+                "replay_prompt": "Co by się stało, gdybyś powiedziała o swojej tęsknocie zamiast od razu przechodzić do rozwiązań? Zagraj jeszcze raz i sprawdź."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 8,
+                "max": 9
+            },
+            "color": "green",
+            "title": "WIECZÓR, KTÓRY ZBLIŻYŁ",
+            "emoji": "🟢",
+            "subtitle": "Dotarłaś tam, gdzie liczy się naprawdę",
+            "narrative": "Kamil siedzi obok ciebie, nie obok telefonu. Macie za sobą trudną rozmowę — ale też prawdziwą. Po raz pierwszy od dawna czujesz, że jesteś naprawdę widziana. Jutro będzie inaczej.",
+            "diagnosis": "Rozmowa dotarła do Poziomu III — transformacji. Marta wyrażała potrzeby przez komunikaty Ja, walidowała emocje Kamila i stworzyła bezpieczną przestrzeń, w której mógł się otworzyć. Oboje zbudowali nowe rozumienie tego, czego potrzebują.",
+            "post_game": {
+                "communication_style_summary": "Dominowała empatia i transformacja — komunikacja Marty budowała mosty zamiast murów.",
+                "strongest_moment": "Gdy zamiast atakować powiedziałaś o swojej tęsknocie — to zmieniło wszystko. Odwaga emocjonalna to najsilniejszy instrument w dialogu.",
+                "growth_tip": "Robisz to dobrze. Teraz przenieś to do codzienności — nie czekaj na kryzysy. Krótkie Tęskniłam za tobą dziś może zdziałać więcej niż godzinna rozmowa po miesiącu dystansu.",
+                "replay_prompt": "Idealnie? Prawie. Zagraj jeszcze raz i spróbuj trafić w każdy moment z pełną empatią — jest tu jeszcze jeden poziom głębi."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 10,
+                "max": 12
+            },
+            "color": "blue",
+            "title": "ROZMOWA, KTÓRA ZMIENIŁA ZWIĄZEK",
+            "emoji": "🔵",
+            "subtitle": "Rzadka sztuka — bycia w pełni razem",
+            "narrative": "Siedzicie ramię w ramię. Telefon jest wyłączony. Kamil powiedział ci o swoim strachu, ty powiedziałaś o swojej tęsknocie. Zbudowaliście dziś wieczór coś nowego — nową umowę i nowe zaufanie. Jutro nie będzie łatwe, ale będziecie je przeżywać razem.",
+            "diagnosis": "Perfekcyjna realizacja komunikacji transformacyjnej. Marta przez całą rozmowę budowała bezpieczną przestrzeń, wyrażała potrzeby bez ataku, walidowała emocje Kamila i konsekwentnie proponowała ramę my zamiast ja vs ty. Kamil mógł się otworzyć, bo czuł się bezpiecznie.",
+            "post_game": {
+                "communication_style_summary": "Komunikacja transformacyjna na najwyższym poziomie — empatia i budowanie wspólnej wizji jako dominujące style przez całą rozmowę.",
+                "strongest_moment": "Chcę być kimś, do kogo możesz przyjść — ten jeden moment wyraził wszystko, czym może być partnerstwo.",
+                "growth_tip": "To, co zrobiłaś tej nocy, jest rzadkie i cenne. Możesz to stosować codziennie: zanim zareagujesz, zatrzymaj się i zapytaj — czego naprawdę potrzebuję? I czego naprawdę potrzebuje osoba naprzeciwko mnie?",
+                "replay_prompt": "Podziel się tym scenariuszem z kimś bliskim. Niekiedy największą zmianą jest pomoc innym w dostrzeżeniu wzorców, które sami przeżywamy."
+            }
+        }
+    ]
+}

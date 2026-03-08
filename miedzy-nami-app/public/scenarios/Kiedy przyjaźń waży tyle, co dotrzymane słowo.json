@@ -1,0 +1,877 @@
+{
+    "scenario_id": "last_minute_cancel",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Ostatnia chwila",
+        "subtitle": "Kiedy przyjaźń waży tyle, co dotrzymane słowo",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 8,
+        "interaction_count": 5
+    },
+    "tags": {
+        "relationship_type": "friends",
+        "theme": [
+            "trust",
+            "expectations",
+            "respect"
+        ],
+        "emotional_intensity": "moderate",
+        "age_rating": "all",
+        "session_type": "mini_story",
+        "player_role_gender": "female",
+        "difficulty": "intermediate"
+    },
+    "characters": {
+        "player": {
+            "name": "Kasia",
+            "role_label": "Przyjaciółka · Gracz",
+            "age_range": "26-32",
+            "context": "Kasia czekała na to spotkanie od dwóch tygodni. Odwołała inne plany, żeby być wolna. Dwie godziny przed umówioną kawą dostaje wiadomość od Marty. Znowu.",
+            "hidden_need": "recognition",
+            "hidden_need_text": "Kasia potrzebuje wiedzieć, że jej czas i uczucia są ważne — że nie jest opcją rezerwową.",
+            "traits": [
+                {
+                    "text": "Lojalna",
+                    "type": "positive"
+                },
+                {
+                    "text": "Wrażliwa na odrzucenie",
+                    "type": "negative"
+                },
+                {
+                    "text": "Trudno jej mówić wprost o bólu",
+                    "type": "negative"
+                },
+                {
+                    "text": "Bardzo zaangażowana w przyjaźń",
+                    "type": "positive"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 5,
+                "patience": 6,
+                "defensiveness": 4,
+                "empathy": 8,
+                "need_for_control": 4,
+                "shame_sensitivity": 7,
+                "directness": 4,
+                "repair_ability": 7
+            }
+        },
+        "npc": {
+            "name": "Marta",
+            "role_label": "Przyjaciółka · NPC",
+            "age_range": "27-33",
+            "context": "Marta ma ostatnio bardzo dużo na głowie — praca, sprawy rodzinne, zmęczenie. Odwołuje spotkanie nie ze złej woli, ale nie zdaje sobie sprawy, jak bardzo Kasia to przeżywa.",
+            "hidden_need": "autonomy",
+            "hidden_need_text": "Marta potrzebuje przestrzeni i zrozumienia dla swoich ograniczeń — boi się, że zawodzi wszystkich wokół.",
+            "traits": [
+                {
+                    "text": "Przeciążona obowiązkami",
+                    "type": "negative"
+                },
+                {
+                    "text": "Dobra intencjonalnie",
+                    "type": "positive"
+                },
+                {
+                    "text": "Defensywna gdy czuje się oskarżana",
+                    "type": "negative"
+                },
+                {
+                    "text": "Otwarta gdy czuje się bezpieczna",
+                    "type": "positive"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 4,
+                "patience": 5,
+                "defensiveness": 7,
+                "empathy": 6,
+                "need_for_control": 3,
+                "shame_sensitivity": 8,
+                "directness": 5,
+                "repair_ability": 6
+            },
+            "npc_reaction_logic": "Marta reaguje obronnie na oskarżenia i generalizacje — zamyka się i kontruje. Na empatię i komunikaty Ja odpowiada otwarciem i szczerością. Kiedy czuje się bezpiecznie, sama przyznaje do błędów."
+        }
+    },
+    "metrics_start": {
+        "tension": 40,
+        "trust": 60,
+        "openness": 50,
+        "feeling_heard": 50
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Wiadomość, która zatrzymuje dzień",
+            "scene": {
+                "description": "Jesteś już gotowa. Masz na sobie ulubioną bluzkę, klucze i torebka leżą przy drzwiach. Do wyjścia zostały dwie godziny. Telefon wibruje.",
+                "location": "living_room",
+                "time_of_day": "afternoon",
+                "visual_mood": "neutral"
+            },
+            "npc_line": "Hej, tak mi przykro, ale chyba nie dam rady dziś przyjść. Coś mi wypadło w ostatniej chwili. Możemy się umówić innym razem?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Poważnie?! To już trzeci raz w tym roku! Zawsze znajdziesz jakiś powód!",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Przepraszam, ale nie muszę tego słuchać. Miałam po prostu ciężki dzień.",
+                    "feedback": {
+                        "label": "Uogólnienie i atak",
+                        "psychology": "Słowa zawsze i trzeci raz w tym roku to klasyczne uogólnienie — błąd poznawczy, który natychmiast uruchamia mechanizm obronny rozmówcy. Według modelu Gottmana generalizacje są jednym z Czterech Jeźdźców Apokalipsy relacji. Marta zamknie się i zacznie bronić, zamiast usłyszeć Twój ból.",
+                        "better_alternative_hint": "Zamiast liczyć winy Marty, spróbuj powiedzieć, co czujesz w tej chwili — bez oceniania."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uogólnianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Atak personalny",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Ok, spoko. Nie ma żadnego problemu.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Super, dzięki za wyrozumiałość! To może w przyszłym tygodniu?",
+                    "feedback": {
+                        "label": "Udawanie, że wszystko gra",
+                        "psychology": "Pasywna odpowiedź ukrywa prawdziwe emocje i wysyła fałszywy sygnał — że wszystko jest w porządku. To tłumienie uczuć, które buduje ukryty żal. W analizie transakcyjnej Berne'a to zachowanie Dziecka Ugrzeczniającego: dajemy innym to, czego chcą, kosztem własnych potrzeb.",
+                        "better_alternative_hint": "Możesz być uprzejma i jednocześnie szczera. Nie musisz udawać, że nie boli."
+                    },
+                    "tags": [
+                        {
+                            "text": "Tłumienie emocji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Dziecko Ugrzeczniające",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Jestem rozczarowana. Czekałam na to spotkanie od tygodni i odwołałam przez to inne plany.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Masz rację, przepraszam. Nie pomyślałam o tym. Wiem, że to niedobrze z mojej strony.",
+                    "feedback": {
+                        "label": "Asertywność bez empatii",
+                        "psychology": "Komunikat jest jasny i uczciwy — to duży krok naprzód. Mówisz o faktach i swoim rozczarowaniu. Jednak brakuje tu otwarcia na Martę: nie wiesz jeszcze, co się po jej stronie wydarzyło. Asertywność najlepiej działa w parze z ciekawością — inaczej rozmówca może poczuć się oceniony, nie wysłuchany.",
+                        "better_alternative_hint": "Spróbuj dodać pytanie: co się stało u Marty? To może pogłębić rozmowę i otworzyć prawdziwy dialog."
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Żal mi, że tak wyszło. Czekałam na ten dzień i trudno mi to teraz przetrawić. Czy u ciebie wszystko w porządku?",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Och, Kasiu... przepraszam. Tak naprawdę mam teraz straszny tydzień. Nie chciałam cię zawieść.",
+                    "feedback": {
+                        "label": "Empatia i otwarte pytanie",
+                        "psychology": "To wzorcowy komunikat Ja według NVC Rosenberga: wyrażasz uczucie bez oskarżenia, a pytaniem o Martę dajesz jej przestrzeń. Zamiast eskalować, tworzysz most. Marta nie musi się bronić — może się otworzyć i powiedzieć, co naprawdę się dzieje.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC Rosenberga",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Aktywne słuchanie",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Tłumaczenia i mury",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Marta wysyła kolejną wiadomość. Czujesz, jak jej słowa spływają po tobie zimno. Ta rozmowa idzie w złym kierunku i obydwie to wyczuwacie.",
+                "location": "living_room",
+                "time_of_day": "afternoon",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Naprawdę, nie dramatyzuj. Wypadła mi ważna sprawa i nie mogłam tego przewidzieć. Nie możesz mi mieć za złe.",
+            "scene_high": {
+                "description": "Telefon dzwoni — tym razem Marta oddzwania głosowo. Słyszysz w jej tonie coś innego niż zwykle, jakby naprawdę chciała porozmawiać.",
+                "location": "living_room",
+                "time_of_day": "afternoon",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Chciałam zadzwonić, bo poczułam, że należy ci się więcej niż wiadomość. Mam teraz naprawdę ciężki czas w pracy i dałam się wciągnąć. Przepraszam.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Ważna sprawa? Co mogło być ważniejsze niż nasze spotkanie?",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Nie zamierzam tłumaczyć się z każdej minuty swojego życia. Jeśli tak to widzisz, to nie wiem, o czym rozmawiamy.",
+                    "feedback": {
+                        "label": "Rywalizacja o ważność",
+                        "psychology": "To pytanie retoryczne, które w istocie jest atakiem — kwestionujesz hierarchię wartości Marty. Rozmowa ześlizgnęła się na Poziom II: licytujemy się, czyje potrzeby są ważniejsze. Marta będzie się bronić, zamiast naprawdę słuchać.",
+                        "better_alternative_hint": "Zamiast pytać, co było ważniejsze, zapytaj, jak ona teraz się czuje i co się naprawdę wydarzyło."
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Rywalizacja o rację",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Jasne, rozumiem. Zawsze coś wypada akurat kiedy mamy się zobaczyć.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Co to ma znaczyć? Sugerujesz, że robię to celowo?",
+                    "feedback": {
+                        "label": "Sarkastyczne poddanie",
+                        "psychology": "Słowa brzmią jak zgoda, ale ton sugeruje oskarżenie. To bierna agresja — ukryty atak za maską spokoju. Kwadrat von Thuna pokazuje, że komunikujemy równocześnie na czterech poziomach; tu poziom relacyjny krzyczy to, czego tekst nie mówi wprost. Marta natychmiast to wyczuje.",
+                        "better_alternative_hint": "Jeśli czujesz wzorzec w zachowaniu Marty, powiedz o nim wprost zamiast sugerować go ironią."
+                    },
+                    "tags": [
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Ukryty atak",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Dobrze, rozumiem, że coś wypadło. Kiedy możemy się przełożyć?",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 0,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Może w weekend? Sprawdzę kalendarz i dam ci znać.",
+                    "feedback": {
+                        "label": "Przejście do logistyki",
+                        "psychology": "Unikasz konfliktu i skupiasz się na rozwiązaniu — to chroni relację przed eskalacją. To Poziom I rozmowy — transakcja. Problem w tym, że poczucie bycia opcją rezerwową leży nieporuszone. Rozmowa kończy się technicznie, ale emocjonalnie nic się nie zamyka.",
+                        "better_alternative_hint": "Ustalenie terminu to dobry krok, ale warto wcześniej powiedzieć Marcie, jak się czujesz — żeby termin był mostem, nie plastrem."
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Unikanie emocji",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Słyszę, że coś ważnego się wydarzyło. Chcę ci powiedzieć, że czuję się trochę jak opcja rezerwowa i nie wiem, jak z tym być.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Opcja rezerwowa... To mnie boli. Naprawdę tak to odbierasz? Nie chciałam, żebyś tak się czuła.",
+                    "feedback": {
+                        "label": "Walidacja i komunikat Ja",
+                        "psychology": "Robisz dwie rzeczy naraz: uznajesz sytuację Marty i mówisz o swoim odczuciu bez oskarżenia. To serce NVC Rosenberga — obserwacja, uczucie, potrzeba. Metafora opcja rezerwowa jest konkretna i trafia w sedno bez ataku. Marta może teraz naprawdę usłyszeć.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC Rosenberga",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Pod powierzchnią słów",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Cisza po drugiej stronie. Marta odzywa się ostrożnie, jakby stawiała słowa na polu minowym. Atmosfera rozmowy jest ciężka.",
+                "location": "living_room",
+                "time_of_day": "afternoon",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Nie wiem, czego ode mnie chcesz. Przeprosiłam przecież. Nie mogę cofnąć czasu.",
+            "scene_high": {
+                "description": "Marta milczy przez chwilę. Kiedy znowu mówi, jej głos jest cieplejszy — jakby mur powoli opadał i coś prawdziwszego zaczęło wychodzić.",
+                "location": "living_room",
+                "time_of_day": "afternoon",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Nie chciałam, żebyś tak się czuła. Ostatnio mam naprawdę bardzo ciężki czas i chyba... zaniedbałam naszą przyjaźń.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Właśnie o to chodzi! Przeprosiny nic nie zmieniają, jeśli to samo się ciągle powtarza!",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Skoro tak myślisz, to może w ogóle nie warto się dalej spotykać.",
+                    "feedback": {
+                        "label": "Eskalacja zamiast dialogu",
+                        "psychology": "Zdanie jeśli to samo się ciągle powtarza jest ukrytą groźbą i kolejną generalizacją. Zamiast rozmawiać o dzisiejszej sytuacji, cofasz się do wzorców z przeszłości — to przeskok w czasie typowy dla rozmów zmierzających ku zerwaniu. Marta nie ma jak się obronić bez wycofania.",
+                        "better_alternative_hint": "Zostań w teraźniejszości. Mów o tym, czego potrzebujesz teraz, nie o całej historii przyjaźni."
+                    },
+                    "tags": [
+                        {
+                            "text": "Eskalacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Katastrofizacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Uogólnianie",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "...",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Okej... to co teraz? Milczymy?",
+                    "feedback": {
+                        "label": "Zamknięcie się w sobie",
+                        "psychology": "Milczenie jako reakcja na konflikt to ucieczka, która zostawia drugą osobę w próżni. W systemie Gottmana to stonewalling — jeden z najtrudniejszych wzorców do przełamania. Marta nie wie, co myślisz, i zaczyna interpretować ciszę po swojemu, zwykle na gorsze.",
+                        "better_alternative_hint": "Jeśli potrzebujesz chwili, powiedz to wprost: Potrzebuję minuty, żeby zebrać myśli."
+                    },
+                    "tags": [
+                        {
+                            "text": "Stonewalling",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Chcę, żebyśmy mogły normalnie porozmawiać. Bez kłótni, bez wzajemnych pretensji.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Ja też chcę. Po prostu ostatnio jest mi ciężko.",
+                    "feedback": {
+                        "label": "Prośba o spokojny dialog",
+                        "psychology": "Wyrażasz potrzebę konstruktywnego kontaktu — to ruch w kierunku Poziomu III rozmowy. Brakuje jednak pogłębienia: co dokładnie sprawia, że rozmowa jest trudna? Pytanie o Martę mogłoby otworzyć drzwi, które są tu wciąż tylko uchylone.",
+                        "better_alternative_hint": "Po wyrażeniu potrzeby zapytaj, jak Marta naprawdę się czuje. To przesunie was z asertywności w stronę transformacji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Słyszę, że masz teraz ciężki czas. Martwię się o ciebie. I martwię się też o nas.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Kasiu... tak mi przykro. Chyba sama przed sobą nie przyznawałam, jak bardzo się zapodziałam w tym wszystkim.",
+                    "feedback": {
+                        "label": "Troska o człowieka i relację",
+                        "psychology": "To klasyczny ruch transformacyjny w dialogu: przechodzisz od konfliktu do troski. Zamiast my kontra siebie, tworzysz przestrzeń my razem wobec problemu. Marta po raz pierwszy czuje się widziana, a nie oskarżana — i to otwiera jej możliwość szczerego przyznania się do zaniedbania.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Aktywne słuchanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Prawdziwe pytanie",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Rozmowa utknęła w miejscu. Marta jest defensywna, ty czujesz się nieusłyszana. Coś w powietrzu mówi, że to może być ostatnia szansa na powiedzenie czegoś ważnego.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Zawsze musisz robić z igły widły. Bywa, że plany się zmieniają — to jest życie.",
+            "scene_high": {
+                "description": "Tempo rozmowy zwolniło. Obydwie mówicie z większą uwagą, jakbyście w końcu dotarły do sedna. Marta jest skupiona i otwarta.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Chyba naprawdę zaniedbałam naszą przyjaźń. I nie widziałam tego, bo byłam całkowicie pochłonięta swoimi problemami. Co mogę zrobić, żebyś poczuła, że na tobie mi zależy?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Robię z igły widły?! W takim razie może lepiej skończymy tę rozmowę.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Jak chcesz.",
+                    "feedback": {
+                        "label": "Groźba zakończenia dialogu",
+                        "psychology": "Groźba zerwania rozmowy to eskalacja, która zamknęła wszystkie drzwi. Zamiast powiedzieć, co cię boli, użyłaś ultimatum — zachowanie typowe dla Dziecka Zbuntowanego w analizie transakcyjnej Berne'a. Dialog nie ma teraz jak się odbudować bez gestu jednej ze stron.",
+                        "better_alternative_hint": "Jeśli potrzebujesz przerwy — weź ją. Ale wróć do rozmowy. Ucieczka nie rozwiązuje problemu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Groźba wycofania",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Dziecko Zbuntowane",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Eskalacja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Masz rację, przepraszam. Może faktycznie przesadziłam z tym wszystkim.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "No właśnie. Spoko, zapomnijmy o tym.",
+                    "feedback": {
+                        "label": "Kapitulacja z fałszywej winy",
+                        "psychology": "Przepraszasz za coś, na co nie zasługujesz — bo jedno zdanie Marty miało cię zawstydzić. To reakcja Dziecka Ugrzeczniającego: wolisz oddać rację niż znosić napięcie. Problem pozostaje nierozwiązany, a obydwie wychodzicie z tej rozmowy z niczym.",
+                        "better_alternative_hint": "Nie musisz przepraszać za swoje uczucia. Możesz powiedzieć wprost, że nie zgadzasz się z oceną Marty."
+                    },
+                    "tags": [
+                        {
+                            "text": "Fałszywa wina",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Dziecko Ugrzeczniające",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie przesadzam. Zależy mi na naszej przyjaźni i właśnie dlatego to mówię. To naprawdę boli.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Okej. Słyszę cię. Nie wiedziałam, że aż tak.",
+                    "feedback": {
+                        "label": "Nieustępliwa asertywność",
+                        "psychology": "Stoisz przy swoich uczuciach pod presją — to ważna umiejętność. Komunikat jest jasny i osadzony w trosce o relację. Brakuje jednak zaproszenia Marty do wspólnego rozwiązania: rozmawiasz o problemie, ale most nie jest jeszcze zbudowany.",
+                        "better_alternative_hint": "Po wyrażeniu bólu zapytaj Martę, jak ona widzi tę sytuację. To przeniesie was w stronę Poziomu III."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Marto, zależy mi na tobie i na naszej przyjaźni. Chcę, żebyśmy obie czuły się w niej dobrze. Co możemy razem zrobić?",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -3,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kasiu... to jest piękne, co powiedziałaś. Naprawdę. Chcę to naprawić.",
+                    "feedback": {
+                        "label": "Zaproszenie do wspólnego rozwiązania",
+                        "psychology": "To wzorcowy ruch na Poziom III rozmowy: zamiast my kontra siebie, tworzysz przestrzeń my razem wobec problemu. Pytanie co możemy razem zrobić jest konkretnym zaproszeniem do współodpowiedzialności — Marta nie musi się bronić, może się zaangażować.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Wspólne rozwiązywanie",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Co teraz?",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Rozmowa dobiegła końca bez prawdziwego rozwiązania. W słuchawce zapada cisza. Wiesz, że coś zostało powiedziane — i wiesz też, że czegoś ważnego nie powiedziano.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Nie wiem, co powiedzieć. Chyba obydwie potrzebujemy teraz ochłonąć.",
+            "scene_high": {
+                "description": "Atmosfera jest spokojniejsza niż na początku. Obydwie zatrzymałyście się w tym samym miejscu — chcecie, żeby ta przyjaźń przetrwała.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Powiedz mi, co mogę zrobić. Nie chcę, żebyś czuła się tak jak dzisiaj. Chcę być lepszą przyjaciółką.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Zapomnijmy o tym. Nie ma sensu dalej rozmawiać.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Okej. Jak chcesz.",
+                    "feedback": {
+                        "label": "Zamknięcie bez rozwiązania",
+                        "psychology": "To ostateczna forma pasywnej kapitulacji: temat zostaje zamknięty, problem zamieciony pod dywan. Żal i poczucie bycia opcją rezerwową nie znika — odkłada się na przyszłość. To wzorzec, który prowadzi do stopniowego oddalania się bez żadnego dramatycznego momentu.",
+                        "better_alternative_hint": "Nawet jeśli potrzebujesz przerwy, możesz powiedzieć Marcie, kiedy chcesz wrócić do rozmowy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Tłumienie emocji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nie wiem, czy to da się naprawić. Może naprawdę potrzebujemy przerwy od siebie.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Rozumiem. Może masz rację.",
+                    "feedback": {
+                        "label": "Ultimatum jako kara",
+                        "psychology": "Sugestia przerwy w tym tonie brzmi jak kara, nie jak realny plan dbania o siebie. To emotional withdrawal — wycofanie emocjonalne jako forma nacisku. Zamiast budować wyjście, zamykasz je, zostawiając Martę z poczuciem winy i bez drogi naprzód.",
+                        "better_alternative_hint": "Przerwa może być zdrowa, ale powinna być omawiana spokojnie — nie rzucana jako groźba na zakończenie trudnej rozmowy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Groźba wycofania",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Eskalacja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Umów się ze mną na konkretny termin i dotrzymaj słowa. To by mi teraz naprawdę pomogło.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "To mogę obiecać. Sprawdzam teraz — sobota, godzina dwunasta. Możliwe?",
+                    "feedback": {
+                        "label": "Konkretna prośba",
+                        "psychology": "To dobry ruch: zamiast mglistych obietnic oczekujesz konkretnego działania. To asertywna prośba zakorzeniona w potrzebie niezawodności. Brakuje jeszcze ciepłego zamknięcia emocjonalnego — poczucia, że wychodzicie z tej rozmowy bliżej, nie tylko z terminem w kalendarzu.",
+                        "better_alternative_hint": "Po ustaleniu terminu dodaj jedno zdanie, które wyraża, że zależy ci na Marcie jako osobie — nie tylko na spotkaniu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Możemy zacząć od małych kroków — może regularne wiadomości albo krótkie rozmowy w tygodniu? Chcę, żebyś wiedziała, że zależy mi na nas.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -3,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Tak. Tego chcę. Dziękuję, że nie dałaś za wygraną. To dużo dla mnie znaczy.",
+                    "feedback": {
+                        "label": "Budowanie mostu na przyszłość",
+                        "psychology": "Zamiast oczekiwać perfekcyjnej zmiany natychmiast, proponujesz realistyczną ścieżkę. Małe kroki to dowód dojrzałości emocjonalnej — wiesz, że relacje odbudowuje się powoli i z konsekwencją. Finałowe zdanie zamyka rozmowę z ciepłem i nadzieją, nie z żalem.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Wspólne rozwiązywanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Repair attempt",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 2
+            },
+            "color": "red",
+            "title": "NIEZAŁATWIONA SPRAWA",
+            "emoji": "🔴",
+            "subtitle": "Rozmowa, która pogłębiła ranę",
+            "narrative": "Odkładasz telefon. Marta pewnie też. Nic się nie zmieniło — a może nawet coś się zepsuło. Żal leży nienaruszony jak kamień pod wodą. Widujecie się coraz rzadziej i obydwie wiecie dlaczego, choć żadna tego nie mówi.",
+            "diagnosis": "W tej ścieżce dominowały ataki, generalizacje i bierne wycofanie. Marta nie miała szans usłyszeć Twojego bólu, bo za każdym razem musiała się bronić. Rozmowa utknęła na Poziomie II — licytacji racji i cierpienia. Bez komunikatu Ja trudno o prawdziwy kontakt.",
+            "post_game": {
+                "communication_style_summary": "Twoja komunikacja oscylowała między agresją a biernym wycofaniem. Obie skrajności chronią przed bólem, ale uniemożliwiają dialog.",
+                "strongest_moment": "Sam fakt, że podjęłaś rozmowę zamiast milczeć, to ważny krok — nawet jeśli tym razem nie wyszło.",
+                "growth_tip": "Zacznij od jednej zmiany: kiedy coś boli, powiedz Czuję się... zamiast Ty zawsze... Samo to przenosi rozmowę z pola walki na pole kontaktu.",
+                "replay_prompt": "Zagraj jeszcze raz i spróbuj za każdym razem pytać Martę, jak ona się czuje. Zobaczysz, jak bardzo zmienia to kierunek całej rozmowy."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 3,
+                "max": 5
+            },
+            "color": "yellow",
+            "title": "NIEZAKOŃCZONA SPRAWA",
+            "emoji": "🟡",
+            "subtitle": "Coś zostało powiedziane — nie wszystko",
+            "narrative": "Rozmowa się skończyła, ale czujesz, że coś wisiało w powietrzu i nie padło. Marta przeprosiła. Ty powiedziałaś, co czujesz. Umówiłyście się na inny termin. To już coś. Zobaczymy.",
+            "diagnosis": "W tej ścieżce pojawiły się elementy asertywności i pojedyncze błędy komunikacyjne. Rozmowa poruszała się między Poziomem I a II — chwilami zbliżała się do prawdziwego kontaktu, ale nie przekroczyła progu Poziomu III. Potrzeba bycia słyszaną wybrzmiewała, choć nie w pełni.",
+            "post_game": {
+                "communication_style_summary": "Radziłaś sobie asertywnie, ale czasem skupiałaś się bardziej na własnym bólu niż na tym, co przeżywa Marta. Dialog potrzebuje dwóch stron.",
+                "strongest_moment": "Moment, kiedy powiedziałaś wprost, że czujesz się jak opcja rezerwowa — to wymagało odwagi i przyniosło prawdziwy efekt.",
+                "growth_tip": "Spróbuj po wyrażeniu swoich emocji zadać pytanie o perspektywę drugiej osoby. Jeden taki krok przenosi rozmowę z asertywności w empatię.",
+                "replay_prompt": "Zagraj jeszcze raz i zwróć uwagę na momenty, kiedy Marta mówi o swoim trudnym czasie. Co się dzieje, kiedy zatrzymujesz się i pytasz o nią?"
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 6,
+                "max": 8
+            },
+            "color": "green",
+            "title": "POMOST ZBUDOWANY",
+            "emoji": "🟢",
+            "subtitle": "Rozmowa, która zbliżyła",
+            "narrative": "Odkładasz telefon, ale tym razem jest inaczej. Marta powiedziała coś, czego dawno nie mówiła. Ty też. Czujesz, że coś ważnego się odmieniło — nie wszystko, ale coś. Może uda się to utrzymać.",
+            "diagnosis": "W tej ścieżce komunikacja wielokrotnie sięgała Poziomu III — transformacyjnego dialogu. Komunikaty Ja, walidacja emocji Marty i zaproszenie do wspólnego rozwiązania stworzyły przestrzeń, w której obie mogły się naprawdę usłyszeć. To nie koniec problemu, ale dobry początek naprawy.",
+            "post_game": {
+                "communication_style_summary": "Twoja komunikacja była empatyczna i transformacyjna — rzadkie połączenie, które buduje trwałe relacje.",
+                "strongest_moment": "Kiedy powiedziałaś Martwię się o ciebie i martwię się też o nas zamiast skupiać się wyłącznie na swoim bólu — to był przełomowy moment tej rozmowy.",
+                "growth_tip": "Kontynuuj to, co robiłaś. Ćwicz regularne rozmowy z bliskimi, w których pytasz jak się czują, zanim zaczniesz mówić o sobie.",
+                "replay_prompt": "Zagraj jeszcze raz, wybierając za każdym razem odpowiedź, której normalnie byś unikała. Co się zmienia?"
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 9,
+                "max": 10
+            },
+            "color": "blue",
+            "title": "GŁĘBOKI KONTAKT",
+            "emoji": "🔵",
+            "subtitle": "Przyjaźń, która wyszła z kryzysu silniejsza",
+            "narrative": "Po rozmowie siedzisz chwilę w ciszy — ale to dobra cisza. Marta i Ty dotknęłyście czegoś prawdziwego. Powiedziałyście rzeczy, których dawno nie mówiłyście sobie na głos. Ten dzień, który zaczął się od rozczarowania, skończył się czymś niespodziewanym: większą bliskością.",
+            "diagnosis": "Przez całą rozmowę utrzymywałaś komunikację na najwyższym poziomie: łączyłaś empatię z asertywnością, walidowałaś emocje Marty nie rezygnując z własnych potrzeb, i zamieniałaś każdy moment konfliktu w zaproszenie do współpracy. To mistrzowski poziom komunikacji — rzadki i bezcenny.",
+            "post_game": {
+                "communication_style_summary": "Przez całą rozmowę łączyłaś empatię z odwagą — byłaś szczera bez atakowania, troskliwa bez rezygnowania z siebie.",
+                "strongest_moment": "Propozycja małych kroków na zakończenie rozmowy: konkretna, realistyczna, pełna ciepła. Pokazałaś Marcie, że przyjaźń buduje się powoli i z konsekwencją.",
+                "growth_tip": "Przenieś to, co zrobiłaś tutaj, do prawdziwego życia. Kiedy następnym razem ktoś bliski cię zawiedzie, zatrzymaj się na chwilę i spytaj: co mu się teraz dzieje?",
+                "replay_prompt": "Czy jest ktoś w Twoim życiu, z kim taka rozmowa jest potrzebna? To może być dobry moment, żeby ją przeprowadzić."
+            }
+        }
+    ]
+}

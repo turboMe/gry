@@ -3,12 +3,17 @@
 import { useEffect, type ReactNode } from 'react';
 import { onAuthChange } from '@/lib/firebase/auth';
 import { useAuthStore } from '@/store/game-store';
+import { usePWA } from '@/hooks/usePWA';
 
 /**
  * AuthProvider — listens to Firebase auth state and syncs to Zustand.
+ * Also registers Service Worker via usePWA.
  */
 export function AuthProvider({ children }: { children: ReactNode }) {
   const setUser = useAuthStore((s) => s.setUser);
+
+  // Register SW + capture A2HS prompt
+  usePWA();
 
   useEffect(() => {
     const unsubscribe = onAuthChange((user) => {
