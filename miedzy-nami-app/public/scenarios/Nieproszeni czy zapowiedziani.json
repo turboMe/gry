@@ -1,0 +1,823 @@
+{
+"scenario_id": "roommates_guests_boundaries",
+"version": "1.0.0",
+"language": "pl",
+"metadata": {
+"title": "Nieproszeni czy zapowiedziani",
+"subtitle": "Codzienny spór o gości, granice i oddech we wspólnym mieszkaniu",
+"author": "NARRATOR",
+"created_at": "2026-03-08",
+"estimated_duration_minutes": 8,
+"interaction_count": 5
+},
+"tags": {
+"relationship_type": "roommates",
+"theme": [
+"boundaries",
+"respect",
+"conflict_resolution"
+],
+"emotional_intensity": "moderate",
+"age_rating": "all",
+"session_type": "training",
+"player_role_gender": "neutral",
+"difficulty": "intermediate"
+},
+"characters": {
+"player": {
+"name": "Alex",
+"role_label": "Współlokator · Gracz",
+"age_range": "24-30",
+"context": "Wracasz po długim dniu pracy i cenisz przewidywalność we wspólnej przestrzeni. Niezapowiedziani goście sprawiają, że trudno ci odpocząć i poczuć się u siebie.",
+"hidden_need": "safety",
+"hidden_need_text": "Potrzebujesz spokoju, przewidywalności i poczucia wpływu na to, co dzieje się w mieszkaniu.",
+"traits": [
+{
+"text": "Odpowiedzialny",
+"type": "positive"
+},
+{
+"text": "Wrażliwy na chaos",
+"type": "neutral"
+},
+{
+"text": "Łatwo się spina przy naruszaniu granic",
+"type": "negative"
+}
+],
+"profile": {
+"impulsiveness": 5,
+"patience": 6,
+"defensiveness": 6,
+"empathy": 7,
+"need_for_control": 7,
+"shame_sensitivity": 4,
+"directness": 7,
+"repair_ability": 6
+}
+},
+"npc": {
+"name": "Kuba",
+"role_label": "Współlokator · NPC",
+"age_range": "24-29",
+"context": "Lubisz spontaniczność i kontakt z ludźmi. Krótkie wizyty znajomych wydają ci się czymś normalnym, więc nie zawsze widzisz potrzebę uprzedzania.",
+"hidden_need": "autonomy",
+"hidden_need_text": "Potrzebujesz swobody, zaufania i poczucia, że mieszkanie nie zamienia się w system zakazów.",
+"traits": [
+{
+"text": "Towarzyski",
+"type": "positive"
+},
+{
+"text": "Spontaniczny",
+"type": "neutral"
+},
+{
+"text": "Broni się, gdy czuje kontrolę",
+"type": "negative"
+}
+],
+"profile": {
+"impulsiveness": 6,
+"patience": 5,
+"defensiveness": 7,
+"empathy": 6,
+"need_for_control": 4,
+"shame_sensitivity": 5,
+"directness": 6,
+"repair_ability": 5
+},
+"npc_reaction_logic": "Na atak odpowiada obroną albo kontratakiem. Na chłód i wycofanie reaguje dystansem. Gdy słyszy konkret bez oskarżeń, jest skłonny negocjować. Najlepiej odpowiada na komunikaty, które łączą jasną granicę z uznaniem jego potrzeby swobody."
+}
+},
+"metrics_start": {
+"tension": 40,
+"trust": 60,
+"openness": 50,
+"feeling_heard": 50
+},
+"interactions": [
+{
+"interaction_id": "INT_1",
+"title": "Powrót do pełnego salonu",
+"scene": {
+"description": "Otwierasz drzwi po pracy. W salonie siedzą dwie osoby, na stole stoją kubki i pudełka po jedzeniu. Kuba odwraca się do ciebie z uśmiechem, jakby wszystko było oczywiste.",
+"location": "living_room",
+"time_of_day": "evening",
+"visual_mood": "tense"
+},
+"npc_line": "Hej, wpadli tylko na chwilę. Mam nadzieję, że ci nie przeszkadza.",
+"npc_stage_direction": null,
+"choices": [
+{
+"choice_id": "A",
+"text": "Oczywiście, że przeszkadza. To nie jest twoja prywatna knajpa.",
+"points": 0,
+"communication_style": "aggressive",
+"metric_effects": {
+"tension": 3,
+"trust": -2,
+"openness": -3,
+"feeling_heard": -2
+},
+"npc_reaction": "Kuba prostuje się i momentalnie twardnieje. Mówi, że przesadzasz i robisz scenę przy ludziach.",
+"feedback": {
+"label": "Atak i upokorzenie",
+"psychology": "Wchodzisz w Poziom II — pozycyjny. Z perspektywy analizy transakcyjnej to komunikat z pozycji krytycznego Rodzica, który wywołuje obronę zamiast dialogu.",
+"better_alternative_hint": "Nazwij wpływ sytuacji na ciebie bez deprecjonowania współlokatora."
+},
+"tags": [
+{
+"text": "Pogarda",
+"type": "error"
+},
+{
+"text": "Poziom II — pozycyjny",
+"type": "concept"
+}
+]
+},
+{
+"choice_id": "B",
+"text": "Spoko, rób co chcesz. I tak mnie nikt tu o nic nie pyta.",
+"points": 0,
+"communication_style": "passive_aggressive",
+"metric_effects": {
+"tension": 2,
+"trust": -2,
+"openness": -2,
+"feeling_heard": -3
+},
+"npc_reaction": "Kuba przewraca oczami i odpowiada, że znowu rzucasz aluzjami zamiast powiedzieć wprost, o co chodzi.",
+"feedback": {
+"label": "Aluzja zamiast granicy",
+"psychology": "To bierna agresja. W kwadracie von Thuna warstwa relacyjna dominuje nad rzeczową, więc druga strona słyszy przytyk, nie potrzebę.",
+"better_alternative_hint": "Powiedz jasno, czego potrzebujesz w kwestii zapowiadania gości."
+},
+"tags": [
+{
+"text": "Bierna agresja",
+"type": "error"
+},
+{
+"text": "Kwadrat von Thuna",
+"type": "concept"
+}
+]
+},
+{
+"choice_id": "C",
+"text": "Potrzebuję wiedzieć wcześniej, kiedy ktoś przychodzi. Bez uprzedzenia trudno mi się tu odnaleźć.",
+"points": 1,
+"communication_style": "assertive",
+"metric_effects": {
+"tension": 0,
+"trust": 1,
+"openness": 1,
+"feeling_heard": 1
+},
+"npc_reaction": "Kuba wzdycha, ale przyznaje, że mógł napisać. Dodaje jednak, że to była spontaniczna decyzja.",
+"feedback": {
+"label": "Jasna granica",
+"psychology": "To asertywność na poziomie rzeczowym. Komunikat jest czytelny, ale jeszcze nie obejmuje perspektywy Kuby, więc rozmowa może utknąć na transakcji.",
+"better_alternative_hint": "Dodaj krótko, że nie chcesz mu zakazywać gości, tylko ustalić zasady."
+},
+"tags": [
+{
+"text": "Asertywność",
+"type": "skill"
+},
+{
+"text": "Poziom I — transakcja",
+"type": "concept"
+}
+]
+},
+{
+"choice_id": "D",
+"text": "Nie mam problemu z tym, że zapraszasz ludzi. Problem mam z tym, że wracam bez ostrzeżenia do pełnego mieszkania. Chcę czuć, że to też moja przestrzeń.",
+"points": 2,
+"communication_style": "empathic",
+"metric_effects": {
+"tension": -2,
+"trust": 3,
+"openness": 2,
+"feeling_heard": 3
+},
+"npc_reaction": "Kuba mięknie. Mówi ciszej, że nie patrzył na to z tej strony i że po wyjściu gości możecie ustalić zasady.",
+"feedback": {
+"label": "Granica z uznaniem drugiej strony",
+"psychology": "To komunikat zgodny z NVC: obserwacja, wpływ i potrzeba bez oskarżenia. Dzięki temu rośnie szansa na przejście do Poziomu III — transformacja.",
+"better_alternative_hint": null
+},
+"tags": [
+{
+"text": "Komunikat Ja",
+"type": "skill"
+},
+{
+"text": "Poziom III — transformacja",
+"type": "concept"
+}
+]
+}
+]
+},
+{
+"interaction_id": "INT_2",
+"title": "Pierwsza rozmowa po wizycie",
+"score_threshold": 1,
+"scene_low": {
+"description": "Goście już wyszli. W kuchni zalega ciężka cisza, a Kuba z impetem wkłada kubki do zlewu. Oboje jesteście napięci po wcześniejszej wymianie.",
+"location": "kitchen",
+"time_of_day": "evening",
+"visual_mood": "dark"
+},
+"npc_line_low": "Naprawdę musiałeś robić z tego problem przy wszystkich?",
+"scene_high": {
+"description": "Goście wyszli, w kuchni zrobiło się spokojniej. Kuba opiera się o blat i patrzy na ciebie już bez obronnego tonu.",
+"location": "kitchen",
+"time_of_day": "evening",
+"visual_mood": "neutral"
+},
+"npc_line_high": "Dobra, pogadajmy. Chcę zrozumieć, co cię w tym najbardziej rusza.",
+"npc_stage_direction": null,
+"choices": [
+{
+"choice_id": "A",
+"text": "Bo inaczej do ciebie nic nie dociera. Z tobą trzeba ostro.",
+"points": 0,
+"communication_style": "aggressive",
+"metric_effects": {
+"tension": 3,
+"trust": -3,
+"openness": -2,
+"feeling_heard": -2
+},
+"npc_reaction": "Kuba odbija piłkę i mówi, że skoro tak go widzisz, to nie ma o czym rozmawiać.",
+"feedback": {
+"label": "Uzasadnianie agresji",
+"psychology": "Bronisz formy ataku, zamiast wrócić do potrzeby. To wzmacnia spiralę eskalacji i utrwala pozycję ja mam rację, ty jesteś problemem.",
+"better_alternative_hint": "Oddziel frustrację od osądu charakteru rozmówcy."
+},
+"tags": [
+{
+"text": "Eskalacja",
+"type": "error"
+},
+{
+"text": "Analiza transakcyjna Berne'a",
+"type": "concept"
+}
+]
+},
+{
+"choice_id": "B",
+"text": "Nieważne. Po prostu będę siedzieć u siebie, kiedy przyjdą twoi znajomi.",
+"points": 0,
+"communication_style": "passive",
+"metric_effects": {
+"tension": 1,
+"trust": -2,
+"openness": -3,
+"feeling_heard": -2
+},
+"npc_reaction": "Kuba marszczy brwi i mówi, że to brzmi jak ciche obrażanie się, a nie rozwiązanie.",
+"feedback": {
+"label": "Wycofanie bez rozwiązania",
+"psychology": "Unikasz konfrontacji, ale koszt ponosi relacja. Niewyrażona potrzeba wraca później z większą siłą i obniża poczucie wpływu.",
+"better_alternative_hint": "Powiedz, czego konkretnie potrzebujesz, zamiast tylko się odsunąć."
+},
+"tags": [
+{
+"text": "Unikanie",
+"type": "error"
+},
+{
+"text": "Brak ujawnienia potrzeby",
+"type": "concept"
+}
+]
+},
+{
+"choice_id": "C",
+"text": "Najbardziej rusza mnie brak uprzedzenia. Wystarczyłaby krótka wiadomość, żebym wiedział, czego się spodziewać.",
+"points": 1,
+"communication_style": "transactional",
+"metric_effects": {
+"tension": -1,
+"trust": 1,
+"openness": 1,
+"feeling_heard": 0
+},
+"npc_reaction": "Kuba kiwa głową i mówi, że wiadomość brzmi fair, ale nie chce mieć poczucia, że musi pytać o pozwolenie na każdą wizytę.",
+"feedback": {
+"label": "Konkretne doprecyzowanie",
+"psychology": "To dobry ruch rzeczowy. Ustalasz problem operacyjnie, ale jeszcze nie budujesz mostu do jego obawy o nadmierną kontrolę.",
+"better_alternative_hint": "Dopowiedz, że chodzi o przewidywalność, a nie wydawanie zgody."
+},
+"tags": [
+{
+"text": "Doprecyzowanie potrzeby",
+"type": "skill"
+},
+{
+"text": "Poziom I — transakcja",
+"type": "concept"
+}
+]
+},
+{
+"choice_id": "D",
+"text": "Najbardziej chodzi mi o przewidywalność, nie o kontrolowanie ciebie. Chcę wiedzieć wcześniej, a ty pewnie chcesz nie czuć się ograniczany. Da się to pogodzić.",
+"points": 2,
+"communication_style": "transformative",
+"metric_effects": {
+"tension": -2,
+"trust": 3,
+"openness": 3,
+"feeling_heard": 2
+},
+"npc_reaction": "Kuba wyraźnie odpuszcza. Przyznaje, że dokładnie tego się obawiał i proponuje, żeby wspólnie ustalić prostą zasadę.",
+"feedback": {
+"label": "Nazwanie obu potrzeb",
+"psychology": "Przechodzisz z licytacji racji do wspólnego projektowania rozwiązania. To klasyczne wejście na Poziom III — transformacja.",
+"better_alternative_hint": null
+},
+"tags": [
+{
+"text": "Walidacja perspektywy drugiej strony",
+"type": "skill"
+},
+{
+"text": "Poziom III — transformacja",
+"type": "concept"
+}
+]
+}
+]
+},
+{
+"interaction_id": "INT_3",
+"title": "Ustalanie zasad",
+"score_threshold": 2,
+"scene_low": {
+"description": "Rozmowa toczy się dalej, ale ton jest sztywny. Kuba stoi z założonymi rękami i słucha bardziej po to, by odpowiedzieć, niż żeby zrozumieć.",
+"location": "kitchen",
+"time_of_day": "evening",
+"visual_mood": "tense"
+},
+"npc_line_low": "No to powiedz konkretnie, czego w ogóle chcesz. Tylko bez robienia ze mnie problemu.",
+"scene_high": {
+"description": "Atmosfera trochę mięknie. Siadacie przy stole i zamiast wzajemnych pretensji pojawia się przestrzeń na konkrety.",
+"location": "kitchen",
+"time_of_day": "evening",
+"visual_mood": "hopeful"
+},
+"npc_line_high": "Dobra, ustalmy zasady tak, żebyś ty miał spokój, a ja trochę swobody.",
+"npc_stage_direction": null,
+"choices": [
+{
+"choice_id": "A",
+"text": "Od teraz żadnych gości bez mojej zgody. Koniec dyskusji.",
+"points": 0,
+"communication_style": "aggressive",
+"metric_effects": {
+"tension": 3,
+"trust": -3,
+"openness": -3,
+"feeling_heard": -2
+},
+"npc_reaction": "Kuba reaguje natychmiastowym sprzeciwem. Mówi, że nie będzie mieszkał pod cudzym nadzorem.",
+"feedback": {
+"label": "Kontrola zamiast granicy",
+"psychology": "Granica dotyczy ciebie i twoich działań, a nie pełnego zarządzania drugą osobą. Taki komunikat uderza w autonomię i niemal gwarantuje opór.",
+"better_alternative_hint": "Formułuj zasadę jako wspólną umowę, nie jednostronny nakaz."
+},
+"tags": [
+{
+"text": "Kontrolowanie",
+"type": "error"
+},
+{
+"text": "Naruszenie autonomii",
+"type": "concept"
+}
+]
+},
+{
+"choice_id": "B",
+"text": "Jasne, najlepiej zrób tu jeszcze hostel i kasuj wejściówki.",
+"points": 0,
+"communication_style": "passive_aggressive",
+"metric_effects": {
+"tension": 2,
+"trust": -2,
+"openness": -2,
+"feeling_heard": -3
+},
+"npc_reaction": "Kuba prycha i mówi, że z sarkazmem nie da się nic ustalić.",
+"feedback": {
+"label": "Sarkazm",
+"psychology": "Sarkazm bywa maską bezsilności, ale odbiorca słyszy pogardę. To podnosi napięcie i zamyka kanał rzeczowy.",
+"better_alternative_hint": "Zamiast ironii podaj prostą, mierzalną zasadę."
+},
+"tags": [
+{
+"text": "Sarkazm",
+"type": "error"
+},
+{
+"text": "Pogarda",
+"type": "error"
+}
+]
+},
+{
+"choice_id": "C",
+"text": "Chciałbym, żeby przy zwykłych odwiedzinach była wiadomość wcześniej, a przy nocowaniu minimum dzień uprzedzenia.",
+"points": 1,
+"communication_style": "assertive",
+"metric_effects": {
+"tension": -1,
+"trust": 1,
+"openness": 1,
+"feeling_heard": 1
+},
+"npc_reaction": "Kuba mówi, że to brzmi rozsądnie, choć dzień uprzedzenia może być czasem trudny przy spontanicznych planach.",
+"feedback": {
+"label": "Konkretna propozycja",
+"psychology": "To dobra struktura granicy: jasno, mierzalnie, bez ataku. Nadal jednak jest to głównie propozycja jednostronna, a nie wspólnie budowana umowa.",
+"better_alternative_hint": "Dopytaj, co dla niego byłoby realne i gdzie potrzebujecie wyjątku."
+},
+"tags": [
+{
+"text": "Jasne zasady",
+"type": "skill"
+},
+{
+"text": "Asertywność",
+"type": "skill"
+}
+]
+},
+{
+"choice_id": "D",
+"text": "Proponuję dwie zasady: krótkie odwiedziny zapowiadasz wiadomością, a nocowanie ustalamy wcześniej. Jeśli wypadnie coś nagłego, mówimy o tym od razu i szukamy wyjątku, nie faktu dokonanego.",
+"points": 2,
+"communication_style": "transformative",
+"metric_effects": {
+"tension": -2,
+"trust": 3,
+"openness": 3,
+"feeling_heard": 2
+},
+"npc_reaction": "Kuba przytakuje i dodaje, że taka zasada brzmi partnersko, bo zostawia miejsce na awaryjne sytuacje.",
+"feedback": {
+"label": "Wspólna architektura zasad",
+"psychology": "Łączysz granicę z elastycznością. To obniża lęk przed kontrolą i wzmacnia poczucie wspólnej odpowiedzialności za przestrzeń.",
+"better_alternative_hint": null
+},
+"tags": [
+{
+"text": "Wspólne rozwiązywanie problemu",
+"type": "skill"
+},
+{
+"text": "Poziom III — transformacja",
+"type": "concept"
+}
+]
+}
+]
+},
+{
+"interaction_id": "INT_4",
+"title": "Nieprzewidziany wyjątek",
+"score_threshold": 3,
+"scene_low": {
+"description": "Chwilę po ustaleniach Kuba zerka w telefon i marszczy czoło. W powietrzu znowu wraca napięcie, jakby wszystko miało się rozsypać przy pierwszym teście.",
+"location": "living_room",
+"time_of_day": "night",
+"visual_mood": "tense"
+},
+"npc_line_low": "Mateusz napisał, że odwołali mu ostatni autobus. Pyta, czy może dziś przenocować. No i właśnie o takich sytuacjach mówię.",
+"scene_high": {
+"description": "Telefon Kuby zawibrował. Czyta wiadomość i od razu patrzy na ciebie, zanim odpowie, jakby chciał zastosować to, co przed chwilą ustaliliście.",
+"location": "living_room",
+"time_of_day": "night",
+"visual_mood": "neutral"
+},
+"npc_line_high": "Mam nagłą sytuację. Koledze odwołali autobus i pyta, czy może dziś przenocować. Sprawdzam to z tobą od razu.",
+"npc_stage_direction": null,
+"choices": [
+{
+"choice_id": "A",
+"text": "Nie interesuje mnie to. Sam sobie narobiłeś problemów, to sobie radź.",
+"points": 0,
+"communication_style": "aggressive",
+"metric_effects": {
+"tension": 3,
+"trust": -3,
+"openness": -2,
+"feeling_heard": -2
+},
+"npc_reaction": "Kuba patrzy na ciebie chłodno i mówi, że przy takim podejściu żadna umowa nie ma sensu.",
+"feedback": {
+"label": "Sztywność bez relacji",
+"psychology": "Bronisz zasady kosztem człowieka i kontekstu. Sztywność może chwilowo dać poczucie siły, ale relacyjnie obniża zaufanie.",
+"better_alternative_hint": "Rozróżnij zwykłe łamanie zasad od realnej sytuacji awaryjnej."
+},
+"tags": [
+{
+"text": "Brak elastyczności",
+"type": "error"
+},
+{
+"text": "Dehumanizacja problemu",
+"type": "concept"
+}
+]
+},
+{
+"choice_id": "B",
+"text": "Pewnie, jeszcze mu pościel rozłóż i może niech zostanie do weekendu.",
+"points": 0,
+"communication_style": "passive_aggressive",
+"metric_effects": {
+"tension": 2,
+"trust": -2,
+"openness": -2,
+"feeling_heard": -3
+},
+"npc_reaction": "Kuba odpowiada ostrzej, że znowu wracasz do uszczypliwości i nic z tej rozmowy nie wynika.",
+"feedback": {
+"label": "Uszczypliwość pod przykrywką zgody",
+"psychology": "Formalnie nie odmawiasz, ale emocjonalnie karzesz drugą stronę. To rozbija poczucie bezpieczeństwa w relacji.",
+"better_alternative_hint": "Powiedz warunek wyjątku wprost, bez złośliwości."
+},
+"tags": [
+{
+"text": "Ukryty atak",
+"type": "error"
+},
+{
+"text": "Bierna agresja",
+"type": "error"
+}
+]
+},
+{
+"choice_id": "C",
+"text": "Jedna noc może być wyjątkiem, ale chcę, żebyśmy jasno trzymali się zasady, że to wyjątek, a nie nowy standard.",
+"points": 1,
+"communication_style": "transactional",
+"metric_effects": {
+"tension": -1,
+"trust": 1,
+"openness": 1,
+"feeling_heard": 1
+},
+"npc_reaction": "Kuba zgadza się i mówi, że to fair. Wciąż jednak brzmi dość formalnie.",
+"feedback": {
+"label": "Elastyczny warunek",
+"psychology": "To sensowna granica operacyjna. Chronisz zasadę, ale nie pogłębiasz jeszcze wzajemnego zrozumienia emocji i intencji.",
+"better_alternative_hint": "Dodaj, że doceniasz to, że tym razem zapytał wcześniej."
+},
+"tags": [
+{
+"text": "Warunkowa zgoda",
+"type": "skill"
+},
+{
+"text": "Rozwiązanie sytuacyjne",
+"type": "concept"
+}
+]
+},
+{
+"choice_id": "D",
+"text": "Doceniam, że mówisz o tym od razu. Na dziś zgadzam się na wyjątek, bo sytuacja jest nagła. Chcę tylko, żeby to potwierdzało naszą zasadę: najpierw informacja i wspólne ustalenie.",
+"points": 2,
+"communication_style": "empathic",
+"metric_effects": {
+"tension": -2,
+"trust": 3,
+"openness": 2,
+"feeling_heard": 3
+},
+"npc_reaction": "Kuba wyraźnie czuje ulgę. Dziękuje i mówi, że właśnie o taki sposób dogadywania się mu chodziło.",
+"feedback": {
+"label": "Elastyczność bez rezygnacji z granicy",
+"psychology": "Wzmacniasz pożądane zachowanie i jednocześnie utrzymujesz regułę. To bardzo skuteczna forma naprawy relacyjnej i uczenia nowego wzorca.",
+"better_alternative_hint": null
+},
+"tags": [
+{
+"text": "Wzmacnianie dobrego zachowania",
+"type": "skill"
+},
+{
+"text": "Walidacja emocji",
+"type": "skill"
+}
+]
+}
+]
+},
+{
+"interaction_id": "INT_5",
+"title": "Domknięcie i nowa umowa",
+"score_threshold": 4,
+"scene_low": {
+"description": "Następnego ranka w mieszkaniu jest cicho, ale nie spokojnie. Kuba pije kawę bez większej chęci do rozmowy, jakby czekał, czy znów wrócicie do przepychanki.",
+"location": "kitchen",
+"time_of_day": "morning",
+"visual_mood": "cold"
+},
+"npc_line_low": "To jak? Mamy z tego zrobić normalną zasadę czy dalej będziemy się spinać przy każdej takiej sytuacji?",
+"scene_high": {
+"description": "Rano atmosfera jest lżejsza niż wczoraj. Kubki stoją już posprzątane, a Kuba wygląda na gotowego zamknąć temat bez obrony.",
+"location": "kitchen",
+"time_of_day": "morning",
+"visual_mood": "hopeful"
+},
+"npc_line_high": "Myślę, że możemy to dobrze ustawić. Jak chcesz to podsumować, żeby oboje wiedzieli, na czym stoimy?",
+"npc_stage_direction": null,
+"choices": [
+{
+"choice_id": "A",
+"text": "Proste. Ty przestajesz robić swoje akcje, a ja może przestanę się denerwować.",
+"points": 0,
+"communication_style": "aggressive",
+"metric_effects": {
+"tension": 3,
+"trust": -3,
+"openness": -2,
+"feeling_heard": -2
+},
+"npc_reaction": "Kuba zaciska szczękę i kończy rozmowę. Mówi, że nie będzie funkcjonował w takim tonie.",
+"feedback": {
+"label": "Wygrana kosztem relacji",
+"psychology": "Ustawiasz rozmowę jako system kar i win. Nawet jeśli zasada zostanie, więź i gotowość do współpracy słabną.",
+"better_alternative_hint": "Zamknij rozmowę wspólną zasadą, nie osobistym przytykiem."
+},
+"tags": [
+{
+"text": "Oskarżanie",
+"type": "error"
+},
+{
+"text": "Poziom II — pozycyjny",
+"type": "concept"
+}
+]
+},
+{
+"choice_id": "B",
+"text": "Rób, co chcesz. Ja już nie mam siły tego ciągnąć.",
+"points": 0,
+"communication_style": "passive",
+"metric_effects": {
+"tension": 1,
+"trust": -2,
+"openness": -3,
+"feeling_heard": -2
+},
+"npc_reaction": "Kuba milknie. Oboje zostajecie bez ustaleń i z poczuciem niedomknięcia.",
+"feedback": {
+"label": "Kapitulacja",
+"psychology": "Wycofanie chwilowo obniża wysiłek, ale długofalowo zwiększa chaos. Brak domknięcia sprzyja nawrotom tego samego konfliktu.",
+"better_alternative_hint": "Sformułuj choć jedną prostą zasadę, która daje wam obu punkt odniesienia."
+},
+"tags": [
+{
+"text": "Wycofanie",
+"type": "error"
+},
+{
+"text": "Brak domknięcia",
+"type": "concept"
+}
+]
+},
+{
+"choice_id": "C",
+"text": "Ustalmy, że piszemy sobie wcześniej o gościach i od razu zaznaczamy, czy chodzi o krótką wizytę, czy nocowanie.",
+"points": 1,
+"communication_style": "assertive",
+"metric_effects": {
+"tension": -1,
+"trust": 1,
+"openness": 1,
+"feeling_heard": 1
+},
+"npc_reaction": "Kuba przyznaje, że to proste i użyteczne. Nadal jednak rozmowa zostaje bardziej techniczna niż relacyjna.",
+"feedback": {
+"label": "Domknięcie proceduralne",
+"psychology": "Dobra zasada organizacyjna porządkuje przyszłość. Brakuje jeszcze krótkiego potwierdzenia wspólnego celu, które wzmacnia współpracę.",
+"better_alternative_hint": "Dodaj, po co to robicie jako współlokatorzy, nie tylko co robicie."
+},
+"tags": [
+{
+"text": "Ustalanie procedury",
+"type": "skill"
+},
+{
+"text": "Poziom I — transakcja",
+"type": "concept"
+}
+]
+},
+{
+"choice_id": "D",
+"text": "Chcę, żebyśmy oboje czuli się tu u siebie. Umawiamy się na wcześniejszą wiadomość o gościach, wcześniejsze ustalanie nocowania i mówienie od razu, kiedy wypada wyjątek. To ma nam ułatwiać życie, nie ograniczać.",
+"points": 2,
+"communication_style": "transformative",
+"metric_effects": {
+"tension": -3,
+"trust": 3,
+"openness": 3,
+"feeling_heard": 3
+},
+"npc_reaction": "Kuba uśmiecha się z ulgą i potwierdza. Mówi, że taka zasada brzmi fair i daje wam obu miejsce w tym mieszkaniu.",
+"feedback": {
+"label": "Wspólna definicja domu",
+"psychology": "Nie tylko ustalasz reguły, ale też sens tych reguł. To buduje tożsamość my i zwiększa szansę, że ustalenia będą realnie przestrzegane.",
+"better_alternative_hint": null
+},
+"tags": [
+{
+"text": "Wspólna wizja",
+"type": "skill"
+},
+{
+"text": "Poziom III — transformacja",
+"type": "concept"
+}
+]
+}
+]
+}
+],
+"endings": [
+{
+"ending_id": "END_RED",
+"score_range": {
+"min": 0,
+"max": 3
+},
+"color": "red",
+"title": "ZIMNA WOJNA W SALONIE",
+"emoji": "🔴",
+"subtitle": "Zasady nie powstały, a napięcie zostało w mieszkaniu",
+"narrative": "Po rozmowie każde z was zamyka się w swoim pokoju i zaczyna funkcjonować obok siebie, nie ze sobą. Temat gości nie znika, tylko zmienia się w kolejny zapalnik. Mieszkanie nadal jest wspólne formalnie, ale emocjonalnie staje się podzielonym terytorium.",
+"diagnosis": "Dominował styl agresywny, biernie agresywny albo wycofany. Konflikt pozostał na Poziomie II — pozycyjnym albo rozpadł się w unikanie. Granice nie zostały nazwane w sposób, który dawałby drugiej stronie szansę na współpracę, więc autonomia Kuby i twoje poczucie bezpieczeństwa weszły w otwarte zderzenie.",
+"post_game": {
+"communication_style_summary": "W tej ścieżce rozmowa była napędzana frustracją, przytykami albo rezygnacją. Potrzeby istniały, ale nie zostały zakomunikowane w formie możliwej do przyjęcia.",
+"strongest_moment": "Najmocniejszym punktem była sama próba podjęcia tematu zamiast całkowitego milczenia.",
+"growth_tip": "Następnym razem zacznij od wpływu sytuacji na ciebie i jednej konkretnej potrzeby. Bez etykietowania charakteru współlokatora.",
+"replay_prompt": "Spróbuj przejść od pretensji do wspólnego ustalenia zasad, które chronią i przewidywalność, i swobodę."
+}
+},
+{
+"ending_id": "END_YELLOW",
+"score_range": {
+"min": 4,
+"max": 6
+},
+"color": "yellow",
+"title": "KRUCHE ZASADY",
+"emoji": "🟡",
+"subtitle": "Ustaliliście ramy, ale bez pełnego zrozumienia",
+"narrative": "Powstała podstawowa umowa dotycząca uprzedzania o gościach i nocowaniach. To już coś, ale w rozmowie zostało trochę sztywności. Oboje wiecie, co robić technicznie, choć nie do końca czujecie, że temat został emocjonalnie domknięty.",
+"diagnosis": "Dominował styl asertywny lub transakcyjny. To wystarczyło do ograniczenia chaosu, ale nie do pełnej odbudowy poczucia bycia po tej samej stronie. Rozmowa weszła częściowo na Poziom I — transakcja, momentami dotykając transformacji, lecz bez głębszej walidacji obaw obu stron.",
+"post_game": {
+"communication_style_summary": "Ta ścieżka porządkuje rzeczywistość, ale nie zawsze łagodzi napięcie pod spodem. Jest poprawna, choć trochę chłodna.",
+"strongest_moment": "Najlepszy moment to chwila, w której pojawiła się konkretna zasada zamiast samej pretensji.",
+"growth_tip": "Masz już szkielet rozmowy. Kolejny krok to krótkie nazwanie także perspektywy drugiej strony, bo to wzmacnia chęć współpracy.",
+"replay_prompt": "Przejdź jeszcze dalej: spróbuj połączyć granicę z walidacją potrzeb współlokatora i sprawdź, jak zmieni się ton całej sceny."
+}
+},
+{
+"ending_id": "END_GREEN",
+"score_range": {
+"min": 7,
+"max": 10
+},
+"color": "green",
+"title": "WSPÓLNA PRZESTRZEŃ, WSPÓLNE ZASADY",
+"emoji": "🟢",
+"subtitle": "Granice zostały nazwane bez odbierania sobie miejsca",
+"narrative": "Po rozmowie mieszkanie nie wydaje się już polem minowym. Ustaliliście jasne zasady dotyczące gości, nocowania i wyjątków, ale najważniejsze jest coś innego: oboje poczuliście, że ta przestrzeń naprawdę należy do was obu. Konflikt nie zniknął przez magię, tylko został przetworzony w porozumienie.",
+"diagnosis": "Dominował styl empatyczny i transformacyjny. Udało się połączyć dwie ważne potrzeby: twoją potrzebę przewidywalności oraz potrzebę swobody po stronie Kuby. Rozmowa weszła na Poziom III — transformacja, bo zamiast walczyć o rację, zaczęliście projektować reguły wspólnego życia.",
+"post_game": {
+"communication_style_summary": "Ta ścieżka łączy jasność granic z uznaniem drugiej strony. Dzięki temu zasady nie brzmią jak kara, tylko jak wspólna umowa.",
+"strongest_moment": "Najmocniejszy był moment, w którym nazwałeś zarówno własną potrzebę bezpieczeństwa, jak i jego potrzebę autonomii.",
+"growth_tip": "To dobry wzorzec na realne życie: najpierw wpływ sytuacji, potem potrzeba, potem wspólne rozwiązanie. Właśnie tak buduje się trwały szacunek.",
+"replay_prompt": "Zagraj jeszcze raz i sprawdź, jak szybko rozmowa psuje się, gdy zrezygnujesz z walidacji albo wspólnej perspektywy."
+}
+}
+]
+}
+
