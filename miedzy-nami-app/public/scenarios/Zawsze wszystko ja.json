@@ -1,0 +1,885 @@
+{
+    "scenario_id": "chores_inequality_conflict",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Zawsze wszystko ja",
+        "subtitle": "Kiedy niewidzialna praca staje się widocznym konfliktem",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 12,
+        "interaction_count": 5
+    },
+    "tags": {
+        "relationship_type": "romantic_partner",
+        "theme": [
+            "chores",
+            "communication_breakdown",
+            "expectations"
+        ],
+        "emotional_intensity": "moderate",
+        "age_rating": "all",
+        "session_type": "mini_story",
+        "player_role_gender": "female",
+        "difficulty": "intermediate"
+    },
+    "characters": {
+        "player": {
+            "name": "Marta",
+            "role_label": "Partnerka · Gracz",
+            "age_range": "28-35",
+            "context": "Wraca zmęczona z pracy i zastaje nieuporządkowane mieszkanie. Od tygodni czuje, że większość domowych obowiązków spoczywa na jej barkach, a jej wysiłek pozostaje niezauważony.",
+            "hidden_need": "recognition",
+            "hidden_need_text": "Marta potrzebuje być dostrzeżona i doceniona za swoją pracę. Nie chodzi tylko o podział obowiązków - chodzi o poczucie, że jej wkład ma znaczenie i że nie jest w tym wszystkim niewidzialna.",
+            "traits": [
+                {
+                    "text": "Odpowiedzialna",
+                    "type": "positive"
+                },
+                {
+                    "text": "Skłonna do generalizacji pod wpływem emocji",
+                    "type": "negative"
+                },
+                {
+                    "text": "Silna potrzeba sprawiedliwości",
+                    "type": "neutral"
+                },
+                {
+                    "text": "Trudno jej prosić o pomoc wprost",
+                    "type": "negative"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 6,
+                "patience": 4,
+                "defensiveness": 5,
+                "empathy": 7,
+                "need_for_control": 6,
+                "shame_sensitivity": 5,
+                "directness": 5,
+                "repair_ability": 7
+            }
+        },
+        "npc": {
+            "name": "Kacper",
+            "role_label": "Partner · NPC",
+            "age_range": "28-35",
+            "context": "Wrócił z pracy wcześniej i odpoczywał. Zrobił pranie rano, ale nie zauważył, że wiele innych rzeczy czeka. Czuje się atakowany, gdy Marta podnosi temat obowiązków, bo nie rozumie skali jej obciążenia.",
+            "hidden_need": "respect",
+            "hidden_need_text": "Kacper potrzebuje czuć, że jego wkład jest dostrzegany, a nie tylko wypominane są zaległości. Boi się, że cokolwiek zrobi - to będzie za mało.",
+            "traits": [
+                {
+                    "text": "Defensywny pod presją",
+                    "type": "negative"
+                },
+                {
+                    "text": "Dobra wola, brak świadomości",
+                    "type": "neutral"
+                },
+                {
+                    "text": "Otwarty na rozmowę gdy nie czuje ataku",
+                    "type": "positive"
+                },
+                {
+                    "text": "Tendencja do minimalizowania problemu",
+                    "type": "negative"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 5,
+                "patience": 5,
+                "defensiveness": 7,
+                "empathy": 5,
+                "need_for_control": 4,
+                "shame_sensitivity": 7,
+                "directness": 4,
+                "repair_ability": 6
+            },
+            "npc_reaction_logic": "Kacper reaguje defensywnością na ataki i uogólnienia. Gdy czuje się oskarżony, zamyka się lub przechodzi do kontrataku. Jednak gdy rozmowa jest prowadzona bez oskarżeń, jest w stanie słuchać i otworzyć się. Docenia konkretne rozwiązania i jest skłonny do kompromisu, jeśli jego wkład jest dostrzeżony."
+        }
+    },
+    "metrics_start": {
+        "tension": 45,
+        "trust": 55,
+        "openness": 50,
+        "feeling_heard": 40
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Zlew pełen naczyń",
+            "scene": {
+                "description": "Wracasz do domu po długim dniu w pracy. W kuchni stos talerzy w zlewie, okruchy na blacie - dokładnie tak jak zostawiłaś rano. Kacper siedzi na kanapie z telefonem w ręku, słuchawki na uszach, lekko uśmiechnięty do jakiegoś filmiku.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": null,
+            "npc_stage_direction": "Kacper nie zauważył twojego wejścia. Na stoliku obok niego stoi niedopita szklanka soku. Atmosfera jest pozornie spokojna - ale ty widzisz to, czego on nie widzi.",
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Niesamowite. Znowu wszystko na mnie. Ty tylko siedzisz i nic, co nie?",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kacper ściąga słuchawki ze zmarszczonymi brwiami. Serio? Wchodzisz i od razu to? Robiłem dziś rano pranie!",
+                    "feedback": {
+                        "label": "Atak i uogólnienie",
+                        "psychology": "Sformułowanie zawierające uogólnienie i oskarżenie aktywuje mechanizm obronny partnera. Zgodnie z modelem Gottmana, krytyka i pogarda to dwa z czterech jeźdźców apokalipsy związku. Kacper, zamiast usłyszeć potrzebę Marty, słyszy atak - i instynktownie się broni, przechodząc do kontry.",
+                        "better_alternative_hint": "Spróbuj opisać swoje uczucia zamiast oceniać zachowanie partnera. Komunikat Ja: Jestem zmęczona i potrzebuję, żebyśmy porozmawiali o podziale obowiązków."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uogólnianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Atak personalny",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "...",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -1,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kacper kiwa głową na twój widok i wraca do telefonu. Nie wie, że coś jest nie tak. Naczynia czekają.",
+                    "feedback": {
+                        "label": "Milczenie jako unikanie",
+                        "psychology": "Pasywne wycofanie chroni przed konfliktem, ale nie rozwiązuje problemu. W analizie transakcyjnej Bernea to gra w Ofiarę - Marta bierze na siebie ciężar, kipi w środku, aż do wybuchu. Kacper nie ma szansy niczego zmienić, bo nie wie, że jest problem.",
+                        "better_alternative_hint": "Nawet jeśli jesteś zmęczona, krótkie: Hej, musimy porozmawiać - może otworzyć drzwi do zmiany bez eskalacji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Tłumienie potrzeb",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna Bernea",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Kacper, chcę porozmawiać o tym, jak dzielimy obowiązki. Mam wrażenie, że to nie działa.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Kacper ściąga słuchawki. Okej, słucham. Co konkretnie masz na myśli?",
+                    "feedback": {
+                        "label": "Asertywne otwarcie tematu",
+                        "psychology": "Dobry start - bezpośredni i spokojny komunikat. Brakuje jednak warstwy emocjonalnej: co Marta czuje i dlaczego ten temat jest dla niej ważny. Asertywność bez empatii brzmi jak negocjacja, a nie rozmowa bliskich osób.",
+                        "better_alternative_hint": "Dodaj komunikat Ja: Czuję się przeciążona i potrzebuję, żebyśmy razem coś z tym zrobili."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywne otwarcie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Brak warstwy emocjonalnej",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Hej. Widzę, że odpoczywasz - słusznie. Ale ja też bym chciała odpocząć, a czuję, że większość domowych rzeczy zostaje na mnie. Możemy o tym porozmawiać?",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Kacper odkłada telefon i patrzy na ciebie uważnie. Słyszę cię. Co cię przytłacza najbardziej?",
+                    "feedback": {
+                        "label": "Komunikat Ja z walidacją partnera",
+                        "psychology": "Wzorowy komunikat zgodny z NVC Rosenberga: walidacja potrzeby partnera (odpoczynek jest ok), wyrażenie własnego uczucia (zmęczenie), sformułowanie potrzeby (podział pracy), otwarte zaproszenie do rozmowy. Kacper nie czuje się atakowany - może słuchać zamiast się bronić.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC Rosenberga",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Pranie się liczy",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Kacper wstaje z kanapy, wyraźnie spięty. Jego ramiona są uniesione, twarz zamknięta. Atmosfera jest gęsta - pierwsze słowa postawiły was naprzeciwko siebie zamiast obok siebie.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "No super, kolejny atak. Robiłem dziś rano pranie, ale to pewnie się nie liczy, co? Cokolwiek zrobię - i tak będzie źle.",
+            "scene_high": {
+                "description": "Kacper odkłada telefon na stolik i obraca się w twoją stronę. Jego postawa jest otwarta. Twoje słowa dotarły do niego inaczej niż zwykle - widać to po tym, jak na ciebie patrzy.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Okej, słyszę cię. Co konkretnie czujesz, że na tobie zostaje?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Pranie raz na tydzień to nie jest pół na pół, Kacper. Przepraszam, ale to trochę śmieszne.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kacper podnosi głos. Śmieszne? Bardzo śmieszne. To ile razy ty robiłaś pranie w ostatnim miesiącu? Licytujemy się?",
+                    "feedback": {
+                        "label": "Drwina i dewaluacja wkładu",
+                        "psychology": "Sformułowanie brzmi jak pogarda - jeden z czterech jeźdźców apokalipsy wg Gottmana. Nawet jeśli Marta ma rację co do podziału pracy, ton dewaluuje argument Kacpra i uruchamia kontratak. Rozmowa ześlizguje się w licytację kto zrobił więcej.",
+                        "better_alternative_hint": "Zamiast odrzucać wkład partnera, przyznaj go i dodaj kontekst: Widzę, że zrobiłeś pranie - dziękuję. Mam na myśli więcej rzeczy naraz."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Licytacja cierpienia",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Ooo, pranie! Wielkie brawa. A reszta to się sama ogarnie?",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -1
+                    },
+                    "npc_reaction": "Kacper patrzy na ciebie zimno. Wiesz co? Jak tak mówisz, to może naprawdę sama ogarniaj.",
+                    "feedback": {
+                        "label": "Sarkazm jako ukryty atak",
+                        "psychology": "Ironia i sarkazm to klasyczne narzędzia komunikacji pasywno-agresywnej. Marta wyraża złość ukrytymi kanałami - przez co Kacper nie słyszy potrzeby, a jedynie atak. Zgodnie z kwadratem von Thuna, wiadomość jest odczytana po stronie appelu jako: walcz, nie: pomóż mi.",
+                        "better_alternative_hint": "Powiedz wprost co czujesz zamiast owijać w bawełnę. Złość ma prawo istnieć - ale komunikowana wprost robi więcej dobrego niż ukryta w ironii."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Widziałam pranie, dziękuję. Mam na myśli całość - naczynia, gotowanie, planowanie zakupów, sprzątanie. To wszystko razem.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kacper siada z powrotem. Okej. To powiedz mi dokładnie co masz na myśli, bo może nie widzę tego samego co ty.",
+                    "feedback": {
+                        "label": "Dostrzeżenie wkładu i konkretyzacja",
+                        "psychology": "Dobre posunięcie - Marta docenia wkład Kacpra zanim wskazuje na problem. To zmniejsza defensywność. Brakuje jednak warstwy emocjonalnej - jak się czuje i co to dla niej znaczy. Komunikat jest rzeczowy, ale chłodny.",
+                        "better_alternative_hint": "Dodaj jedno zdanie o uczuciach: Czuję się przeciążona, gdy myślę o tym wszystkim naraz."
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja wkładu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Konkretyzacja problemu",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Doceniam, że zrobiłeś pranie - naprawdę. I chcę, żebyś wiedział, że widzę co robisz. Ale czuję się przytłoczona, gdy myślę o całej reszcie - i potrzebuję, żebyśmy to razem ogarnęli.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kacper rozluźnia ramiona. Nie wiedziałem, że tak się czujesz. Powiedz mi więcej - co konkretnie cię przytłacza?",
+                    "feedback": {
+                        "label": "Walidacja i komunikat Ja",
+                        "psychology": "Marta stosuje tu pełny wzorzec NVC Rosenberga: obserwacja (pranie zostało zrobione), uczucie (przytłoczenie), potrzeba (wspólne zarządzanie domem), prośba (rozmowa). Walidacja wkładu Kacpra sprawia, że nie musi się bronić - może naprawdę słuchać.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC Rosenberga",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Niewidzialna praca",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Kacper stoi przy oknie, ramiona skrzyżowane. Rozmowa kręci się w kółko - ataki i defensywa zamiast szukania rozwiązania. Napięcie w pokoju jest prawie namacalne, a każde kolejne zdanie oddala was od siebie.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "To powiedz mi konkretnie, bo mam wrażenie, że cokolwiek zrobię - i tak będzie za mało. Może po prostu nigdy nie dam rady.",
+            "scene_high": {
+                "description": "Kacper siedzi naprzeciwko ciebie, nachylony lekko do przodu. Atmosfera jest spokojniejsza - oboje jesteście w trybie rozmowy, nie walki. Czujesz, że naprawdę słucha.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Nie wiedziałem, że tak to wygląda z twojej perspektywy. Możesz mi powiedzieć konkretnie co masz na myśli przez tę niewidzialną pracę?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Zmywanie, gotowanie, odkurzanie, zakupy, rachunki, umawianie wizyt. Mam wymienić resztę?",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -1
+                    },
+                    "npc_reaction": "Kacper unosi ręce. Okej, skoro tak to widzisz, to co ja właściwie robię według ciebie? Nic?",
+                    "feedback": {
+                        "label": "Lista zarzutów jako atak",
+                        "psychology": "Wyliczanie zarzutów w trybie licytacji to klasyczny Poziom II - walka o rację zamiast o rozwiązanie. Sformułowanie Mam wymienić resztę to pogarda wyrażona przez sarkazm. Kacper słyszy Jesteś bezużyteczny, nie Potrzebuję twojej pomocy.",
+                        "better_alternative_hint": "Zamiast listy oskarżeń, opisz jeden konkretny aspekt i swoje uczucia z nim związane."
+                    },
+                    "tags": [
+                        {
+                            "text": "Lista zarzutów",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Katastrofizacja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nieważne. Zapomnij. Widocznie tak ma być.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kacper patrzy na ciebie z frustracją. Co to znaczy zapomnij? Nie możemy tak tego zostawić.",
+                    "feedback": {
+                        "label": "Pseudo-poddanie się",
+                        "psychology": "Zapomnij to nie rezygnacja - to pasywno-agresywny komunikat, który mówi: zawiodłeś mnie. W analizie transakcyjnej Bernea to gra w Ofiarę - Marta pozornie odpuszcza, ale buduje emocjonalny dług, który wybuchnie później.",
+                        "better_alternative_hint": "Jeśli jesteś zmęczona, możesz powiedzieć: Potrzebuję chwili przerwy. Wróćmy do tego za 10 minut - na spokojnie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie pasywno-agresywne",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna Bernea",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie chodzi tylko o konkretne zadania. Mam na myśli całe planowanie - myślenie o tym co trzeba kupić, co naprawić, co zorganizować. To żyje w mojej głowie cały czas.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 2,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kacper kiwa głową powoli. Okej, rozumiem. To znaczy... chyba nie do końca rozumiałem co masz na myśli.",
+                    "feedback": {
+                        "label": "Konkretyzacja bez emocji",
+                        "psychology": "Dobry krok - Marta wyjaśnia pojęcie mental load w sposób zrozumiały i bez oskarżeń. Brakuje jednak emocjonalnego wymiaru: co to dla niej znaczy, jak się z tym czuje. Komunikat jest informacyjny, ale jeszcze nie buduje głębszego połączenia.",
+                        "better_alternative_hint": "Dodaj: I to mnie wyczerpuje. Chcę, żebyś to ze mną dzielił."
+                    },
+                    "tags": [
+                        {
+                            "text": "Mental load",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Konkretyzacja",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chodzi o planowanie posiłków, pamiętanie o zakupach, myślenie co trzeba naprawić, umawianie wizyt. To wszystko siedzi w mojej głowie - i nigdy w twojej.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Kacper milczy przez chwilę. Tego nie wiedziałem. Naprawdę nie myślałem, że to tak wygląda. Czy możemy razem na to spojrzeć?",
+                    "feedback": {
+                        "label": "Nazwanie niewidzialnej pracy",
+                        "psychology": "Marta wprowadza kluczowe pojęcie mental load - niewidzialnej pracy emocjonalnej i organizacyjnej. Komunikuje konkretnie i bez oskarżeń. To przejście z Poziomu II (kto ma rację) ku Poziomowi III (rozumienie perspektywy drugiej osoby). Kacper może to usłyszeć, bo nie czuje się atakowany.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Mental load",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Konkretna obserwacja bez oceny",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Też jestem zmęczony",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Kacper wstaje i zaczyna chodzić po pokoju. Jego głos jest naładowany napięciem. Rozmowa ześlizgnęła się w miejsce, gdzie oboje bronicie swoich pozycji zamiast szukać wspólnego wyjścia.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Wiesz co? Też jestem zmęczony po pracy. Nie tylko ty masz ciężki dzień. Może moje zmęczenie też trochę liczy?",
+            "scene_high": {
+                "description": "Kacper siada bliżej ciebie na kanapie. Mówi spokojniej, ale w jego głosie słyszysz coś nowego - jakąś ostrożność, jakby mierzył się z czymś trudnym dla siebie.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Chcę to zmienić, naprawdę. Ale muszę ci powiedzieć coś, co może zabrzmi dziwnie. Też czasem czuję się niedoceniany. Że cokolwiek zrobię - to i tak za mało.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Zmęczony? Ty? To przynajmniej masz czas siedzieć z telefonem! Ja po pracy od razu gotuję!",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kacper wstaje. Dosyć. Nie dam rady rozmawiać, gdy tak do mnie mówisz.",
+                    "feedback": {
+                        "label": "Atak w miejscu wrażliwości",
+                        "psychology": "Kacper próbował wyrazić swoją potrzebę - poczucia docenienia. Marta odpowiada atakiem zamiast usłyszeniem. To klasyczne zablokowanie wyjawienia wrażliwości partnera. Efekt: Kacper zamknie się i nie będzie próbował znowu. Szansa na głębszą rozmowę zostaje utracona.",
+                        "better_alternative_hint": "Gdy partner wyraża wrażliwość, to moment na wysłuchanie - nawet jeśli jesteś w bólu. Spróbuj: Słyszę cię. Powiedz mi więcej."
+                    },
+                    "tags": [
+                        {
+                            "text": "Blokowanie wrażliwości partnera",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Eskalacja konfliktu",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Rozumiem, że też jesteś zmęczony. Właśnie dlatego chcę, żebyśmy inaczej to podzielili - żebyśmy oboje mieli oddech.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kacper kiwa głową. Okej, to ma sens. Jak to widzisz?",
+                    "feedback": {
+                        "label": "Asertywna walidacja i propozycja",
+                        "psychology": "Marta słyszy zmęczenie Kacpra i przekierowuje na wspólne rozwiązanie. Dobre posunięcie, ale za szybkie. Nie zatrzymuje się przy emocjach partnera - przeskakuje od razu do propozycji. Warto było dać mu chwilę, by poczuł się naprawdę wysłuchany.",
+                        "better_alternative_hint": "Dodaj: Cieszę się, że to mówisz. Jak możemy oboje mieć więcej przestrzeni?"
+                    },
+                    "tags": [
+                        {
+                            "text": "Aktywne słuchanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Skupienie na rozwiązaniu",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Zmęczony... okej. To może zamiast siedzieć z telefonem, wstań i pomóż?",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kacper patrzy na ciebie z bólem. Wiesz co - zapomnij. Nie ma o czym gadać.",
+                    "feedback": {
+                        "label": "Odrzucenie wrażliwości sarkazmem",
+                        "psychology": "Kacper zdobył się na wyznanie wrażliwości - poczucia niedocenienia. Marta odpowiada złośliwą sugestią. To jeden z najbardziej destrukcyjnych momentów w rozmowie: partner ryzykuje i odsłania się, a dostaje cios. Zaufanie spada drastycznie i długo się odbudowuje.",
+                        "better_alternative_hint": "Nawet jeśli jego wyznanie cię zaskoczyło, spróbuj: Nie wiedziałam, że tak to czujesz. Chcę to zrozumieć."
+                    },
+                    "tags": [
+                        {
+                            "text": "Odrzucenie wrażliwości",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Sarkazm jako atak",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Słyszę, że też jesteś zmęczony - i że czujesz się niedoceniany. To ważne, że mi to mówisz. Może oboje potrzebujemy częściej widzieć nawzajem swój wysiłek?",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kacper zatrzymuje się. Tak. Dokładnie tak to czuję. Nie wiedziałem, że to tak na mnie działa. Dziękuję, że to słyszysz.",
+                    "feedback": {
+                        "label": "Wzajemna walidacja i Poziom III",
+                        "psychology": "Marta stosuje tu zaawansowaną technikę transformatywną: zamiast bronić swojej racji, reflektuje emocje partnera i proponuje wspólną zmianę perspektywy. To pełne wejście w Poziom III - od walki o to kto ma rację do pytania jak możemy oboje czuć się lepiej w tej relacji.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Aktywne słuchanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Co teraz?",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Siedzicie w odległości dwóch metrów od siebie. Między wami niewidoczna ściana. Kacper patrzy w podłogę. Rozmowa utknęła - żadne z was nie wie jak przebić się przez to napięcie.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Nie wiem jak to naprawić. Może... po prostu daj mi trochę czasu.",
+            "scene_high": {
+                "description": "Siedzicie blisko siebie na kanapie. Kacper obrócił się w twoją stronę. W pokoju pali się ciepła lampka. Oboje czujecie, że coś ważnego właśnie się wydarzyło - dotknęliście czegoś prawdziwego.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Chcę to zmienić. Naprawdę chcę. Co proponujesz? Jak możemy to razem ogarnąć - tak, żebyśmy oboje czuli się widziani?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Proponuję żebyśmy razem usiedli i stworzyli listę - nie po to żeby się rozliczać, ale żebyśmy oboje wiedzieli co nas czeka i mogli to dzielić. Nasze mieszkanie, nasza wspólna odpowiedzialność.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -3,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kacper kiwa głową z ulgą w oczach. Tak. Tego właśnie potrzebujemy. Chodź, zróbmy to razem.",
+                    "feedback": {
+                        "label": "Transformacyjna propozycja",
+                        "psychology": "Marta używa języka my zamiast ty kontra ja. Propozycja jest konkretna, ale motywowana wartością (wspólna odpowiedzialność), nie karą (rozliczanie). To pełne wejście w Poziom III transformacji - zamiast walczyć o to kto ma rację, budują razem nową strukturę.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Język my",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Propozycja budowania wspólnoty",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, podzielmy konkretnie: ty - naczynia i śmieci, ja - gotowanie i odkurzanie. Proste i jasne.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 0,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Kacper wzrusza ramionami. Okej, mogę spróbować. Ale... to chyba nie chodzi tylko o listę, prawda?",
+                    "feedback": {
+                        "label": "Rozwiązanie transakcyjne",
+                        "psychology": "Marta proponuje konkretny podział - to krok naprzód, ale zatrzymuje się na Poziomie I: transakcji. Kacper wyczuwa, że to nie rozwiązuje całości problemu. Podział zadań bez zmiany wzajemnej świadomości i docenienia może nie przetrwać długo.",
+                        "better_alternative_hint": "Uzupełnij propozycję o wymiar emocjonalny: Ale ważne, żebyśmy też mówili sobie nawzajem co widzimy u drugiej osoby."
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Rozwiązanie problemu",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Widzisz? Zawsze tak samo. Nic się nie zmieni, bo nigdy nic się nie zmienia.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kacper wstaje. Jak tak mówisz, to po co w ogóle rozmawiamy? Dobranoc.",
+                    "feedback": {
+                        "label": "Katastrofizacja na finiszu",
+                        "psychology": "Nigdy i zawsze to klasyczne zniekształcenia poznawcze, które zamykają rozmowę. Kacper słyszy: Jesteś nienaprawialny. To nie daje mu żadnej szansy na zmianę. Marta traci szansę na przełom, który był tuż przed nią.",
+                        "better_alternative_hint": "Zamiast zamykać drzwi, spróbuj: Boję się, że znowu wrócimy do tego samego. Jak możemy tym razem naprawdę to zmienić?"
+                    },
+                    "tags": [
+                        {
+                            "text": "Katastrofizacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Uogólnianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Zamknięcie dialogu",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Może masz rację. Daj mi spokój, jestem zmęczona.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kacper siada z powrotem i milczy. Para wisi w powietrzu. Żadne z was nie wie co dalej.",
+                    "feedback": {
+                        "label": "Rezygnacja w ostatniej chwili",
+                        "psychology": "Marta rezygnuje tuż przed możliwym przełomem. Wycofanie może być sygnałem emocjonalnego wyczerpania - i warto je rozpoznawać. Ale bez zakończenia rozmowy problem wróci, prawdopodobnie z większą siłą.",
+                        "better_alternative_hint": "Jeśli jesteś wyczerpana, powiedz: Potrzebuję odpocząć. Czy możemy wrócić do tego jutro rano, gdy oboje będziemy spokojniejsi?"
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie emocjonalne",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Unikanie rozwiązania",
+                            "type": "error"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 2
+            },
+            "color": "red",
+            "title": "ŚCIANA Z CISZY",
+            "emoji": "🔴",
+            "subtitle": "Rozmowa zamieniła się w bitwę",
+            "narrative": "Kacper wychodzi do sypialni, zatrzaskując cicho drzwi. Siedzisz sama w salonie, wśród nieuzmytych talerzy. Poczucie niesprawiedliwości nie znikło - wróci jutro, może silniejsze. Nic się nie zmieniło, a oboje czujecie się gorzej niż przed rozmową.",
+            "diagnosis": "Dominowały komunikaty agresywne lub pasywno-agresywne, które uruchamiały defensywność Kacpra zamiast otwierać przestrzeń do dialogu. Generalizacje (zawsze, nigdy, nic) i sarkazm uniemożliwiły skupienie się na faktycznym problemie - nierównym podziale obowiązków. Rozmowa utknęła na Poziomie II: licytacji cierpienia i walce o to kto ma rację.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl agresywny lub pasywno-agresywny - ataki, uogólnienia i sarkazm zamiast wyrażania potrzeb.",
+                "strongest_moment": "Samo podjęcie tematu zamiast tłumienia wszystkiego w sobie to ważny krok. Odwaga do rozmowy, nawet jeśli poszła nie po myśli, jest punktem wyjścia.",
+                "growth_tip": "Zacznij od komunikatu Ja: Czuję się przeciążona zamiast Ty nigdy nic nie robisz. To jedna zmiana, która może całkowicie zmienić to, jak partner odbiera twoje słowa.",
+                "replay_prompt": "Spróbuj jeszcze raz - tym razem zamiast ataku, powiedz partnerowi jak się czujesz i czego potrzebujesz. Zobaczysz jak inaczej może wyglądać ta sama rozmowa."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 3,
+                "max": 5
+            },
+            "color": "yellow",
+            "title": "KROK W DOBRĄ STRONĘ",
+            "emoji": "🟡",
+            "subtitle": "Coś się poruszyło, ale nie do końca",
+            "narrative": "Doszliście do jakiegoś kompromisu. Na kartce pojawia się lista zadań. Kacper zgodził się na zmiany. Ale wieczór kończy się w ciszy - jakby coś ważnego zostało niedopowiedziane. Jest nadzieja, ale oboje nadal nie czujecie się w pełni usłyszani.",
+            "diagnosis": "Udało się utrzymać część rozmowy na poziomie asertywnym i rzeczowym. Jednak emocjonalna warstwa konfliktu - potrzeba docenienia z obu stron - nie została w pełni zaadresowana. Podział zadań jest krokiem naprzód, ale bez wzajemnego uznania i empatii może być trudno go utrzymać w czasie.",
+            "post_game": {
+                "communication_style_summary": "Przeważał styl asertywny lub transakcyjny - konkretny i względnie spokojny, ale rzadko sięgający do emocji.",
+                "strongest_moment": "Zatrzymanie się na konkrecie i próba znalezienia praktycznego rozwiązania - to świadczy o dojrzałości i orientacji na działanie.",
+                "growth_tip": "Następnym razem spróbuj wejść głębiej - zanim zaproponujesz listę zadań, zapytaj: Co ty czujesz w tej sytuacji? Emocjonalne połączenie sprawia, że rozwiązania są trwalsze.",
+                "replay_prompt": "Masz dobry instynkt do rozwiązywania problemów. Sprawdź co się stanie, gdy do asertywności dodasz więcej empatii - i czy rozmowa poprowadzi cię w nieoczekiwane, głębsze miejsce."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 6,
+                "max": 8
+            },
+            "color": "green",
+            "title": "WIDZIMY SIĘ",
+            "emoji": "🟢",
+            "subtitle": "Zrozumienie, które zmienia relację",
+            "narrative": "Siedzicie razem przy stole z pustą kartką. Kacper nalewa ci herbatę. Nie ma jeszcze gotowego planu, ale jest coś ważniejszego - oboje poczuliście się usłyszani. Naczynia poczekają. Teraz ważniejsza jest ta rozmowa.",
+            "diagnosis": "Udało ci się przeprowadzić rozmowę przez Poziom II ku Poziomowi III. Dzięki komunikatom empatycznym i walidacji uczuć partnera, Kacper mógł otworzyć się na swoje własne potrzeby. Problem obowiązków nie zniknął, ale zyskał nowe ramy - zamiast pytania kto ile robi, pojawia się pytanie jak możemy oboje czuć się dobrze w tej relacji.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl empatyczny z elementami transformacyjnymi - słuchanie, walidacja i budowanie wspólnego rozumienia sytuacji.",
+                "strongest_moment": "Moment, gdy zamiast kontratakować, usłyszałaś że Kacper też czuje się niedoceniany - i zamiast to odrzucić, potwierdziłaś. To był przełom.",
+                "growth_tip": "Świetnie zarządzasz emocjami w trudnych chwilach. Teraz ćwicz utrzymywanie tej otwartości już na początku rozmowy, zanim napięcie narośnie - i obserwuj jak zmienia się dynamika.",
+                "replay_prompt": "Wiesz już jak rozmawiać z empatią. Co by się stało, gdybyś zastosowała to od samego początku - od pierwszego zdania?"
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 9,
+                "max": 10
+            },
+            "color": "blue",
+            "title": "GŁĘBOKA WIĘŹ",
+            "emoji": "🔵",
+            "subtitle": "Kiedy konflikt o naczynia staje się mostem",
+            "narrative": "Siedzicie przy stoliku z herbatą, tworząc razem listę. Ale ta lista to tylko symbol. Ważniejsze jest to, co usłyszeliście od siebie nawzajem. Kacper powiedział ci, że czuł się niedoceniany. Ty powiedziałaś mu, że boisz się niewidzialności. Żadne z was tego wcześniej nie wiedziało. Ta rozmowa was zmieniła.",
+            "diagnosis": "Mistrzowskie przeprowadzenie trudnej rozmowy przez wszystkie poziomy - od transakcji przez emocje aż do transformacji. Komunikaty empatyczne i transformacyjne pozwoliły obojgu odsłonić głębsze potrzeby. Konflikt o naczynia zamienił się w rozmowę o wzajemnym uznaniu i wspólnej odpowiedzialności.",
+            "post_game": {
+                "communication_style_summary": "Konsekwentnie empatyczny i transformacyjny - komunikat Ja, walidacja, wspólna perspektywa, język my przez całą rozmowę.",
+                "strongest_moment": "Kiedy powiedziałaś: Może oboje potrzebujemy częściej widzieć nawzajem swój wysiłek - i Kacper poczuł się naprawdę usłyszany po raz pierwszy w tej rozmowie.",
+                "growth_tip": "Osiągnęłaś poziom mistrzowski. Teraz największym wyzwaniem jest przenosić tę umiejętność do momentów gdy jesteś naprawdę zła lub przestraszona - gdy ciało mówi walcz lub uciekaj, a ty wybierasz połącz.",
+                "replay_prompt": "To był wyjątkowy wynik. Spróbuj teraz scenariusza z wyższym poziomem trudności - gdy partner jest bardziej zamknięty albo konflikt jest głębszy. Twoje umiejętności są gotowe na więcej."
+            }
+        }
+    ]
+}

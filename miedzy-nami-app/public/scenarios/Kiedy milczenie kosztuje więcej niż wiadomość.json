@@ -1,0 +1,1071 @@
+{
+    "scenario_id": "late_return_no_notice",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Późny powrót",
+        "subtitle": "Kiedy milczenie kosztuje więcej niż wiadomość",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 12,
+        "interaction_count": 6
+    },
+    "tags": {
+        "relationship_type": "romantic_partner",
+        "theme": [
+            "trust",
+            "boundaries",
+            "communication_breakdown"
+        ],
+        "emotional_intensity": "moderate",
+        "age_rating": "teen",
+        "session_type": "mini_story",
+        "player_role_gender": "female",
+        "difficulty": "intermediate"
+    },
+    "characters": {
+        "player": {
+            "name": "Marta",
+            "role_label": "Partnerka · Gracz",
+            "age_range": "28-35",
+            "context": "Czeka w domu od dwóch godzin. Telefon milczy. Wyobraźnia pracuje pełną parą — wypadek? Brak szacunku? Kiedy Tomek w końcu wchodzi, cała ulga natychmiast miesza się z furią.",
+            "hidden_need": "safety",
+            "hidden_need_text": "Potrzebuje pewności, że jest dla partnera ważna — że jej spokój się liczy i że może na nim polegać.",
+            "traits": [
+                {
+                    "text": "Lojalna",
+                    "type": "positive"
+                },
+                {
+                    "text": "Wrażliwa na ignorowanie",
+                    "type": "negative"
+                },
+                {
+                    "text": "Szybko eskaluje, gdy się boi",
+                    "type": "negative"
+                },
+                {
+                    "text": "Zdolna do głębokiej rozmowy",
+                    "type": "positive"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 7,
+                "patience": 4,
+                "defensiveness": 6,
+                "empathy": 8,
+                "need_for_control": 5,
+                "shame_sensitivity": 6,
+                "directness": 7,
+                "repair_ability": 8
+            }
+        },
+        "npc": {
+            "name": "Tomek",
+            "role_label": "Partner · NPC",
+            "age_range": "30-37",
+            "context": "Wraca po stresującym dniu — nieoczekiwane zebranie, potem kolega w kryzysie. Zapomniał napisać. Czuje się winny, ale zmęczony i od razu wchodzi w tryb defensywny, kiedy widzi minę Marty.",
+            "hidden_need": "recognition",
+            "hidden_need_text": "Chce być widziany jako ktoś starający się. Boi się, że cokolwiek powie, zostanie osądzony.",
+            "traits": [
+                {
+                    "text": "Odpowiedzialny w pracy",
+                    "type": "positive"
+                },
+                {
+                    "text": "Unika konfrontacji",
+                    "type": "negative"
+                },
+                {
+                    "text": "Zamyka się gdy jest atakowany",
+                    "type": "negative"
+                },
+                {
+                    "text": "Otwarty gdy czuje się bezpiecznie",
+                    "type": "positive"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 4,
+                "patience": 6,
+                "defensiveness": 8,
+                "empathy": 6,
+                "need_for_control": 4,
+                "shame_sensitivity": 8,
+                "directness": 4,
+                "repair_ability": 6
+            },
+            "npc_reaction_logic": "Tomek zamyka się i kontratauje, gdy słyszy oskarżenia lub uogólnienia ('zawsze', 'nigdy'). Mięknie i otwiera się, gdy Marta mówi o swoich uczuciach zamiast jego winach. Jest gotowy na głębszą rozmowę, jeśli poczuje, że nie jest z góry skazany."
+        }
+    },
+    "metrics_start": {
+        "tension": 55,
+        "trust": 55,
+        "openness": 40,
+        "feeling_heard": 30
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Drzwi się otwierają",
+            "scene": {
+                "description": "Jest 23:15. Siedzisz w salonie od ponad dwóch godzin — kubek herbaty dawno wystygł, telefon leży ekranem do góry na kolanach. Słyszysz klucz w zamku. Tomek wchodzi, wygląda na zmęczonego i zaskoczonego twoim wzrokiem.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "tense"
+            },
+            "npc_line": "Hej… coś się stało?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Coś się stało?! Siedzę tu od dwóch godzin i ani jednej wiadomości. Jesteś kompletnie nieodpowiedzialny!",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -1
+                    },
+                    "npc_reaction": "Tomek prostuje się, zmęczenie zastępuje napięcie. Przepraszam, ale nie musisz od razu atakować.",
+                    "feedback": {
+                        "label": "Atak na tożsamość",
+                        "psychology": "Oskarżenie o 'nieodpowiedzialność' to atak na tożsamość, nie na zachowanie — klasyczny błąd z modelu Gottmana (krytyka vs. zarzut). Tomek z wysoką defensywnością natychmiast przejdzie w tryb obrony zamiast przeprosin.",
+                        "better_alternative_hint": "Zamiast oceniać go, nazwij co czułaś: strach, niepokój, ulgę że żyje."
+                    },
+                    "tags": [
+                        {
+                            "text": "Atak na tożsamość",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Uogólnianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Eskalacja konfliktu",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nic. Nieważne. Cieszę się, że wróciłeś. (odwracasz wzrok)",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Tomek odczytuje twój chłód. Okej… to idę się przebrać. Wychodzi z pokoju, ale atmosfera jest lodowata.",
+                    "feedback": {
+                        "label": "Udawanie, że wszystko gra",
+                        "psychology": "Wycofanie bez słowa to bierna komunikacja, która tłumi potrzebę bezpieczeństwa i pozwala problemowi narastać. W analizie transakcyjnej Berne'a to komunikat: 'nie jestem warta uwagi' — wzmacniający negatywny skrypt relacyjny.",
+                        "better_alternative_hint": "Twoje uczucia są ważne. Zamknięcie się w sobie nie rozwiąże problemu — on nawet nie wie, co czułaś."
+                    },
+                    "tags": [
+                        {
+                            "text": "Tłumienie emocji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Martwię się, kiedy nie dajesz znaku życia. Następnym razem napisz, dobrze?",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Tomek kiwa głową. Masz rację, przepraszam. Wiem, że powinienem był napisać.",
+                    "feedback": {
+                        "label": "Asertywny komunikat",
+                        "psychology": "To poprawna asertywność — jest komunikat 'Ja' i konkretna prośba. Brakuje jednak odsłonięcia głębszej emocji (strach, ulga), co mogłoby bardziej zbliżyć do siebie niż rozwiązać problem na poziomie zasad.",
+                        "better_alternative_hint": "Dobrze! Możesz pójść jeszcze krok dalej i powiedzieć co tak naprawdę czułaś przez te dwie godziny."
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Cieszę się, że jesteś cały. Przez te dwie godziny naprawdę się bałam — wyobraźnia potrafi zrobić z człowiekiem różne rzeczy.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Tomek zatrzymuje się. Widać, że tego się nie spodziewał. Boże, przepraszam. Nie pomyślałem, że tak to odbierzesz. Wszystko w porządku?",
+                    "feedback": {
+                        "label": "Ulga i prawdziwa emocja",
+                        "psychology": "Odsłonięcie strachu zamiast pretensji to komunikat z warstwy uczuć w kwadracie von Thuna. Zamiast walczyć o rację, zapraszasz Tomka do kontaktu z twoim doświadczeniem — to odwraca defensywność i aktywuje empatię.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Odsłonięcie emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Pierwsza obrona",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Tomek stoi przy drzwiach, ramiona skrzyżowane. Twoje pierwsze słowa postawiły go w tryb bojowy — widać to po zaciśniętej szczęce i unikaniu wzroku.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Słuchaj, miałem ciężki dzień. Nie wiedziałem, że muszę pisać raport o każdym swoim ruchu.",
+            "scene_high": {
+                "description": "Tomek odkłada klucze i siada naprzeciwko ciebie. Jego mowa ciała jest otwarta — twoje pierwsze słowa coś w nim poruszyły.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Masz rację, powinienem był napisać. Chcesz wiedzieć co się działo?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Raport? Poważnie? Chodzi o zwykłą wiadomość. Ale jak wolisz traktować mnie jak powietrze, proszę bardzo.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Tomek prycha. No to pięknie. Rozmawiaj ze mną, kiedy będziesz gotowa na rozmowę — nie na wojnę.",
+                    "feedback": {
+                        "label": "Sarkazm jako broń",
+                        "psychology": "Pasywna agresja ('jak wolisz') to ukryty atak — celowo rani, ale pozwala nadawcy czuć się ofiarą. W modelu Gottmana to komunikat pogardy, który niszczy bazę zaufania szybciej niż otwarta kłótnia.",
+                        "better_alternative_hint": "Sarkazm zamknął Tomkowi usta. Spróbuj powiedzieć wprost, co cię boli — bez ironii."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pasywna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Eskalacja konfliktu",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Wiem, że masz ciężkie dni. Nie chcę być trudna. (milkniesz)",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Tomek kiwa głową z ulgą i idzie do kuchni. Temat zamknięty — ale tylko pozornie.",
+                    "feedback": {
+                        "label": "Rezygnacja ze swoich potrzeb",
+                        "psychology": "Oddanie pola pod wpływem jego defensywności to bierna odpowiedź wzmocniona wstydem ('nie chcę być trudna'). Wewnętrzne przekonanie 'moje potrzeby są przeszkodą' blokuje autentyczny kontakt. Teoria NVC Rosenberga: niespełniona potrzeba wróci ze zdwojoną siłą.",
+                        "better_alternative_hint": "Twoja potrzeba spokoju nie jest 'byciem trudną'. Możesz ją wyrazić łagodnie, ale jasno."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wyrzeczenie się potrzeby",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "NVC — niezaspokojona potrzeba",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Rozumiem, że miałeś ciężki dzień. Ale jedna wiadomość zajmuje 10 sekund.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Tomek wzdycha. Okej, masz rację. Przepraszam, naprawdę.",
+                    "feedback": {
+                        "label": "Asertywność z empatycznym wstępem",
+                        "psychology": "Dobry komunikat — walidacja jego sytuacji ('rozumiem') przed stawianiem granicy zmniejsza defensywność. To Poziom II: asertywna pozycja bez eskalacji. Brakuje zejścia do głębszej warstwy uczuć.",
+                        "better_alternative_hint": "Idzie dobrze! Możesz powiedzieć, dlaczego ta jedna wiadomość jest dla ciebie tak ważna — co by zmieniła w tych dwóch godzinach?"
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie chodzi o raportowanie. Chodzi o to, że kiedy nie wiem, gdzie jesteś, moja głowa idzie w najgorsze miejsca. Boję się.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Tomek opuszcza ramiona. Kurde… nie myślałem o tym tak. Myślałem tylko, że się zaraz wyśpisz. Pierwszy raz patrzy na ciebie naprawdę.",
+                    "feedback": {
+                        "label": "Potrzeba zamiast zarzutu",
+                        "psychology": "Nazwanie lęku (NVC: uczucie + potrzeba) zamiast reagowania na jego defensywność rozbija transakcyjną walkę o rację. Tomek widzi Martę — nie przeciwniczkę. To przejście z Poziomu II na Poziom III.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC — uczucia i potrzeby",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Deeskalacja",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Wyjaśnienie czy wymówka?",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Tomek stoi przy oknie, plecami do ciebie. Szuka wyjścia z sytuacji — jego tłumaczenie brzmi jak wymówka, bo rozmowa od początku była bitwą.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Kolega miał kryzys, siedziałem z nim w samochodzie przez godzinę. Nie mogłem po prostu wyjść i pisać smsów.",
+            "scene_high": {
+                "description": "Tomek siada bliżej i mówi spokojnie. Czuć, że naprawdę chce, żebyś zrozumiała — nie żeby się wybronić.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Kolega Marek miał dziś kryzys — płakał w samochodzie, nie mogłem go zostawić. Zupełnie zapomniałem o telefonie. Wiem, że to nie jest dobre wytłumaczenie.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Zawsze masz jakieś wytłumaczenie. Zawsze coś ważniejszego niż ja.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Tomek odwraca się z błyskiem w oczach. Pomagałem człowiekowi, który płakał. Jak mam wygrać z twoją logiką?",
+                    "feedback": {
+                        "label": "Uogólnienie 'zawsze'",
+                        "psychology": "Słowo 'zawsze' to klasyczna katastrofizacja — jeden z Czterech Jeźdźców Apokalipsy Gottmana. Tomek teraz broni swojego dobrego czynu (pomocy koledze), a nie odpowiada za brak wiadomości. Temat się niebezpiecznie przesunął.",
+                        "better_alternative_hint": "Zamiast oceniać jego historię, możesz potwierdzić, że to była trudna sytuacja — a potem wrócić do swojej potrzeby."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uogólnianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Katastrofizacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Czterej Jeźdźcy — krytyka",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "No okej, skoro tak było, to rozumiem. (wzruszasz ramionami, mimo że nadal czujesz niepokój)",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -1,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Tomek kiwa głową z ulgą i odchodzi do łazienki. Zostajesz sama z niestrawionymi uczuciami.",
+                    "feedback": {
+                        "label": "Fałszywe 'rozumiem'",
+                        "psychology": "Akceptowanie bez rzeczywistego przetworzenia to 'ukryte milczenie'. Emocja nie znika — schodzi pod powierzchnię i wróci przy kolejnej okazji. W analizie transakcyjnej Berne'a grasz 'Spokojną Dorosłą', ale wewnętrzne Dziecko nadal krzyczy.",
+                        "better_alternative_hint": "Możesz jednocześnie rozumieć jego sytuację i mówić o swojej. To nie są wykluczające się rzeczy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Tłumienie emocji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna — konflikt stanów",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Dobrze, że byłeś dla niego. Ale może następnym razem — choćby jedna wiadomość?",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Tak, masz rację. Następnym razem napiszę. — odpowiada spokojnie, choć trochę odruchowo.",
+                    "feedback": {
+                        "label": "Uznanie i granica",
+                        "psychology": "Walidacja jego czynu i asertywna prośba — to dobra strategia. Rozmowa zostaje na poziomie zachowania i zasad (Poziom II), ale nie sięga głębiej — do uczuć i potrzeb. Problem zostaje zarządzony, niekoniecznie zrozumiany.",
+                        "better_alternative_hint": "Możesz też powiedzieć mu, co przeżywałaś przez te dwie godziny — to da umowie głębszy fundament niż sama zasada."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "To musiało być dla niego trudne. I rozumiem, że nie mogłeś wyjść. Ale chciałabym, żebyś wiedział, co ja w tym czasie przeżywałam.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Tomek wyraźnie mięknie. Okej. Powiedz mi.",
+                    "feedback": {
+                        "label": "Walidacja i otwarcie przestrzeni",
+                        "psychology": "To wzorcowy komunikat transformacyjny: walidacja jego doświadczenia ('to musiało być trudne') + zaproszenie do wysłuchania swojego. Obie perspektywy istnieją jednocześnie — serce Poziomu III. To fundament dialogu partnerskiego.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Aktywne słuchanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC — empatia dla siebie i innych",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Pod powierzchnią",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Rozmowa ugrzęzła. Tomek siedzi na kanapie, wpatrując się w podłogę. W powietrzu wisi niedopowiedziane — oboje czujecie, że coś ważnego nie zostało powiedziane, ale nikt nie wie jak zacząć.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Słuchaj, jest już późno. Może po prostu pójdziemy spać?",
+            "scene_high": {
+                "description": "Tomek patrzy na ciebie z uwagą. Czuć, że ta rozmowa doszła do miejsca, gdzie oboje chcecie być szczerzy. Cisza jest miękka, nie ciężka.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Chcę wiedzieć — co tak naprawdę czułaś przez te dwie godziny? Bo wydaje mi się, że to nie tylko chodzi o wiadomość.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Tak, pójdźmy spać. I tak nic nie rozwiążemy. (wstajesz i wychodzisz z pokoju bez słowa)",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Tomek zostaje sam z poczuciem winy, które nie ma gdzie pójść. Żadne z was nie wyciągnie z tej nocy niczego dobrego.",
+                    "feedback": {
+                        "label": "Zamknięcie zanim zaczęło",
+                        "psychology": "Wyjście z pokoju bez zakończenia rozmowy to stonewalling — czwarty z Jeźdźców Apokalipsy Gottmana. Nawet jeśli jest naturalną odpowiedzią na przeciążenie emocjonalne, bez sygnału powrotu zostawia relację w zawieszeniu.",
+                        "better_alternative_hint": "Jeśli naprawdę potrzebujesz przerwy, powiedz to wprost: 'Potrzebuję chwili. Wrócimy do tego rano.'"
+                    },
+                    "tags": [
+                        {
+                            "text": "Stonewalling",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Czterej Jeźdźcy — wycofanie",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Myślałam, że coś ci się stało. Że może leżysz gdzieś w rowie. Śmieszne, wiem.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -3,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Tomek przełyka ślinę. Wcale nie śmieszne. Boże, przepraszam. Nie pomyślałem, że możesz iść w takie miejsca. Przesuwa się bliżej.",
+                    "feedback": {
+                        "label": "Odsłonięcie ukrytego lęku",
+                        "psychology": "Wyjawienie konkretnego obrazu z wyobraźni ('leżysz w rowie') to pełne odsłonięcie wrażliwości — komunikat z najgłębszej warstwy kwadratu von Thuna. Samozdeprecjonowanie ('śmieszne, wiem') paradoksalnie zwiększa autentyczność i rozbija defensywność Tomka.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Odsłonięcie wrażliwości",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna — warstwa uczuć",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Czułam się sama. Jakbym nie była wystarczającym powodem, żeby napisać.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Tomek milknie. To nieprawda. Jesteś dla mnie ważna, bardzo. Wyciąga rękę.",
+                    "feedback": {
+                        "label": "Nazwanie bólu pod złością",
+                        "psychology": "Złość jest często wtórną emocją przykrywającą ból lub wstyd. Komunikat 'czułam się sama' dociera do pierwotnej rany i zaprasza Tomka do kontaktu z jego wartościami. To dobry kierunek — NVC w praktyce. Brakuje jednak konkretnego obrazu lub głębszego wyznania, które w pełni otworzyłoby dialog.",
+                        "better_alternative_hint": "Możesz powiedzieć mu, co konkretnie się działo w twojej głowie przez te dwie godziny — to zbliżyłoby was jeszcze bardziej."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pierwotna emocja vs. wtórna",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "NVC — potrzeba uznania",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Wiem, że nie miałeś złych intencji. Może po prostu ustalmy jakieś zasady na takie sytuacje?",
+                    "points": 0,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -1,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Jasne, możemy porozmawiać o tym jutro. Tomek kiwa głową — ugoda, ale emocje zostają z boku, niewidoczne.",
+                    "feedback": {
+                        "label": "Skok do rozwiązań za wcześnie",
+                        "psychology": "Zasady i umowy to ważny element związku, ale skakanie do rozwiązań przed pełnym przetworzeniem emocji to strategia transakcyjna, która blokuje głębszy kontakt. W teorii NVC Rosenberga: potrzeba emocjonalna musi być najpierw usłyszana — inaczej umowa będzie pusta.",
+                        "better_alternative_hint": "Zasady są ważne — ale może najpierw powiedz mu, co ta noc w tobie poruszyła? To da umowie głębszy fundament."
+                    },
+                    "tags": [
+                        {
+                            "text": "Transakcja zamiast połączenia",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "NVC — pominięcie emocji",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Tomek otwiera się",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Siedzicie w milczeniu. Tomek zaczyna mówić, ale w głosie słychać rezerwę — czuje się oceniany i mówi mniej niż mógłby.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "cold"
+            },
+            "npc_line_low": "Wiesz… staram się. Może nie zawsze mi wychodzi, ale się staram. Nie wiem, czy to widzisz.",
+            "scene_high": {
+                "description": "Tomek odchyla się na kanapie i patrzy w sufit przez chwilę, zanim zacznie mówić. To znak, że sięga głębiej — czuje się bezpiecznie.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Wiesz, co mnie uderzyło? Że ty się bałaś <em>o mnie</em>. Ja w tej chwili byłem skupiony tylko na Marku i nie pomyślałem, że ktoś może się martwić, że mnie nie ma. To dziwne uczucie.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "No właśnie. Ja też się staram, ale nikt tego nie docenia.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Tomek zaciska usta. Dobranoc. Wstaje i wychodzi z pokoju.",
+                    "feedback": {
+                        "label": "Licytacja cierpienia",
+                        "psychology": "Odpowiedź na jego otwarcie własnym zarzutem to zamiana dialogu na Poziom II — walkę o to, kto bardziej się stara. To blokuje właśnie ten moment, gdy Tomek gotów był naprawdę się podzielić.",
+                        "better_alternative_hint": "Kiedy ktoś się otwiera, kluczowe jest potwierdzenie — nie porównywanie. Spróbuj: 'Widzę, że się starasz.'"
+                    },
+                    "tags": [
+                        {
+                            "text": "Licytacja cierpienia",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Blokowanie otwarcia",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Tak, widzę. Dlatego nie rozumiem, dlaczego tak trudno ci napisać jedną wiadomość.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Tomek wzdycha głęboko. Bo wtedy myślę o innych rzeczach. Nie robię tego celowo. Jego głos jest zmęczony.",
+                    "feedback": {
+                        "label": "Pytanie jako zarzut",
+                        "psychology": "Zdanie zaczyna się od pozornej walidacji ('tak, widzę'), ale natychmiast przechodzi do 'dlaczego' — co w kontekście emocjonalnym brzmi jak oskarżenie. To technika pozornego słuchania, forma pasywnej agresji.",
+                        "better_alternative_hint": "Zamiast pytać 'dlaczego tak trudno', możesz powiedzieć: 'Chcę to zrozumieć — co się wtedy w tobie dzieje?'"
+                    },
+                    "tags": [
+                        {
+                            "text": "Pozorne słuchanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Pytanie-zarzut",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Widzę, że się starasz. I doceniam to. Dziękuję, że mi to mówisz.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 2,
+                        "openness": 1,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Tomek kiwa głową z wyraźną ulgą. Dziękuję. To dużo znaczy.",
+                    "feedback": {
+                        "label": "Walidacja starania",
+                        "psychology": "Potwierdzenie jego wysiłków odpowiada na ukrytą potrzebę uznania (NVC). Brakuje jednak odzwierciedlenia jego konkretnej refleksji i pogłębienia rozmowy. To poprawna, ale dość transakcyjna odpowiedź na głęboki moment.",
+                        "better_alternative_hint": "Możesz też podzielić się tym, co poczułaś słysząc jego słowa — to mogłoby otworzyć naprawdę wyjątkową rozmowę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC — uznanie potrzeby",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "To co powiedziałeś — że ktoś się boi, że cię nie ma — to jest właśnie to. Nie chodzi o wiadomość. Chodzi o to, że jesteś dla mnie kimś, bez kogo bym się gubiła.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -3,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Tomek patrzy na ciebie długo. Nie wiedziałem, że tak o mnie myślisz. Nikt mi tak nie powiedział. Przesuwa się bliżej.",
+                    "feedback": {
+                        "label": "Odzwierciedlenie i wyznanie",
+                        "psychology": "Odzwierciedlenie jego słów ('to co powiedziałeś') to technika aktywnego słuchania, która pokazuje, że naprawdę słyszałaś. Dodanie własnego wyznania ('jesteś kimś bez kogo bym się gubiła') zmienia perspektywę całego konfliktu — z 'ty mnie zawiodłeś' na 'znaczysz dla mnie bardzo wiele'. To transformacja.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Aktywne słuchanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Odzwierciedlenie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Transformacyjny komunikat",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_6",
+            "title": "Co dalej z nami",
+            "score_threshold": 5,
+            "scene_low": {
+                "description": "Rozmowa dogasa. Oboje jesteście zmęczeni — nie tylko nocą, ale i tą ścianą, której nie udało się przebić. Zostaje niedopowiedzenie ciężkie jak mgła.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Przepraszam za dziś. Mam nadzieję, że jutro będzie lepiej. (Tomek mówi to machinalnie, jakby chciał już zamknąć temat)",
+            "scene_high": {
+                "description": "Siedzicie blisko. Napięcie opadło — zostało coś ciepłego i prawdziwego. Tomek trzyma twoją rękę.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Chcę, żebyś wiedziała, że następnym razem napiszę — nie dlatego, że musisz mi pilnować. Ale dlatego, że nie chcę, żebyś się bała. To ma dla mnie znaczenie.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Mam nadzieję, że to nie będzie następnym razem to samo.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Tomek blednie. Nie wiem już co powiedzieć. Idzie spać bez słowa.",
+                    "feedback": {
+                        "label": "Zatruty ostatni akcent",
+                        "psychology": "Zakończenie rozmowy wątpiącym komentarzem to forma pasywnej agresji — niszczy wszystko, co udało się zbudować. W modelu naprawy relacji Gottmana moment zamknięcia jest kluczowy: jak kończysz rozmowę, tak definiujesz co z niej zostaje.",
+                        "better_alternative_hint": "Nawet jeśli nie czujesz w pełni, że to się zmieni — możesz powiedzieć co chcesz, żeby było, zamiast prognozować porażkę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pasywna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Sabotaż naprawy",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Naprawa relacji — błąd",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dziękuję, że rozmawiałeś ze mną. To dużo znaczy.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 2,
+                        "openness": 1,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Tomek uśmiecha się lekko. Mnie też. Dobranoc, kochanie.",
+                    "feedback": {
+                        "label": "Wdzięczność jako zamknięcie",
+                        "psychology": "Wyrażenie wdzięczności za rozmowę to dobra naprawa relacji — przerywa defensywny cykl i zostawia pozytywny ślad. To jednak bardziej grzeczne zamknięcie niż pełne porozumienie — brakuje sygnału wspólnoty i wizji 'my razem'.",
+                        "better_alternative_hint": "Możesz dodać co ta rozmowa dla ciebie zmieniła — to domknęłoby pętlę i wzmocniło poczucie 'my razem'."
+                    },
+                    "tags": [
+                        {
+                            "text": "Naprawa relacji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Wdzięczność jako komunikat",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Cieszę się, że to powiedziałeś. Chcę, żebyśmy mogli zawsze tak rozmawiać — kiedy jest trudno, a nie tylko kiedy jest dobrze.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -3,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Tomek ściska twoją rękę. Ja też tego chcę. Dziękuję, że nie dałaś za wygraną dziś wieczorem.",
+                    "feedback": {
+                        "label": "Wizja wspólnej komunikacji",
+                        "psychology": "Sformułowanie 'chcę, żebyśmy mogli zawsze tak rozmawiać' to komunikat transformacyjny w czystej postaci — buduje wspólną wizję relacji, nie tylko rozwiązuje dzisiejszy problem. To przejście z 'ja' i 'ty' do 'my'. Poziom III domknięty.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Transformacyjny komunikat",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Budowanie wspólnej wizji",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Dobranoc. Jutro możemy jeszcze porozmawiać o tym, co dalej.",
+                    "points": 0,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -1,
+                        "openness": -1,
+                        "feeling_heard": -1
+                    },
+                    "npc_reaction": "Tomek kiwa głową. Dobranoc. Wstaje, zostawia cię z poczuciem niedokończoności.",
+                    "feedback": {
+                        "label": "Odkładanie zamiast domknięcia",
+                        "psychology": "Odkładanie rozmowy na jutro może być zdrową pauzą, ale tutaj — po całym emocjonalnym wieczorze — brzmi jak transakcyjne wycofanie. Brakuje momentu połączenia, który mógłby zregenerować relację po trudnej nocy.",
+                        "better_alternative_hint": "Kiedy rozmowa dotarła tak daleko, warto ją domknąć ciepłym gestem lub słowem. 'Jutro' może być zbyt dalekie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Odkładanie zamknięcia",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Transakcja zamiast połączenia",
+                            "type": "error"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "MURY, KTÓRE ROSNĄ",
+            "emoji": "🔴",
+            "subtitle": "Noc minęła, ale coś zostało nienaprawione.",
+            "narrative": "Tomek i Marta idą spać z plecami do siebie. W pokoju unosi się to dziwne napięcie — ani kłótnia, ani zgoda. Jutro wstaniecie, zrobicie kawę, może nawet się uśmiechniecie. Ale mur trochę wyrósł. I żadne z was tego nie powie wprost.",
+            "diagnosis": "Rozmowa utknęła na Poziomie II lub niżej — walce o rację, zarzutach lub wzajemnym zamykaniu się. Błędy takie jak uogólnienia ('zawsze'), sarkazm i stonewalling zablokowały autentyczny kontakt. Tomek nie poczuł się wysłuchany, Marta nie poczuła się ważna — oboje stracili.",
+            "post_game": {
+                "communication_style_summary": "Dominowały style agresywny i pasywno-agresywny — zarzuty, ironiczne komentarze i wycofywanie się bez wyjaśnienia.",
+                "strongest_moment": "Każdy moment, w którym zdecydowałaś się w ogóle cokolwiek powiedzieć — choćby niedoskonale — był krokiem w dobrą stronę.",
+                "growth_tip": "Zauważ, kiedy używasz słów 'zawsze' i 'nigdy' — to sygnał, że emocja przejęła dowodzenie. Zamień je na konkretną sytuację: 'kiedy dziś nie napisałeś, poczułam...'",
+                "replay_prompt": "Zagraj jeszcze raz i sprawdź, co zmienia się, gdy zamiast zarzutu — zaczniesz od swojego strachu."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "KOMPROMIS Z DYSTANSEM",
+            "emoji": "🟡",
+            "subtitle": "Ugodziliście się, ale serca zostały lekko za zamkiem.",
+            "narrative": "Zasady na przyszłość: ustalone. Przeprosiny: złożone. Pocałunek na dobranoc: był. Ale gdzieś w środku masz poczucie, że rozmawialiście o zachowaniach, nie o sobie. Jutro Tomek napisze. Ale czy wiesz, dlaczego tak naprawdę nie napisał dziś?",
+            "diagnosis": "Rozmowa osiągnęła Poziom II — asertywne stawianie granic, konkretne ustalenia i unikanie eskalacji. Zabrakło zejścia do Poziomu III: odsłonięcia głębszych emocji, ukrytych potrzeb i budowania wspólnej historii. Problem został zarządzony, lecz nie zrozumiany.",
+            "post_game": {
+                "communication_style_summary": "Dominowały style asertywny i transakcyjny — skuteczne granice, ale bez emocjonalnej głębi.",
+                "strongest_moment": "Momenty, w których zamiast atakować — mówiłaś o swoich potrzebach. To była właściwa droga.",
+                "growth_tip": "Następnym razem spróbuj jednego zdania głębiej: zamiast 'chcę, żebyś pisał' — 'kiedy piszesz, czuję że jestem dla ciebie ważna'. To różnica między regułą a połączeniem.",
+                "replay_prompt": "Wróć do interakcji 4 i wybierz inaczej — co się stanie, gdy Marta pokaże konkretny strach zamiast przechodzić do zasad?"
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 9
+            },
+            "color": "green",
+            "title": "NOWA WARSTWA BLISKOŚCI",
+            "emoji": "🟢",
+            "subtitle": "Zaczęło się od spóźnienia, a skończyło na prawdziwej rozmowie.",
+            "narrative": "Gasisz lampę. Tomek leży obok i mówi cicho: 'Nie wiedziałem, że tak o mnie myślisz.' Uśmiechasz się w ciemności. To nie była łatwa noc — ale coś w was obu się przesunęło. Jutro będzie inne, bo wiecie o sobie coś nowego.",
+            "diagnosis": "Rozmowa dotarła do Poziomu III — oboje zdołaliście zamienić konflikt w kontakt. Marta odsłoniła strach zamiast gniewu, Tomek mógł odpowiedzieć empatią zamiast defensywnością. To wzorzec budujący zaufanie na lata.",
+            "post_game": {
+                "communication_style_summary": "Dominowały style empatyczny i transformacyjny — odsłanianie emocji, walidacja i budowanie wspólnoty.",
+                "strongest_moment": "Moment, w którym powiedziałaś mu o swoim strachu — to był klucz, który otworzył całą rozmowę.",
+                "growth_tip": "Robisz to dobrze. Teraz kolejny poziom: stosuj ten styl komunikacji zanim emocje sięgną zenitu — prewencyjnie, w spokojnych chwilach, żeby relacja miała zapas siły na trudne momenty.",
+                "replay_prompt": "Zagraj scenariusz ponownie i tym razem celuj w wynik idealny — każda interakcja na 2 punkty. Czy rozmowa brzmi inaczej od samego początku?"
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 10,
+                "max": 12
+            },
+            "color": "blue",
+            "title": "DIALOG, KTÓRY ZMIENIA",
+            "emoji": "🔵",
+            "subtitle": "Mistrzostwo komunikacji — i coś więcej niż rozwiązanie problemu.",
+            "narrative": "Siedzicie w ciemności salonu jeszcze przez chwilę po wygaszeniu lampy. Tomek mówi cicho: 'Chcę, żebyś zawsze mogła mi to powiedzieć. Że się boisz. Że ci zależy.' A potem cisza, która nie potrzebuje słów. Tej nocy nauczyliście się czegoś o sobie nawzajem — czegoś, czego nie da się oduczyć.",
+            "diagnosis": "Perfekcyjne przejście przez wszystkie poziomy: od transakcji przez emocje do transformacji. Marta konsekwentnie wybierała odsłonięcie wrażliwości nad zarzutem, co pozwoliło Tomkowi wyjść z defensywności i naprawdę się otworzyć. Podręcznikowy przykład naprawy relacji według modeli Gottmana i Rosenberga.",
+            "post_game": {
+                "communication_style_summary": "Konsekwentnie empatyczny i transformacyjny styl komunikacji — od pierwszego do ostatniego słowa.",
+                "strongest_moment": "Ostatnie zdanie, które wybrałaś — wizja wspólnej komunikacji 'kiedy jest trudno, a nie tylko gdy jest dobrze'. To nie rozwiązanie problemu, to fundament relacji.",
+                "growth_tip": "Masz to. Teraz twoje zadanie to nie 'uczyć się komunikacji', ale stosować ją zanim przyjdzie kryzys — i zapraszać partnera do tego samego języka w spokojnych chwilach.",
+                "replay_prompt": "Zagraj jeszcze raz, ale tym razem wciel się w Tomka — zmień perspektywę i poczuj, jak te same słowa brzmią z drugiej strony."
+            }
+        }
+    ]
+}

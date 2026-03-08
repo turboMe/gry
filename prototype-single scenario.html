@@ -1,0 +1,1984 @@
+<!DOCTYPE html>
+
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Między Nami — Symulator Relacji</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-deep: #0c0c14;
+            --bg-panel: #14141f;
+            --bg-card: #1c1c2e;
+            --bg-card-hover: #252540;
+            --accent-cyan: #00e5ff;
+            --accent-magenta: #ff2d7b;
+            --accent-gold: #ffd740;
+            --accent-green: #00e676;
+            --accent-red: #ff3d3d;
+            --accent-orange: #ff9100;
+            --accent-purple: #b388ff;
+            --text-primary: #e8e8f0;
+            --text-secondary: #8888a8;
+            --text-dim: #555570;
+            --tension-color: #ff3d3d;
+            --trust-color: #00e5ff;
+            --openness-color: #ffd740;
+            --heard-color: #00e676;
+            --glow-cyan: 0 0 20px rgba(0, 229, 255, 0.3);
+            --glow-magenta: 0 0 20px rgba(255, 45, 123, 0.3);
+            --glow-gold: 0 0 20px rgba(255, 215, 64, 0.3);
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body: 'Source Sans 3', -apple-system, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: var(--bg-deep);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            touch-action: none;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        #game-container {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ─── SCROLLABLE AREA ─── */
+        .scroll-area {
+            flex: 1;
+            overflow-y: auto;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
+            touch-action: pan-y;
+            padding: 0 16px 100px 16px;
+        }
+
+        /* ─── SCREEN TRANSITIONS ─── */
+        .screen {
+            display: none;
+            width: 100%;
+            min-height: 100%;
+            flex-direction: column;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .screen.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .screen.fade-in {
+            animation: fadeSlideUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeSlideDown {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            to {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+        }
+
+        /* ─── MENU SCREEN ─── */
+        #menu-screen {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 24px;
+            min-height: 100vh;
+        }
+
+        .menu-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(ellipse at 30% 20%, rgba(0, 229, 255, 0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 80%, rgba(255, 45, 123, 0.06) 0%, transparent 60%),
+                var(–bg-deep);
+            z-index: 0;
+        }
+
+        .menu-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .game-logo {
+            font-family: var(–font-display);
+            font-size: clamp(2.4rem, 8vw, 3.8rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(–accent-cyan), var(–accent-magenta));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: none;
+            filter: drop-shadow(0 0 30px rgba(0, 229, 255, 0.2));
+        }
+
+        .game-subtitle {
+            font-size: clamp(0.85rem, 2.5vw, 1rem);
+            color: var(–text-secondary);
+            font-weight: 300;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+
+        .menu-divider {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, var(–accent-cyan), var(–accent-magenta));
+            margin: 0 auto 32px;
+            border-radius: 1px;
+        }
+
+        .best-score-display {
+            font-family: var(–font-mono);
+            font-size: 0.85rem;
+            color: var(–accent-gold);
+            margin-bottom: 32px;
+            opacity: 0.9;
+        }
+
+        .best-score-display:empty {
+            display: none;
+        }
+
+        .start-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 48px;
+            border: none;
+            border-radius: 60px;
+            background: linear-gradient(135deg, var(–accent-cyan), #0091ea);
+            color: #000;
+            font-family: var(–font-body);
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: transform 0.15s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 30px rgba(0, 229, 255, 0.3);
+            text-transform: uppercase;
+        }
+
+        .start-btn:active {
+            transform: scale(0.95);
+            box-shadow: 0 2px 15px rgba(0, 229, 255, 0.4);
+        }
+
+        .menu-hint {
+            margin-top: 24px;
+            font-size: 0.8rem;
+            color: var(–text-dim);
+        }
+
+        .scenario-label {
+            margin-top: 40px;
+            padding: 12px 20px;
+            background: var(–bg-card);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 0.85rem;
+            color: var(–text-secondary);
+            line-height: 1.5;
+        }
+
+        .scenario-label strong {
+            color: var(–accent-gold);
+        }
+
+        /* ─── PROFILE SCREEN ─── */
+        .profile-header {
+            text-align: center;
+            padding: 30px 0 20px;
+        }
+
+        .profile-header h2 {
+            font-family: var(–font-display);
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .profile-header p {
+            color: var(–text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .profile-card {
+            background: var(–bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+
+        .profile-card .card-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(–text-dim);
+            margin-bottom: 10px;
+        }
+
+        .profile-card .char-name {
+            font-family: var(–font-display);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .profile-card .char-role {
+            font-size: 0.85rem;
+            color: var(–accent-cyan);
+            margin-bottom: 12px;
+        }
+
+        .profile-card .char-desc {
+            font-size: 0.88rem;
+            color: var(–text-secondary);
+            line-height: 1.6;
+        }
+
+        .trait-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            margin: 3px 4px 3px 0;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            font-size: 0.78rem;
+            color: var(–text-secondary);
+        }
+
+        .trait-tag.negative {
+            border-color: rgba(255, 61, 61, 0.3);
+            color: var(–accent-red);
+        }
+
+        .trait-tag.positive {
+            border-color: rgba(0, 230, 118, 0.3);
+            color: var(–accent-green);
+        }
+
+        .trait-tag.neutral {
+            border-color: rgba(255, 215, 64, 0.3);
+            color: var(–accent-gold);
+        }
+
+        .hidden-need {
+            margin-top: 12px;
+            padding: 10px 14px;
+            background: rgba(255, 215, 64, 0.06);
+            border-left: 3px solid var(–accent-gold);
+            border-radius: 0 8px 8px 0;
+            font-size: 0.82rem;
+            color: var(–accent-gold);
+        }
+
+        .continue-btn {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            border: none;
+            border-radius: 14px;
+            background: linear-gradient(135deg, var(–accent-cyan), #0091ea);
+            color: #000;
+            font-family: var(–font-body);
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.15s ease;
+        }
+
+        .continue-btn:active {
+            transform: scale(0.97);
+        }
+
+        /* ─── INTERACTION SCREEN ─── */
+        .interaction-top-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 16px;
+            background: var(–bg-panel);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            flex-shrink: 0;
+        }
+
+        .interaction-label {
+            font-family: var(–font-mono);
+            font-size: 0.75rem;
+            color: var(–text-dim);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .interaction-progress {
+            display: flex;
+            gap: 6px;
+        }
+
+        .progress-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(–bg-card);
+            border: 1.5px solid var(–text-dim);
+            transition: all 0.3s ease;
+        }
+
+        .progress-dot.done {
+            background: var(–accent-cyan);
+            border-color: var(–accent-cyan);
+            box-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
+        }
+
+        .progress-dot.current {
+            border-color: var(–accent-gold);
+            box-shadow: 0 0 8px rgba(255, 215, 64, 0.4);
+            animation: dotPulse 1.5s ease infinite;
+        }
+
+        @keyframes dotPulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.3);
+            }
+        }
+
+        /* ─── METERS BAR ─── */
+        .meters-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            padding: 10px 16px;
+            background: var(–bg-panel);
+            flex-shrink: 0;
+        }
+
+        .meter-item {
+            text-align: center;
+        }
+
+        .meter-icon {
+            font-size: 1rem;
+            margin-bottom: 2px;
+        }
+
+        .meter-label {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(–text-dim);
+            margin-bottom: 4px;
+        }
+
+        .meter-track {
+            height: 4px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .meter-fill {
+            height: 100%;
+            border-radius: 2px;
+            transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .meter-fill.tension {
+            background: var(–tension-color);
+        }
+
+        .meter-fill.trust {
+            background: var(–trust-color);
+        }
+
+        .meter-fill.openness {
+            background: var(–openness-color);
+        }
+
+        .meter-fill.heard {
+            background: var(–heard-color);
+        }
+
+        /* ─── COMIC PANEL ─── */
+        .comic-scene {
+            padding: 20px 0;
+        }
+
+        .scene-title {
+            font-family: var(–font-display);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .scene-subtitle {
+            font-size: 0.8rem;
+            color: var(–text-dim);
+            margin-bottom: 16px;
+        }
+
+        .comic-panel {
+            position: relative;
+            background: var(–bg-card);
+            border: 2px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 16px;
+        }
+
+        .panel-illustration {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .scene-art {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .scene-art canvas {
+            width: 100%;
+            height: 100%;
+        }
+
+        .panel-situation {
+            padding: 16px 18px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(–text-secondary);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .panel-situation em {
+            color: var(–text-primary);
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        /* ─── SPEECH BUBBLE ─── */
+        .speech-bubble-wrap {
+            padding: 0 18px 18px;
+        }
+
+        .speech-bubble {
+            position: relative;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px 16px 16px 4px;
+            padding: 14px 18px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: var(–text-primary);
+        }
+
+        .speech-bubble .speaker {
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(–accent-magenta);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 6px;
+        }
+
+        .speech-bubble::before {
+            content: ’’;
+            position: absolute;
+            bottom: -8px;
+            left: 16px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid rgba(255, 255, 255, 0.07);
+        }
+
+        /* ─── CHOICES ─── */
+        .choices-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(–text-dim);
+            margin-bottom: 10px;
+        }
+
+        .choice-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 14px 16px;
+            margin-bottom: 10px;
+            background: var(–bg-card);
+            border: 1.5px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .choice-card:active {
+            transform: scale(0.98);
+            background: var(–bg-card-hover);
+        }
+
+        .choice-card:hover {
+            border-color: rgba(0, 229, 255, 0.3);
+            background: var(–bg-card-hover);
+        }
+
+        .choice-letter {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1.5px solid rgba(255, 255, 255, 0.12);
+            font-family: var(–font-mono);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(–text-secondary);
+        }
+
+        .choice-text {
+            font-size: 0.88rem;
+            line-height: 1.5;
+            color: var(–text-secondary);
+        }
+
+        .choice-card.selected {
+            border-color: var(–accent-cyan);
+            background: rgba(0, 229, 255, 0.06);
+        }
+
+        .choice-card.selected .choice-letter {
+            background: var(–accent-cyan);
+            border-color: var(–accent-cyan);
+            color: #000;
+        }
+
+        .choice-card.selected .choice-text {
+            color: var(–text-primary);
+        }
+
+        /* choice result highlights */
+        .choice-card.result-best {
+            border-color: var(–accent-green);
+            background: rgba(0, 230, 118, 0.06);
+        }
+
+        .choice-card.result-best .choice-letter {
+            background: var(–accent-green);
+            border-color: var(–accent-green);
+            color: #000;
+        }
+
+        .choice-card.result-good {
+            border-color: var(–accent-gold);
+            background: rgba(255, 215, 64, 0.06);
+        }
+
+        .choice-card.result-good .choice-letter {
+            background: var(–accent-gold);
+            border-color: var(–accent-gold);
+            color: #000;
+        }
+
+        .choice-card.result-bad {
+            border-color: var(–accent-red);
+            background: rgba(255, 61, 61, 0.04);
+            opacity: 0.7;
+        }
+
+        .choice-card.result-bad .choice-letter {
+            background: var(–accent-red);
+            border-color: var(–accent-red);
+            color: #fff;
+        }
+
+        /* ─── FEEDBACK PANEL ─── */
+        .feedback-panel {
+            margin-top: 16px;
+            padding: 18px;
+            background: var(–bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            animation: fadeSlideUp 0.5s ease;
+        }
+
+        .feedback-verdict {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .verdict-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        .verdict-icon.best {
+            background: rgba(0, 230, 118, 0.15);
+        }
+
+        .verdict-icon.good {
+            background: rgba(255, 215, 64, 0.15);
+        }
+
+        .verdict-icon.bad {
+            background: rgba(255, 61, 61, 0.15);
+        }
+
+        .verdict-text {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .verdict-text.best {
+            color: var(–accent-green);
+        }
+
+        .verdict-text.good {
+            color: var(–accent-gold);
+        }
+
+        .verdict-text.bad {
+            color: var(–accent-red);
+        }
+
+        .feedback-points {
+            font-family: var(–font-mono);
+            font-size: 0.8rem;
+            margin-bottom: 12px;
+            color: var(–text-dim);
+        }
+
+        .feedback-points span {
+            color: var(–accent-cyan);
+            font-weight: 500;
+        }
+
+        .feedback-body {
+            font-size: 0.88rem;
+            line-height: 1.65;
+            color: var(–text-secondary);
+        }
+
+        .feedback-body strong {
+            color: var(–text-primary);
+            font-weight: 600;
+        }
+
+        .psych-tag {
+            display: inline-block;
+            padding: 3px 10px;
+            margin: 6px 4px 0 0;
+            border-radius: 20px;
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+
+        .psych-tag.error {
+            background: rgba(255, 61, 61, 0.12);
+            color: var(–accent-red);
+        }
+
+        .psych-tag.skill {
+            background: rgba(0, 230, 118, 0.12);
+            color: var(–accent-green);
+        }
+
+        .psych-tag.concept {
+            background: rgba(0, 229, 255, 0.12);
+            color: var(–accent-cyan);
+        }
+
+        /* ─── ENDING SCREEN ─── */
+        .ending-screen {
+            padding: 30px 0 50px;
+            text-align: center;
+        }
+
+        .ending-badge {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            animation: badgePop 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes badgePop {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            60% {
+                transform: scale(1.15);
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .ending-badge.war {
+            background: rgba(255, 61, 61, 0.15);
+            border: 2px solid var(–accent-red);
+        }
+
+        .ending-badge.compromise {
+            background: rgba(255, 215, 64, 0.15);
+            border: 2px solid var(–accent-gold);
+        }
+
+        .ending-badge.bond {
+            background: rgba(0, 230, 118, 0.15);
+            border: 2px solid var(–accent-green);
+        }
+
+        .ending-title {
+            font-family: var(–font-display);
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .ending-title.war {
+            color: var(–accent-red);
+        }
+
+        .ending-title.compromise {
+            color: var(–accent-gold);
+        }
+
+        .ending-title.bond {
+            color: var(–accent-green);
+        }
+
+        .ending-score {
+            font-family: var(–font-mono);
+            font-size: 1rem;
+            color: var(–text-dim);
+            margin-bottom: 20px;
+        }
+
+        .ending-score span {
+            color: var(–accent-cyan);
+        }
+
+        .ending-narrative {
+            background: var(–bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 20px;
+            margin: 0 auto 20px;
+            max-width: 400px;
+            text-align: left;
+            font-size: 0.92rem;
+            line-height: 1.6;
+            color: var(–text-secondary);
+            font-style: italic;
+        }
+
+        .ending-diagnosis {
+            background: var(–bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 20px;
+            margin: 0 auto 20px;
+            max-width: 400px;
+            text-align: left;
+        }
+
+        .ending-diagnosis h4 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(–text-dim);
+            margin-bottom: 10px;
+        }
+
+        .ending-diagnosis p {
+            font-size: 0.88rem;
+            line-height: 1.6;
+            color: var(–text-secondary);
+        }
+
+        .new-best-banner {
+            display: none;
+            padding: 8px 20px;
+            background: linear-gradient(135deg, var(–accent-gold), var(–accent-orange));
+            color: #000;
+            font-weight: 700;
+            font-size: 0.85rem;
+            border-radius: 30px;
+            margin: 0 auto 16px;
+            width: fit-content;
+            animation: bestPulse 0.8s ease;
+        }
+
+        @keyframes bestPulse {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .new-best-banner.show {
+            display: inline-block;
+        }
+
+        .restart-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 40px;
+            border: none;
+            border-radius: 60px;
+            background: linear-gradient(135deg, var(–accent-magenta), #d50000);
+            color: #fff;
+            font-family: var(–font-body);
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.15s ease;
+            box-shadow: 0 4px 20px rgba(255, 45, 123, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .restart-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* ─── PARTICLES ─── */
+        .particle {
+            position: fixed;
+            pointer-events: none;
+            border-radius: 50%;
+            z-index: 999;
+        }
+
+        /* ─── SCREEN SHAKE ─── */
+        .shake {
+            animation: shakeAnim 0.3s ease;
+        }
+
+        @keyframes shakeAnim {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            20% {
+                transform: translateX(-4px);
+            }
+
+            40% {
+                transform: translateX(4px);
+            }
+
+            60% {
+                transform: translateX(-3px);
+            }
+
+            80% {
+                transform: translateX(3px);
+            }
+        }
+
+        /* ─── SCORE POPUP ─── */
+        .score-popup {
+            position: fixed;
+            pointer-events: none;
+            font-family: var(–font-mono);
+            font-size: 1.4rem;
+            font-weight: 700;
+            z-index: 998;
+            animation: popFloat 1.2s ease-out forwards;
+        }
+
+        @keyframes popFloat {
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(1.2);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-80px) scale(0.8);
+            }
+        }
+
+        /* ─── UTILITY ─── */
+        .mt-12 {
+            margin-top: 12px;
+        }
+
+        .mb-24 {
+            margin-bottom: 24px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="game-container">
+
+        <!-- ═══════════ MENU ═══════════ -->
+
+        <div id="menu-screen" class="screen active fade-in">
+            <div class="menu-bg"></div>
+            <div class="menu-content">
+                <div class="game-logo">Między Nami</div>
+                <div class="game-subtitle">Symulator Relacji</div>
+                <div class="menu-divider"></div>
+                <div id="best-score" class="best-score-display"></div>
+                <button class="start-btn" id="btn-start" ontouchstart="">▶ ROZPOCZNIJ</button>
+                <div class="menu-hint">Interaktywny komiks o psychologii komunikacji</div>
+                <div class="scenario-label">
+                    <strong>Scenariusz:</strong> Wieczór po ciężkim dniu. Brudne naczynia. Dwa zmęczone ego. Trzy
+                    kluczowe wymiany zdań, które zdecydują, czy noc skończy się wojną czy porozumieniem.
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════ PROFILES ═══════════ -->
+
+        <div id="profile-screen" class="screen">
+            <div class="scroll-area" id="profile-scroll">
+                <div class="profile-header">
+                    <h2>Profile Postaci</h2>
+                    <p>Poznaj obie strony konfliktu</p>
+                </div>
+
+                ```
+                <div class="profile-card">
+                    <div class="card-label">👤 Twoja Rola</div>
+                    <div class="char-name">Anna</div>
+                    <div class="char-role">Partnerka · Gracz</div>
+                    <div class="char-desc">Wracasz zmęczona po całym dniu pracy i usypianiu dzieci. Stres sprawia, że
+                        łatwo możesz wejść w rozmowę pozycyjną — nastawioną na udowodnienie racji.</div>
+                    <div style="margin-top:10px;">
+                        <span class="trait-tag negative">Wysoki stres</span>
+                        <span class="trait-tag neutral">Rozmowa pozycyjna</span>
+                        <span class="trait-tag positive">Potrzeba wsparcia</span>
+                    </div>
+                    <div class="hidden-need">🔑 Ukryta potrzeba: wsparcie i sprawiedliwy podział obowiązków</div>
+                </div>
+
+                <div class="profile-card">
+                    <div class="card-label">🗣️ Twój rozmówca</div>
+                    <div class="char-name">Tomasz</div>
+                    <div class="char-role">Partner · NPC</div>
+                    <div class="char-desc">Leży na kanapie po ciężkim dniu pracy. Jest wysoce defensywny — łatwo odbiera
+                        neutralne komunikaty jako atak na swoją osobę. Wrażliwy na płaszczyznę relacji.</div>
+                    <div style="margin-top:10px;">
+                        <span class="trait-tag negative">Wysoka defensywność</span>
+                        <span class="trait-tag negative">Wrażliwość na krytykę</span>
+                        <span class="trait-tag positive">Potrzeba docenienia</span>
+                    </div>
+                    <div class="hidden-need">🔑 Ukryta potrzeba: spokój i poczucie, że jest wystarczający</div>
+                </div>
+
+                <button class="continue-btn" id="btn-continue-profile" ontouchstart="">PRZEJDŹ DO SCENY →</button>
+            </div>
+            ```
+
+        </div>
+
+        <!-- ═══════════ INTERACTION ═══════════ -->
+
+        <div id="interaction-screen" class="screen">
+            <div class="interaction-top-bar">
+                <div class="interaction-label" id="interaction-label">INTERAKCJA 1/3</div>
+                <div class="interaction-progress">
+                    <div class="progress-dot" id="dot-1"></div>
+                    <div class="progress-dot" id="dot-2"></div>
+                    <div class="progress-dot" id="dot-3"></div>
+                </div>
+            </div>
+            <div class="meters-bar" id="meters-bar">
+                <div class="meter-item">
+                    <div class="meter-icon">🔥</div>
+                    <div class="meter-label">Napięcie</div>
+                    <div class="meter-track">
+                        <div class="meter-fill tension" id="meter-tension" style="width:40%"></div>
+                    </div>
+                </div>
+                <div class="meter-item">
+                    <div class="meter-icon">🤝</div>
+                    <div class="meter-label">Zaufanie</div>
+                    <div class="meter-track">
+                        <div class="meter-fill trust" id="meter-trust" style="width:60%"></div>
+                    </div>
+                </div>
+                <div class="meter-item">
+                    <div class="meter-icon">💬</div>
+                    <div class="meter-label">Dialog</div>
+                    <div class="meter-track">
+                        <div class="meter-fill openness" id="meter-openness" style="width:50%"></div>
+                    </div>
+                </div>
+                <div class="meter-item">
+                    <div class="meter-icon">👂</div>
+                    <div class="meter-label">Słuchanie</div>
+                    <div class="meter-track">
+                        <div class="meter-fill heard" id="meter-heard" style="width:50%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-area" id="interaction-scroll">
+                <div id="interaction-content"></div>
+            </div>
+        </div>
+
+        <!-- ═══════════ ENDING ═══════════ -->
+
+        <div id="ending-screen" class="screen">
+            <div class="scroll-area" id="ending-scroll">
+                <div id="ending-content"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // ═══════════════════════════════════════════
+        // GAME STATE
+        // ═══════════════════════════════════════════
+        const SAVE_KEY = 'miedzy_nami_save';
+        let state = {
+            phase: 'MENU', // MENU, PROFILES, INTERACTION, ENDING
+            currentInteraction: 0,
+            totalScore: 0,
+            choices: [],
+            meters: { tension: 40, trust: 60, openness: 50, heard: 50 },
+            bestScore: 0,
+            gamesPlayed: 0
+        };
+
+        function loadSave() {
+            try {
+                const raw = localStorage.getItem(SAVE_KEY);
+                if (raw) {
+                    const s = JSON.parse(raw);
+                    state.bestScore = s.bestScore || 0;
+                    state.gamesPlayed = s.gamesPlayed || 0;
+                }
+            } catch (e) { }
+        }
+        function savePersist() {
+            try {
+                localStorage.setItem(SAVE_KEY, JSON.stringify({
+                    bestScore: state.bestScore,
+                    gamesPlayed: state.gamesPlayed
+                }));
+            } catch (e) { }
+        }
+        loadSave();
+
+        // ═══════════════════════════════════════════
+        // SCENARIO DATA
+        // ═══════════════════════════════════════════
+        const interactions = [
+            {
+                title: 'Otwarcie',
+                subtitle: 'Interakcja 1 z 3',
+                situation: 'Wchodzisz do salonu. Widzisz, że Tomasz przegląda telefon, a na stole nadal stoją <em>brudne naczynia po śniadaniu</em>, o których schowanie prosiłaś rano. Stajesz nad nim.',
+                npcLine: 'Tomasz nawet nie podnosi wzroku z telefonu. Naczynia na stole mówią same za siebie.',
+                speaker: null,
+                choices: [
+                    {
+                        letter: 'A',
+                        text: '„Znowu zostawiłeś naczynia na stole. Zawsze muszę o wszystko prosić sto razy. Wszystko jest na mojej głowie, a ty w ogóle mi nie pomagasz!"',
+                        points: 0,
+                        quality: 'bad',
+                        verdict: 'Uogólnienie i atak',
+                        verdictIcon: '⚠️',
+                        feedback: 'Używasz słów <strong>„zawsze"</strong> i <strong>„znowu"</strong>. Według modelu kwadratu komunikacyjnego von Thuna, Tomasz najprawdopodobniej odczyta ten komunikat na <strong>płaszczyźnie relacji</strong> jako: „Jesteś leniwy i do niczego". To natychmiast uaktywnia jego reakcję obronną.',
+                        tags: [
+                            { text: 'Uogólnianie', type: 'error' },
+                            { text: 'Atak na relację', type: 'error' },
+                            { text: 'Kwadrat von Thuna', type: 'concept' }
+                        ],
+                        meters: { tension: +25, trust: -15, openness: -20, heard: -10 }
+                    },
+                    {
+                        letter: 'B',
+                        text: '„Widzę, że krasnoludki znowu nie przyszły posprzątać. Bardzo fajnie, leż sobie dalej, ja to za ciebie zrobię."',
+                        points: 0,
+                        quality: 'bad',
+                        verdict: 'Bierna agresja',
+                        verdictIcon: '⚠️',
+                        feedback: 'Taki komunikat jest <strong>ukrytym atakiem</strong>. Nie komunikujesz wprost swoich oczekiwań, co prowadzi do nieporozumień i eskalacji braku zaufania. Ironia maskuje złość, ale Tomasz wyczuje wrogość.',
+                        tags: [
+                            { text: 'Bierna agresja', type: 'error' },
+                            { text: 'Ukryty atak', type: 'error' }
+                        ],
+                        meters: { tension: +20, trust: -20, openness: -15, heard: -5 }
+                    },
+                    {
+                        letter: 'C',
+                        text: '„Zostawiłeś naczynia na stole, a prosiłam rano, żebyś je schował. Proszę, wstaw je teraz do zmywarki."',
+                        points: 1,
+                        quality: 'good',
+                        verdict: 'Asertywność',
+                        verdictIcon: '✓',
+                        feedback: 'Komunikujesz się głównie na <strong>płaszczyźnie faktów i apelu</strong>, jasno określając, co ma zostać zrobione. Choć komunikat jest poprawny, brakuje w nim budowania więzi — brzmi jak polecenie służbowe, tzw. <strong>rozmowa transakcyjna</strong> (Poziom I).',
+                        tags: [
+                            { text: 'Asertywność', type: 'skill' },
+                            { text: 'Poziom I — transakcja', type: 'concept' }
+                        ],
+                        meters: { tension: +5, trust: 0, openness: +5, heard: 0 }
+                    },
+                    {
+                        letter: 'D',
+                        text: '„Kiedy widzę naczynia na stole po tak ciężkim dniu, czuję złość i opadam z sił. Brakuje mi twojego wsparcia, dlatego potrzebuję, żebyś je teraz sprzątnął."',
+                        points: 2,
+                        quality: 'best',
+                        verdict: 'Komunikat „Ja" i odsłonięcie',
+                        verdictIcon: '★',
+                        feedback: 'Wykorzystujesz <strong>płaszczyznę ujawniania siebie</strong>, komunikując własne uczucia (złość, zmęczenie) bez bezpośredniego atakowania wartości partnera. To zaproszenie do <strong>rozmowy transformacyjnej (Poziom III)</strong>, która sprzyja współpracy.',
+                        tags: [
+                            { text: 'Komunikat „Ja"', type: 'skill' },
+                            { text: 'Odsłonięcie emocji', type: 'skill' },
+                            { text: 'Poziom III — transformacja', type: 'concept' }
+                        ],
+                        meters: { tension: -5, trust: +10, openness: +15, heard: +10 }
+                    }
+                ],
+                sceneColors: { bg1: '#1a1a2e', bg2: '#16213e', accent: '#ff6b6b' }
+            },
+            {
+                title: 'Reakcja na defensywę',
+                subtitle: 'Interakcja 2 z 3',
+                situation: 'Niezależnie od tego, jak dobrze sformułowałaś pierwszą wypowiedź, zmęczony Tomasz reaguje <em>instynktowną obroną</em>.',
+                npcLine: '„Dopiero co wróciłem z pracy i chciałem chociaż przez 15 minut odetchnąć! Zresztą, sama też dzisiaj nie odkurzyłaś, chociaż miałaś to zrobić. Dlaczego od razu na mnie naskakujesz?"',
+                speaker: 'Tomasz',
+                choices: [
+                    {
+                        letter: 'A',
+                        text: '„Nie odkurzyłam, bo robiłam pranie i pomagałam dzieciom! Ty w ogóle nie masz pojęcia, ile ja tu muszę codziennie robić!"',
+                        points: 0,
+                        quality: 'bad',
+                        verdict: 'Licytacja na cierpienie',
+                        verdictIcon: '⚠️',
+                        feedback: 'Wchodzisz w rozmowę na <strong>Poziomie II</strong>, gdzie celem staje się obrona własnych interesów i udowodnienie, kto ma trudniej. Taka wymiana zdań to dwa oddzielne monologi, które napędzają cykl nieufności.',
+                        tags: [
+                            { text: 'Licytacja cierpienia', type: 'error' },
+                            { text: 'Poziom II — pozycyjny', type: 'concept' }
+                        ],
+                        meters: { tension: +25, trust: -15, openness: -20, heard: -20 }
+                    },
+                    {
+                        letter: 'B',
+                        text: '„Rozmawiamy teraz o naczyniach, a nie o odkurzaniu. Nie zmieniaj tematu, tylko zrób to, o co prosiłam."',
+                        points: 0,
+                        quality: 'bad',
+                        verdict: 'Sztywność apelu',
+                        verdictIcon: '⚠️',
+                        feedback: 'Trzymasz się mocno <strong>płaszczyzny apelu</strong> (żądania). Ignorujesz stan emocjonalny partnera. Przerywanie lub ignorowanie uczuć drugiej osoby blokuje wzajemne zrozumienie.',
+                        tags: [
+                            { text: 'Ignorowanie emocji', type: 'error' },
+                            { text: 'Sztywny apel', type: 'error' }
+                        ],
+                        meters: { tension: +15, trust: -10, openness: -15, heard: -15 }
+                    },
+                    {
+                        letter: 'C',
+                        text: '„Jeśli ci się tu tak bardzo nie podoba i tak ci ze mną źle, to może w ogóle przestańmy ze sobą rozmawiać!"',
+                        points: 0,
+                        quality: 'bad',
+                        verdict: 'Katastrofizacja',
+                        verdictIcon: '⚠️',
+                        feedback: 'Zamiast rozwiązać konkretny problem, <strong>eskalujesz go do poziomu końca relacji</strong>. To klasyczny błąd: przeniesienie drobnego konfliktu na egzystencjalny poziom, który paraliżuje rozmowę.',
+                        tags: [
+                            { text: 'Katastrofizacja', type: 'error' },
+                            { text: 'Eskalacja problemu', type: 'error' }
+                        ],
+                        meters: { tension: +30, trust: -25, openness: -25, heard: -20 }
+                    },
+                    {
+                        letter: 'D',
+                        text: '„Rozumiem, że jesteś zmęczony, oboje padamy dziś z nóg. Dajmy sobie 15 minut luzu, a potem proszę cię, żebyś to sprzątnął. Odkurzę jutro."',
+                        points: 2,
+                        quality: 'best',
+                        verdict: 'Aktywne słuchanie i walidacja',
+                        verdictIcon: '★',
+                        feedback: 'Skuteczne aktywne słuchanie wymaga <strong>zwalidowania perspektywy i emocji rozmówcy</strong>, co tworzy bezpieczną przestrzeń do otwartej komunikacji. Zauważasz zmęczenie Tomasza, a jednocześnie chronisz własną potrzebę (posprzątanie naczyń).',
+                        tags: [
+                            { text: 'Aktywne słuchanie', type: 'skill' },
+                            { text: 'Walidacja emocji', type: 'skill' },
+                            { text: 'Kompromis', type: 'skill' }
+                        ],
+                        meters: { tension: -15, trust: +15, openness: +20, heard: +20 }
+                    }
+                ],
+                sceneColors: { bg1: '#1a1028', bg2: '#201040', accent: '#ffa726' }
+            },
+            {
+                title: 'Finał',
+                subtitle: 'Interakcja 3 z 3',
+                situation: 'Atmosfera wciąż jest napięta. Tomasz wstaje z kanapy, wzdycha ciężko i mówi z <em>widocznym żalem</em>:',
+                npcLine: '„Dobra, zrobię to. Po prostu mam wrażenie, że dla ciebie nigdy nie robię niczego wystarczająco dobrze. Cokolwiek zrobię w tym domu, i tak na końcu znajdziesz dziurę w całym."',
+                speaker: 'Tomasz',
+                choices: [
+                    {
+                        letter: 'A',
+                        text: '„Bo taka jest prawda! Gdybyś myślał o kimś innym poza sobą, nie musiałabym ciągle narzekać."',
+                        points: 0,
+                        quality: 'bad',
+                        verdict: 'Pogarda',
+                        verdictIcon: '⚠️',
+                        feedback: 'Używasz pytań i stwierdzeń, które niosą w sobie <strong>ocenę i pogardę</strong>, co utrudnia otwartą komunikację. Potwierdzasz jego najgorsze obawy z płaszczyzny relacji: „Nigdy nie jestem wystarczający".',
+                        tags: [
+                            { text: 'Pogarda', type: 'error' },
+                            { text: 'Potwierdzenie lęku', type: 'error' }
+                        ],
+                        meters: { tension: +30, trust: -25, openness: -30, heard: -25 }
+                    },
+                    {
+                        letter: 'B',
+                        text: '„To nie jest prawda, ale naczynia po prostu musisz zmywać częściej. Temat skończony."',
+                        points: 1,
+                        quality: 'good',
+                        verdict: 'Poprawna, ale chłodna',
+                        verdictIcon: '✓',
+                        feedback: 'Szybkie ucięcie tematu i powrót do <strong>transakcyjnego Poziomu I</strong> rozmowy. Zatrzymałaś kłótnię, ale zablokowałaś budowanie zaufania. Problem zniknął z powierzchni, ale nie z głębi.',
+                        tags: [
+                            { text: 'Poziom I — transakcja', type: 'concept' },
+                            { text: 'Brak pogłębienia', type: 'error' }
+                        ],
+                        meters: { tension: -5, trust: 0, openness: -5, heard: -5 }
+                    },
+                    {
+                        letter: 'C',
+                        text: '„Wiem, że możesz tak czuć, kiedy często zwracam ci uwagę. Widzę, kiedy pomagasz, chcę po prostu, żebyśmy dzielili te drobne obowiązki. Dziękuję, że to teraz zrobisz."',
+                        points: 1,
+                        quality: 'good',
+                        verdict: 'Dobra odpowiedź',
+                        verdictIcon: '✓',
+                        feedback: 'Potwierdzasz emocje Tomasza <strong>bez oceniania</strong> i jasno wyrażasz swoje oczekiwania na płaszczyźnie ujawniania siebie i apelu. Brakuje jednak elementu wspólnego działania.',
+                        tags: [
+                            { text: 'Walidacja', type: 'skill' },
+                            { text: 'Jasny apel', type: 'skill' }
+                        ],
+                        meters: { tension: -10, trust: +10, openness: +10, heard: +10 }
+                    },
+                    {
+                        letter: 'D',
+                        text: '„Przykro mi, że tak to odbierasz. Bardzo cenię to, jak dużo pracujesz dla rodziny. Zróbmy to razem — ty wstawisz naczynia, a ja w tym czasie przetrę stół. Potem usiądziemy i obejrzymy coś razem."',
+                        points: 2,
+                        quality: 'best',
+                        verdict: 'Rozmowa transformacyjna (Poziom III)',
+                        verdictIcon: '★',
+                        feedback: 'Twoja wypowiedź skupia się na <strong>budowaniu więzi</strong> i wspólnym tworzeniu nowej rzeczywistości (<strong>„my" zamiast „ja vs ty"</strong>). Proponujesz działanie, które obniża barierę współpracy i buduje zaufanie zespołu.',
+                        tags: [
+                            { text: 'Poziom III — transformacja', type: 'concept' },
+                            { text: 'Wspólne działanie', type: 'skill' },
+                            { text: 'Docenianie', type: 'skill' }
+                        ],
+                        meters: { tension: -20, trust: +20, openness: +25, heard: +20 }
+                    }
+                ],
+                sceneColors: { bg1: '#0c1a1a', bg2: '#102828', accent: '#66bb6a' }
+            }
+        ];
+
+        const endings = [
+            {
+                minScore: 0, maxScore: 1,
+                type: 'war',
+                title: 'ZACIĘTA WOJNA',
+                emoji: '🔴',
+                subtitle: 'Eskalacja Napięcia',
+                narrative: 'Tomasz z trzaskiem wrzuca naczynia do zmywarki, mrucząc coś pod nosem, po czym idzie do sypialni i zamyka drzwi. Zostajesz w salonie z poczuciem winy, złością i brakiem rozwiązania.',
+                diagnosis: 'Komunikacja utknęła na poziomie pozycyjnym. Oboje skupiliście się wyłącznie na udowadnianiu swoich racji. Brak aktywnego słuchania i weryfikacji emocji zablokował szansę na porozumienie.'
+            },
+            {
+                minScore: 2, maxScore: 4,
+                type: 'compromise',
+                title: 'SZORSTKI KOMPROMIS',
+                emoji: '🟡',
+                subtitle: 'Stan Neutralny',
+                narrative: 'Tomasz bez słowa sprząta ze stołu i wraca na kanapę. Siedzicie w jednym pokoju, ale w ciszy. Osiągnęłaś cel fizyczny — naczynia zniknęły — ale bariera między wami pozostała.',
+                diagnosis: 'Rozmowa toczyła się poprawnie, głównie na płaszczyźnie faktów i apelu. Udało się uniknąć wielkiej kłótni, ale zabrakło rozmowy na III poziomie (transformacyjnym), która zbliżyłaby was do siebie.'
+            },
+            {
+                minScore: 5, maxScore: 6,
+                type: 'bond',
+                title: 'ODBUDOWA WIĘZI',
+                emoji: '🟢',
+                subtitle: 'Spadek Napięcia · Wzrost Zaufania',
+                narrative: 'Tomasz wzdycha, ale jego postawa mięknie. Puszcza do ciebie oko i mówi: „Dobra, dawaj te naczynia. Włączysz w tym czasie nasz serial?". Razem ogarniacie kuchnię w 3 minuty i siadacie obok siebie na kanapie.',
+                diagnosis: 'Mistrzowska komunikacja! Pokazałaś wysoki poziom inteligencji konwersacyjnej. Używałaś aktywnego słuchania i walidacji, operując na płaszczyźnie odsłaniania siebie bez atakowania relacji. Przekształciłaś konflikt we współpracę.'
+            }
+        ];
+
+        // ═══════════════════════════════════════════
+        // DOM REFERENCES
+        // ═══════════════════════════════════════════
+        const container = document.getElementById('game-container');
+        const screens = {
+            menu: document.getElementById('menu-screen'),
+            profile: document.getElementById('profile-screen'),
+            interaction: document.getElementById('interaction-screen'),
+            ending: document.getElementById('ending-screen')
+        };
+
+        // ═══════════════════════════════════════════
+        // SCREEN MANAGEMENT
+        // ═══════════════════════════════════════════
+        function showScreen(name) {
+            Object.values(screens).forEach(s => {
+                s.classList.remove('active', 'fade-in');
+            });
+            const target = screens[name];
+            requestAnimationFrame(() => {
+                target.classList.add('active');
+                requestAnimationFrame(() => target.classList.add('fade-in'));
+            });
+            // Reset scroll positions
+            const scrollAreas = target.querySelectorAll('.scroll-area');
+            scrollAreas.forEach(s => s.scrollTop = 0);
+        }
+
+        // ═══════════════════════════════════════════
+        // MENU
+        // ═══════════════════════════════════════════
+        function updateMenuBest() {
+            const el = document.getElementById('best-score');
+            if (state.bestScore > 0) {
+                el.textContent = `Najlepszy wynik: ${state.bestScore}/6 · Gry: ${state.gamesPlayed}`;
+            } else {
+                el.textContent = '';
+            }
+        }
+        updateMenuBest();
+
+        document.getElementById('btn-start').addEventListener('click', () => {
+            state.currentInteraction = 0;
+            state.totalScore = 0;
+            state.choices = [];
+            state.meters = { tension: 40, trust: 60, openness: 50, heard: 50 };
+            showScreen('profile');
+        });
+
+        document.getElementById('btn-continue-profile').addEventListener('click', () => {
+            showScreen('interaction');
+            renderInteraction();
+        });
+
+        // ═══════════════════════════════════════════
+        // METERS
+        // ═══════════════════════════════════════════
+        function updateMeters(animated = true) {
+            const m = state.meters;
+            document.getElementById('meter-tension').style.width = clamp(m.tension, 0, 100) + '%';
+            document.getElementById('meter-trust').style.width = clamp(m.trust, 0, 100) + '%';
+            document.getElementById('meter-openness').style.width = clamp(m.openness, 0, 100) + '%';
+            document.getElementById('meter-heard').style.width = clamp(m.heard, 0, 100) + '%';
+        }
+        function clamp(v, min, max) { return Math.max(min, Math.min(max, v)); }
+
+        function applyMeterChanges(changes) {
+            for (const key in changes) {
+                state.meters[key] = clamp(state.meters[key] + changes[key], 0, 100);
+            }
+            updateMeters();
+        }
+
+        // ═══════════════════════════════════════════
+        // PROGRESS DOTS
+        // ═══════════════════════════════════════════
+        function updateProgressDots() {
+            for (let i = 1; i <= 3; i++) {
+                const dot = document.getElementById('dot-' + i);
+                dot.className = 'progress-dot';
+                if (i - 1 < state.currentInteraction) dot.classList.add('done');
+                else if (i - 1 === state.currentInteraction) dot.classList.add('current');
+            }
+        }
+
+        // ═══════════════════════════════════════════
+        // RENDER INTERACTION
+        // ═══════════════════════════════════════════
+        function renderInteraction() {
+            const idx = state.currentInteraction;
+            const data = interactions[idx];
+            const content = document.getElementById('interaction-content');
+
+            document.getElementById('interaction-label').textContent = `INTERAKCJA ${idx + 1}/3`;
+            updateProgressDots();
+            updateMeters();
+
+            let html = `
+    <div class="comic-scene fade-in">
+      <div class="scene-title">${data.title}</div>
+      <div class="scene-subtitle">${data.subtitle}</div>
+
+      <div class="comic-panel">
+        <div class="panel-illustration" id="scene-illustration-${idx}">
+          <div class="scene-art"><canvas id="scene-canvas-${idx}"></canvas></div>
+        </div>
+        <div class="panel-situation">${data.situation}</div>
+        ${data.speaker ? `
+        <div class="speech-bubble-wrap">
+          <div class="speech-bubble">
+            <div class="speaker">${data.speaker}</div>
+            ${data.npcLine}
+          </div>
+        </div>` : ''}
+      </div>
+
+      <div class="choices-label">CO ODPOWIADASZ?</div>
+      <div id="choices-container">
+  `;
+
+            data.choices.forEach((c, ci) => {
+                html += `
+      <div class="choice-card" data-choice="${ci}" id="choice-${ci}">
+        <div class="choice-letter">${c.letter}</div>
+        <div class="choice-text">${c.text}</div>
+      </div>
+    `;
+            });
+
+            html += `</div><div id="feedback-area"></div>
+    <div id="next-btn-area" style="padding:10px 0 40px;"></div>
+  </div>`;
+
+            content.innerHTML = html;
+
+            // Draw scene illustration
+            requestAnimationFrame(() => drawScene(idx));
+
+            // Attach choice listeners
+            document.querySelectorAll('.choice-card').forEach(card => {
+                card.addEventListener('click', () => handleChoice(parseInt(card.dataset.choice)));
+            });
+        }
+
+        // ═══════════════════════════════════════════
+        // SCENE ILLUSTRATION (Canvas)
+        // ═══════════════════════════════════════════
+        function drawScene(idx) {
+            const canvas = document.getElementById('scene-canvas-' + idx);
+            if (!canvas) return;
+            const parent = canvas.parentElement.parentElement;
+            const w = parent.clientWidth;
+            const h = parent.clientHeight || (w * 9 / 16);
+            canvas.width = w * 2;
+            canvas.height = h * 2;
+            canvas.style.width = w + 'px';
+            canvas.style.height = h + 'px';
+            const ctx = canvas.getContext('2d');
+            ctx.scale(2, 2);
+            const colors = interactions[idx].sceneColors;
+
+            // Background gradient
+            const grad = ctx.createLinearGradient(0, 0, w, h);
+            grad.addColorStop(0, colors.bg1);
+            grad.addColorStop(1, colors.bg2);
+            ctx.fillStyle = grad;
+            ctx.fillRect(0, 0, w, h);
+
+            // Ambient particles
+            ctx.globalAlpha = 0.08;
+            for (let i = 0; i < 30; i++) {
+                const x = Math.random() * w;
+                const y = Math.random() * h;
+                const r = Math.random() * 3 + 1;
+                ctx.beginPath();
+                ctx.arc(x, y, r, 0, Math.PI * 2);
+                ctx.fillStyle = colors.accent;
+                ctx.fill();
+            }
+            ctx.globalAlpha = 1;
+
+            // Floor
+            ctx.fillStyle = 'rgba(0,0,0,0.3)';
+            ctx.fillRect(0, h * 0.72, w, h * 0.28);
+
+            // Window / ambient light
+            ctx.fillStyle = 'rgba(255,255,200,0.04)';
+            ctx.fillRect(w * 0.6, h * 0.05, w * 0.25, h * 0.35);
+            ctx.strokeStyle = 'rgba(255,255,200,0.08)';
+            ctx.lineWidth = 1;
+            ctx.strokeRect(w * 0.6, h * 0.05, w * 0.25, h * 0.35);
+
+            // Table with dishes (all scenes)
+            ctx.fillStyle = 'rgba(80,60,40,0.6)';
+            roundRect(ctx, w * 0.35, h * 0.48, w * 0.3, h * 0.08, 4);
+            ctx.fill();
+            // Plates
+            ctx.fillStyle = 'rgba(200,200,210,0.4)';
+            ctx.beginPath();
+            ctx.ellipse(w * 0.43, h * 0.47, 12, 6, 0, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.beginPath();
+            ctx.ellipse(w * 0.55, h * 0.46, 10, 5, 0.2, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Couch
+            ctx.fillStyle = 'rgba(60,50,80,0.7)';
+            roundRect(ctx, w * 0.05, h * 0.45, w * 0.28, h * 0.22, 8);
+            ctx.fill();
+
+            // Tomasz on couch
+            drawStickFigureSitting(ctx, w * 0.16, h * 0.38, 'rgba(100,140,200,0.8)', idx);
+
+            // Anna standing
+            drawStickFigureStanding(ctx, w * 0.52, h * 0.25, 'rgba(230,100,120,0.8)', idx);
+
+            // Emotion indicators
+            if (idx === 0) {
+                drawEmoji(ctx, w * 0.52, h * 0.12, '😤', 18);
+                drawEmoji(ctx, w * 0.16, h * 0.25, '📱', 14);
+            } else if (idx === 1) {
+                drawEmoji(ctx, w * 0.16, h * 0.25, '😠', 16);
+                drawEmoji(ctx, w * 0.52, h * 0.12, '😰', 16);
+            } else {
+                drawEmoji(ctx, w * 0.16, h * 0.25, '😔', 16);
+                drawEmoji(ctx, w * 0.52, h * 0.12, '💭', 16);
+            }
+
+            // Tension overlay
+            const tensionAlpha = state.meters.tension / 500;
+            ctx.fillStyle = `rgba(255,0,0,${tensionAlpha})`;
+            ctx.fillRect(0, 0, w, h);
+        }
+
+        function drawStickFigureSitting(ctx, x, y, color, idx) {
+            ctx.strokeStyle = color;
+            ctx.lineWidth = 3;
+            ctx.lineCap = 'round';
+            // Head
+            ctx.beginPath();
+            ctx.arc(x, y, 10, 0, Math.PI * 2);
+            ctx.stroke();
+            // Body
+            ctx.beginPath();
+            ctx.moveTo(x, y + 10);
+            ctx.lineTo(x, y + 30);
+            ctx.stroke();
+            // Arms
+            ctx.beginPath();
+            ctx.moveTo(x - 12, y + 18);
+            ctx.lineTo(x, y + 16);
+            ctx.lineTo(x + 12, y + 14);
+            ctx.stroke();
+            // Legs (sitting)
+            ctx.beginPath();
+            ctx.moveTo(x, y + 30);
+            ctx.lineTo(x - 10, y + 40);
+            ctx.moveTo(x, y + 30);
+            ctx.lineTo(x + 10, y + 40);
+            ctx.stroke();
+        }
+
+        function drawStickFigureStanding(ctx, x, y, color, idx) {
+            ctx.strokeStyle = color;
+            ctx.lineWidth = 3;
+            ctx.lineCap = 'round';
+            // Head
+            ctx.beginPath();
+            ctx.arc(x, y, 10, 0, Math.PI * 2);
+            ctx.stroke();
+            // Body
+            ctx.beginPath();
+            ctx.moveTo(x, y + 10);
+            ctx.lineTo(x, y + 38);
+            ctx.stroke();
+            // Arms (on hips for scene 0, crossed for others)
+            if (idx === 0) {
+                ctx.beginPath();
+                ctx.moveTo(x - 15, y + 28);
+                ctx.lineTo(x - 5, y + 20);
+                ctx.lineTo(x, y + 20);
+                ctx.lineTo(x + 5, y + 20);
+                ctx.lineTo(x + 15, y + 28);
+                ctx.stroke();
+            } else {
+                ctx.beginPath();
+                ctx.moveTo(x - 14, y + 22);
+                ctx.lineTo(x, y + 18);
+                ctx.lineTo(x + 14, y + 22);
+                ctx.stroke();
+            }
+            // Legs
+            ctx.beginPath();
+            ctx.moveTo(x, y + 38);
+            ctx.lineTo(x - 10, y + 55);
+            ctx.moveTo(x, y + 38);
+            ctx.lineTo(x + 10, y + 55);
+            ctx.stroke();
+        }
+
+        function drawEmoji(ctx, x, y, emoji, size) {
+            ctx.font = size + 'px sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText(emoji, x, y);
+        }
+
+        function roundRect(ctx, x, y, w, h, r) {
+            ctx.beginPath();
+            ctx.moveTo(x + r, y);
+            ctx.lineTo(x + w - r, y);
+            ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+            ctx.lineTo(x + w, y + h - r);
+            ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+            ctx.lineTo(x + r, y + h);
+            ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+            ctx.lineTo(x, y + r);
+            ctx.quadraticCurveTo(x, y, x + r, y);
+            ctx.closePath();
+        }
+
+        // ═══════════════════════════════════════════
+        // HANDLE CHOICE
+        // ═══════════════════════════════════════════
+        let choiceMade = false;
+        function handleChoice(choiceIdx) {
+            if (choiceMade) return;
+            choiceMade = true;
+
+            const idx = state.currentInteraction;
+            const data = interactions[idx];
+            const choice = data.choices[choiceIdx];
+
+            // Mark selection
+            document.querySelectorAll('.choice-card').forEach((c, i) => {
+                c.style.pointerEvents = 'none';
+                const q = data.choices[i].quality;
+                if (i === choiceIdx) {
+                    c.classList.add('selected');
+                }
+                // Show quality colors
+                setTimeout(() => {
+                    if (q === 'best') c.classList.add('result-best');
+                    else if (q === 'good') c.classList.add('result-good');
+                    else c.classList.add('result-bad');
+                }, 300);
+            });
+
+            // Update score
+            state.totalScore += choice.points;
+            state.choices.push(choiceIdx);
+
+            // Apply meter changes
+            setTimeout(() => applyMeterChanges(choice.meters), 400);
+
+            // Vibrate on bad choice
+            if (choice.quality === 'bad') {
+                container.classList.add('shake');
+                setTimeout(() => container.classList.remove('shake'), 300);
+                if (navigator.vibrate) navigator.vibrate(50);
+            }
+
+            // Score popup
+            if (choice.points > 0) {
+                spawnScorePopup(choice.points);
+            }
+
+            // Particles on best
+            if (choice.quality === 'best') {
+                spawnParticles(window.innerWidth / 2, window.innerHeight / 2, '#00e676', 15);
+            }
+
+            // Show feedback
+            setTimeout(() => {
+                const feedbackArea = document.getElementById('feedback-area');
+                let tagsHtml = choice.tags.map(t =>
+                    `<span class="psych-tag ${t.type}">${t.text}</span>`
+                ).join('');
+
+                const verdictClass = choice.quality === 'best' ? 'best' : choice.quality === 'good' ? 'good' : 'bad';
+                feedbackArea.innerHTML = `
+      <div class="feedback-panel">
+        <div class="feedback-verdict">
+          <div class="verdict-icon ${verdictClass}">${choice.verdictIcon}</div>
+          <div class="verdict-text ${verdictClass}">${choice.verdict}</div>
+        </div>
+        <div class="feedback-points">+<span>${choice.points}</span> ${choice.points === 1 ? 'punkt' : 'punkty'} · Wynik: <span>${state.totalScore}/6</span></div>
+        <div class="feedback-body">${choice.feedback}</div>
+        <div class="mt-12">${tagsHtml}</div>
+      </div>
+    `;
+
+                // Scroll to feedback
+                const scrollArea = document.getElementById('interaction-scroll');
+                setTimeout(() => {
+                    scrollArea.scrollTo({ top: scrollArea.scrollHeight, behavior: 'smooth' });
+                }, 100);
+
+                // Show next button
+                const nextArea = document.getElementById('next-btn-area');
+                const isLast = idx >= interactions.length - 1;
+                nextArea.innerHTML = `
+      <button class="continue-btn" id="btn-next" ontouchstart="">
+        ${isLast ? 'ZOBACZ ZAKOŃCZENIE →' : 'NASTĘPNA SCENA →'}
+      </button>
+    `;
+                document.getElementById('btn-next').addEventListener('click', () => {
+                    choiceMade = false;
+                    if (isLast) {
+                        showEnding();
+                    } else {
+                        state.currentInteraction++;
+                        renderInteraction();
+                        document.getElementById('interaction-scroll').scrollTop = 0;
+                    }
+                });
+            }, 600);
+        }
+
+        // ═══════════════════════════════════════════
+        // ENDING
+        // ═══════════════════════════════════════════
+        function showEnding() {
+            showScreen('ending');
+            state.gamesPlayed++;
+            const isNewBest = state.totalScore > state.bestScore;
+            if (isNewBest) state.bestScore = state.totalScore;
+            savePersist();
+
+            const ending = endings.find(e => state.totalScore >= e.minScore && state.totalScore <= e.maxScore);
+            const content = document.getElementById('ending-content');
+
+            content.innerHTML = `
+    <div class="ending-screen fade-in">
+      <div class="new-best-banner ${isNewBest ? 'show' : ''}" id="new-best">🏆 NOWY REKORD!</div>
+      <div class="ending-badge ${ending.type}">${ending.emoji}</div>
+      <div class="ending-title ${ending.type}">${ending.title}</div>
+      <div style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:6px;">${ending.subtitle}</div>
+      <div class="ending-score"><span>${state.totalScore}</span> / 6 punktów</div>
+
+      <div class="ending-narrative">${ending.narrative}</div>
+
+      <div class="ending-diagnosis">
+        <h4>🧠 Analiza psychologiczna</h4>
+        <p>${ending.diagnosis}</p>
+      </div>
+
+      <div style="margin:0 auto;max-width:400px;">
+        ${renderMetersSummary()}
+      </div>
+
+      <div style="margin-top:24px;">
+        <button class="restart-btn" id="btn-restart" ontouchstart="">↻ ZAGRAJ PONOWNIE</button>
+      </div>
+      <div class="menu-hint" style="margin-top:16px;">Spróbuj wybrać inne odpowiedzi i sprawdź inne zakończenie!</div>
+    </div>
+  `;
+
+            if (ending.type === 'bond') {
+                setTimeout(() => {
+                    for (let i = 0; i < 5; i++) {
+                        setTimeout(() => {
+                            spawnParticles(
+                                Math.random() * window.innerWidth,
+                                Math.random() * window.innerHeight * 0.5,
+                                ['#00e676', '#ffd740', '#00e5ff'][Math.floor(Math.random() * 3)],
+                                10
+                            );
+                        }, i * 200);
+                    }
+                }, 500);
+            }
+
+            document.getElementById('btn-restart').addEventListener('click', () => {
+                updateMenuBest();
+                showScreen('menu');
+            });
+        }
+
+        function renderMetersSummary() {
+            const m = state.meters;
+            return `
+    <div class="ending-diagnosis">
+      <h4>📊 Wskaźniki końcowe</h4>
+      <div style="margin-top:12px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+          <span style="font-size:0.82rem;color:var(--text-secondary);">🔥 Napięcie</span>
+          <span style="font-family:var(--font-mono);font-size:0.8rem;color:var(--tension-color);">${Math.round(m.tension)}%</span>
+        </div>
+        <div class="meter-track" style="margin-bottom:12px;"><div class="meter-fill tension" style="width:${m.tension}%"></div></div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+          <span style="font-size:0.82rem;color:var(--text-secondary);">🤝 Zaufanie</span>
+          <span style="font-family:var(--font-mono);font-size:0.8rem;color:var(--trust-color);">${Math.round(m.trust)}%</span>
+        </div>
+        <div class="meter-track" style="margin-bottom:12px;"><div class="meter-fill trust" style="width:${m.trust}%"></div></div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+          <span style="font-size:0.82rem;color:var(--text-secondary);">💬 Otwartość na dialog</span>
+          <span style="font-family:var(--font-mono);font-size:0.8rem;color:var(--openness-color);">${Math.round(m.openness)}%</span>
+        </div>
+        <div class="meter-track" style="margin-bottom:12px;"><div class="meter-fill openness" style="width:${m.openness}%"></div></div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+          <span style="font-size:0.82rem;color:var(--text-secondary);">👂 Poczucie bycia słuchanym</span>
+          <span style="font-family:var(--font-mono);font-size:0.8rem;color:var(--heard-color);">${Math.round(m.heard)}%</span>
+        </div>
+        <div class="meter-track"><div class="meter-fill heard" style="width:${m.heard}%"></div></div>
+      </div>
+    </div>
+  `;
+        }
+
+        // ═══════════════════════════════════════════
+        // JUICE: PARTICLES
+        // ═══════════════════════════════════════════
+        const particlePool = [];
+        function spawnParticles(x, y, color, count) {
+            for (let i = 0; i < count; i++) {
+                const el = document.createElement('div');
+                el.className = 'particle';
+                const size = Math.random() * 6 + 3;
+                const angle = (Math.PI * 2 * i) / count + (Math.random() - 0.5) * 0.5;
+                const dist = Math.random() * 80 + 40;
+                const dx = Math.cos(angle) * dist;
+                const dy = Math.sin(angle) * dist;
+                el.style.width = size + 'px';
+                el.style.height = size + 'px';
+                el.style.background = color;
+                el.style.left = x + 'px';
+                el.style.top = y + 'px';
+                el.style.transition = `all ${0.6 + Math.random() * 0.4}s cubic-bezier(0.25,0.46,0.45,0.94)`;
+                el.style.opacity = '1';
+                document.body.appendChild(el);
+                requestAnimationFrame(() => {
+                    el.style.transform = `translate(${dx}px, ${dy}px)`;
+                    el.style.opacity = '0';
+                });
+                setTimeout(() => el.remove(), 1200);
+            }
+        }
+
+        // ═══════════════════════════════════════════
+        // JUICE: SCORE POPUP
+        // ═══════════════════════════════════════════
+        function spawnScorePopup(pts) {
+            const el = document.createElement('div');
+            el.className = 'score-popup';
+            el.textContent = `+${pts}`;
+            el.style.color = pts === 2 ? '#00e676' : '#ffd740';
+            el.style.left = (window.innerWidth / 2 - 20) + 'px';
+            el.style.top = (window.innerHeight / 2 - 40) + 'px';
+            el.style.textShadow = `0 0 20px ${pts === 2 ? 'rgba(0,230,118,0.5)' : 'rgba(255,215,64,0.5)'}`;
+            document.body.appendChild(el);
+            setTimeout(() => el.remove(), 1300);
+        }
+
+        // ═══════════════════════════════════════════
+        // PREVENT DEFAULTS
+        // ═══════════════════════════════════════════
+        document.addEventListener('gesturestart', e => e.preventDefault());
+        document.addEventListener('gesturechange', e => e.preventDefault());
+
+    </script>
+
+</body>
+
+</html>
