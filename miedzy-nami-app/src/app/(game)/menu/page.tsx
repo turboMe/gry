@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { useProfileStore } from '@/store/game-store';
+import { useProfileStore, useAuthStore } from '@/store/game-store';
+import { getIdToken } from '@/lib/firebase/auth';
 
 /**
  * Main Menu — the home screen of the game.
@@ -10,8 +11,10 @@ import { useProfileStore } from '@/store/game-store';
 export default function MenuPage() {
   const router = useRouter();
   const { quizCompleted } = useProfileStore();
+  const user = useAuthStore((s) => s.user);
   const [stats, setStats] = useState<{ totalGames: number; avgScore: string } | null>(null);
   const [hasProfile, setHasProfile] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
     // Check for saved profile
@@ -27,6 +30,21 @@ export default function MenuPage() {
       }
     } catch { /* ignore */ }
   }, []);
+
+  // Check admin status silently
+  useEffect(() => {
+    if (!user) return;
+    (async () => {
+      try {
+        const token = await getIdToken();
+        if (!token) return;
+        const res = await fetch('/api/admin/stats', {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        if (res.ok) setIsAdmin(true);
+      } catch { /* not admin, that's fine */ }
+    })();
+  }, [user]);
 
   const handlePlay = () => {
     if (!quizCompleted && !hasProfile) {
@@ -77,6 +95,14 @@ export default function MenuPage() {
             <span className="btn-label">Statystyki</span>
             <span className="btn-arrow">→</span>
           </button>
+
+          {isAdmin && (
+            <button className="btn" onClick={() => router.push('/admin')} style={{ borderColor: 'rgba(255,215,0,0.3)' }}>
+              <span className="btn-icon">⚙️</span>
+              <span className="btn-label">Panel Admina</span>
+              <span className="btn-arrow">→</span>
+            </button>
+          )}
         </div>
 
         <div style={{ fontSize: '0.8rem', color: 'var(--text-dim)' }}>
