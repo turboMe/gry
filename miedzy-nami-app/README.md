@@ -21,7 +21,7 @@
 
 > **Link do aplikacji.**
 >
-> `[ 🔗 https://miedzy-nami.vercel.app ]`
+🔗 **[https://miedzy-nami.vercel.app](https://miedzy-nami.vercel.app)**
 
 ---
 
