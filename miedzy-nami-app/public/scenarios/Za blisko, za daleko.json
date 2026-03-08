@@ -1,0 +1,983 @@
+{
+    "scenario_id": "bliskosc_i_przestrzen_w_zwiazku",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Za blisko, za daleko",
+        "subtitle": "Wieczorny konflikt o bliskość zamienia się w rozmowę o więzi i autonomii.",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 12,
+        "interaction_count": 6
+    },
+    "tags": {
+        "relationship_type": "romantic_partner",
+        "theme": [
+            "intimacy",
+            "independence",
+            "communication_breakdown"
+        ],
+        "emotional_intensity": "moderate",
+        "age_rating": "adult",
+        "session_type": "training",
+        "player_role_gender": "female",
+        "difficulty": "intermediate"
+    },
+    "characters": {
+        "player": {
+            "name": "Maja",
+            "role_label": "Partnerka · Gracz",
+            "age_range": "29-34",
+            "context": "Maja coraz częściej czuje, że inicjuje kontakt i czeka na bliskość, która nie przychodzi wtedy, gdy jej potrzebuje.",
+            "hidden_need": "closeness",
+            "hidden_need_text": "Potrzebuje więzi, przewidywalności i sygnałów, że jest ważna nawet wtedy, gdy partner chce pobyć sam.",
+            "traits": [
+                {
+                    "text": "Uważna na sygnały relacyjne",
+                    "type": "positive"
+                },
+                {
+                    "text": "Lojalna",
+                    "type": "positive"
+                },
+                {
+                    "text": "Wrażliwa na dystans",
+                    "type": "negative"
+                },
+                {
+                    "text": "Szybko dopowiada sobie znaczenia ciszy",
+                    "type": "negative"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 5,
+                "patience": 6,
+                "defensiveness": 6,
+                "empathy": 7,
+                "need_for_control": 5,
+                "shame_sensitivity": 7,
+                "directness": 6,
+                "repair_ability": 7
+            }
+        },
+        "npc": {
+            "name": "Kuba",
+            "role_label": "Partner · NPC",
+            "age_range": "30-36",
+            "context": "Kuba po intensywnych dniach pracy potrzebuje samotności i ciszy, ale rzadko potrafi uprzedzić o tym w sposób, który nie rani partnerki.",
+            "hidden_need": "autonomy",
+            "hidden_need_text": "Potrzebuje oddechu, swobody i prawa do wycofania się bez bycia od razu ocenianym jako chłodny lub niezaangażowany.",
+            "traits": [
+                {
+                    "text": "Odpowiedzialny",
+                    "type": "positive"
+                },
+                {
+                    "text": "Ceni niezależność",
+                    "type": "neutral"
+                },
+                {
+                    "text": "Źle reaguje na presję",
+                    "type": "negative"
+                },
+                {
+                    "text": "Powoli odsłania emocje",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 4,
+                "patience": 5,
+                "defensiveness": 7,
+                "empathy": 6,
+                "need_for_control": 6,
+                "shame_sensitivity": 5,
+                "directness": 4,
+                "repair_ability": 6
+            },
+            "npc_reaction_logic": "Gdy słyszy nacisk, uogólnienia albo poczucie winy, wycofuje się i broni autonomii. Gdy słyszy język potrzeb, konkret oraz uznanie jego granic, obniża defensywność i zaczyna współtworzyć rozwiązanie."
+        }
+    },
+    "metrics_start": {
+        "tension": 40,
+        "trust": 60,
+        "openness": 50,
+        "feeling_heard": 50
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Wieczór po kolejnym oddaleniu",
+            "scene": {
+                "description": "W salonie świeci tylko mała lampka. Kuba stoi przy półce z kubkiem herbaty i wygląda tak, jakby chciał już zamknąć ten dzień. Między wami wisi niedomknięta rozmowa z poprzednich tygodni.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": "Wiem, że jesteś spięta, ale naprawdę nie mam teraz siły na ciężką rozmowę.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Ty nigdy nie masz siły, kiedy chodzi o mnie.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kuba zaciska szczękę i odwraca wzrok. Dobra, czyli znowu zaczynamy od oskarżeń.",
+                    "feedback": {
+                        "label": "Uogólnienie i atak",
+                        "psychology": "To klasyczne uogólnienie, które ustawia rozmowę na Poziomie II. Zamiast mówić o jednym konkretnym doświadczeniu, przypisujesz partnerowi stałą winę, więc uruchamiasz obronę.",
+                        "better_alternative_hint": "Nazwij własne odczucie i konkretną sytuację zamiast oceniać jego charakter."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uogólnianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Spoko. Przyzwyczajam się, że zawsze jestem na końcu listy.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kuba wzdycha ciężko. Właśnie przez takie teksty nie mam ochoty w to wchodzić.",
+                    "feedback": {
+                        "label": "Ukryty atak",
+                        "psychology": "Bierna agresja maskuje potrzebę bliskości ironią. W modelu NVC potrzeba zostaje ukryta, a rozmówca słyszy głównie przytyk i broni się przed zawstydzeniem.",
+                        "better_alternative_hint": "Powiedz wprost, że czujesz się odsunięta i czego teraz potrzebujesz."
+                    },
+                    "tags": [
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "NVC Rosenberga",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie chcę awantury. Potrzebuję tylko wiedzieć, kiedy możemy spokojnie pogadać.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Kuba spuszcza ramiona. Okej, to brzmi fair. Tylko nie chcę robić tego teraz na emocjach.",
+                    "feedback": {
+                        "label": "Asertywne zatrzymanie",
+                        "psychology": "To ruch w stronę regulacji rozmowy i zejścia z walki o rację. Jest jasno i bez ataku, ale jeszcze niewiele tu odsłonięcia emocji i znaczenia tej sytuacji dla ciebie.",
+                        "better_alternative_hint": "Dodaj krótko, co ta sytuacja w tobie uruchamia, żeby nie zostać tylko na logistyce."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Regulacja rozmowy",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie chcę cię przyciskać. Jest mi po prostu samotnie, kiedy znikasz bez słowa.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kuba patrzy na ciebie uważniej. Okej. To brzmi inaczej. Nie wiedziałem, że aż tak to odbierasz.",
+                    "feedback": {
+                        "label": "Komunikat Ja i odsłonięcie potrzeby",
+                        "psychology": "To bliskie NVC: mówisz o własnym przeżyciu bez przypisywania intencji drugiej stronie. Dzięki temu maleje zagrożenie, a rośnie szansa na empatyczne słuchanie.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja własnej emocji",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Nazwanie ukrytych potrzeb",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Kuba stoi już przy przedpokoju z ręką na klamce od sypialni. Atmosfera zrobiła się sztywna i każdy kolejny wyraz brzmi jak test lojalności.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Właśnie dlatego się wycofuję. Każda taka rozmowa kończy się pretensją.",
+            "scene_high": {
+                "description": "Kuba siada na końcu kanapy i odkłada telefon ekranem do dołu. Nadal jest zmęczony, ale jego ciało nie wygląda już na gotowe do ucieczki.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Okej. Słyszę, że chodzi o coś więcej niż sam wieczór. O co najbardziej?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Najbardziej o to, że jesteś egoistą i myślisz tylko o sobie.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kuba cofa się o krok. Skoro tak mnie widzisz, to serio nie mamy o czym gadać.",
+                    "feedback": {
+                        "label": "Etykietowanie partnera",
+                        "psychology": "Przypisujesz stałą cechę zamiast mówić o niezaspokojonej potrzebie. W kwadracie von Thuna rozmówca słyszy przede wszystkim komunikat o własnej wadzie i uruchamia obronę.",
+                        "better_alternative_hint": "Zamiast etykiety nazwij potrzebę więzi i wpływ sytuacji na ciebie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Etykietowanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nieważne. Zapomnijmy. Ja po prostu przestanę czegoś oczekiwać.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kuba milknie i również się zamyka. Okej. To chyba jeszcze gorsze niż kłótnia.",
+                    "feedback": {
+                        "label": "Wycofanie z rezygnacją",
+                        "psychology": "Wycofanie chwilowo zmniejsza tarcie, ale nie daje partnerowi dostępu do twojego prawdziwego doświadczenia. Ukryta potrzeba znika z dialogu, więc relacja nie ma z czym pracować.",
+                        "better_alternative_hint": "Powiedz, co próbujesz chronić w sobie, zamiast ogłaszać rezygnację."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Ukryta potrzeba",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Chodzi mi o to, żebyśmy mieli jasne zasady kontaktu i wspólnego czasu.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Kuba kiwa głową powoli. To przynajmniej jest konkret, chociaż brzmi trochę jak regulamin.",
+                    "feedback": {
+                        "label": "Krok w stronę struktury",
+                        "psychology": "Porządkujesz temat i schodzisz z chaosu emocjonalnego na poziom ustaleń. To pomaga, ale bez nazwania znaczeń może zostać odebrane jako zarządzanie partnerem, a nie zaproszenie do dialogu.",
+                        "better_alternative_hint": "Połącz konkret z informacją, dlaczego to dla ciebie ważne emocjonalnie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Konkret i struktura",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chodzi mi o bliskość i spokój. Chcę zrozumieć, czego ty bronisz, kiedy prosisz o przestrzeń.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Kuba robi dłuższą pauzę. Chyba właśnie tego, że zaraz będę musiał udowadniać, że cię kocham.",
+                    "feedback": {
+                        "label": "Wejście pod konflikt",
+                        "psychology": "To ruch na Poziom III. Zamiast ścierać stanowiska, pytasz o potrzebę i mechanizm obronny drugiej strony, co otwiera przestrzeń na współrozumienie.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Pytanie o potrzebę",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Co naprawdę znaczy przestrzeń",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "W kuchni słychać tylko brzęk łyżeczki o zlew. Kuba mówi z dystansu, nie siada, jakby każdy gest zbyt bliskiego kontaktu miał zaraz zostać użyty przeciw niemu.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "cold"
+            },
+            "npc_line_low": "Przestrzeń znaczy, że chcę odetchnąć, a nie tłumaczyć się z każdej godziny.",
+            "scene_high": {
+                "description": "Przenosicie się do kuchni po wodę. Napięcie nie zniknęło, ale rozmowa zwolniła i między zdaniami pojawiło się miejsce na słuchanie.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Kiedy mówię przestrzeń, nie chodzi o ucieczkę od ciebie. Chodzi o to, żebym nie czuł się oceniany.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To wygodne. Mówisz przestrzeń, a robisz co chcesz bez konsekwencji.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kuba natychmiast się usztywnia. Właśnie o to chodzi. Znowu słyszę, że jestem podejrzany.",
+                    "feedback": {
+                        "label": "Przypisanie złej intencji",
+                        "psychology": "Interpretujesz potrzebę autonomii jako nadużycie. To błąd atrybucji, który zamyka dostęp do realnego sensu słowa przestrzeń i eskaluje defensywność.",
+                        "better_alternative_hint": "Sprawdź znaczenie jego słów zamiast od razu nadawać im negatywną interpretację."
+                    },
+                    "tags": [
+                        {
+                            "text": "Czytanie intencji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Defensywność",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Super. Czyli mam siedzieć cicho i czekać, aż łaskawie wrócisz.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kuba kręci głową. Nie. Ale przez taki ton odechciewa mi się w ogóle tłumaczyć.",
+                    "feedback": {
+                        "label": "Sarkazm zamiast ciekawości",
+                        "psychology": "Sarkazm daje chwilowe poczucie siły, ale rozbija kontakt. Zamiast budować most między potrzebą więzi a autonomii, wzmacnia biegunowość i wstyd po drugiej stronie.",
+                        "better_alternative_hint": "Powiedz, co dla ciebie oznacza cisza i zapytaj, jak on odróżnia oddech od oddalenia."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Polaryzacja potrzeb",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Potrzebuję od ciebie konkretu. Co dla ciebie znaczy zdrowa ilość czasu osobno.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kuba zastanawia się chwilę. To już da się opisać. Potrzebuję czasem jednego wieczoru bez presji rozmowy.",
+                    "feedback": {
+                        "label": "Dopytanie o definicję",
+                        "psychology": "To dobre zatrzymanie niejasności. Pytasz o operacyjne znaczenie słowa przestrzeń, co zmniejsza ryzyko projekcji, ale jeszcze nie mostkujesz waszych dwóch potrzeb.",
+                        "better_alternative_hint": "Dołóż jedno zdanie o tym, jak twoje ciało reaguje na ciszę, żeby partner zobaczył także twoją perspektywę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Dopytywanie o konkret",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Porządkowanie znaczeń",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Słyszę, że przestrzeń ma ci dać oddech, nie oddalenie. Chcę to dobrze zrozumieć, bo dla mnie cisza brzmi jak odrzucenie.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kuba mięknie w twarzy. To ma sens. Nie chcę, żebyś tak to odbierała. Po prostu zacinam się, gdy czuję presję.",
+                    "feedback": {
+                        "label": "Walidacja i odsłonięcie znaczenia",
+                        "psychology": "Najpierw odzwierciedlasz jego potrzebę, potem pokazujesz własne przeżycie. To bardzo skuteczne, bo obie strony mogą istnieć naraz bez licytacji, czyja potrzeba jest ważniejsza.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Podwójna perspektywa",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Granice bez odrzucenia",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Następnego popołudnia spotykacie się w pobliskiej kawiarni, ale napięcie z wczoraj weszło z wami do środka. Kuba siedzi sztywno i wygląda, jakby spodziewał się listy zarzutów zapisanej w notatkach.",
+                "location": "cafe",
+                "time_of_day": "afternoon",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Mam wrażenie, że zaraz usłyszę zasady, których i tak nie spełnię.",
+            "scene_high": {
+                "description": "Następnego dnia siadacie przy małym stoliku w kawiarni. Jest spokojniej niż wczoraj, a rozmowa ma szansę przejść z obrony do wspólnego układania rytmu.",
+                "location": "cafe",
+                "time_of_day": "afternoon",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Dobrze, spróbujmy ustalić coś, co zadba o nas oboje.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To proste. Masz być bardziej dostępny i przestać znikać.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kuba opiera się o krzesło i chłodnieje. Czyli jednak chodzi o kontrolę, nie o rozmowę.",
+                    "feedback": {
+                        "label": "Żądanie zamiast granicy",
+                        "psychology": "Granica mówi o tym, czego ty potrzebujesz i co zrobisz, by o siebie zadbać. Żądanie mówi drugiej osobie, jaka ma być. To często uruchamia walkę o autonomię.",
+                        "better_alternative_hint": "Mów o minimalnym sygnale kontaktu, którego potrzebujesz, zamiast żądać zmiany jego osobowości."
+                    },
+                    "tags": [
+                        {
+                            "text": "Kontrola",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Granica a żądanie",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nie musimy nic ustalać. Ja sobie jakoś poradzę bez ciebie.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kuba marszczy czoło. To nie brzmi jak porozumienie. To brzmi jak kara.",
+                    "feedback": {
+                        "label": "Pozorna samowystarczalność",
+                        "psychology": "Wycofanie podszyte żalem nie buduje autonomii, tylko wzmacnia dystans. Druga strona dostaje sygnał odcięcia, a nie dojrzałej granicy.",
+                        "better_alternative_hint": "Nazwij, co ma ci pomagać czuć więź, nawet gdy partner bierze oddech."
+                    },
+                    "tags": [
+                        {
+                            "text": "Karzące wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Unikanie bliskości",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Ustalmy dwa wspólne wieczory w tygodniu i informację, kiedy potrzebujesz czasu solo.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kuba przytakuje. To brzmi sensownie. Tylko chciałbym, żeby nie było z tego systemu kontroli.",
+                    "feedback": {
+                        "label": "Praktyczne ustalenie",
+                        "psychology": "Wprowadzasz ramę, która daje przewidywalność. To pomaga układowi nerwowemu obu stron, ale sama struktura nie wystarczy, jeśli nie pojawi się wspólna intencja stojąca za tym planem.",
+                        "better_alternative_hint": "Dopowiedz, czemu ten układ ma służyć wam obojgu, nie tylko zmniejszeniu twojego lęku."
+                    },
+                    "tags": [
+                        {
+                            "text": "Kontrakt relacyjny",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Przewidywalność",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chcę rytmu, który da mi poczucie więzi, a tobie oddech. Poszukajmy takiego układu razem.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kuba pierwszy raz lekko się uśmiecha. To brzmi jak coś, w czym oboje mamy miejsce.",
+                    "feedback": {
+                        "label": "Wspólna rama zamiast dwóch okopów",
+                        "psychology": "Łączysz obie potrzeby w jedno zadanie relacyjne. To rdzeń transformacji: nie pytasz, kto ma rację, tylko jak zbudować system, który pomieści dwie prawdy naraz.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Wspólna wizja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Naprawa po potknięciu",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Mija kilka dni. Wieczorem stoisz z Kubą na spokojnej ulicy po tym, jak odwołał wasze wyjście w ostatniej chwili. Stary schemat wraca szybciej, niż zdążyliście zbudować coś nowego.",
+                "location": "street",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Odwołałem jedno wyjście i od razu wracamy do punktu wyjścia.",
+            "scene_high": {
+                "description": "Kilka dni później po drobnym zgrzycie spotykacie się na krótkim spacerze. Kuba sam wrócił do tematu odwołanego planu i widać, że chce go naprawić, a nie zamieść pod dywan.",
+                "location": "street",
+                "time_of_day": "evening",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Wiem, że odwołanie planu cię zabolało. Nie chciałem znowu wrzucać cię w tę niepewność.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Bo z tobą zawsze tak jest. Nie da się na tobie polegać.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kuba od razu twardnieje. Skoro zawsze tak jest, to po co w ogóle próbuję coś naprawiać.",
+                    "feedback": {
+                        "label": "Katastrofizacja i przekreślenie",
+                        "psychology": "Jedno potknięcie zostaje przedstawione jako dowód na trwałą niewiarygodność partnera. To niszczy motywację do naprawy, bo druga strona słyszy, że i tak jest już skazana na porażkę.",
+                        "better_alternative_hint": "Oddziel to konkretne zdarzenie od oceny całej relacji i powiedz, jak wpłynęło na twoje poczucie bezpieczeństwa."
+                    },
+                    "tags": [
+                        {
+                            "text": "Katastrofizacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Przekreślenie partnera",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nie szkodzi. Już niczego nie planujmy, będzie prościej.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kuba patrzy z bezradnością. To brzmi tak, jakbyś właśnie wycofała się z nas, nie z jednego planu.",
+                    "feedback": {
+                        "label": "Rezygnacja zamiast naprawy",
+                        "psychology": "Pozorna zgoda ukrywa ból i obcina możliwość reparacji. W analizie transakcyjnej to ruch z pozycji bezradnej, który nie prowadzi ani do granicy, ani do bliskości.",
+                        "better_alternative_hint": "Powiedz, że zabolało, i wskaż, czego potrzebujesz następnym razem."
+                    },
+                    "tags": [
+                        {
+                            "text": "Rezygnacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna Berne'a",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Jest mi trudno, gdy plan znika w ostatniej chwili. Potrzebuję wcześniej wiedzieć, co się dzieje.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kuba kiwa głową. To jest uczciwe. Mogę wcześniej dawać znać, nawet gdy jeszcze nie mam idealnego wyjaśnienia.",
+                    "feedback": {
+                        "label": "Jasny komunikat o wpływie",
+                        "psychology": "Pokazujesz skutek zdarzenia i konkretną prośbę na przyszłość. To dobry ruch naprawczy, choć nadal głównie operacyjny, a mniej relacyjny.",
+                        "better_alternative_hint": "Dodaj, co takie sytuacje uruchamiają w tobie emocjonalnie, żeby partner lepiej rozumiał wagę sprawy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Jasna prośba",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Naprawa relacyjna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "To mnie uruchomiło, bo boję się, że znowu zostanę na końcu. Chcę powiedzieć o tym bez robienia z ciebie wroga.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kuba bierze głębszy oddech. Dzięki, że mówisz to tak. Mogę ci powiedzieć wcześniej, że się przeciążam, zamiast znikać.",
+                    "feedback": {
+                        "label": "Nazwanie uruchomienia bez ataku",
+                        "psychology": "Mówisz o lęku przywiązaniowym jako o swoim doświadczeniu, a nie jako wyroku na partnera. To pozwala utrzymać kontakt nawet wtedy, gdy stary schemat właśnie się odpala.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Nazywanie triggera",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Regulacja napięcia",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_6",
+            "title": "Nowa definicja bliskości",
+            "score_threshold": 5,
+            "scene_low": {
+                "description": "Wracacie do mieszkania już zmęczeni samym tematem. Siedzicie daleko od siebie na przeciwnych krańcach kanapy, jakby każde z was pilnowało własnego terytorium.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "cold"
+            },
+            "npc_line_low": "Nie wiem, czy my w ogóle chcemy związku w tej samej formie.",
+            "scene_high": {
+                "description": "W mieszkaniu jest cicho, ale nie ciężko. Oboje wyglądacie na zmęczonych, jednak pierwszy raz to zmęczenie nie pcha was do ucieczki, tylko do doprecyzowania wspólnego języka.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Widzę, że możemy o tym rozmawiać inaczej niż zwykle. Co ma nam pomagać, kiedy wróci stare napięcie?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Albo wchodzisz w to po mojemu, albo ten związek nie ma sensu.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kuba zamyka się natychmiast. To nie jest rozmowa o nas. To ultimatum.",
+                    "feedback": {
+                        "label": "Ultimatum",
+                        "psychology": "Ultimatum może dawać pozór siły, ale zwykle niszczy autonomię i bezpieczeństwo jednocześnie. Relacja przechodzi z dialogu do testu posłuszeństwa.",
+                        "better_alternative_hint": "Zaproponuj wspólne zasady powrotu do kontaktu zamiast stawiać warunek podporządkowania."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ultimatum",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Walka o kontrolę",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Rób, co chcesz. Ja już nie będę mówić, czego potrzebuję.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kuba milknie na długo. To brzmi tak, jakby relacja miała trwać, ale bez prawdziwego kontaktu.",
+                    "feedback": {
+                        "label": "Oddanie pola przez rezygnację",
+                        "psychology": "Rezygnacja z własnych potrzeb nie tworzy spokoju, tylko zamrożenie. Z zewnątrz jest ciszej, ale więź słabnie, bo jedna osoba znika z relacji emocjonalnie.",
+                        "better_alternative_hint": "Pozostań przy swoich potrzebach, ale przedstaw je jako element wspólnego układu, nie jako broń."
+                    },
+                    "tags": [
+                        {
+                            "text": "Samowyciszenie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Zamrożenie kontaktu",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Potrzebujemy prostych zasad, żeby nie wpadać w ten sam konflikt.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kuba przytakuje. Tak. Zasady by się przydały, choć chciałbym, żeby było w tym też trochę serca.",
+                    "feedback": {
+                        "label": "Rozsądny szkielet",
+                        "psychology": "To stabilizuje relację i daje plan działania. Nadal jednak zostajesz bardziej przy mechanice niż przy wspólnej filozofii bliskości, więc efekt może być poprawny, ale nie głęboki.",
+                        "better_alternative_hint": "Dopowiedz, co bliskość i przestrzeń mają znaczyć dla was, nie tylko jak mają wyglądać."
+                    },
+                    "tags": [
+                        {
+                            "text": "Plan działania",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Struktura relacyjna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chcę, żeby bliskość nie oznaczała kontroli, a przestrzeń nie oznaczała porzucenia. Ustalmy nasze sygnały i sposób wracania do kontaktu.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -3,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kuba przysuwa się bliżej. To jest dokładnie to. Wtedy oboje wiemy, że jesteśmy po tej samej stronie.",
+                    "feedback": {
+                        "label": "Wspólny język więzi i autonomii",
+                        "psychology": "Integrujesz dwa pozornie sprzeczne bieguny w jedną relacyjną umowę. To najbardziej dojrzała odpowiedź, bo reguluje zarówno emocje, jak i przyszłe zachowania.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Integracja potrzeb",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "ODDALIENIE POD PRZYKRYWKĄ RACJI",
+            "emoji": "🔴",
+            "subtitle": "Oboje zostaliście przy własnych interpretacjach i żadna z potrzeb nie dostała bezpiecznego miejsca.",
+            "narrative": "Wieczór kończy się ciszą, która nie koi, tylko odcina. Maja czuje się jeszcze bardziej samotna, a Kuba jeszcze mocniej pilnuje swojej przestrzeni. Zamiast mostu powstały dwa okopy.",
+            "diagnosis": "Rozmowa utknęła głównie na Poziomie II, gdzie dominuje obrona własnej racji, etykietowanie i reakcje na wstyd. Potrzeba bliskości została wyrażona przez nacisk lub żal, a potrzeba autonomii została odebrana jako odrzucenie. To klasyczny cykl gonienie i wycofanie.",
+            "post_game": {
+                "communication_style_summary": "Dominowały atak, wycofanie albo bierna agresja, więc napięcie rosło szybciej niż zrozumienie.",
+                "strongest_moment": "Pojawiły się pojedyncze próby zatrzymania konfliktu, ale nie wystarczyły, by wyjść spod warstwy pretensji.",
+                "growth_tip": "Zacznij od krótkiego komunikatu Ja: co czujesz, po czym to poznajesz i czego potrzebujesz. Bez etykiet, bez słowa zawsze, bez przypisywania intencji.",
+                "replay_prompt": "Spróbuj ponownie i zobacz, co się zmieni, gdy zamiast walczyć o rację zaczniesz pytać o potrzebę pod zachowaniem."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "KRUCHY ROZEJM",
+            "emoji": "🟡",
+            "subtitle": "Udało się wyhamować konflikt, ale porozumienie pozostało bardziej praktyczne niż emocjonalne.",
+            "narrative": "Rozmowa nie kończy się wybuchem. Ustalacie kilka zasad i schodzicie z najwyższego napięcia, ale w tle nadal zostaje pytanie, czy naprawdę rozumiecie, co dla was znaczy bliskość i przestrzeń.",
+            "diagnosis": "Pojawiła się asertywność i więcej konkretu, co ograniczyło chaos i częściowo odbudowało bezpieczeństwo. Nadal jednak relacja opierała się bardziej na zarządzaniu sytuacją niż na pełnym uznaniu obu ukrytych potrzeb.",
+            "post_game": {
+                "communication_style_summary": "Przeważał styl rzeczowy i częściowo asertywny. To wystarczyło do ustaleń, ale nie do głębszej ulgi emocjonalnej.",
+                "strongest_moment": "Najlepiej działały momenty, w których zamiast oskarżenia pojawiał się konkret i prośba.",
+                "growth_tip": "Następnym razem dołóż walidację drugiej strony i jedno zdanie o swoim lęku lub tęsknocie. Sama struktura bez empatii daje tylko pół rozwiązania.",
+                "replay_prompt": "Zagraj jeszcze raz i spróbuj częściej łączyć konkret z ciekawością tego, co partner chroni swoim zachowaniem."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 9
+            },
+            "color": "green",
+            "title": "BLISKOŚĆ Z MIEJSCEM NA ODDECH",
+            "emoji": "🟢",
+            "subtitle": "Udało się stworzyć układ, w którym więź i autonomia przestają się nawzajem wykluczać.",
+            "narrative": "Wieczór kończy się spokojniej niż się zaczął. Maja nie musi już zgadywać, czy cisza oznacza oddalenie, a Kuba nie musi bronić każdej potrzeby przestrzeni jak własnej suwerenności. Pojawia się ulga i ostrożne zaufanie.",
+            "diagnosis": "Rozmowa weszła momentami na Poziom III. Potrzeba więzi została nazwana bez oskarżenia, a potrzeba autonomii bez ucieczki. Dzięki temu konflikt przestał być testem miłości i stał się wspólnym zadaniem do ułożenia.",
+            "post_game": {
+                "communication_style_summary": "Dominowały empatia, asertywność i pierwsze ruchy transformacyjne, które obniżyły defensywność po obu stronach.",
+                "strongest_moment": "Najmocniej zadziałały te wybory, w których jednocześnie uznawałaś jego oddech i własną potrzebę bycia ważną.",
+                "growth_tip": "To dobry kierunek. Utrwal go przez małe rytuały kontaktu i szybkie naprawy po potknięciach, zanim wróci stary schemat gonienie i wycofanie.",
+                "replay_prompt": "Sprawdź, czy potrafisz dojść jeszcze dalej i zbudować prawdziwie wspólny język więzi oraz wolności."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 10,
+                "max": 12
+            },
+            "color": "blue",
+            "title": "WSPÓLNY JĘZYK WIĘZI I WOLNOŚCI",
+            "emoji": "🔵",
+            "subtitle": "Nie tylko zatrzymaliście konflikt. Stworzyliście nową mapę relacji, w której obie potrzeby mają równą godność.",
+            "narrative": "Między wami pojawia się rzadki rodzaj ciszy: nie chłodnej, tylko bezpiecznej. Maja czuje się widziana bez błagania o uwagę, a Kuba może prosić o przestrzeń bez lęku, że zrani samym faktem swojej inności. To nie jest idealność. To jest dojrzałe porozumienie.",
+            "diagnosis": "Rozmowa została przeprowadzona transformacyjnie. Zamiast wybierać między bliskością a autonomią, zintegrowaliście oba bieguny i zamieniliście konflikt tożsamościowy w wspólny system regulacji kontaktu. To wzmacnia trust, openness i feeling_heard jednocześnie.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl empatyczny i transformacyjny. Rozmowa była jednocześnie szczera, konkretna i wspólnotowa.",
+                "strongest_moment": "Najsilniejszy był moment, w którym bliskość przestała oznaczać kontrolę, a przestrzeń przestała oznaczać porzucenie.",
+                "growth_tip": "To poziom mistrzowski. Przenoś ten sam wzorzec do kolejnych konfliktów: najpierw regulacja, potem nazwanie potrzeb, na końcu wspólna umowa.",
+                "replay_prompt": "Przejdź scenariusz jeszcze raz inną ścieżką i porównaj, jak szybko relacja traci jakość, gdy znikają ciekawość i walidacja."
+            }
+        }
+    ]
+}

@@ -3,10 +3,10 @@
 //  Cache-first for static assets, network-first for API.
 // ═══════════════════════════════════════════════════════════
 
-const CACHE_NAME = 'miedzy-nami-v1';
+const CACHE_NAME = 'miedzy-nami-v2';
 
 const PRECACHE_URLS = [
-  '/menu',
+  '/',
   '/manifest.json',
   '/favicon.ico',
 ];

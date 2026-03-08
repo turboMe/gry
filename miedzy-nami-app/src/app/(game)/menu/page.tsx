@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useProfileStore, useAuthStore } from '@/store/game-store';
-import { getIdToken } from '@/lib/firebase/auth';
+import { getIdToken, logOut } from '@/lib/firebase/auth';
 
 /**
  * Main Menu — the home screen of the game.
@@ -62,6 +62,11 @@ export default function MenuPage() {
     }
   };
 
+  const handleLogout = async () => {
+    await logOut();
+    router.replace('/login');
+  };
+
   return (
     <div className="screen fade-in" style={{ justifyContent: 'center', alignItems: 'center', textAlign: 'center', padding: '40px 24px' }}>
       <div className="menu-bg" />
@@ -108,6 +113,25 @@ export default function MenuPage() {
         <div style={{ fontSize: '0.8rem', color: 'var(--text-dim)' }}>
           Interaktywny komiks o psychologii komunikacji
         </div>
+
+        {user && (
+          <button
+            onClick={handleLogout}
+            style={{
+              marginTop: 24,
+              background: 'none',
+              border: '1px solid rgba(255,255,255,0.08)',
+              borderRadius: 10,
+              padding: '10px 24px',
+              color: 'var(--text-dim)',
+              fontSize: '0.8rem',
+              cursor: 'pointer',
+              transition: 'all 0.2s',
+            }}
+          >
+            🚪 Wyloguj się
+          </button>
+        )}
       </div>
     </div>
   );

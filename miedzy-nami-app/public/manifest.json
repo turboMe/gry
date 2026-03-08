@@ -2,7 +2,7 @@
   "name": "Między Nami — Symulator Relacji",
   "short_name": "Między Nami",
   "description": "Interaktywny komiks psychologiczny o komunikacji w relacjach",
-  "start_url": "/menu",
+  "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait",

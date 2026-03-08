@@ -1,0 +1,1221 @@
+{
+    "scenario_id": "sibling_care_for_parent_conflict",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Kto weźmie dyżur przy mamie",
+        "subtitle": "Rodzinne rachunki wracają, gdy trzeba podzielić opiekę nad chorym rodzicem",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 12,
+        "interaction_count": 7
+    },
+    "tags": {
+        "relationship_type": "siblings",
+        "theme": [
+            "support",
+            "responsibility",
+            "health"
+        ],
+        "emotional_intensity": "critical",
+        "age_rating": "teen",
+        "session_type": "what_if",
+        "player_role_gender": "neutral",
+        "difficulty": "advanced"
+    },
+    "characters": {
+        "player": {
+            "name": "Ewa",
+            "role_label": "Młodsza siostra · Gracz",
+            "age_range": "34-40",
+            "context": "Od miesięcy ogarnia większość wizyt, zakupów i nocnych telefonów związanych ze stanem mamy. Jest zmęczona, ale jeszcze bardziej boli ją poczucie, że jej wysiłek jest traktowany jak oczywistość.",
+            "hidden_need": "recognition",
+            "hidden_need_text": "Potrzebuje uznania, realnego wsparcia i partnerskiego traktowania zamiast kolejnych poleceń.",
+            "traits": [
+                {
+                    "text": "Odpowiedzialna",
+                    "type": "positive"
+                },
+                {
+                    "text": "Przeciążona",
+                    "type": "negative"
+                },
+                {
+                    "text": "Długo tłumi złość",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 5,
+                "patience": 4,
+                "defensiveness": 7,
+                "empathy": 7,
+                "need_for_control": 5,
+                "shame_sensitivity": 6,
+                "directness": 6,
+                "repair_ability": 7
+            }
+        },
+        "npc": {
+            "name": "Marek",
+            "role_label": "Starszy brat · Rozmówca",
+            "age_range": "40-46",
+            "context": "Mieszka w innym końcu miasta, dokłada się finansowo i załatwia część formalności, ale rzadko jest przy mamie fizycznie. W stresie wraca do starej rodzinnej roli najstarszego dziecka, które mówi innym, co mają robić.",
+            "hidden_need": "control",
+            "hidden_need_text": "Potrzebuje poczucia wpływu i bezpieczeństwa, dlatego łatwo przechodzi w ton zarządzający.",
+            "traits": [
+                {
+                    "text": "Zaradny",
+                    "type": "positive"
+                },
+                {
+                    "text": "Dominujący pod presją",
+                    "type": "negative"
+                },
+                {
+                    "text": "Praktyczny",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 4,
+                "patience": 5,
+                "defensiveness": 8,
+                "empathy": 5,
+                "need_for_control": 8,
+                "shame_sensitivity": 7,
+                "directness": 7,
+                "repair_ability": 5
+            },
+            "npc_reaction_logic": "Na agresję odpowiada kontratakiem i licytacją zasług. Na bierność przejmuje stery i utwierdza się w hierarchii. Na asertywność słucha tylko częściowo, a na empatię połączoną z konkretami zaczyna opuszczać pozycję starszego, który wie lepiej."
+        }
+    },
+    "metrics_start": {
+        "tension": 45,
+        "trust": 52,
+        "openness": 46,
+        "feeling_heard": 40
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Po wyjściu z oddziału",
+            "scene": {
+                "description": "Późny wieczór. Stoicie z Markiem przy automacie z kawą na korytarzu szpitala. Mama właśnie zasnęła po badaniach, a napięcie po całym dniu wisi między wami jak ciężkie powietrze.",
+                "location": "hospital",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": "Ja w przyszłym tygodniu nie dam rady tyle przyjeżdżać. Ty i tak masz z mamą lepszy kontakt, więc najlepiej będzie, jak ogarniesz to znowu ty.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Zawsze tak robisz. Zjawiasz się na chwilę i rozstawiasz wszystkich po kątach.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marek prostuje się i zaciska szczękę. Super. Czyli od razu wracamy do ataku, zamiast myśleć o mamie.",
+                    "feedback": {
+                        "label": "Atak i uogólnienie",
+                        "psychology": "To wejście w krytykę osoby, a nie w opis problemu. W modelu von Thuna druga strona słyszy głównie apel obronny i zarzut, więc rośnie defensywność.",
+                        "better_alternative_hint": "Nazwij konkretny problem i jego wpływ na ciebie zamiast oceniać Marka jako całość."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uogólnianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Krytyka osoby",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra. Jak zwykle ja to ogarnę.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Marek kiwa głową z ulgą, nie zauważając twojego tonu. Wiedziałem, że mogę na ciebie liczyć.",
+                    "feedback": {
+                        "label": "Wycofanie i rezygnacja",
+                        "psychology": "Na powierzchni konflikt cichnie, ale twoje granice znikają. W analizie transakcyjnej to ruch z pozycji podporządkowanej, który utrwala starą hierarchię.",
+                        "better_alternative_hint": "Powiedz wprost, czego nie jesteś w stanie dalej brać na siebie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Brak granic",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Tłumienie emocji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna Berne'a",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie mogę wziąć wszystkiego. Potrzebuję, żebyśmy dziś podzielili obowiązki konkretniej.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Marek wzdycha i spogląda w bok. No dobra, tylko mów konkretnie, bo ja też mam swoją pracę i dzieci.",
+                    "feedback": {
+                        "label": "Jasna granica",
+                        "psychology": "To asertywne postawienie sprawy. Daje ramę rozmowy, ale jeszcze nie uznaje napięcia Marka ani wspólnego celu, więc łatwo utkwić na poziomie transakcyjnym.",
+                        "better_alternative_hint": "Dodaj własne emocje i wspólną intencję, żeby obniżyć jego potrzebę bronienia się."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granice",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Słyszę, że też jesteś przeciążony, ale ja już nie daję rady dźwigać tego prawie sama. Chcę ustalić podział tak, żebyśmy oboje to naprawdę unieśli.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Marek pierwszy raz patrzy na ciebie bez pośpiechu. Okej. To powiedz, gdzie najbardziej cię to przygniata.",
+                    "feedback": {
+                        "label": "Empatia z granicą",
+                        "psychology": "Łączysz komunikat Ja z uznaniem perspektywy drugiej strony. To obniża wstyd i obronność, zgodnie z NVC oraz przejściem w stronę poziomu transformacji.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC Rosenberg",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Pierwsze liczenie obowiązków",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Chwilę później siedzicie w szpitalnej poczekalni. Krzesła trzeszczą, a Marek zerka na telefon częściej niż na ciebie. Po poprzedniej wymianie słów atmosfera zrobiła się twarda i chłodna.",
+                "location": "hospital",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "To powiedz od razu, o co ci chodzi, bo nie mam siły na kolejną awanturę.",
+            "scene_high": {
+                "description": "Siadacie obok siebie w prawie pustej poczekalni. Mimo zmęczenia Marek odkłada telefon ekranem do dołu. Widać, że po twoich słowach jest bardziej gotów słuchać niż odbijać piłkę.",
+                "location": "hospital",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Dobra, rozpiszmy to. Czego jest teraz najwięcej i co cię najbardziej dobija?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Najwięcej jest twoich wymówek. Gdybyś chciał, znalazłbyś czas tak jak ja.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marek unosi brwi. Jasne, a ty oczywiście jesteś tu jedyną świętą osobą w rodzinie.",
+                    "feedback": {
+                        "label": "Moralizowanie",
+                        "psychology": "To licytacja poświęcenia. Uruchamia wstyd i kontratak zamiast wspólnego liczenia zasobów.",
+                        "better_alternative_hint": "Oddziel ocenę intencji od opisu realnych zadań, które są do zrobienia."
+                    },
+                    "tags": [
+                        {
+                            "text": "Licytacja cierpienia",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nieważne. Sama zrobię listę i potem ci ją wyślę.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Marek marszczy czoło. Czyli znowu mam się domyślać, za co będę później winny.",
+                    "feedback": {
+                        "label": "Ukryty atak",
+                        "psychology": "Pozorna zgoda miesza się tu z pretensją. Bierna agresja podtrzymuje napięcie, bo treść i ton wysyłają sprzeczne komunikaty.",
+                        "better_alternative_hint": "Zamiast wbijać szpilę, poproś o konkretny udział w tworzeniu planu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Podwójny komunikat",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Niejasny apel",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Najwięcej czasu schodzi na wizyty, leki i nocne telefony. Potrzebuję, żebyś przejął choć część z tych rzeczy.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Marek kiwa głową wolno. To brzmi sensownie. Powiedz, które rzeczy mam wziąć konkretnie.",
+                    "feedback": {
+                        "label": "Rzeczowe porządkowanie",
+                        "psychology": "Dobry ruch zadaniowy. Ułatwia podział obowiązków, ale nie dotyka jeszcze emocjonalnego ciężaru i starego wzorca między wami.",
+                        "better_alternative_hint": "Nazwij też, jak wpływa na ciebie obecny układ, żeby nie zostać tylko przy logistyce."
+                    },
+                    "tags": [
+                        {
+                            "text": "Konkretyzacja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Planowanie",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Najbardziej dobija mnie to, że jestem pod telefonem cały czas i czuję się z tym sama. Chcę policzyć zadania razem, nie po to, żeby cię obwiniać, tylko żeby ten ciężar przestał być jednostronny.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Marek wypuszcza powietrze. Dobra. To rozpiszmy tydzień tak, żebyś nie była dyżurną córką przez całą dobę.",
+                    "feedback": {
+                        "label": "Wspólny problem zamiast przeciwnika",
+                        "psychology": "Przesuwasz rozmowę z ja kontra ty na my kontra problem. To klasyczne wejście w poziom III, gdzie obie strony mogą współtworzyć rozwiązanie.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Przeformułowanie konfliktu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Wspólna odpowiedzialność",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Wraca stara hierarchia",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Jesteście już na parkingu przed szpitalem. Marek mówi szybciej i bardziej szorstko, jakby chciał zamknąć temat zanim się rozleje. W twoim ciele narasta znajome spięcie z dawnych rodzinnych kłótni.",
+                "location": "hospital",
+                "time_of_day": "night",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Po prostu zrób to, co zawsze działało. Ty będziesz bliżej mamy, a ja dopnę resztę zdalnie.",
+            "scene_high": {
+                "description": "Stoicie obok samochodu, ale rozmowa nie brzmi już jak rozkaz. Marek nadal chce porządku, jednak w jego tonie jest mniej wyższości. Widać, że próbuje nie wejść automatycznie w rolę starszego dowódcy.",
+                "location": "hospital",
+                "time_of_day": "night",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Mam odruch, żeby to po prostu rozpisać po swojemu, ale chyba znowu wchodzę w ten stary ton. Jak ty to widzisz?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "No właśnie, jak zwykle wydajesz polecenia, bo od dzieciństwa musisz wszystkimi rządzić.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marek od razu twardnieje. A ty od dzieciństwa masz problem z każdym, kto nie myśli tak jak ty.",
+                    "feedback": {
+                        "label": "Rozliczanie tożsamości",
+                        "psychology": "Atakujesz utrwalony wzorzec w formie etykiety. To zwiększa wstyd i zamyka dostęp do refleksji nad zachowaniem tu i teraz.",
+                        "better_alternative_hint": "Oddziel dawny schemat od obecnej prośby i nazwij jego wpływ bez przypisywania roli na stałe."
+                    },
+                    "tags": [
+                        {
+                            "text": "Etykietowanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Historia jako broń",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna Berne'a",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Rób jak chcesz. I tak zawsze było po twojemu.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marek zaciska usta. Skoro tak uważasz, to może rzeczywiście nie ma o czym rozmawiać.",
+                    "feedback": {
+                        "label": "Kapitulacja z żądłem",
+                        "psychology": "Pozorne oddanie kontroli jest tu formą kary. To nie odsłania potrzeby równego traktowania, tylko wzmacnia układ wygrany kontra przegrany.",
+                        "better_alternative_hint": "Powiedz wprost, że nie chcesz znów wejść w dawną hierarchię."
+                    },
+                    "tags": [
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Ukryta kara",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie chcę znowu rozmowy, w której ty decydujesz, a ja mam wykonać. Potrzebuję, żebyśmy ustalali to razem.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Marek mruga i prostuje ramiona. Okej, to mów, gdzie stawiasz granicę.",
+                    "feedback": {
+                        "label": "Nazwanie wzorca",
+                        "psychology": "Dobrze stawiasz granicę wobec hierarchii. Nadal jednak jesteś głównie w obronie swojej pozycji, więc rozmowa może zostać przy negocjacji wpływu.",
+                        "better_alternative_hint": "Dodaj, że rozumiesz jego potrzebę ogarnięcia chaosu, ale nie chcesz być podporządkowana."
+                    },
+                    "tags": [
+                        {
+                            "text": "Granice",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Nazwanie wzorca",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Widzę, że kiedy robi się chaotycznie, ty przejmujesz stery, a ja od razu czuję się ustawiana pod ścianą jak kiedyś. Chciałabym, żebyśmy oboje wyszli z tych ról i ustalili to partnersko.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Marek spuszcza wzrok na chwilę. To uczciwe. Faktycznie często nawet nie zauważam, kiedy zaczynam tobą zarządzać.",
+                    "feedback": {
+                        "label": "Ujawnienie schematu bez ataku",
+                        "psychology": "Nazywasz cykl relacyjny, a nie winnego. To sprzyja meta-komunikacji i zwiększa szansę, że druga osoba zobaczy swój wkład bez natychmiastowej obrony.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Meta-komunikacja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Cykl relacyjny",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Ból z przeszłości wychodzi na wierzch",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Wracacie do mieszkania mamy po odebranie rzeczy. W kuchni pachnie herbatą i starym drewnem, ale między wami jest chłodno. Kilka ostrzejszych zdań już padło i oboje chodzicie na granicy wybuchu.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Nie udawaj, że tylko ty masz stare pretensje. Ja też od lat noszę swoje.",
+            "scene_high": {
+                "description": "W kuchni mamy jest cicho, słychać tylko tykanie zegara. Rozmowa zeszła głębiej niż planowaliście, ale nie rozpadła się. Marek mówi ciszej, jakby sam był zaskoczony, że dotykacie dawnych spraw bez krzyku.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "cold"
+            },
+            "npc_line_high": "Chyba oboje nosimy to dłużej, niż chcieliśmy przyznać. Tylko nie wiem, od czego zacząć.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To zacznij od przyznania, że całe życie byłam w tym domu na końcu kolejki.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marek odstawia kubek zbyt mocno. Serio chcesz teraz robić ze mnie winnego całego dzieciństwa.",
+                    "feedback": {
+                        "label": "Całkowite rozliczenie",
+                        "psychology": "Absolutyzowanie przeszłości przytłacza rozmowę i wywołuje obronę systemu rodzinnego. Druga strona przestaje słyszeć ból, a słyszy oskarżenie totalne.",
+                        "better_alternative_hint": "Weź jeden konkretny wzorzec z przeszłości i pokaż, jak działa dziś."
+                    },
+                    "tags": [
+                        {
+                            "text": "Absolutyzacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Przeciążenie rozmowy",
+                            "type": "error"
+                        },
+                        {
+                            "text": "System rodzinny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nieważne. I tak nic z tym już nie zrobimy.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Marek bezradnie rozkłada ręce. To po co w ogóle to wyciągać, skoro chcesz wszystko zamknąć.",
+                    "feedback": {
+                        "label": "Zamknięcie po odsłonięciu",
+                        "psychology": "Wycofanie po dotknięciu ważnego tematu zostawia drugą stronę w dezorientacji. Otwierasz ranę, ale nie dajesz drogi do regulacji i naprawy.",
+                        "better_alternative_hint": "Zostań przy jednym odczuciu i jednej potrzebie, zamiast gasić rozmowę całkowicie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Unikanie podatności",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Regulacja emocji",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Mam żal, że wtedy często decydowano za mnie. I chyba dlatego dziś tak mocno reaguję, kiedy słyszę, co mam zrobić.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Marek patrzy uważniej. Okej, to już rozumiem bardziej. Nadal nie wszystko, ale bardziej.",
+                    "feedback": {
+                        "label": "Powiązanie przeszłości z teraźniejszością",
+                        "psychology": "To ważne doprecyzowanie źródła reakcji. Pomaga zrozumieć intensywność konfliktu, ale jeszcze nie tworzy mostu do doświadczenia Marka.",
+                        "better_alternative_hint": "Dodaj jedno zdanie ciekawości wobec tego, co on w tamtym czasie przeżywał."
+                    },
+                    "tags": [
+                        {
+                            "text": "Urealnienie emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Most między przeszłością a teraźniejszością",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Mam żal z dawnych lat, bo często czułam się mniej ważna i dziś ten sam ton uruchamia mnie natychmiast. Nie mówię tego, żeby cię skazać, tylko żebyśmy nie powtarzali tego przy mamie teraz.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Marek siada ciężej na krześle. To trudne do usłyszenia, ale chyba pierwszy raz mówisz mi to tak, że nie chcę od razu się bronić.",
+                    "feedback": {
+                        "label": "Podatność bez aktu oskarżenia",
+                        "psychology": "Odsłaniasz zranienie i jednocześnie wyjaśniasz intencję naprawczą. To zmniejsza poczucie zagrożenia i ułatwia mentalizację po obu stronach.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Podatność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja własnych emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Mentalizacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Czas na konkretny plan",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Na stole ląduje kalendarz i pudełko z lekami mamy. Jednak zamiast porządku czuć chaos, bo każde z was bardziej pilnuje swojego stanowiska niż planu. Nawet zwykłe pytania brzmią jak zarzuty.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Dobra, to powiedz wreszcie, co według ciebie niby mam robić, skoro wszystko robię źle.",
+            "scene_high": {
+                "description": "Rozkładacie kalendarz, recepty i notatki od lekarza. Emocje nadal są obecne, ale wreszcie zaczynają pracować na rzecz planu, a nie przeciw niemu. Powietrze robi się lżejsze, bo pojawia się konkret.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Dobra, rozpiszmy tydzień uczciwie. Co jest codzienne, a co można przejąć rotacyjnie?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Najpierw przestań udawać, że nie wiesz, ile to wszystko kosztuje mnie zdrowia.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marek kręci głową. Znowu wracamy do oskarżeń zamiast ustaleń.",
+                    "feedback": {
+                        "label": "Powrót do oskarżeń",
+                        "psychology": "Nawet słuszny ból podany jako zarzut rozbija fazę rozwiązywania problemu. Rozmowa cofa się z zadaniowości do walki o rację.",
+                        "better_alternative_hint": "Najpierw nazwij zadania i oczekiwany udział, potem dopiero dodaj, czemu to dla ciebie ważne."
+                    },
+                    "tags": [
+                        {
+                            "text": "Przeskok z planu do ataku",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Katastrofizacja obciążenia",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nieważne, sama wpiszę wszystko przy swoim nazwisku. Będzie szybciej.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Marek odkłada długopis. Skoro tak, to po co w ogóle mnie do tego sadzasz.",
+                    "feedback": {
+                        "label": "Samopoświęcenie bez negocjacji",
+                        "psychology": "To ruch pozornie odpowiedzialny, ale relacyjnie destrukcyjny. Wzmacnia nierówność i gromadzi materiał do przyszłego wybuchu.",
+                        "better_alternative_hint": "Poproś o udział w dwóch lub trzech konkretnych zadaniach zamiast brać wszystko z rozpędu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Nadmierna odpowiedzialność",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak negocjacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Schemat opiekuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Potrzebuję, żebyś przejął wizyty u lekarza w czwartki i wszystkie zakupy leków. Ja mogę dalej ogarniać poranki i telefony z przychodni.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Marek sięga po długopis. Dobra. To da się wpisać i sprawdzić w kalendarzu.",
+                    "feedback": {
+                        "label": "Podział zadań",
+                        "psychology": "To solidny ruch organizacyjny. Ogranicza chaos, choć jeszcze nie buduje pełnego poczucia współodpowiedzialności emocjonalnej.",
+                        "better_alternative_hint": "Dodaj pytanie, czy taki podział jest dla niego realny i czego potrzebuje, żeby go dowieźć."
+                    },
+                    "tags": [
+                        {
+                            "text": "Kontrakt zadaniowy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Konkrety",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chcę planu, który nie będzie się opierał na tym, że ja pęknę pierwsza. Mogę dalej brać poranki, ale potrzebuję od ciebie stałych dyżurów, nie pomocy od święta. Co realnie możesz wziąć co tydzień?",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Marek przesuwa kalendarz bliżej siebie. Mogę wziąć czwartki, sobotnie zakupy i dwa wieczory pod telefonem. To będzie stałe, nie awaryjne.",
+                    "feedback": {
+                        "label": "Plan oparty na realności",
+                        "psychology": "Łączysz ochronę własnych zasobów z zaproszeniem do trwałego wkładu. To zwiększa odpowiedzialność bez zawstydzania i wspiera bardziej stabilny kontrakt.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Wspólne rozwiązywanie problemu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Ochrona zasobów",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_6",
+            "title": "Sprawa pieniędzy i poczucia zasługi",
+            "score_threshold": 5,
+            "scene_low": {
+                "description": "Gdy plan zaczyna się układać, Marek nagle wraca do rachunków i przelewów. Wystarczy chwila, by rozmowa znów przesunęła się z opieki na to, kto wnosi więcej. W kuchni robi się duszno.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Tylko nie zapominaj, że to ja opłacam większość leków i rehabilitację. To też jest ciężar.",
+            "scene_high": {
+                "description": "Kiedy plan jest już częściowo spisany, Marek ostrożniej dorzuca temat pieniędzy. Nie brzmi to jak broń, raczej jak coś, co też chce mieć uznane. To moment, który może was znowu poróżnić albo domknąć porozumienie uczciwiej.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Chcę jeszcze powiedzieć jedną rzecz. Te wydatki też mnie przygniatają i chyba czasem przez to brzmię, jakbym się rozliczał.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Pieniądze nie przewijają mamy w nocy, więc nie porównujmy rzeczy nieporównywalnych.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Marek cofa się na krześle. Czyli moje wsparcie liczy się tylko wtedy, gdy pasuje do twojej narracji.",
+                    "feedback": {
+                        "label": "Unieważnienie wkładu",
+                        "psychology": "Dewaluujesz jego formę udziału, więc on przestaje uznawać twoją. To klasyczny mechanizm wzajemnego kasowania zasług.",
+                        "better_alternative_hint": "Uznaj jego ciężar, a potem doprecyzuj, że potrzebna jest równowaga także w obecności."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unieważnianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Licytacja wkładu",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "No tak, najlepiej wszystko przeliczyć na faktury, wtedy może poczujesz się bohaterem.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marek prycha krótko. Świetnie. Czyli cokolwiek zrobię, i tak będzie źle.",
+                    "feedback": {
+                        "label": "Sarkazm zamiast uznania",
+                        "psychology": "Sarkazm jest atakiem zamaskowanym humorem. Zwiększa dystans i uruchamia obronę godności, nie rozmowę o proporcjach odpowiedzialności.",
+                        "better_alternative_hint": "Powiedz wprost, że doceniasz wydatki, ale samymi pieniędzmi nie da się zastąpić dyżurów."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Obrona godności",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Wiem, że finansowo bierzesz dużo i to jest ważne. Tyle że sama kasa nie rozwiązuje całej opieki, więc potrzebuję też twojej obecności w ustalonym zakresie.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Marek kiwa głową niechętnie, ale bez kłótni. Dobra. To wpiszmy obecność tak samo twardo jak wydatki.",
+                    "feedback": {
+                        "label": "Uznanie plus granica",
+                        "psychology": "To dojrzała asertywność. Uznajesz jego wkład, ale wracasz do sedna problemu. Brakuje jeszcze zaproszenia do wspólnego sensu tego układu.",
+                        "better_alternative_hint": "Dodaj, że chodzi o ochronę mamy i waszej relacji, nie o bilans wygranych."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Uznanie wkładu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Równowaga odpowiedzialności",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Masz rację, pieniądze też są ciężarem i nie chcę tego pomniejszać. Ja z kolei niosę ciężar bycia stale dostępną. Jeśli uznamy obie rzeczy naraz, łatwiej nam będzie zrobić uczciwy układ bez licytacji, kto cierpi bardziej.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Marek powoli przytakuje. To brzmi fair. Nie chcę już z tobą walczyć o to, czyj ciężar jest prawdziwszy.",
+                    "feedback": {
+                        "label": "Uznanie dwóch prawd naraz",
+                        "psychology": "To przykład integracji perspektyw. W terapii systemowej taki ruch obniża polaryzację, bo obie strony odzyskują ważność bez potrzeby wygranej.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja obustronna",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Integracja perspektyw",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Deeskalacja",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_7",
+            "title": "Ostatnie domknięcie",
+            "score_threshold": 6,
+            "scene_low": {
+                "description": "Jest po północy. Na stole leży niedokończony plan, ale więcej w nim skreśleń niż decyzji. Oboje jesteście wyczerpani i jedno zdanie może jeszcze złożyć rozmowę albo ją całkiem pogrzebać.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Powiedz wprost. W ogóle chcesz ze mną to dalej robić, czy już tylko czekasz, aż się potknę?",
+            "scene_high": {
+                "description": "Po północy kuchnia jest cicha, a kalendarz wreszcie ma sensowny układ. Nie wszystko jest rozwiązane, ale napięcie opadło na tyle, że możecie zdecydować, jak chcecie działać dalej jako rodzeństwo, nie tylko współkoordynatorzy kryzysu.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Nie będzie idealnie, ale chyba pierwszy raz czuję, że możemy to dźwigać razem. Co ustalamy na dalej między nami, nie tylko przy mamie?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Chcę tylko jednego: żebyś wreszcie nie zawalił jak zwykle.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marek wstaje od stołu. To nie ma sensu. Rób po swojemu, skoro i tak wyrok już zapadł.",
+                    "feedback": {
+                        "label": "Wyrok zamiast umowy",
+                        "psychology": "Kończysz rozmowę aktem oskarżenia i odbierasz drugiej stronie możliwość naprawy. To zamyka system współpracy i wzmacnia samospełniającą się przepowiednię.",
+                        "better_alternative_hint": "Zamiast przewidywać porażkę, ustal sposób sprawdzania i reagowania na potknięcia."
+                    },
+                    "tags": [
+                        {
+                            "text": "Przepowiednia porażki",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Oskarżenie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Samorealizująca się prognoza",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nie wiem. Zobaczymy. Róbmy swoje i tyle.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marek patrzy z rezygnacją. Czyli plan jest, ale między nami dalej zostaje bagno.",
+                    "feedback": {
+                        "label": "Unik na końcu",
+                        "psychology": "Po dużym wysiłku relacyjnym zostawiasz niedomkniętą warstwę więzi. To zwiększa ryzyko, że kolejny kryzys znów uruchomi stare role.",
+                        "better_alternative_hint": "Nazwij choć jedno konkretne ustalenie dotyczące sposobu rozmowy między wami."
+                    },
+                    "tags": [
+                        {
+                            "text": "Niedomknięcie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Unikanie relacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Naprawa relacyjna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Chcę, żebyśmy co tydzień sprawdzali plan i mówili sobie wcześniej, kiedy ktoś nie wyrabia. To mi da więcej spokoju.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Marek kiwa głową. To uczciwe. Krótki telefon w niedzielę wieczorem i nie zgadujemy za siebie.",
+                    "feedback": {
+                        "label": "Dobre domknięcie robocze",
+                        "psychology": "Tworzysz procedurę, która zmniejsza chaos i liczbę domysłów. To dobre zakończenie zadaniowe, choć emocjonalnie nadal dość oszczędne.",
+                        "better_alternative_hint": "Dodaj jeszcze jedno zdanie uznania albo intencji, żeby wzmocnić więź, nie tylko system."
+                    },
+                    "tags": [
+                        {
+                            "text": "Procedura naprawcza",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Jasne oczekiwania",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chcę, żebyśmy pilnowali nie tylko grafiku, ale też tonu. Gdy któreś z nas zacznie rozkazywać albo milczeć z urazą, zatrzymujemy się i wracamy do rozmowy o potrzebach. Przy mamie potrzebujemy być zespołem, a nie dawnym rodzeństwem z walki o miejsce.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -3,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Marek wyraźnie mięknie. Zgoda. I jak wypadnę z planu, to nie znikam, tylko mówię to wcześniej. Nie chcę już budować tego na domysłach i starym układzie.",
+                    "feedback": {
+                        "label": "Naprawa systemu relacji",
+                        "psychology": "To finał transformacyjny: ustalacie nie tylko zadania, ale też zasady kontaktu i korekty. Dzięki temu konflikt staje się źródłem nowego kontraktu relacyjnego.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Kontrakt relacyjny",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Naprawa",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "PĘKNIĘCIE POD OPIEKĄ",
+            "emoji": "🔴",
+            "subtitle": "Plan się rozsypał, a stary układ wygrał z rozmową",
+            "narrative": "Noc kończy się trzaskiem szuflady i niedopisanym kalendarzem. Opieka nad mamą formalnie trwa dalej, ale między tobą a Markiem zostaje twardy mur. Każde kolejne zadanie będzie od teraz obciążone nie tylko stresem, ale i wzajemną nieufnością.",
+            "diagnosis": "Dominowały reakcje pozycyjne: oskarżenia, wycofanie albo ironia. Rozmowa ugrzęzła w licytacji, kto niesie większy ciężar i kto ma większe prawo do pretensji. Nierozpoznana stara hierarchia rodzinna przejęła stery nad bieżącą sytuacją.",
+            "post_game": {
+                "communication_style_summary": "W tej ścieżce przeważał styl agresywny, bierny lub biernie agresywny, przez co konflikt przesunął się z opieki nad mamą na walkę o rację i winę.",
+                "strongest_moment": "Najbliżej zmiany było wtedy, gdy pojawiała się szansa nazwania realnego obciążenia zamiast oceniania drugiej osoby.",
+                "growth_tip": "Zacznij od jednego konkretu i jednego komunikatu Ja. Nie rozliczaj całej historii naraz, bo druga strona usłyszy przede wszystkim atak i przejdzie do obrony.",
+                "replay_prompt": "Spróbuj przejść rozmowę tak, by najpierw uznać dwa różne ciężary, a dopiero potem negocjować podział obowiązków."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 7
+            },
+            "color": "yellow",
+            "title": "KRUCHY ROZEJM",
+            "emoji": "🟡",
+            "subtitle": "Udało się coś ustalić, ale napięcie nadal łatwo wróci",
+            "narrative": "Macie już zapisane kilka dyżurów i wstępny plan tygodnia. To wystarcza, żeby najbliższe dni nie zamieniły się w chaos, ale pod spodem dalej zostaje sporo niewypowiedzianego żalu. Współpraca jest możliwa, tylko jeszcze mało odporna.",
+            "diagnosis": "Pojawiła się asertywność i trochę rzeczowego porządkowania, lecz rozmowa tylko częściowo zeszła z poziomu walki o pozycję. Udało się zabezpieczyć logistykę, ale nie do końca przepracować wzajemne zranienia i dawny układ rodzinny.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl asertywny lub transakcyjny, który ograniczył chaos, ale nie zawsze dawał pełne poczucie bycia usłyszanym.",
+                "strongest_moment": "Najmocniejsze były chwile, gdy wracałeś lub wracałaś do konkretu i stawiałeś lub stawiałaś granicę bez całkowitego wycofania.",
+                "growth_tip": "Masz już bazę do porozumienia. Kolejny krok to dołożyć empatię i meta-komunikację, zwłaszcza wtedy, gdy wraca stara hierarchia albo licytacja zasług.",
+                "replay_prompt": "Sprawdź, co się zmieni, gdy oprócz planu zadań zaczniesz też nazywać emocje i intencję wspólnej opieki."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 8,
+                "max": 11
+            },
+            "color": "green",
+            "title": "WSPÓLNY CIĘŻAR",
+            "emoji": "🟢",
+            "subtitle": "Rodzeństwo zaczyna działać jak partnerzy, nie rywale",
+            "narrative": "Kiedy wychodzicie z kuchni, plan na tydzień jest jasny, a napięcie wyraźnie mniejsze. Nie zniknęła cała przeszłość, ale przestała rządzić każdą odpowiedzią. Przy mamie nadal będzie trudno, tylko nie musicie już nieść tego przeciw sobie.",
+            "diagnosis": "W rozmowie coraz częściej pojawiała się walidacja emocji, uznanie dwóch perspektyw i przechodzenie od winy do wspólnego problemu. Dzięki temu udało się osłabić dawną hierarchię i zbudować bardziej partnerski podział odpowiedzialności.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl empatyczny i częściowo transformacyjny. Rozmowa zaczęła łączyć granice, emocje i konkretne ustalenia.",
+                "strongest_moment": "Najlepszy efekt dawały momenty, w których potrafiłeś lub potrafiłaś jednocześnie nazwać własny ciężar i uznać ciężar Marka.",
+                "growth_tip": "To dobra ścieżka. Utrzymuj ją, regularnie wracając do wspólnego przeglądu planu i do rozmowy o tonie, zanim napięcie znów urośnie.",
+                "replay_prompt": "Zagraj jeszcze raz i zobacz, czy potrafisz doprowadzić rozmowę do pełnego kontraktu relacyjnego, nie tylko sprawnego planu opieki."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 12,
+                "max": 14
+            },
+            "color": "blue",
+            "title": "NOWY UKŁAD RODZEŃSTWA",
+            "emoji": "🔵",
+            "subtitle": "Kryzys wokół mamy staje się początkiem głębszej naprawy",
+            "narrative": "Plan opieki jest domknięty, ale ważniejsze jest to, co wydarzyło się między wami. Zamiast odtwarzać role starszego dowódcy i młodszej wykonawczyni, zbudowaliście nową umowę: mówić wcześniej, uznawać oba ciężary i wracać do potrzeb, zanim odezwą się stare rany.",
+            "diagnosis": "Ta ścieżka wykorzystuje konflikt jako materiał do transformacji relacji. Udało się przejść od poziomu pozycyjnego do poziomu III, gdzie liczy się nie tylko podział zadań, ale też sposób bycia ze sobą w obliczu przeciążenia.",
+            "post_game": {
+                "communication_style_summary": "Przeważał styl transformacyjny wsparty empatią i jasnymi granicami. Rozmowa nie tylko obniżyła napięcie, ale stworzyła nowy wzorzec kontaktu.",
+                "strongest_moment": "Kluczowe było nazwanie starego schematu bez oskarżenia i zamiana sporu o winę na wspólny kontrakt dotyczący opieki i tonu rozmowy.",
+                "growth_tip": "To poziom mistrzowski. W realnych rozmowach utrzymasz go wtedy, gdy będziesz równocześnie pilnować konkretów, relacji i wczesnych sygnałów przeciążenia.",
+                "replay_prompt": "Wróć do scenariusza i sprawdź, jak szybko rozmowa rozpada się wtedy, gdy zabraknie jednego elementu: walidacji, granicy albo wspólnej wizji."
+            }
+        }
+    ]
+}
