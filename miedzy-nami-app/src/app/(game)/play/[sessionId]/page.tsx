@@ -163,6 +163,21 @@ export default function PlayPage() {
     }
   }, [game]);
 
+  // ═══ HOOKS MUST BE CALLED BEFORE ANY EARLY RETURNS ═══
+  // Compute interaction + shuffled choices unconditionally to satisfy Rules of Hooks.
+  const rawInteraction = game?.scenario.interactions[game.currentInteraction] ?? null;
+  const totalInts = game?.scenario.interactions.length ?? 0;
+  const interaction = rawInteraction && game
+    ? resolveInteraction(rawInteraction, game.currentInteraction, game.totalScore)
+    : null;
+
+  // Shuffle choices once per interaction (stable until player moves to next question)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const shuffledChoices = useMemo(
+    () => interaction ? shuffleWithOriginalIndices(interaction.choices) : [],
+    [game?.currentInteraction]
+  );
+
   if (!game || phase === 'LOADING') {
     return (
       <div className="flex-center" style={{ flex: 1 }}>
@@ -213,18 +228,8 @@ export default function PlayPage() {
   }
 
   // ═══ PLAYING — Main interaction loop ═══
-  const rawInteraction = game.scenario.interactions[game.currentInteraction];
-  const totalInts = game.scenario.interactions.length;
-
-  // Resolve scene variants based on accumulated score
-  const interaction = resolveInteraction(rawInteraction, game.currentInteraction, game.totalScore);
-
-  // Shuffle choices once per interaction (stable until player moves to next question)
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const shuffledChoices = useMemo(
-    () => shuffleWithOriginalIndices(interaction.choices),
-    [game.currentInteraction]
-  );
+  // interaction is guaranteed non-null here because game is non-null and phase is PLAYING
+  if (!interaction) return null;
 
   return (
     <div className="screen">
