@@ -1,0 +1,975 @@
+{
+    "scenario_id": "boundary_salami_pattern",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "To tylko drobiazg",
+        "subtitle": "Małe przekroczenia granic układają się w duży problem",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 10,
+        "interaction_count": 6
+    },
+    "tags": {
+        "relationship_type": "romantic_partner",
+        "theme": [
+            "boundaries",
+            "control",
+            "respect"
+        ],
+        "emotional_intensity": "critical",
+        "age_rating": "adult",
+        "session_type": "training",
+        "player_role_gender": "neutral",
+        "difficulty": "advanced"
+    },
+    "characters": {
+        "player": {
+            "name": "Aleks",
+            "role_label": "Partner · Gracz",
+            "age_range": "29-35",
+            "context": "Od dłuższego czasu czujesz narastające napięcie, bo Lena coraz częściej podejmuje małe decyzje za ciebie. Każda z osobna wydaje się błaha, ale razem sprawiają, że tracisz poczucie wpływu na własny czas i prywatność.",
+            "hidden_need": "autonomy",
+            "hidden_need_text": "Potrzeba autonomii, jasnych granic i bycia traktowanym jak osobna osoba, a nie przedłużenie partnerki.",
+            "traits": [
+                {
+                    "text": "Uważny na niuanse",
+                    "type": "positive"
+                },
+                {
+                    "text": "Długo znosi dyskomfort zanim zareaguje",
+                    "type": "negative"
+                },
+                {
+                    "text": "Lojalny wobec relacji",
+                    "type": "positive"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 4,
+                "patience": 7,
+                "defensiveness": 5,
+                "empathy": 7,
+                "need_for_control": 4,
+                "shame_sensitivity": 6,
+                "directness": 5,
+                "repair_ability": 7
+            }
+        },
+        "npc": {
+            "name": "Lena",
+            "role_label": "Partnerka · NPC",
+            "age_range": "28-34",
+            "context": "Lena lubi sprawy załatwiać szybko i po swojemu. Swoje wchodzenie w twoją przestrzeń tłumaczy bliskością, dobrą intencją albo wygodą, przez co rzadko uznaje drobne przekroczenia za realny problem.",
+            "hidden_need": "closeness",
+            "hidden_need_text": "Potrzeba bliskości, wpływu i pewności, że relacja daje jej dostęp do twojego czasu i decyzji.",
+            "traits": [
+                {
+                    "text": "Sprawcza",
+                    "type": "positive"
+                },
+                {
+                    "text": "Ma tendencję do minimalizowania cudzych granic",
+                    "type": "negative"
+                },
+                {
+                    "text": "Nie lubi czuć się winna",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 6,
+                "patience": 4,
+                "defensiveness": 8,
+                "empathy": 5,
+                "need_for_control": 7,
+                "shame_sensitivity": 7,
+                "directness": 7,
+                "repair_ability": 4
+            },
+            "npc_reaction_logic": "Na oskarżenia, ironię i uogólnienia reaguje defensywnie albo kontratakiem. Na spokojne, konkretne przykłady i jasne granice reaguje początkowo oporem, ale przy konsekwentnym tonie potrafi przejść od obrony do słuchania."
+        }
+    },
+    "metrics_start": {
+        "tension": 40,
+        "trust": 60,
+        "openness": 50,
+        "feeling_heard": 50
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Znowu bez pytania",
+            "scene": {
+                "description": "Wracasz do mieszkania. Na stole leży otwarty kalendarz, a Lena kończy rozmowę przez telefon z wyraźną ulgą, jakby właśnie coś załatwiła za was oboje.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": "Zapisałam ci sobotę u mojej siostry. Potrzebują pomocy przy przeprowadzce, a ty i tak miałeś wolne, więc potwierdziłam za ciebie.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Ty zawsze decydujesz za mnie. Masz obsesję kontroli.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Lena prostuje się i patrzy ostro. No świetnie, od razu ze mnie robisz potwora.",
+                    "feedback": {
+                        "label": "Uogólnienie i atak",
+                        "psychology": "To wejście na Poziom II — pozycyjny. Zamiast opisać konkretne zachowanie, atakujesz cechy drugiej osoby. Według NVC taka forma uruchamia obronę, a nie refleksję.",
+                        "better_alternative_hint": "Nazwij konkretne działanie i jego wpływ na ciebie, bez przypisywania intencji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uogólnianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Super. Może od razu rozdaj wszystkim mój kalendarz, będzie szybciej.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Lena przewraca oczami. Jak masz mówić takim tonem, to naprawdę nie mam ochoty tego ciągnąć.",
+                    "feedback": {
+                        "label": "Sarkazm zamiast granicy",
+                        "psychology": "Bierna agresja pozwala wyładować napięcie, ale nie daje drugiej stronie jasnej informacji. W kwadracie von Thuna na poziomie relacji wysyłasz pogardę, a nie prośbę.",
+                        "better_alternative_hint": "Powiedz wprost, że nie zgadzasz się na decyzje podejmowane bez twojej zgody."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie zgadzałem się na to. Chcę, żebyś przed takimi ustaleniami najpierw pytała mnie o zgodę.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Lena marszczy brwi. Okej, ale to naprawdę wyglądało na coś oczywistego.",
+                    "feedback": {
+                        "label": "Jasna granica",
+                        "psychology": "To asertywny komunikat o zachowaniu i zasadzie. Działa lepiej niż atak, ale jeszcze nie nazywa wzorca, więc rozmowa może zostać sprowadzona do jednego incydentu.",
+                        "better_alternative_hint": "Dodaj, że to nie pierwszy raz i że problem dotyczy powtarzalnego schematu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Definiowanie granicy",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Zatrzymajmy się. To nie jest tylko o sobocie. Coraz częściej podejmujesz małe decyzje za mnie i chcę porozmawiać o tym wzorcu.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Lena odkłada telefon na stół. O wzorcu? Dobra, to mów konkretnie.",
+                    "feedback": {
+                        "label": "Nazwanie wzorca",
+                        "psychology": "To mocny ruch w stronę Poziomu III — transformacja. Zamiast walczyć o to, kto ma rację w jednej sytuacji, przenosisz rozmowę na schemat relacyjny i jego wpływ.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Technika salami",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "To tylko drobiazg",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Lena stoi z założonymi rękami. W powietrzu wisi świeża irytacja, a rozmowa już zaczęła przypominać przeciąganie liny.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Naprawdę robisz problem z kilku godzin? Nie czytam ci w myślach.",
+            "scene_high": {
+                "description": "Lena siada na brzegu kanapy i odkłada telefon ekranem do dołu. Nadal jest spięta, ale przestaje działać w biegu.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Okej, widzę, że cię to ruszyło. Nadal nie rozumiem, czemu aż tak mocno.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nieważne. Zrób jak chcesz, przecież i tak robisz.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Lena wzrusza ramionami. No to chyba temat zamknięty.",
+                    "feedback": {
+                        "label": "Wycofanie z urazą",
+                        "psychology": "To pozorna deeskalacja. W analizie transakcyjnej przechodzisz w bezradne Dziecko, a granica zostaje nienazwana i bez ochrony.",
+                        "better_alternative_hint": "Nie wycofuj się. Powiedz, dlaczego to ma znaczenie i czego konkretnie potrzebujesz."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna Berne'a",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Bo jesteś egoistką i wszystko ma być po twojemu.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Lena unosi głos. A ty zawsze robisz ze mnie winowajczynię, gdy coś nie idzie po twojej myśli.",
+                    "feedback": {
+                        "label": "Przypisanie złej intencji",
+                        "psychology": "To przesunięcie rozmowy z zachowania na charakter. Taka etykieta niemal gwarantuje kontratak i blokuje zdolność do usłyszenia granicy.",
+                        "better_alternative_hint": "Nazwij skutki dla siebie zamiast definiować, kim jest druga osoba."
+                    },
+                    "tags": [
+                        {
+                            "text": "Etykietowanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Defensywność",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Chodzi o prostą zasadę. Bez potwierdzenia z mojej strony nie zapisujesz mnie nikomu.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Lena kiwa głową, choć nadal jest sztywna. Dobra, to jest konkret.",
+                    "feedback": {
+                        "label": "Zasada bez głębi",
+                        "psychology": "To rzeczowe i użyteczne. Problem w tym, że bez pokazania szerszego sensu Lena może potraktować to jako jedną techniczną regułę, a nie wzorzec naruszania granic.",
+                        "better_alternative_hint": "Połącz zasadę z tym, jak powtarzalne małe przekroczenia wpływają na twoje poczucie bezpieczeństwa."
+                    },
+                    "tags": [
+                        {
+                            "text": "Kontraktowanie zasad",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Pojedynczo to może wyglądać na drobiazg, ale dla mnie składa się w wzorzec. Moje niepewne tak albo brak sprzeciwu są traktowane jak pełna zgoda.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Lena milknie na moment. Okej, to brzmi inaczej niż myślałam.",
+                    "feedback": {
+                        "label": "Zamiana incydentu w obraz całości",
+                        "psychology": "To trafne nazwanie techniki salami. Opisujesz mechanizm stopniowego przesuwania granic bez demonizowania osoby, co zwiększa szansę na refleksję zamiast obrony.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Technika salami",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Nazywanie wzorca",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Udawana niewiedza",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Atmosfera robi się chłodna. Lena chodzi po pokoju, jakby próbowała odzyskać przewagę i nie dać się postawić pod ścianą.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "cold"
+            },
+            "npc_line_low": "Skoro to taki wzorzec, to czemu nigdy nie mówisz od razu? Mam zgadywać twoje granice?",
+            "scene_high": {
+                "description": "Lena siada naprzeciwko ciebie. W jej twarzy widać opór, ale też pierwszy moment realnego słuchania.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Powiedz konkretnie, które sytuacje masz na myśli. Chcę zrozumieć, a nie zgadywać.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Serio? Mam ci jeszcze robić listę twoich manipulacji?",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Lena zaciska szczękę. Skoro tak to nazywasz, to nie ma o czym gadać.",
+                    "feedback": {
+                        "label": "Moralny osąd",
+                        "psychology": "Użycie słowa manipulacje w tej formie działa jak wyrok. Nawet jeśli opisujesz realny mechanizm, oskarżycielski ton zamyka drogę do odpowiedzialności i przerzuca rozmowę w walkę.",
+                        "better_alternative_hint": "Mów o zachowaniach i ich skutkach. Zostaw diagnozę na poziomie opisu wzorca, nie etykiety osoby."
+                    },
+                    "tags": [
+                        {
+                            "text": "Oskarżenie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Jasne. Jak zwykle nic nie pamiętasz. Bardzo wygodne.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Lena prycha. Jeśli masz mnie tylko wbijać szpilą, to skończmy.",
+                    "feedback": {
+                        "label": "Szpila zamiast konkretu",
+                        "psychology": "Bierna agresja wzmacnia wstyd i obronę u rozmówcy, ale nie wnosi danych potrzebnych do zmiany. Z punktu widzenia komunikacji to kara, nie informacja.",
+                        "better_alternative_hint": "Podaj dwa lub trzy konkretne przykłady i połącz je wspólnym znaczeniem."
+                    },
+                    "tags": [
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Były już podobne sytuacje z moim czasem i prywatnością. Nie chcę teraz licytacji przykładów, tylko zmiany.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Lena kręci głową, ale słucha. Dobra, tylko nadal potrzebuję wiedzieć, co dokładnie przekraczam.",
+                    "feedback": {
+                        "label": "Kierunek jest dobry",
+                        "psychology": "Bronisz sensu rozmowy i nie dajesz się wciągnąć w procesową przepychankę. Jednak kilka konkretnych przykładów może pomóc rozmówcy uchwycić, gdzie przebiega granica.",
+                        "better_alternative_hint": "Podaj krótką listę sytuacji i nazwij, co je łączy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Utrzymanie ramy rozmowy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Kiedy bez pytania zapisujesz mnie, czytasz mi nad ramieniem wiadomości albo mówisz za mnie, czuję jak moje granice przesuwają się po kawałku. Reaguję teraz na wzorzec, nie na jeden incydent.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Lena spuszcza wzrok na chwilę. Okej. Kiedy mówisz to tak, widzę, że to się faktycznie powtarza.",
+                    "feedback": {
+                        "label": "Konkret plus sens",
+                        "psychology": "To połączenie obserwacji, emocji i znaczenia, czyli rdzeń skutecznego komunikatu Ja. Dajesz rozmówcy materiał do refleksji bez utraty stanowczości.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Technika salami",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Nazwanie granicy",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Napięcie gęstnieje. Lena zaczyna mówić szybciej, jakby sama myśl o granicy była dla niej oskarżeniem przeciw całej relacji.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "To brzmi tak, jakbym była obca. Przecież jesteśmy razem, nie musimy wszystkiego formalizować.",
+            "scene_high": {
+                "description": "Przenosicie się do kuchennego stołu. Rozmowa nadal jest trudna, ale zaczyna mieć strukturę zamiast chaotycznej obrony.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Dobra. To jak dokładnie ma wyglądać szanowanie tej granicy w praktyce?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nie wiem. Sam już nie wiem, o co mi chodzi.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Lena rozkłada ręce. No właśnie. Robisz awanturę, a potem nic konkretnego z tego nie wynika.",
+                    "feedback": {
+                        "label": "Rozmycie własnej granicy",
+                        "psychology": "Kiedy wycofujesz się z definicji granicy, druga strona dostaje sygnał, że temat jest niepewny i negocjowalny. To wzmacnia dotychczasowy wzorzec.",
+                        "better_alternative_hint": "Powiedz prosto, które obszary wymagają twojej zgody i dlaczego."
+                    },
+                    "tags": [
+                        {
+                            "text": "Rozmycie granicy",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "To oczywiste. Masz przestać wtrącać się we wszystko.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Lena prycha. We wszystko? Czyli znowu przesada zamiast konkretu.",
+                    "feedback": {
+                        "label": "Granica w formie wyrzutu",
+                        "psychology": "Masz słuszną potrzebę, ale wyrażasz ją przez globalny zarzut. To uruchamia debatę o słowie wszystko zamiast rozmowy o realnych zasadach.",
+                        "better_alternative_hint": "Zamień ogólnik na krótką listę obszarów, których granica dotyczy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Generalizacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Są rzeczy wspólne i są moje. Potrzebuję pytania przed decyzjami o moim czasie.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Lena przytakuje powoli. Dobra, czas rozumiem. A reszta?",
+                    "feedback": {
+                        "label": "Dobra zasada, częściowy zakres",
+                        "psychology": "To już konkret i zdrowa separacja tego, co wspólne, od tego, co indywidualne. Brakuje jednak pełnego zasięgu granicy, więc pole do omijania zasad nadal zostaje.",
+                        "better_alternative_hint": "Doprecyzuj też prywatność i zobowiązania podejmowane w twoim imieniu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywne doprecyzowanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granice relacyjne",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Bliskość nie oznacza dostępu do wszystkiego. Chcę związku, w którym pytamy, a nie zakładamy. Mój czas, moje wiadomości i moje zobowiązania wymagają mojej zgody.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Lena bierze wdech i siada spokojniej. Dobra. To jest jasne.",
+                    "feedback": {
+                        "label": "Granica bez przepraszania",
+                        "psychology": "To wzorcowe połączenie asertywności i perspektywy relacyjnej. Nie bronisz prawa do granicy, tylko definiujesz zdrowe warunki bliskości, co przesuwa rozmowę na Poziom III.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Definiowanie granicy",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Próba odwrócenia ról",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Lena odsuwa krzesło i sięga po kurtkę. Wygląda tak, jakby chciała zamienić własny dyskomfort w dowód, że to ty przesadzasz.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Czyli mam teraz chodzić po domu jak po polu minowym, bo wszystko może cię urazić?",
+            "scene_high": {
+                "description": "Mimo napięcia Lena nie odwraca się od stołu. Widać, że boi się krytyki, ale jeszcze nie zrywa kontaktu.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "To jest konkretne. Nadal boję się, że będę popełniać błędy. Co wtedy?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Jak jeszcze raz to zrobisz, będziesz miała problem.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Lena sztywnieje. Czyli jednak chodzi ci o grożenie, nie o rozmowę.",
+                    "feedback": {
+                        "label": "Groźba zamiast konsekwencji",
+                        "psychology": "Groźba może chwilowo wymusić zachowanie, ale niszczy bezpieczeństwo i zaufanie. Zdrowa granica mówi, co ty zrobisz, nie czym ukarzesz drugą stronę.",
+                        "better_alternative_hint": "Opisz, jak będziesz reagować na przekroczenie granicy bez używania strachu jako narzędzia."
+                    },
+                    "tags": [
+                        {
+                            "text": "Groźba",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kontrola przez lęk",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Spokojnie. Najłatwiej będzie, jak po prostu nic ci już nie będę mówić.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Lena unosi brwi. No świetnie, czyli mamy się teraz karać ciszą.",
+                    "feedback": {
+                        "label": "Kara przez odcięcie",
+                        "psychology": "To forma biernej agresji i wycofania więzi. Zamiast budować odpowiedzialność, wzmacniasz lęk i wzajemną nieufność.",
+                        "better_alternative_hint": "Powiedz, jak ma wyglądać naprawa po błędzie i czego potrzebujesz, żeby znów poczuć bezpieczeństwo."
+                    },
+                    "tags": [
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Wycofanie więzi",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Gdy coś przekroczysz, powiem o tym od razu. Oczekuję wtedy uznania tego bez tłumaczenia, że to nic takiego.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Lena przyjmuje to skinieniem głowy. To brzmi fair, choć pewnie nie będzie mi łatwo.",
+                    "feedback": {
+                        "label": "Realistyczna procedura",
+                        "psychology": "To dobra odpowiedź, bo rozdziela błąd od intencji i ustala ścieżkę reakcji. Jeszcze silniej zadziała dodanie elementu naprawy i wspólnego celu.",
+                        "better_alternative_hint": "Dopowiedz, że chodzi o większe bezpieczeństwo i bliskość, a nie o szukanie winy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Naprawa po błędzie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie chcę pola minowego, tylko jasności. Błąd da się naprawić, jeśli nie będziesz udawać, że granicy nie było. Wystarczy: słyszę to, przepraszam, następnym razem zapytam.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Lena wyraźnie mięknie. To brzmi dużo spokojniej niż się bałam.",
+                    "feedback": {
+                        "label": "Granica plus procedura naprawy",
+                        "psychology": "Pokazujesz, że granica nie służy karaniu, tylko ochronie relacji. To obniża defensywność i daje rozmówcy jasny model naprawy po potknięciu.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Repair ability",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Model naprawy",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_6",
+            "title": "Nowa umowa",
+            "score_threshold": 5,
+            "scene_low": {
+                "description": "Jest późno. Między wami stoi zmęczenie i chłód. Każde kolejne słowo może jeszcze coś uratować albo ostatecznie domknąć rozmowę.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "cold"
+            },
+            "npc_line_low": "To brzmi bardziej jak regulamin niż związek. Nie wiem, czy mam siłę na takie zasady.",
+            "scene_high": {
+                "description": "Oboje siedzicie już ciszej. Pierwszy raz w tej rozmowie pojawia się wrażenie, że możecie zbudować coś nowego, a nie tylko obronić stare nawyki.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Dobra. Chcę spróbować inaczej. Jaką jedną zasadę wprowadzamy od dziś?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nieważne. Zapomnijmy o tym i zobaczymy, co będzie.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Lena wzdycha z ulgą, ale temat pozostaje nieruszony. No to wróćmy do tego, co było.",
+                    "feedback": {
+                        "label": "Powrót do starego układu",
+                        "psychology": "Wycofanie się na finiszu daje chwilowy spokój, ale wzorzec zostaje bez korekty. To klasyczna cena unikania: mniej napięcia teraz, więcej napięcia później.",
+                        "better_alternative_hint": "Dokończ rozmowę jedną prostą, mierzalną zasadą."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Lęk przed konfrontacją",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Jedna zasada? Przestań robić cokolwiek beze mnie.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Lena zamyka się natychmiast. Tego nie da się spełnić, więc nie ma sensu udawać, że to rozmowa.",
+                    "feedback": {
+                        "label": "Niemożliwy warunek",
+                        "psychology": "Granica skuteczna musi być konkretna i wykonalna. Żądanie totalne brzmi jak kontrkontrola, więc druga strona albo się zbuntuje, albo odłączy.",
+                        "better_alternative_hint": "Ustal zachowanie w jednym obszarze, który da się zauważyć i sprawdzić."
+                    },
+                    "tags": [
+                        {
+                            "text": "Nierealistyczne żądanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kontrkontrola",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Przed planowaniem czegoś w moim imieniu pytasz mnie wprost i czekasz na wyraźne tak.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Lena kiwa głową. To mogę zapamiętać.",
+                    "feedback": {
+                        "label": "Dobra zasada operacyjna",
+                        "psychology": "To sensowna i mierzalna reguła. Jest użyteczna, ale zostawia niedopowiedziany szerszy sens: że granica służy wzajemnemu szacunkowi, a nie biurokracji relacji.",
+                        "better_alternative_hint": "Dodaj wspólny cel albo drugi element dotyczący reakcji po przekroczeniu granicy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Konkretna zasada",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Ustalmy dwie proste rzeczy: pytamy, zanim decydujemy za drugą osobę, i nie bronimy się tekstem nie wiedziałam, tylko sprawdzamy, co zostało przekroczone. To ma nas zbliżać, nie oddalać.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -3,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Lena wyciąga rękę przez stół. Dobra. Tego właśnie chcę spróbować.",
+                    "feedback": {
+                        "label": "Nowa umowa relacyjna",
+                        "psychology": "To najlepsze domknięcie. Łączysz granicę, odpowiedzialność i wspólny sens. Dzięki temu granica nie jest murem, tylko warunkiem bezpiecznej bliskości.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Wspólna umowa",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "GRANICA ZOSTAJE ROZMYTA",
+            "emoji": "🔴",
+            "subtitle": "Rozmowa zamienia się w walkę albo wycofanie",
+            "narrative": "Wieczór kończy się chłodem. Lena uznaje, że przesadzasz albo atakujesz, a ty zostajesz z poczuciem, że znów musiałeś wybierać między ciszą a awanturą. Konkretny temat soboty znika, ale wzorzec pozostaje nietknięty.",
+            "diagnosis": "Dominował styl agresywny, biernie agresywny albo wycofany. Zamiast nazwania mechanizmu stopniowego przesuwania granic rozmowa ugrzęzła w obronie, etykietach i niedopowiedzeniach. W efekcie napięcie wzrosło, a sama granica nie została uznana ani zabezpieczona.",
+            "post_game": {
+                "communication_style_summary": "Przeważały reakcje pozycyjne: atak, ironia albo wycofanie bez jasnej granicy.",
+                "strongest_moment": "Najbliżej przełomu był moment, w którym próbowałeś zatrzymać temat konkretnego incydentu i zobaczyć szerszy schemat.",
+                "growth_tip": "Nie walcz o to, czy drugi ma złe intencje. Nazwij powtarzalny wzorzec, pokaż jego wpływ na ciebie i dopiero potem postaw jedną konkretną granicę.",
+                "replay_prompt": "Zagraj jeszcze raz i skup się na spokojnym nazwaniu wzorca zamiast reagowania na każdy incydent osobno."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "CHWILOWY ROZEJM",
+            "emoji": "🟡",
+            "subtitle": "Padły ważne słowa, ale bez pełnej zmiany wzorca",
+            "narrative": "Rozmowa kończy się bez eksplozji, ale też bez prawdziwej ulgi. Lena rozumie część twoich zastrzeżeń, jednak bardziej na poziomie zasad technicznych niż głębszego sensu granicy. Jest szansa na poprawę, lecz stary nawyk może wrócić przy pierwszym pośpiechu.",
+            "diagnosis": "Udało się przejść od czystej obrony do częściowej asertywności. Problem w tym, że dialog został głównie na Poziomie I lub II: padły reguły, ale nie zawsze wybrzmiało, że granica służy bezpieczeństwu i wzajemnemu szacunkowi. To daje częściowy efekt, lecz nie zmienia jeszcze relacyjnego kodu.",
+            "post_game": {
+                "communication_style_summary": "Dominowała asertywność i rzeczowe ustalanie zasad, ale z ograniczoną empatią i transformacją.",
+                "strongest_moment": "Najmocniejszy był moment, w którym oddzieliłeś swoje obszary od tego, co wspólne, i zacząłeś mówić konkretem.",
+                "growth_tip": "Następnym razem połącz granicę z emocjonalnym sensem. Sama zasada pomaga, ale trwałą zmianę daje dopiero zrozumienie, dlaczego ta granica chroni relację.",
+                "replay_prompt": "Spróbuj ponownie i zobacz, co się zmieni, gdy nie tylko ustalisz regułę, ale też nazwiesz wzorzec i wspólny cel."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 9
+            },
+            "color": "green",
+            "title": "GRANICA ZOSTAJE USŁYSZANA",
+            "emoji": "🟢",
+            "subtitle": "Pojawia się realne zrozumienie i pierwsza zmiana",
+            "narrative": "Lena nie staje się nagle inną osobą, ale po raz pierwszy naprawdę słyszy, że nie chodzi o jeden drobiazg. Ustalenia są proste i konkretne, a napięcie spada na tyle, że możecie zakończyć wieczór bez odcięcia od siebie. To początek bardziej świadomej relacji.",
+            "diagnosis": "Rozmowa weszła na Poziom III na tyle, by odróżnić bliskość od prawa do dowolnego dostępu. Dzięki nazwaniu wzorca i jasnemu określeniu granicy udało się ograniczyć defensywność NPC i uruchomić odpowiedzialność zamiast przepychanki.",
+            "post_game": {
+                "communication_style_summary": "Najmocniej wybrzmiały asertywność, komunikat Ja i orientacja na wspólne rozwiązanie.",
+                "strongest_moment": "Kluczowy był moment, w którym nazwałeś stopniowe przesuwanie granic i podałeś konkretne przykłady bez upokarzania rozmówczyni.",
+                "growth_tip": "To działa, bo nie przepraszasz za granicę. Utrwal ten styl: konkret, wpływ na ciebie, jasna prośba i gotowość do naprawy po błędzie.",
+                "replay_prompt": "Zagraj jeszcze raz i sprawdź, czy potrafisz doprowadzić rozmowę do jeszcze pełniejszej wspólnej umowy."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 10,
+                "max": 12
+            },
+            "color": "blue",
+            "title": "NOWA UMOWA BLISKOŚCI",
+            "emoji": "🔵",
+            "subtitle": "Granica staje się wspólnym językiem, nie polem bitwy",
+            "narrative": "Wieczór kończy się nie tyle zgodą co nowym zrozumieniem. Lena uznaje, że jej drobne działania układały się w realny wzorzec, a ty potrafisz postawić granicę bez kary, lęku i przeprosin. Między wami pojawia się dojrzała umowa: pytamy, zanim zakładamy.",
+            "diagnosis": "To ścieżka mistrzowska. Udało się połączyć obserwację, emocjonalny wpływ, definicję granicy i procedurę naprawy. Rozmowa nie zatrzymała się na racji ani regulaminie, tylko przeszła w relacyjne porozumienie, w którym autonomia wzmacnia bliskość.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl transformacyjny wsparty empatią i precyzyjną asertywnością.",
+                "strongest_moment": "Najlepszym momentem było zamienienie granicy z prywatnej obrony w wspólną zasadę dbania o relację.",
+                "growth_tip": "To poziom, który warto przenosić do życia: nazywaj wzorzec, nie tylko incydent, stawiaj granicę bez usprawiedliwiania i od razu proponuj zdrową ścieżkę naprawy.",
+                "replay_prompt": "Spróbuj przejść scenariusz inaczej i zobacz, jak szybko rozmowa rozpada się wtedy, gdy zabraknie nazwania wzorca albo wspólnego sensu granicy."
+            }
+        }
+    ]
+}

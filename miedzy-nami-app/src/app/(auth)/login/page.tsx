@@ -308,6 +308,20 @@ export default function LoginPage() {
               <span>Napisz do mnie</span>
             </a>
 
+            {/* Data & Privacy */}
+            <div style={{ height: 1, background: 'rgba(255,255,255,0.06)', margin: '12px 0' }} />
+
+            <h4 style={{ fontSize: '0.82rem', fontWeight: 600, marginBottom: 8, color: 'var(--text-primary)' }}>
+              🔒 Dane i prywatność
+            </h4>
+            <p style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: 14 }}>
+              Twoje dane (email, profil psychologiczny, wyniki&nbsp;gier) przechowywane
+              są w&nbsp;<strong>Firebase (Google Cloud)</strong> na serwerach w&nbsp;UE.
+              Dane służą wyłącznie do działania gry i&nbsp;nie są udostępniane
+              osobom trzecim. W&nbsp;dowolnym momencie możesz usunąć swoje konto
+              i&nbsp;wszystkie dane z&nbsp;poziomu menu gry.
+            </p>
+
             {/* Disclaimer */}
             <div style={{ height: 1, background: 'rgba(255,255,255,0.06)', margin: '12px 0' }} />
             <p style={{

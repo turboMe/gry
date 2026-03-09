@@ -18,6 +18,13 @@ export default function MenuPage() {
   const [showGuestBanner, setShowGuestBanner] = useState(false);
   const [bannerVisible, setBannerVisible] = useState(false);
 
+  // Drawer state
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [deleteConfirm, setDeleteConfirm] = useState('');
+  const [deleting, setDeleting] = useState(false);
+  const [deleteError, setDeleteError] = useState<string | null>(null);
+
   useEffect(() => {
     // Check for saved profile
     const saved = localStorage.getItem('mn_player_profile');
@@ -90,13 +97,64 @@ export default function MenuPage() {
   };
 
   const handleLogout = async () => {
+    setDrawerOpen(false);
     await logOut();
     router.replace('/login');
+  };
+
+  const handleDeleteAccount = async () => {
+    if (deleteConfirm !== 'USUŃ') return;
+    setDeleting(true);
+    setDeleteError(null);
+
+    try {
+      const token = await getIdToken();
+      if (!token) throw new Error('Brak tokenu');
+
+      const res = await fetch('/api/account', {
+        method: 'DELETE',
+        headers: { Authorization: `Bearer ${token}` },
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.message || 'Nie udało się usunąć konta');
+      }
+
+      // Clear all local data
+      localStorage.clear();
+      sessionStorage.clear();
+
+      // Redirect to login
+      window.location.href = '/login';
+    } catch (err: unknown) {
+      const error = err as { message?: string };
+      setDeleteError(error.message || 'Wystąpił błąd');
+      setDeleting(false);
+    }
+  };
+
+  const openDeleteModal = () => {
+    setDeleteConfirm('');
+    setDeleteError(null);
+    setShowDeleteModal(true);
   };
 
   return (
     <div className="screen fade-in" style={{ justifyContent: 'center', alignItems: 'center', textAlign: 'center', padding: '40px 24px' }}>
       <div className="menu-bg" />
+
+      {/* Hamburger button — only for logged-in users */}
+      {user && (
+        <button
+          className="hamburger-btn"
+          onClick={() => setDrawerOpen(true)}
+          aria-label="Menu ustawień"
+          id="hamburger-menu-btn"
+        >
+          ☰
+        </button>
+      )}
 
       <div style={{ position: 'relative', zIndex: 1, width: '100%', maxWidth: 420 }}>
         {/* Guest banner */}
@@ -171,27 +229,145 @@ export default function MenuPage() {
         <div style={{ fontSize: '0.8rem', color: 'var(--text-dim)' }}>
           Interaktywny komiks o psychologii komunikacji
         </div>
-
-        {user && (
-          <button
-            onClick={handleLogout}
-            style={{
-              marginTop: 24,
-              background: 'none',
-              border: '1px solid rgba(255,255,255,0.08)',
-              borderRadius: 10,
-              padding: '10px 24px',
-              color: 'var(--text-dim)',
-              fontSize: '0.8rem',
-              cursor: 'pointer',
-              transition: 'all 0.2s',
-            }}
-          >
-            🚪 Wyloguj się
-          </button>
-        )}
       </div>
+
+      {/* ═══ Side Drawer ═══ */}
+      {drawerOpen && (
+        <>
+          <div className="drawer-overlay" onClick={() => setDrawerOpen(false)} />
+          <div className="side-drawer" id="settings-drawer">
+            <div className="drawer-header">
+              <span className="drawer-title">⚙️ Ustawienia</span>
+              <button className="drawer-close" onClick={() => setDrawerOpen(false)} aria-label="Zamknij">✕</button>
+            </div>
+
+            <div className="drawer-body">
+              {/* Privacy / Data Info */}
+              <div className="drawer-section">
+                <div className="drawer-section-title">
+                  <span>🔒</span>
+                  <span>Twoje dane</span>
+                </div>
+                <p className="drawer-section-text">
+                  Przechowujemy Twoje dane w&nbsp;<strong>Firebase (Google Cloud)</strong>,
+                  serwery zlokalizowane w&nbsp;UE. Dane służą wyłącznie do działania gry
+                  i&nbsp;nie są udostępniane osobom trzecim.
+                </p>
+                <div className="drawer-data-list">
+                  <div className="drawer-data-item">
+                    <span className="drawer-data-icon">📧</span>
+                    <span><strong>Email</strong> — do logowania i identyfikacji konta</span>
+                  </div>
+                  <div className="drawer-data-item">
+                    <span className="drawer-data-icon">🧠</span>
+                    <span><strong>Profil psychologiczny</strong> — cechy komunikacji z quizu</span>
+                  </div>
+                  <div className="drawer-data-item">
+                    <span className="drawer-data-icon">🎮</span>
+                    <span><strong>Historia gier</strong> — wybory, wyniki i zakończenia</span>
+                  </div>
+                </div>
+                <p className="drawer-section-text" style={{ marginTop: 10, fontSize: '0.72rem', color: 'var(--text-dim)' }}>
+                  Możesz usunąć wszystkie swoje dane w&nbsp;dowolnym momencie, korzystając z&nbsp;przycisku poniżej.
+                </p>
+              </div>
+
+              <div className="drawer-divider" />
+
+              {/* Actions */}
+              <button className="drawer-action-btn" onClick={handleLogout}>
+                <span className="drawer-action-icon">🚪</span>
+                <span>Wyloguj się</span>
+              </button>
+
+              <button
+                className="drawer-action-btn drawer-action-btn-danger"
+                onClick={openDeleteModal}
+                id="delete-account-btn"
+              >
+                <span className="drawer-action-icon">🗑️</span>
+                <span>Usuń konto i dane</span>
+              </button>
+
+              {/* Contact */}
+              <div style={{ marginTop: 'auto', paddingTop: 12 }}>
+                <p style={{ fontSize: '0.72rem', color: 'var(--text-dim)', textAlign: 'center', lineHeight: 1.6 }}>
+                  Pytania dotyczące danych?<br />
+                  <a
+                    href="mailto:karczespatryk@gmail.com"
+                    style={{ color: 'var(--accent-cyan)', textDecoration: 'none' }}
+                  >
+                    karczespatryk@gmail.com
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
+
+      {/* ═══ Delete Account Modal ═══ */}
+      {showDeleteModal && (
+        <div className="delete-overlay" onClick={() => !deleting && setShowDeleteModal(false)}>
+          <div className="delete-modal" onClick={(e) => e.stopPropagation()}>
+            <div className="delete-modal-icon">⚠️</div>
+            <div className="delete-modal-title">Usunięcie konta</div>
+            <div className="delete-modal-desc">
+              Ta operacja jest <strong style={{ color: 'var(--accent-red)' }}>nieodwracalna</strong>.
+              Zostaną usunięte:
+              <br /><br />
+              • Twoje konto i email<br />
+              • Profil psychologiczny<br />
+              • Cała historia gier i wyniki
+              <br /><br />
+              Wpisz <strong style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-mono)' }}>USUŃ</strong> aby potwierdzić:
+            </div>
+
+            <input
+              type="text"
+              className="delete-modal-confirm-input"
+              placeholder="Wpisz USUŃ"
+              value={deleteConfirm}
+              onChange={(e) => setDeleteConfirm(e.target.value.toUpperCase())}
+              disabled={deleting}
+              autoComplete="off"
+              id="delete-confirm-input"
+            />
+
+            {deleteError && (
+              <div style={{
+                padding: '8px 12px',
+                borderRadius: 8,
+                background: 'rgba(255, 59, 48, 0.12)',
+                border: '1px solid rgba(255, 59, 48, 0.25)',
+                color: '#ff6b6b',
+                fontSize: '0.78rem',
+                marginBottom: 12,
+              }}>
+                {deleteError}
+              </div>
+            )}
+
+            <div className="delete-modal-actions">
+              <button
+                className="delete-modal-btn delete-modal-btn-cancel"
+                onClick={() => setShowDeleteModal(false)}
+                disabled={deleting}
+              >
+                Anuluj
+              </button>
+              <button
+                className="delete-modal-btn delete-modal-btn-delete"
+                onClick={handleDeleteAccount}
+                disabled={deleteConfirm !== 'USUŃ' || deleting}
+                id="delete-confirm-btn"
+              >
+                {deleting ? '⏳ Usuwanie...' : '🗑️ Usuń konto'}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
-
