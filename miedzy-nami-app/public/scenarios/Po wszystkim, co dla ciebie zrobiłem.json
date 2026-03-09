@@ -1,0 +1,865 @@
+{
+    "scenario_id": "po_wszystkim_co_dla_ciebie_zrobilem",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Po wszystkim, co dla ciebie zrobiłem",
+        "subtitle": "Wdzięczność miesza się z presją i próbą kontroli",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 7,
+        "interaction_count": 5
+    },
+    "tags": {
+        "relationship_type": "friends",
+        "theme": [
+            "boundaries",
+            "control",
+            "support"
+        ],
+        "emotional_intensity": "moderate",
+        "age_rating": "teen",
+        "session_type": "training",
+        "player_role_gender": "neutral",
+        "difficulty": "intermediate"
+    },
+    "characters": {
+        "player": {
+            "name": "Alex",
+            "role_label": "Przyjaciel · Gracz",
+            "age_range": "27-34",
+            "context": "Alex ceni lojalność i ma trudność z odmawianiem, gdy druga strona odwołuje się do dawnych przysług. Jednocześnie coraz bardziej męczy go relacja, w której wdzięczność bywa używana jako narzędzie nacisku.",
+            "hidden_need": "autonomy",
+            "hidden_need_text": "Potrzebuje prawa do odmowy bez poczucia, że przez to staje się złym albo niewdzięcznym człowiekiem.",
+            "traits": [
+                {
+                    "text": "Lojalny",
+                    "type": "positive"
+                },
+                {
+                    "text": "Refleksyjny",
+                    "type": "positive"
+                },
+                {
+                    "text": "Łatwo bierze odpowiedzialność za cudze emocje",
+                    "type": "negative"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 4,
+                "patience": 7,
+                "defensiveness": 5,
+                "empathy": 8,
+                "need_for_control": 3,
+                "shame_sensitivity": 8,
+                "directness": 5,
+                "repair_ability": 7
+            }
+        },
+        "npc": {
+            "name": "Marek",
+            "role_label": "Przyjaciel · NPC",
+            "age_range": "28-35",
+            "context": "Marek jest przed przeprowadzką i czuje się zostawiony z organizacyjnym chaosem. W przeszłości kilka razy realnie pomógł Alexowi i teraz zaczyna traktować tamte gesty jak kapitał, który uprawnia go do posłuszeństwa.",
+            "hidden_need": "support",
+            "hidden_need_text": "Potrzebuje wsparcia i potwierdzenia, że może na kimś polegać, ale wyraża to przez presję i rozliczanie.",
+            "traits": [
+                {
+                    "text": "Pomocny",
+                    "type": "positive"
+                },
+                {
+                    "text": "Pamiętliwy",
+                    "type": "negative"
+                },
+                {
+                    "text": "Impulsywny pod stresem",
+                    "type": "negative"
+                },
+                {
+                    "text": "Towarzyski",
+                    "type": "positive"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 7,
+                "patience": 4,
+                "defensiveness": 7,
+                "empathy": 5,
+                "need_for_control": 6,
+                "shame_sensitivity": 6,
+                "directness": 7,
+                "repair_ability": 4
+            },
+            "npc_reaction_logic": "Na agresję reaguje kontratakiem i licytacją krzywd. Na uległość idzie dalej w presję, bo dostaje sygnał, że to działa. Na czystą asertywność częściowo hamuje, ale nadal walczy o rację. Najbardziej otwiera się, gdy jego stres zostaje zauważony, a granica jest postawiona bez podporządkowania."
+        }
+    },
+    "metrics_start": {
+        "tension": 40,
+        "trust": 60,
+        "openness": 50,
+        "feeling_heard": 50
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Prośba z rachunkiem w tle",
+            "scene": {
+                "description": "Siedzicie z Markiem w małej kawiarni po pracy. Na stole stygnie kawa, a on nerwowo przesuwa kubek. Za dwa dni ma przeprowadzkę i właśnie usłyszałeś, że potrzebuje pomocy od rana do wieczora.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": "Serio nie możesz mi pomóc w sobotę? Po wszystkim, co dla ciebie zrobiłem, myślałem, że to oczywiste.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To obrzydliwe, że próbujesz mnie szantażować.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marek prostuje się i zaciska szczękę. Mówi, że niewdzięczność to twoja specjalność.",
+                    "feedback": {
+                        "label": "Atak i etykietowanie",
+                        "psychology": "Nazywasz problem, ale robisz to przez oskarżenie osoby. Rozmowa od razu przechodzi na Poziom II — walkę o rację — i uruchamia defensywę zamiast refleksji.",
+                        "better_alternative_hint": "Oddziel zachowanie od oceny osoby i nazwij własną granicę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Oskarżenie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, przyjadę. Skoro tak to stawiasz.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marek kiwa głową, jakby sprawa była załatwiona. Nie zauważa twojego oporu, tylko to, że nacisk zadziałał.",
+                    "feedback": {
+                        "label": "Uległość pod presją",
+                        "psychology": "Zgoda wymuszona poczuciem winy nie buduje bliskości. W analizie transakcyjnej to wejście w pozycję uległą wobec naciskającego rozmówcy.",
+                        "better_alternative_hint": "Możesz uznać czyjąś frustrację i jednocześnie nie zgodzić się na presję."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie granicy",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna Berne'a",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie mogę w sobotę. Mam własne plany.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": 0,
+                        "openness": 0,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Marek prycha i pyta, czy twoje plany są naprawdę ważniejsze niż przyjaciel w potrzebie.",
+                    "feedback": {
+                        "label": "Granica bez nazwania wzorca",
+                        "psychology": "To poprawna odmowa, ale nie dotyka sedna, czyli użycia długu jako narzędzia nacisku. Rozmowa zostaje na poziomie transakcyjnym.",
+                        "better_alternative_hint": "Nazwij, co ci przeszkadza w sposobie proszenia, nie tylko w samej prośbie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywna odmowa",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Doceniam to, że wiele razy mi pomogłeś. Nie chcę jednak, żeby nasze przysługi były kartą przetargową. W sobotę nie mogę, ale mogę pomóc ci znaleźć inne rozwiązanie.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Marek milknie na chwilę. Nadal jest spięty, ale słucha uważniej niż przed momentem.",
+                    "feedback": {
+                        "label": "Wdzięczność bez oddawania sterów",
+                        "psychology": "Łączysz walidację z granicą. W języku NVC uznajesz wkład drugiej osoby, a potem jasno komunikujesz własne możliwości bez poddania się presji.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC Rosenberga",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Lojalność czy posłuszeństwo",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "W kawiarni robi się duszno. Marek odsuwa kubek z głośnym stuknięciem i patrzy na ciebie tak, jakbyś właśnie złamał niewypowiedzianą umowę.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Czyli kiedy ty potrzebowałeś wsparcia, ja byłem. A kiedy ja proszę raz, nagle masz zasady?",
+            "scene_high": {
+                "description": "Marek nadal siedzi napięty, ale nie podnosi głosu. W jego spojrzeniu jest bardziej rozczarowanie niż atak.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Brzmi to tak, jakbyś chciał się ode mnie odciąć. Trochę mnie to uderza.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Przestań robić ze mnie potwora. To ty masz problem z kontrolą.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marek unosi głos i mówi, że nie będzie słuchał psychoanalizy od kogoś, kto właśnie go zawodzi.",
+                    "feedback": {
+                        "label": "Kontratak obronny",
+                        "psychology": "Przerzucasz uwagę z własnej granicy na diagnozowanie rozmówcy. To nasila opór i utrwala walkę o to, kto jest gorszy.",
+                        "better_alternative_hint": "Mów o tym, jak odbierasz nacisk, zamiast oceniać charakter drugiej strony."
+                    },
+                    "tags": [
+                        {
+                            "text": "Diagnozowanie drugiej osoby",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Masz rację, najlepiej wpisz sobie wszystko do zeszytu i rozliczaj mnie do końca życia.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marek odpowiada, że właśnie tak to wygląda, skoro bez nacisku nic się od ciebie nie dostaje.",
+                    "feedback": {
+                        "label": "Sarkazm zamiast granicy",
+                        "psychology": "Bierna agresja daje chwilowe odreagowanie, ale zaciemnia sens komunikatu. W kwadracie von Thuna warstwa relacyjna zagłusza treść rzeczową.",
+                        "better_alternative_hint": "Powiedz wprost, co jest dla ciebie problemem, bez ironii."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "To nie jest dobry argument. Mimo wszystko nie zmienię planów.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": 0,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Marek wzdycha ciężko. Nie odpuszcza, ale przestaje krążyć wyłącznie wokół soboty.",
+                    "feedback": {
+                        "label": "Twarda granica",
+                        "psychology": "Chronisz swoją decyzję, co jest ważne. Brakuje jednak uznania emocji Marka, więc może on dalej słyszeć tylko odmowę, a nie relację.",
+                        "better_alternative_hint": "Połącz granicę z pokazaniem, co rozumiesz po drugiej stronie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Stawianie granicy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Słyszę, że odbierasz moją odmowę jak sygnał, że nie można na mnie liczyć. To nie o to chodzi. Odmawiam tej konkretnej prośbie, a nie naszej relacji.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Marek spuszcza wzrok na kubek. Po raz pierwszy brzmi mniej bojowo, a bardziej szczerze.",
+                    "feedback": {
+                        "label": "Oddzielenie osoby od sytuacji",
+                        "psychology": "To mocny ruch transformacyjny: rozbrajasz fałszywe równanie odmowa równa się odrzucenie. Pomagasz rozmówcy wrócić z pozycji do potrzeb.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Aktywne słuchanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "NVC Rosenberga",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Lista przysług",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Wychodzicie przed kawiarnię. Zimne powietrze nie studzi napięcia; Marek zaczyna wyliczać kolejne sytuacje, w których był obok ciebie.",
+                "location": "street",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Woziłem cię po lekarzach, siedziałem z tobą po rozstaniu, a ty teraz mówisz mi o granicach. Serio?",
+            "scene_high": {
+                "description": "Stoicie przed kawiarnią, a Marek mówi ciszej. Nadal wraca do dawnych przysług, ale bardziej jak do dowodu swojej ważności niż amunicji.",
+                "location": "street",
+                "time_of_day": "evening",
+                "visual_mood": "cold"
+            },
+            "npc_line_high": "Chyba po prostu myślałem, że dla ciebie też jestem kimś, komu się nie odmawia.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "I co jeszcze? Mam ci to spłacić z odsetkami?",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Marek mówi, że może właśnie o to chodzi, bo inaczej nic nie znaczy to, co dla ciebie robił.",
+                    "feedback": {
+                        "label": "Ośmieszenie i eskalacja",
+                        "psychology": "Kpina uderza w godność rozmówcy. Zamiast zatrzymać manipulację, wzmacnia licytację krzywd i utrwala Poziom II.",
+                        "better_alternative_hint": "Nazwij wzorzec bez poniżania rozmówcy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, może faktycznie jestem niewdzięczny. Zostawmy to.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Marek, słysząc to, nie uspokaja się. Traktuje twoje cofnięcie jako potwierdzenie swojej wersji.",
+                    "feedback": {
+                        "label": "Przyjęcie cudzej narracji",
+                        "psychology": "Samoponiżenie bywa próbą wygaszenia konfliktu, ale oddaje definicję sytuacji drugiej stronie. To nie rozwiązuje wzorca, tylko go cementuje.",
+                        "better_alternative_hint": "Możesz podziękować za pomoc bez zgadzania się na dług emocjonalny."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uległość",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Wstyd jako regulator zachowania",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie chcę wracać do każdej przysługi. To nie prowadzi do niczego.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Marek przestaje wyliczać, ale jego twarz pozostaje zamknięta. Widać, że nadal nie czuje się zrozumiany.",
+                    "feedback": {
+                        "label": "Zatrzymanie spirali",
+                        "psychology": "Hamujesz nieproduktywny tor rozmowy. To krok naprzód, ale nadal bardziej odcinasz proces niż nadajesz mu nową, bezpieczniejszą ramę.",
+                        "better_alternative_hint": "Powiedz, jakiej relacji chcesz zamiast tej opartej na rozliczaniu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Zatrzymanie eskalacji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Pamiętam te sytuacje i jestem za nie wdzięczny. Właśnie dlatego nie chcę, żeby nasza relacja zamieniła się w księgowość. Pomoc ma sens tylko wtedy, gdy jest dobrowolna, nie wyciągana długiem.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Marek przez chwilę nic nie mówi. W jego twarzy pojawia się nie tyle złość, co zmieszanie.",
+                    "feedback": {
+                        "label": "Nazwanie wzorca zamiast incydentu",
+                        "psychology": "Przenosisz rozmowę z pojedynczej odmowy na zasady relacji. To sedno scenariusza: odróżnienie wdzięczności od kontraktu podporządkowania.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Nazywanie wzorca",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Granice relacyjne",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Co ma obowiązywać między wami",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Pod kawiarnią ludzie mijają was szerokim łukiem. Marek jest już wyraźnie pobudzony i z każdym zdaniem słucha bardziej po to, żeby odpowiedzieć, niż zrozumieć.",
+                "location": "street",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Brzmisz jak ktoś, kto bierze wszystko, a potem zasłania się dojrzałymi tekstami.",
+            "scene_high": {
+                "description": "Napięcie nie zniknęło, ale rozmowa przestała przypominać bójkę. Marek wygląda na poruszonego i trochę zawstydzonego.",
+                "location": "street",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Może rzeczywiście za bardzo wrzuciłem to w kategorię kto komu ile jest winien. Po prostu panikuję, bo zostałem z tym prawie sam.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To twój problem. Naucz się nie kupować ludzi przysługami.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marek zamyka się natychmiast i mówi, że nie chce już z tobą rozmawiać.",
+                    "feedback": {
+                        "label": "Poniżenie w chwili odsłonięcia",
+                        "psychology": "Gdy druga strona ujawnia wrażliwość, atak działa szczególnie niszcząco. Niszczy szansę na naprawę i obniża bezpieczeństwo relacyjne.",
+                        "better_alternative_hint": "Odnieś się do potrzeby, nie do charakteru rozmówcy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Bezpieczeństwo relacyjne",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Jasne, biedny ty. I pewnie znowu ja mam to naprawić.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marek cofa się i mówi, że z tobą każda szczerość kończy się kpiną.",
+                    "feedback": {
+                        "label": "Złośliwa riposta",
+                        "psychology": "Bierna agresja karze za odsłonięcie emocji. To uczy drugą stronę, że szczerość jest ryzykowna, więc później wraca kontrola zamiast otwartości.",
+                        "better_alternative_hint": "Możesz nie brać odpowiedzialności za problem i nadal nie kpić z czyjejś bezradności."
+                    },
+                    "tags": [
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Rozumiem, że jesteś pod presją, ale ja i tak nie pomogę w sobotę.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Marek kiwa głową bez przekonania. Przyjmuje fakt odmowy, lecz nie dostaje nowej definicji waszej relacji.",
+                    "feedback": {
+                        "label": "Granica z minimalną walidacją",
+                        "psychology": "To stabilniejsza odpowiedź niż obrona lub atak. Nadal jednak brakuje wspólnej zasady, która zapobiegłaby powrotowi tego samego wzorca.",
+                        "better_alternative_hint": "Dopowiedz, jak chcesz, by wyglądało proszenie i odmawianie między wami."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Wierzę, że jesteś teraz pod ścianą. Jednocześnie chcę, żeby między nami obowiązywała prosta zasada: prosimy bez presji, pomagamy wtedy, gdy naprawdę możemy, a odmowa nie jest dowodem braku lojalności.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Marek wypuszcza powietrze i przestaje stać w kontrze. Słychać, że pierwszy raz naprawdę rozważa twoje słowa.",
+                    "feedback": {
+                        "label": "Ustalenie zdrowej normy",
+                        "psychology": "To odpowiedź transformacyjna. Nie tylko chronisz granicę, ale też proponujesz model relacji oparty na dobrowolności i wzajemnym szacunku.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Ustalanie zasad relacji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Ostatni ruch",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Następnego ranka stoisz pod blokiem Marka. Po ciężkim wieczorze dystans jest wyraźny, a każde słowo może albo domknąć sprawę, albo przeciąć relację.",
+                "location": "street",
+                "time_of_day": "morning",
+                "visual_mood": "cold"
+            },
+            "npc_line_low": "Dobra, już wiem. Na ciebie można liczyć tylko wtedy, kiedy to wygodne.",
+            "scene_high": {
+                "description": "Następnego ranka pod blokiem Marka atmosfera jest ostrożna, ale spokojniejsza. Widać po nim zmęczenie i lekkie zawstydzenie po wczorajszej rozmowie.",
+                "location": "street",
+                "time_of_day": "morning",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Nie podoba mi się ta sytuacja, ale chyba rozumiem, że pomyliłem wdzięczność z prawem do decydowania za ciebie.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Wreszcie coś do ciebie dotarło. Szkoda, że tak późno.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marek zamyka twarz i kończy rozmowę jednym krótkim okej.",
+                    "feedback": {
+                        "label": "Triumf nad relacją",
+                        "psychology": "Nawet gdy druga strona mięknie, upokorzenie przywraca walkę statusową. Wygrywasz moment, przegrywasz więź.",
+                        "better_alternative_hint": "Gdy pojawia się refleksja, nie zamieniaj jej w okazję do odwetu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Odwet",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nieważne. Po prostu zróbmy, jak chcesz, i nie ciągnijmy tego.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marek przyjmuje twoje ustępstwo, ale zasada pozostaje ta sama: presja działa.",
+                    "feedback": {
+                        "label": "Wycofanie pod koniec",
+                        "psychology": "Cofnięcie granicy na finiszu anuluje wcześniejszą pracę. Wzorzec zostaje nagrodzony, więc ma dużą szansę wrócić.",
+                        "better_alternative_hint": "Zakończenie może być spokojne i nadal konsekwentne."
+                    },
+                    "tags": [
+                        {
+                            "text": "Cofnięcie granicy",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Wzmocnienie wzorca",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie pomogę w przeprowadzce, ale wyślę ci numer do ekipy i kontakt do Pawła. Tyle mogę zrobić.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Marek przyjmuje praktyczne wsparcie. Konflikt cichnie, choć nie wszystko między wami zostaje nazwane.",
+                    "feedback": {
+                        "label": "Praktyczne domknięcie",
+                        "psychology": "To rozsądne zakończenie na poziomie zadaniowym. Relacja zostaje częściowo zabezpieczona, ale emocjonalny sens rozmowy pozostaje tylko częściowo przepracowany.",
+                        "better_alternative_hint": "Dodaj jedno zdanie o relacji, aby nie kończyć wyłącznie logistyką."
+                    },
+                    "tags": [
+                        {
+                            "text": "Rozwiązanie problemu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chcę, żebyś wiedział jedno: twoja wcześniejsza pomoc była dla mnie ważna i nie zamierzam jej umniejszać. Ale nie zgodzę się, by wdzięczność zamieniała się w dług. Mogę dziś pomóc ci znaleźć ludzi albo posiedzieć z tobą chwilę, jeśli potrzebujesz wsparcia bez nacisku.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Marek kiwa głową powoli. Nie wszystko znika od razu, ale między wami wraca poczucie, że rozmawiacie jak sojusznicy, a nie wierzyciel i dłużnik.",
+                    "feedback": {
+                        "label": "Wdzięczność bez podporządkowania",
+                        "psychology": "To dojrzałe domknięcie: uznajesz dobro, nie oddajesz autonomii i oferujesz kontakt na zdrowych zasadach. Tak buduje się zaufanie po napięciu.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Naprawa relacji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 2
+            },
+            "color": "red",
+            "title": "DŁUG, KTÓRY RZĄDZI",
+            "emoji": "🔴",
+            "subtitle": "Rozmowa zamienia się w walkę o winę i wyższość",
+            "narrative": "Marek odchodzi z poczuciem krzywdy, a ty z mieszanką złości i winy. Nie udało się zatrzymać mechanizmu rozliczania; przeciwnie, obie strony utwierdziły się w swoich najgorszych interpretacjach.",
+            "diagnosis": "Dominował styl agresywny, biernie agresywny albo wycofany. Zamiast nazwać wzorzec manipulacji i ochronić granicę, rozmowa ugrzęzła w Poziomie II — licytacji, kto komu bardziej zawinił. To wzmacnia relację transakcyjno-kontrolującą.",
+            "post_game": {
+                "communication_style_summary": "Przeważały reakcje obronne: atak, sarkazm albo uległość pod presją.",
+                "strongest_moment": "Pojawiały się próby zatrzymania konfliktu, ale były zbyt krótkie lub szybko cofane.",
+                "growth_tip": "Następnym razem oddziel wdzięczność od długu. Jedno zdanie, które warto ćwiczyć, to: doceniam to, co dla mnie zrobiłeś, ale nie zgadzam się, by to było używane jako nacisk.",
+                "replay_prompt": "Spróbuj przejść scenariusz tak, by nie reagować na pojedyncze zaczepki, tylko nazwać sam wzorzec rozliczania."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 3,
+                "max": 5
+            },
+            "color": "yellow",
+            "title": "GRANICA BEZ GŁĘBI",
+            "emoji": "🟡",
+            "subtitle": "Udało się nie ulec, ale więź pozostała napięta",
+            "narrative": "Przeprowadzka Marka dochodzi do skutku bez twojego udziału. Kontakt nie urywa się całkiem, ale między wami zostaje chłód i niedopowiedzenie. Granica została obroniona, jednak temat lojalności i wzajemności nadal jest nieuporządkowany.",
+            "diagnosis": "Dominował styl asertywny lub transakcyjny. To wystarczyło, by nie wejść w pełne podporządkowanie, ale zabrakło głębszego ruchu w stronę Poziomu III — wspólnego nazwania, czym ma być zdrowa relacja i gdzie kończy się wdzięczność, a zaczyna kontrola.",
+            "post_game": {
+                "communication_style_summary": "Było rzeczowo i w miarę stabilnie, ale z ograniczoną empatią i bez pełnego przeformułowania relacji.",
+                "strongest_moment": "Najmocniejsze były chwile, w których nie zmieniałeś decyzji mimo nacisku.",
+                "growth_tip": "Sama odmowa to za mało, gdy problemem jest wzorzec. Dodaj zdanie o relacji, na przykład: chcę, żebyśmy mogli prosić i odmawiać bez rozliczania.",
+                "replay_prompt": "Zagraj ponownie i sprawdź, co się stanie, gdy połączysz granicę z walidacją stresu drugiej strony."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 6,
+                "max": 8
+            },
+            "color": "green",
+            "title": "WDZIĘCZNOŚĆ BEZ POSŁUSZEŃSTWA",
+            "emoji": "🟢",
+            "subtitle": "Relacja zostaje ochroniona, a nacisk nazwany",
+            "narrative": "Marek nie dostaje od ciebie tego, czego chciał w sobotę, ale dostaje coś cenniejszego: jasny komunikat, że bliskość nie może być oparta na długu. Między wami wraca więcej spokoju, a przyszłe prośby mają szansę brzmieć inaczej.",
+            "diagnosis": "Udało ci się połączyć granicę z uznaniem emocji i wcześniejszego dobra. To przesunęło rozmowę w stronę transformacji: od sporu o rację do rozmowy o zasadach relacji. Tak buduje się szacunek bez podporządkowania.",
+            "post_game": {
+                "communication_style_summary": "Przeważała asertywność wsparta empatią i momentami styl transformacyjny.",
+                "strongest_moment": "Najlepiej zadziałało oddzielenie odmowy konkretnej prośby od odrzucenia samej relacji.",
+                "growth_tip": "To dobry kierunek. W podobnych sytuacjach wzmacniaj jeszcze bardziej wspólną zasadę: przysługi są darem, nie walutą.",
+                "replay_prompt": "Spróbuj zdobyć wynik mistrzowski, jeszcze szybciej nazywając wzorzec i proponując nową normę dla relacji."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 9,
+                "max": 10
+            },
+            "color": "blue",
+            "title": "RELACJA ZAMIAST KSIĘGOWOŚCI",
+            "emoji": "🔵",
+            "subtitle": "Dochodzi do głębokiego przełomu w sposobie bycia ze sobą",
+            "narrative": "Nie tylko ochroniłeś swoją granicę, ale też pomogłeś Markowi zobaczyć mechanizm, którego sam do końca nie rozumiał. Rozmowa kończy się bez podporządkowania i bez zerwania. Powstaje nowa umowa: pomagacie sobie z wyboru, nie z długu.",
+            "diagnosis": "To ścieżka o wysokiej dojrzałości komunikacyjnej. Użyłeś elementów NVC, aktywnego słuchania i Poziomu III — transformacji. Dzięki temu udało się jednocześnie uznać dobro otrzymane od Marka, nie oddać autonomii i zaproponować zdrową normę wzajemności.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl transformacyjny: empatia, granice i wspólna redefinicja relacji.",
+                "strongest_moment": "Mistrzowski był moment, w którym nazwałeś różnicę między wdzięcznością a długiem i od razu zaproponowałeś zdrowszą zasadę na przyszłość.",
+                "growth_tip": "Przenoś ten model do życia: uznawaj wkład drugiej strony, ale nigdy nie myl bliskości z prawem do kontroli. To fundament dojrzałych więzi.",
+                "replay_prompt": "Zobacz, jak zmieni się dynamika, gdy w innych scenariuszach równie wcześnie połączysz walidację, granicę i wspólną wizję relacji."
+            }
+        }
+    ]
+}

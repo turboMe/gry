@@ -1,0 +1,1007 @@
+{
+    "scenario_id": "divorce_child_as_messenger",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Nie będę pośrednikiem",
+        "subtitle": "Rodzic po rozwodzie próbuje zrobić z dziecka źródło informacji i nośnik pretensji.",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 9,
+        "interaction_count": 6
+    },
+    "tags": {
+        "relationship_type": "parent_child",
+        "theme": [
+            "parenting",
+            "boundaries",
+            "control"
+        ],
+        "emotional_intensity": "critical",
+        "age_rating": "teen",
+        "session_type": "training",
+        "player_role_gender": "neutral",
+        "difficulty": "advanced"
+    },
+    "characters": {
+        "player": {
+            "name": "Alex",
+            "role_label": "Dziecko · Gracz",
+            "age_range": "15-17",
+            "context": "Jesteś zmęczony/a tym, że po każdym kontakcie z drugim rodzicem ktoś wypytuje cię o szczegóły, każe coś przekazać albo oczekuje opowiedzenia się po stronie.",
+            "hidden_need": "safety",
+            "hidden_need_text": "Chcesz mieć bezpieczny kontakt z obojgiem rodziców bez bycia wciąganym w ich konflikt.",
+            "traits": [
+                {
+                    "text": "Uważny/a na napięcie dorosłych",
+                    "type": "neutral"
+                },
+                {
+                    "text": "Lojalny/a wobec obu stron",
+                    "type": "positive"
+                },
+                {
+                    "text": "Łatwo bierzesz na siebie cudzy ciężar",
+                    "type": "negative"
+                },
+                {
+                    "text": "Masz potencjał do spokojnego stawiania granic",
+                    "type": "positive"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 4,
+                "patience": 6,
+                "defensiveness": 7,
+                "empathy": 8,
+                "need_for_control": 3,
+                "shame_sensitivity": 8,
+                "directness": 5,
+                "repair_ability": 7
+            }
+        },
+        "npc": {
+            "name": "Tata",
+            "role_label": "Ojciec · NPC",
+            "age_range": "38-45",
+            "context": "Jest w trakcie rozwodu, czuje utratę wpływu i próbuje odzyskiwać kontrolę przez dziecko, wypytując o drugiego rodzica i używając cię jako kanału komunikacji.",
+            "hidden_need": "control",
+            "hidden_need_text": "Pod warstwą nacisku kryje się lęk przed utratą wpływu, informacji i znaczenia w życiu rodziny.",
+            "traits": [
+                {
+                    "text": "Podejrzliwy",
+                    "type": "negative"
+                },
+                {
+                    "text": "Reaktywny pod wpływem stresu",
+                    "type": "negative"
+                },
+                {
+                    "text": "Potrafi mięknąć, gdy granica jest spokojna i konsekwentna",
+                    "type": "positive"
+                },
+                {
+                    "text": "Myli bliskość z dostępem do cudzych informacji",
+                    "type": "negative"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 7,
+                "patience": 4,
+                "defensiveness": 8,
+                "empathy": 5,
+                "need_for_control": 9,
+                "shame_sensitivity": 7,
+                "directness": 6,
+                "repair_ability": 4
+            },
+            "npc_reaction_logic": "Na uległość reaguje zwiększaniem nacisku i dalszym przerzucaniem roli pośrednika. Na atak odpowiada kontratakiem, poczuciem krzywdy i odwracaniem winy. Na spokojną, konkretną granicę początkowo testuje jej trwałość, ale przy konsekwencji stopniowo obniża napięcie i łatwiej przyjmuje rozwiązania bez udziału dziecka."
+        }
+    },
+    "metrics_start": {
+        "tension": 50,
+        "trust": 45,
+        "openness": 35,
+        "feeling_heard": 30
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Pierwsze pytanie po powrocie",
+            "scene": {
+                "description": "Wracasz z weekendu u mamy. W kuchni pachnie kolacją, ale atmosfera robi się sztywna, gdy tata odkłada kubek i patrzy na ciebie z napiętą uwagą.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": "I co tam u mamy? Kto był w domu? I powiedz jej przy okazji, że ma przestać kombinować z terminami.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Przestań mnie traktować jak szpiega. Serio masz coś z głową.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Tata prostuje się i marszczy czoło. Super, teraz jeszcze ja jestem tym złym, bo pytam własne dziecko.",
+                    "feedback": {
+                        "label": "Atak i upokorzenie",
+                        "psychology": "To trafia w godność rozmówcy i błyskawicznie przerzuca rozmowę na Poziom II, czyli walkę o rację i pozycję. Zamiast zatrzymać instrumentalizację, uruchamiasz obronę i kontratak.",
+                        "better_alternative_hint": "Nazwij problem bez obrażania: powiedz, jaki wpływ ma to na ciebie i gdzie stawiasz granicę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Atak personalny",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra. Powiem jej.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Tata kiwa głową z ulgą. No i widzisz, da się normalnie. To jeszcze powiedz, że wiem, co robi.",
+                    "feedback": {
+                        "label": "Uległość wobec roli pośrednika",
+                        "psychology": "To wzmacnia triangulację i parentyfikację. Uczysz drugiego rodzica, że może używać cię do regulowania własnego konfliktu z byłym partnerem.",
+                        "better_alternative_hint": "Odmów udziału w przekazywaniu wiadomości i wróć odpowiedzialność tam, gdzie należy, czyli do dorosłych."
+                    },
+                    "tags": [
+                        {
+                            "text": "Triangulacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Parentyfikacja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie chcę przekazywać wiadomości. Napisz do niej sam.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Tata wzdycha ciężko. Łatwo ci mówić. To nigdy nie jest takie proste.",
+                    "feedback": {
+                        "label": "Granica rzeczowa",
+                        "psychology": "To zatrzymuje konkretną prośbę i wraca do faktów, więc jest lepsze niż uległość. Nadal jednak brakuje nazwania wpływu tej sytuacji na ciebie, przez co granica może brzmieć technicznie i zostać łatwiej podważona.",
+                        "better_alternative_hint": "Dodaj komunikat o swoim obciążeniu i nazwij, dlaczego nie chcesz być w środku."
+                    },
+                    "tags": [
+                        {
+                            "text": "Stawianie granicy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "To stawia mnie między wami. Nie chcę zbierać informacji ani przekazywać pretensji. Jeśli masz sprawę do mamy, powiedz jej to bezpośrednio.",
+                    "points": 2,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Tata milknie na moment. Nie chcę cię stawiać pośrodku, tylko muszę wiedzieć, co się dzieje.",
+                    "feedback": {
+                        "label": "Jasna granica z nazwaniem wpływu",
+                        "psychology": "To dobry komunikat Ja. Nie atakujesz, nie bierzesz odpowiedzialności za konflikt dorosłych i precyzyjnie oddajesz komunikację tam, gdzie powinna być. To otwiera drogę do Poziomu III, bo mówisz o ochronie relacji i procesu, nie o wygraniu starcia.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granica",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Poczucie winy i odwrócona lojalność",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Tata odsuwa talerz i patrzy na ciebie z narastającą urazą. W powietrzu czuć dobrze znany ciężar: masz pomóc mu poczuć się mniej bezsilnym.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Czyli mam nic nie wiedzieć? Po wszystkim, co dla ciebie robię, nawet tyle nie możesz zrobić dla mnie?",
+            "scene_high": {
+                "description": "Tata siada ciężej na kanapie. Nie brzmi miękko, ale w jego głosie jest mniej oskarżenia, więcej napięcia i lęku.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "cold"
+            },
+            "npc_line_high": "Nie chcę cię mieszać, ale czuję, że druga strona coś przede mną ukrywa. To nie jest dla mnie łatwe.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To wasz rozwód, nie mój problem. Ogarnij się wreszcie.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Tata zaciska szczękę. Jasne. Najlepiej mnie od razu skreśl, skoro nie pasuję ci do wersji świata.",
+                    "feedback": {
+                        "label": "Odrzucenie i pogarda",
+                        "psychology": "Masz prawo nie brać udziału w konflikcie, ale forma pogardliwa uruchamia wstyd i złość, więc rozmówca słyszy atak zamiast granicy. W modelu von Thuna najmocniej wybrzmiewa tu relacyjny komunikat odrzucenia.",
+                        "better_alternative_hint": "Oddziel swoje prawo do granicy od oceny drugiej osoby jako człowieka."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "No dobra, tylko powiedz, co dokładnie mam przekazać.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Tata od razu podchwytuje temat. Powiedz jej, że nie dam sobą pomiatać i że wiem więcej, niż myśli.",
+                    "feedback": {
+                        "label": "Wejście w rolę posłańca",
+                        "psychology": "To nie tylko brak granicy. To aktywne wejście w koalicję z jednym rodzicem przeciw drugiemu. Dla dziecka oznacza to konflikt lojalnościowy i wzrost napięcia niezależnie od intencji.",
+                        "better_alternative_hint": "Nie negocjuj treści wiadomości. Zatrzymaj samą zasadę, że nie przenosisz komunikatów między dorosłymi."
+                    },
+                    "tags": [
+                        {
+                            "text": "Konflikt lojalnościowy",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Brak granicy",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie chcę o tym rozmawiać. To sprawa między wami.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 0,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Tata prycha. Łatwo powiedzieć, kiedy to nie ty jesteś ignorowany.",
+                    "feedback": {
+                        "label": "Granica bez kontaktu z emocją",
+                        "psychology": "To poprawne i potrzebne, bo zatrzymuje przerzucenie roli. Nadal jednak zostawiasz emocjonalną próżnię, więc rozmówca może wrócić do poczucia krzywdy i nacisku.",
+                        "better_alternative_hint": "Uznaj emocję, ale nie przejmuj zadania. To wzmacnia granicę zamiast ją osłabiać."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Słyszę, że jest ci ciężko i chcesz wiedzieć więcej, ale wypytywanie mnie i proszenie o przekazywanie rzeczy mnie obciąża. To powinni załatwiać dorośli między sobą.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Tata bierze oddech i odwraca wzrok. Może. Tylko mam wrażenie, że nikt mnie nie słucha.",
+                    "feedback": {
+                        "label": "Walidacja bez oddania sterów",
+                        "psychology": "To łączy walidację emocji z zachowaniem granicy. Z perspektywy NVC uznajesz uczucie i potrzebę rozmówcy, ale nie bierzesz odpowiedzialności za zaspokojenie jej kosztem siebie.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Granica",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Prośba o sekret",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Tata pochyla się w twoją stronę i ścisza głos, jakbyście właśnie wchodzili w prywatny układ. Napięcie robi się gęste i lepkie.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Dobrze, to chociaż nie mów mamie, że cię o to pytałem. Nie chcę kolejnej awantury.",
+            "scene_high": {
+                "description": "Po krótkiej ciszy tata mówi ciszej. Brzmi mniej napastliwie, ale wciąż próbuje zbudować z tobą osobny kanał wobec drugiego rodzica.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Może masz rację, ale nie chcę, żeby znowu zrobiła z tego konflikt. Lepiej, żebyś nic nie mówił.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Okej, nic nie powiem.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Tata wyraźnie się rozluźnia. Wiedziałem, że mogę na tobie polegać.",
+                    "feedback": {
+                        "label": "Sekret zamiast bezpieczeństwa",
+                        "psychology": "Sekret między rodzicem a dzieckiem w sprawach konfliktu rozwodowego wzmacnia koalicję i izoluje dziecko od drugiego rodzica. To klasyczny mechanizm triangulacji i emocjonalnego obciążania.",
+                        "better_alternative_hint": "Oddziel swoją prywatność od cudzych sekretów. Rozmowy o konflikcie dorosłych nie powinny być przechowywane przez dziecko."
+                    },
+                    "tags": [
+                        {
+                            "text": "Triangulacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Sekret lojalnościowy",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Powiem wszystko i jeszcze dodam, jak mną manipulujesz.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Tata gwałtownie podnosi głos. Czyli grozisz mi teraz własną matką? Świetnie.",
+                    "feedback": {
+                        "label": "Groźba i odwet",
+                        "psychology": "Masz rację co do problemu, ale forma odwetu wzmacnia układ walki i zemsty. Zamiast ochronić siebie, dajesz rozmówcy pretekst, by skupił się na twoim tonie, nie na sednie.",
+                        "better_alternative_hint": "Odmów tajemnicy spokojnie i jednoznacznie, bez szantażu i bez eskalacji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Groźba",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie chcę mieć sekretów między wami.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Tata marszczy brwi, ale nie naciska od razu. Czyli znowu mam zostać z tym sam.",
+                    "feedback": {
+                        "label": "Dobra odmowa, mało kontekstu",
+                        "psychology": "To zdrowo odcina tajemnicę, ale nadal jest skrótowe. Brakuje nazwania, że chodzi o twoje bezpieczeństwo i o właściwe granice między rolą dziecka a rolą partnera w konflikcie.",
+                        "better_alternative_hint": "Dodaj, czego potrzebujesz jako dziecko i gdzie widzisz właściwe miejsce dla takich rozmów."
+                    },
+                    "tags": [
+                        {
+                            "text": "Odmowa",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granica",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie chcę ukrywać rozmów o mnie ani nosić waszych sekretów. Chcę mieć z wami obojgiem bezpieczny kontakt, więc sprawy między dorosłymi powinny zostać między dorosłymi.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Tata patrzy na ciebie dłużej, jakby dopiero teraz słyszał ciężar tej sytuacji. Nie myślałem o tym w ten sposób.",
+                    "feedback": {
+                        "label": "Ochrona siebie i relacji naraz",
+                        "psychology": "To ruch transformacyjny. Nie tylko odmawiasz, ale pokazujesz, jaką relację chcesz budować i jakie zasady ją chronią. Dzięki temu granica nie brzmi jak odrzucenie rodzica, tylko jak obrona zdrowego układu.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Ochrona relacji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Oczernianie drugiego rodzica",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Tata zaczyna chodzić po pokoju. Coraz mniej mówi do ciebie jako do dziecka, coraz bardziej jak do sojusznika, który ma przytaknąć jego wersji wydarzeń.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Widzisz? Ona zawsze robi ze mnie potwora. Pewnie już ci nagadała na mnie.",
+            "scene_high": {
+                "description": "Tata nie krzyczy, ale w jego tonie pobrzmiewa żal i potrzeba potwierdzenia, że nie jest tym złym. To wciąż próba wciągnięcia cię w ocenianie drugiego rodzica.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "cold"
+            },
+            "npc_line_high": "Trudno mi odpuścić, kiedy czuję się niesprawiedliwie potraktowany.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Może dlatego, że naprawdę tak się zachowujesz.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Tata zatrzymuje się gwałtownie. Czyli już zdecydowałeś/aś, po czyjej jesteś stronie.",
+                    "feedback": {
+                        "label": "Kontratak zamiast granicy",
+                        "psychology": "Ta odpowiedź może być emocjonalnie zrozumiała, ale praktycznie wzmacnia narrację o stronach konfliktu. Zostajesz wciągnięty/a w sąd nad rodzicem, zamiast wyjść z roli arbitra.",
+                        "better_alternative_hint": "Nie oceniaj, kto ma rację. Nazwij, że nie chcesz słuchać złych komentarzy o drugim rodzicu przy sobie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wciągnięcie w koalicję",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nie wiem... może.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Tata od razu to podchwytuje. No właśnie. Sam/a widzisz, jaka ona jest.",
+                    "feedback": {
+                        "label": "Pół-zgoda pod presją",
+                        "psychology": "Nawet niepewna zgoda działa jak wzmocnienie. W logice konfliktu rozwodowego to zaproszenie do dalszego oczerniania drugiego rodzica i ustawiania cię po jednej stronie.",
+                        "better_alternative_hint": "Przerwij sam format rozmowy, nie tylko treść. Powiedz, że nie chcesz słyszeć ocen drugiego rodzica przy sobie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uleganie presji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Konflikt lojalnościowy",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie chcę słuchać komentarzy o mamie przy mnie.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Tata odwraca wzrok. Czyli mam już nic nie mówić, nawet jak mnie boli.",
+                    "feedback": {
+                        "label": "Czysta granica",
+                        "psychology": "To skutecznie zatrzymuje oczernianie i chroni cię przed wejściem w rolę sędziego. Nadal jednak może być odebrane jako zimne odcięcie, jeśli nie nazwiesz, dlaczego to dla ciebie takie ważne.",
+                        "better_alternative_hint": "Dopowiedz, że to rani ciebie i psuje twoją relację z obojgiem rodziców."
+                    },
+                    "tags": [
+                        {
+                            "text": "Granica",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie chcę słyszeć ocen mamy ode mnie ani o niej przy mnie. To rani mnie i pogarsza wszystko, bo stawia mnie w środku zamiast zostawić mi miejsce na bycie waszym dzieckiem.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Tata siada z powrotem. Dobra. Rozumiem, że to cię przygniata bardziej, niż myślałem.",
+                    "feedback": {
+                        "label": "Nazwanie rany zamiast wejścia w spór",
+                        "psychology": "W analizie transakcyjnej przechodzisz z układu Rodzic kontra Dziecko do bardziej partnerskiego komunikatu o wpływie i potrzebie. To zwiększa szansę, że rodzic usłyszy twoją perspektywę, a nie tylko zakaz.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Analiza transakcyjna",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja własnych granic",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Nowa zasada komunikacji",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Rozmowa dochodzi do ściany. Tata patrzy na ciebie tak, jakbyś właśnie odebrał/a mu jedyne narzędzie wpływu na sytuację.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "To jak niby mam się czegokolwiek dowiedzieć? Mam udawać, że nic się nie dzieje?",
+            "scene_high": {
+                "description": "Napięcie lekko opada. Tata nadal jest spięty, ale zamiast naciskać tylko na ciebie, zaczyna pytać o sposób wyjścia z tego układu.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Dobrze, ale potrzebuję jakiegoś sposobu, żeby te sprawy nie wisiały w powietrzu.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To sobie radź. Nie obchodzi mnie to.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Tata kiwa głową z goryczą. Jasne. Wszyscy mają mnie gdzieś.",
+                    "feedback": {
+                        "label": "Odrzucenie potrzeby rozmówcy",
+                        "psychology": "Granica nie wymaga zajmowania się problemem za drugą osobę, ale całkowite odcięcie od jej potrzeby może zabrzmieć jak kara. To obniża gotowość do współpracy i wzmacnia narrację ofiary.",
+                        "better_alternative_hint": "Możesz nie brać odpowiedzialności za rozwiązanie, a jednocześnie wskazać zdrowy kierunek kontaktu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Odrzucenie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Może pierwszy raz zachowaj się jak dorosły.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Tata prycha z niedowierzaniem. Naprawdę? To ty będziesz mnie teraz wychowywać?",
+                    "feedback": {
+                        "label": "Ukryty atak pod przykrywką słuszności",
+                        "psychology": "To typowa bierna agresja: trafna treść, ale podana jako upokorzenie. Efekt jest podobny jak przy otwartym ataku, bo rozmówca koncentruje się na obrazie siebie, nie na rozwiązaniu.",
+                        "better_alternative_hint": "Podaj konkretną zasadę albo kanał komunikacji zamiast moralizować."
+                    },
+                    "tags": [
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Moralizowanie",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Napisz do niej wiadomość albo mail.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Tata wzrusza ramionami. Może. Przynajmniej byłoby jasno, kto co powiedział.",
+                    "feedback": {
+                        "label": "Rozwiązanie praktyczne",
+                        "psychology": "To dobre przesunięcie z emocjonalnego chaosu do konkretu. Wciąż jednak nie przypominasz, po co ta zasada istnieje, więc może zostać potraktowana jako techniczna sugestia, a nie ochrona ciebie.",
+                        "better_alternative_hint": "Dodaj, że nowy kanał komunikacji ma wyciągnąć ciebie ze środka konfliktu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Rozwiązywanie problemu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Ustalcie stały kanał tylko do spraw organizacyjnych, na przykład mail albo aplikację rodzicielską. Ja nie chcę być już łącznikiem.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Tata powoli kiwa głową. To byłoby uczciwsze. Przynajmniej nie przechodziłoby wszystko przez ciebie.",
+                    "feedback": {
+                        "label": "Granica zamieniona w nową strukturę",
+                        "psychology": "To bardzo mocny ruch, bo nie kończysz na zakazie. Proponujesz układ, który ogranicza chaos i jednocześnie chroni dziecko przed dalszą instrumentalizacją. To esencja podejścia transformacyjnego.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Wspólne rozwiązanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granica systemowa",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_6",
+            "title": "Granica z konsekwencją",
+            "score_threshold": 5,
+            "scene_low": {
+                "description": "Tata patrzy twardo, jakby sam fakt twojej granicy był buntem przeciw niemu. To moment, w którym musisz zdecydować, czy twoje słowa będą miały realny ciężar.",
+                "location": "hallway",
+                "time_of_day": "night",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Nie będziesz mi mówić, jak mam rozmawiać. Jesteś moim dzieckiem i masz mi pomagać.",
+            "scene_high": {
+                "description": "Przy drzwiach zapada dłuższa cisza. Tata nie wygląda na spokojnego, ale pierwszy raz brzmi tak, jakby próbował pomieścić twoją perspektywę.",
+                "location": "hallway",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Nie obiecuję, że od razu będzie idealnie, ale rozumiem, że to dla ciebie za dużo.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Jak jeszcze raz to zrobisz, przestanę do ciebie przychodzić.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Tata sztywnieje. Czyli już mi grozisz odebraniem własnego dziecka.",
+                    "feedback": {
+                        "label": "Ultimatum z wysoką stawką",
+                        "psychology": "Konsekwencja jest ważna, ale grożenie zerwaniem kontaktu jako pierwszy ruch zwykle eskaluje lęk i walkę o władzę. To przesuwa rozmowę z ochrony dziecka na bitwę o dostęp i kontrolę.",
+                        "better_alternative_hint": "Ustal mniejszą, realną konsekwencję związaną z samą rozmową, nie z całą relacją."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ultimatum",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Eskalacja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, nieważne. Zapomnij.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Tata od razu odzyskuje grunt. No właśnie. Nie róbmy z tego dramatu.",
+                    "feedback": {
+                        "label": "Wycofanie granicy",
+                        "psychology": "To uczy rozmówcę, że wystarczy nacisnąć trochę mocniej, a twoja granica zniknie. W praktyce wzmacnia dawny schemat i obniża twoje poczucie sprawczości.",
+                        "better_alternative_hint": "Powiedz jasno, co zrobisz, gdy temat wróci, i trzymaj konsekwencję na poziomie rozmowy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie się",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak konsekwencji",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Gdy znowu poprosisz mnie o przekazywanie wiadomości albo informacji, odmówię.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Tata wzdycha. Czyli przynajmniej wiem, na czym stoję.",
+                    "feedback": {
+                        "label": "Konsekwencja podstawowa",
+                        "psychology": "To dobra, realna granica i czytelna konsekwencja. Brakuje tylko przypomnienia, po co ją stawiasz i jakiej relacji chcesz zamiast obecnego układu.",
+                        "better_alternative_hint": "Dodaj, że chcesz być dzieckiem, a nie pośrednikiem. To porządkuje sens granicy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Konsekwencja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Kiedy prosisz mnie o informacje albo przekazywanie pretensji, kończę taką rozmowę i wracam do niej tylko wtedy, gdy dotyczy mnie bezpośrednio. Chcę mieć relację z tobą jako twoje dziecko, nie pośrednik.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -3,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Tata patrzy na ciebie długo, potem powoli kiwa głową. Dobrze. To fair. Nie powinienem był robić z ciebie łącznika.",
+                    "feedback": {
+                        "label": "Granica, konsekwencja i definicja relacji",
+                        "psychology": "To modelowa odpowiedź. Masz jasną konsekwencję, nie karzesz całej relacji i mówisz, jaką więź chcesz chronić. Dzięki temu granica nie jest wojną o władzę, tylko ochroną roli dziecka.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Konsekwencja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Ochrona roli dziecka",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "ROZDARTE LOJALNOŚCI",
+            "emoji": "🔴",
+            "subtitle": "Konflikt dorosłych dalej przechodzi przez ciebie.",
+            "narrative": "Po rozmowie zostajesz z ciężarem większym niż wcześniej. Tata nadal traktuje cię jak źródło informacji i nośnik emocji, a ty wychodzisz z poczuciem winy, złości albo bezsilności. Zamiast ochronić siebie, zostałeś/aś głębiej wciągnięty/a w środek rozwodu.",
+            "diagnosis": "Ta ścieżka utrwala triangulację. Albo weszła uległość i przyjęcie roli pośrednika, albo eskalacja, która zamieniła granicę w walkę. W obu wersjach sedno problemu zostało przykryte, a dziecko dalej pełni funkcję regulowania napięcia dorosłych.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl bierny lub agresywny, który albo oddawał stery rozmówcy, albo przerzucał rozmowę w otwarty konflikt.",
+                "strongest_moment": "Pojawiła się intuicja, że sytuacja jest nie w porządku, ale zabrakło stabilnej formy, by ją obronić.",
+                "growth_tip": "Nie musisz rozstrzygać, kto ma rację między rodzicami. Następnym razem nazwij wpływ na siebie, odmów roli posłańca i oddaj komunikację dorosłym.",
+                "replay_prompt": "Spróbuj przejść scenariusz jeszcze raz, używając krótkich granic z komunikatem Ja zamiast ataku albo wycofania."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "CHWILOWY ROZEJM",
+            "emoji": "🟡",
+            "subtitle": "Zatrzymałeś/aś część nacisku, ale układ nadal nie jest do końca jasny.",
+            "narrative": "Udało ci się powiedzieć kilka ważnych rzeczy i ograniczyć najbardziej wprost wypowiedziane prośby. Mimo to tata nadal widzi w tobie łatwy kanał, gdy napięcie wróci. Jest trochę lżej, ale granica nie stała się jeszcze nową zasadą relacji.",
+            "diagnosis": "Ta ścieżka pokazuje częściową asertywność bez pełnego przejścia do transformacji. Zostały zatrzymane pojedyncze zachowania, ale nie zawsze wybrzmiał ich koszt dla dziecka ani nowy sposób komunikacji między dorosłymi.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl asertywny i transakcyjny, który porządkował rozmowę, ale nie zawsze docierał do głębszej potrzeby bezpieczeństwa i roli dziecka.",
+                "strongest_moment": "Najlepiej działały te chwile, w których odmawiałeś/aś przekazywania wiadomości i wracałeś/aś odpowiedzialność rodzicom.",
+                "growth_tip": "Dodaj walidację emocji i nazwij, że chcesz być dzieckiem, a nie pośrednikiem. To zmienia granicę z suchego zakazu w obronę zdrowej relacji.",
+                "replay_prompt": "Zagraj ponownie i sprawdź, co się stanie, gdy poza granicą zaproponujesz też bezpośredni kanał kontaktu między rodzicami."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 9
+            },
+            "color": "green",
+            "title": "DZIECKO WYCHODZI ZE ŚRODKA",
+            "emoji": "🟢",
+            "subtitle": "Granica została usłyszana i zaczyna zmieniać układ.",
+            "narrative": "Rozmowa nie była łatwa, ale udało ci się wyraźnie powiedzieć, że nie będziesz zbierać informacji, nosić sekretów ani przekazywać pretensji. Tata nie zmienia się w sekundę, jednak po raz pierwszy musi zobaczyć, że jego sposób radzenia sobie rani ciebie i nie będzie już automatycznie działał.",
+            "diagnosis": "Ta ścieżka osłabia triangulację i przywraca porządek ról. Granica była nie tylko zakazem, ale także ochroną bezpieczeństwa dziecka. Dzięki temu rozmowa przesunęła się z walki o rację w kierunku bardziej dojrzałego układu.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl asertywny i empatyczny, który łączył ochronę siebie z uznaniem napięcia rozmówcy.",
+                "strongest_moment": "Najmocniejsze było nazwanie, że komentarze i sekrety między rodzicami stawiają cię w środku i odbierają ci rolę dziecka.",
+                "growth_tip": "To działa najlepiej wtedy, gdy pozostajesz konsekwentny/a. W realnym życiu granicę trzeba zwykle powtórzyć kilka razy, zanim stanie się nową normą.",
+                "replay_prompt": "Sprawdź wersję perfekcyjną i zobacz, jak zmienia się finał, gdy poza granicą budujesz też nową strukturę kontaktu między dorosłymi."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 10,
+                "max": 12
+            },
+            "color": "blue",
+            "title": "GRANICA BEZ UTRATY WIĘZI",
+            "emoji": "🔵",
+            "subtitle": "Chronisz siebie i jednocześnie nadajesz relacji zdrowszy kształt.",
+            "narrative": "Nie wszedłeś/aś ani w bunt, ani w uległość. Zrobiłeś/aś coś trudniejszego: nazwałeś/aś ciężar tej sytuacji, odmówiłeś/aś roli pośrednika, odrzuciłeś/aś sekrety i zaproponowałeś/aś dorosły kanał komunikacji między rodzicami. Tata nie dostał tego, czego chciał w starej formie, ale dostał szansę na relację z tobą bez używania cię jako narzędzia.",
+            "diagnosis": "To ścieżka wysokiej dojrzałości komunikacyjnej. Granica została połączona z walidacją, ochroną roli dziecka i propozycją nowej struktury. Właśnie tak rozbraja się instrumentalizację: nie przez wygraną nad rodzicem, tylko przez wyjście z chorego układu.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl transformacyjny: jasne granice, komunikat Ja, walidacja emocji i budowanie nowego układu zamiast samego oporu.",
+                "strongest_moment": "Najlepszy moment to ten, w którym określasz konsekwencję dla rozmowy i jednocześnie mówisz, że chcesz być dzieckiem, a nie pośrednikiem.",
+                "growth_tip": "To mistrzowski poziom. W realnym życiu taka postawa wymaga spokoju, powtarzalności i trzymania się faktu, że konflikt dorosłych nie jest zadaniem dziecka.",
+                "replay_prompt": "Wróć do scenariusza i przetestuj słabsze odpowiedzi, żeby zobaczyć dokładnie, w którym miejscu rozmowa zaczyna znów wciągać dziecko do środka."
+            }
+        }
+    ]
+}

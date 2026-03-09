@@ -1,0 +1,921 @@
+{
+    "scenario_id": "love_bombing_after_conflict",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Czułość zamiast odpowiedzi",
+        "subtitle": "Po kłótni partner zalewa cię uwagą i prezentami, próbując zresetować niewygodny temat",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 7,
+        "interaction_count": 5
+    },
+    "tags": {
+        "relationship_type": "romantic_partner",
+        "theme": [
+            "boundaries",
+            "control",
+            "trust"
+        ],
+        "emotional_intensity": "critical",
+        "age_rating": "adult",
+        "session_type": "training",
+        "player_role_gender": "neutral",
+        "difficulty": "advanced"
+    },
+    "characters": {
+        "player": {
+            "name": "Alex",
+            "role_label": "Osoba stawiająca granicę · Gracz",
+            "age_range": "28-35",
+            "context": "Po ostatniej kłótni próbujesz wrócić do sytuacji, w której twoja granica została zlekceważona. Nie chcesz ani kolejnej awantury, ani kolejnego resetu bez rozmowy.",
+            "hidden_need": "safety",
+            "hidden_need_text": "Potrzebujesz bezpieczeństwa emocjonalnego i poczucia, że twoje granice nie znikają pod wpływem chwilowej czułości.",
+            "traits": [
+                {
+                    "text": "Uważność na niespójność",
+                    "type": "positive"
+                },
+                {
+                    "text": "Skłonność do zwątpienia, gdy druga strona bywa bardzo ciepła",
+                    "type": "negative"
+                },
+                {
+                    "text": "Potrzeba jasności",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 4,
+                "patience": 7,
+                "defensiveness": 5,
+                "empathy": 8,
+                "need_for_control": 4,
+                "shame_sensitivity": 6,
+                "directness": 7,
+                "repair_ability": 8
+            }
+        },
+        "npc": {
+            "name": "Niko",
+            "role_label": "Partner stosujący reset czułością · NPC",
+            "age_range": "29-36",
+            "context": "Po konflikcie zamiast wejść w trudną rozmowę szybko przechodzi do intensywnej czułości, komplementów i gestów, żeby odzyskać bliskość bez konfrontacji z własnym zachowaniem.",
+            "hidden_need": "control",
+            "hidden_need_text": "Potrzebuje ulgi od napięcia i kontroli nad klimatem relacji, dlatego próbuje przyspieszyć pojednanie bez pełnej odpowiedzialności.",
+            "traits": [
+                {
+                    "text": "Urok osobisty",
+                    "type": "positive"
+                },
+                {
+                    "text": "Unikanie odpowiedzialności pod przykryciem czułości",
+                    "type": "negative"
+                },
+                {
+                    "text": "Silny lęk przed odrzuceniem",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 5,
+                "patience": 4,
+                "defensiveness": 7,
+                "empathy": 5,
+                "need_for_control": 8,
+                "shame_sensitivity": 7,
+                "directness": 3,
+                "repair_ability": 4
+            },
+            "npc_reaction_logic": "Niko mięknie przy spokojnej asertywności połączonej z nazwaniem wpływu zachowania. Na oskarżenia reaguje defensywą i odwracaniem ról. Na wycofanie reaguje dalszym zalewaniem uwagą, bo odbiera brak oporu jako zgodę na reset."
+        }
+    },
+    "metrics_start": {
+        "tension": 40,
+        "trust": 60,
+        "openness": 50,
+        "feeling_heard": 50
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Słodki reset po kłótni",
+            "scene": {
+                "description": "Wieczór po ostrej wymianie zdań. W salonie nadal czuć napięcie, ale Niko wchodzi z twoimi ulubionymi kwiatami i torbą jedzenia na wynos, jakby próbował przykryć wcześniejszy konflikt nową atmosferą.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": "Kupiłem wszystko, co lubisz. Nie chcę już tego ciężaru między nami. Chodź, zróbmy sobie miły wieczór.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Przestań mnie kupować. Myślisz, że kwiaty załatwią wszystko?",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Niko sztywnieje, odkłada torbę na stół i mówi, że cokolwiek zrobi, i tak jest źle.",
+                    "feedback": {
+                        "label": "Atak zamiast nazwania wpływu",
+                        "psychology": "To uderza w intencję rozmówcy, a nie nazywa skutku jego zachowania. W kwadracie von Thuna druga strona słyszy głównie apel obronny i atak relacyjny, więc przechodzi do defensywy.",
+                        "better_alternative_hint": "Oddziel gest od problemu. Możesz uznać gest i jednocześnie wrócić do tego, co zostało nierozwiązane."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uogólnienie i atak",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Love bombing",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, nieważne. Zjedzmy po prostu i udawajmy, że nic nie było.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Niko od razu się rozluźnia i zaczyna opowiadać o planach na weekend, jakby temat właśnie został zamknięty.",
+                    "feedback": {
+                        "label": "Wycofanie i samounieważnienie",
+                        "psychology": "Napięcie chwilowo spada, ale twoja granica znika z rozmowy. To klasyczne wejście w Poziom I pozornego spokoju, bez realnego naprawienia relacji.",
+                        "better_alternative_hint": "Nie musisz odrzucać gestu, ale nie rezygnuj z meritum. Utrzymaj temat przy życiu jednym spokojnym zdaniem."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Granica",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Doceniam gest, ale nadal chcę wrócić do tego, co stało się wczoraj.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Niko marszczy brwi, ale nie wycofuje się całkiem. Mówi, że naprawdę liczył na spokojniejszy wieczór.",
+                    "feedback": {
+                        "label": "Asertywne zatrzymanie resetu",
+                        "psychology": "To dobry ruch, bo nie pozwalasz przykryć konfliktu gestem. Brakuje jednak nazwania, jak ten nagły zwrot wpływa na ciebie emocjonalnie, więc rozmowa zostaje na poziomie zadaniowym.",
+                        "better_alternative_hint": "Dodaj krótki komunikat o swoim stanie, aby zwiększyć szansę na prawdziwe usłyszenie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Powrót do meritum",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Widzę, że próbujesz zrobić między nami ciepło, ale ja nadal mam w sobie tamtą sytuację i potrzebuję do niej wrócić.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Niko przez chwilę milczy. Odkłada kwiaty, siada naprzeciwko i pyta ciszej, co dokładnie w tobie zostało.",
+                    "feedback": {
+                        "label": "Uznanie gestu bez porzucenia granicy",
+                        "psychology": "Łączysz walidację intencji z komunikatem Ja. To zgodne z NVC i zmniejsza potrzebę obrony, a jednocześnie nie pozwala na reset bez odpowiedzialności.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC Rosenberga",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Prezent zamiast odpowiedzi",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Niko szybko odzyskuje inicjatywę. Na stole ląduje kolejne pudełko z drobiazgiem, a tempo rozmowy przyspiesza tak, żebyś nie zdążył lub nie zdążyła wrócić do sedna.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "No widzisz, już jest lepiej. Kupiłem ci jeszcze coś małego. Nie psujmy tego znowu rozmową o problemach.",
+            "scene_high": {
+                "description": "Niko siedzi bliżej, ale nie wciska prezentu w twoje ręce. Widać napięcie między chęcią zbliżenia a niechęcią do wracania do konfliktu.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Chcę, żeby było między nami dobrze. Może po prostu zaczniemy od nowa i nie będziemy już wracać do tego wieczoru.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Jasne, najlepiej przykryć wszystko błyskotką i udawać, że jesteś romantyczny.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Niko odpowiada chłodno, że skoro i tak szydzisz, to nie ma sensu się starać.",
+                    "feedback": {
+                        "label": "Sarkazm zamiast granicy",
+                        "psychology": "Bierna agresja daje chwilową ulgę, ale zaciemnia przekaz. W analizie transakcyjnej to ruch z pozycji Dziecko buntownicze, który prowokuje kontratak zamiast odpowiedzialności.",
+                        "better_alternative_hint": "Powiedz wprost, czego potrzebujesz od rozmowy, bez ironii."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna Berne'a",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Granica",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobrze, odpuśćmy. Nie mam już siły tego ciągnąć.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Niko natychmiast przechodzi do czułego tonu i zaczyna planować wspólny wieczór, jakby temat został definitywnie zamknięty.",
+                    "feedback": {
+                        "label": "Zmęczenie oddaje ster",
+                        "psychology": "To zrozumiałe, ale oddajesz kontrolę nad definicją rzeczywistości. Love bombing działa właśnie wtedy, gdy napięcie staje się tak męczące, że łatwiej wejść w ulgę niż w prawdę.",
+                        "better_alternative_hint": "Możesz mówić krótko i spokojnie. Nie musisz mieć dużo energii, żeby postawić jedno jasne zdanie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Rezygnacja z potrzeby",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Love bombing",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Samounieważnienie",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie chcę teraz kolejnego gestu. Chcę konkretnej odpowiedzi na to, co próbowałem albo próbowałam powiedzieć wczoraj.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Niko wzdycha i mówi, że nie lubi takich rozmów, ale pyta, o którą konkretnie chwilę ci chodzi.",
+                    "feedback": {
+                        "label": "Rzeczowy powrót do faktów",
+                        "psychology": "To zatrzymuje manipulacyjny skręt w stronę nastroju. Nadal jednak brakuje nazwania twojego doświadczenia, więc rozmowa może stać się przesłuchaniem zamiast kontaktem.",
+                        "better_alternative_hint": "Połącz konkret z krótkim opisem wpływu na ciebie, żeby rozmowa nie utknęła w obronach."
+                    },
+                    "tags": [
+                        {
+                            "text": "Konkret zamiast rozmycia",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Powrót do meritum",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "To, że chcesz bliskości, jest dla mnie ważne. Jednocześnie czuję się zagubiony albo zagubiona, gdy czułość pojawia się zamiast odpowiedzi na trudny temat.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Niko zwalnia. Patrzy na prezent, odkłada go obok i przyznaje, że może próbował lub próbowała za szybko przejść do miłej części.",
+                    "feedback": {
+                        "label": "Nazwanie mechanizmu bez demonizowania",
+                        "psychology": "Rozróżniasz potrzebę bliskości od sposobu jej realizacji. To bardzo skuteczne, bo nie dyskutujesz o tym, czy gest jest miły, tylko o tym, jaki ma wpływ w danym momencie.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Nazwanie wpływu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Odróżnianie intencji od wpływu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC Rosenberga",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Komplementy jako zasłona",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Atmosfera robi się lepka od przesadnej czułości. Niko przysiada się bardzo blisko i zaczyna mówić o tym, jak wyjątkowa jest wasza relacja, omijając konkret, który próbujesz utrzymać.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Jesteś najlepszą osobą, jaką mam. Naprawdę musimy rozgrzebywać coś, co tylko nas oddala, skoro tak się kochamy?",
+            "scene_high": {
+                "description": "Niko mówi ciszej i uważniej, ale nadal podpiera się idealizującymi komplementami, jakby chciał lub chciała rozpuścić problem w nastroju bliskości.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Jesteś dla mnie bardzo ważny albo ważna. Chyba próbuję uratować nastrój, bo boję się, że znowu się rozpadniemy.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nie mieszaj miłości z uciekaniem od odpowiedzialności. To jest zwykła manipulacja.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Niko gwałtownie odsuwa się i mówi, że skoro tak go albo ją widzisz, to nie ma już o czym rozmawiać.",
+                    "feedback": {
+                        "label": "Etykietowanie zamiast prowadzenia rozmowy",
+                        "psychology": "Możesz mieć rację co do wzorca, ale frontalne przypięcie etykiety uruchamia wstyd i kontratak. To przesuwa rozmowę z problemu na walkę o tożsamość.",
+                        "better_alternative_hint": "Nazwij zachowanie i jego efekt bez definiowania całej osoby."
+                    },
+                    "tags": [
+                        {
+                            "text": "Etykietowanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Wstyd i defensywność",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Love bombing",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Może masz rację. Może za bardzo się czepiam i niszczę to, co między nami dobre.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Niko przytula cię i mówi, że wiedział albo wiedziała, że w końcu odpuścisz, bo przecież się kochacie.",
+                    "feedback": {
+                        "label": "Zwątpienie w siebie pod wpływem idealizacji",
+                        "psychology": "To moment, w którym love bombing najłatwiej rozbraja pamięć o problemie. Ulegasz narracji, że nazwanie krzywdy niszczy relację, choć w zdrowej relacji właśnie je wzmacnia.",
+                        "better_alternative_hint": "Oddziel lęk przed stratą od prawa do rozmowy o granicy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Podważenie własnej percepcji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Idealizacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Granica",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "To, że jesteśmy dla siebie ważni, nie odpowiada jeszcze na pytanie, co zrobimy z tamtą sytuacją.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Niko kiwa głową, choć widać opór. Przyznaje, że unika konkretu i prosi, żebyś powiedział albo powiedziała, od czego zacząć.",
+                    "feedback": {
+                        "label": "Rozdzielenie uczuć od odpowiedzialności",
+                        "psychology": "To dobra dekonstrukcja mechanizmu. Nadal jednak brzmisz bardziej logicznie niż relacyjnie, więc druga strona może współpracować bez głębszego kontaktu emocjonalnego.",
+                        "better_alternative_hint": "Dodaj, co dzieje się w tobie, gdy słyszysz komplementy zamiast odniesienia do problemu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Dekonstrukcja manipulacji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Te słowa o miłości są dla mnie ważne, ale jeszcze ważniejsze jest to, czy potrafimy zostać przy trudnym temacie, kiedy on boli.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Niko spuszcza wzrok i mówi, że chyba naprawdę próbował lub próbowała ominąć ból, zamiast go z tobą wytrzymać.",
+                    "feedback": {
+                        "label": "Przejście z nastroju do dojrzałości relacji",
+                        "psychology": "To ruch w stronę Poziomu III. Nie walczysz o rację, tylko definiujesz, czym dla ciebie jest realna bliskość: zdolnością do zostania przy trudności, a nie tylko przy przyjemności.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Definiowanie zdrowej bliskości",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Wspólna perspektywa",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Granica bez odrzucenia",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Czułość zaczyna mieszać się z irytacją. Niko bierze twoją dłoń, ale ton ma napięty, jakby chciał lub chciała wymusić zgodę przez bliskość i zmęczenie.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Naprawdę chcesz dalej psuć ten wieczór? Przecież właśnie próbuję być dla ciebie dobry albo dobra.",
+            "scene_high": {
+                "description": "Między wami robi się ciszej. Niko nie odwraca wzroku, lecz wyraźnie boi się, że powrót do tematu znowu uruchomi konflikt.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Ja naprawdę próbuję naprawić atmosferę. Chyba boję się, że jak wrócimy do szczegółów, znowu się od siebie oddalimy.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Rób, co chcesz. I tak zawsze kończy się tak samo.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Niko puszcza twoją dłoń i odpowiada, że skoro wszystko jest z góry przesądzone, to nie ma sensu próbować.",
+                    "feedback": {
+                        "label": "Fatalizm i ukryty atak",
+                        "psychology": "Taki komunikat zamyka możliwość ruchu. Zamiast granicy pojawia się beznadzieja, która prowokuje wycofanie albo kontratak.",
+                        "better_alternative_hint": "Powiedz jasno, czego nie chcesz w tej rozmowie i czego potrzebujesz zamiast tego."
+                    },
+                    "tags": [
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Katastrofizacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Granica",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nie wciskaj mi tej dobroci. To jest obrzydliwe.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Niko zamyka się natychmiast i mówi lodowato, że twoja pogarda boli bardziej niż jakikolwiek wcześniejszy błąd.",
+                    "feedback": {
+                        "label": "Pogarda niszczy kontakt",
+                        "psychology": "Pogarda jest jednym z najsilniej destrukcyjnych sygnałów relacyjnych. Nawet gdy bronisz ważnej granicy, taki ton odbiera szansę na przyjęcie odpowiedzialności.",
+                        "better_alternative_hint": "Oddziel krytykę zachowania od deprecjonowania osoby."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Dehumanizacja w konflikcie",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Eskalacja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie chcę teraz prezentów ani uspokajania atmosfery. Chcę usłyszeć, czy rozumiesz moją granicę z tamtego wieczoru.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Niko wzdycha, ale zostaje w rozmowie. Mówi, że rozumie, iż bardziej chodzi ci o granicę niż o samą kłótnię.",
+                    "feedback": {
+                        "label": "Jasna struktura rozmowy",
+                        "psychology": "To dobrze porządkuje chaos i zatrzymuje rozmowę na temacie. Brakuje jednak mostu emocjonalnego, który pomógłby drugiej stronie nie słyszeć tego wyłącznie jako testu.",
+                        "better_alternative_hint": "Możesz dodać jedno zdanie o tym, że twoim celem nie jest kara, tylko poczucie bezpieczeństwa."
+                    },
+                    "tags": [
+                        {
+                            "text": "Jasna granica",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Strukturyzowanie rozmowy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie odrzucam twojej czułości. Potrzebuję tylko, żeby nie zastępowała rozmowy o tym, co mnie zraniło i jak chcesz to naprawić.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Niko wyraźnie mięknie. Przyznaje, że mieszał albo mieszała naprawę z zacieraniem śladów i pyta, jak może odpowiedzieć uczciwiej.",
+                    "feedback": {
+                        "label": "Granica bez odrzucenia więzi",
+                        "psychology": "To bardzo dojrzały ruch. Mówisz nie wobec mechanizmu, ale nie wobec osoby. Dzięki temu rozmówca ma szansę zachować godność i wejść w odpowiedzialność.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Granica bez odcięcia",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Naprawa relacji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Powrót do meritum i przyszłych zasad",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Jest późno. Na stole stoją niedojedzone rzeczy i nierozpakowany prezent. Niko wygląda na zranionego lub zranioną i coraz mocniej broni się tym, że przecież próbował albo próbowała okazać miłość.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Czyli co, moja czułość jest teraz problemem? Mam już wrażenie, że cokolwiek zrobię, zostanie użyte przeciwko mnie.",
+            "scene_high": {
+                "description": "Mimo zmęczenia między wami jest więcej przestrzeni niż wcześniej. Niko nie sięga już po prezenty ani komplementy, tylko czeka, choć nadal widać lęk przed oceną.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Chcę to zrozumieć. Chyba naprawdę próbowałem albo próbowałam naprawić napięcie bez mówienia o tym, co zrobiłem albo zrobiłam.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nie mam już nic do powiedzenia. Po prostu rób dalej swoje.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Niko zamyka temat w powierzchownym spokoju. Między wami zostaje niewypowiedziany żal i duży dystans.",
+                    "feedback": {
+                        "label": "Zamknięcie z bezsilności",
+                        "psychology": "Pozornie kończysz konflikt, ale realnie utrwalasz wzorzec, w którym trudne tematy znikają bez naprawy. To zwiększa ryzyko powrotu tego samego mechanizmu.",
+                        "better_alternative_hint": "Zakończenie rozmowy ma sens tylko wtedy, gdy zawiera jasny komunikat o tym, czego potrzebujesz dalej."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Utrwalenie wzorca",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Brak domknięcia",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Tak, twoja czułość jest problemem, bo wszystko w tobie jest na pokaz.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Niko wstaje, odsuwa krzesło i mówi, że nie będzie siedzieć w rozmowie, w której jest całkowicie przekreślony albo przekreślona.",
+                    "feedback": {
+                        "label": "Globalny osąd osoby",
+                        "psychology": "Krytyka całej osoby przesłania ważną treść o konkretnym zachowaniu. Nawet trafna obserwacja traci siłę, gdy staje się totalnym wyrokiem.",
+                        "better_alternative_hint": "Mów o wzorcu zachowania, nie o całej wartości drugiej osoby."
+                    },
+                    "tags": [
+                        {
+                            "text": "Globalizacja winy",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Atak na tożsamość",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Defensywność",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Na przyszłość potrzebuję jednej rzeczy: najpierw rozmowa o problemie, dopiero potem gesty i odbudowywanie nastroju.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Niko przytakuje. Nie brzmi to jeszcze głęboko, ale zgadza się, że taka zasada byłaby uczciwsza dla was obojga.",
+                    "feedback": {
+                        "label": "Dobra reguła, ograniczony kontakt",
+                        "psychology": "Ustalasz praktyczną zasadę, co jest cenne. Brakuje jednak doprecyzowania odpowiedzialności za to, co już się wydarzyło, więc naprawa może pozostać techniczna.",
+                        "better_alternative_hint": "Dodaj, czego potrzebujesz teraz, aby poczuć, że temat został naprawdę usłyszany, a nie tylko opisany zasadą."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ustalanie zasad",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Kontrakt relacyjny",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie chodzi o zakaz czułości. Chodzi o to, żeby czułość nie kasowała odpowiedzialności. Potrzebuję usłyszeć, że rozumiesz, co się stało, i co zrobisz inaczej następnym razem.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -3,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Niko bierze oddech i mówi, że rozumie różnicę między bliskością a zacieraniem problemu. Zaczyna mówić konkretnie o swoim zachowaniu i o tym, co zrobi inaczej przy następnym konflikcie.",
+                    "feedback": {
+                        "label": "Odpowiedzialność bez wojny z czułością",
+                        "psychology": "To najpełniejsza odpowiedź, bo bronisz swojej granicy, a jednocześnie nie demonizujesz samej potrzeby bliskości. Zapraszasz do realnej naprawy: uznania wpływu, odpowiedzialności i zmiany na przyszłość.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Odpowiedzialność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Naprawa relacji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 2
+            },
+            "color": "red",
+            "title": "RESET BEZ ROZMOWY",
+            "emoji": "🔴",
+            "subtitle": "Konflikt znika z powierzchni, ale zostaje w środku",
+            "narrative": "Wieczór kończy się chłodno albo w pozornym pojednaniu. Czułość przykrywa konflikt tylko na chwilę, a twoje zastrzeżenia nie dostają miejsca. Pod powierzchnią zostaje napięcie i rosnące zwątpienie we własny osąd.",
+            "diagnosis": "W tej ścieżce dominowało albo wycofanie, albo atak. To wzmocniło mechanizm love bombingu: albo dało mu wolną przestrzeń, albo zamieniło rozmowę w walkę o to, kto jest gorszy. Granica nie została utrzymana w sposób, który dawał szansę na odpowiedzialność.",
+            "post_game": {
+                "communication_style_summary": "Przeważały reakcje obronne: agresja, bierna agresja albo rezygnacja z własnej potrzeby.",
+                "strongest_moment": "Najważniejsze było to, że zauważyłeś albo zauważyłaś, iż sama czułość nie rozwiązuje problemu.",
+                "growth_tip": "Następnym razem nie walcz z gestem i nie poddawaj się mu. Nazwij spokojnie jego wpływ i wróć do konkretu, który chcesz domknąć.",
+                "replay_prompt": "Sprawdź, jak zmienia się rozmowa, gdy uznajesz intencję partnera, ale nie pozwalasz jej przykryć odpowiedzialności."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 3,
+                "max": 5
+            },
+            "color": "yellow",
+            "title": "USTALENIA BEZ GŁĘBI",
+            "emoji": "🟡",
+            "subtitle": "Udało się zatrzymać reset, ale kontakt nadal jest kruchy",
+            "narrative": "Nie dajesz całkiem zamknąć tematu, jednak rozmowa pozostaje ostrożna i bardziej techniczna niż naprawdę naprawcza. Pojawiają się zasady i pewna jasność, lecz emocjonalny rdzeń problemu wciąż nie jest do końca przepracowany.",
+            "diagnosis": "Ta ścieżka pokazuje, że sama asertywność potrafi zatrzymać manipulacyjny skręt rozmowy, ale bez większej dawki empatii łatwo utknąć w pozycyjnym dialogu. Jest mniej chaosu, lecz jeszcze nie ma pełnej odbudowy zaufania.",
+            "post_game": {
+                "communication_style_summary": "Dominowała rzeczowa asertywność i porządkowanie rozmowy bez pełnego wejścia w emocjonalny kontakt.",
+                "strongest_moment": "Najmocniejsze było konsekwentne wracanie do meritum mimo prób zmiany nastroju i tematu.",
+                "growth_tip": "Dodaj więcej zdań o swoim doświadczeniu i potrzebie bezpieczeństwa. To pomoże przenieść rozmowę z samej kontroli procesu do realnego usłyszenia.",
+                "replay_prompt": "Zagraj ponownie i sprawdź, co się stanie, gdy poza granicą nazwiesz także swój ból i oczekiwaną naprawę."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 6,
+                "max": 8
+            },
+            "color": "green",
+            "title": "CZUŁOŚĆ I ODPOWIEDZIALNOŚĆ",
+            "emoji": "🟢",
+            "subtitle": "Bliskość przestaje służyć za zasłonę i zaczyna wspierać rozmowę",
+            "narrative": "Rozmowa nie jest łatwa, ale stopniowo odzyskuje sens. Niko zaczyna rozumieć, że czułość po konflikcie nie może kasować tego, co się wydarzyło. Między wami pojawia się więcej uczciwości i pierwsze realne sygnały naprawy.",
+            "diagnosis": "W tej ścieżce potrafisz jednocześnie chronić granicę i nie upokarzać drugiej strony. To osłabia mechanizm resetu i tworzy warunki do odpowiedzialności. Dialog przesuwa się z walki o nastrój w stronę wspólnego rozumienia.",
+            "post_game": {
+                "communication_style_summary": "Przeważała empatyczna asertywność z elementami transformacji i dobrego nazywania wpływu zachowania.",
+                "strongest_moment": "Najsilniejszy był moment, w którym oddzieliłeś albo oddzieliłaś potrzebę bliskości od unikania odpowiedzialności.",
+                "growth_tip": "To działa, bo łączysz granicę z kontaktem. W realnym życiu wzmacniaj jeszcze prośbę o konkretną zmianę na przyszłość.",
+                "replay_prompt": "Sprawdź ścieżkę mistrzowską i zobacz, jak rozmowa wygląda, gdy od początku konsekwentnie prowadzisz ją w stronę Poziomu III."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 9,
+                "max": 10
+            },
+            "color": "blue",
+            "title": "BLISKOŚĆ, KTÓRA NIE ZAMIATA POD DYWAN",
+            "emoji": "🔵",
+            "subtitle": "Udaje się nazwać wzorzec i zamienić go w punkt zwrotny relacji",
+            "narrative": "Niko nie tylko słyszy twoją granicę, ale zaczyna rozumieć własny mechanizm. Czułość nie znika z relacji, lecz przestaje pełnić rolę szybkiego resetu. Pojawia się konkret, odpowiedzialność i nowa definicja bliskości: taka, która wytrzymuje także trudne rozmowy.",
+            "diagnosis": "To ścieżka wysokiej dojrzałości komunikacyjnej. Zamiast wpaść w atak lub rozbroić się idealizacją, utrzymujesz kontakt z własnym doświadczeniem i prowadzisz rozmowę ku wspólnej zmianie. To klasyczne przejście do Poziomu III — transformacji.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl transformacyjny: jasna granica, empatia, precyzyjne nazwanie wpływu i zaproszenie do odpowiedzialności.",
+                "strongest_moment": "Kluczowe było pokazanie, że problemem nie jest sama czułość, tylko używanie jej do kasowania niewygodnej prawdy.",
+                "growth_tip": "To mistrzowski poziom. W realnych relacjach stosuj ten sam wzorzec: uznaj intencję, nazwij wpływ, poproś o odpowiedzialność i wspólnie ustalcie zmianę.",
+                "replay_prompt": "Przejdź scenariusz inną ścieżką i porównaj, jak szybko rozmowa zsuwa się w chaos, gdy zabraknie spokojnego powrotu do meritum."
+            }
+        }
+    ]
+}

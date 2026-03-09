@@ -1,0 +1,999 @@
+{
+    "scenario_id": "darvo_reverse_victim_confrontation",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "To nie ja mam cię przepraszać",
+        "subtitle": "Konfrontacja z osobą, która po zwróceniu uwagi natychmiast robi z siebie ofiarę",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 9,
+        "interaction_count": 6
+    },
+    "tags": {
+        "relationship_type": "romantic_partner",
+        "theme": [
+            "boundaries",
+            "communication_breakdown",
+            "control"
+        ],
+        "emotional_intensity": "critical",
+        "age_rating": "adult",
+        "session_type": "training",
+        "player_role_gender": "female",
+        "difficulty": "advanced"
+    },
+    "characters": {
+        "player": {
+            "name": "Maja",
+            "role_label": "Partnerka · Gracz",
+            "age_range": "28-35",
+            "context": "Od kilku tygodni nosisz w sobie napięcie, bo każda próba rozmowy o zachowaniu Kuby kończy się tym, że to ty pocieszasz jego albo przepraszasz za ton. Tym razem chcesz zostać przy faktach i nie stracić własnego gruntu.",
+            "hidden_need": "respect",
+            "hidden_need_text": "Chcesz, żeby twoje doświadczenie zostało uznane, a rozmowa nie została odwrócona przeciwko tobie.",
+            "traits": [
+                {
+                    "text": "uważna",
+                    "type": "positive"
+                },
+                {
+                    "text": "łatwo bierze odpowiedzialność za atmosferę",
+                    "type": "negative"
+                },
+                {
+                    "text": "bezpośrednia pod presją",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 4,
+                "patience": 7,
+                "defensiveness": 5,
+                "empathy": 8,
+                "need_for_control": 4,
+                "shame_sensitivity": 7,
+                "directness": 7,
+                "repair_ability": 8
+            }
+        },
+        "npc": {
+            "name": "Kuba",
+            "role_label": "Partner · NPC",
+            "age_range": "29-36",
+            "context": "Kiedy czuje się zawstydzony lub przyłapany, szybko przechodzi w obronę. Zamiast zajmować się swoim zachowaniem, zmienia temat na twoją rzekomą surowość, niewdzięczność albo atak.",
+            "hidden_need": "safety",
+            "hidden_need_text": "Boi się winy i utraty dobrego obrazu samego siebie, więc desperacko próbuje uniknąć poczucia winy.",
+            "traits": [
+                {
+                    "text": "charyzmatyczny",
+                    "type": "positive"
+                },
+                {
+                    "text": "defensywny",
+                    "type": "negative"
+                },
+                {
+                    "text": "sprawny werbalnie",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 6,
+                "patience": 4,
+                "defensiveness": 9,
+                "empathy": 4,
+                "need_for_control": 8,
+                "shame_sensitivity": 9,
+                "directness": 6,
+                "repair_ability": 3
+            },
+            "npc_reaction_logic": "Na agresję odpowiada kontratakiem i eskalacją. Na bierność wchodzi głębiej w odwrócenie ról i przejmuje narrację. Na komunikaty rzeczowe chwilowo mięknie, ale dalej szuka wyjścia bez odpowiedzialności. Najlepiej reaguje na spokojne nazwanie wzorca, utrzymanie faktów i jasną granicę bez usprawiedliwiania się."
+        }
+    },
+    "metrics_start": {
+        "tension": 40,
+        "trust": 60,
+        "openness": 50,
+        "feeling_heard": 50
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Wejście w trudny temat",
+            "scene": {
+                "description": "Wieczór po wspólnym wyjściu. W mieszkaniu jest cicho, ale napięcie wisi w powietrzu. Wraca do ciebie moment z kolacji, kiedy Kuba wyśmiał twoją uwagę przy znajomych, a potem zbył to żartem.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": "No dobra, widzę po tobie, że coś jest. O co znowu chodzi?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "O to, że zawsze musisz mnie upokorzyć przy innych, bo inaczej chyba nie umiesz istnieć.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Serio? Zawsze? Czyli już zaczynasz od robienia ze mnie potwora.",
+                    "feedback": {
+                        "label": "Uogólnienie i atak",
+                        "psychology": "Uderzasz w charakter zamiast w konkretne zachowanie. To niemal automatycznie przenosi rozmowę na Poziom II, gdzie druga strona walczy o twarz zamiast słuchać treści.",
+                        "better_alternative_hint": "Zacznij od jednego zdarzenia i jego wpływu na ciebie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uogólnianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nieważne. I tak nie ma sensu o tym rozmawiać.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "No właśnie. Czyli robisz atmosferę i nawet nie powiesz o co ci chodzi.",
+                    "feedback": {
+                        "label": "Wycofanie pod napięciem",
+                        "psychology": "Unikanie chwilowo chroni przed konfliktem, ale oddaje kontrolę nad narracją drugiej stronie. W relacji z tendencją do DARVO to zwiększa podatność na późniejsze odwrócenie winy.",
+                        "better_alternative_hint": "Powiedz krótko, o jakim zachowaniu chcesz rozmawiać."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Utrata własnego komunikatu",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Chodzi o to, co powiedziałeś przy znajomych. To było dla mnie nie w porządku i chcę o tym porozmawiać.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "No dobra, ale mam nadzieję, że nie będziesz robić z tego wielkiej afery.",
+                    "feedback": {
+                        "label": "Konkret bez pogłębienia",
+                        "psychology": "To dobry start: konkretne zdarzenie i cel rozmowy. Brakuje jeszcze nazwania wpływu emocjonalnego, które pomaga zakotwiczyć temat w twoim doświadczeniu, a nie w sporze o interpretację.",
+                        "better_alternative_hint": "Dodaj, jak to na ciebie wpłynęło, bez oskarżania."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Oddzielenie faktu od oceny",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chcę wrócić do tego, co powiedziałeś przy znajomych. Dla ciebie to mógł być żart, ale ja poczułam się ośmieszona i chcę, żebyśmy porozmawiali o tym poważnie.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Nie miałem takiego zamiaru, ale okej, słucham.",
+                    "feedback": {
+                        "label": "Fakt, wpływ i intencja rozmowy",
+                        "psychology": "Łączysz komunikat Ja z uznaniem możliwej perspektywy drugiej strony, nie oddając własnej. To obniża defensywność i utrzymuje rozmowę bliżej Poziomu III.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja bez ustępowania",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Pierwsze odwrócenie",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Kuba przewraca oczami i opiera się ciężko o kanapę. W powietrzu jest już wyraźna walka o to, kto tu jest winny, a nie o to, co się wydarzyło.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Niesamowite. Powiedziałaś jedno zdanie, a już brzmi to tak, jakbym był jakimś toksykiem.",
+            "scene_high": {
+                "description": "Kuba napina szczękę, ale jeszcze nie ucieka z rozmowy. Widać defensywność, lecz wciąż jest szansa utrzymać temat przy konkretnym zachowaniu.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_high": "Nie przesadzasz trochę? To był żart, a ty od razu robisz z tego problem.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Bo może jesteś toksyczny, skoro każdą uwagę obracasz przeciwko mnie.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Super. Czyli już mam etykietkę. To może od razu skończmy tę rozmowę.",
+                    "feedback": {
+                        "label": "Etykietowanie",
+                        "psychology": "Nazwanie osoby zamiast wzorca zachowania daje jej silny pretekst do obrony i ucieczki. W mechanizmie DARVO etykieta staje się paliwem do roli ofiary.",
+                        "better_alternative_hint": "Nazywaj to, co dzieje się w rozmowie, a nie kim ktoś jest."
+                    },
+                    "tags": [
+                        {
+                            "text": "Etykietowanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "DARVO",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, może rzeczywiście za mocno to odebrałam. Zapomnijmy.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "No widzisz. Czyli jednak problem był w twojej reakcji, nie w tym co powiedziałem.",
+                    "feedback": {
+                        "label": "Przedwczesne wycofanie",
+                        "psychology": "Wycofujesz własne doświadczenie, żeby uspokoić sytuację. To chwilowo obniża tarcie, ale wzmacnia wzorzec, w którym druga strona nie bierze odpowiedzialności za swój udział.",
+                        "better_alternative_hint": "Nie musisz eskalować, ale nie cofaj faktu, że coś cię zraniło."
+                    },
+                    "tags": [
+                        {
+                            "text": "Samounieważnienie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Lęk przed konfliktem",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie rozmawiam o tym, kim jesteś, tylko o konkretnej sytuacji i o jej skutku dla mnie.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "No dobrze, ale dalej mam wrażenie, że robisz z tego coś większego niż było.",
+                    "feedback": {
+                        "label": "Powrót do zakresu rozmowy",
+                        "psychology": "To skutecznie zawęża rozmowę do faktów i zatrzymuje rozlanie się konfliktu. Nadal jednak nie nazywasz samego odwracania tematu, więc przestrzeń do DARVO pozostaje otwarta.",
+                        "better_alternative_hint": "Możesz spokojnie wskazać, że rozmowa właśnie schodzi z tematu na ocenę twojej reakcji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Powrót do faktów",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Zakres rozmowy",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Zauważam, że zamiast mówić o tym, co się wydarzyło, szybko przechodzimy do tego, że ja przesadzam. Chcę zostać przy sytuacji z kolacji.",
+                    "points": 2,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Nie podoba mi się to, jak to ujmujesz, ale okej. Mów dalej.",
+                    "feedback": {
+                        "label": "Nazwanie przesunięcia rozmowy",
+                        "psychology": "To centralna umiejętność przy DARVO: nie bronisz się przed zarzutem przesady, tylko pokazujesz sam mechanizm odwrócenia. Dzięki temu nie wpadasz w rolę sprawcy.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Nazwanie wzorca",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "DARVO",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Utrzymanie tematu",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Rola ofiary",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Kuba siada dalej od ciebie i zakłada ręce. Jego ton robi się chłodny, a cała rozmowa zaczyna krążyć wokół tego, jak bardzo jest przez ciebie krzywdzony.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Wiedziałem. Cokolwiek zrobię, i tak jestem ten zły. Z tobą człowiek chodzi jak po polu minowym.",
+            "scene_high": {
+                "description": "Kuba wzdycha i odwraca wzrok. Nadal się broni, ale słychać więcej napięcia niż pewności siebie.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "cold"
+            },
+            "npc_line_high": "Mam wrażenie, że cokolwiek powiem, to już jestem ustawiony jako winny.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Przestań robić teatr. To ty narozrabiałeś i teraz odgrywasz biednego.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Czyli jeszcze mnie wyśmiewasz. Świetnie, naprawdę świetnie.",
+                    "feedback": {
+                        "label": "Pogarda i deprecjacja",
+                        "psychology": "Pogarda niemal natychmiast zamyka zdolność do refleksji po drugiej stronie. Przy wysokiej wrażliwości na wstyd prowadzi do silniejszego kontrataku albo wycofania.",
+                        "better_alternative_hint": "Nie komentuj dramatyzowania z góry. Nazwij, co dzieje się z rozmową i wróć do sedna."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Eskalacja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nie chcę, żebyś się tak czuł. Dobra, przepraszam za sam temat.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "No. W końcu słyszę coś normalnego. Bo naprawdę robisz ze mnie winnego za wszystko.",
+                    "feedback": {
+                        "label": "Przejęcie cudzej winy",
+                        "psychology": "To klasyczna pułapka DARVO. Zamiast rozmawiać o zachowaniu sprawcy, zaczynasz naprawiać jego dyskomfort, co ostatecznie unieważnia twój pierwotny komunikat.",
+                        "better_alternative_hint": "Możesz uznać emocję drugiej strony bez przepraszania za samą próbę rozmowy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wejście w rolę sprawcy",
+                            "type": "error"
+                        },
+                        {
+                            "text": "DARVO",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie mówię, że jesteś zły w całości. Mówię, że tamto zachowanie mnie zraniło i chcę to doprowadzić do końca.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Dobra, tylko powiedz wprost, czego ode mnie teraz chcesz.",
+                    "feedback": {
+                        "label": "Oddzielenie osoby od zachowania",
+                        "psychology": "To ważne rozróżnienie obniża poczucie totalnego osądu. Nadal jednak rozmowa pozostaje na poziomie obrony, jeśli nie nazwiesz, że centrum rozmowy znowu przesunęło się z twojego doświadczenia na jego samopoczucie.",
+                        "better_alternative_hint": "Połącz to z uznaniem jego reakcji i powrotem do głównego tematu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Oddzielenie osoby od zachowania",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Redukcja defensywności",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Widzę, że czujesz się oskarżony i to cię uruchamia. Jednocześnie nie chcę zgubić tego, że ja zostałam zraniona. Zostańmy przy obu tych faktach.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "To brzmi fair. Nie obiecuję, że łatwo mi to słuchać, ale rozumiem, o co ci chodzi.",
+                    "feedback": {
+                        "label": "Walidacja bez kapitulacji",
+                        "psychology": "To najbardziej dojrzała odpowiedź na odwrócenie ról. Uznajesz stan drugiej strony, ale nie oddajesz swojej rzeczywistości. W ten sposób nie karmisz polaryzacji ja przeciwko ty.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Utrzymanie dwóch perspektyw",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Granica wobec ataku",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Kuba wstaje, zaczyna chodzić po pokoju i mówi coraz szybciej. Temat rozmowy prawie zniknął pod lawiną zarzutów o twoją surowość i niewdzięczność.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Ty naprawdę nie widzisz, jaka bywasz? Wszystko musi być po twojemu, a potem jeszcze robisz mi przesłuchanie.",
+            "scene_high": {
+                "description": "Kuba dalej jest spięty, ale siedzi już nieruchomo. Słychać w nim obronę, jednak rozmowa jeszcze nie rozpadła się całkiem na wzajemne oskarżenia.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "cold"
+            },
+            "npc_line_high": "Mam problem z tym tonem. Czuję się stawiany pod ścianą.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Bo trzeba cię postawić pod ścianą, skoro normalnie nic do ciebie nie dociera.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "No i właśnie o tym mówię. Ty nie rozmawiasz, tylko karzesz.",
+                    "feedback": {
+                        "label": "Kontratak potwierdzający narrację",
+                        "psychology": "Potwierdzasz dokładnie ten obraz, który druga strona próbuje zbudować, czyli że jest przez ciebie atakowana. To wzmacnia odwrócenie sprawca-ofiara.",
+                        "better_alternative_hint": "Odróżnij granicę od kary i nazwij, czego nie chcesz w dalszej rozmowie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Kontratak",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Reverse Victim and Offender",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, nie będę cię męczyć. Nie musimy kończyć tej rozmowy.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Właśnie. Czasem mogłabyś po prostu odpuścić zamiast rozdmuchiwać.",
+                    "feedback": {
+                        "label": "Oddanie pola pod presją",
+                        "psychology": "Wycofanie się bez postawienia granicy nie kończy wzorca, tylko nagradza go skutecznością. Druga strona dostaje sygnał, że wystarczy odwrócić role, by uniknąć odpowiedzialności.",
+                        "better_alternative_hint": "Możesz przerwać rozmowę, ale nazwij warunek, na jakim do niej wrócisz."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ustępowanie pod naciskiem",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Wzmocnienie wzorca",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Możemy zrobić krótką przerwę, ale chcę wrócić do tej rozmowy później i dokończyć temat.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 0,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Dobrze. Przerwa brzmi lepiej niż to przepychanie się teraz.",
+                    "feedback": {
+                        "label": "Regulacja rozmowy",
+                        "psychology": "To sensowny ruch, gdy napięcie rośnie. Nie rozwiązuje jednak problemu ataku i odwrócenia ról, bo nie wyznaczasz jeszcze, w jakiej formie rozmowa ma dalej przebiegać.",
+                        "better_alternative_hint": "Dodaj granicę dotyczącą obrażania i zmiany tematu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Regulacja napięcia",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Możesz czuć się pod ścianą, ale nie zgodzę się na to, żeby rozmowa zamieniła się w ocenianie mnie. Mogę kontynuować tylko wtedy, gdy wracamy do konkretnego zachowania i jego skutku.",
+                    "points": 2,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Okej. To jest akurat jasne. Nie obiecuję, że będzie mi miło, ale rozumiem granicę.",
+                    "feedback": {
+                        "label": "Granica bez odwetu",
+                        "psychology": "To kluczowy moment: nie bronisz swojej dobroci ani nie kontratakujesz, tylko ustalasz warunki bezpiecznej rozmowy. Tak wygląda asertywność odróżniona od kary.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Stawianie granic",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Nieuczestniczenie w DARVO",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Czego właściwie potrzebujesz",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Po kilku minutach napięcia rozmowa jest ciężka i szarpana. Kuba wygląda na zirytowanego bardziej samą koniecznością mierzenia się z tematem niż tym, co zrobił.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "No dobra, to powiedz wreszcie, czego ty ode mnie chcesz. Żebym znowu powiedział, że wszystko moja wina?",
+            "scene_high": {
+                "description": "Rozmowa nieco zwolniła. Kuba nie jest jeszcze gotowy na pełną odpowiedzialność, ale pierwszy raz pyta, czego od niego konkretnie oczekujesz.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "To czego ty właściwie teraz potrzebujesz ode mnie?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Potrzebuję, żebyś wreszcie przyznał, że to wszystko twoja wina i przestał udawać niewiniątko.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "No i proszę. Jednak chodzi ci o upokorzenie mnie, nie o rozmowę.",
+                    "feedback": {
+                        "label": "Żądanie kapitulacji",
+                        "psychology": "Gdy celem staje się pełne przyznanie winy, rozmowa łatwo zamienia się w walkę o dominację. Osoba defensywna słyszy tu groźbę utraty twarzy, więc jeszcze mocniej się okopuje.",
+                        "better_alternative_hint": "Mów o uznaniu konkretu i o naprawie, nie o całkowitym podporządkowaniu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Walka o rację",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Już sama nie wiem. Nieważne, naprawdę. Zostawmy to.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "No i widzisz. Czyli znowu była awantura o nic.",
+                    "feedback": {
+                        "label": "Rozmycie celu rozmowy",
+                        "psychology": "Kiedy nie nazywasz potrzeby, rozmowa wraca do tezy, że problem był przesadzony lub nieistniejący. To odbiera ci sprawczość i utrwala chaos komunikacyjny.",
+                        "better_alternative_hint": "Nazwij jedno konkretne oczekiwanie: uznanie, przeprosiny albo zmiana zachowania."
+                    },
+                    "tags": [
+                        {
+                            "text": "Brak jasnej prośby",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Rozmycie granic",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Potrzebuję, żebyś uznał, że to co powiedziałeś mnie zraniło, nawet jeśli nie taki był twój zamiar.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "To jest bardziej konkretne. Mogę się do tego odnieść.",
+                    "feedback": {
+                        "label": "Jasna potrzeba uznania",
+                        "psychology": "To dobra i realistyczna prośba. Pozostawia przestrzeń na odpowiedzialność bez wchodzenia w spór o intencję. Do pełni brakuje jeszcze elementu naprawy na przyszłość.",
+                        "better_alternative_hint": "Dodaj, czego potrzebujesz następnym razem, gdy podobna sytuacja się pojawi."
+                    },
+                    "tags": [
+                        {
+                            "text": "Jasna prośba",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Rozróżnienie intencji i wpływu",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Potrzebuję dwóch rzeczy: uznania, że to było raniące, i ustalenia, że gdy zwracam ci uwagę, nie odwracamy rozmowy na to, że ja jestem problemem.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "To już brzmi jak coś konkretnego. Nie jest to dla mnie wygodne, ale rozumiem, o czym mówisz.",
+                    "feedback": {
+                        "label": "Potrzeba plus nowa zasada rozmowy",
+                        "psychology": "Nie zatrzymujesz się na samym bólu, ale proponujesz zmianę procesu komunikacji. To przejście z gaszenia pożaru do budowania nowego kontraktu rozmowy.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Transformacja rozmowy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Nowa zasada kontaktu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_6",
+            "title": "Ostatni ruch przed finałem",
+            "score_threshold": 5,
+            "scene_low": {
+                "description": "Rozmowa jest już zmęczona i lepka od wzajemnego napięcia. Kuba stoi przy blacie, gotowy raczej się zamknąć niż naprawdę coś uznać.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Szczerze? Nie mam już siły tego słuchać. Cokolwiek powiem, i tak wyjdzie, że jestem winny.",
+            "scene_high": {
+                "description": "W kuchni zrobiło się ciszej. Kuba nie wygląda na spokojnego, ale po raz pierwszy od początku rozmowy nie atakuje. Raczej waży słowa.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Dobra. Widzę, że kilka razy zamiast usłyszeć ciebie, broniłem siebie. Co chcesz z tym zrobić dalej?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Chcę, żebyś wreszcie przestał grać ofiarę i przyznał, że to ty rozwalasz tę relację.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "I właśnie dlatego nie da się z tobą gadać. Zawsze kończy się oskarżeniem totalnym.",
+                    "feedback": {
+                        "label": "Całkowite potępienie",
+                        "psychology": "Zamieniasz konkretny wzorzec w osąd całej relacji i całej osoby. To uruchamia obronę końcową, nie naprawę.",
+                        "better_alternative_hint": "Zostań przy odpowiedzialności za wzorzec i przy własnej granicy na przyszłość."
+                    },
+                    "tags": [
+                        {
+                            "text": "Katastrofizacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Totalizowanie",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "W sumie może rzeczywiście za ostro weszłam. Przepraszam, niepotrzebnie to wyciągnęłam.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Dobrze, że to widzisz. Naprawdę nie chcę być ciągle stawiany w takiej roli.",
+                    "feedback": {
+                        "label": "Wymazanie własnej rzeczywistości",
+                        "psychology": "Kończysz rozmowę, biorąc na siebie odpowiedzialność za sam fakt konfrontacji. To może dać chwilowy spokój, ale buduje długoterminową bezsilność i urazę.",
+                        "better_alternative_hint": "Nie musisz kończyć wojną, ale nie kończ też samounieważnieniem."
+                    },
+                    "tags": [
+                        {
+                            "text": "Samounieważnienie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Fałszywa naprawa",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Na dziś wystarczy. Wrócę do tego, jeśli będziemy potrafili rozmawiać o faktach bez przerzucania winy.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "To przynajmniej jest jasne. Potrzebuję chwili, ale rozumiem, co mówisz.",
+                    "feedback": {
+                        "label": "Zamknięcie z warunkiem",
+                        "psychology": "To dobre domknięcie, gdy pełne porozumienie nie jest jeszcze możliwe. Chronisz siebie i nie wdajesz się w dalszą spiralę, choć nie wykorzystujesz całego potencjału do zbudowania wspólnego planu naprawy.",
+                        "better_alternative_hint": "Dodaj, czego konkretnie oczekujesz przy następnym podejściu do rozmowy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Domknięcie rozmowy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Warunkowa kontynuacja",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chcę, żebyśmy zapamiętali ten moment. Gdy mówię o zranieniu, nie chcę być ustawiana jako problem. Jeśli to wróci, przerwę rozmowę i wrócę do niej dopiero wtedy, gdy oboje będziemy mówić o faktach i odpowiedzialności.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -3,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "To uczciwe. Nie jest mi z tym wygodnie, ale widzę, że masz rację co do samego wzorca. Chcę spróbować inaczej.",
+                    "feedback": {
+                        "label": "Nazwanie wzorca i zasady na przyszłość",
+                        "psychology": "To mistrzowskie domknięcie. Nie próbujesz wymusić idealnej skruchy, tylko jasno określasz standard rozmowy i własną granicę. To zwiększa szansę na realną zmianę zamiast jednorazowej ulgi.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Kontrakt na przyszłość",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Odpowiedzialność zamiast winy",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "PĘTLA ODWÓCENIA WINY",
+            "emoji": "🔴",
+            "subtitle": "Temat zniknął, a rozmowa skończyła się walką o to, kto jest gorszy",
+            "narrative": "Kuba zamyka się albo wychodzi z kuchni z przekonaniem, że został niesprawiedliwie zaatakowany. Ty zostajesz z mieszaniną złości, bezsilności i znajomego ciężaru, że znowu nie udało się utrzymać rozmowy przy tym, co naprawdę bolało.",
+            "diagnosis": "W tej ścieżce mechanizm DARVO wygrał. Zamiast zostać nazwany i zatrzymany, został nakarmiony agresją albo wycofaniem. Rozmowa utknęła na Poziomie II, gdzie obie strony bronią siebie, a nie badają rzeczywistości.",
+            "post_game": {
+                "communication_style_summary": "Dominowały reakcje obronne, kontrataki lub cofanie własnego komunikatu pod presją.",
+                "strongest_moment": "Najmocniejszy potencjał pojawił się wtedy, gdy próbowałaś wrócić do konkretnego zdarzenia, ale nie został utrzymany.",
+                "growth_tip": "Przy DARVO nie wygrywa ten, kto mocniej udowodni winę drugiej strony. Wygrywa ten, kto nie da się przesunąć z faktów na obronę własnego prawa do mówienia.",
+                "replay_prompt": "Zagraj jeszcze raz i zobacz, co zmienia samo spokojne nazwanie odwrócenia ról bez tłumaczenia się."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "ZATRZYMANIE BEZ PRZEŁOMU",
+            "emoji": "🟡",
+            "subtitle": "Nie dałaś się całkiem wciągnąć, ale rozmowa zatrzymała się w pół kroku",
+            "narrative": "Rozmowa nie wybuchła całkiem, ale też nie przyniosła pełnego uznania twojego doświadczenia. Udało ci się częściowo ochronić własne granice, jednak Kuba nadal bardziej chronił swój obraz siebie niż realnie brał odpowiedzialność.",
+            "diagnosis": "To ścieżka umiarkowanie skuteczna. Pojawiły się elementy asertywności i powrotu do faktów, lecz zabrakło konsekwentnego nazwania wzorca albo sformułowania nowej zasady rozmowy. Dzięki temu nie przegrałaś całkiem, ale też nie zmieniłaś dynamiki.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl rzeczowo-asertywny z momentami wycofania lub zbyt szybkiego domykania napięcia.",
+                "strongest_moment": "Najlepszy był moment, kiedy oddzieliłaś osobę od zachowania i wróciłaś do konkretu.",
+                "growth_tip": "Kolejny krok to nie tylko mówić o tym, co zabolało, ale też nazywać sam mechanizm, w którym rozmowa schodzi z torów i robi z ciebie stronę winną.",
+                "replay_prompt": "Spróbuj przejść tę scenę tak, by oprócz faktów postawić też jasną granicę wobec odwracania ról."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 9
+            },
+            "color": "green",
+            "title": "ODZYSKANY TEMAT",
+            "emoji": "🟢",
+            "subtitle": "Nie dałaś się wciągnąć w cudzą obronę i utrzymałaś sedno rozmowy",
+            "narrative": "Kuba nie stał się nagle idealnie otwarty, ale po raz pierwszy nie udało mu się całkowicie odwrócić rozmowy. Ty zachowałaś kontakt ze sobą, nazwałaś wzorzec i postawiłaś granicę. To nie jest bajkowe pojednanie, tylko realny zwrot w stronę dojrzalszej rozmowy.",
+            "diagnosis": "Najważniejsze osiągnięcie tej ścieżki to utrzymanie własnego komunikatu bez wejścia w rolę oskarżyciela ani opiekuna cudzego dyskomfortu. Rozmowa zaczęła przesuwać się z obrony pozycyjnej w stronę odpowiedzialności za proces kontaktu.",
+            "post_game": {
+                "communication_style_summary": "Dominowały odpowiedzi empatyczno-asertywne, które zatrzymywały spiralę i przywracały rozmowie strukturę.",
+                "strongest_moment": "Najmocniejszy moment to spokojne nazwanie, że temat znów przesuwa się z twojego zranienia na ocenę ciebie.",
+                "growth_tip": "To dobry model do życia: uznaj emocję drugiej strony, ale nigdy nie oddawaj prawa do nazywania własnego doświadczenia i warunków rozmowy.",
+                "replay_prompt": "Zagraj ponownie i sprawdź, czy potrafisz dojść do jeszcze pełniejszego porozumienia, formułując wspólną zasadę na przyszłość."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 10,
+                "max": 12
+            },
+            "color": "blue",
+            "title": "PRZERWANA SEKWENCJA DARVO",
+            "emoji": "🔵",
+            "subtitle": "Nie tylko ochroniłaś siebie, ale też zmieniłaś reguły rozmowy",
+            "narrative": "Kuba milknie na chwilę i pierwszy raz nie wykorzystuje ciszy jako przewagi. Nie jest zachwycony, ale widzi wzorzec, o którym mówisz. Ty nie wygrałaś przez dominację, tylko przez precyzję, spokój i granicę. Rozmowa kończy się nową zasadą: kiedy pojawia się zranienie, nie wolno odwracać go w proces oskarżania osoby, która je nazywa.",
+            "diagnosis": "To ścieżka wysokiej dojrzałości komunikacyjnej. Utrzymałaś równowagę między walidacją a odpowiedzialnością, nie pomyliłaś empatii z kapitulacją i przeprowadziłaś rozmowę z poziomu obrony na poziom transformacji reguł kontaktu.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl transformacyjny oparty na nazywaniu wzorca, stawianiu granic i budowaniu nowej umowy komunikacyjnej.",
+                "strongest_moment": "Najsilniejszy moment to domknięcie rozmowy zasadą na przyszłość, zamiast próbą wymuszenia pełnej skruchy tu i teraz.",
+                "growth_tip": "Mistrzostwo nie polega na tym, że druga strona natychmiast wszystko rozumie. Polega na tym, że ty nie tracisz siebie, gdy ktoś próbuje odwrócić role.",
+                "replay_prompt": "Sprawdź inne ścieżki i zobacz, jak niewielkie ustępstwa wobec odwrócenia ról potrafią całkowicie zmienić wynik rozmowy."
+            }
+        }
+    ]
+}

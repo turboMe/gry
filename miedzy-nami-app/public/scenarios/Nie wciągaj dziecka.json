@@ -1,0 +1,1071 @@
+{
+    "scenario_id": "co_parent_alienation_boundary",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Nie wciągaj dziecka",
+        "subtitle": "Rozmowa po rozstaniu o podważaniu drugiego rodzica w oczach dziecka",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 12,
+        "interaction_count": 6
+    },
+    "tags": {
+        "relationship_type": "romantic_partner",
+        "theme": [
+            "parenting",
+            "boundaries",
+            "respect"
+        ],
+        "emotional_intensity": "critical",
+        "age_rating": "teen",
+        "session_type": "training",
+        "player_role_gender": "female",
+        "difficulty": "advanced"
+    },
+    "characters": {
+        "player": {
+            "name": "Maja",
+            "role_label": "Mama · Gracz",
+            "age_range": "32-38",
+            "context": "Po weekendzie z ojcem córka wróciła spięta i powiedziała, że chyba musi wybrać, kogo bardziej kocha. Maja czuje złość, lęk i presję, ale chce ochronić dziecko przed wojną lojalności.",
+            "hidden_need": "safety",
+            "hidden_need_text": "Potrzebuje poczucia, że dziecko nie będzie obciążane konfliktem dorosłych i że rodzicielskie granice będą respektowane.",
+            "traits": [
+                {
+                    "text": "Uważna na emocje dziecka",
+                    "type": "positive"
+                },
+                {
+                    "text": "Zmęczona konfliktem",
+                    "type": "neutral"
+                },
+                {
+                    "text": "Łatwo wchodzi w defensywę, gdy chodzi o córkę",
+                    "type": "negative"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 5,
+                "patience": 6,
+                "defensiveness": 7,
+                "empathy": 8,
+                "need_for_control": 6,
+                "shame_sensitivity": 6,
+                "directness": 7,
+                "repair_ability": 7
+            }
+        },
+        "npc": {
+            "name": "Kamil",
+            "role_label": "Ojciec po rozstaniu · NPC",
+            "age_range": "33-40",
+            "context": "Kamil czuje się niedoceniony jako rodzic i nadal nosi złość po rozstaniu. Kiedy mówi źle o Mai przy dziecku, racjonalizuje to jako mówienie prawdy albo bronienie swojej pozycji.",
+            "hidden_need": "recognition",
+            "hidden_need_text": "Potrzebuje uznania jako ważnego rodzica i potwierdzenia, że nie został odsunięty ani zdegradowany do roli dodatku.",
+            "traits": [
+                {
+                    "text": "Zaangażowany w relację z córką",
+                    "type": "positive"
+                },
+                {
+                    "text": "Uraza po rozstaniu",
+                    "type": "negative"
+                },
+                {
+                    "text": "Skłonny do usprawiedliwiania swoich zachowań",
+                    "type": "negative"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 6,
+                "patience": 4,
+                "defensiveness": 8,
+                "empathy": 5,
+                "need_for_control": 7,
+                "shame_sensitivity": 8,
+                "directness": 6,
+                "repair_ability": 4
+            },
+            "npc_reaction_logic": "Na atak odpowiada kontratakiem albo odwracaniem winy. Na chłodny styl transakcyjny czasem reaguje częściową współpracą, ale bez refleksji. Najbardziej mięknie, gdy słyszy konkretny wpływ na dziecko, brak upokarzania i jasną granicę."
+        }
+    },
+    "metrics_start": {
+        "tension": 45,
+        "trust": 45,
+        "openness": 40,
+        "feeling_heard": 35
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Pierwszy telefon po powrocie dziecka",
+            "scene": {
+                "description": "Wieczór po powrocie córki. W kuchni stoi niedopita herbata, a w tle leży plecak dziecka. Maja dzwoni do Kamila zaraz po tym, jak usłyszała, że u taty mówi się o niej jak o problemie.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": null,
+            "npc_stage_direction": "Telefon łączy się po kilku sygnałach. Po drugiej stronie słychać telewizor ściszony w pośpiechu i krótki, ostrożny oddech Kamila.",
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Przestań truć dziecku o mnie, bo robisz jej wodę z mózgu.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kamil natychmiast podnosi głos i mówi, że to ty od dawna nastawiasz córkę przeciwko niemu.",
+                    "feedback": {
+                        "label": "Atak i stygmatyzacja",
+                        "psychology": "Otwierasz rozmowę od oskarżenia i etykiety. To ustawia rozmowę na Poziomie II, gdzie obie strony walczą o rację zamiast o bezpieczeństwo dziecka.",
+                        "better_alternative_hint": "Nazwij konkretny problem i jego wpływ na dziecko, bez obrażania drugiego rodzica."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uogólnianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Atak personalny",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nieważne. Widzę, że i tak nie da się z tobą rozmawiać.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kamil prycha i mówi, że sama zrobiłaś awanturę o nic, po czym czeka, aż to ty pierwsza się rozłączysz.",
+                    "feedback": {
+                        "label": "Wycofanie z ukrytą pretensją",
+                        "psychology": "Pozornie unikasz konfliktu, ale zostawiasz w powietrzu osąd i bezradność. To nie chroni dziecka, bo problem pozostaje nienazwany.",
+                        "better_alternative_hint": "Powiedz wprost, o jaką sytuację chodzi i czego potrzebujesz jako współrodzic."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Niedopowiedzenie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak granicy",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Dzwonię w konkretnej sprawie. Nie chcę, żeby przy Zosi padały komentarze podważające mnie jako rodzica.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Kamil odpowiada chłodno, że niczego nie podważa, tylko nie będzie udawał, że wszystko jest idealnie.",
+                    "feedback": {
+                        "label": "Jasna granica bez mostu",
+                        "psychology": "To komunikat asertywny i konkretny. Brakuje jednak uznania napięcia po obu stronach, więc rozmowa może utknąć na poziomie sporu o definicje.",
+                        "better_alternative_hint": "Połącz granicę z krótkim nazwaniem wspólnego celu wobec dziecka."
+                    },
+                    "tags": [
+                        {
+                            "text": "Stawianie granicy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Komunikat konkretny",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Dzwonię, bo Zosia wróciła z poczuciem, że ma wybierać między nami. Chcę, żebyśmy swoje pretensje kierowali do siebie, nie do niej.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Kamil milknie na chwilę i mówi ciszej, że nie chciał, żeby to tak zabrzmiało, ale nadal jest w nim dużo złości.",
+                    "feedback": {
+                        "label": "Wspólny cel ponad konfliktem",
+                        "psychology": "Łączysz wpływ na dziecko z granicą i przesuwasz rozmowę w stronę Poziomu III. To redukuje pole do wojny o winę i kieruje uwagę na dobro dziecka.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Ochrona dziecka",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Odseparowanie konfliktu dorosłych",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Defensywa i zaprzeczanie",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Rozmowa od początku brzmi jak przeciąganie liny. Maja stoi nieruchomo przy blacie, a każde słowo Kamila brzmi jak odbicie piłki z jeszcze większą siłą.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Przestań robić ze mnie potwora. Ja tylko mówię Zosi, jak jest.",
+            "scene_high": {
+                "description": "Napięcie nie znika, ale ton rozmowy trochę zwalnia. Maja siada przy stole, a po drugiej stronie zapada krótka, niepewna cisza.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "cold"
+            },
+            "npc_line_high": "Nie chciałem jej stawiać po żadnej stronie. Po prostu czasem mi się ulewa.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nie wmawiaj mi, że to przypadek. Robisz to celowo, żeby mnie zniszczyć.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kamil odpowiada, że jeśli ktoś niszczy rodzinę, to zaczęło się to dużo wcześniej i nie zamierza słuchać kazań.",
+                    "feedback": {
+                        "label": "Przypisanie intencji",
+                        "psychology": "Czytasz drugiej stronie w głowie i przypisujesz wrogą motywację. To zwykle uruchamia obronę ego i kontratak.",
+                        "better_alternative_hint": "Zostań przy skutku zachowania i przy granicy, zamiast rozstrzygać intencje."
+                    },
+                    "tags": [
+                        {
+                            "text": "Czytanie w myślach",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Eskalacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Atrybucja wroga",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Jasne, ty zawsze tylko przypadkiem ranisz innych.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kamil mówi z ironią, że dobrze zna ten ton i nie będzie uczestniczył w takiej rozmowie.",
+                    "feedback": {
+                        "label": "Sarkazm zamiast treści",
+                        "psychology": "Bierna agresja daje chwilowe poczucie przewagi, ale nie wnosi informacji operacyjnej. Rozmowa staje się pojedynkiem na przytyki.",
+                        "better_alternative_hint": "Powiedz wprost, jaki konkretny komunikat przy dziecku jest nie do przyjęcia."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Komunikat ukryty",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie rozmawiam teraz o intencjach. Rozmawiam o tym, że Zosia powtarza po tobie zdania, które podkopują jej poczucie bezpieczeństwa.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kamil wzdycha i mówi, że może kilka rzeczy powiedział za ostro, ale też ma prawo być sfrustrowany.",
+                    "feedback": {
+                        "label": "Powrót do faktów",
+                        "psychology": "Dobrze odróżniasz skutek od intencji. To obniża chaos, choć nadal brakuje mocniejszego połączenia z perspektywą dziecka i wspólną odpowiedzialnością.",
+                        "better_alternative_hint": "Dodaj, czego konkretnie potrzebujesz od teraz jako zasady współrodzicielstwa."
+                    },
+                    "tags": [
+                        {
+                            "text": "Oddzielenie faktów od interpretacji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Regulacja rozmowy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC — obserwacja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Wierzę, że jesteś wkurzony. Ale kiedy ta złość wychodzi przy Zosi, ona nie słyszy prawdy, tylko że ma uważać na własną mamę. Tego chcę zatrzymać.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kamil ścisza głos i po chwili przyznaje, że córka ostatnio patrzy na niego, jakby miała sprawdzać, co wolno powiedzieć.",
+                    "feedback": {
+                        "label": "Walidacja bez ustępowania",
+                        "psychology": "Uznajesz emocję rozmówcy, ale nie ustępujesz w sprawie granicy. To zmniejsza defensywność i zwiększa szansę na kontakt z konsekwencją zachowania.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Parental alienation",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Nazwanie szkody dla dziecka",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Po obu stronach rośnie zmęczenie. Maja chodzi po kuchni, a rozmowa zaczyna przypominać rozliczanie dawnych krzywd pod przykrywką rozmowy o Zosi.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Zosia sama widzi, kto dotrzymuje słowa, a kto nie. Nie muszę jej niczego tłumaczyć.",
+            "scene_high": {
+                "description": "W rozmowie pojawia się więcej konkretu niż jadu. Maja opiera dłoń o stół i skupia się na jednym wątku, zamiast wracać do historii związku.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Nie pomyślałem, że ona może to brać na siebie. Nadal jednak nie chcę być przedstawiany jako ten gorszy rodzic.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Skoro sama widzi, to może powinna też usłyszeć, ile razy ty ją zawiodłeś.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kamil wybucha, że właśnie o to chodziło od początku i że zawsze wykorzystujesz każdą okazję, by go poniżyć.",
+                    "feedback": {
+                        "label": "Wciągnięcie dziecka w sąd",
+                        "psychology": "Odpowiadasz na alienację symetryczną alienacją. To wzmacnia lojalnościowy konflikt dziecka i utrwala destrukcyjny wzorzec.",
+                        "better_alternative_hint": "Zatrzymaj logikę odwetu i wróć do zasady, że dziecko nie ma być arbitrem dorosłych."
+                    },
+                    "tags": [
+                        {
+                            "text": "Odwet",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Instrumentalizacja dziecka",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Symetryczna eskalacja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobrze, rób jak chcesz. Ja już nie mam siły tego ciągnąć.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kamil mówi krótko, że skoro tak, to kończy temat, a w jego głosie słychać ulgę, że nie musi nic zmieniać.",
+                    "feedback": {
+                        "label": "Kapitulacja bez ochrony",
+                        "psychology": "Wycofanie może chwilowo obniżyć napięcie, ale zostawia dziecko bez realnej ochrony. Brak granicy bywa przez drugą stronę odczytany jako przyzwolenie.",
+                        "better_alternative_hint": "Nawet przy zmęczeniu warto sformułować jedno jasne nie i jedną konkretną prośbę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Rezygnacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Bezsilność komunikacyjna",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Brak konsekwencji",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "To nie jest rozmowa o tym, kto wypada lepiej. To rozmowa o tym, że Zosia nie może być stawiana w roli sędziego między rodzicami.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kamil odpowiada, że rozumie sens tego zdania, ale nadal uważa, że niektóre rzeczy trzeba dziecku wyjaśniać.",
+                    "feedback": {
+                        "label": "Przerwanie fałszywej osi sporu",
+                        "psychology": "Dobrze redefiniujesz problem. To ruch z licytacji racji na poziom zasad, choć jeszcze bez propozycji, jak te zasady wdrożyć.",
+                        "better_alternative_hint": "Dodaj prostą normę współrodzicielstwa, którą obie strony mogą od razu zastosować."
+                    },
+                    "tags": [
+                        {
+                            "text": "Redefinicja problemu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granica roli dziecka",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Analiza transakcyjna Berne'a",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Zosia nie powinna zbierać dowodów ani wybierać strony. Potrzebuje słyszeć, że ma prawo kochać nas oboje bez poczucia zdrady wobec któregoś z nas.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kamil długo milczy, po czym mówi, że nienawidzi myśli, że córka może bać się okazywać przy nim sympatię do ciebie.",
+                    "feedback": {
+                        "label": "Ochrona więzi dziecka z obojgiem rodziców",
+                        "psychology": "To komunikat głęboko transformacyjny. Nie bronisz tylko własnego wizerunku, lecz prawa dziecka do bezpiecznej więzi z dwojgiem rodziców.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Dobro dziecka",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Lojalność podzielona",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Konkret zamiast rozmycia",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Rozmowa zaczyna grzęznąć w półprawdach i dawnych urazach. Kamil wchodzi w ton obronny, a Maja czuje, że za chwilę temat rozpłynie się w kłótni o wszystko naraz.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Ty z jednego tekstu robisz wielką teorię. Przecież nie siedzę i nie programuję dziecka przeciwko tobie.",
+            "scene_high": {
+                "description": "Mimo napięcia rozmowa utrzymuje się przy jednym temacie. Maja ma poczucie, że jeśli teraz poda przykład i granicę, może zatrzymać dalsze rozmywanie odpowiedzialności.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Może faktycznie czasem mówię za dużo. Powiedz konkretnie, co według ciebie przekracza granicę.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Skoro sam nie umiesz tego zobaczyć, to może sąd ci to wytłumaczy.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kamil natychmiast twardnieje i mówi, że w takim razie każdą kolejną sprawę też będzie prowadził tylko przez prawników.",
+                    "feedback": {
+                        "label": "Groźba jako skrót",
+                        "psychology": "Odwołanie do sankcji bywa czasem potrzebne, ale użyte za wcześnie zamyka szansę na dobrowolną korektę zachowania. Rozmowa przestaje być o dziecku, a staje się o sile.",
+                        "better_alternative_hint": "Najpierw nazwij konkretny przykład i oczekiwaną zmianę. Sankcję zostaw jako dalszy krok, nie pierwszy ruch."
+                    },
+                    "tags": [
+                        {
+                            "text": "Groźba",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Walcz albo uciekaj",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Eskalacja proceduralna",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Pewnie, nic nie robisz. Wszystko samo się dzieje, a dziecko samo wraca z twoimi tekstami.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kamil odpowiada chłodno, że skoro znowu jedziesz ironią, to on nie ma nic więcej do dodania.",
+                    "feedback": {
+                        "label": "Ironia zamiast przykładu",
+                        "psychology": "Sarkazm nie porządkuje rzeczywistości. Odbiorca koncentruje się na tonie, a nie na treści i łatwo odrzuca całość.",
+                        "better_alternative_hint": "Przywołaj jedno zdanie dziecka albo jedną sytuację i nazwij jej wpływ."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ironia",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Rozmycie komunikatu",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Kiedy Zosia mówi, że u taty dowiedziała się, iż mama zawsze przesadza, to jest dla mnie jasny sygnał przekroczenia granicy. Tego nie chcę słyszeć od dziś dalej.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kamil mówi ciszej, że rozumie, o który typ komentarza chodzi, choć nadal uważa twoją reakcję za mocną.",
+                    "feedback": {
+                        "label": "Konkret i granica",
+                        "psychology": "Dostarczasz obserwację i limit, co porządkuje rozmowę. Brakuje jeszcze zaproszenia do wspólnej zasady, dzięki której zmiana będzie bardziej trwała.",
+                        "better_alternative_hint": "Dodaj propozycję, jak oboje możecie chronić dziecko, gdy wzbiera złość."
+                    },
+                    "tags": [
+                        {
+                            "text": "Konkretny przykład",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC — obserwacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Stawianie granicy",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Granica jest tam, gdzie nasze żale zaczynają płynąć przez Zosię. Jeśli mamy do siebie pretensje, mówmy je sobie wprost albo wcale nie przy dziecku.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Kamil przyznaje, że to uczciwa zasada i że sam nie chce, by córka była kanałem dla dorosłych pretensji.",
+                    "feedback": {
+                        "label": "Zasada współrodzicielstwa",
+                        "psychology": "Nie zatrzymujesz się na pretensji, tylko tworzysz regułę. To buduje ramę współpracy i redukuje ryzyko powrotu do personalnej wojny.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Budowanie reguły",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Odseparowanie konfliktu dorosłych",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Ustalenie praktycznych zasad",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Oboje są już znużeni i każde kolejne zdanie grozi cofnięciem się do zarzutów. Maja czuje, że bez konkretnej procedury ta rozmowa skończy się jak wiele poprzednich.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "No dobrze, to czego ty w ogóle ode mnie chcesz konkretnie, poza tym żebym siedział cicho?",
+            "scene_high": {
+                "description": "W powietrzu nadal jest ciężko, ale pojawia się miejsce na robocze ustalenia. Maja bierze notes, jakby chciała zamienić emocje na zasady, które da się potem egzekwować.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Dobra. To ustalmy jasno, co robimy, kiedy jedno z nas jest wkurzone i przy dziecku zaczyna się to wylewać.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Chcę, żebyś przy Zosi po prostu przestał się odzywać na mój temat, najlepiej w ogóle.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kamil odbiera to jako próbę kontroli i odpowiada, że nie będzie przyjmował rozkazów we własnym domu.",
+                    "feedback": {
+                        "label": "Rozkaz bez współudziału",
+                        "psychology": "Treść dotyka realnego problemu, ale forma uruchamia walkę o autonomię. Gdy rozmówca słyszy tylko zakaz, szuka sposobu odzyskania wpływu.",
+                        "better_alternative_hint": "Sformułuj zasadę, która obowiązuje obie strony, nie tylko jego."
+                    },
+                    "tags": [
+                        {
+                            "text": "Rozkaz",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Walka o kontrolę",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Brak wzajemności",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Sama już nie wiem. Może po prostu róbmy, co się da i jakoś to będzie.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kamil natychmiast łapie ten brak konkretu i mówi, że skoro nawet ty nie wiesz, czego chcesz, to temat jest sztucznie pompowany.",
+                    "feedback": {
+                        "label": "Rozmycie ustaleń",
+                        "psychology": "Kiedy rozmowa wchodzi w etap zasad, niejasność działa jak cofnięcie postępu. Brak struktury sprzyja powrotowi do starych wzorców.",
+                        "better_alternative_hint": "Podaj dwa lub trzy proste punkty, które da się zauważyć i stosować."
+                    },
+                    "tags": [
+                        {
+                            "text": "Niejasność",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Unikanie odpowiedzialności",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak kontraktu",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Chcę jednej zasady operacyjnej: sprawy o dziecku omawiamy bez ocen drugiego rodzica i tylko między sobą, najlepiej wiadomością albo telefonem bez udziału Zosi.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kamil przytakuje częściowo i mówi, że pisanie może pomóc, bo wtedy łatwiej mu nie wybuchnąć od razu.",
+                    "feedback": {
+                        "label": "Procedura bez pogłębienia",
+                        "psychology": "To dobra mikro-umowa. Jest konkretna i możliwa do wdrożenia, ale nie dotyka jeszcze głębiej wspólnej intencji, więc może pozostać krucha.",
+                        "better_alternative_hint": "Dodaj, po co ta procedura jest dziecku potrzebna, nie tylko wam wygodna."
+                    },
+                    "tags": [
+                        {
+                            "text": "Kontrakt komunikacyjny",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Procedura",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chcę, żeby obowiązywały nas oboje trzy rzeczy: żadnych ocen drugiego rodzica przy Zosi, żadnego wysyłania przez nią wiadomości i przerwa w rozmowie, kiedy czujemy, że zaraz mówimy z żalu, a nie jako rodzice.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -3,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Kamil mówi, że to brzmi fair i pierwszy raz w tej rozmowie słychać w nim bardziej ojca niż byłego partnera.",
+                    "feedback": {
+                        "label": "Reguły chroniące dziecko",
+                        "psychology": "Tworzysz symetryczny kontrakt i uwzględniasz moment przeciążenia emocjonalnego. To zwiększa szansę, że zasady zadziałają także wtedy, gdy pojawi się napięcie.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Kontrakt współrodzicielski",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Samoregulacja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Parentyfikacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_6",
+            "title": "Domknięcie i odpowiedzialność",
+            "score_threshold": 5,
+            "scene_low": {
+                "description": "To końcówka rozmowy, w której każdy jest już zmęczony i łatwo o ostatni cios. Maja wie, że sposób zamknięcia zdecyduje, czy cokolwiek z tej rozmowy zostanie na przyszłość.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "cold"
+            },
+            "npc_line_low": "Zobaczymy, jak to wyjdzie w praktyce. Nie obiecuję cudów.",
+            "scene_high": {
+                "description": "Nadal nie ma pełnej lekkości, ale pojawia się realna przestrzeń na odpowiedzialność. Maja słyszy, że rozmowa może zakończyć się zasadą, a nie tylko zmęczeniem.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Masz rację w jednym: Zosia nie może płacić za to, że nam się nie ułożyło. Chcę tego pilnować.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Dobrze, że w końcu to przyznałeś. Szkoda, że dopiero po tylu szkodach.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kamil natychmiast się zamyka i rzuca, że wiedział, iż i tak wykorzystasz to do wbicia szpilki.",
+                    "feedback": {
+                        "label": "Triumf zamiast domknięcia",
+                        "psychology": "Gdy rozmówca robi minimalny krok w stronę odpowiedzialności, zawstydzenie go często odbiera mu motywację do utrzymania zmiany.",
+                        "better_alternative_hint": "Zamknij rozmowę w duchu odpowiedzialności i jasnych następnych kroków, nie moralnego zwycięstwa."
+                    },
+                    "tags": [
+                        {
+                            "text": "Zawstydzanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Wbijanie szpilki",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Utrata naprawy",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, nieważne. Oby jakoś przetrwać kolejny tydzień.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -1,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kamil kończy rozmowę bez dalszych ustaleń, a w powietrzu zostaje poczucie tymczasowości i braku odpowiedzialności.",
+                    "feedback": {
+                        "label": "Zamknięcie bez ramy",
+                        "psychology": "Zdejmujesz napięcie tu i teraz, ale nie domykasz zmiany. To zwiększa ryzyko, że oboje wrócicie do starego schematu przy pierwszym trudniejszym momencie.",
+                        "better_alternative_hint": "Zakończ rozmowę jednym wspólnym zdaniem celu albo prostym ustaleniem, do którego można wrócić."
+                    },
+                    "tags": [
+                        {
+                            "text": "Brak domknięcia",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Minimalizacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Repair failure",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Dobrze. Wracam do tego, że jeśli któreś z nas przekroczy tę granicę, przenosimy temat między dorosłych i nie wciągamy Zosi. Tego będę się trzymać.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kamil mówi, że to uczciwe i kończy rozmowę spokojniej niż ją zaczął.",
+                    "feedback": {
+                        "label": "Spokojne dopięcie granicy",
+                        "psychology": "To dobre domknięcie: jasno przypominasz regułę i bierzesz odpowiedzialność za własną stronę. Mogłoby jeszcze mocniej wybrzmieć wspólne dobro dziecka.",
+                        "better_alternative_hint": "Dodaj jedno zdanie wzmacniające wspólną intencję, nie tylko regułę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Konsekwencja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Domknięcie rozmowy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie musimy się dziś we wszystkim zgodzić. Wystarczy, że zgodzimy się co do jednego: Zosia ma prawo czuć się bezpiecznie z nami obojgiem i to my mamy nosić ciężar konfliktu, nie ona.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kamil przyjmuje to bez walki i mówi, że spróbuje pilnować języka oraz reagować szybciej, gdy poczuje żal.",
+                    "feedback": {
+                        "label": "Wspólna odpowiedzialność rodziców",
+                        "psychology": "Kończysz rozmowę zbiorem wartości, a nie tylko zakazów. To wzmacnia szansę na trwałą zmianę, bo odwołuje się do tożsamości rodzica, nie do samej kontroli zachowania.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Wspólna intencja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Dobro dziecka",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "ROZMOWA ZAMIENIONA W WOJNĘ",
+            "emoji": "🔴",
+            "subtitle": "Dziecko nadal zostaje między wami",
+            "narrative": "Po rozłączeniu Maja czuje, że powiedziała dużo, ale niewiele ochroniła. Kamil zamyka się jeszcze bardziej i traktuje rozmowę jak kolejny dowód, że każde słowo będzie użyte przeciwko niemu. Nad Zosią nadal wisi presja wybierania strony.",
+            "diagnosis": "Dominował styl agresywny, bierny albo biernie agresywny. Rozmowa utknęła na Poziomie II, czyli walce o rację i winę. Zabrakło konsekwentnego oddzielenia konfliktu dorosłych od potrzeb dziecka, więc mechanizm parental alienation nie został zatrzymany.",
+            "post_game": {
+                "communication_style_summary": "W tej ścieżce rozmowa była reaktywna i skoncentrowana na odwecie albo wycofaniu. Granice nie zostały postawione w sposób, który dawałby szansę na współpracę.",
+                "strongest_moment": "Najmocniejszy był każdy moment, w którym wracał temat wpływu na Zosię, nawet jeśli tylko na chwilę.",
+                "growth_tip": "Przy tak wysokim ładunku emocjonalnym zacznij od jednego konkretu, jednego wpływu na dziecko i jednej granicy. Nie rozstrzygaj intencji, nie odpowiadaj alienacją na alienację.",
+                "replay_prompt": "Spróbuj przejść rozmowę tak, by ani razu nie użyć odwetu ani ironii. Zobacz, jak zmienia się reakcja Kamila."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "KRUCHY ROZEJM",
+            "emoji": "🟡",
+            "subtitle": "Padły granice, ale bez głębszej zmiany",
+            "narrative": "Rozmowa nie eksplodowała, ale też nie stała się bezpiecznym miejscem na prawdziwą korektę. Maja zaznaczyła, czego nie akceptuje, a Kamil częściowo to usłyszał. Jest szansa na poprawę, lecz bez mocniejszego zakorzenienia w perspektywie dziecka stare wzorce mogą wrócić.",
+            "diagnosis": "Dominowała asertywność albo chłodny styl transakcyjny. To pozwoliło uporządkować temat i nazwać granice, ale nie zawsze wystarczyło do obniżenia defensywności i uruchomienia współodpowiedzialności. Rozmowa oscylowała między Poziomem I a II.",
+            "post_game": {
+                "communication_style_summary": "Ta ścieżka była rzeczowa i w miarę stabilna, ale miejscami zbyt chłodna, by dotknąć głębszej motywacji rodzicielskiej.",
+                "strongest_moment": "Najlepiej działały momenty, kiedy problem został nazwany konkretnie, bez rozmycia i bez personalnych ocen.",
+                "growth_tip": "Masz już fundament w postaci granic i faktów. Następny krok to połączenie ich z walidacją emocji i wspólnym celem, żeby rozmówca nie słyszał wyłącznie kontroli.",
+                "replay_prompt": "W kolejnej rozgrywce spróbuj częściej mówić o prawie dziecka do więzi z obojgiem rodziców, a nie tylko o tym, czego nie wolno."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 9
+            },
+            "color": "green",
+            "title": "WSPÓLNA GRANICA WOKÓŁ DZIECKA",
+            "emoji": "🟢",
+            "subtitle": "Rozmowa zaczyna chronić Zosię, nie ego dorosłych",
+            "narrative": "Po rozmowie nie znika cała historia żalu, ale pojawia się realna rama współrodzicielska. Maja nie dała się wciągnąć w walkę o wygraną, a Kamil zaczął słyszeć, że stawką nie jest jego porażka, tylko bezpieczeństwo córki. To jeszcze nie pełna zgoda, ale jest kierunek.",
+            "diagnosis": "W tej ścieżce gracz przesuwał rozmowę z pozycyjnej walki na poziom zasad i dobra dziecka. Pojawiła się walidacja emocji, konkret i granice, co osłabiło mechanizm obronny NPC i zwiększyło gotowość do współpracy.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl empatyczny, asertywny i momentami transformacyjny. Rozmowa miała napięcie, ale nie została mu podporządkowana.",
+                "strongest_moment": "Najsilniejsze były chwile, w których Zosia została nazwana jako dziecko mające prawo kochać oboje rodziców bez poczucia zdrady.",
+                "growth_tip": "To dobry kierunek. W realnym życiu wzmacniaj takie rozmowy prostymi, powtarzalnymi zasadami i wracaj do nich konsekwentnie, zanim konflikt znów się rozleje.",
+                "replay_prompt": "Przejdź scenariusz jeszcze raz i spróbuj zbudować jeszcze pełniejszy kontrakt współrodzicielski, żeby zobaczyć mistrzowski wariant zakończenia."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 10,
+                "max": 12
+            },
+            "color": "blue",
+            "title": "RODZICE WRACAJĄ DO ROLI RODZICÓW",
+            "emoji": "🔵",
+            "subtitle": "Konflikt dorosłych przestaje płynąć przez dziecko",
+            "narrative": "Rozmowa kończy się bez łatwego pojednania, ale z czymś cenniejszym: wspólną zgodą, że ciężar dorosłego bólu nie może spadać na Zosię. Maja stawia granice bez upokarzania, a Kamil pierwszy raz przestaje bronić swojej dumy kosztem córki. To punkt, od którego może zacząć się dojrzalsze współrodzicielstwo.",
+            "diagnosis": "Gracz utrzymał Poziom III przez większą część rozmowy. Granice były jasne, emocje nazwane, a dziecko konsekwentnie chronione przed triangulacją i lojalnościowym rozdarciem. To modelowy przykład transformacyjnej interwencji w sytuacji parental alienation.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl transformacyjny: stanowczy, empatyczny i zorientowany na wspólną odpowiedzialność rodziców.",
+                "strongest_moment": "Najmocniejsze było domknięcie rozmowy wspólną zasadą, że to dorośli niosą konflikt, a nie dziecko.",
+                "growth_tip": "To poziom mistrzowski. W życiu codziennym utrzymuj go przez krótkie, konkretne check-iny i szybkie zatrzymywanie języka, gdy pojawia się pokusa deprecjonowania drugiego rodzica.",
+                "replay_prompt": "Sprawdź, czy potrafisz utrzymać ten sam standard także w innych scenariuszach, gdzie druga strona jest bardziej prowokująca lub mniej refleksyjna."
+            }
+        }
+    ]
+}

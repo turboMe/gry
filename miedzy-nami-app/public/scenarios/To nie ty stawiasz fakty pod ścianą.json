@@ -1,0 +1,841 @@
+{
+    "scenario_id": "projection_false_accusation_partner",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "To nie ty stawiasz fakty pod ścianą",
+        "subtitle": "Partner odwraca rozmowę i oskarża cię o własne zachowania",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 7,
+        "interaction_count": 5
+    },
+    "tags": {
+        "relationship_type": "romantic_partner",
+        "theme": [
+            "trust",
+            "respect",
+            "communication_breakdown"
+        ],
+        "emotional_intensity": "critical",
+        "age_rating": "teen",
+        "session_type": "training",
+        "player_role_gender": "neutral",
+        "difficulty": "advanced"
+    },
+    "characters": {
+        "player": {
+            "name": "Alex",
+            "role_label": "Partner · Gracz",
+            "age_range": "28-35",
+            "context": "Chcesz porozmawiać o powtarzającym się wzorcu odwracania rozmowy. Jesteś zmęczony ciągłym tłumaczeniem się z rzeczy, których nie robisz.",
+            "hidden_need": "respect",
+            "hidden_need_text": "Potrzebujesz szacunku, uczciwego nazwania faktów i rozmowy bez fałszywych oskarżeń.",
+            "traits": [
+                {
+                    "text": "Spokojny pod presją",
+                    "type": "positive"
+                },
+                {
+                    "text": "Łatwo wpada w defensywę, gdy ktoś przekręca fakty",
+                    "type": "negative"
+                },
+                {
+                    "text": "Uważny obserwator szczegółów",
+                    "type": "positive"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 4,
+                "patience": 7,
+                "defensiveness": 6,
+                "empathy": 7,
+                "need_for_control": 4,
+                "shame_sensitivity": 6,
+                "directness": 7,
+                "repair_ability": 8
+            }
+        },
+        "npc": {
+            "name": "Marta",
+            "role_label": "Partnerka · NPC",
+            "age_range": "28-35",
+            "context": "Nie lubi czuć się przyłapana na niespójności. Gdy słyszy krytykę, szybko przechodzi do kontrataku i przypisuje drugiej stronie własne zachowania.",
+            "hidden_need": "safety",
+            "hidden_need_text": "Potrzebuje zachować twarz, uniknąć wstydu i poczucia, że traci kontrolę nad sytuacją.",
+            "traits": [
+                {
+                    "text": "Błyskotliwa",
+                    "type": "positive"
+                },
+                {
+                    "text": "Defensywna przy konfrontacji",
+                    "type": "negative"
+                },
+                {
+                    "text": "Czuła na ocenę",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 7,
+                "patience": 4,
+                "defensiveness": 9,
+                "empathy": 5,
+                "need_for_control": 7,
+                "shame_sensitivity": 8,
+                "directness": 6,
+                "repair_ability": 5
+            },
+            "npc_reaction_logic": "Na atak odpowiada silniejszym atakiem, na wycofanie rośnie w pewności siebie i dalej narzuca narrację. Najlepiej reaguje na spokojne oddzielenie faktów od etykiet, prośbę o konkret oraz granicę postawioną bez upokarzania."
+        }
+    },
+    "metrics_start": {
+        "tension": 40,
+        "trust": 60,
+        "openness": 50,
+        "feeling_heard": 50
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Pierwszy zwrot oskarżenia",
+            "scene": {
+                "description": "Siedzicie w salonie po kolacji. Chciałeś wrócić do sytuacji z rana, kiedy Marta zignorowała wasze ustalenie i wyszła bez słowa. Gdy tylko wspominasz o tym spokojnie, ona prostuje się na kanapie i patrzy na ciebie ostro.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": "Serio chcesz o tym gadać? To ty robisz awantury z byle czego. Ty mnie ostatnio w ogóle nie szanujesz.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nie odwracaj tego. To ty zawsze robisz dramy i jeszcze próbujesz zwalić to na mnie.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marta podnosi głos i wchodzi ci w słowo. Mówi, że właśnie pokazujesz swoją agresję i że nie ma sensu z tobą rozmawiać.",
+                    "feedback": {
+                        "label": "Kontratak i lustrzane oskarżenie",
+                        "psychology": "Wchodzisz w poziom II rozmowy i zaczynasz licytację winy. Projekcja dostaje paliwo, bo druga strona może wskazać twój ton jako dowód na swoją narrację.",
+                        "better_alternative_hint": "Zamiast odbijać etykietę, nazwij konkretny fakt i wróć do tematu rozmowy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uogólnianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, nieważne. Widocznie znowu wszystko źle odebrałem.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Marta wzrusza ramionami i mówi, że dobrze, że wreszcie to widzisz. Temat zostaje przykryty, ale napięcie nie znika.",
+                    "feedback": {
+                        "label": "Wycofanie pod naciskiem",
+                        "psychology": "Wycofanie chwilowo obniża intensywność, ale wzmacnia wzorzec, w którym fałszywe oskarżenie zamyka rozmowę. Z perspektywy analizy transakcyjnej wpadasz w rolę uległego Dziecka.",
+                        "better_alternative_hint": "Nie musisz się bronić ani poddawać. Możesz zatrzymać etykietę i poprosić o rozmowę o faktach."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna Berne'a",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Ja teraz mówię o poranku i o tym, że wyszłaś bez informacji. Trzymajmy się tego konkretu.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Marta przewraca oczami, ale na chwilę milknie. Widać, że nie jest jej wygodnie, gdy wracasz do konkretu.",
+                    "feedback": {
+                        "label": "Powrót do faktów",
+                        "psychology": "To dobry ruch transakcyjny. Odcinasz się od etykiet i zawężasz pole rozmowy. Brakuje jeszcze nazwania wpływu tej sytuacji na ciebie, więc kontakt emocjonalny pozostaje ograniczony.",
+                        "better_alternative_hint": "Po nazwaniu faktu dodaj, jaki skutek miało to dla ciebie i czego potrzebujesz dalej."
+                    },
+                    "tags": [
+                        {
+                            "text": "Oddzielanie faktów od oceny",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie chcę się przerzucać etykietami. Chcę porozmawiać o tym, że rano wyszłaś bez słowa i to podważyło moje zaufanie.",
+                    "points": 2,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Marta zaciska szczękę, ale nie przerywa. Słyszy, że nie atakujesz jej charakteru, tylko nazywasz zdarzenie i jego wpływ.",
+                    "feedback": {
+                        "label": "Granica bez defensywy",
+                        "psychology": "To optymalna odpowiedź. Zatrzymujesz projekcję bez przyjmowania cudzej definicji siebie i używasz komunikatu Ja. Taki ruch utrzymuje rozmowę blisko poziomu III, choć druga strona jeszcze tam nie jest.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Projekcja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Oddzielenie etykiety od faktu",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Marta wstaje z kanapy i chodzi po pokoju. Poprzednia odpowiedź dolała oliwy do ognia albo oddała jej pole. W powietrzu czuć chaos i walkę o rację.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Właśnie o to chodzi. Z tobą nie da się normalnie rozmawiać, bo zawsze wszystko przekręcasz pod siebie.",
+            "scene_high": {
+                "description": "Marta nadal jest spięta, ale siada z powrotem i nie odwraca wzroku. Twoja poprzednia odpowiedź nie zatrzymała całkiem obrony, ale nadała rozmowie trochę więcej struktury.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "cold"
+            },
+            "npc_line_high": "Dobra, ale ty też robisz rzeczy, które są nie okej. Nie udawaj, że problem jest tylko po mojej stronie.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To wymień od razu wszystko, bo mam dość twojej hipokryzji.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marta natychmiast wylicza kilka luźnych pretensji, miesza wątki i mówi, że sam prosiłeś o szczerą rozmowę.",
+                    "feedback": {
+                        "label": "Rozszerzenie pola bitwy",
+                        "psychology": "Otwierasz wiele frontów naraz, więc projekcja może się ukryć w lawinie zarzutów. Zamiast porządku pojawia się przeciążenie i defensywa po obu stronach.",
+                        "better_alternative_hint": "Zawęź rozmowę do jednego twierdzenia i poproś o konkret zamiast listy etykiet."
+                    },
+                    "tags": [
+                        {
+                            "text": "Eskalacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Przeciążenie tematyczne",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Okej, może rzeczywiście jestem problemem. Po prostu zapomnijmy o tym.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Marta mięknie tylko pozornie. Mówi, że wreszcie bierzesz odpowiedzialność, ale temat twojej pierwotnej potrzeby znika całkowicie.",
+                    "feedback": {
+                        "label": "Fałszywe uspokojenie",
+                        "psychology": "To nie jest rozwiązanie, tylko kapitulacja. W NVC rezygnujesz z nazwania obserwacji, uczucia i potrzeby, więc relacja nie dostaje szansy na naprawę.",
+                        "better_alternative_hint": "Możesz uznać, że obie strony mają wpływ, ale nadal domagać się jednego konkretu tu i teraz."
+                    },
+                    "tags": [
+                        {
+                            "text": "Samounieważnienie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "NVC Rosenberga",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Jeżeli masz do mnie konkretny zarzut, nazwij jedno zdarzenie. Najpierw dokończmy jednak poranek.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Marta wzdycha i na moment traci impet. Niechętnie przyjmuje ramę rozmowy, choć nadal szuka sposobu, by wrócić do oskarżeń.",
+                    "feedback": {
+                        "label": "Porządkowanie rozmowy",
+                        "psychology": "To skuteczna struktura: prosisz o konkret i pilnujesz kolejności tematów. Nadal jednak dominuje warstwa proceduralna, a mniej jest kontaktu z emocją i intencją naprawy.",
+                        "better_alternative_hint": "Dodaj, że zależy ci na uczciwej rozmowie, a nie na wygraniu sporu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Dopytywanie o konkret",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granica rozmowy",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Słyszę, że chcesz też powiedzieć coś o mnie. Jestem na to gotów, ale nie przy etykietach. Najpierw ustalmy, co dokładnie wydarzyło się rano.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Marta wyraźnie zwalnia. Czuje, że nie zamykasz jej ust, tylko odmawiasz gry w etykiety.",
+                    "feedback": {
+                        "label": "Walidacja bez oddania pola",
+                        "psychology": "Łączysz walidację potrzeby wypowiedzenia się z jasną granicą dotyczącą formy. To klasyczny ruch assertive plus empathic, który obniża zagrożenie i wzmacnia szansę na rozmowę o faktach.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywna granica",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Prośba o dowód zamiast obrony",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Rozmowa staje się rwąca. Marta łapie za telefon, odkłada go i znów bierze do ręki, jakby chciała w każdej chwili uciec z kontaktu. Jej ton jest coraz bardziej oskarżycielski.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Ty zawsze mówisz, że chodzi ci o fakty, a tak naprawdę po prostu chcesz mnie ustawić pod ścianą.",
+            "scene_high": {
+                "description": "Choć napięcie nie zniknęło, rozmowa jest bardziej uporządkowana. Marta krzyżuje ręce, ale zamiast wchodzić ci w słowo, czeka na odpowiedź.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Czasem mam wrażenie, że jak wracasz do szczegółów, to nie po to, żeby mnie zrozumieć, tylko żebym wyszła na tę złą.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Bo może jesteś tą złą, skoro ciągle tak robisz.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marta zamyka się natychmiast i mówi, że właśnie pokazałeś swoje prawdziwe intencje. Rozmowa skręca w ocenę charakteru.",
+                    "feedback": {
+                        "label": "Ocena osoby zamiast zachowania",
+                        "psychology": "To klasyczny błąd atrybucji. Zamiast pracować na obserwacji i zachowaniu, przypisujesz stałą cechę. Projekcja zostaje zastąpiona kontrprojekcją.",
+                        "better_alternative_hint": "Nie oceniaj osoby. Poproś o przykład albo nazwij, jaki proces rozmowy widzisz."
+                    },
+                    "tags": [
+                        {
+                            "text": "Etykietowanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Błąd atrybucji",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, już nic nie mówię, bo i tak wszystko obrócisz przeciwko mnie.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marta prycha i mówi, że znowu grasz ofiarę. Sarkazm zamyka ostatnią przestrzeń na konkret.",
+                    "feedback": {
+                        "label": "Sarkastyczne wycofanie",
+                        "psychology": "Pozornie się zatrzymujesz, ale w praktyce zadajesz ukryty cios. Bierna agresja zwiększa dezorientację i utrudnia odbudowę wspólnej ramy rozmowy.",
+                        "better_alternative_hint": "Zamiast ironii użyj pytania o konkretne zachowanie albo nazwij mechanizm odwracania tematu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Ukryty atak",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie chcę cię ustawiać pod ścianą. Chcę sprawdzić, czy rozmawiamy o tym samym zdarzeniu. Co dokładnie w moim zachowaniu tak odebrałaś?",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Marta zatrzymuje się i przez chwilę szuka przykładu. Nie ma go od razu pod ręką, co osłabia impet oskarżenia.",
+                    "feedback": {
+                        "label": "Testowanie twierdzenia",
+                        "psychology": "To mocny ruch poznawczy. Nie bronisz swojego obrazu siebie, tylko prosisz o dane. Dzięki temu projekcja traci abstrakcyjność i musi zejść na poziom sprawdzalny.",
+                        "better_alternative_hint": "Możesz jeszcze dodać, że zależy ci, by oboje czuli się uczciwie potraktowani."
+                    },
+                    "tags": [
+                        {
+                            "text": "Dopytywanie o dowód",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Oddzielenie interpretacji od obserwacji",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Kiedy słyszę, że przypisujesz mi intencję ustawienia cię pod ścianą, robi się między nami jeszcze mniej jasno. Zostańmy przy zachowaniach, nie przy domysłach o motywach.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Marta patrzy na ciebie dłużej i pierwszy raz nie odpowiada natychmiast. Słyszy zaproszenie do uczciwszej reguły rozmowy, a nie do walki o winę.",
+                    "feedback": {
+                        "label": "Zmiana reguł gry",
+                        "psychology": "Nie bronisz się przed zarzutem na poziomie tożsamości, tylko proponujesz wspólną zasadę: zachowania ponad domysły. To ruch transformacyjny, bo nie tylko reagujesz, ale zmieniasz ramę całej rozmowy.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Meta-komunikacja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Co kryje się pod projekcją",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Napięcie jest wysokie. Marta stoi już przy drzwiach balkonowych, jakby potrzebowała fizycznego dystansu. Jej twarz robi się twarda, ale pod spodem widać też zmęczenie.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Bo przy tobie człowiek cały czas czuje, że zaraz będzie sądzony. Ty naprawdę nie widzisz, jaki wywierasz nacisk.",
+            "scene_high": {
+                "description": "Rozmowa zwalnia. Marta odchyla się i mówi ciszej niż dotąd. Nadal się broni, ale coraz mniej brzmi to jak czysty atak, a bardziej jak napięcie, z którym sobie nie radzi.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Nie wiem, może czasem reaguję za ostro. Po prostu jak słyszę zarzut, od razu się spinam i mam wrażenie, że muszę się bronić.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "No to może wreszcie przyznaj, że problem jest w tobie, a nie we mnie.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marta natychmiast wraca do kontrataku i mówi, że nie będzie słuchać pouczeń. Wstyd zamienia się z powrotem w obronę.",
+                    "feedback": {
+                        "label": "Upokorzenie zamiast kontaktu",
+                        "psychology": "Gdy druga strona na moment odsłania lęk lub kruchość, atak jest szczególnie niszczący. Shame sensitivity rośnie, a system obronny zamyka dostęp do autentycznej rozmowy.",
+                        "better_alternative_hint": "Wykorzystaj ten moment, by nazwać mechanizm i zaprosić do innego sposobu rozmawiania."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Wstyd jako wyzwalacz obrony",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Jasne, jak zwykle wszystko się rozmyje i nic się nie zmieni.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marta zamyka twarz i mówi, że skoro już wydałeś wyrok, to rozmowa jest skończona. Cynizm odbiera sens dalszym wyjaśnieniom.",
+                    "feedback": {
+                        "label": "Cyniczne przekreślenie",
+                        "psychology": "To forma biernej agresji, która maskuje zranienie i bezsilność. Problem zostaje nazwany, ale w sposób, który nie daje drugiej stronie ścieżki wyjścia.",
+                        "better_alternative_hint": "Powiedz wprost, czego potrzebujesz, aby uwierzyć w zmianę, zamiast ogłaszać klęskę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Cynizm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Zamykanie ścieżki naprawy",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Rozumiem, że się spinasz. Ja jednak nie chcę rozmawiać w schemacie, w którym mój temat znika pod oskarżeniem wobec mnie.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Marta kiwa głową bardzo niechętnie, ale nie zaprzecza. Po raz pierwszy brzmi, jakby rozumiała, o jaki wzorzec ci chodzi.",
+                    "feedback": {
+                        "label": "Nazwanie wzorca obronnego",
+                        "psychology": "To dobra integracja empatii i granicy. Nadal jednak akcent pada bardziej na obronę twojego miejsca niż na wspólną zasadę na przyszłość.",
+                        "better_alternative_hint": "Dodaj propozycję, jak możecie przerwać projekcję w kolejnej trudnej rozmowie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Nazwanie wzorca",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granica procesowa",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Wierzę, że wtedy naprawdę czujesz nacisk. Jednocześnie kiedy odpowiadasz oskarżeniem na mój temat, tracimy kontakt z tym, co się wydarzyło. Chcę, żebyśmy oboje umieli to zatrzymać.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -3,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Marta opuszcza ramiona. Nie zgadza się jeszcze ze wszystkim, ale przestaje walczyć o to, kto jest gorszy, i zaczyna słuchać, co proponujesz.",
+                    "feedback": {
+                        "label": "Wspólna odpowiedzialność za proces",
+                        "psychology": "To odpowiedź najwyższej jakości. Nie unieważniasz lęku drugiej strony, ale też nie oddajesz prawdy o faktach. Tworzysz wspólny cel: zatrzymywanie projekcji, zanim zniszczy rozmowę.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja bez zgody na zniekształcenie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Wspólna rama rozmowy",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Ustalenie nowej zasady albo koniec rozmowy",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Jest późno. Oboje jesteście zmęczeni, a atmosfera jest ciężka i lepka od niedopowiedzeń. Każde kolejne zdanie może albo definitywnie zerwać kontakt, albo przynajmniej zatrzymać dalsze szkody.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Nie wiem już, o co ci chodzi. Mam wrażenie, że cokolwiek powiem, i tak uznasz, że manipuluję.",
+            "scene_high": {
+                "description": "Napięcie nie zniknęło całkiem, ale pojawiło się trochę oddechu. Marta patrzy na ciebie uważnie, jakby pierwszy raz od początku tej rozmowy rozważała, że można to zrobić inaczej niż zwykle.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Dobra. To jak mam zareagować następnym razem, kiedy poczuję, że się bronię i zaczynam odwracać temat?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Po prostu przestań kłamać i robić ze mnie winnego. To naprawdę nie jest skomplikowane.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marta sztywnieje i odcina rozmowę. Mówi, że nie będzie dalej siedzieć w takim tonie.",
+                    "feedback": {
+                        "label": "Słuszny cel, niszcząca forma",
+                        "psychology": "Treść dotyczy problemu, ale forma uruchamia wstyd i kontratak. Ostatnia szansa na zmianę zostaje stracona przez moralizowanie i etykietę kłamcy.",
+                        "better_alternative_hint": "Zamiast oceniać charakter, zaproponuj konkretną procedurę zatrzymania projekcji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Moralizowanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Etykieta kłamcy",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nieważne. Następnym razem po prostu nie będę już zaczynać trudnych tematów.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Marta milknie z ulgą, ale też z dystansem. Konflikt nie został rozwiązany, tylko odsunięty kosztem twojego głosu.",
+                    "feedback": {
+                        "label": "Pokój za cenę siebie",
+                        "psychology": "To strategia przetrwania, nie naprawy. Unikasz bólu teraz, ale wzmacniasz system, w którym trudny temat automatycznie prowadzi do twojego wycofania.",
+                        "better_alternative_hint": "Zadbaj o siebie i rozmowę jednocześnie. Możesz zaproponować prosty sygnał stop oraz powrót do faktów."
+                    },
+                    "tags": [
+                        {
+                            "text": "Rezygnacja z własnej potrzeby",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Milcząca adaptacja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Kiedy któreś z nas usłyszy etykietę zamiast konkretu, zatrzymajmy rozmowę i wróćmy do jednego zdarzenia. To byłby dla mnie uczciwy początek.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Marta przytakuje ostrożnie. To brzmi dla niej sensownie, choć jeszcze dość technicznie i bez głębszego emocjonalnego domknięcia.",
+                    "feedback": {
+                        "label": "Procedura bezpieczeństwa",
+                        "psychology": "To dobry, praktyczny kontrakt rozmowy. Zmniejsza chaos i daje wam strukturę. Aby zwiększyć szansę realnej zmiany, warto jeszcze dodać intencję wzajemnego szacunku i naprawy.",
+                        "better_alternative_hint": "Poza procedurą nazwij też wspólny cel, na przykład że oboje chcecie rozumieć się lepiej, a nie wygrywać."
+                    },
+                    "tags": [
+                        {
+                            "text": "Kontrakt rozmowy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Reguła stop",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chcę, żebyśmy mieli zasadę: gdy pojawia się etykieta albo domysł o intencji, zatrzymujemy się, nazywamy jedno zdarzenie i mówimy, co w nas uruchomiło. To ochroni i ciebie, i mnie.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -3,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Marta powoli kiwa głową. Nie daje wielkiej deklaracji, ale pierwszy raz brzmi, jakby naprawdę chciała współtworzyć nowy sposób rozmowy.",
+                    "feedback": {
+                        "label": "Nowa wspólna zasada",
+                        "psychology": "To mistrzowskie domknięcie. Łączysz konkretną procedurę, język emocji i perspektywę wspólnego dobra. Projekcja traci funkcję obronnej broni, bo pojawia się bezpieczniejszy sposób regulowania napięcia.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Transformacja konfliktu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Wspólna regulacja napięcia",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 2
+            },
+            "color": "red",
+            "title": "ROZMOWA PRZEJĘTA PRZEZ PROJEKCJĘ",
+            "emoji": "🔴",
+            "subtitle": "Eskalacja i zerwanie kontaktu",
+            "narrative": "Wieczór kończy się trzaśnięciem drzwi albo ciężką ciszą. Pierwotny temat całkiem znika pod warstwą wzajemnych oskarżeń, a w relacji zostaje tylko poczucie zagrożenia i niesprawiedliwości.",
+            "diagnosis": "W tej ścieżce rozmowa ugrzęzła na poziomie II. Zamiast oddzielić fakt od projekcyjnej etykiety, gracz wszedł w obronę, kontratak albo wycofanie. To pozwoliło fałszywym oskarżeniom przejąć strukturę dialogu.",
+            "post_game": {
+                "communication_style_summary": "Dominowały reakcje defensywne, agresywne lub kapitulacyjne. Rozmowa była walką o to, kto jest winny, a nie próbą ustalenia, co się wydarzyło.",
+                "strongest_moment": "Najmocniejszym momentem była sama próba zatrzymania trudnego wzorca, nawet jeśli wykonanie nie utrzymało rozmowy na faktach.",
+                "growth_tip": "Gdy słyszysz projekcję, nie broń swojej tożsamości i nie oddawaj ciosu. Zatrzymaj etykietę, nazwij jedno zdarzenie i poproś o konkret.",
+                "replay_prompt": "Spróbuj ponownie i zobacz, co się zmieni, gdy przestaniesz odpowiadać na zarzut o sobie, a zaczniesz prowadzić rozmowę po faktach."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 3,
+                "max": 5
+            },
+            "color": "yellow",
+            "title": "TEMAT UTRZYMANY, ALE BEZ PEŁNEGO DOMKNIĘCIA",
+            "emoji": "🟡",
+            "subtitle": "Jest trochę porządku, lecz mało ulgi",
+            "narrative": "Nie dochodzi do pełnej awantury, ale też nie ma wyraźnej zmiany jakości. Udało ci się wracać do konkretów, jednak między wami nadal krąży nieufność i brak pewności, czy następnym razem nie powtórzy się to samo.",
+            "diagnosis": "Gracz częściowo poradził sobie z projekcją. Potrafił zawężać temat i prosić o konkrety, lecz rozmowa pozostała głównie proceduralna. Zabrakło mocniejszego połączenia faktów z emocją i wspólną zasadą na przyszłość.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl asertywny lub transakcyjny. To wystarczyło, by ograniczyć chaos, ale nie w pełni odbudowało zaufanie i poczucie bycia usłyszanym.",
+                "strongest_moment": "Najlepiej zadziałały chwile, w których wracałeś do jednego zdarzenia i odmawiałeś dyskusji na poziomie etykiet.",
+                "growth_tip": "Sam konkret to jeszcze nie wszystko. Dodaj komunikat o wpływie sytuacji na ciebie i zaproponuj wspólną regułę rozmowy, aby wyjść z trybu obronnego.",
+                "replay_prompt": "Rozegraj scenę jeszcze raz i sprawdź, jak działa połączenie granicy, walidacji oraz wspólnego celu zamiast samej kontroli przebiegu rozmowy."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 6,
+                "max": 8
+            },
+            "color": "green",
+            "title": "FAKTY WRACAJĄ NA MIEJSCE",
+            "emoji": "🟢",
+            "subtitle": "Udało się przerwać mechanizm odwracania winy",
+            "narrative": "Rozmowa nie staje się nagle łatwa ani lekka, ale przestaje być pułapką. Marta zaczyna dostrzegać, że jej oskarżenia pojawiały się jako obrona, a ty nie dajesz się już odciągać od sedna sprawy.",
+            "diagnosis": "Gracz skutecznie ograniczył projekcję przez spokojne oddzielanie faktów od etykiet i przez stawianie granic bez upokarzania. Dzięki temu rozmowa przesunęła się z walki o rację w stronę bardziej świadomego kontaktu.",
+            "post_game": {
+                "communication_style_summary": "Przeważały odpowiedzi asertywne i empatyczne. To pozwoliło jednocześnie chronić siebie i nie dolewać wstydu do systemu obronnego drugiej strony.",
+                "strongest_moment": "Najważniejszy był moment, w którym nazwałeś mechanizm projekcji jako problem procesu rozmowy, a nie dowód złego charakteru partnerki.",
+                "growth_tip": "To dobra ścieżka. W realnym życiu warto utrwalać takie rozmowy prostą zasadą: etykieta stop, konkret dalej, emocja nazwana wprost.",
+                "replay_prompt": "Sprawdź wersję mistrzowską i zobacz, jak dużo daje zamiana indywidualnej obrony na wspólnie ustaloną regułę komunikacji."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 9,
+                "max": 10
+            },
+            "color": "blue",
+            "title": "PRZERWANY CYKL PROJEKCJI",
+            "emoji": "🔵",
+            "subtitle": "Powstaje nowa reguła bezpieczeństwa dla rozmowy",
+            "narrative": "Zamiast kolejnej nocy spędzonej na walce o winę, pojawia się konkretna, wspólna zasada. Nie znika cała trudność relacji, ale oboje macie już język do zatrzymywania projekcji, zanim przejmie rozmowę.",
+            "diagnosis": "Gracz nie tylko obronił się przed fałszywymi oskarżeniami, ale przekształcił konflikt w okazję do zbudowania nowej struktury dialogu. To poziom III w praktyce: nie wygrana nad drugą stroną, lecz zmiana sposobu, w jaki obie strony będą rozmawiać dalej.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl transformacyjny wsparty empatią i precyzją. Rozmowa została przeprowadzona tak, by chronić fakty, emocje i relację jednocześnie.",
+                "strongest_moment": "Najmocniejszy był finał, w którym zaproponowałeś wspólną procedurę na moment pojawienia się etykiet i domysłów o intencji.",
+                "growth_tip": "To mistrzowski poziom komunikacji. Ćwicz go dalej szczególnie wtedy, gdy ktoś próbuje zdefiniować ciebie zamiast rozmawiać o zdarzeniu. Wtedy właśnie ta umiejętność daje największą przewagę.",
+                "replay_prompt": "Wróć do scenariusza i przetestuj inne wybory, żeby zobaczyć, jak cienka jest granica między obroną siebie a prowadzeniem rozmowy ku zmianie."
+            }
+        }
+    ]
+}

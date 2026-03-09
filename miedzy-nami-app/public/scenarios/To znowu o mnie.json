@@ -1,0 +1,975 @@
+{
+    "scenario_id": "rodzic_przejmuje_kazda_rozmowe",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "To znowu o mnie",
+        "subtitle": "Przychodzisz po wsparcie, a wychodzisz z poczuciem, że znowu musisz regulować emocje rodzica.",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 11,
+        "interaction_count": 6
+    },
+    "tags": {
+        "relationship_type": "parent_child",
+        "theme": [
+            "boundaries",
+            "control",
+            "support"
+        ],
+        "emotional_intensity": "critical",
+        "age_rating": "adult",
+        "session_type": "training",
+        "player_role_gender": "neutral",
+        "difficulty": "advanced"
+    },
+    "characters": {
+        "player": {
+            "name": "Alex",
+            "role_label": "Dorosłe dziecko · Gracz",
+            "age_range": "29-36",
+            "context": "Przychodzisz do rodzica po trudnym dniu i potrzebujesz wsparcia, ale w tej relacji często kończysz zajmowaniem się jego stanem zamiast swoim.",
+            "hidden_need": "support",
+            "hidden_need_text": "Potrzebujesz wysłuchania, uznania własnych emocji i prawa do pozostania przy swoim temacie bez poczucia winy.",
+            "traits": [
+                {
+                    "text": "Samodzielność",
+                    "type": "positive"
+                },
+                {
+                    "text": "Czujność na napięcie",
+                    "type": "neutral"
+                },
+                {
+                    "text": "Szybko bierze odpowiedzialność za cudzy nastrój",
+                    "type": "negative"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 4,
+                "patience": 6,
+                "defensiveness": 6,
+                "empathy": 8,
+                "need_for_control": 3,
+                "shame_sensitivity": 8,
+                "directness": 5,
+                "repair_ability": 7
+            }
+        },
+        "npc": {
+            "name": "Ewa",
+            "role_label": "Rodzic · NPC",
+            "age_range": "56-64",
+            "context": "Gdy ktoś wnosi własny problem, szybko przesuwa środek ciężkości na siebie. Lubi czuć się niezastąpiona i bardzo źle znosi sygnał, że nie jest centrum rozmowy.",
+            "hidden_need": "control",
+            "hidden_need_text": "Potrzebuje znaczenia, wpływu i potwierdzania, że jej przeżycia są najważniejsze.",
+            "traits": [
+                {
+                    "text": "Wrażliwa na krytykę",
+                    "type": "negative"
+                },
+                {
+                    "text": "Dramatyzuje",
+                    "type": "negative"
+                },
+                {
+                    "text": "Bywa opiekuńcza, gdy zachowuje kontrolę",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 6,
+                "patience": 3,
+                "defensiveness": 9,
+                "empathy": 3,
+                "need_for_control": 9,
+                "shame_sensitivity": 9,
+                "directness": 7,
+                "repair_ability": 2
+            },
+            "npc_reaction_logic": "Na agresję odpowiada kontratakiem albo urażeniem. Na wycofanie wchodzi mocniej i przejmuje rozmowę całkowicie. Na spokojną asertywność testuje granice poczuciem winy. Na konsekwentne wracanie do tematu może chwilowo ustąpić, ale zwykle jeszcze raz próbuje odwrócić role."
+        }
+    },
+    "metrics_start": {
+        "tension": 45,
+        "trust": 50,
+        "openness": 40,
+        "feeling_heard": 35
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Przychodzisz z własną sprawą",
+            "scene": {
+                "description": "Wieczór w kuchni. Ewa miesza herbatę i nawet nie siada, gdy zaczynasz mówić. Już po jej tonie czujesz, że będziesz musieć walczyć o miejsce na własne zdanie.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": "No, mów. Tylko błagam, nie dokładaj mi dziś niczego, bo sama ledwo stoję.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Z tobą zawsze tak jest. Nie da się powiedzieć jednego zdania, żebyś nie zrobiła tego o sobie.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Ewa prostuje się i patrzy ostro. A ty oczywiście od razu z atakiem. Niewdzięczność to jedyne, co od ciebie słyszę.",
+                    "feedback": {
+                        "label": "Uogólnienie i atak",
+                        "psychology": "Zaczynasz od globalnego osądu. W modelu von Thuna najmocniej wybrzmiewa tu apel do obrony i relacyjny komunikat jesteś problemem, więc NPC wchodzi w defensywę.",
+                        "better_alternative_hint": "Nazwij swój cel i potrzebę zamiast oceniać charakter rozmówcy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uogólnianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Defensywność",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nieważne. Już mi przeszło.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Ewa wzdycha z ulgą. No i dobrze. Ja naprawdę nie mam dziś siły na cudze dramaty.",
+                    "feedback": {
+                        "label": "Wycofanie własnej potrzeby",
+                        "psychology": "Wycofujesz temat, więc relacja wraca do starej parentyfikacji. Pozornie jest spokojniej, ale twoja potrzeba znika z pola widzenia.",
+                        "better_alternative_hint": "Zostań przy swoim temacie choćby jednym prostym zdaniem o tym, czego teraz potrzebujesz."
+                    },
+                    "tags": [
+                        {
+                            "text": "Parentyfikacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Chcę powiedzieć o swojej sytuacji z pracy. Potrzebuję teraz dwóch minut bez porównań.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Ewa marszczy brwi. Dwie minuty? Dobrze, mów, skoro to takie ważne.",
+                    "feedback": {
+                        "label": "Jasna prośba",
+                        "psychology": "To asertywny komunikat z konkretną ramą. Dobrze ograniczasz temat, ale jeszcze nie adresujesz napięcia po stronie rozmówczyni, więc ryzyko kontrataku pozostaje.",
+                        "better_alternative_hint": "Dodaj krótkie uznanie jej stanu, ale nie oddawaj rozmowy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granica czasowa",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Widzę, że też jesteś napięta, ale przyszłam z czymś ważnym dla mnie. Chcę najpierw dokończyć swoją sprawę, a potem mogę usłyszeć twoją.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Ewa na moment milknie. No dobrze. To mów, tylko krótko.",
+                    "feedback": {
+                        "label": "Empatia z granicą",
+                        "psychology": "Łączysz walidację z jasnym porządkiem rozmowy. To ogranicza odruch obronny NPC i nie wpadasz w ratowanie jej kosztem siebie.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granice",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Pierwsze przejęcie rozmowy",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Ewa nie daje ci wejść w szczegóły. Krąży po kuchni szybciej, stawia kubek z hukiem i przejmuje rytm rozmowy.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Aha, czyli znowu ja jestem problemem? Ciekawe, bo to ja całe życie wszystko dźwigałam.",
+            "scene_high": {
+                "description": "Ewa nadal próbuje ustawić rozmowę pod siebie, ale twój wcześniejszy ton trochę ją wyhamował. Patrzy na ciebie krócej i mniej bojowo.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "cold"
+            },
+            "npc_line_high": "No dobrze, tylko wiesz, ja też mam ciężko. Ale mów.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Ty zawsze robisz z siebie ofiarę.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Ewa odwraca się gwałtownie. Ofiarę? Po tym wszystkim, co dla ciebie zrobiłam? Nie rozmawiajmy w ogóle.",
+                    "feedback": {
+                        "label": "Etykietowanie",
+                        "psychology": "Nazywasz jej strategię wprost, ale w formie oskarżenia. To trafia w jej wstyd i uruchamia jeszcze mocniejszą obronę.",
+                        "better_alternative_hint": "Opisz proces rozmowy zamiast przypisywać intencję albo tożsamość."
+                    },
+                    "tags": [
+                        {
+                            "text": "Etykietowanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Wstyd i kontratak",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Masz rację, opowiedz lepiej, co u ciebie.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -1,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Ewa siada ciężko i zaczyna długi monolog o swoim tygodniu. Twój temat znika całkowicie.",
+                    "feedback": {
+                        "label": "Oddanie pola",
+                        "psychology": "To pełna kapitulacja wobec hijackingu emocjonalnego. Uczysz drugą stronę, że wystarczy uruchomić poczucie winy, by porzucić własny temat.",
+                        "better_alternative_hint": "Zostań przy jednej spokojnej prośbie o powrót do swojej sprawy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Hijacking emocjonalny",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie chcę się spierać o to, kto ma gorzej. Chcę wrócić do tego, z czym przyszłam.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Ewa przewraca oczami. No to wróć, skoro musisz.",
+                    "feedback": {
+                        "label": "Powrót do tematu",
+                        "psychology": "Dobrze wyjmujesz rozmowę z licytacji cierpienia. To ruch z poziomu II w stronę poziomu I, ale bez głębszego nazwania wzorca.",
+                        "better_alternative_hint": "Nazwij również, co dzieje się z tobą, kiedy rozmowa jest przejmowana."
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Powrót do tematu",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Słyszę, że chcesz być zauważona. Ja też teraz tego potrzebuję. Zostańmy chwilę przy mojej sprawie.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Ewa zaciska usta, ale nie przerywa od razu. Dobrze. Powiedz.",
+                    "feedback": {
+                        "label": "Dwie potrzeby naraz",
+                        "psychology": "Uznajesz jej potrzebę znaczenia, nie oddając centrum rozmowy. To już dotyka poziomu III, bo próbujesz pomieścić obie perspektywy bez zamiany ról.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Walidacja bez ratowania",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Poczucie winy wraca",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Atmosfera gęstnieje. Ewa mówi coraz ciszej, ale każde słowo brzmi jak wyrzut. Masz znane uczucie, że zaraz znowu będziesz przepraszać za sam fakt, że czegoś potrzebujesz.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Wiedziałam. Przychodzisz tylko brać. Nigdy nie myślisz, ile mnie to kosztuje.",
+            "scene_high": {
+                "description": "Ewa jeszcze walczy o centralne miejsce, ale wyraźnie słyszy, że nie chcesz iść w kłótnię. W głosie nadal pobrzmiewa żal.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_high": "Dobrze, ale powiedz szybko. Po prostu czasem mam wrażenie, że nikt nie widzi, ile znoszę.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To nie mój problem, że wszystko dramatyzujesz.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Ewa robi krok w tył. Niewiarygodne. Przychodzisz tu po pomoc i jeszcze mnie poniżasz.",
+                    "feedback": {
+                        "label": "Pogarda",
+                        "psychology": "Pogardliwy ton gwałtownie podnosi napięcie. W analizie transakcyjnej przechodzisz do relacji Rodzic krytyczny wobec Dziecka, co natychmiast destabilizuje dialog.",
+                        "better_alternative_hint": "Mów o skutku jej zachowania dla ciebie, nie o jej rzekomej przesadzie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, przepraszam. Może nie trzeba było zaczynać tego tematu.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Ewa mięknie tylko pozornie. No właśnie. Czasem warto pomyśleć o kimś innym niż o sobie.",
+                    "feedback": {
+                        "label": "Fałszywe przeprosiny",
+                        "psychology": "Przepraszasz za własną potrzebę, więc wzmacniasz schemat, w którym twoje emocje są obciążeniem. To typowy skutek parentyfikacji.",
+                        "better_alternative_hint": "Oddziel szacunek dla rozmówcy od rezygnacji z własnego prawa do wsparcia."
+                    },
+                    "tags": [
+                        {
+                            "text": "Parentyfikacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Uległość",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie atakuję cię. Mówię tylko, że teraz potrzebuję, żebyś mnie wysłuchała.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Ewa wzdycha. No dobrze, słucham, ale mów konkretnie.",
+                    "feedback": {
+                        "label": "Doprecyzowanie intencji",
+                        "psychology": "To dobry ruch odróżniający granicę od ataku. Nadal jednak reagujesz głównie na jej zarzut, zamiast w pełni wrócić do własnego doświadczenia.",
+                        "better_alternative_hint": "Dodaj zdanie o tym, co dzieje się z tobą, gdy wchodzi poczucie winy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Rozbrojenie defensywności",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie chcę wchodzić w winę ani w rozliczanie. Przyszłam po wysłuchanie i chcę to powiedzieć wprost.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Ewa patrzy dłużej, jakby szukała kolejnego haka. Mhm. To powiedz wprost.",
+                    "feedback": {
+                        "label": "Wyjście z poczucia winy",
+                        "psychology": "Nie bronisz się przed zarzutem w nieskończoność, tylko nazywasz mechanizm i wracasz do potrzeby. To chroni cię przed odwróceniem ról.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Nazwanie mechanizmu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poczucie winy jako narzędzie kontroli",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Nazwanie wzorca",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "W kuchni robi się duszno. Ewa stoi już frontem do ciebie, jakby cała rozmowa była sądem nad nią. Czujesz pokusę, żeby odpuścić tylko po to, by to się skończyło.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Jak zwykle robisz ze mnie potwora. Wszystko, co powiem, obrócisz przeciwko mnie.",
+            "scene_high": {
+                "description": "Mimo napięcia powstaje mała szczelina na bardziej dorosłą rozmowę. Ewa jest spięta, ale nie ucina cię od razu.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "cold"
+            },
+            "npc_line_high": "Nie lubię tego słuchać, ale chyba rozumiem, że chodzi ci o coś powtarzalnego.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Bo zachowujesz się jak potwór emocjonalny.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Ewa blednie i odwraca wzrok. To już przesada. Koniec rozmowy.",
+                    "feedback": {
+                        "label": "Atak na tożsamość",
+                        "psychology": "Przechodzisz od opisu wzorca do obraźliwej definicji osoby. To najkrótsza droga do zerwania kontaktu i utraty wpływu na przebieg rozmowy.",
+                        "better_alternative_hint": "Nazywaj powtarzalne zachowanie i jego skutek, nie całą osobę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Atak personalny",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Opis zamiast oceny",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, zostawmy to. I tak nic się nie zmieni.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Ewa podchwytuje ton. Jak uważasz. To ty zawsze uciekasz, kiedy robi się trudno.",
+                    "feedback": {
+                        "label": "Rezygnacja z domieszką żalu",
+                        "psychology": "Wycofujesz się, ale zostawiasz ukryte oskarżenie. Bierna agresja nie chroni granicy, tylko konserwuje bezsilność.",
+                        "better_alternative_hint": "Powiedz wprost, jaki wzorzec widzisz i czego chcesz zamiast niego."
+                    },
+                    "tags": [
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Bezsilność wyuczona",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Kiedy opowiadam o sobie, rozmowa często schodzi na ciebie. To mnie zatrzymuje.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Ewa kręci głową, ale słucha. Nie wiedziałam, że aż tak to odbierasz.",
+                    "feedback": {
+                        "label": "Opis wzorca",
+                        "psychology": "Precyzyjnie opisujesz sekwencję zachowań i skutek dla siebie. To dobra asertywność, choć jeszcze bez pełnego nazwania odwrócenia ról.",
+                        "better_alternative_hint": "Dodaj, że kończysz wtedy pocieszając ją zamiast mówić o sobie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Opis zachowania",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chcę nazwać konkretny wzorzec: przychodzę z problemem, a po chwili pocieszam ciebie. To sprawia, że znikam w tej rozmowie.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Ewa milknie. Nie odpowiada od razu, jakby pierwszy raz usłyszała to bez oskarżenia.",
+                    "feedback": {
+                        "label": "Nazwanie parentyfikacji",
+                        "psychology": "Precyzyjnie pokazujesz odwrócenie ról i jego emocjonalny koszt. To bardzo silny ruch, bo ujawniasz strukturę rozmowy, a nie tylko pojedynczy incydent.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Parentyfikacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Nazywanie wzorca",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Test granicy",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Po nazwaniu wzorca Ewa przechodzi w znajomy repertuar urażenia i męczeństwa. W powietrzu wisi groźba, że zaraz będziesz ratować ją przed jej własnym bólem.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "To może w ogóle nic już nie będę mówić. Najlepiej zamknąć mi usta, prawda?",
+            "scene_high": {
+                "description": "Ewa jest dotknięta, ale nie eksploduje. Broni się, jednak widać, że część twoich słów do niej dotarła.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Nie chcę, żebyś miał poczucie, że znikasz. Tylko trudno mi nie reagować od razu.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Tak, najlepiej nic nie mów, bo tylko psujesz.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Ewa zamiera, a potem zaciska szczękę. Skoro tak o mnie myślisz, nie mamy o czym rozmawiać.",
+                    "feedback": {
+                        "label": "Odrzucenie rozmówcy",
+                        "psychology": "Twoja granica zamienia się w karę. To chwilowo daje poczucie siły, ale niszczy możliwość jakiejkolwiek zmiany wzorca.",
+                        "better_alternative_hint": "Oddziel limit od poniżenia. Granica ma regulować rozmowę, nie upokarzać."
+                    },
+                    "tags": [
+                        {
+                            "text": "Agresywna granica",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Granica vs kara",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nie, nie, mów, co chcesz. Już nieważne, co miałem do powiedzenia.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Ewa od razu łapie ten ruch. Widzisz? Z tobą nie da się normalnie rozmawiać, bo wszystko bierzesz za bardzo do siebie.",
+                    "feedback": {
+                        "label": "Cofnięcie granicy",
+                        "psychology": "Wycofujesz się dokładnie w momencie testu. To wzmacnia u drugiej strony przekonanie, że wystarczy odrobina urażenia, by oddać jej przestrzeń.",
+                        "better_alternative_hint": "Utrzymaj prostą zasadę rozmowy bez tłumaczenia się nadmiernie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Test granicy",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Cofnięcie się",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie proszę cię o milczenie. Proszę o kolejność: najpierw ja kończę, potem ty.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Ewa bierze oddech. Dobrze. Najpierw ty.",
+                    "feedback": {
+                        "label": "Ustalenie zasad",
+                        "psychology": "To rzeczowa regulacja procesu rozmowy. Działa, ale jest dość chłodna i nie dotyka emocjonalnego sensu granicy, więc może być krucha.",
+                        "better_alternative_hint": "Dodaj jedno zdanie, że twoja granica nie jest odrzuceniem jej emocji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Regulacja procesu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie odbieram ci prawa do twoich emocji. Stawiam granicę na moment tej rozmowy: teraz moja sprawa, za chwilę twoja.",
+                    "points": 2,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Ewa spuszcza wzrok na kubek. Dobrze. Słucham cię teraz.",
+                    "feedback": {
+                        "label": "Granica bez odrzucenia",
+                        "psychology": "Pokazujesz, że granica nie jest unieważnieniem drugiej osoby. To zmniejsza lęk przed zawstydzeniem i utrudnia dalsze odwracanie ról.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granica bez odrzucenia",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_6",
+            "title": "Domknięcie rozmowy po swojemu",
+            "score_threshold": 5,
+            "scene_low": {
+                "description": "Rozmowa dojechała do ściany. Ewa siedzi sztywno i wygląda tak, jakby każda kolejna minuta miała potwierdzić jej krzywdę. Ty decydujesz, czy jeszcze raz oddasz temat, czy zakończysz rozmowę na własnych warunkach.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Nie umiem tak rozmawiać. Zawsze wychodzi, że jestem winna. Rób, jak chcesz.",
+            "scene_high": {
+                "description": "Po raz pierwszy od początku rozmowy powstaje chwila ciszy, która nie jest karą. Ewa nadal jest spięta, ale nie przejmuje już automatycznie steru.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Dobrze. Spróbuję ci nie przerywać. Powiedz, co było dla ciebie najtrudniejsze.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Za późno. Nigdy więcej do ciebie z niczym nie przyjdę.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Ewa unosi brodę. Proszę bardzo. Jak zwykle dramatyzujesz i trzaskasz drzwiami.",
+                    "feedback": {
+                        "label": "Ultimatum w afekcie",
+                        "psychology": "To zrozumiała złość, ale wyrażona jako ostateczne odcięcie. Zamykasz rozmowę w trybie kary, więc kończy się ona kolejną walką o rację.",
+                        "better_alternative_hint": "Zakończ kontakt jasno, ale bez globalnych deklaracji w afekcie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ultimatum",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Eskalacja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nieważne. Lepiej udawajmy, że tej rozmowy nie było.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Ewa natychmiast chwyta wycofanie. Właśnie. Znowu robisz problem z niczego.",
+                    "feedback": {
+                        "label": "Wymazanie siebie",
+                        "psychology": "Wracasz do starej strategii znikania. Konflikt pozornie się kończy, ale schemat zostaje nienaruszony, a twoja potrzeba znowu jest anulowana.",
+                        "better_alternative_hint": "Domknij rozmowę zdaniem o tym, czego potrzebujesz dalej, nawet jeśli odchodzisz."
+                    },
+                    "tags": [
+                        {
+                            "text": "Samounieważnienie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Unikanie",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Skoro teraz nie ma na to przestrzeni, wrócę do tego innym razem.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 0,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Ewa wzrusza ramionami. Jak chcesz. Przynajmniej już nie róbmy scen.",
+                    "feedback": {
+                        "label": "Kontrolowane wyjście",
+                        "psychology": "Chronisz siebie i nie dokładasz paliwa do konfliktu. To zdrowe domknięcie, ale bez pełnego zakotwiczenia, czego oczekujesz od tej relacji w przyszłości.",
+                        "better_alternative_hint": "Dodaj warunek przyszłej rozmowy, żeby nie wrócić do starego schematu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wyjście z rozmowy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Samoregulacja",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Powiem krótko, czego potrzebuję: wysłuchania bez przejmowania rozmowy. Jeśli to się nie uda, zakończę temat na dziś i wrócę do niego gdzie indziej.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Ewa wzdycha, ale nie odbiera ci już prawa do własnej sprawy. Dobrze. Rozumiem, o co prosisz.",
+                    "feedback": {
+                        "label": "Jasne warunki kontaktu",
+                        "psychology": "To dojrzałe połączenie granicy, potrzeby i konsekwencji. Nie grozisz, tylko komunikujesz warunki bezpiecznej rozmowy i bierzesz odpowiedzialność za własną ochronę.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Warunki kontaktu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Dorosły — Dorosły",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "UTONIĘCIE W STARYM UKŁADZIE",
+            "emoji": "🔴",
+            "subtitle": "Twoja sprawa znów zniknęła, a rozmowa skończyła się walką albo kapitulacją.",
+            "narrative": "Wychodzisz z kuchni z tym samym ciężarem, z którym wszedłeś do rozmowy, tylko większym. Ewa zostaje w roli skrzywdzonej, a ty znów czujesz się winny albo odpowiedzialny za jej stan. Twój temat nie został naprawdę usłyszany.",
+            "diagnosis": "W tej ścieżce dominowały atak, wycofanie albo fałszywe przeprosiny. Mechanizm parentyfikacji pozostał nienazwany lub został nazwany w formie oskarżenia, co tylko nasiliło defensywność NPC. Rozmowa utknęła na poziomie II albo rozpadła się całkowicie.",
+            "post_game": {
+                "communication_style_summary": "Przeważały reakcje obronne: agresja, uległość albo bierna agresja. Każda z nich wzmacniała stary układ ról.",
+                "strongest_moment": "Nawet w trudnej rozmowie próbujesz choć na chwilę zatrzymać eskalację, ale brakuje konsekwencji w ochronie własnego tematu.",
+                "growth_tip": "Nie przepraszaj za sam fakt, że czegoś potrzebujesz. Zacznij od prostego schematu: nazywam, co się dzieje, mówię, czego potrzebuję, wracam do tematu.",
+                "replay_prompt": "Spróbuj ponownie i zobacz, co się zmieni, gdy nie będziesz ani atakować, ani pocieszać rodzica."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "GRANICA POSTAWIONA, ALE CHWIEJNA",
+            "emoji": "🟡",
+            "subtitle": "Udało ci się nieco ochronić siebie, ale rozmowa wciąż była zdominowana przez stare odruchy.",
+            "narrative": "Nie dajesz się całkiem wciągnąć w ratowanie Ewy, ale też nie udaje się naprawdę przestawić rozmowy na nowe tory. Padają pojedyncze ważne zdania, po czym znów wracają obrona, żal i napięcie. To nie porażka, ale jeszcze nie zmiana wzorca.",
+            "diagnosis": "W tej ścieżce pojawiła się asertywność, lecz często bez dość mocnego nazwania mechanizmu i bez konsekwencji przy teście granicy. Rozmowa chwilami schodziła z poziomu II do poziomu I, ale rzadko dotykała transformacji.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl assertive lub transactional, ale bez wystarczającej stałości pod naciskiem poczucia winy.",
+                "strongest_moment": "Najmocniejsze było to, że wracasz do własnego tematu zamiast całkowicie go oddać.",
+                "growth_tip": "Następnym razem nazwij wzorzec wprost: przychodzę z problemem i kończę pocieszając ciebie. Potem utrzymaj granicę, kiedy pojawi się urażenie.",
+                "replay_prompt": "Zagraj jeszcze raz i sprawdź, co da połączenie walidacji z jasną konsekwencją."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 9
+            },
+            "color": "green",
+            "title": "ODZYSKANA PRZESTRZEŃ",
+            "emoji": "🟢",
+            "subtitle": "Nie naprawiasz rodzica, ale chronisz siebie i utrzymujesz własny temat.",
+            "narrative": "Rozmowa nie staje się nagle łatwa, ale przestaje być jednostronnym przejęciem. Ewa kilka razy próbuje wrócić do starego układu, jednak konsekwentnie i bez ataku wracasz do siebie. Po raz pierwszy twoja sprawa nie znika całkiem.",
+            "diagnosis": "Ta ścieżka opierała się na asertywności połączonej z walidacją. Nazwanie wzorca parentyfikacji i oddzielenie granicy od odrzucenia zmniejszyły chaos oraz ograniczyły skuteczność emocjonalnego hijackingu.",
+            "post_game": {
+                "communication_style_summary": "Przeważał styl assertive i empathic. Dzięki temu rozmowa miała szansę wyjść poza licytację cierpienia.",
+                "strongest_moment": "Kluczowe było nazwanie wzorca bez obrażania rozmówczyni i spokojne wracanie do własnej potrzeby.",
+                "growth_tip": "To, że ktoś chwilowo słucha, nie znaczy jeszcze trwałej zmiany. Kontynuuj stawianie warunków kontaktu także w kolejnych rozmowach.",
+                "replay_prompt": "Sprawdź, czy potrafisz dojść jeszcze dalej i utrzymać granicę bez ani jednej kapitulacji przy teście winy."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 10,
+                "max": 12
+            },
+            "color": "blue",
+            "title": "NIE ODDAJESZ JUŻ SWOJEGO MIEJSCA",
+            "emoji": "🔵",
+            "subtitle": "Zachowujesz spokój, nazywasz wzorzec i nie dajesz się wciągnąć w odwrócenie ról.",
+            "narrative": "To nie jest bajkowe pojednanie, ale bardzo dojrzałe przesunięcie dynamiki. Ewa nadal ma swoje odruchy, jednak nie przejmują już automatycznie całej rozmowy. Mówisz o sobie jak dorosła osoba, która nie musi ratować rodzica, żeby mieć prawo istnieć w relacji.",
+            "diagnosis": "W tej ścieżce utrzymujesz pozycję Dorosły — Dorosły mimo prób zawstydzenia i wzbudzania winy. Łączysz walidację z konsekwentnym wracaniem do własnego tematu, co jest najskuteczniejszą odpowiedzią na hijacking emocjonalny w tym układzie.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl transformative z mocną bazą asertywną. Nie chodziło o wygraną nad rodzicem, tylko o odzyskanie własnego miejsca w rozmowie.",
+                "strongest_moment": "Najsilniejsze było postawienie warunków kontaktu bez kary, bez tłumaczenia się i bez porzucania własnej potrzeby.",
+                "growth_tip": "To jest poziom mistrzowski: uznajesz cudze emocje, ale nie bierzesz za nie odpowiedzialności. Przenoś ten sam wzorzec do innych trudnych relacji.",
+                "replay_prompt": "Przetestuj inne wybory i zobacz dokładnie, w którym momencie najłatwiej wpaść z powrotem w ratowanie drugiej osoby."
+            }
+        }
+    ]
+}

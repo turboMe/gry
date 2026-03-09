@@ -1,0 +1,975 @@
+{
+    "scenario_id": "silent_treatment_boundary_training",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Kara ciszą",
+        "subtitle": "Gdy partner nie bierze przerwy, tylko odcina kontakt, żeby odzyskać przewagę",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 10,
+        "interaction_count": 6
+    },
+    "tags": {
+        "relationship_type": "romantic_partner",
+        "theme": [
+            "boundaries",
+            "control",
+            "communication_breakdown"
+        ],
+        "emotional_intensity": "critical",
+        "age_rating": "adult",
+        "session_type": "training",
+        "player_role_gender": "neutral",
+        "difficulty": "advanced"
+    },
+    "characters": {
+        "player": {
+            "name": "Ty",
+            "role_label": "Partner · Gracz",
+            "age_range": "29-36",
+            "context": "Od dwóch dni żyjesz w napięciu. Po kłótni partner nie powiedział, że potrzebuje przerwy, tylko całkowicie odciął kontakt i zostawił cię w niepewności.",
+            "hidden_need": "safety",
+            "hidden_need_text": "Potrzebujesz przewidywalności, jasnych zasad kontaktu i pewności, że konflikt nie będzie rozgrywany przez karanie dystansem.",
+            "traits": [
+                {
+                    "text": "Czułość na napięcie w relacji",
+                    "type": "positive"
+                },
+                {
+                    "text": "Skłonność do brania odpowiedzialności za atmosferę",
+                    "type": "negative"
+                },
+                {
+                    "text": "Duża potrzeba jasności",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 4,
+                "patience": 6,
+                "defensiveness": 5,
+                "empathy": 8,
+                "need_for_control": 4,
+                "shame_sensitivity": 7,
+                "directness": 6,
+                "repair_ability": 7
+            }
+        },
+        "npc": {
+            "name": "Maks",
+            "role_label": "Partner · NPC",
+            "age_range": "30-38",
+            "context": "Po konflikcie wycofuje kontakt, ale nie komunikuje tego wprost. Zamiast nazwać potrzebę przestrzeni, zostawia cię w zawieszeniu i odzyskuje kontrolę przez ciszę.",
+            "hidden_need": "control",
+            "hidden_need_text": "Pod spodem może kryć się lęk przed zalaniem emocjami, ale na powierzchni dominuje potrzeba odzyskania wpływu i uniknięcia bezpośredniej konfrontacji.",
+            "traits": [
+                {
+                    "text": "Wycofanie pod stresem",
+                    "type": "neutral"
+                },
+                {
+                    "text": "Unikanie bezpośredniej konfrontacji",
+                    "type": "negative"
+                },
+                {
+                    "text": "Zdolność do mięknięcia przy jasnych granicach",
+                    "type": "positive"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 3,
+                "patience": 5,
+                "defensiveness": 8,
+                "empathy": 4,
+                "need_for_control": 8,
+                "shame_sensitivity": 6,
+                "directness": 3,
+                "repair_ability": 4
+            },
+            "npc_reaction_logic": "Maks źle reaguje na pogoń, oskarżenia i emocjonalne błaganie, bo wtedy jeszcze mocniej chowa się za ciszą albo odwraca winę. Najbardziej otwiera go spokojne nazwanie zachowania, rozróżnienie przerwy od kary oraz jasna granica z konsekwencją bez grożenia."
+        }
+    },
+    "metrics_start": {
+        "tension": 50,
+        "trust": 45,
+        "openness": 35,
+        "feeling_heard": 25
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Pierwsze podejście po dwóch dniach ciszy",
+            "scene": {
+                "description": "Wieczór. W kuchni słychać tylko lodówkę i stuk kubka o blat. Maks stoi tyłem i przewija coś w telefonie, jakby między wami nie wisiały dwa dni niewypowiedzianego napięcia.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line": null,
+            "npc_stage_direction": "Maks bierze łyk herbaty i nawet nie podnosi wzroku. To ty decydujesz, jak wejdziesz w rozmowę.",
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nie mogę tego znieść. Odezwij się w końcu, proszę.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maks wzdycha ciężko. Mówi, że robisz scenę z niczego i odwraca się z powrotem do telefonu.",
+                    "feedback": {
+                        "label": "Błaganie o kontakt",
+                        "psychology": "To oddaje kontrolę drugiej stronie. W analizie transakcyjnej wchodzisz w pozycję Dziecka proszącego o ulgę, co przy wzorcu kary ciszą często wzmacnia nierównowagę.",
+                        "better_alternative_hint": "Nazwij wpływ zachowania na ciebie i poproś o jasne zasady, zamiast zabiegać o łaskę kontaktu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Błaganie o kontakt",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "To jest chore i dziecinne. Normalni ludzie tak nie robią.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maks zaciska szczękę i rzuca, że właśnie dlatego nie chciał z tobą rozmawiać.",
+                    "feedback": {
+                        "label": "Atak i uogólnienie",
+                        "psychology": "Ocena osoby zamiast nazwania zachowania uruchamia defensywność. W kwadracie von Thuna druga strona słyszy głównie atak na relację i własną wartość.",
+                        "better_alternative_hint": "Oddziel zachowanie od oceny partnera. Mów o tym, co się wydarzyło i jaki miało to skutek."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uogólnianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Potrzebuję wiedzieć, czy rozmawiamy dziś, czy jutro. Nie chcę zgadywać.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Maks odkłada telefon na blat, ale nadal jest sztywny. Pyta chłodno, po co w ogóle ustalać grafik rozmowy.",
+                    "feedback": {
+                        "label": "Prośba o konkret",
+                        "psychology": "To ruch w stronę jasności i przerwania chaosu, ale jeszcze bez nazwania emocjonalnego kosztu ciszy. Zostajesz na poziomie transakcji.",
+                        "better_alternative_hint": "Dodaj komunikat o wpływie na twoje poczucie bezpieczeństwa i nazwij różnicę między przerwą a karą."
+                    },
+                    "tags": [
+                        {
+                            "text": "Doprecyzowanie oczekiwania",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Widzę, że jesteś zamknięty, ale to milczenie mnie rani. Jeśli potrzebujesz przerwy, powiedz mi to wprost i ustalmy, kiedy wrócimy do rozmowy.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Maks wreszcie podnosi wzrok. Nie mięknie całkiem, ale przestaje udawać, że problemu nie ma.",
+                    "feedback": {
+                        "label": "Nazwanie wpływu i ram kontaktu",
+                        "psychology": "To dobry komunikat Ja w duchu NVC. Uznajesz możliwość potrzeby przestrzeni, ale nie rezygnujesz z granicy i przewidywalności.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Przerwa czy kara",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Powietrze robi się cięższe. Maks opiera się o blat z kamienną twarzą, jakby twoje wejście w rozmowę było kolejnym problemem, a nie próbą rozwiązania starego.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "No i co teraz. Znowu mam się tłumaczyć z tego, że nie chciałem gadać.",
+            "scene_high": {
+                "description": "Napięcie nadal jest duże, ale Maks nie ucieka wzrokiem. Oparł dłonie o blat i słucha, choć wyraźnie nie jest mu wygodnie.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "cold"
+            },
+            "npc_line_high": "Może nie byłem gotowy rozmawiać. Nie wiem, czego teraz ode mnie chcesz.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Chcesz mnie po prostu złamać i czekać, aż ustąpię.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maks natychmiast odbija piłkę. Mówi, że dorabiasz mu intencje i nie ma sensu z tobą gadać.",
+                    "feedback": {
+                        "label": "Czytanie intencji jako zarzut",
+                        "psychology": "Możesz trafnie przeczuwać mechanizm kontroli, ale podanie go jako oskarżenia pcha rozmowę w walkę pozycyjną. Druga strona broni obrazu siebie, zamiast słuchać wpływu zachowania.",
+                        "better_alternative_hint": "Nie zgaduj intencji. Opisz wzorzec i jego efekt: brak informacji, napięcie, niepewność."
+                    },
+                    "tags": [
+                        {
+                            "text": "Czytanie w myślach",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, nieważne. Pewnie przesadzam. Po prostu przestań się obrażać.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maks nie bierze za to odpowiedzialności. Korzysta z wycofania i ucina temat słowami, że skoro nieważne, to koniec rozmowy.",
+                    "feedback": {
+                        "label": "Unieważnienie siebie",
+                        "psychology": "Wycofujesz własną rzeczywistość, żeby odzyskać kontakt. To częsty efekt gaslightingowego klimatu, ale psychologicznie wzmacnia wzorzec i obniża twoje poczucie sprawczości.",
+                        "better_alternative_hint": "Zostań przy własnym doświadczeniu. Nie musisz udowadniać złych intencji, żeby nazwać realny skutek ciszy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Samounieważnienie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Zakotwiczenie we własnej percepcji",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Jeśli to była przerwa, potrzebuję konkretu: ile trwa i kiedy wracamy do rozmowy.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Maks marszczy brwi, ale pierwszy raz słyszy ramę zamiast pogoni. Mówi, że może jutro wieczorem byłby w stanie wrócić do tematu.",
+                    "feedback": {
+                        "label": "Domaganie się struktury",
+                        "psychology": "To już stawia granicę i odróżnia potrzebę przestrzeni od chaosu. Brakuje jeszcze nazwania, dlaczego taki konkret jest dla ciebie niezbędny.",
+                        "better_alternative_hint": "Dodaj, że bez umówionego powrotu cisza działa na ciebie jak kara i podkopuje bezpieczeństwo."
+                    },
+                    "tags": [
+                        {
+                            "text": "Stawianie granicy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Rozumiem, że możesz potrzebować ochłonąć. Nie zgodzę się jednak na odcięcie bez słowa. Potrzebuję jasnej informacji, do kiedy robimy przerwę i kiedy wracamy do rozmowy.",
+                    "points": 2,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Maks nie protestuje od razu. Widać opór, ale też to, że trudno mu zbyć tak sformułowaną granicę.",
+                    "feedback": {
+                        "label": "Rozróżnienie przerwy od kary",
+                        "psychology": "Uznajesz prawo do regulacji emocji, ale jednocześnie nazywasz warunki bezpiecznej przerwy. To asertywność bez agresji i bez porzucania siebie.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Rozróżnienie regulacji od kary",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granica interpersonalna",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Gdy partner odwraca znaczenie problemu",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Maks przesuwa kubek po blacie i patrzy na ciebie z mieszaniną znużenia i irytacji. Atmosfera robi się lepka od niedopowiedzeń.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Przesadzasz. Po prostu nie miałem ochoty rozmawiać. To nie jest żadne karanie.",
+            "scene_high": {
+                "description": "Maks nadal jest spięty, ale nie odcina się całkiem. Głos ma niższy, bardziej ludzki niż przed chwilą.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "cold"
+            },
+            "npc_line_high": "Może przeciągnąłem to za długo, ale serio nie wiedziałem, jak do tego wrócić.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Jasne, jak zwykle wszystko odwracasz. Z tobą nie da się normalnie rozmawiać.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maks reaguje lodem. Mówi, że skoro tak o nim myślisz, to nie ma sensu ciągnąć tej farsy.",
+                    "feedback": {
+                        "label": "Ironia i etykietowanie",
+                        "psychology": "Bierna agresja daje chwilowe poczucie odzyskania mocy, ale nie buduje wpływu. Wzmacnia defensywę i spycha rozmowę jeszcze głębiej w walkę o rację.",
+                        "better_alternative_hint": "Nie oceniaj charakteru partnera. Wróć do konkretu: co się wydarzyło i jak to działało na ciebie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Bierna agresja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Okej. To już nic nie mówię. Widocznie tak po prostu musi być.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maks wzrusza ramionami i przyjmuje twoje wycofanie bez żadnej korekty zachowania.",
+                    "feedback": {
+                        "label": "Rezygnacja z własnej granicy",
+                        "psychology": "Milczące poddanie się może obniżyć konflikt na powierzchni, ale psychologicznie utrwala wzorzec. Twoja potrzeba bezpieczeństwa zostaje bez reprezentacji.",
+                        "better_alternative_hint": "Zamiast kapitulować, nazwij, że nie dyskutujesz o prawie do swoich odczuć, tylko o zasadach kontaktu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Granice",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie dyskutuję o tym, czy mam prawo tak to czuć. Mówię, że bez informacji i powrotu do rozmowy tracę poczucie bezpieczeństwa.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Maks przestaje się przepychać o definicje i milknie na chwilę. To nie jest zgoda, ale pierwszy moment, gdy słyszy koszt swojego zachowania.",
+                    "feedback": {
+                        "label": "Powrót do własnego doświadczenia",
+                        "psychology": "To dobre wyjście z pułapki udowadniania, co druga osoba naprawdę miała na myśli. Chronisz swoją percepcję i wracasz do wpływu na relację.",
+                        "better_alternative_hint": "Możesz pójść krok dalej i od razu połączyć to z konkretną zasadą przerwy lub konsekwencją."
+                    },
+                    "tags": [
+                        {
+                            "text": "Zakotwiczenie w faktach i odczuciach",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Masz prawo nie być gotowy teraz. Ja mam prawo wiedzieć, czy to przerwa, czy odcięcie. Bez tej różnicy tracę zaufanie i spokój.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Maks spuszcza wzrok na kubek. Mówi ciszej, że nie myślał o tym w ten sposób.",
+                    "feedback": {
+                        "label": "Uznanie dwóch praw naraz",
+                        "psychology": "To ruch z poziomu pozycyjnego do dojrzałej granicy. Uznajesz autonomię partnera i równocześnie nie oddajesz własnego bezpieczeństwa.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja bez uległości",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Granica z konsekwencją",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Maks bierze kubek, jakby chciał właśnie wyjść z kuchni. Jego ciało mówi, że najchętniej znowu zniknie i zostawi cię z ciężarem po tej rozmowie.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Nie będziesz mi mówić, jak mam przeżywać rzeczy. Jak potrzebuję ciszy, to biorę ciszę.",
+            "scene_high": {
+                "description": "Maks nie odchodzi. Nadal jest sztywny, ale stoi w miejscu, jakby pierwszy raz rozważał, że cisza też jest działaniem, nie tylko jego brakiem.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Nie lubię, kiedy ktoś naciska. Ale może faktycznie powinienem był coś powiedzieć.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Jak teraz wyjdziesz, to dla mnie ten związek jest skończony.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maks natychmiast stawia mur. Mówi, że nie będzie rozmawiać pod szantażem i robi krok do wyjścia.",
+                    "feedback": {
+                        "label": "Ultimatum w afekcie",
+                        "psychology": "Groźba ma przywrócić kontrolę, ale zwykle aktywuje kontratak albo ucieczkę. To przesuwa rozmowę z granicy do walki o dominację.",
+                        "better_alternative_hint": "Konsekwencja działa lepiej niż groźba. Powiedz, co ty zrobisz, żeby chronić siebie, zamiast straszyć partnera."
+                    },
+                    "tags": [
+                        {
+                            "text": "Szantaż emocjonalny",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Regulacja przez groźbę",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra. To ci wszystko wypiszę w wiadomości i może wtedy łaskawie odpiszesz.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maks przewraca oczami i rzuca, że właśnie dlatego nie da się z tobą niczego spokojnie ustalić.",
+                    "feedback": {
+                        "label": "Sarkazm zamiast granicy",
+                        "psychology": "Bierna agresja pozwala wyrazić złość bez jawnego konfliktu, ale komunikat relacyjny brzmi jak kara za karę. To nie rozwiązuje wzorca, tylko go odbija.",
+                        "better_alternative_hint": "Powiedz jasno, jaki kontakt jest dla ciebie akceptowalny i co zrobisz, jeśli go nie będzie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Komunikat relacyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Jeśli nie ustalimy zasad kontaktu, wycofam się dziś z tej rozmowy i wrócę jutro. Nie będę dalej zgadywać.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Maks patrzy uważniej. Nie czuje się już ścigany, ale też nie dostaje wolnej ręki do przeciągania ciszy bez końca.",
+                    "feedback": {
+                        "label": "Konsekwencja bez przemocy",
+                        "psychology": "To solidny krok, bo przestajesz tańczyć wokół jego wycofania. Nadal jednak bardziej zarządzasz sytuacją niż budujesz wspólne rozumienie.",
+                        "better_alternative_hint": "Dodaj, że nie chodzi o karanie go, tylko o ochronę relacji przed wzorcem niepewności."
+                    },
+                    "tags": [
+                        {
+                            "text": "Konsekwencja granicy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie chcę cię ścigać ani karać za karę. Potrzebuję relacji, w której przerwa jest nazwana i ograniczona. Jeśli dziś nie jesteś gotowy, wróć do mnie do 20. Jeśli nie wrócisz, zatrzymam rozmowę do czasu jasnych zasad.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Maks wyraźnie mięknie. Nie jest zachwycony, ale słyszy, że nie próbujesz nim sterować, tylko chronić wasz sposób bycia w konflikcie.",
+                    "feedback": {
+                        "label": "Granica połączona z wizją relacji",
+                        "psychology": "To poziom transformacyjny. Nie mówisz tylko, czego nie chcesz, ale jaki wzorzec kontaktu ma zastąpić karę ciszą i jaką konsekwencję wprowadzasz dla ochrony siebie.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Wspólna rama relacji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Czy partner przyjmie ramę",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Napięcie opada tylko pozornie. Maks ma minę człowieka, który za chwilę znów schowa się za chłodem i zostawi niedomknięty konflikt tam, gdzie stoi.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Rób, co chcesz. Ja nie będę się meldował jak w wojsku.",
+            "scene_high": {
+                "description": "Rozmowa przeniosła się do salonu. Maks siedzi na skraju kanapy i nie ucieka już wzrokiem. To nadal nie jest komfort, ale pojawiło się minimum współpracy.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Dobra. Jutro o 20 możemy do tego wrócić. Teraz naprawdę nie chcę powiedzieć czegoś głupiego.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nie, proszę, nie zostawiajmy tego. Zrobię cokolwiek, tylko już się nie wycofuj.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maks znów dostaje potwierdzenie, że to on rozdaje karty. Jego ton robi się jeszcze bardziej chłodny.",
+                    "feedback": {
+                        "label": "Porzucenie własnej pozycji",
+                        "psychology": "W lęku przed utratą kontaktu rezygnujesz z granicy i oferujesz nadmierne ustępstwo. To chwilowo zmniejsza twoje napięcie, ale długofalowo wzmacnia wzorzec kontroli.",
+                        "better_alternative_hint": "Utrzymaj wcześniej postawioną ramę. Bez tego rozmowa wróci do logiki pogoni i wycofania."
+                    },
+                    "tags": [
+                        {
+                            "text": "Nadmierne ustępowanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Lęk przed odrzuceniem",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Super. To teraz ja cię zignoruję i zobaczymy, jak to smakuje.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maks prycha. Rozmowa natychmiast zamienia się w konkurs na to, kto dotkliwiej odetnie drugą osobę.",
+                    "feedback": {
+                        "label": "Odwet",
+                        "psychology": "To pokusa symetrii: oddać tym samym, żeby odzyskać godność. W praktyce budujesz nowy cykl kary, a nie nową regułę kontaktu.",
+                        "better_alternative_hint": "Nie odpowiadaj karą na karę. Trzymaj się zasady, którą chcesz widzieć w relacji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Odwet",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Symetria przemocy",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Przyjmuję jutro o 20. Chcę, żebyśmy się tego trzymali.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Maks przytakuje krótko. To porządek i przewidywalność, ale bez głębszego nazwania, co ma się zmienić między wami.",
+                    "feedback": {
+                        "label": "Dobre domknięcie przerwy",
+                        "psychology": "Akceptujesz uzgodnienie bez ścigania partnera. To reguluje sytuację, choć jeszcze nie dotyka sedna wzorca ani wspólnej odpowiedzialności za przyszłość.",
+                        "better_alternative_hint": "Dodaj, że wracacie nie tylko do tematu konfliktu, ale też do sposobu, w jaki robicie przerwy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Domknięcie ustalenia",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Struktura rozmowy",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Dziękuję za konkretną godzinę. Chcę wrócić do tego spokojnie i bez karania się ciszą. Jutro powiem, co mnie zraniło, i chcę też usłyszeć, co działo się u ciebie.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Maks po raz pierwszy odpowiada miękko. Mówi, że dobrze i że jutro spróbuje nie znikać za ścianą milczenia.",
+                    "feedback": {
+                        "label": "Przyjęcie ustalenia i otwarcie mostu",
+                        "psychology": "To nie tylko zamknięcie logistyki, ale też zaproszenie do rozmowy o procesie konfliktu. Z poziomu samej kontroli przechodzisz do współtworzenia bezpieczniejszej dynamiki.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Naprawa relacji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Współtworzenie zasad",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_6",
+            "title": "Nowa zasada albo stary cykl",
+            "score_threshold": 5,
+            "scene_low": {
+                "description": "Następnego wieczoru mieszkanie jest ciche w ten sam zły sposób. Maks siada naprzeciwko, ale wygląda, jakby przyszedł bardziej odbębnić termin niż naprawdę wejść w kontakt.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "cold"
+            },
+            "npc_line_low": "No dobra, wróciłem. Tylko nie róbmy z tego wielkiej teorii.",
+            "scene_high": {
+                "description": "Następnego wieczoru napięcie nadal istnieje, ale nie rządzi już całym pokojem. Maks siada naprzeciwko i sam odkłada telefon ekranem do dołu.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Chcę to zrobić lepiej niż ostatnio. Powiedz, co było dla ciebie najgorsze w tych dwóch dniach.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Przez ciebie czułem się jak śmieć. Nigdy więcej tego nie rób, bo mam dość.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maks natychmiast wraca do obrony. Zamiast słuchać, skupia się na odpieraniu ataku i rozmowa znów wpada w stary tor.",
+                    "feedback": {
+                        "label": "Prawdziwy ból podany jako cios",
+                        "psychology": "Treść twojego doświadczenia jest ważna, ale forma uruchamia kontratak. W NVC potrzeba i uczucie tracą moc, gdy są opakowane w oskarżenie.",
+                        "better_alternative_hint": "Powiedz, co to w tobie uruchomiło, a potem zaproponuj jasną zasadę na przyszłość."
+                    },
+                    "tags": [
+                        {
+                            "text": "Oskarżenie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "NVC",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, nieważne. Po prostu zamknijmy to i idźmy dalej.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maks z ulgą zgadza się zamknąć temat, ale nic w waszym sposobie konfliktu realnie się nie zmienia.",
+                    "feedback": {
+                        "label": "Pozorny spokój",
+                        "psychology": "Unik redukuje dyskomfort tu i teraz, lecz zostawia system bez korekty. To klasyczny kompromis kosztem siebie i przyszłego bezpieczeństwa.",
+                        "better_alternative_hint": "Domknij sprawę zasadą. Bez niej ulga będzie krótkotrwała."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Koszt tłumienia",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie akceptuję ciszy jako sposobu rozwiązywania konfliktu. Jeśli to się powtórzy, będę przerywać rozmowę i wracać dopiero do jasnych ustaleń.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Maks słyszy konsekwencję i przyjmuje ją poważniej niż wcześniej. To mocna granica, choć jeszcze bardziej obronna niż wspólnotowa.",
+                    "feedback": {
+                        "label": "Twarda granica",
+                        "psychology": "Chronisz siebie skutecznie i jasno, ale skupiasz się głównie na obronie. To dobre, gdy trzeba zatrzymać wzorzec, choć nie tworzy jeszcze pełnego mostu.",
+                        "better_alternative_hint": "Dodaj wspólną zasadę, która jednocześnie chroni ciebie i daje partnerowi zdrowy sposób proszenia o przestrzeń."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywna konsekwencja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Ochrona granicy",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chcę jasnej zasady na przyszłość: kiedy któreś z nas potrzebuje przerwy, mówi to wprost, podaje orientacyjny czas i wraca do rozmowy. Wtedy oboje mamy przestrzeń i bezpieczeństwo.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -3,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Maks kiwa głową i pierwszy raz zgadza się na wspólną regułę zamiast bronić swojego wycofania. W pokoju robi się wyraźnie lżej.",
+                    "feedback": {
+                        "label": "Wspólna zasada zamiast walki o kontrolę",
+                        "psychology": "To najbardziej dojrzała odpowiedź, bo nie neguje potrzeby przestrzeni, ale odbiera ciszy funkcję kary. Budujesz nową normę relacyjną, a nie tylko gasisz pożar.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Ustalanie wspólnej normy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "ŚLEPY ZAUŁEK CISZY",
+            "emoji": "🔴",
+            "subtitle": "Rozmowa utknęła w walce o kontrolę albo w kapitulacji",
+            "narrative": "Po tej rozmowie napięcie nie znika. Maks albo znowu się odcina, albo formalnie zostaje w kontakcie, ale bez żadnej realnej zmiany. Ty wychodzisz z poczuciem, że znowu trzeba było wybierać między gonieniem a znikaniem.",
+            "diagnosis": "W tej ścieżce silent treatment nie został skutecznie nazwany ani zatrzymany. Dominuje pogoń, odwet albo wycofanie, więc wzorzec kary ciszą pozostaje nienaruszony. Psychologicznie relacja zostaje w logice Poziomu II: kto ma rację, kto kogo bardziej zaboli, kto pierwszy odpuści.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl agresywny, bierny albo biernie agresywny. Było dużo reakcji na ból, mało ram dla bezpiecznego kontaktu.",
+                "strongest_moment": "Najmocniejszy był każdy moment, w którym próbowałeś albo próbowałaś wrócić do faktu ciszy zamiast całkiem zniknąć z rozmowy.",
+                "growth_tip": "Następnym razem nie udowadniaj intencji i nie błagaj o uwagę. Nazwij skutek zachowania, odróżnij przerwę od kary i postaw jedną jasną granicę z konsekwencją.",
+                "replay_prompt": "Spróbuj przejść scenę jeszcze raz, pilnując własnej percepcji i prosząc nie o bliskość za wszelką cenę, tylko o przewidywalne zasady kontaktu."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "KRUCHY ROZEJM",
+            "emoji": "🟡",
+            "subtitle": "Udało się ograniczyć chaos, ale rdzeń problemu nie został domknięty",
+            "narrative": "Maks wraca do rozmowy albo godzi się na minimalny konkret, lecz w powietrzu nadal wisi stary wzorzec. Ty czujesz trochę ulgi, ale też wiesz, że przy kolejnym konflikcie możecie łatwo wrócić do tego samego.",
+            "diagnosis": "To wynik częściowo ochronny. Pojawiła się asertywność i trochę struktury, ale nie doszło do pełnej zmiany reguły relacyjnej. Silent treatment został przyhamowany, nie przekształcony. Rozmowa zatrzymała się między Poziomem I i II, z krótkimi wejściami w dojrzalszy kontakt.",
+            "post_game": {
+                "communication_style_summary": "Przeważała asertywność i transakcyjność. Było mniej chaosu, ale ograniczona ilość empatii i wspólnego sensu.",
+                "strongest_moment": "Najlepiej zadziałały momenty, gdy prosiłeś albo prosiłaś o konkretny termin powrotu do rozmowy i przestawałeś albo przestawałaś zgadywać.",
+                "growth_tip": "Sama struktura nie wystarczy. Następnym razem połącz granicę z nazwaniem wpływu ciszy na twoje bezpieczeństwo oraz z propozycją wspólnej zasady na przyszłość.",
+                "replay_prompt": "Zagraj ponownie i zobacz, co się stanie, gdy oprócz konkretu wniesiesz jeszcze walidację potrzeby przestrzeni i jasną normę relacyjną."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 9
+            },
+            "color": "green",
+            "title": "JASNA GRANICA",
+            "emoji": "🟢",
+            "subtitle": "Zatrzymałeś albo zatrzymałaś wzorzec i odzyskałeś albo odzyskałaś grunt pod nogami",
+            "narrative": "Rozmowa nie staje się nagle łatwa, ale przestaje być polem bez zasad. Maks rozumie, że milczenie bez zapowiedzi nie będzie już neutralnym zwyczajem, tylko nazwanym problemem z konsekwencją. Ty czujesz więcej spokoju i mniej przymusu gonienia za kontaktem.",
+            "diagnosis": "W tej ścieżce udało się ochronić własną percepcję i postawić granicę bez wchodzenia w otwartą wojnę. To ważny przełom: silent treatment przestaje działać jak ukryte narzędzie kontroli, bo został rozpoznany i osadzony w regule kontaktu.",
+            "post_game": {
+                "communication_style_summary": "Dominowała asertywność wsparta empatią. Rozmowa przesuwała się od napięcia ku odpowiedzialności za sposób komunikacji.",
+                "strongest_moment": "Najsilniejszy był moment, w którym rozróżniłeś albo rozróżniłaś przerwę na regulację od odcięcia jako kary i nie oddałeś albo nie oddałaś tej różnicy.",
+                "growth_tip": "To dobra droga. W realnym życiu wzmacniaj ją jeszcze przez umawianie konkretnego czasu powrotu do rozmowy i spokojne przypominanie wspólnej zasady przy każdym nawrocie wzorca.",
+                "replay_prompt": "Spróbuj dojść do zakończenia mistrzowskiego, jeszcze wyraźniej budując zasadę wspólną, a nie tylko własną ochronę."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 10,
+                "max": 12
+            },
+            "color": "blue",
+            "title": "NOWA ZASADA BLISKOŚCI",
+            "emoji": "🔵",
+            "subtitle": "Udało się przekształcić kryzys w konkretną normę relacji",
+            "narrative": "Nie wszystko między wami jest już naprawione, ale wydarzyło się coś ważniejszego niż jednorazowe pogodzenie. Zamiast kolejnego cyklu ciszy i pogoni pojawia się wspólna zasada: można potrzebować przestrzeni, ale nie wolno używać niepewności jako kary. To daje obojgu więcej oddechu i mniej lęku.",
+            "diagnosis": "To najbardziej dojrzały przebieg rozmowy. Uznana została zarówno potrzeba regulacji, jak i potrzeba bezpieczeństwa. Dzięki temu silent treatment traci funkcję kontroli, a konflikt zostaje przeniesiony na Poziom III — transformację, gdzie relacja nie służy wygrywaniu, tylko budowaniu reguł chroniących obie strony.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl transformacyjny z mocną bazą empatii i granic. Rozmowa stała się wspólnym projektowaniem bezpiecznego kontaktu.",
+                "strongest_moment": "Najmocniejszy był moment, w którym nie tylko postawiłeś albo postawiłaś granicę, ale zaproponowałeś albo zaproponowałaś lepszy wzorzec: nazwana przerwa, orientacyjny czas i powrót do rozmowy.",
+                "growth_tip": "To poziom mistrzowski. W życiu codziennym zapisuj takie ustalenia prostym językiem i wracaj do nich spokojnie, zanim kolejny konflikt wejdzie w stary schemat.",
+                "replay_prompt": "Zagraj ponownie i sprawdź, jak wcześnie w scenariuszu możesz zacząć budować tę samą jakość kontaktu bez utraty stanowczości."
+            }
+        }
+    ]
+}

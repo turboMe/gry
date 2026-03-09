@@ -1,0 +1,983 @@
+{
+    "scenario_id": "addiction_denial_refusal_of_treatment",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Nie mam problemu",
+        "subtitle": "Bliskość zderza się z zaprzeczaniem i lękiem przed leczeniem",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 10,
+        "interaction_count": 6
+    },
+    "tags": {
+        "relationship_type": "romantic_partner",
+        "theme": [
+            "health",
+            "boundaries",
+            "support"
+        ],
+        "emotional_intensity": "critical",
+        "age_rating": "adult",
+        "session_type": "training",
+        "player_role_gender": "neutral",
+        "difficulty": "advanced"
+    },
+    "characters": {
+        "player": {
+            "name": "Alex",
+            "role_label": "Partner/ka · Gracz",
+            "age_range": "30-38",
+            "context": "Od miesięcy widzisz coraz więcej sygnałów, że używanie wymknęło się spod kontroli: odwołane plany, znikanie bez słowa, zmiany nastroju i narastające zmęczenie. Kochasz tę osobę, ale czujesz też strach i bezsilność.",
+            "hidden_need": "safety",
+            "hidden_need_text": "Potrzebujesz bezpieczeństwa, przewidywalności i uczciwości w relacji, bez przejmowania odpowiedzialności za cudzy nałóg.",
+            "traits": [
+                {
+                    "text": "Uważny/a",
+                    "type": "positive"
+                },
+                {
+                    "text": "Przeciążony/a emocjonalnie",
+                    "type": "negative"
+                },
+                {
+                    "text": "Lojalny/a",
+                    "type": "positive"
+                },
+                {
+                    "text": "Skłonny/a brać za dużo na siebie",
+                    "type": "negative"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 5,
+                "patience": 6,
+                "defensiveness": 4,
+                "empathy": 8,
+                "need_for_control": 6,
+                "shame_sensitivity": 5,
+                "directness": 6,
+                "repair_ability": 7
+            }
+        },
+        "npc": {
+            "name": "Marek",
+            "role_label": "Partner · NPC",
+            "age_range": "31-40",
+            "context": "Na zewnątrz nadal funkcjonuje względnie normalnie, co wzmacnia jego przekonanie, że nie ma powodu do leczenia. Każdą rozmowę o używaniu odbiera jako próbę kontroli albo upokorzenia.",
+            "hidden_need": "autonomy",
+            "hidden_need_text": "Potrzebuje zachować poczucie sprawczości, godności i wpływu, bo leczenie kojarzy mu się z przyznaniem do słabości i utratą twarzy.",
+            "traits": [
+                {
+                    "text": "Charyzmatyczny",
+                    "type": "positive"
+                },
+                {
+                    "text": "Defensywny",
+                    "type": "negative"
+                },
+                {
+                    "text": "Wstydliwy",
+                    "type": "negative"
+                },
+                {
+                    "text": "Funkcjonuje pozornie normalnie",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 6,
+                "patience": 4,
+                "defensiveness": 9,
+                "empathy": 4,
+                "need_for_control": 8,
+                "shame_sensitivity": 8,
+                "directness": 5,
+                "repair_ability": 3
+            },
+            "npc_reaction_logic": "Marek reaguje gwałtowną obroną na etykietowanie, wstydzanie i ultimata. Zamraża się albo kontratakuje, gdy czuje, że ktoś chce przejąć nad nim kontrolę. Najbardziej otwiera go nazywanie konkretnych faktów, komunikat Ja i jasne granice bez ratowania ani moralizowania."
+        }
+    },
+    "metrics_start": {
+        "tension": 45,
+        "trust": 55,
+        "openness": 45,
+        "feeling_heard": 40
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Pierwsze zderzenie z zaprzeczaniem",
+            "scene": {
+                "description": "Wieczór w salonie. Marek wrócił późno, pachnie używką i unika twojego wzroku. Na stole stoi nietknięta kolacja, a napięcie wisi w powietrzu od progu.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": "Przestań robić ze mnie chorego. Normalnie funkcjonuję i mam to pod kontrolą.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nie masz żadnej kontroli. Kłamiesz sobie i mnie.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marek prostuje się i twardnieje. Rzuca ci chłodne spojrzenie i odcina się emocjonalnie.",
+                    "feedback": {
+                        "label": "Atak na tożsamość",
+                        "psychology": "Uderzasz w osobę, nie w zachowanie. Przy silnym mechanizmie denial taki komunikat zwiększa wstyd i uruchamia kontratak zamiast refleksji. W modelu NVC brakuje tu obserwacji i własnego przeżycia, jest za to osąd.",
+                        "better_alternative_hint": "Nazwij konkretne fakty i swój lęk, zamiast ogłaszać diagnozę o nim jako człowieku."
+                    },
+                    "tags": [
+                        {
+                            "text": "Etykietowanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Denial",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, nieważne. Jak chcesz, to rób co chcesz.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Marek wzrusza ramionami, ale w jego twarzy widać ulgę pomieszaną z unikaniem. Temat zostaje zamieciony pod dywan.",
+                    "feedback": {
+                        "label": "Wycofanie z lęku",
+                        "psychology": "Unikasz konfliktu, ale cena jest wysoka: problem zostaje nietknięty, a ty wzmacniasz wzorzec, w którym zaprzeczanie kończy rozmowę. To krok w stronę współuzależnienia przez milczące dostosowanie.",
+                        "better_alternative_hint": "Możesz mówić spokojnie i jasno bez awantury. Wycofanie nie chroni relacji, tylko odwleka kryzys."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Współuzależnienie",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie chcę awantury. Po prostu powiedz, czy zamierzasz trochę ograniczyć.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Marek prycha, ale nie odchodzi. Wygląda na zirytowanego, jednak słucha.",
+                    "feedback": {
+                        "label": "Rozmowa o rozwiązaniu za wcześnie",
+                        "psychology": "To rzeczowe i mniej eskalujące, ale pomija emocjonalny rdzeń sytuacji. Przechodzisz od razu do kontroli zachowania, zanim nazwiesz wpływ problemu na ciebie i relację.",
+                        "better_alternative_hint": "Najpierw pokaż, co widzisz i czujesz. Potem dopiero pytaj o zmianę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Orientacja na rozwiązanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Widzę, że to dla ciebie drażliwy temat. Ja się boję, bo ostatnio odwołałeś pracę, zasnąłeś za kierownicą i coraz częściej znikasz. Chcę porozmawiać o tym, co się dzieje.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Marek odwraca wzrok, ale nie przerywa. Jego twarz mięknie na moment, jakby część z tego do niego trafiała.",
+                    "feedback": {
+                        "label": "Fakty plus emocja",
+                        "psychology": "Łączysz obserwacje z własnym przeżyciem i nie odbierasz mu godności. To zgodne z NVC i obniża ryzyko, że rozmowa od razu wejdzie w walkę o rację.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Obrona pod hasłem mam kontrolę",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Powietrze robi się cięższe. Marek stoi przy oknie tyłem do ciebie, jakby już szykował się do wyjścia z rozmowy. Twoje wcześniejsze słowa zostawiły w nim złość i wstyd.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "No i super. Teraz jeszcze będziesz liczyć każdy mój ruch? To jest właśnie przesada.",
+            "scene_high": {
+                "description": "Napięcie nadal jest wysokie, ale Marek nie odcina się całkiem. Siada ciężko na kanapie i po raz pierwszy wygląda bardziej na zmęczonego niż bojowego.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Nie podoba mi się to, co mówisz, ale... słucham. Tylko nie rób ze mnie wraku.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To udowodnij. Od dziś zero używek albo się wynoś.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marek parska śmiechem bez humoru. Jego spojrzenie twardnieje i rozmowa zamienia się w pojedynek o władzę.",
+                    "feedback": {
+                        "label": "Ultimatum z pozycji siły",
+                        "psychology": "Przy denial ultimatum bywa odbierane jako przemocowa próba przejęcia kontroli. Z perspektywy analizy transakcyjnej wchodzisz w surowego Rodzica, co prowokuje buntujące się Dziecko albo kontratak.",
+                        "better_alternative_hint": "Stawiaj granicę dotyczącą siebie, nie test lojalności ani natychmiastową próbę tresury."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ultimatum",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Jasne, wszystko pod kontrolą. Tak samo jak ostatnie trzy weekendy.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marek zaciska szczękę. Ironia trafia w jego wstyd, więc odpowiada chłodem i pogardą.",
+                    "feedback": {
+                        "label": "Sarkazm zamiast kontaktu",
+                        "psychology": "Bierna agresja pozwala wyładować napięcie, ale nie tworzy przestrzeni na realne przyjęcie przekazu. W kwadracie von Thuna słyszalny staje się głównie atak relacyjny.",
+                        "better_alternative_hint": "Zamiast drwić, nazwij konkretną konsekwencję i swój stan emocjonalny."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie musimy teraz rozstrzygać, czy jesteś uzależniony. Potrzebuję tylko wiedzieć, czy widzisz, że to wpływa na nasze życie.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Marek wzdycha. Nie przyznaje ci racji, ale nie odrzuca pytania.",
+                    "feedback": {
+                        "label": "Przeniesienie rozmowy na skutki",
+                        "psychology": "To dobra korekta: odchodzisz od etykiety i skupiasz się na wpływie. Nadal jednak brakuje odsłonięcia własnej stawki emocjonalnej, więc dialog pozostaje bardziej rzeczowy niż relacyjny.",
+                        "better_alternative_hint": "Dołóż krótkie nazwanie tego, co to z tobą robi. To pomaga nie brzmieć jak przesłuchanie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Oddzielenie faktów od etykiet",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Słyszę, że bardzo bronisz swojego poczucia kontroli. Jednocześnie ja widzę skutki i nie mogę udawać, że ich nie ma. Chcę rozmawiać o faktach, nie o tym, kto kogo upokorzy.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Marek na chwilę milknie. Wygląda, jakby jednocześnie chciał zaprzeczać i poczuł ulgę, że nie próbujesz go zgniatać.",
+                    "feedback": {
+                        "label": "Walidacja bez ustępowania",
+                        "psychology": "Uznajesz jego potrzebę autonomii, ale nie rezygnujesz z nazywania realności. To mocne połączenie empatii i granicy, które pomaga przejść z walki pozycyjnej do bardziej dojrzałego dialogu.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Granica między pomocą a osłanianiem",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Przenosicie się do kuchni, ale napięcie idzie za wami. Marek chodzi nerwowo od blatu do lodówki i mówi szybciej, jakby chciał wyprzedzić każdy zarzut.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Skoro już robisz śledztwo, to przynajmniej nie mieszaj w to innych. I nie dzwoń jutro do mojej siostry.",
+            "scene_high": {
+                "description": "W kuchni zapada cięższa, ale bardziej ludzka cisza. Marek unika twoich oczu, jakby najbardziej bał się tego, że ktoś poza wami zobaczy problem.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "cold"
+            },
+            "npc_line_high": "Nie chcę, żeby wszyscy o tym gadali. To moja sprawa.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Może właśnie powinienem_powinnam powiedzieć wszystkim, co odwalasz.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marek momentalnie się zamyka. W jego twarzy pojawia się strach przykryty gniewem.",
+                    "feedback": {
+                        "label": "Groźba ujawnienia",
+                        "psychology": "Publiczne zawstydzenie rzadko buduje gotowość do leczenia. Częściej wzmacnia izolację, kłamstwo i ukrywanie, czyli dokładnie te mechanizmy, które napędzają nałóg.",
+                        "better_alternative_hint": "Rozdziel prywatność od osłaniania. Nie musisz go obnażać, ale nie musisz też kłamać za niego."
+                    },
+                    "tags": [
+                        {
+                            "text": "Zawstydzanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Lęk przed ekspozycją",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra. Nikomu nic nie powiem i znowu cię jutro wytłumaczę.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Marek wyraźnie rozluźnia ramiona, ale nie zbliża się do odpowiedzialności. Problem znów zostaje przykryty.",
+                    "feedback": {
+                        "label": "Osłanianie skutków",
+                        "psychology": "To klasyczny enabling. Chwilowo obniża napięcie, ale usuwa naturalne konsekwencje, przez co osoba używająca ma mniej powodów, by szukać pomocy.",
+                        "better_alternative_hint": "Możesz uszanować jego prywatność bez przejmowania roli ochroniarza jego nałogu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Enabling",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Ratowanie",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie chcę cię publicznie zawstydzać, ale nie będę też już odkręcać konsekwencji za ciebie.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Marek patrzy na ciebie uważniej. Nie podoba mu się to, ale słyszy wyraźną zmianę zasad.",
+                    "feedback": {
+                        "label": "Granica bez pogłębienia",
+                        "psychology": "To zdrowy ruch przeciw współuzależnieniu. Nadal jednak mówisz głównie o regule, a mniej o tym, dlaczego ta reguła jest dla ciebie tak ważna.",
+                        "better_alternative_hint": "Dodaj, że to granica służąca ochronie ciebie i relacji, a nie kara."
+                    },
+                    "tags": [
+                        {
+                            "text": "Stawianie granic",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Współuzależnienie",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Uszanuję twoją prywatność, ale nie będę kłamać ani przykrywać skutków używania. To jest granica, nie kara.",
+                    "points": 2,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Marek wygląda na poruszonego i po raz pierwszy nie ma szybkiej riposty. Wisi między oporem a rozpoznaniem, że mówisz poważnie.",
+                    "feedback": {
+                        "label": "Miłość bez osłaniania",
+                        "psychology": "To dojrzała granica: nie zawstydzasz, ale też nie współpracujesz z nałogiem. Taki komunikat odróżnia troskę od ratowania i daje realną szansę na przesunięcie rozmowy w stronę odpowiedzialności.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Granica",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Enabling",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Oferta pomocy bez przejmowania steru",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Jest już późno. Marek opiera się o framugę sypialni i wygląda na skrajnie spiętego. Każde słowo brzmi jak przygotowanie do kolejnej walki.",
+                "location": "bedroom",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Nie potrzebuję terapii. Potrzebuję, żebyś przestał_a panikować.",
+            "scene_high": {
+                "description": "W sypialni robi się ciszej. Marek siada na brzegu łóżka i po raz pierwszy jego złość miesza się z bezradnością. Widać, że samo słowo leczenie uruchamia w nim lęk.",
+                "location": "bedroom",
+                "time_of_day": "night",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Nie wiem, czy terapia coś da. I nie chcę, żeby ktoś mnie oceniał.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Przestań się kompromitować i jedziemy jutro na odwyk, czy chcesz czy nie.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marek natychmiast zamyka twarz. W jego ciele pojawia się odruch ucieczki i oporu.",
+                    "feedback": {
+                        "label": "Przymus zamiast wpływu",
+                        "psychology": "Można zmusić kogoś do jazdy samochodem, ale nie do autentycznej współpracy z leczeniem. Kiedy naruszasz autonomię, jego energia idzie w obronę siebie, nie w konfrontację z problemem.",
+                        "better_alternative_hint": "Zaproponuj konkretny krok i zachowaj jego sprawczość, jednocześnie jasno mówiąc o swoich granicach."
+                    },
+                    "tags": [
+                        {
+                            "text": "Kontrola",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Autonomia",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Jasne, najlepiej nic nie rób. Poczekajmy, aż wszystko się rozwali.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marek przewraca oczami i odcina się jeszcze mocniej. Słyszy w tym pogardę, nie troskę.",
+                    "feedback": {
+                        "label": "Katastrofizacja z pogardą",
+                        "psychology": "Straszysz przyszłością, ale w formie, która go poniża. Pogarda jest jednym z najsilniejszych niszczycieli kontaktu, bo uruchamia obronę godności zamiast gotowości do zmiany.",
+                        "better_alternative_hint": "Mów o realnym ryzyku i swoim lęku bez szyderstwa."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Katastrofizacja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Mam numer do specjalisty. Możesz po prostu zadzwonić i sprawdzić, jak to wygląda, bez żadnych deklaracji.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Marek nie mówi nie. Wygląda jednak tak, jakby nadal walczył z samym pomysłem, że potrzebuje pomocy.",
+                    "feedback": {
+                        "label": "Niski próg wejścia",
+                        "psychology": "Dajesz mu konkretny, mniej przerażający krok. To dobre, ale jeszcze lepiej byłoby nazwać, że lęk przed oceną jest zrozumiały i nie odbiera mu wartości.",
+                        "better_alternative_hint": "Połącz propozycję działania z uznaniem jego wstydu i potrzeby godności."
+                    },
+                    "tags": [
+                        {
+                            "text": "Mały krok",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Redukcja progu wejścia",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Rozumiem, że leczenie może brzmieć jak przyznanie się do porażki. Dla mnie to raczej ruch w stronę odzyskania wpływu. Mogę usiąść z tobą i razem sprawdzić opcje, ale decyzji za ciebie nie podejmę.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Marek spuszcza wzrok. Widać, że propozycja nie wciska go w róg, tylko zostawia mu godność i odpowiedzialność.",
+                    "feedback": {
+                        "label": "Wsparcie bez przejęcia odpowiedzialności",
+                        "psychology": "Przekształcasz leczenie z symbolu porażki w symbol odzyskiwania wpływu. To klasyczny ruch transformacyjny: budujesz wspólny język bez zabierania mu sprawczości.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Reframing",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Test granicy pod presją emocjonalną",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Noc się przeciąga. Marek wraca do salonu po krótkim wyjściu i od progu czuć, że znowu jest pod wpływem. W mieszkaniu unosi się ciężar starego, bolesnego schematu.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Nie będziesz mi mówić, kiedy mogę wracać do domu. Jak mnie kochasz, to mnie nie zostawisz.",
+            "scene_high": {
+                "description": "Jest już po północy, ale napięcie nie jest tak chaotyczne jak wcześniej. Marek wygląda na wyczerpanego i mówi ciszej, jakby bał się usłyszeć konsekwencje własnych działań.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "cold"
+            },
+            "npc_line_high": "Nie chcę cię stracić. Po prostu nie umiem obiecać, że od razu wszystko odetnę.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Jak jeszcze raz wrócisz po używkach, to powiem wszystkim, że jesteś ćpunem.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marek reaguje gniewem i upokorzeniem. Sytuacja staje się niebezpiecznie konfrontacyjna.",
+                    "feedback": {
+                        "label": "Przemocowy język",
+                        "psychology": "Obelga i groźba odcinają możliwość kontaktu. Zamiast granicy pojawia się upokorzenie, a to niemal zawsze wzmacnia denial i spirale używania.",
+                        "better_alternative_hint": "Granica ma chronić ciebie, nie upokarzać jego."
+                    },
+                    "tags": [
+                        {
+                            "text": "Obelga",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Zawstydzanie",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Okej, masz rację. Nie będę robić problemu, byle tylkośmy się nie kłócili.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Marek łapie ulgę, ale nie odpowiedzialność. Relacja wraca w stary układ unikania i ratowania.",
+                    "feedback": {
+                        "label": "Rezygnacja z siebie",
+                        "psychology": "To pozorny spokój kupiony kosztem własnych granic. Kiedy z lęku przed konfliktem rezygnujesz z realności, sygnał brzmi: to zachowanie nadal mieści się w relacji bez konsekwencji.",
+                        "better_alternative_hint": "Możesz kochać i jednocześnie nie zgadzać się na chaos."
+                    },
+                    "tags": [
+                        {
+                            "text": "Samowyparcie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Enabling",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Jeśli wrócisz pod wpływem, wyjdę z mieszkania na noc. Nie umiem inaczej zadbać o siebie.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Marek marszczy brwi, ale wyraźnie słyszy, że to nie groźba, tylko zasada ochrony siebie.",
+                    "feedback": {
+                        "label": "Granica ochronna",
+                        "psychology": "To dobra, konkretna granica oparta na twoim zachowaniu, nie na próbie sterowania nim. Brakuje tylko doprecyzowania, kiedy rozmowa może wrócić i co jest dla ciebie warunkiem kontaktu.",
+                        "better_alternative_hint": "Dodaj, że do rozmowy wrócicie na trzeźwo i bez kłamstwa."
+                    },
+                    "tags": [
+                        {
+                            "text": "Granica ochronna",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "To właśnie dlatego stawiam granicę. Nie będę z tobą rozmawiać ani spać obok ciebie, kiedy jesteś pod wpływem, i nie będę cię kryć następnego dnia. Mogę ci towarzyszyć, kiedy będziesz trzeźwy i gotowy do rozmowy.",
+                    "points": 2,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Marek wygląda na poruszonego. Słyszy jednocześnie twardą granicę i fakt, że nie jest przez ciebie skreślony.",
+                    "feedback": {
+                        "label": "Twarda granica z pozostawionym mostem",
+                        "psychology": "Najzdrowsze granice nie są ani karą, ani porzuceniem. Pokazujesz, że miłość nie polega na uczestniczeniu w chaosie, tylko na wspieraniu odpowiedzialności i trzeźwego kontaktu.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Oddzielenie wsparcia od osłaniania",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granica",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_6",
+            "title": "Ostatnie słowo bez ratowania",
+            "score_threshold": 5,
+            "scene_low": {
+                "description": "Rano kuchnia jest nienaturalnie cicha. Marek siedzi z kubkiem kawy, ale jego ciało nadal jest spięte. W powietrzu czuć, że kolejny zły ruch może zamknąć rozmowę całkowicie.",
+                "location": "kitchen",
+                "time_of_day": "morning",
+                "visual_mood": "cold"
+            },
+            "npc_line_low": "Dramatyzujesz. Nie mam zamiaru nigdzie dzwonić.",
+            "scene_high": {
+                "description": "Poranne światło wpada do kuchni i pierwszy raz od dawna napięcie nie jest tylko wojną. Marek wygląda na niewyspanego, ale też mniej bojowego niż zwykle.",
+                "location": "kitchen",
+                "time_of_day": "morning",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Nie obiecuję cudów. Ale chyba pierwszy raz słyszę, że nie próbujesz mnie ani ratować, ani dobić. Co właściwie proponujesz?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Skoro nie chcesz się leczyć, to jesteś skończony i nie ma już o czym gadać.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marek zamyka się natychmiast. Słyszy wyrok, nie granicę.",
+                    "feedback": {
+                        "label": "Wyrok zamiast decyzji o sobie",
+                        "psychology": "To brzmi jak ostateczne potępienie jego osoby. Nawet jeśli chcesz się odciąć, skuteczniejsze i zdrowsze jest nazwanie własnej decyzji i warunków, a nie ogłaszanie, kim on jest.",
+                        "better_alternative_hint": "Mów o tym, co ty zrobisz, jeśli problem pozostanie bez zmiany."
+                    },
+                    "tags": [
+                        {
+                            "text": "Potępienie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Atak tożsamościowy",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Rób, co chcesz. Ja już nic nie czuję i nic mnie to nie obchodzi.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Marek patrzy na ciebie nieufnie. Czuje odcięcie, ale nie dostaje żadnej jasności co dalej.",
+                    "feedback": {
+                        "label": "Zamrożenie kontaktu",
+                        "psychology": "Emocjonalne odcięcie bywa formą obrony przed bólem, ale komunikacyjnie zostawia pustkę. Nie ma tu ani autentyczności, ani granicy, więc rozmowa kończy się bez kierunku.",
+                        "better_alternative_hint": "Nawet gdy jesteś wyczerpany_a, nazwij jeden konkretny warunek i jedną konsekwencję dotyczącą siebie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie emocjonalne",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Stonewalling",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Chcę jednego konkretu: do jutra umów konsultację albo powiedz, że świadomie odmawiasz. Wtedy ja podejmę swoje decyzje.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Marek nie protestuje od razu. Wygląda, jakby ważył koszt dalszego zaprzeczania.",
+                    "feedback": {
+                        "label": "Konkretny próg decyzji",
+                        "psychology": "To porządkuje chaos i jasno rozdziela odpowiedzialność. Nadal jednak jest w tym mało kontaktu z relacją i mało uznania dla tego, że zmiana będzie dla niego trudna.",
+                        "better_alternative_hint": "Dodaj krótkie uznanie jego lęku i podkreśl, że konsekwencja nie jest zemstą."
+                    },
+                    "tags": [
+                        {
+                            "text": "Kontrakt",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Odpowiedzialność",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie mogę za ciebie wybrać zdrowienia. Mogę za to jasno powiedzieć, czego potrzebuję: dziś jeden konkretny krok z twojej strony albo ja uruchamiam swoje granice i przestaję osłaniać ten nałóg. To nie jest odrzucenie, tylko odpowiedzialność po obu stronach.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Marek długo milczy. Widać, że po raz pierwszy rozmowa nie daje mu łatwej ucieczki ani wygodnego wroga.",
+                    "feedback": {
+                        "label": "Troska spleciona z odpowiedzialnością",
+                        "psychology": "To najbardziej dojrzała końcówka: uznajesz granice własnego wpływu, precyzujesz oczekiwanie i nie mylisz miłości z ochroną przed konsekwencjami. Taki komunikat daje szansę na realny pierwszy krok, nawet jeśli nie gwarantuje cudu.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Oddanie odpowiedzialności",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "ŚCIANA ZAPRZECZENIA",
+            "emoji": "🔴",
+            "subtitle": "Rozmowa kończy się walką albo wycofaniem bez granicy.",
+            "narrative": "Marek zamyka się całkowicie albo wychodzi z mieszkania, trzaskając drzwiami. Zostajesz z bólem, złością i poczuciem, że znów albo zaatakowałeś_aś za mocno, albo odpuściłeś_aś za wcześnie. Problem nie został nazwany w sposób, który dawałby szansę na kontakt, a relacja wraca do starego układu chaosu i zaprzeczania.",
+            "diagnosis": "W tej ścieżce dominowały komunikaty wywołujące wstyd, bunt albo bezradność. Denial został wzmocniony przez atak, sarkazm lub wycofanie. Zabrakło odróżnienia granicy od kary oraz troski od ratowania. Psychologicznie rozmowa utknęła na poziomie walki o rację albo zerwania kontaktu.",
+            "post_game": {
+                "communication_style_summary": "Dominowały styl agresywny, bierny albo biernie agresywny. Zamiast kontaktu pojawiła się polaryzacja albo zamrożenie.",
+                "strongest_moment": "Najmocniejszym elementem było to, że temat w ogóle został podjęty, a problem nie został całkowicie zignorowany.",
+                "growth_tip": "Przy kolejnej próbie zacznij od faktów i wpływu na ciebie. Nie diagnozuj człowieka, nie ratuj go i nie groź. Nazwij jedną granicę dotyczącą siebie.",
+                "replay_prompt": "Spróbuj przejść tę scenę tak, by nie wygrać kłótni, tylko utrzymać kontakt i odpowiedzialność naraz."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "KRUCHE ZAWIESZENIE",
+            "emoji": "🟡",
+            "subtitle": "Padły ważne słowa, ale ruch w stronę pomocy jest jeszcze niepewny.",
+            "narrative": "Rozmowa nie wybucha całkiem, ale też nie przynosi przełomu. Marek nie przyznaje wprost, że potrzebuje leczenia, a ty zaczynasz lepiej rozumieć, że samo naciskanie nie zadziała. Pojawia się szkic granicy i odrobina realności, lecz nadal łatwo wrócić do starego schematu osłaniania albo przepychania.",
+            "diagnosis": "Ta ścieżka zatrzymała część eskalacji i wprowadziła element odpowiedzialności, ale dialog był jeszcze za mało pogłębiony. Było trochę asertywności i konkretu, lecz za mało walidacji lęku i za mało konsekwentnego odróżniania pomocy od współuzależnienia.",
+            "post_game": {
+                "communication_style_summary": "Przeważał styl rzeczowy i częściowo asertywny. Rozmowa wyszła poza chaos, ale nie weszła jeszcze stabilnie w poziom transformacji.",
+                "strongest_moment": "Najlepszym momentem było postawienie pierwszej granicy bez całkowitego odcięcia relacji.",
+                "growth_tip": "Następnym razem połącz konkret z empatią. Nie wystarczy mieć rację i plan. Druga strona musi usłyszeć, że widzisz jej wstyd i lęk, ale nie zgodzisz się dalej osłaniać skutków.",
+                "replay_prompt": "Zagraj ponownie i sprawdź, jak zmienia się przebieg rozmowy, gdy walidujesz autonomię Marka, a jednocześnie jasno nazywasz swoje granice."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 9
+            },
+            "color": "green",
+            "title": "TRUDNA UCZCIWOŚĆ",
+            "emoji": "🟢",
+            "subtitle": "Nie ma cudu, ale jest pierwszy realny krok i uczciwsza relacja.",
+            "narrative": "Marek nie deklaruje nagłej przemiany, ale pierwszy raz przestaje walczyć wyłącznie o pozory kontroli. Być może zgadza się sprawdzić konsultację albo słyszy wyraźnie, że nie będziesz już przykrywać konsekwencji. Nie jest lekko, ale rozmowa przestaje być teatrem zaprzeczania i zaczyna dotyczyć odpowiedzialności.",
+            "diagnosis": "Ta ścieżka pokazuje zdrowe połączenie troski, granic i realności. Udało się nie wejść ani w rolę surowego kontrolera, ani w rolę ratownika. Psychologicznie to przesunięcie z poziomu pozycyjnego ku transformacji: od walki o rację do rozmowy o wpływie, odpowiedzialności i możliwych krokach.",
+            "post_game": {
+                "communication_style_summary": "Dominowały styl empatyczny, asertywny i momentami transformacyjny. Granice były jasne, a kontakt pozostał żywy.",
+                "strongest_moment": "Najmocniejszy był moment, w którym oddzieliłeś_aś wsparcie od osłaniania i nazwałeś_aś granicę bez zawstydzania.",
+                "growth_tip": "To dobry kierunek. W życiu pilnuj konsekwencji po rozmowie, bo sama jakość dialogu nie zastąpi realnych działań i utrzymanych granic.",
+                "replay_prompt": "Spróbuj jeszcze raz i zobacz, czy potrafisz od początku do końca utrzymać troskę bez choćby jednego wejścia w ratowanie albo walkę o władzę."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 10,
+                "max": 12
+            },
+            "color": "blue",
+            "title": "MIŁOŚĆ BEZ RATOWANIA",
+            "emoji": "🔵",
+            "subtitle": "Granice i bliskość zaczynają działać po tej samej stronie.",
+            "narrative": "Marek nie zostaje naprawiony jednym wieczorem, ale dzieje się coś rzadszego i cenniejszego: pierwszy raz nie musi wybierać między upokorzeniem a unikaniem. Słyszy, że nie uratujesz go przed konsekwencjami, ale też nie odrzucasz go jako człowieka. Pojawia się zgoda na konkretny krok, a relacja wychodzi z chorego tańca kontroli i osłaniania.",
+            "diagnosis": "To ścieżka mistrzowska, bo utrzymałeś_aś jednocześnie trzy trudne rzeczy: empatię wobec wstydu, granicę wobec nałogu i pokorę wobec granic własnego wpływu. W praktyce to przejście na poziom transformacyjny, gdzie nie chodzi już o wygraną w rozmowie, lecz o stworzenie warunków do odpowiedzialnej decyzji.",
+            "post_game": {
+                "communication_style_summary": "Rozmowa była dojrzała, empatyczna i transformacyjna. Zachowałeś_aś kontakt bez oddawania rzeczywistości i bez przejmowania odpowiedzialności za zdrowienie drugiej osoby.",
+                "strongest_moment": "Najsilniejszy był moment, gdy jasno powiedziałeś_aś, że nie możesz wybrać za niego zdrowienia, ale możesz przestać współpracować z nałogiem.",
+                "growth_tip": "To jest poziom, który warto przenosić do życia: fakt, emocja, granica, odpowiedzialność. Pamiętaj tylko, że nawet wzorcowa rozmowa nie daje kontroli nad cudzym wyborem.",
+                "replay_prompt": "Zagraj ponownie i sprawdź, jak szybko jedna mała zmiana stylu potrafi zepchnąć tak trudną rozmowę z poziomu mistrzowskiego z powrotem w chaos."
+            }
+        }
+    ]
+}

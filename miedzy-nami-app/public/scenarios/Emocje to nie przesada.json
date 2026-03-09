@@ -1,0 +1,975 @@
+{
+    "scenario_id": "emocje_to_nie_przesada",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Emocje to nie przesada",
+        "subtitle": "Bliska osoba systematycznie pomniejsza twoje uczucia i nazywa je przesadą",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 10,
+        "interaction_count": 6
+    },
+    "tags": {
+        "relationship_type": "romantic_partner",
+        "theme": [
+            "respect",
+            "communication_breakdown",
+            "support"
+        ],
+        "emotional_intensity": "critical",
+        "age_rating": "teen",
+        "session_type": "training",
+        "player_role_gender": "neutral",
+        "difficulty": "intermediate"
+    },
+    "characters": {
+        "player": {
+            "name": "Alex",
+            "role_label": "Partner · Gracz",
+            "age_range": "27-34",
+            "context": "Od dłuższego czasu czujesz, że gdy mówisz o zranieniu, smutku albo napięciu, druga strona reaguje drwiną albo lekceważeniem. Nie chodzi już o pojedynczy komentarz, tylko o wzorzec, który podkopuje twoje poczucie bezpieczeństwa w relacji.",
+            "hidden_need": "support",
+            "hidden_need_text": "Potrzebujesz prawa do własnych emocji, szacunku i wysłuchania bez zawstydzania.",
+            "traits": [
+                {
+                    "text": "Wrażliwość emocjonalna",
+                    "type": "neutral"
+                },
+                {
+                    "text": "Rosnąca frustracja",
+                    "type": "negative"
+                },
+                {
+                    "text": "Gotowość do szczerości",
+                    "type": "positive"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 5,
+                "patience": 6,
+                "defensiveness": 6,
+                "empathy": 8,
+                "need_for_control": 4,
+                "shame_sensitivity": 8,
+                "directness": 6,
+                "repair_ability": 7
+            }
+        },
+        "npc": {
+            "name": "Kuba",
+            "role_label": "Partner · Rozmówca",
+            "age_range": "28-35",
+            "context": "Kuba ma nawyk rozładowywania napięcia żartem, dystansem albo minimalizowaniem problemu. Gdy słyszy emocjonalny komunikat, szybko interpretuje go jako atak albo przesadę, bo sam słabo toleruje dyskomfort i poczucie winy.",
+            "hidden_need": "self_protection",
+            "hidden_need_text": "Potrzebuje uniknąć wstydu i poczucia, że zawiódł, dlatego broni się przez pomniejszanie problemu.",
+            "traits": [
+                {
+                    "text": "Defensywność",
+                    "type": "negative"
+                },
+                {
+                    "text": "Dowcip jako tarcza",
+                    "type": "neutral"
+                },
+                {
+                    "text": "Zdolność do refleksji pod spokojnym naciskiem",
+                    "type": "positive"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 4,
+                "patience": 5,
+                "defensiveness": 8,
+                "empathy": 4,
+                "need_for_control": 6,
+                "shame_sensitivity": 7,
+                "directness": 5,
+                "repair_ability": 5
+            },
+            "npc_reaction_logic": "Na agresję i sarkazm odpowiada kontratakiem albo kpiną. Na wycofanie reaguje dalszym bagatelizowaniem, bo uznaje temat za zamknięty. Najbardziej mięknie, gdy gracz spokojnie nazywa wzorzec, mówi o własnym doświadczeniu i stawia granicę bez upokarzania."
+        }
+    },
+    "metrics_start": {
+        "tension": 40,
+        "trust": 60,
+        "openness": 50,
+        "feeling_heard": 50
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Pierwsze unieważnienie",
+            "scene": {
+                "description": "Wieczór po spotkaniu ze znajomymi. W mieszkaniu jest cicho, ale napięcie wisi w powietrzu. Wróciliście do domu po sytuacji, w której Kuba zażartował z ciebie przy innych, a gdy dałeś to po sobie poznać, machnął ręką.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": "No bez przesady. Znowu za bardzo się przejmujesz.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Przestań robić ze mnie idiotę. Zawsze mnie poniżasz.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kuba prostuje się i od razu przechodzi do obrony. Mówi, że to ty robisz aferę i że z tobą nie da się normalnie rozmawiać.",
+                    "feedback": {
+                        "label": "Uogólnienie i atak",
+                        "psychology": "To komunikat z poziomu oskarżenia. W kwadracie von Thuna druga strona słyszy głównie apel do obrony i relacyjny cios. Uogólnienie zawsze nasila defensywność i spycha rozmowę na Poziom II.",
+                        "better_alternative_hint": "Mów o konkretnym zachowaniu i jego wpływie na ciebie, zamiast oceniać całą osobę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uogólnianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, nieważne.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kuba wzrusza ramionami i uznaje temat za zamknięty. Ty zostajesz z napięciem i poczuciem, że znowu musisz połknąć to sam.",
+                    "feedback": {
+                        "label": "Wycofanie z rozmowy",
+                        "psychology": "Bierność pozornie obniża konflikt, ale wzmacnia wzorzec invalidacji. W analizie transakcyjnej to wejście w uległe Dziecko Adaptowane zamiast dorosłego nazwania granicy.",
+                        "better_alternative_hint": "Nie musisz eskalować, ale warto zostać przy swoim doświadczeniu i nazwać je wprost."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna Berne'a",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie podoba mi się, kiedy tak mówisz. Chcę, żebyś przestał.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kuba patrzy na ciebie uważniej, ale nadal jest spięty. Odpowiada, że nie rozumie, czemu robisz z tego aż taki problem.",
+                    "feedback": {
+                        "label": "Granica bez pogłębienia",
+                        "psychology": "To zdrowy ruch asertywny. Stawiasz granicę, ale nie odsłaniasz jeszcze pełnego znaczenia sytuacji, więc rozmowa może utknąć na poziomie faktów i oporu.",
+                        "better_alternative_hint": "Dodaj, co dokładnie w tobie uruchamia taki komentarz i czego potrzebujesz zamiast niego."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granice",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Kiedy słyszę, że przesadzam, czuję się unieważniony. Chcę powiedzieć, co mnie zabolało, bez wyśmiewania.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kuba nieco spuszcza wzrok. Nadal nie jest w pełni miękki, ale przestaje żartować i pierwszy raz naprawdę słucha.",
+                    "feedback": {
+                        "label": "Nazwanie wpływu na siebie",
+                        "psychology": "To rdzeń NVC: obserwacja, uczucie i potrzeba bez ataku. Taki komunikat zmniejsza szansę na kontratak i podnosi szansę przejścia z walki o rację do rozmowy o doświadczeniu.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC Rosenberga",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Nazwanie wzorca",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Kuba stoi przy blacie z założonymi rękami. Atmosfera robi się twarda i chłodna. Po twojej pierwszej reakcji czuje się zaatakowany albo upewniony, że lepiej nic nie tłumaczyć.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Okej, zaraz zrobisz ze mnie potwora tylko dlatego, że powiedziałem jedno zdanie.",
+            "scene_high": {
+                "description": "Kuba opiera się o blat i patrzy na ciebie mniej zaczepnie. Wciąż jest napięty, ale przestał lekceważyć sam fakt, że coś cię zabolało.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Dobra. To powiedz konkretnie, co cię zabolało.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Tak, jasne. Ty zawsze jesteś biedny i niezrozumiany.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kuba od razu wyłapuje ironię i odpowiada chłodno, że skoro chcesz się nabijać, to nie ma o czym gadać.",
+                    "feedback": {
+                        "label": "Sarkazm zamiast treści",
+                        "psychology": "Bierna agresja pozwala wyładować złość bez odsłonięcia zranienia, ale nie buduje zrozumienia. To komunikat podwójny: formalnie rozmowa trwa, faktycznie relacja dostaje kolejny cios.",
+                        "better_alternative_hint": "Nazwij wzorzec wprost, bez kłucia drugiej strony ironią."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Komunikat podwójny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Problem jest z tobą. Nie umiesz nikogo szanować.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kuba zaciska szczękę i odbija piłkę. Mówi, że to ty od miesięcy szukasz problemu we wszystkim.",
+                    "feedback": {
+                        "label": "Ocena osoby zamiast wzorca",
+                        "psychology": "Atak na charakter prowokuje obronę tożsamości. Zamiast rozmawiać o zachowaniu, uruchamiasz walkę o to, kto jest gorszy. To klasyczne ugrzęźnięcie na Poziomie II.",
+                        "better_alternative_hint": "Mów o powtarzalnym mechanizmie i o tym, co on robi z relacją."
+                    },
+                    "tags": [
+                        {
+                            "text": "Atak personalny",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie chodzi o jedno zdanie. Chodzi o to, że to się powtarza.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kuba marszczy brwi. Nie zgadza się do końca, ale słyszy, że problem jest większy niż jeden wieczór.",
+                    "feedback": {
+                        "label": "Nazwanie wzorca",
+                        "psychology": "To ważny krok: przesuwasz rozmowę z jednego incydentu na powtarzalny mechanizm. Nadal jednak brakuje odsłonięcia skutku emocjonalnego, więc druga strona może dalej spierać się o fakty.",
+                        "better_alternative_hint": "Dodaj, co dzieje się z tobą, gdy ten wzorzec wraca."
+                    },
+                    "tags": [
+                        {
+                            "text": "Nazywanie wzorca",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Metakomunikacja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie chcę udowadniać, że mam rację. Chcę nazwać wzorzec: kiedy mówię o uczuciach, często słyszę, że przesadzam, i wtedy zamykam się.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Kuba wyraźnie zwalnia. Mówi ciszej, że nie zdawał sobie sprawy, że jego teksty aż tak cię odcinają.",
+                    "feedback": {
+                        "label": "Metakomunikacja z wpływem",
+                        "psychology": "Zamiast licytacji racji wprowadzasz rozmowę o samym sposobie rozmowy. To ruch transformacyjny: pokazujesz nie tylko problem, ale też jego konsekwencję dla więzi.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Metakomunikacja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Prawo do własnej reakcji",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "W kuchni robi się duszno od niewypowiedzianej złości. Kuba kręci głową i chodzi po mieszkaniu krótkimi nerwowymi krokami. Nadal broni się przed przyjęciem twojej perspektywy.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Każdy ma jakieś emocje, ale ty naprawdę robisz z tego teatr.",
+            "scene_high": {
+                "description": "Między wami nadal jest napięcie, ale pojawiło się też miejsce na refleksję. Kuba już nie żartuje i nie ucieka wzrokiem. Słychać, że pierwszy raz rozważa, że problem nie leży tylko w twojej reaktywności.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Nie myślałem o tym jako o wyśmiewaniu. Bardziej o tym, że próbowałem rozładować sytuację.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To może w końcu poczujesz, jak to jest, kiedy ktoś cię lekceważy.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kuba odbiera to jako groźbę odwetu i natychmiast się zamyka. Mówi, że nie będzie brał udziału w takiej rozmowie.",
+                    "feedback": {
+                        "label": "Odwet zamiast granicy",
+                        "psychology": "To już nie obrona emocji, tylko chęć zadania bólu zwrotnego. W relacji uruchamia to schemat kara za karę i niszczy możliwość naprawy.",
+                        "better_alternative_hint": "Broń prawa do własnych uczuć bez zamiaru ukarania drugiej strony."
+                    },
+                    "tags": [
+                        {
+                            "text": "Odwet",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Eskalacja konfliktu",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Może faktycznie przesadzam. Zapomnijmy o tym.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kuba natychmiast łapie tę wersję. Mówi, że właśnie o to mu chodziło, i kończy temat, a ty zostajesz z jeszcze większym zwątpieniem w siebie.",
+                    "feedback": {
+                        "label": "Auto-unieważnienie",
+                        "psychology": "To moment, w którym internalizujesz cudzą ocenę i podważasz własną percepcję. Przy długotrwałej invalidacji taki ruch wzmacnia wstyd i rozszczelnia granice psychiczne.",
+                        "better_alternative_hint": "Nie musisz przekonywać, że twoja emocja jest obiektywnie słuszna. Wystarczy uznać, że jest realna."
+                    },
+                    "tags": [
+                        {
+                            "text": "Auto-gaslighting",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Wstyd",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "To, że ty byś zareagował inaczej, nie znaczy, że moje uczucia są nieważne.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kuba milknie na chwilę. Nie przyznaje ci jeszcze racji, ale słyszy wyraźną granicę między jego oceną a twoim doświadczeniem.",
+                    "feedback": {
+                        "label": "Obrona prawa do emocji",
+                        "psychology": "To zdrowe oddzielenie faktu przeżywania od cudzej interpretacji. Wychodzisz z walki o to, kto ma rację, i bronisz prawa do własnej reakcji, ale bez wskazania dalszej drogi rozmowy.",
+                        "better_alternative_hint": "Dodaj, czego dokładnie oczekujesz zamiast oceniania twojej reakcji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Oddzielenie perspektyw",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie oczekuję, że będziesz czuć to samo co ja. Oczekuję, że nie będziesz oceniać mojej reakcji, tylko spróbujesz ją zrozumieć.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Kuba oddycha głębiej i przestaje się przerzucać argumentami. Mówi, że to brzmi fair i że może spróbować słuchać bez poprawiania ciebie.",
+                    "feedback": {
+                        "label": "Walidacja bez zgody co do wszystkiego",
+                        "psychology": "Walidacja nie oznacza identycznego przeżywania. Pokazujesz różnicę między rozumieniem czyjejś emocji a ocenianiem jej. To bardzo dojrzały ruch relacyjny.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Różnica między zgodą a zrozumieniem",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Konkretna prośba o zmianę",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Rozmowa jest już zmęczona i poszarpana. W powietrzu czuć zniecierpliwienie, a każde kolejne zdanie grozi skrętem w kolejną kłótnię o styl, ton i winę.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "No dobrze, to jak mam z tobą w ogóle rozmawiać, skoro wszystko odbierasz tak mocno?",
+            "scene_high": {
+                "description": "Siedzicie już spokojniej. Nadal jest ciężko, ale rozmowa przestaje być wyłącznie obroną i oskarżeniem. Pojawia się przestrzeń na konkret zamiast kolejnej wymiany ciosów.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Okej. To powiedz mi konkretnie, co byłoby dla ciebie pomocne.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Najlepiej wcale się nie odzywaj, skoro i tak nic nie umiesz.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kuba prycha i odpowiada, że właśnie pokazałeś, że chodzi ci o upokorzenie, a nie o rozmowę.",
+                    "feedback": {
+                        "label": "Pogarda pod przykrywką",
+                        "psychology": "Pogarda jest jednym z najsilniejszych predyktorów rozpadu dialogu. Sarkastyczne poniżenie może dać chwilową ulgę, ale silnie niszczy zaufanie i motywację do zmiany.",
+                        "better_alternative_hint": "Zamiast wbijać szpilę, nazwij konkretne zachowanie, którego potrzebujesz."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Czterej jeźdźcy konfliktu",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nieważne. Sam powinieneś wiedzieć.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kuba z ulgą korzysta z tej furtki i temat znowu rozmywa się bez konkretu. Nic realnie się nie zmienia.",
+                    "feedback": {
+                        "label": "Domyśl się sam",
+                        "psychology": "To częsty ruch po długim niewysłuchaniu: skoro tyle razy tłumaczyłeś, pojawia się pokusa, by druga strona czytała w myślach. Problem w tym, że bez jasnej prośby wzorzec zwykle trwa dalej.",
+                        "better_alternative_hint": "Podaj prostą, wykonalną prośbę dotyczącą zachowania w rozmowie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Czytanie w myślach",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Jasna prośba",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Gdy mówię, że jest mi przykro, nie mów mi, że przesadzam.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kuba kiwa głową. Słyszy prostą zasadę, choć nie do końca rozumie jeszcze, dlaczego jest ona dla ciebie aż tak ważna.",
+                    "feedback": {
+                        "label": "Czytelna zasada",
+                        "psychology": "To dobra prośba operacyjna: krótka, konkretna i możliwa do wykonania. Brakuje jednak szerszego sensu relacyjnego, więc łatwo ją potraktować jak techniczną instrukcję, a nie zmianę jakości kontaktu.",
+                        "better_alternative_hint": "Dodaj, co pomaga ci wrócić do dialogu i poczuć się bezpiecznie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Konkretna prośba",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Gdy mówię o emocjach, potrzebuję najpierw usłyszeć, że rozumiesz, że coś mnie poruszyło. Dopiero potem możemy rozmawiać o faktach i rozwiązaniu.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kuba pierwszy raz słyszy nie tylko zakaz, ale też mapę bezpiecznej rozmowy. Przyznaje, że to jest dla niego konkret, z którym może pracować.",
+                    "feedback": {
+                        "label": "Prośba o proces, nie tylko o słowa",
+                        "psychology": "To bardzo dojrzały ruch. Nie prosisz wyłącznie o unikanie raniącego tekstu, ale proponujesz kolejność, która reguluje napięcie i buduje kontakt. To już wyraźny Poziom III.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Struktura rozmowy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Granica bez szantażu",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Zmęczenie zaczyna mieszać się z gniewem. Kuba jest wyraźnie poirytowany samym faktem, że temat wciąż trwa, i szuka sposobu, żeby odzyskać przewagę albo zamknąć rozmowę.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "To brzmi jak instrukcja obsługi twoich humorów.",
+            "scene_high": {
+                "description": "Choć rozmowa nadal jest trudna, pojawia się moment realnego testu. Kuba nie jest już tylko w obronie. Zaczyna rozumieć, że chodzi o wzorzec, a nie jednorazowy foch.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Mogę spróbować. A co zrobisz, jeśli znowu palnę coś odruchowo?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Wtedy zobaczysz, jak szybko skończy się ta rozmowa i może cały związek.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kuba natychmiast skupia się na groźbie, a nie na problemie. Odbiera to jak ultimatum i mówi, że nie da się tak sterować.",
+                    "feedback": {
+                        "label": "Ultimatum pod wpływem bólu",
+                        "psychology": "Granica i szantaż to nie to samo. Kiedy konsekwencja brzmi jak kara mająca wymusić zmianę, druga strona walczy o autonomię zamiast słuchać sensu twojej potrzeby.",
+                        "better_alternative_hint": "Powiedz, co zrobisz dla ochrony siebie, bez straszenia rozpadem relacji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ultimatum",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Granica a kara",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nic nie zrobię. Jak zwykle to przeczekam.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kuba słyszy, że realnie nic mu nie grozi poza twoim bólem, do którego już przywykł. Wzorzec zostaje bez żadnego hamulca.",
+                    "feedback": {
+                        "label": "Brak konsekwencji",
+                        "psychology": "Sama prośba bez konsekwencji bywa nieskuteczna, zwłaszcza przy utrwalonej invalidacji. Granica potrzebuje działania ochronnego, inaczej relacja uczy się, że można ją ignorować.",
+                        "better_alternative_hint": "Nazwij spokojnie, co zrobisz, gdy rozmowa znów stanie się raniąca."
+                    },
+                    "tags": [
+                        {
+                            "text": "Brak granicy wykonawczej",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Konsekwencja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Jeśli znowu usłyszę wyśmianie, przerwę rozmowę i wrócę do niej później.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kuba marszczy czoło, ale rozumie zasadę. To nie brzmi przyjemnie, ale brzmi jasno i przewidywalnie.",
+                    "feedback": {
+                        "label": "Zdrowa konsekwencja",
+                        "psychology": "To już prawdziwa granica: mówisz, co zrobisz ty, a nie co ma się stać jemu. Brakuje tylko dopowiedzenia, że celem jest ochrona dialogu, a nie obrażenie się.",
+                        "better_alternative_hint": "Dodaj, że to przerwa dla ochrony rozmowy, nie kara."
+                    },
+                    "tags": [
+                        {
+                            "text": "Konsekwencja granicy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Samoregulacja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Jeśli znowu pojawi się wyśmianie albo tekst, że przesadzam, zatrzymam rozmowę. To nie kara, tylko granica, bo chcę rozmawiać w sposób, który nie niszczy nas obojga.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Kuba słyszy, że nie chodzi o pokaz siły, tylko o ochronę relacji przed dalszym ranieniem. W jego twarzy pojawia się mniej oporu, więcej namysłu.",
+                    "feedback": {
+                        "label": "Granica z intencją ochrony relacji",
+                        "psychology": "Najsilniejsze granice nie poniżają i nie grożą. Łączysz troskę o siebie z troską o jakość kontaktu, dzięki czemu konsekwencja nie brzmi jak wojna, lecz jak warunek bezpiecznej rozmowy.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Granica",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Ochrona relacji",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_6",
+            "title": "Domknięcie i kierunek na przyszłość",
+            "score_threshold": 5,
+            "scene_low": {
+                "description": "Jest późno. Oboje jesteście zmęczeni i napięci. Rozmowa stoi na granicy zerwania albo chłodnego zawieszenia broni. Ostatnie zdanie może zamknąć temat w starym układzie albo przynajmniej nazwać, co dalej.",
+                "location": "bedroom",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Czyli teraz mam chodzić wokół ciebie na palcach?",
+            "scene_high": {
+                "description": "W sypialni jest ciszej niż wcześniej. Napięcie nie zniknęło całkiem, ale przestało być walką. To moment, w którym można albo utrwalić nową jakość rozmowy, albo stracić ją przez ostatni złośliwy skręt.",
+                "location": "bedroom",
+                "time_of_day": "night",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Nie obiecuję perfekcji, ale rozumiem, że to dla ciebie ważne.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nieważne. I tak za tydzień wrócimy do tego samego.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kuba zamyka się natychmiast. Słyszy pogardliwą rezygnację i uznaje, że niczego nie da się tu zbudować.",
+                    "feedback": {
+                        "label": "Cynizm na finiszu",
+                        "psychology": "Cynizm chroni przed kolejnym rozczarowaniem, ale odbiera sens każdej próbie zmiany. To zrozumiała reakcja po długim bólu, lecz relacyjnie działa jak samospełniająca się przepowiednia.",
+                        "better_alternative_hint": "Zostań przy ostrożnej nadziei albo jasnej granicy, zamiast zamykać wszystko szyderczą rezygnacją."
+                    },
+                    "tags": [
+                        {
+                            "text": "Cynizm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Samospełniająca się przepowiednia",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Tak, bo inaczej z tobą się nie da jak z dzieckiem.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kuba natychmiast wybucha i kończy rozmowę. W jego oczach to już nie jest rozmowa o emocjach, tylko o wzajemnym poniżaniu.",
+                    "feedback": {
+                        "label": "Upokorzenie drugiej strony",
+                        "psychology": "Nawet po trafnym nazwaniu problemu końcowe upokorzenie resetuje postęp. W analizie transakcyjnej wpychasz rozmówcę w buntownicze Dziecko albo karzącego Rodzica.",
+                        "better_alternative_hint": "Domknij rozmowę w języku granic i potrzeb, nie w języku wyższości."
+                    },
+                    "tags": [
+                        {
+                            "text": "Poniżenie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna Berne'a",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Chcę sprawdzić w praktyce, czy potrafimy rozmawiać inaczej od teraz.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kuba przyjmuje to bez większego ciepła, ale też bez oporu. Pada między wami ostrożna zgoda na próbę zmiany.",
+                    "feedback": {
+                        "label": "Rozsądne domknięcie",
+                        "psychology": "To stabilny finał: nie idealizujesz sytuacji, ale otwierasz drogę do sprawdzenia zmiany w działaniu. Wciąż jednak brakuje krótkiego uznania dla wysiłku rozmowy lub nazwania wspólnego celu.",
+                        "better_alternative_hint": "Połącz realizm z uznaniem tego, co dziś udało się usłyszeć."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywne domknięcie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Testowanie zmiany",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Dziękuję, że tego słuchasz. Nie potrzebuję idealnej reakcji, tylko szacunku dla tego, co czuję, i gotowości do poprawy, kiedy coś zaboli.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kuba mięknie i przyznaje, że będzie musiał się tego uczyć, ale rozumie już, że twoje emocje nie są problemem samym w sobie. Po raz pierwszy pada między wami poczucie, że można zbudować inny sposób rozmowy.",
+                    "feedback": {
+                        "label": "Szacunek zamiast perfekcjonizmu",
+                        "psychology": "Nie żądasz idealności, tylko odpowiedzialności i korekty. To obniża defensywność i wzmacnia realną gotowość do zmiany. Bardzo dobry finał naprawczy.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Docenienie wysiłku",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Naprawa relacji",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "PĘKNIĘCIE I ODWROT",
+            "emoji": "🔴",
+            "subtitle": "Rozmowa kończy się dalszą invalidacją albo otwartą eskalacją",
+            "narrative": "Wieczór kończy się chłodem, trzaskiem drzwi albo ciężkim milczeniem. Nikt nie czuje się zobaczony. Twoje emocje nie zostały obronione w sposób, który dawałby szansę na zrozumienie, a Kuba zostaje w swojej obronności albo kontrataku.",
+            "diagnosis": "Dominował Poziom II — walka o rację, obrona ego i wzajemne rany. Pojawiły się albo atak, albo wycofanie, co w obu przypadkach utrwaliło wzorzec emotional invalidation. Z perspektywy NVC zabrakło bezpiecznego połączenia między uczuciem, potrzebą i konkretną prośbą.",
+            "post_game": {
+                "communication_style_summary": "Ścieżka zdominowana przez agresję, bierność albo sarkazm. Emocjonalny ból był realny, ale forma odpowiedzi nie ochroniła rozmowy.",
+                "strongest_moment": "Najbliżej zmiany było wtedy, gdy problem został choć na chwilę nazwany jako coś więcej niż pojedynczy incydent.",
+                "growth_tip": "Następnym razem nie broń swojej godności przez atak ani przez wycofanie. Nazwij wpływ na siebie, a potem postaw jasną granicę bez poniżania drugiej strony.",
+                "replay_prompt": "Spróbuj przejść scenariusz tak, by szybciej nazwać wzorzec i odróżnić granicę od kary."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "KRUCHY ROZEJM",
+            "emoji": "🟡",
+            "subtitle": "Udało się zatrzymać najgorsze, ale bez pełnego przełomu",
+            "narrative": "Rozmowa nie wybucha, ale też nie prowadzi do głębokiego zrozumienia. Padają ważne słowa o granicach albo o powtarzającym się wzorcu, lecz między wami nadal zostaje sporo ostrożności. Jest szansa na zmianę, ale nie ma jeszcze mocnego poczucia bezpieczeństwa.",
+            "diagnosis": "Pojawiły się elementy asertywności i częściowe odejście od obrony, ale dialog wciąż balansował między transakcją a pozycją. Został nazwany problem, lecz nie zawsze wybrzmiała walidacja ani sens relacyjny proponowanej zmiany.",
+            "post_game": {
+                "communication_style_summary": "Dominuje styl asertywny i rzeczowy, ale z ograniczoną głębią emocjonalną. To lepsze niż eskalacja, lecz niewystarczające do pełnej naprawy.",
+                "strongest_moment": "Najmocniejszy był moment, gdy padła jasna zasada albo konsekwencja dotycząca dalszej rozmowy.",
+                "growth_tip": "Idziesz w dobrym kierunku. Kolejny krok to połączenie granicy z walidacją własnych uczuć i z krótkim pokazaniem, po co ta zmiana ma służyć relacji.",
+                "replay_prompt": "Zagraj jeszcze raz i spróbuj częściej wybierać odpowiedzi, które łączą konkret z odsłonięciem emocji."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 9
+            },
+            "color": "green",
+            "title": "EMOCJE ODZYSKUJĄ MIEJSCE",
+            "emoji": "🟢",
+            "subtitle": "Bronisz prawa do własnych uczuć i otwierasz drogę do zdrowszej rozmowy",
+            "narrative": "Rozmowa pozostaje trudna, ale przestaje być polem walki o to, kto przesadza. Udaje ci się nazwać wzorzec invalidacji, obronić własną perspektywę i zaproponować lepszy sposób rozmowy. Kuba nie staje się nagle idealny, ale zaczyna rozumieć, że twoje emocje nie są problemem do wyśmiania.",
+            "diagnosis": "Przeszedłeś od reaktywności do świadomego stawiania granic. Wprowadziłeś komunikaty Ja, metakomunikację i konsekwencję bez szantażu. To pozwoliło zbliżyć się do Poziomu III i odzyskać poczucie bycia słyszanym.",
+            "post_game": {
+                "communication_style_summary": "Przeważa styl empatyczny i asertywny. Rozmowa chroni zarówno twoją godność, jak i możliwość kontaktu.",
+                "strongest_moment": "Najlepszy moment to nazwanie, że nie oczekujesz identycznych emocji, tylko szacunku i próby zrozumienia.",
+                "growth_tip": "To dobra ścieżka. W realnym życiu wzmacniaj ją przez konsekwencję: powtarzaj prośbę i granicę tak samo spokojnie również przy kolejnych sytuacjach.",
+                "replay_prompt": "Sprawdź, czy potrafisz dojść jeszcze dalej i zbudować finał, w którym obie strony mają wspólną mapę rozmowy."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 10,
+                "max": 12
+            },
+            "color": "blue",
+            "title": "SZACUNEK ZAMIAST OBRONY",
+            "emoji": "🔵",
+            "subtitle": "Powstaje nowa zasada rozmowy o emocjach",
+            "narrative": "Nie tylko bronisz prawa do własnych uczuć, ale też pomagasz relacji wyjść ze starego wzorca. Kuba zaczyna widzieć, że bagatelizowanie emocji nie jest niewinnym stylem, tylko raniącym mechanizmem. Kończycie rozmowę z konkretną zasadą: najpierw uznanie emocji, potem fakty i rozwiązania.",
+            "diagnosis": "To ścieżka transformacyjna. Nie zatrzymałeś się na obronie przed zranieniem, ale przełożyłeś konflikt na wspólny język potrzeb, procesu rozmowy i konsekwencji. W praktyce połączyłeś NVC, metakomunikację i zdrową granicę bez przemocy relacyjnej.",
+            "post_game": {
+                "communication_style_summary": "Dominuje styl transformacyjny z wysoką empatią i precyzją granic. To wzorcowe bronienie własnych emocji bez niszczenia kontaktu.",
+                "strongest_moment": "Mistrzowski był moment, gdy granica została nazwana jako ochrona relacji, a nie kara dla rozmówcy.",
+                "growth_tip": "Utrzymuj ten standard także poza wielkimi konfliktami. Najsilniejsze zmiany dzieją się wtedy, gdy nowy sposób rozmowy staje się codziennym nawykiem, a nie tylko odpowiedzią kryzysową.",
+                "replay_prompt": "Zagraj ponownie i sprawdź, jak szybko potrafisz rozpoznać pierwszy sygnał invalidacji, zanim wzorzec się rozkręci."
+            }
+        }
+    ]
+}

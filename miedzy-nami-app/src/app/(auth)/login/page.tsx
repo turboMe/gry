@@ -15,7 +15,6 @@ export default function LoginPage() {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
-  const [contactOpen, setContactOpen] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -56,7 +55,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="screen fade-in" style={{ display: 'flex', flexDirection: 'column', minHeight: '100%' }}>
+    <div className="screen fade-in" style={{ display: 'flex', flexDirection: 'column', minHeight: '100%', overflowY: 'auto' }}>
       {/* Centered form area */}
       <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div style={{ width: '100%', maxWidth: 420, padding: '0 20px' }}>
@@ -245,9 +244,9 @@ export default function LoginPage() {
 
         <div
           style={{
-            overflow: 'hidden',
-            transition: 'max-height 0.4s ease, opacity 0.3s ease',
-            maxHeight: aboutOpen ? 500 : 0,
+            overflow: aboutOpen ? 'visible' : 'hidden',
+            transition: 'max-height 0.5s ease, opacity 0.3s ease',
+            maxHeight: aboutOpen ? 2000 : 0,
             opacity: aboutOpen ? 1 : 0,
           }}
         >
@@ -287,8 +286,8 @@ export default function LoginPage() {
             <p style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', marginBottom: 10 }}>
               Jeśli chciałbyś <strong>współpracować nad rozwojem aplikacji</strong>, skontaktuj się:
             </p>
-            <button
-              onClick={() => setContactOpen(!contactOpen)}
+            <a
+              href="mailto:karczespatryk@gmail.com"
               style={{
                 background: 'rgba(255,255,255,0.06)',
                 border: '1px solid rgba(255,255,255,0.12)',
@@ -298,38 +297,16 @@ export default function LoginPage() {
                 cursor: 'pointer',
                 padding: '8px 16px',
                 borderRadius: 8,
-                display: 'flex',
+                display: 'inline-flex',
                 alignItems: 'center',
                 gap: 6,
                 transition: 'all 0.2s',
+                textDecoration: 'none',
               }}
             >
               <span>✉️</span>
               <span>Napisz do mnie</span>
-              <span style={{
-                display: 'inline-block',
-                transition: 'transform 0.3s ease',
-                transform: contactOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-                fontSize: '0.6rem',
-                marginLeft: 2,
-              }}>▼</span>
-            </button>
-            <div
-              style={{
-                overflow: 'hidden',
-                transition: 'max-height 0.3s ease, opacity 0.2s ease',
-                maxHeight: contactOpen ? 40 : 0,
-                opacity: contactOpen ? 1 : 0,
-                marginTop: contactOpen ? 8 : 0,
-              }}
-            >
-              <a
-                href="mailto:karczespatryk@gmail.com"
-                style={{ color: 'var(--accent-cyan)', textDecoration: 'none', fontSize: '0.78rem' }}
-              >
-                📧 karczespatryk@gmail.com
-              </a>
-            </div>
+            </a>
 
             {/* Disclaimer */}
             <div style={{ height: 1, background: 'rgba(255,255,255,0.06)', margin: '12px 0' }} />

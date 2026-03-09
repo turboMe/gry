@@ -1,0 +1,1071 @@
+{
+    "scenario_id": "moving_goalposts_partner_loop",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Ciągle za mało",
+        "subtitle": "Gdy każde spełnione ustalenie otwiera nowy test",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 9,
+        "interaction_count": 6
+    },
+    "tags": {
+        "relationship_type": "romantic_partner",
+        "theme": [
+            "boundaries",
+            "control",
+            "conflict_resolution"
+        ],
+        "emotional_intensity": "moderate",
+        "age_rating": "teen",
+        "session_type": "training",
+        "player_role_gender": "neutral",
+        "difficulty": "advanced"
+    },
+    "characters": {
+        "player": {
+            "name": "Alex",
+            "role_label": "Partner · Gracz",
+            "age_range": "28-35",
+            "context": "Od kilku tygodni masz poczucie, że każde ustalenie z Leną rozpada się chwilę po tym, jak je spełnisz. Coraz mniej wiesz, czy rozmawiacie o realnym problemie, czy o kolejnym teście.",
+            "hidden_need": "clarity",
+            "hidden_need_text": "Potrzebujesz jasnych zasad, przewidywalności i poczucia, że porozumienie naprawdę jest możliwe.",
+            "traits": [
+                {
+                    "text": "sumienny",
+                    "type": "positive"
+                },
+                {
+                    "text": "łatwo bierze odpowiedzialność za atmosferę",
+                    "type": "neutral"
+                },
+                {
+                    "text": "męczy się w chaosie",
+                    "type": "negative"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 4,
+                "patience": 7,
+                "defensiveness": 5,
+                "empathy": 7,
+                "need_for_control": 6,
+                "shame_sensitivity": 6,
+                "directness": 6,
+                "repair_ability": 7
+            }
+        },
+        "npc": {
+            "name": "Lena",
+            "role_label": "Partnerka · Rozmówczyni",
+            "age_range": "27-34",
+            "context": "Lena czuje narastający niedosyt i lęk, że musi dopominać się o uwagę. Zamiast nazywać ten lęk wprost, podnosi poprzeczkę po każdym spełnionym warunku.",
+            "hidden_need": "reassurance",
+            "hidden_need_text": "Potrzebuje potwierdzenia, że jest ważna i że nie musi walczyć o inicjatywę oraz zaangażowanie.",
+            "traits": [
+                {
+                    "text": "uważna na sygnały odrzucenia",
+                    "type": "neutral"
+                },
+                {
+                    "text": "bywa testująca",
+                    "type": "negative"
+                },
+                {
+                    "text": "potrafi się otworzyć, gdy czuje się bezpiecznie",
+                    "type": "positive"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 5,
+                "patience": 4,
+                "defensiveness": 7,
+                "empathy": 6,
+                "need_for_control": 7,
+                "shame_sensitivity": 8,
+                "directness": 4,
+                "repair_ability": 5
+            },
+            "npc_reaction_logic": "Na agresję reaguje kontratakiem i dorzuca nowe zarzuty. Na bierność reaguje dalszym podnoszeniem wymagań, bo czuje chwilową przewagę i nadal nie czuje ukojenia. Na komunikację asertywną i empatyczną początkowo testuje granice, ale przy konsekwencji zaczyna odsłaniać lęk ukryty pod przesuwaniem warunków."
+        }
+    },
+    "metrics_start": {
+        "tension": 40,
+        "trust": 60,
+        "openness": 50,
+        "feeling_heard": 50
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Pierwszy nowy warunek",
+            "scene": {
+                "description": "Wieczór. W salonie świeci tylko lampa przy kanapie, a na stole leży otwarty kalendarz z zaznaczonym wspólnym weekendem. Tydzień temu zrobiłeś to, o co Lena prosiła, ale rozmowa wraca z nową pretensją.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": "No tak, zarezerwowałeś ten weekend, ale to jeszcze nie znaczy, że naprawdę wziąłeś mnie pod uwagę. Gdybyś się postarał, sam byś wiedział, czego potrzebuję.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To jest niemożliwe. Cokolwiek zrobię, zawsze wymyślasz nowy problem.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "A widzisz? Znowu chodzi tylko o ciebie. Właśnie dlatego nie mam ochoty dalej mówić.",
+                    "feedback": {
+                        "label": "Atak i generalizacja",
+                        "psychology": "Uogólnienie podnosi rozmowę na Poziom II, czyli walkę o rację. Z perspektywy kwadratu von Thuna Lena usłyszy przede wszystkim atak na siebie, a nie informację o twoim zagubieniu.",
+                        "better_alternative_hint": "Nazwij konkretny mechanizm i jego efekt, zamiast oceniać całą osobę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uogólnianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Eskalacja konfliktu",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, to powiedz jeszcze raz, co mam zrobić, i po prostu to zrobię.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Nie chcę ci wszystkiego rozpisywać. Chcę, żeby to było oczywiste.",
+                    "feedback": {
+                        "label": "Wejście w pętlę spełniania",
+                        "psychology": "Bierność chwilowo zmniejsza ryzyko otwartego konfliktu, ale wzmacnia moving goalposts. Oddajesz drugiej stronie prawo do ciągłego dopisywania kryteriów po fakcie.",
+                        "better_alternative_hint": "Zatrzymaj rozmowę na jednym ustaleniu i sprawdź, co dokładnie zostało zmienione."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Oddanie sprawczości",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Moving goalposts",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Zatrzymajmy się. Jaki był poprzedni warunek i co dokładnie doszło teraz?",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Poprzedni był o czasie, a teraz chodzi też o inicjatywę. To nie jest to samo.",
+                    "feedback": {
+                        "label": "Porządkowanie faktów",
+                        "psychology": "To ruch na Poziomie I. Pomaga oddzielić fakty od emocjonalnego chaosu, ale jeszcze nie zatrzymuje samego wzorca przesuwania poprzeczki.",
+                        "better_alternative_hint": "Po uporządkowaniu faktów nazwij też wpływ zmieniających się kryteriów na możliwość porozumienia."
+                    },
+                    "tags": [
+                        {
+                            "text": "Porządkowanie faktów",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Doprecyzowanie",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Słyszę, że jesteś rozczarowana, ale gubię się, kiedy po spełnieniu jednej prośby pojawia się następna. Chcę rozmawiać o jednym konkrecie naraz.",
+                    "points": 2,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Może brzmi to chaotycznie, ale nie chcę być zbywana. Okej, spróbujmy to rozdzielić.",
+                    "feedback": {
+                        "label": "Nazwanie efektu bez ataku",
+                        "psychology": "To asertywne połączenie komunikatu Ja z granicą. W duchu NVC mówisz o swoim doświadczeniu i potrzebie jasności, zamiast przypisywać Lenie złe intencje.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granica",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC Rosenberga",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Sedno czy kolejny test",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Lena stoi przy blacie z napiętymi ramionami. W powietrzu wisi niedokończona pretensja, a twoje poprzednie słowa nie dały jej poczucia bezpieczeństwa.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Nie łapiesz sedna. Zawsze robisz minimum, a potem chcesz medal.",
+            "scene_high": {
+                "description": "Lena siada naprzeciwko ciebie i bierze głębszy oddech. Nadal jest spięta, ale widać, że dopuszcza możliwość bardziej konkretnej rozmowy.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Dobra, spróbujmy. Nadal czuję niedosyt, ale mogę powiedzieć to konkretniej.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Bo twoje sedno zmienia się co pięć minut. Jak mam cię traktować poważnie?",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Świetnie. Teraz jeszcze powiedz, że wszystko sobie wymyślam.",
+                    "feedback": {
+                        "label": "Dewaluacja rozmówcy",
+                        "psychology": "Masz trafną obserwację, ale podaną w formie pogardy. Berne opisałby to jako wejście w krytycznego Rodzica, co u drugiej strony uruchamia obronę zamiast refleksji.",
+                        "better_alternative_hint": "Oddziel opis wzorca od oceny osoby."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Krytyczny Rodzic",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Eskalacja konfliktu",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Super, czyli mam zgadywać zasady gry, które znasz tylko ty.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Właśnie przez taki ton odechciewa mi się cokolwiek tłumaczyć.",
+                    "feedback": {
+                        "label": "Sarkazm zamiast granicy",
+                        "psychology": "Bierna agresja pozwala wyładować frustrację bez jawnego nazwania potrzeby. Problem pozostaje nierozwiązany, a druga strona słyszy głównie lekceważenie.",
+                        "better_alternative_hint": "Powiedz wprost, że nie wejdziesz w zgadywanie i potrzebujesz jednego konkretnego przykładu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Ukryty atak",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "To ustalmy pełną listę oczekiwań, żebym mógł niczego nie pominąć.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": 0,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Nie o listę chodzi. Chcę czuć, że to wychodzi też od ciebie.",
+                    "feedback": {
+                        "label": "Próba zamknięcia chaosu listą",
+                        "psychology": "To logiczne, ale wciąż zakłada, że problem da się rozwiązać przez dopisanie wszystkich warunków. Przy moving goalposts lista często rośnie szybciej niż poczucie bezpieczeństwa.",
+                        "better_alternative_hint": "Zamiast zbierać wszystkie warunki, nazwij, że same zasady zmieniają się po spełnieniu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Strukturyzowanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Moving goalposts",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Pozorna kontrola",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie chcę zgadywać ani się bronić. Potrzebuję, żebyśmy wybrali jeden przykład i sprawdzili, czy kryterium nie zmieniło się w trakcie.",
+                    "points": 2,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Okej. Jeden przykład to ten weekend. Najpierw chodziło o czas, a teraz o to, że sama musiałam go zainicjować.",
+                    "feedback": {
+                        "label": "Zatrzymanie rozmowy na jednym przykładzie",
+                        "psychology": "To skuteczna interwencja procesowa. Nie ścigasz treści kolejnych zarzutów, tylko regulujesz samą strukturę rozmowy, co jest warunkiem wyjścia z pętli.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Regulacja procesu rozmowy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granica proceduralna",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Intencja kontra efekt",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Rozmowa robi się cięższa. Lena chodzi po pokoju i zamiast zostawać przy jednym przykładzie, zaczyna wracać do ogólnego poczucia zawodu.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Ty wszystko zamieniasz w teorię. Problem jest prosty: gdyby ci zależało, nie musiałabym tego tłumaczyć.",
+            "scene_high": {
+                "description": "Lena nieco mięknie, choć wciąż jest ostrożna. Zamiast rzucać kolejne pretensje, próbuje mówić o tym, czego jej zabrakło.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Może trochę mieszam kilka rzeczy naraz, ale naprawdę chodzi mi o to, że chcę czuć twoją inicjatywę.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To klasyczna manipulacja. Chcesz, żebym ciągle przegrywał.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Skoro tak mnie widzisz, to nie mamy o czym rozmawiać.",
+                    "feedback": {
+                        "label": "Diagnoza jako broń",
+                        "psychology": "Nawet trafna etykieta użyta w formie oskarżenia zamyka dialog. Druga strona broni tożsamości zamiast przyglądać się mechanizmowi.",
+                        "better_alternative_hint": "Opisz obserwowalny wzorzec i jego konsekwencje bez przypisywania intencji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Etykietowanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Atrybucja intencji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Obrona tożsamości",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Może masz rację. Po prostu powiedz, jak mam udowodnić, że mi zależy.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Właśnie o to chodzi, że to powinno wychodzić samo.",
+                    "feedback": {
+                        "label": "Przyjęcie niemożliwego zadania",
+                        "psychology": "Prosisz o instrukcję do testu, który z definicji ma nie mieć jasnych zasad. To wzmacnia bezradność i utrwala niedosiężne kryterium.",
+                        "better_alternative_hint": "Rozdziel potrzebę drugiej strony od nierealistycznego sposobu jej sprawdzania."
+                    },
+                    "tags": [
+                        {
+                            "text": "Bezradność",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Moving goalposts",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Utrwalanie wzorca",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Rozumiem, że chcesz więcej inicjatywy. Podaj jeden moment, w którym tego zabrakło.",
+                    "points": 1,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Na przykład wtedy, kiedy zgodziłeś się na wyjazd, ale sam niczego nie zaproponowałeś od siebie.",
+                    "feedback": {
+                        "label": "Walidacja z prośbą o przykład",
+                        "psychology": "To dobry ruch, bo waliduje emocję i zawęża rozmowę. Nadal jednak jeszcze nie nazywasz, że standard został dopisany po fakcie.",
+                        "better_alternative_hint": "Po uzyskaniu przykładu wskaż też, że ocenianie po zmienionych kryteriach blokuje porozumienie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Dopytanie o przykład",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Aktywne słuchanie",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie oceniam twoich intencji. Mówię o efekcie: kiedy kryterium zmienia się po fakcie, porozumienie staje się nieosiągalne. Chcę wrócić do jednego sprawdzalnego przykładu.",
+                    "points": 2,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "To akurat rozumiem. W tym weekendzie zabrakło mi tego, że nic nie wyszło od ciebie.",
+                    "feedback": {
+                        "label": "Nazwanie wzorca zamiast intencji",
+                        "psychology": "To sedno pracy z moving goalposts. Zamiast spierać się o to, czy Lena ma prawo czegoś chcieć, pokazujesz, że zmiana kryteriów po fakcie czyni zgodę nierealną.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Nazwanie wzorca",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Moving goalposts",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Komunikat o wpływie",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Jedna prośba zamiast ruchomej poprzeczki",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Choć pojawił się konkretny przykład, rozmowa znów dryfuje. Lena przechodzi od weekendu do tego, jaka jest cała relacja, a ty czujesz, że grunt znowu ucieka.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Czyli teraz będziesz mi tłumaczyć, co wolno mi czuć? Właśnie o to chodzi, że zawsze przesuwasz rozmowę na swoje zasady.",
+            "scene_high": {
+                "description": "Po kilku trudnych minutach rozmowa zaczyna się porządkować. Zamiast kolejnych zarzutów pojawia się jedna, bardziej uchwytna potrzeba.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Dobra, przykład jest taki: chciałam, żebyś sam zaproponował wspólny wieczór, a nie tylko zgodził się na mój plan.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To absurd. Masz pretensję, że nie czytam w myślach.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Nie o myśli chodzi, tylko o to, że z tobą zawsze muszę wszystko ciągnąć sama.",
+                    "feedback": {
+                        "label": "Obrona przez kpinę z potrzeby",
+                        "psychology": "Atakujesz sposób wyrażenia potrzeby, ale nie dotykasz sedna. To zwiększa polaryzację i zachęca drugą stronę do dalszego dokładania argumentów.",
+                        "better_alternative_hint": "Przyjmij konkretną prośbę, ale oddziel ją od dopisywania kryteriów po fakcie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Odrzucenie perspektywy drugiej strony",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Polaryzacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Atak",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Jasne, następnym razem może od razu zatrudnię wróżkę.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Właśnie przez takie docinki nie czuję się przy tobie bezpiecznie.",
+                    "feedback": {
+                        "label": "Ironiczna obrona",
+                        "psychology": "Ironia daje ci chwilową ulgę, ale odbiera szansę na wspólne ustalenie reguł. W modelu Berne'a to ukryta gra zamiast komunikatu z pozycji Dorosły.",
+                        "better_alternative_hint": "Zaproponuj jasną zasadę rozmowy: jedna realna prośba na przyszłość bez dopisywania jej wstecz."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ironia",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Gra psychologiczna",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Okej, zapiszę sobie, że mam częściej wychodzić z inicjatywą.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 0,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "To już coś, ale nadal mam wrażenie, że mówimy o tym dopiero wtedy, gdy ja to wyciągam.",
+                    "feedback": {
+                        "label": "Przyjęcie prośby bez ram",
+                        "psychology": "Zgoda na konkretną zmianę jest cenna, ale jeśli nie ustalisz ram, rozmowa łatwo wróci do oceniania cię według kolejnych, nieuzgodnionych standardów.",
+                        "better_alternative_hint": "Połącz gotowość do zmiany z warunkiem jasnych i wspólnie ustalonych kryteriów."
+                    },
+                    "tags": [
+                        {
+                            "text": "Gotowość do zmiany",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Brak ram rozmowy",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kontraktowanie",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "To już jest konkret. Mogę rozmawiać o inicjatywie, ale nie o zasadach, które pojawiają się dopiero po ocenie. Ustalmy jedną realną prośbę na przyszłość.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Dobrze. Jedna prośba na przyszłość brzmi fair. Chcę, żebyś czasem sam wychodził z propozycją.",
+                    "feedback": {
+                        "label": "Kontrakt zamiast egzaminu",
+                        "psychology": "Przenosisz rozmowę z licytacji na wspólne ustalenie reguł. To wejście na Poziom III, bo tworzycie warunki porozumienia, a nie tylko spieracie się o winę.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Kontraktowanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Wspólna rama",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Test uczuć wraca tylnymi drzwiami",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Mimo chwilowego uporządkowania wraca stary rytm. Lena marszczy brwi, jakby sam konkret był za mały, i znów przesuwa rozmowę z zachowań na ocenę twoich uczuć.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Ale widzisz, gdybyś naprawdę mnie znał, nie musiałabym tego doprecyzowywać.",
+            "scene_high": {
+                "description": "W pokoju robi się ciszej. Lena spuszcza wzrok, jakby po raz pierwszy zbliżała się do tego, co naprawdę stoi pod jej pretensjami.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Chyba boję się, że bez proszenia nie będę dla ciebie ważna.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To już przesada. Zawsze musisz zrobić ze mnie tego złego.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Bo zamiast mnie usłyszeć, znowu bronisz tylko siebie.",
+                    "feedback": {
+                        "label": "Kontratak na zranienie",
+                        "psychology": "Pod spodem pojawia się wstyd i lęk, ale ty odpowiadasz na nie walką. To odcina dostęp do prawdziwej potrzeby i przywraca spiralę obron.",
+                        "better_alternative_hint": "Usłysz ukryty lęk, ale nie zgadzaj się na testowanie uczuć przez niemożliwe kryteria."
+                    },
+                    "tags": [
+                        {
+                            "text": "Defensywność",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Lęk przed odrzuceniem",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Kontratak",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, to będę bardziej uważać i sam wszystko wyłapywać.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Właśnie nie o uważanie chodzi. Nie chcę, żeby to było wyuczone.",
+                    "feedback": {
+                        "label": "Obietnica niemożliwa do utrzymania",
+                        "psychology": "Próbujesz kupić spokój obietnicą pełnej przewidywalności. To klasyczna pułapka współtworząca moving goalposts, bo obiecujesz reagować na niewypowiedziane standardy.",
+                        "better_alternative_hint": "Oddziel gotowość do troski od zgody na bycie stale egzaminowanym."
+                    },
+                    "tags": [
+                        {
+                            "text": "Nierealistyczna obietnica",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Moving goalposts",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Uległość",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie chcę, żebyś tak się czuła. Mogę się bardziej starać okazywać inicjatywę.",
+                    "points": 1,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "To ważne, ale nadal boję się, że za chwilę znowu będę musiała się dopominać.",
+                    "feedback": {
+                        "label": "Empatia bez granicy",
+                        "psychology": "Dajesz ukojenie i uznajesz emocję, ale jeszcze nie zamykasz furtki dla testu. Sama empatia nie wystarczy, jeśli forma rozmowy pozostaje niejasna.",
+                        "better_alternative_hint": "Po walidacji dopowiedz, na jakie zasady rozmowy się zgadzasz, a na jakie nie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Brak granicy",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Empatia",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Słyszę w tym lęk, że nie jesteś ważna. Ale kiedy rozmowa zmienia się w test dowodu miłości, wchodzimy w pułapkę. Mogę rozmawiać o zachowaniach, nie o egzaminie z uczuć.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -3,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "To brzmi uczciwie. Chcę bardziej mówić o tym, czego potrzebuję, a mniej cię sprawdzać.",
+                    "feedback": {
+                        "label": "Walidacja plus twarda rama",
+                        "psychology": "To najdojrzalsza odpowiedź: widzisz emocję pod spodem, ale nie rezygnujesz z granicy. W praktyce NVC łączysz empatię z jasnym nazwanie strategii, która wam szkodzi.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granica",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC Rosenberga",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_6",
+            "title": "Nowe zasady albo powrót do pętli",
+            "score_threshold": 5,
+            "scene_low": {
+                "description": "Jest późno. Zmęczenie miesza się z poczuciem bezsilności, a rozmowa chwieje się między rozstaniem a kolejną rundą tych samych zarzutów.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Nie wiem, może po prostu do siebie nie pasujemy. Przy tobie ciągle czuję niedosyt.",
+            "scene_high": {
+                "description": "Napięcie wyraźnie opadło. Nadal nie ma pełnego spokoju, ale po raz pierwszy oboje mówicie o czymś, co da się sprawdzić i wspólnie utrzymać.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Okej. Jedna konkretna prośba z mojej strony to uprzedzaj wcześniej, kiedy chcesz mieć weekend tylko dla siebie. To by mi pomogło.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Wiesz co, nigdy nie będziesz zadowolona, więc kończmy to.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Skoro tak to widzisz, to rzeczywiście nie ma już o czym rozmawiać.",
+                    "feedback": {
+                        "label": "Zerwanie przez przeciążenie",
+                        "psychology": "To zrozumiała reakcja na chroniczną frustrację, ale kończy rozmowę bez domknięcia wzorca. Zostajesz w diagnozie o drugiej stronie, nie w swoich granicach i potrzebach.",
+                        "better_alternative_hint": "Możesz postawić twardą granicę bez przechodzenia w ostateczny atak."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ultimatum",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Przeciążenie",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Zerwanie dialogu",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Masz rację. Spróbuję być wszystkim naraz, żebyś nie miała już pretensji.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Nie chcę, żebyś mówił to z poczucia winy. To i tak niczego nie naprawia.",
+                    "feedback": {
+                        "label": "Kapitulacja bez porozumienia",
+                        "psychology": "Rezygnujesz z siebie, ale nie tworzysz realnej umowy. W praktyce rośnie tylko napięcie ukryte, które wróci przy pierwszym potknięciu.",
+                        "better_alternative_hint": "Zaproponuj konkretną zmianę i równie konkretną zasadę, że warunki nie będą dopisywane po fakcie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Kapitulacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poczucie winy",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Brak granicy",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Dobrze. Następnym razem dam znać wcześniej i zobaczymy, czy to wystarczy.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "To brzmi sensownie. Chciałabym tylko, żebyśmy naprawdę tego pilnowali.",
+                    "feedback": {
+                        "label": "Praktyczne ustalenie bez pełnego domknięcia",
+                        "psychology": "Powstaje konkret, co jest wartościowe. Nadal jednak zostaje niedopowiedziane, co zrobicie, gdy znów pojawi się nowy warunek po fakcie.",
+                        "better_alternative_hint": "Dodaj zasadę zatrzymywania rozmowy, gdy poprzeczka znowu zacznie się przesuwać."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ustalenie praktyczne",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Kontrakt częściowy",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Niedomknięta granica",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Mogę zobowiązać się do jednej jasnej rzeczy: wcześniej komunikować zmianę planów. Potrzebuję też, żeby warunki nie były dopisywane po fakcie. Jeśli wróci pętla nowych testów, zatrzymam rozmowę i wrócimy do konkretu.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -3,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "To jest jasne. Tego mogę się trzymać. I ja też mogę mówić prośbę wcześniej, zamiast liczyć, że się domyślisz.",
+                    "feedback": {
+                        "label": "Nowa umowa z bezpiecznikiem",
+                        "psychology": "Najlepsza odpowiedź łączy konkret behawioralny z procedurą na wypadek nawrotu wzorca. To buduje przewidywalność i chroni obie strony przed powrotem do niemożliwych testów.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Kontraktowanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Bezpiecznik rozmowy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "POROZUMIENIE CORAZ DALEJ",
+            "emoji": "🔴",
+            "subtitle": "Pętla nowych warunków wygrała z rozmową",
+            "narrative": "Wieczór kończy się chłodem i zmęczeniem. Zamiast jednej wspólnej ustalonej prośby zostaje wrażenie, że każde słowo otwiera następny zarzut. Oboje odchodzicie z poczuciem, że niczego nie da się domknąć.",
+            "diagnosis": "W tej ścieżce rozmowa utknęła między atakiem a kapitulacją. Nie udało się stabilnie nazwać wzorca moving goalposts ani zatrzymać dopisywania kryteriów po fakcie, więc dialog rozpadł się na wzajemne obrony.",
+            "post_game": {
+                "communication_style_summary": "Dominowały reakcje agresywne lub bierne, które albo eskalowały spór, albo wzmacniały niedosiężne wymagania.",
+                "strongest_moment": "Najbliżej przełomu było wtedy, gdy próbowałeś wrócić do konkretu zamiast odpowiadać na ogólne oceny.",
+                "growth_tip": "Gdy warunki ciągle się zmieniają, nie ścigaj kolejnych oczekiwań. Zatrzymaj rozmowę i nazwij sam mechanizm: po spełnieniu jednego kryterium pojawia się nowe.",
+                "replay_prompt": "Spróbuj ponownie zbudować rozmowę wokół jednego przykładu i jednej wspólnej zasady na przyszłość."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "CZĘŚCIOWY KONKRET",
+            "emoji": "🟡",
+            "subtitle": "Udało się złapać fragment problemu, ale rama wciąż jest krucha",
+            "narrative": "Pod koniec rozmowy pojawia się pojedyncze ustalenie, lecz obok niego wciąż unosi się stary lęk i pokusa wracania do testów. Jest odrobina ulgi, ale nie pełne zaufanie, że następnym razem nie zacznie się od nowa.",
+            "diagnosis": "Ta ścieżka przyniosła trochę porządku i kilka konkretnych zdań, ale zabrakło pełnego domknięcia wzorca. Część twoich odpowiedzi była rozsądna, lecz nadal pozostawiała przestrzeń na przesuwanie poprzeczki.",
+            "post_game": {
+                "communication_style_summary": "Przeważała rzeczowość i częściowa empatia, ale bez konsekwentnego utrzymania granicy proceduralnej.",
+                "strongest_moment": "Najlepiej działały momenty, w których prosiłeś o jeden przykład zamiast odpowiadać na ogólne oskarżenia.",
+                "growth_tip": "Sam konkret nie wystarczy. Po ustaleniu prośby dopowiedz jeszcze, co zrobicie, gdy pojawi się nowy warunek po fakcie.",
+                "replay_prompt": "Przejdź raz jeszcze ścieżką, w której nie tylko porządkujesz treść, ale też ustanawiasz zasady samej rozmowy."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 9
+            },
+            "color": "green",
+            "title": "PĘTLA ZATRZYMANA",
+            "emoji": "🟢",
+            "subtitle": "Nazwany wzorzec robi miejsce na prawdziwą prośbę",
+            "narrative": "Rozmowa nie staje się nagle lekka, ale przestaje być niemożliwa. Lena nazywa jedną realną potrzebę, a ty stawiasz granicę wobec dopisywania kolejnych testów. Po raz pierwszy oboje macie coś, do czego można wrócić bez zgadywania.",
+            "diagnosis": "Udało ci się odróżnić potrzebę od szkodliwej strategii jej egzekwowania. Dzięki temu moving goalposts przestało sterować całą rozmową, a pojawiła się szansa na odbudowę przewidywalności i zaufania.",
+            "post_game": {
+                "communication_style_summary": "Dominowała asertywność wsparta empatią i orientacją na wspólne zasady.",
+                "strongest_moment": "Przełom nastąpił wtedy, gdy nazwałeś efekt zmiany kryteriów po fakcie bez oskarżania o złe intencje.",
+                "growth_tip": "To działa, bo łączysz dwie rzeczy naraz: widzisz emocję drugiej strony i jednocześnie nie rezygnujesz z jasnej granicy. Utrzymuj ten duet także w kolejnych rozmowach.",
+                "replay_prompt": "Spróbuj zdobyć jeszcze bardziej spójny wynik, konsekwentnie prowadząc rozmowę od konkretu do wspólnej umowy."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 10,
+                "max": 12
+            },
+            "color": "blue",
+            "title": "NOWA UMOWA ZAMIAST EGZAMINU",
+            "emoji": "🔵",
+            "subtitle": "Wzorzec został nazwany, zatrzymany i zastąpiony jasnymi zasadami",
+            "narrative": "Noc kończy się spokojniej, niż się zaczęła. Nie dlatego, że zniknęły wszystkie emocje, ale dlatego, że przestaliście mylić potrzebę bliskości z ruchem poprzeczki. Zostaje konkretna prośba, wzajemne zobowiązanie i jasny plan, co zrobić, jeśli stary mechanizm wróci.",
+            "diagnosis": "To najlepsza możliwa ścieżka: rozpoznałeś moving goalposts jako proces, nie wszedłeś w obronę ani w uległość, a potem przekształciłeś konflikt w kontrakt. To wzorcowe przejście od chaosu i testowania do dojrzałej regulacji relacji.",
+            "post_game": {
+                "communication_style_summary": "Przeważała komunikacja transformacyjna: konkret, empatia, granica i wspólna procedura na przyszłość.",
+                "strongest_moment": "Najmocniejszy był moment, w którym usłyszałeś lęk pod pretensją, ale odmówiłeś udziału w egzaminie z uczuć.",
+                "growth_tip": "To poziom mistrzowski. W realnym życiu utrzymuj tę samą kolejność: zauważ emocję, nazwij wzorzec, zaproponuj jedną wspólną zasadę i bezpiecznik na wypadek nawrotu.",
+                "replay_prompt": "Zagraj ponownie i sprawdź, jak wcześnie możesz rozpoznać ruchomą poprzeczkę, zanim rozmowa zdąży się rozgrzać."
+            }
+        }
+    ]
+}
