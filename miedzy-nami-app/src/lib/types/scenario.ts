@@ -5,9 +5,9 @@
 
 export type RelationshipType =
   | 'romantic_partner' | 'parent_young_child' | 'parent_teenager'
-  | 'teenager_parent' | 'child_parent' | 'siblings' | 'friends'
+  | 'teenager_parent' | 'child_parent' | 'parent_child' | 'siblings' | 'friends'
   | 'coworkers' | 'boss_employee' | 'employee_boss'
-  | 'neighbors' | 'strangers' | 'ex_partners';
+  | 'neighbors' | 'strangers' | 'ex_partners' | 'roommates';
 
 export type Theme =
   | 'chores' | 'jealousy' | 'boundaries' | 'trust' | 'forgiveness'

@@ -75,7 +75,15 @@ export default function ScenariosPage() {
                   className="category-card"
                   onClick={() => setSelectedCategory(rt)}
                 >
-                  <div style={{ fontSize: '2rem', marginBottom: 8 }}>{cat.icon}</div>
+                  {cat.image ? (
+                    <img
+                      src={cat.image}
+                      alt={cat.name}
+                      style={{ width: 64, height: 64, borderRadius: '50%', objectFit: 'cover', marginBottom: 8 }}
+                    />
+                  ) : (
+                    <div style={{ fontSize: '2rem', marginBottom: 8 }}>{cat.icon}</div>
+                  )}
                   <div style={{ fontSize: '0.88rem', fontWeight: 600 }}>{cat.name}</div>
                   <div style={{ fontSize: '0.72rem', color: 'var(--text-dim)', marginTop: 4 }}>
                     {list.length} {list.length === 1 ? 'scenariusz' : 'scenariuszy'}
@@ -98,7 +106,8 @@ export default function ScenariosPage() {
       <div className="scroll-area">
         <Header
           onBack={() => setSelectedCategory(null)}
-          title={`${catInfo.icon} ${catInfo.name}`}
+          title={catInfo.name}
+          icon={catInfo.image || catInfo.icon}
         />
 
         <div className="flex-col">
@@ -148,10 +157,15 @@ export default function ScenariosPage() {
   );
 }
 
-function Header({ onBack, title }: { onBack: () => void; title: string }) {
+function Header({ onBack, title, icon }: { onBack: () => void; title: string; icon?: string }) {
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '20px 0 16px' }}>
       <button className="back-btn" onClick={onBack}>←</button>
+      {icon && (icon.startsWith('/') ? (
+        <img src={icon} alt="" style={{ width: 28, height: 28, borderRadius: '50%', objectFit: 'cover' }} />
+      ) : (
+        <span>{icon}</span>
+      ))}
       <h2 className="heading-section">{title}</h2>
     </div>
   );

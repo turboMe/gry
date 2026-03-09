@@ -159,20 +159,22 @@ export function recommendScenarios(
 }
 
 /**
- * Relationship type categories with icons and Polish names.
+ * Relationship type categories with icons, images, and Polish names.
  */
-export const RELATIONSHIP_CATEGORIES: Record<RelationshipType, { icon: string; name: string }> = {
-  romantic_partner: { icon: '💑', name: 'Związek' },
+export const RELATIONSHIP_CATEGORIES: Record<RelationshipType, { icon: string; name: string; image?: string }> = {
+  romantic_partner: { icon: '💑', name: 'Związek', image: '/icons/categories/romantic_partner.png' },
   parent_young_child: { icon: '👨‍👧', name: 'Rodzic → małe dziecko' },
   parent_teenager: { icon: '👨‍👧‍👦', name: 'Rodzic → nastolatek' },
   teenager_parent: { icon: '🧑‍🤝‍🧑', name: 'Nastolatek → rodzic' },
   child_parent: { icon: '👨‍👩‍👦', name: 'Dziecko → rodzic' },
-  siblings: { icon: '👫', name: 'Rodzeństwo' },
-  friends: { icon: '🤝', name: 'Przyjaciele' },
-  coworkers: { icon: '💼', name: 'Współpracownicy' },
+  parent_child: { icon: '👨‍👧', name: 'Rodzic i dziecko', image: '/icons/categories/parent_child.png' },
+  siblings: { icon: '👫', name: 'Rodzeństwo', image: '/icons/categories/siblings.png' },
+  friends: { icon: '🤝', name: 'Przyjaciele', image: '/icons/categories/friends.png' },
+  coworkers: { icon: '💼', name: 'Współpracownicy', image: '/icons/categories/coworkers.png' },
   boss_employee: { icon: '👔', name: 'Szef → pracownik' },
   employee_boss: { icon: '🙋', name: 'Pracownik → szef' },
   neighbors: { icon: '🏘️', name: 'Sąsiedzi' },
   strangers: { icon: '👥', name: 'Obcy' },
   ex_partners: { icon: '💔', name: 'Byli partnerzy' },
+  roommates: { icon: '🏠', name: 'Współlokatorzy', image: '/icons/categories/roommates.png' },
 };

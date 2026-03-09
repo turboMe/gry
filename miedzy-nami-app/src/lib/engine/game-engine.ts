@@ -155,24 +155,38 @@ export function calculateProfileUpdates(
       case 'empathic':
         updates.empathy = (updates.empathy || 0) + 0.2;
         updates.repair_ability = (updates.repair_ability || 0) + 0.1;
+        updates.shame_sensitivity = (updates.shame_sensitivity || 0) - 0.05;
         break;
       case 'aggressive':
         updates.impulsiveness = (updates.impulsiveness || 0) + 0.1;
         updates.defensiveness = (updates.defensiveness || 0) + 0.1;
+        updates.need_for_control = (updates.need_for_control || 0) + 0.1;
+        updates.patience = (updates.patience || 0) - 0.05;
         break;
       case 'passive_aggressive':
         updates.directness = (updates.directness || 0) - 0.1;
+        updates.defensiveness = (updates.defensiveness || 0) + 0.1;
+        updates.shame_sensitivity = (updates.shame_sensitivity || 0) + 0.05;
         break;
       case 'assertive':
         updates.directness = (updates.directness || 0) + 0.1;
+        updates.need_for_control = (updates.need_for_control || 0) - 0.05;
+        updates.patience = (updates.patience || 0) + 0.05;
         break;
       case 'passive':
         updates.directness = (updates.directness || 0) - 0.15;
         updates.patience = (updates.patience || 0) + 0.1;
+        updates.shame_sensitivity = (updates.shame_sensitivity || 0) + 0.1;
         break;
       case 'transformative':
         updates.empathy = (updates.empathy || 0) + 0.15;
         updates.repair_ability = (updates.repair_ability || 0) + 0.15;
+        updates.shame_sensitivity = (updates.shame_sensitivity || 0) - 0.1;
+        updates.need_for_control = (updates.need_for_control || 0) - 0.05;
+        break;
+      case 'transactional':
+        updates.directness = (updates.directness || 0) + 0.05;
+        updates.need_for_control = (updates.need_for_control || 0) + 0.05;
         break;
     }
   }

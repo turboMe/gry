@@ -144,3 +144,14 @@ export const TRAIT_NAMES: Record<keyof PsychologicalProfile, string> = {
   directness: 'Bezpośredniość',
   repair_ability: 'Zdolność naprawy',
 };
+
+/** Traits where higher = better (resources) */
+export const POSITIVE_TRAITS: (keyof PsychologicalProfile)[] = [
+  'empathy', 'patience', 'directness', 'repair_ability',
+];
+
+/** Traits where lower = better (barriers to work on) */
+export const NEGATIVE_TRAITS: (keyof PsychologicalProfile)[] = [
+  'impulsiveness', 'defensiveness', 'need_for_control', 'shame_sensitivity',
+];
+

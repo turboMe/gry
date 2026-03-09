@@ -8,8 +8,7 @@ import { NextResponse } from 'next/server';
 import { verifyAuth, unauthorizedResponse } from '@/lib/firebase/middleware';
 import { getSession, recordChoice, completeSession } from '@/lib/db/sessions';
 import { getScenario } from '@/lib/db/scenarios';
-import { updateProfileTraits } from '@/lib/db/profiles';
-import { processChoice, calculateDominantStyle, calculateProfileUpdates } from '@/lib/engine/game-engine';
+import { processChoice, calculateDominantStyle } from '@/lib/engine/game-engine';
 
 export async function POST(
   request: Request,
@@ -85,12 +84,6 @@ export async function POST(
         dominantStyle,
         result.metrics_updated
       );
-
-      // Update player profile based on choices
-      const profileDeltas = calculateProfileUpdates(allChoices);
-      await updateProfileTraits(auth.uid, profileDeltas).catch(err => {
-        console.warn('Failed to update profile traits:', err);
-      });
     }
 
     return NextResponse.json(result);

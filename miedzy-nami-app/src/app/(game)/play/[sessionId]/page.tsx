@@ -4,7 +4,7 @@ import { useEffect, useState, useCallback, useRef, useMemo } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import type { Scenario, Interaction, Scene, Choice, Metrics, CommunicationStyle } from '@/lib/types';
 import { applyMetricEffects } from '@/lib/engine/metrics-engine';
-import { findEnding, STYLE_LABELS } from '@/lib/engine/game-engine';
+import { findEnding, STYLE_LABELS, calculateProfileUpdates } from '@/lib/engine/game-engine';
 import { useAuthStore } from '@/store/game-store';
 import { getIdToken } from '@/lib/firebase/auth';
 import { shuffleWithOriginalIndices } from '@/lib/utils/shuffle';
@@ -573,26 +573,26 @@ function EndingScreen({ scenario, totalScore, metrics, choicesMade, onReplay, on
     }
   }, [ending, scenario, totalScore, maxScore, choicesMade, user, dominantStyle, metrics]);
 
-  // Update profile
+  // Update profile using unified calculateProfileUpdates
   useEffect(() => {
     try {
       const raw = localStorage.getItem('mn_player_profile');
       if (!raw) return;
       const profile = JSON.parse(raw);
-      for (const choice of choicesMade) {
-        if (choice.style === 'empathic') {
-          profile.empathy = Math.min(10, profile.empathy + 0.2);
-          profile.repair_ability = Math.min(10, profile.repair_ability + 0.1);
+      const deltas = calculateProfileUpdates(
+        choicesMade.map((c, i) => ({
+          interaction_id: `int_${i}`,
+          choice_id: 'A' as const,
+          choice_index: c.choiceIndex,
+          points: c.points as 0 | 1 | 2,
+          communication_style: c.style,
+          metric_effects_applied: { tension: 0, trust: 0, openness: 0, feeling_heard: 0 },
+        }))
+      );
+      for (const [key, delta] of Object.entries(deltas)) {
+        if (key in profile && typeof delta === 'number') {
+          profile[key] = Math.max(0, Math.min(10, Math.round((profile[key] + delta) * 10) / 10));
         }
-        if (choice.style === 'aggressive') {
-          profile.impulsiveness = Math.min(10, profile.impulsiveness + 0.1);
-        }
-        if (choice.style === 'assertive') {
-          profile.directness = Math.min(10, profile.directness + 0.1);
-        }
-      }
-      for (const k of Object.keys(profile)) {
-        profile[k] = Math.round(profile[k] * 10) / 10;
       }
       localStorage.setItem('mn_player_profile', JSON.stringify(profile));
 
