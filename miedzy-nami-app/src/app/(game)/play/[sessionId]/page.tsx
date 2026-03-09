@@ -542,11 +542,13 @@ function EndingScreen({ scenario, totalScore, metrics, choicesMade, onReplay, on
       const history = JSON.parse(localStorage.getItem('mn_session_history') || '[]');
       history.push({
         scenarioId: scenario.scenario_id,
+        scenarioTitle: scenario.metadata.title,
         date: new Date().toISOString(),
         score: totalScore,
         maxScore,
         endingColor: ending.color,
         endingId: ending.ending_id,
+        dominantStyle,
         choices: choicesMade.map(c => c.choiceIndex),
       });
       localStorage.setItem('mn_session_history', JSON.stringify(history.slice(-100)));

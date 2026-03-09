@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useProfileStore, useAuthStore } from '@/store/game-store';
+import { POSITIVE_TRAITS, NEGATIVE_TRAITS } from '@/lib/engine/profile-quiz';
 import { getIdToken, logOut, changeEmail } from '@/lib/firebase/auth';
 
 /**
@@ -12,11 +13,20 @@ export default function MenuPage() {
   const router = useRouter();
   const { quizCompleted } = useProfileStore();
   const user = useAuthStore((s) => s.user);
-  const [stats, setStats] = useState<{ totalGames: number; avgScore: string } | null>(null);
+  const [stats, setStats] = useState<{ totalGames: number } | null>(null);
+  const [profileAvgs, setProfileAvgs] = useState<{ resourcesAvg: string; barriersAvg: string } | null>(null);
   const [hasProfile, setHasProfile] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
   const [showGuestBanner, setShowGuestBanner] = useState(false);
   const [bannerVisible, setBannerVisible] = useState(false);
+
+  // Welcome disclaimer state
+  const [disclaimerAccepted, setDisclaimerAccepted] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('mn_disclaimer_accepted') === '1';
+    }
+    return false;
+  });
 
   // Drawer state
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -41,8 +51,18 @@ export default function MenuPage() {
     try {
       const history = JSON.parse(localStorage.getItem('mn_session_history') || '[]');
       if (history.length > 0) {
-        const avg = (history.reduce((a: number, s: { score: number }) => a + s.score, 0) / history.length);
-        setStats({ totalGames: history.length, avgScore: avg.toFixed(1) });
+        setStats({ totalGames: history.length });
+      }
+    } catch { /* ignore */ }
+
+    // Load profile averages
+    try {
+      const profileRaw = localStorage.getItem('mn_player_profile');
+      if (profileRaw) {
+        const p = JSON.parse(profileRaw);
+        const resAvg = POSITIVE_TRAITS.reduce((a, t) => a + (typeof p[t] === 'number' ? p[t] : 5), 0) / POSITIVE_TRAITS.length;
+        const barAvg = NEGATIVE_TRAITS.reduce((a, t) => a + (typeof p[t] === 'number' ? p[t] : 5), 0) / NEGATIVE_TRAITS.length;
+        setProfileAvgs({ resourcesAvg: resAvg.toFixed(1), barriersAvg: barAvg.toFixed(1) });
       }
     } catch { /* ignore */ }
   }, []);
@@ -94,6 +114,16 @@ export default function MenuPage() {
     }
     router.push('/scenarios');
   };
+
+  const handleAcceptDisclaimer = () => {
+    localStorage.setItem('mn_disclaimer_accepted', '1');
+    setDisclaimerAccepted(true);
+  };
+
+  // ═══ WELCOME SCREEN (first launch) ═══
+  if (!disclaimerAccepted) {
+    return <WelcomeScreen onAccept={handleAcceptDisclaimer} />;
+  }
 
   const handleProfile = () => {
     if (hasProfile) {
@@ -232,9 +262,23 @@ export default function MenuPage() {
         <div className="game-subtitle">Symulator Relacji</div>
         <div className="menu-divider" />
 
-        {stats && (
-          <div className="text-mono" style={{ fontSize: '0.82rem', color: 'var(--accent-gold)', marginBottom: 28, opacity: 0.9 }}>
-            Sesji: {stats.totalGames} · Średni wynik: {stats.avgScore}
+        {(stats || profileAvgs) && (
+          <div style={{ marginBottom: 28, opacity: 0.9, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6 }}>
+            {stats && (
+              <div className="text-mono" style={{ fontSize: '0.82rem', color: 'var(--accent-gold)' }}>
+                Sesji: {stats.totalGames}
+              </div>
+            )}
+            {profileAvgs && (
+              <div style={{ display: 'flex', gap: 16, alignItems: 'center', justifyContent: 'center' }}>
+                <span className="text-mono" style={{ fontSize: '0.82rem', color: 'var(--accent-cyan)' }}>
+                  🛡️ {profileAvgs.resourcesAvg}
+                </span>
+                <span className="text-mono" style={{ fontSize: '0.82rem', color: 'var(--accent-orange, #ff9100)' }}>
+                  💪 {profileAvgs.barriersAvg}
+                </span>
+              </div>
+            )}
           </div>
         )}
 
@@ -499,6 +543,112 @@ export default function MenuPage() {
           </div>
         </div>
       )}
+    </div>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════
+//  WELCOME SCREEN — shown on first launch (disclaimer)
+// ═══════════════════════════════════════════════════════════
+
+function WelcomeScreen({ onAccept }: { onAccept: () => void }) {
+  return (
+    <div className="screen fade-in" style={{ display: 'flex', flexDirection: 'column', minHeight: '100%' }}>
+      <div className="menu-bg" />
+      <div style={{ flex: 1, overflowY: 'auto', padding: '40px 20px 120px', position: 'relative', zIndex: 1 }}>
+        <div style={{ maxWidth: 420, margin: '0 auto' }}>
+          {/* Logo */}
+          <div style={{ textAlign: 'center', marginBottom: 32 }}>
+            <div style={{ fontSize: '2.5rem', marginBottom: 8 }}>💬</div>
+            <div className="game-logo" style={{ fontSize: '2rem' }}>Między Nami</div>
+            <div className="game-subtitle">Symulator Relacji</div>
+          </div>
+
+          {/* Card 1: About the game */}
+          <div className="card" style={{ padding: 20, marginBottom: 16, borderColor: 'rgba(0,229,255,0.2)' }}>
+            <h3 style={{ fontSize: '0.9rem', fontWeight: 700, marginBottom: 10, color: 'var(--text-primary)' }}>
+              📖 Czym jest ta gra?
+            </h3>
+            <p style={{ fontSize: '0.82rem', lineHeight: 1.65, color: 'var(--text-secondary)', marginBottom: 14 }}>
+              <strong>Między Nami</strong> to interaktywna gra edukacyjna o&nbsp;psychologii komunikacji.
+              Wcielasz się w&nbsp;postać i&nbsp;podejmujesz decyzje wpływające na przebieg rozmowy
+              z&nbsp;drugą osobą. Każdy wybór ma konsekwencje — gra dynamicznie dobiera warianty scen,
+              a&nbsp;na końcu otrzymujesz spersonalizowaną analizę i&nbsp;wskazówki rozwojowe.
+            </p>
+            <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', lineHeight: 1.8 }}>
+              <div>🧠 <strong>Model von Thuna</strong> — cztery płaszczyzny komunikatu</div>
+              <div>💚 <strong>Porozumienie bez Przemocy (NVC)</strong> — empatyczna komunikacja</div>
+              <div>🔄 <strong>Analiza Transakcyjna</strong> — dynamika relacji</div>
+            </div>
+          </div>
+
+          {/* Card 2: Disclaimer */}
+          <div className="card" style={{
+            padding: 20,
+            marginBottom: 16,
+            borderColor: 'rgba(255,152,0,0.3)',
+            background: 'linear-gradient(135deg, rgba(255,152,0,0.06), rgba(244,67,54,0.04))',
+          }}>
+            <h3 style={{ fontSize: '0.9rem', fontWeight: 700, marginBottom: 12, color: 'var(--accent-orange, #ff9100)' }}>
+              ⚠️ Ważna informacja
+            </h3>
+            <div style={{ fontSize: '0.82rem', lineHeight: 1.8, color: 'var(--text-secondary)', marginBottom: 14 }}>
+              <div>• To <strong>nie jest</strong> narzędzie diagnostyczne ani forma terapii</div>
+              <div>• Wyniki i&nbsp;profil psychologiczny służą <strong>wyłącznie celom edukacyjnym</strong></div>
+              <div>• Gra <strong>nie zastępuje</strong> konsultacji z&nbsp;wykwalifikowanym specjalistą</div>
+              <div>• Twórcy nie ponoszą odpowiedzialności za decyzje podejmowane na podstawie treści gry</div>
+            </div>
+            <div style={{
+              padding: '12px 14px',
+              borderRadius: 10,
+              background: 'rgba(255,255,255,0.04)',
+              border: '1px solid rgba(255,255,255,0.08)',
+            }}>
+              <div style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 6 }}>
+                W sytuacji kryzysu emocjonalnego:
+              </div>
+              <div style={{ fontSize: '0.82rem', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
+                <div>📞 Telefon Zaufania: <strong style={{ color: 'var(--accent-cyan)' }}>116 123</strong></div>
+                <div>📞 Centrum Wsparcia: <strong style={{ color: 'var(--accent-cyan)' }}>800 70 2222</strong></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 3: Privacy */}
+          <div className="card" style={{ padding: 20, marginBottom: 16 }}>
+            <h3 style={{ fontSize: '0.9rem', fontWeight: 700, marginBottom: 10, color: 'var(--text-primary)' }}>
+              🔒 Twoje dane
+            </h3>
+            <p style={{ fontSize: '0.82rem', lineHeight: 1.65, color: 'var(--text-secondary)', marginBottom: 0 }}>
+              Dane (email, profil, wyniki) przechowywane są w&nbsp;<strong>Firebase (Google Cloud)</strong>{' '}
+              na serwerach w&nbsp;UE. Służą wyłącznie do działania gry i&nbsp;nie są udostępniane
+              osobom trzecim. Możesz je usunąć w&nbsp;dowolnym momencie z&nbsp;poziomu ustawień w&nbsp;menu.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Sticky button */}
+      <div style={{
+        position: 'fixed',
+        bottom: 0,
+        left: 0,
+        right: 0,
+        padding: '16px 20px',
+        paddingBottom: 'max(16px, env(safe-area-inset-bottom))',
+        background: 'linear-gradient(to top, var(--bg-primary) 60%, transparent)',
+        zIndex: 10,
+        display: 'flex',
+        justifyContent: 'center',
+      }}>
+        <button
+          className="btn btn-primary"
+          onClick={onAccept}
+          style={{ maxWidth: 420, width: '100%', padding: '16px 24px', fontSize: '1rem', fontWeight: 700 }}
+        >
+          Rozumiem i kontynuuję →
+        </button>
+      </div>
     </div>
   );
 }

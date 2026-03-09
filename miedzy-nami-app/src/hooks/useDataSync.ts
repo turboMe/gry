@@ -49,6 +49,7 @@ export function useDataSync() {
             // Merge: cloud data takes priority, but keep any local-only entries
             const cloudHistory = data.sessions.map((s: Record<string, unknown>) => ({
               scenarioId: s.scenario_id,
+              scenarioTitle: s.scenario_title || null,
               date: s.completed_at || s.created_at,
               score: s.total_score,
               maxScore: s.max_possible_score,
@@ -62,9 +63,10 @@ export function useDataSync() {
               localHistory = JSON.parse(localStorage.getItem('mn_session_history') || '[]');
             } catch { /* ignore */ }
 
-            // Merge: use cloud entries + any local entries not in cloud (by date+scenarioId)
-            const cloudKeys = new Set(cloudHistory.map((h: { scenarioId: string; date: string }) => `${h.scenarioId}_${h.date}`));
-            const uniqueLocal = localHistory.filter(h => !cloudKeys.has(`${h.scenarioId}_${h.date}`));
+            // Merge: use cloud entries + any local entries not in cloud (dedup by scenarioId + date truncated to minute)
+            const toKey = (h: { scenarioId: string; date: string }) => `${h.scenarioId}_${h.date?.slice(0, 16)}`;
+            const cloudKeys = new Set(cloudHistory.map(toKey));
+            const uniqueLocal = localHistory.filter(h => !cloudKeys.has(toKey(h)));
             const merged = [...cloudHistory, ...uniqueLocal]
               .sort((a: { date: string }, b: { date: string }) => new Date(a.date).getTime() - new Date(b.date).getTime())
               .slice(-100);
