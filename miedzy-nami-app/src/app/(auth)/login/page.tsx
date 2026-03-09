@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { signInWithEmail, registerWithEmail, signInWithGoogle } from '@/lib/firebase/auth';
+import { signInWithEmail, registerWithEmail, signInWithGoogle, resetPassword } from '@/lib/firebase/auth';
 
 /**
  * Login / Register page — Firebase Auth (email + Google).
@@ -15,6 +15,11 @@ export default function LoginPage() {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
+  const [resetMode, setResetMode] = useState(false);
+  const [resetEmail, setResetEmail] = useState('');
+  const [resetSent, setResetSent] = useState(false);
+  const [resetError, setResetError] = useState<string | null>(null);
+  const [resetLoading, setResetLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -52,6 +57,23 @@ export default function LoginPage() {
       setError(firebaseErr.message || 'Logowanie przez Google nie powiodło się');
     }
     setLoading(false);
+  };
+
+  const handleResetPassword = async () => {
+    if (!resetEmail) return;
+    setResetLoading(true);
+    setResetError(null);
+    try {
+      await resetPassword(resetEmail);
+      setResetSent(true);
+    } catch (err: unknown) {
+      const firebaseErr = err as { code?: string; message?: string };
+      const msg = firebaseErr.code === 'auth/user-not-found' ? 'Nie znaleziono konta z tym emailem'
+        : firebaseErr.code === 'auth/invalid-email' ? 'Nieprawidłowy email'
+        : firebaseErr.message || 'Wystąpił błąd';
+      setResetError(msg);
+    }
+    setResetLoading(false);
   };
 
   return (
@@ -177,10 +199,122 @@ export default function LoginPage() {
             </button>
           </form>
 
+          {/* Forgot password — only in login mode */}
+          {mode === 'login' && (
+            <div style={{ textAlign: 'center', marginTop: 12 }}>
+              {!resetMode ? (
+                <button
+                  onClick={() => { setResetMode(true); setResetEmail(email); setResetSent(false); setResetError(null); }}
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    color: 'var(--text-dim)',
+                    fontSize: '0.78rem',
+                    cursor: 'pointer',
+                    transition: 'color 0.2s',
+                  }}
+                >
+                  🔑 Zapomniałeś hasła?
+                </button>
+              ) : resetSent ? (
+                <div style={{
+                  padding: '12px 16px',
+                  borderRadius: 10,
+                  background: 'rgba(0,230,118,0.1)',
+                  border: '1px solid rgba(0,230,118,0.25)',
+                  marginTop: 4,
+                }}>
+                  <p style={{ fontSize: '0.82rem', color: 'var(--accent-green)', margin: 0, lineHeight: 1.5 }}>
+                    ✅ Link do resetowania hasła został wysłany na <strong>{resetEmail}</strong>. Sprawdź skrzynkę.
+                  </p>
+                  <button
+                    onClick={() => { setResetMode(false); setResetSent(false); }}
+                    style={{
+                      background: 'none',
+                      border: 'none',
+                      color: 'var(--text-dim)',
+                      fontSize: '0.75rem',
+                      cursor: 'pointer',
+                      marginTop: 8,
+                    }}
+                  >
+                    Zamknij
+                  </button>
+                </div>
+              ) : (
+                <div style={{
+                  padding: '14px 16px',
+                  borderRadius: 10,
+                  background: 'rgba(255,255,255,0.04)',
+                  border: '1px solid rgba(255,255,255,0.08)',
+                  marginTop: 4,
+                }}>
+                  <p style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', marginBottom: 10, lineHeight: 1.5 }}>
+                    Podaj email, a wyślemy Ci link do zresetowania hasła:
+                  </p>
+                  <div style={{ display: 'flex', gap: 8 }}>
+                    <input
+                      type="email"
+                      placeholder="Twój email"
+                      value={resetEmail}
+                      onChange={(e) => setResetEmail(e.target.value)}
+                      style={{
+                        flex: 1,
+                        padding: '10px 14px',
+                        borderRadius: 8,
+                        border: '1px solid rgba(255,255,255,0.1)',
+                        background: 'rgba(255,255,255,0.04)',
+                        color: 'var(--text-primary)',
+                        fontSize: '0.85rem',
+                        outline: 'none',
+                      }}
+                    />
+                    <button
+                      onClick={handleResetPassword}
+                      disabled={resetLoading || !resetEmail}
+                      style={{
+                        padding: '10px 16px',
+                        borderRadius: 8,
+                        border: 'none',
+                        background: 'linear-gradient(135deg, var(--accent-cyan), #0091ea)',
+                        color: '#000',
+                        fontSize: '0.82rem',
+                        fontWeight: 600,
+                        cursor: resetLoading ? 'not-allowed' : 'pointer',
+                        opacity: resetLoading || !resetEmail ? 0.5 : 1,
+                        whiteSpace: 'nowrap',
+                      }}
+                    >
+                      {resetLoading ? '⏳' : 'Wyślij'}
+                    </button>
+                  </div>
+                  {resetError && (
+                    <p style={{ fontSize: '0.78rem', color: '#ff6b6b', marginTop: 8, marginBottom: 0 }}>
+                      {resetError}
+                    </p>
+                  )}
+                  <button
+                    onClick={() => setResetMode(false)}
+                    style={{
+                      background: 'none',
+                      border: 'none',
+                      color: 'var(--text-dim)',
+                      fontSize: '0.72rem',
+                      cursor: 'pointer',
+                      marginTop: 8,
+                    }}
+                  >
+                    Anuluj
+                  </button>
+                </div>
+              )}
+            </div>
+          )}
+
           {/* Toggle mode */}
           <div style={{ textAlign: 'center', marginTop: 20 }}>
             <button
-              onClick={() => { setMode(mode === 'login' ? 'register' : 'login'); setError(null); }}
+              onClick={() => { setMode(mode === 'login' ? 'register' : 'login'); setError(null); setResetMode(false); }}
               style={{
                 background: 'none',
                 border: 'none',

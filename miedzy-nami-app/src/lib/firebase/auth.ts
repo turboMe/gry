@@ -8,6 +8,8 @@ import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   signOut,
+  sendPasswordResetEmail,
+  verifyBeforeUpdateEmail,
   GoogleAuthProvider,
   signInWithPopup,
   onAuthStateChanged,
@@ -44,6 +46,27 @@ export async function signInWithGoogle() {
   const provider = new GoogleAuthProvider();
   const result = await signInWithPopup(auth, provider);
   return result.user;
+}
+
+/**
+ * Send password reset email.
+ */
+export async function resetPassword(email: string) {
+  const auth = getFirebaseAuth();
+  if (!auth) throw new Error('Firebase not configured');
+  await sendPasswordResetEmail(auth, email);
+}
+
+/**
+ * Change user email — sends verification to the new address first.
+ * After the user clicks the link, Firebase updates the email automatically.
+ */
+export async function changeEmail(newEmail: string) {
+  const auth = getFirebaseAuth();
+  if (!auth) throw new Error('Firebase not configured');
+  const user = auth.currentUser;
+  if (!user) throw new Error('Not signed in');
+  await verifyBeforeUpdateEmail(user, newEmail);
 }
 
 /**

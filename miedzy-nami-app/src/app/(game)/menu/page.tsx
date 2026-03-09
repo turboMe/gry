@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useProfileStore, useAuthStore } from '@/store/game-store';
-import { getIdToken, logOut } from '@/lib/firebase/auth';
+import { getIdToken, logOut, changeEmail } from '@/lib/firebase/auth';
 
 /**
  * Main Menu — the home screen of the game.
@@ -24,6 +24,13 @@ export default function MenuPage() {
   const [deleteConfirm, setDeleteConfirm] = useState('');
   const [deleting, setDeleting] = useState(false);
   const [deleteError, setDeleteError] = useState<string | null>(null);
+
+  // Email change state
+  const [emailChangeOpen, setEmailChangeOpen] = useState(false);
+  const [newEmail, setNewEmail] = useState('');
+  const [emailChanging, setEmailChanging] = useState(false);
+  const [emailChangeResult, setEmailChangeResult] = useState<'success' | 'error' | null>(null);
+  const [emailChangeError, setEmailChangeError] = useState<string | null>(null);
 
   useEffect(() => {
     // Check for saved profile
@@ -138,6 +145,26 @@ export default function MenuPage() {
     setDeleteConfirm('');
     setDeleteError(null);
     setShowDeleteModal(true);
+  };
+
+  const handleEmailChange = async () => {
+    if (!newEmail) return;
+    setEmailChanging(true);
+    setEmailChangeResult(null);
+    setEmailChangeError(null);
+    try {
+      await changeEmail(newEmail);
+      setEmailChangeResult('success');
+    } catch (err: unknown) {
+      const firebaseErr = err as { code?: string; message?: string };
+      const msg = firebaseErr.code === 'auth/invalid-email' ? 'Nieprawidłowy adres email'
+        : firebaseErr.code === 'auth/email-already-in-use' ? 'Ten email jest już zajęty'
+        : firebaseErr.code === 'auth/requires-recent-login' ? 'Wyloguj się i zaloguj ponownie, a następnie spróbuj zmienić email'
+        : firebaseErr.message || 'Wystąpił błąd';
+      setEmailChangeError(msg);
+      setEmailChangeResult('error');
+    }
+    setEmailChanging(false);
   };
 
   return (
@@ -273,6 +300,100 @@ export default function MenuPage() {
               </div>
 
               <div className="drawer-divider" />
+
+              {/* Email Change */}
+              {!emailChangeOpen ? (
+                <button className="drawer-action-btn" onClick={() => { setEmailChangeOpen(true); setNewEmail(''); setEmailChangeResult(null); setEmailChangeError(null); }}>
+                  <span className="drawer-action-icon">✏️</span>
+                  <span>Zmień email</span>
+                </button>
+              ) : emailChangeResult === 'success' ? (
+                <div className="drawer-section" style={{ borderColor: 'rgba(0,230,118,0.25)', background: 'rgba(0,230,118,0.06)' }}>
+                  <p style={{ fontSize: '0.82rem', color: 'var(--accent-green)', margin: 0, lineHeight: 1.5 }}>
+                    ✅ Link weryfikacyjny został wysłany na <strong>{newEmail}</strong>. Po kliknięciu w link Twój email zostanie zmieniony.
+                  </p>
+                  <button
+                    onClick={() => { setEmailChangeOpen(false); setEmailChangeResult(null); }}
+                    style={{
+                      background: 'none',
+                      border: 'none',
+                      color: 'var(--text-dim)',
+                      fontSize: '0.75rem',
+                      cursor: 'pointer',
+                      marginTop: 8,
+                      padding: 0,
+                    }}
+                  >
+                    Zamknij
+                  </button>
+                </div>
+              ) : (
+                <div className="drawer-section">
+                  <div className="drawer-section-title">
+                    <span>✏️</span>
+                    <span>Zmień email</span>
+                  </div>
+                  <p className="drawer-section-text" style={{ marginBottom: 10 }}>
+                    Podaj nowy adres email. Wyślemy na niego link weryfikacyjny.
+                  </p>
+                  <div style={{ display: 'flex', gap: 8 }}>
+                    <input
+                      type="email"
+                      placeholder="Nowy email"
+                      value={newEmail}
+                      onChange={(e) => setNewEmail(e.target.value)}
+                      disabled={emailChanging}
+                      style={{
+                        flex: 1,
+                        padding: '10px 14px',
+                        borderRadius: 8,
+                        border: '1px solid rgba(255,255,255,0.1)',
+                        background: 'rgba(255,255,255,0.04)',
+                        color: 'var(--text-primary)',
+                        fontSize: '0.85rem',
+                        outline: 'none',
+                      }}
+                    />
+                    <button
+                      onClick={handleEmailChange}
+                      disabled={emailChanging || !newEmail}
+                      style={{
+                        padding: '10px 16px',
+                        borderRadius: 8,
+                        border: 'none',
+                        background: 'linear-gradient(135deg, var(--accent-cyan), #0091ea)',
+                        color: '#000',
+                        fontSize: '0.82rem',
+                        fontWeight: 600,
+                        cursor: emailChanging ? 'not-allowed' : 'pointer',
+                        opacity: emailChanging || !newEmail ? 0.5 : 1,
+                        whiteSpace: 'nowrap',
+                      }}
+                    >
+                      {emailChanging ? '⏳' : 'Wyślij'}
+                    </button>
+                  </div>
+                  {emailChangeError && (
+                    <p style={{ fontSize: '0.78rem', color: '#ff6b6b', marginTop: 8, marginBottom: 0 }}>
+                      {emailChangeError}
+                    </p>
+                  )}
+                  <button
+                    onClick={() => setEmailChangeOpen(false)}
+                    style={{
+                      background: 'none',
+                      border: 'none',
+                      color: 'var(--text-dim)',
+                      fontSize: '0.72rem',
+                      cursor: 'pointer',
+                      marginTop: 8,
+                      padding: 0,
+                    }}
+                  >
+                    Anuluj
+                  </button>
+                </div>
+              )}
 
               {/* Actions */}
               <button className="drawer-action-btn" onClick={handleLogout}>
