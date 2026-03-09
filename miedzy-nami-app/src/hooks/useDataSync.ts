@@ -35,7 +35,9 @@ export function useDataSync() {
         if (profileRes.ok) {
           const data = await profileRes.json();
           if (data.profile && data.quiz_completed) {
-            localStorage.setItem('mn_player_profile', JSON.stringify(data.profile));
+            // The API returns a full PlayerProfile; localStorage stores just the traits object
+            const traits = data.profile.traits ?? data.profile;
+            localStorage.setItem('mn_player_profile', JSON.stringify(traits));
           }
         }
 
