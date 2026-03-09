@@ -35,7 +35,8 @@ export default function ProfilePage() {
     );
   }
 
-  const traits = Object.entries(profile) as [keyof PsychologicalProfile, number][];
+  const traits = (Object.entries(profile) as [keyof PsychologicalProfile, number][])
+    .filter(([_, v]) => typeof v === 'number' && v !== null);
 
   // Strengths and weaknesses
   const sorted = [...traits].sort((a, b) => b[1] - a[1]);
@@ -58,10 +59,10 @@ export default function ProfilePage() {
             <div key={trait} className="trait-bar-group">
               <div className="trait-bar-label">
                 <span className="trait-bar-name">{TRAIT_NAMES[trait]}</span>
-                <span className="trait-bar-value">{value.toFixed(1)}/10</span>
+                <span className="trait-bar-value">{(value ?? 0).toFixed(1)}/10</span>
               </div>
               <div className="trait-bar-track">
-                <div className="trait-bar-fill" style={{ width: `${(value / 10) * 100}%` }} />
+                <div className="trait-bar-fill" style={{ width: `${((value ?? 0) / 10) * 100}%` }} />
               </div>
             </div>
           ))}
@@ -75,7 +76,7 @@ export default function ProfilePage() {
             </h4>
             {strengths.map(([trait, value]) => (
               <div key={trait} style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', marginBottom: 4 }}>
-                • {TRAIT_NAMES[trait]} ({value.toFixed(1)})
+                • {TRAIT_NAMES[trait]} ({(value ?? 0).toFixed(1)})
               </div>
             ))}
           </div>
@@ -89,7 +90,7 @@ export default function ProfilePage() {
             </h4>
             {weaknesses.map(([trait, value]) => (
               <div key={trait} style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', marginBottom: 4 }}>
-                • {TRAIT_NAMES[trait]} ({value.toFixed(1)})
+                • {TRAIT_NAMES[trait]} ({(value ?? 0).toFixed(1)})
               </div>
             ))}
           </div>

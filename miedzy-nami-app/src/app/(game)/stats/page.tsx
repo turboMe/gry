@@ -25,10 +25,10 @@ export default function StatsPage() {
     } catch { /* ignore */ }
   }, []);
 
-  // Calculate stats
+  // Calculate stats — guard against null/undefined scores from incomplete synced sessions
   const totalGames = history.length;
   const avgScore = totalGames > 0
-    ? history.reduce((sum, h) => sum + h.score, 0) / totalGames
+    ? history.reduce((sum, h) => sum + (h.score ?? 0), 0) / totalGames
     : 0;
 
   const endingCounts = { green: 0, yellow: 0, red: 0 };
