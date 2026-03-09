@@ -290,17 +290,14 @@ export default function MenuPage() {
               </button>
 
               {/* Contact */}
-              <div style={{ marginTop: 'auto', paddingTop: 12 }}>
-                <p style={{ fontSize: '0.72rem', color: 'var(--text-dim)', textAlign: 'center', lineHeight: 1.6 }}>
-                  Pytania dotyczące danych?<br />
-                  <a
-                    href="mailto:karczespatryk@gmail.com"
-                    style={{ color: 'var(--accent-cyan)', textDecoration: 'none' }}
-                  >
-                    karczespatryk@gmail.com
-                  </a>
-                </p>
-              </div>
+              <a
+                href="mailto:karczespatryk@gmail.com"
+                className="drawer-action-btn"
+                style={{ textDecoration: 'none', marginTop: 'auto' }}
+              >
+                <span className="drawer-action-icon">✉️</span>
+                <span>Kontakt z twórcą</span>
+              </a>
             </div>
           </div>
         </>
