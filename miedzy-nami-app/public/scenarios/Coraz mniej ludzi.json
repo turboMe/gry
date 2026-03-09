@@ -1,0 +1,999 @@
+{
+    "scenario_id": "partner_isolation_control",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Coraz mniej ludzi",
+        "subtitle": "Miłość miesza się z kontrolą, a troska zaczyna brzmieć jak odcinanie od świata.",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 9,
+        "interaction_count": 6
+    },
+    "tags": {
+        "relationship_type": "romantic_partner",
+        "theme": [
+            "control",
+            "boundaries",
+            "support"
+        ],
+        "emotional_intensity": "critical",
+        "age_rating": "adult",
+        "session_type": "training",
+        "player_role_gender": "neutral",
+        "difficulty": "intermediate"
+    },
+    "characters": {
+        "player": {
+            "name": "Alex",
+            "role_label": "Partner · Gracz",
+            "age_range": "27-35",
+            "context": "Od kilku miesięcy zauważasz, że coraz rzadziej widujesz bliskich. Za każdym razem pojawia się komentarz, foch albo presja ze strony partnera. Nadal nie masz pewności, czy to już kontrola, czy jeszcze troska.",
+            "hidden_need": "safety",
+            "hidden_need_text": "Potrzebujesz bezpieczeństwa bez utraty autonomii i kontaktu z własnym światem.",
+            "traits": [
+                {
+                    "text": "uważny_a",
+                    "type": "positive"
+                },
+                {
+                    "text": "łatwo podważa własną ocenę sytuacji",
+                    "type": "negative"
+                },
+                {
+                    "text": "lojalny_a wobec relacji",
+                    "type": "positive"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 4,
+                "patience": 7,
+                "defensiveness": 5,
+                "empathy": 8,
+                "need_for_control": 3,
+                "shame_sensitivity": 7,
+                "directness": 6,
+                "repair_ability": 7
+            }
+        },
+        "npc": {
+            "name": "Marek",
+            "role_label": "Partner · NPC",
+            "age_range": "29-37",
+            "context": "Marek nie nazywa swojego zachowania kontrolą. Mówi o lojalności, bezpieczeństwie i o tym, że inni źle na ciebie wpływają. Im bardziej czuje utratę wpływu, tym częściej używa winy, sugestii i testów bliskości.",
+            "hidden_need": "control",
+            "hidden_need_text": "Potrzebuje przewidywalności i potwierdzania, że jest najważniejszy, ale realizuje to przez ograniczanie twojej autonomii.",
+            "traits": [
+                {
+                    "text": "czujny",
+                    "type": "neutral"
+                },
+                {
+                    "text": "zaborczy",
+                    "type": "negative"
+                },
+                {
+                    "text": "umie brzmieć troskliwie",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 5,
+                "patience": 4,
+                "defensiveness": 8,
+                "empathy": 4,
+                "need_for_control": 9,
+                "shame_sensitivity": 8,
+                "directness": 6,
+                "repair_ability": 3
+            },
+            "npc_reaction_logic": "Na agresję reaguje kontratakiem i odwracaniem winy. Na bierność zwiększa wpływ i traktuje brak oporu jako zgodę. Na suchą asertywność wchodzi w spór o szczegóły. Najlepiej odpowiada na spokojne nazwanie wzorca, komunikat Ja i jasną granicę bez oskarżającego tonu."
+        }
+    },
+    "metrics_start": {
+        "tension": 45,
+        "trust": 50,
+        "openness": 45,
+        "feeling_heard": 40
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Niby tylko komentarz",
+            "scene": {
+                "description": "Wieczór. W salonie pali się tylko lampa stojąca. Na stole leży telefon z otwartą wiadomością od twojej przyjaciółki o jutrzejszym spotkaniu. Marek zerka na ekran i wzdycha z cieniem uśmiechu.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": "Znowu chcesz się z nimi spotkać? Ostatnio po takich wyjściach jesteś jakaś inna. Oni naprawdę dobrze na ciebie nie działają.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Przestań wreszcie rządzić moim życiem, bo to już jest chore.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marek prostuje się i odpowiada chłodno, że to ty robisz z niego potwora, choć on tylko mówi prawdę.",
+                    "feedback": {
+                        "label": "Atak i diagnozowanie",
+                        "psychology": "To przerzuca rozmowę z poziomu zachowania na poziom etykiet i uruchamia Poziom II, czyli walkę o rację. W analizie transakcyjnej brzmi to jak starcie Rodzic kontra Dziecko, a nie dialog Dorosły-Dorosły.",
+                        "better_alternative_hint": "Nazwij konkretny komentarz i jego wpływ na ciebie zamiast oceniać całą osobę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Etykietowanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nieważne. Może odwołam, żeby nie było problemu.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Marek od razu łagodnieje i mówi, że wiedział, że w głębi serca rozumiesz, co jest dla was dobre.",
+                    "feedback": {
+                        "label": "Wycofanie i oddanie pola",
+                        "psychology": "Unikasz konfliktu, ale wzmacniasz wzorzec kontroli. Z perspektywy uczenia społecznego brak granicy staje się dla drugiej strony sygnałem, że presja działa.",
+                        "better_alternative_hint": "Nie rezygnuj od razu. Zatrzymaj rozmowę przy faktach i nazwij swoje doświadczenie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Utrwalanie wzorca",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Chcę jutro wyjść. Nie musisz lubić moich znajomych, ale to moja decyzja.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": 0,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Marek marszczy brwi i pyta, czemu od razu stawiasz mur, skoro on tylko wyraża obawę.",
+                    "feedback": {
+                        "label": "Granica bez kontaktu z emocją",
+                        "psychology": "To zdrowa asertywność, ale bez odniesienia do emocjonalnego podtekstu może zostać odebrana jako sucha odmowa. W kwadracie von Thuna słyszany jest głównie apel i relacja, a mniej ujawnienie siebie.",
+                        "better_alternative_hint": "Dodaj, co dzieje się z tobą, gdy słyszysz takie komentarze. To obniża pole do manipulacji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywna granica",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Słyszę, że masz obawy, ale kiedy kolejny raz podważasz moje relacje, zaczynam się od ludzi odsuwać. Chcę o tym porozmawiać wprost.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Marek nieco zwalnia. Nadal jest spięty, ale nie przerywa. Patrzy na ciebie uważniej niż przed chwilą.",
+                    "feedback": {
+                        "label": "Nazwanie wpływu bez oskarżenia",
+                        "psychology": "To komunikat Ja w duchu NVC: obserwacja, wpływ i zaproszenie do rozmowy. Utrzymujesz granicę i nie wchodzisz w walkę o to, kto ma rację.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Walidacja bez uległości",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "To tylko troska",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Atmosfera gęstnieje. Marek chodzi po salonie i mówi szybciej. Czujesz, że rozmowa zaczyna się wymykać spod kontroli, a twoje wcześniejsze słowa nie wybrzmiały.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Czyli teraz jestem tym złym, bo się martwię? Niesamowite. Twoi znajomi mieszają ci w głowie, a ja jeszcze mam za to oberwać.",
+            "scene_high": {
+                "description": "Marek nadal jest spięty, ale siada naprzeciwko. Nieco ciszej odkłada telefon. Jest w nim defensywa, ale jeszcze nie zamknął rozmowy.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Nie próbuję cię zamknąć w domu. Po prostu mam wrażenie, że po spotkaniach z nimi jesteśmy dalej od siebie.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Bo jesteś zły. Wszystko musisz kontrolować i zawsze robisz z siebie ofiarę.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marek ucina ci zdaniem, że z kimś tak niesprawiedliwym nie da się rozmawiać, i odwraca wzrok.",
+                    "feedback": {
+                        "label": "Kontratak na defensywę",
+                        "psychology": "To paliwo dla mechanizmu DARVO: zaprzeczanie, atak i odwrócenie ról. Zamiast zatrzymać manipulację, dostarczasz jej materiału.",
+                        "better_alternative_hint": "Nie spieraj się o jego intencje. Wróć do skutku, jaki wywołują powtarzalne komentarze i naciski."
+                    },
+                    "tags": [
+                        {
+                            "text": "DARVO",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Uogólnianie",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, może faktycznie masz rację. Może oni nie są dla mnie najlepsi.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Marek wyraźnie się rozluźnia i mówi, że wreszcie zaczynasz rozumieć, kto naprawdę stoi po twojej stronie.",
+                    "feedback": {
+                        "label": "Internalizacja cudzej narracji",
+                        "psychology": "Pod wpływem presji zaczynasz przejmować jego interpretację bez sprawdzenia faktów. To częsty etap izolacji: zwątpienie we własny ogląd sytuacji.",
+                        "better_alternative_hint": "Oddziel jego uczucia od swojej decyzji i sprawdź, co realnie dzieje się z twoimi relacjami."
+                    },
+                    "tags": [
+                        {
+                            "text": "Podważanie własnej percepcji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Izolacja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Rozumiem, że boisz się dystansu między nami. Ale to nie daje ci prawa oceniać moich ludzi za każdym razem.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Marek milknie na moment i odpowiada, że przynajmniej przyznajesz, że chodzi o was, a nie o jego złą wolę.",
+                    "feedback": {
+                        "label": "Dobra granica z częściową walidacją",
+                        "psychology": "Łączysz granicę z uznaniem emocji drugiej strony, ale nadal zostajesz głównie na poziomie sporu o prawo do oceny. To krok w dobrą stronę, choć jeszcze bez pełnego nazwania wzorca.",
+                        "better_alternative_hint": "Dodaj konkretny opis sekwencji: komentarze, napięcie, odwoływanie spotkań, coraz mniejszy kontakt z bliskimi."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie mówię, że nie wolno ci się martwić. Mówię, że kiedy regularnie podważasz moje relacje, ja krok po kroku odcinam się od ludzi. To jest dla mnie alarm.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Marek zaciska usta, ale nie zaprzecza od razu. Słychać, że słowo alarm wytrąciło go z gotowej obrony.",
+                    "feedback": {
+                        "label": "Nazwanie wzorca izolacji",
+                        "psychology": "Zamiast spierać się o intencje, opisujesz proces i własny stan. To obniża pole do gaslightingu i przenosi rozmowę na konkretne zachowania oraz ich konsekwencje.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Nazwanie wzorca",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Izolacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Zakotwiczenie w faktach",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Lista dowodów przeciw innym",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Marek sięga po stare sytuacje jak po amunicję. Wymienia nazwiska, przewraca oczami i każdą twoją próbę doprecyzowania traktuje jak atak.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "No to proszę. Ola cię kiedyś wystawiła. Bartek mnie nie szanuje. Twoja siostra zawsze sieje chaos. Ja tylko widzę to, czego ty nie chcesz widzieć.",
+            "scene_high": {
+                "description": "Marek mówi nadal defensywnie, ale wolniej. Widać, że szuka uzasadnienia, nie tylko przewagi. Siada głębiej w fotelu, jakby sam próbował zrozumieć, co robi.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "cold"
+            },
+            "npc_line_high": "Przecież nie mówię tego bez powodu. Mam konkretne zastrzeżenia do kilku osób. Naprawdę uważam, że część z nich ci szkodzi.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Świetnie, to może jeszcze zrób ranking ludzi, których wolno mi znać.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marek prycha i mówi, że twoja ironia tylko potwierdza, jak niedojrzale podchodzisz do poważnego tematu.",
+                    "feedback": {
+                        "label": "Sarkazm zamiast treści",
+                        "psychology": "Bierna agresja daje chwilowe poczucie siły, ale zaciemnia główny problem. W kwadracie von Thuna poziom relacji zaczyna dominować nad faktami i potrzebami.",
+                        "better_alternative_hint": "Powiedz wprost, co obserwujesz i jaki to ma skutek, bez drwiny."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Może masz rację, chyba naprawdę wszyscy poza tobą mnie zawodzą.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Marek mówi ciszej, że dobrze, iż wreszcie to widzisz, bo on nie chce być jedynym rozsądnym człowiekiem w twoim życiu.",
+                    "feedback": {
+                        "label": "Oddanie monopolu na prawdę",
+                        "psychology": "To wzmacnia izolację przez przekaz: tylko partner jest bezpieczny, inni są zagrożeniem. To klasyczny mechanizm zawężania sieci wsparcia.",
+                        "better_alternative_hint": "Nie oceniaj wszystkich naraz. Wróć do pytania, co dzieje się z tobą, gdy słyszysz podobne komentarze przed każdym spotkaniem."
+                    },
+                    "tags": [
+                        {
+                            "text": "Czarno-białe myślenie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Sieć wsparcia",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Możemy osobno rozmawiać o konkretnych sytuacjach, ale nie zgadzam się na to, żeby z kilku zastrzeżeń robić powód do odcinania mnie od ludzi.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Marek kiwa głową tylko połowicznie i mówi, że przynajmniej próbujesz mówić konkretnie, choć nadal nie łapiesz skali problemu.",
+                    "feedback": {
+                        "label": "Rozdzielenie faktów od uogólnień",
+                        "psychology": "To dobry ruch na Poziomie I: zatrzymujesz nadmierne generalizacje i prosisz o konkret. Brakuje jednak mocniejszego ujawnienia, dlaczego to jest dla ciebie tak ważne.",
+                        "better_alternative_hint": "Dodaj, że potrzebujesz zachować własne relacje i możliwość samodzielnej oceny ludzi."
+                    },
+                    "tags": [
+                        {
+                            "text": "Precyzowanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "To, że ktoś bywa trudny, nie znaczy, że masz prawo systematycznie osłabiać moje więzi. Gdy po każdym wyjściu słyszę listę zarzutów, zaczynam wybierać samotność zamiast kolejnej kłótni.",
+                    "points": 2,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Marek patrzy na ciebie dłużej i pyta ciszej, czy naprawdę aż tak to przeżywasz.",
+                    "feedback": {
+                        "label": "Konkret i konsekwencja",
+                        "psychology": "Opisujesz sekwencję zachowań oraz cenę, jaką płacisz. To wzmacnia twoją sprawczość i ogranicza możliwość rozmycia problemu w pojedynczych przykładach.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Granica wobec izolacji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Konsekwencje zachowania",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Izolacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Test lojalności",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Na ekranie telefonu pojawia się przypomnienie o jutrzejszej kolacji z siostrą. Marek widzi to i momentalnie sztywnieje. W pokoju robi się duszno.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Jeśli jutro naprawdę pójdziesz, to będę wiedział, ile znaczę. Nie będę się już prosił o pierwsze miejsce w twoim życiu.",
+            "scene_high": {
+                "description": "Napięcie rośnie, gdy na ekranie miga przypomnienie o jutrzejszym spotkaniu z siostrą. Marek zauważa to, ale zamiast wybuchnąć od razu, wypuszcza powietrze i patrzy na ciebie wyczekująco.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "tense"
+            },
+            "npc_line_high": "Jutro znowu wychodzisz do siostry. Nie ukrywam, że to we mnie odpala myśl, że dla innych zawsze znajdzie się miejsce szybciej niż dla mnie.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To twój problem. Nie będę zdawać raportu z każdego wyjścia.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marek zaciska pięści i rzuca, że skoro tak, to może każdy powinien już robić, co chce, bez oglądania się na związek.",
+                    "feedback": {
+                        "label": "Odrzucenie bez regulacji",
+                        "psychology": "Granica jest potrzebna, ale forma pogłębia zagrożenie i uruchamia polaryzację. Zamiast zatrzymać test lojalności, wchodzisz w wojnę o władzę.",
+                        "better_alternative_hint": "Oddziel jego emocję od warunku, który próbuje na tobie wymusić."
+                    },
+                    "tags": [
+                        {
+                            "text": "Walka o władzę",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Test lojalności",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Okej, odwołam. Nie chcę, żebyś czuł się mniej ważny.",
+                    "points": 0,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Marek uspokaja się niemal natychmiast i mówi, że właśnie o takie gesty mu chodziło od początku.",
+                    "feedback": {
+                        "label": "Empatia bez granicy",
+                        "psychology": "Rozpoznajesz jego emocję, ale płacisz za to własną autonomią. Sama empatia nie wystarczy, gdy druga strona używa jej jako dźwigni do kontroli.",
+                        "better_alternative_hint": "Uznaj jego uczucie, ale nie zamieniaj go w obowiązek rezygnacji z ważnej relacji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uległość emocjonalna",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Granice",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Słyszę, że boisz się bycia na drugim planie. Mimo to jutro idę. Potem możemy wrócić do rozmowy o tym, czego potrzebujemy w związku.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Marek wzdycha i mówi, że to przynajmniej uczciwe, choć nadal boli go, że stawiasz sprawę tak twardo.",
+                    "feedback": {
+                        "label": "Granica z uznaniem lęku",
+                        "psychology": "To dobra odpowiedź na próbę wymuszenia: uznajesz emocję, nie zgadzasz się na warunek. Brakuje jeszcze nazwania, że stawianie miłości przeciw bliskim jest nie w porządku.",
+                        "better_alternative_hint": "Dodaj, że lojalność w związku nie wymaga rezygnowania z kontaktu z ważnymi ludźmi."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność pod presją",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Rozumiem, że to uruchamia w tobie lęk. Ale stawianie mnie przed wyborem ty albo bliscy jest formą nacisku. Nie chcę tak budować naszej relacji.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Marek spuszcza wzrok. Słychać w nim opór, ale też chwilę zawahania. Nie zaprzecza, że stawia cię pod ścianą.",
+                    "feedback": {
+                        "label": "Rozbrojenie testu lojalności",
+                        "psychology": "To Poziom III: jednocześnie uznajesz emocję i korygujesz niszczący mechanizm. Nie walczysz z lękiem, tylko z formą, w jakiej jest na ciebie przerzucany.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Nazwanie nacisku",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Test lojalności",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Do kogo w ogóle masz zadzwonić",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Rozmowa przeciąga się. Na blacie kuchennym leży kubek z zimną herbatą. Czujesz zmęczenie i niepokój, gdy uświadamiasz sobie, jak rzadko ostatnio sam_a inicjowałeś_aś kontakt z bliskimi.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Przecież ja ci wystarczam. Naprawdę potrzebujesz jeszcze tylu ludzi dookoła? Może problemem jest to, że ciągle szukasz potwierdzenia poza nami.",
+            "scene_high": {
+                "description": "Przechodzicie do kuchni. W ciszy słychać lodówkę i deszcz za oknem. Słowa Marka wybrzmiewają mocniej, bo sam zaczynasz widzieć, jak skurczył się twój świat.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "cold"
+            },
+            "npc_line_high": "Nie rozumiem tylko jednego. Skoro jesteśmy razem, czemu tak ważne jest dla ciebie trzymanie tych wszystkich relacji osobno?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Bo nie jesteś centrum wszechświata i nie będę ci tłumaczyć rzeczy oczywistych.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marek odpowiada lodowato, że właśnie pokazałeś_aś, jak mało liczy się dla ciebie jego miejsce w związku.",
+                    "feedback": {
+                        "label": "Pogarda i dewaluacja",
+                        "psychology": "Pogardliwy ton niszczy poczucie bezpieczeństwa i od razu spycha rozmowę do obrony. Nawet trafna granica w takiej formie traci skuteczność.",
+                        "better_alternative_hint": "Mów o własnej potrzebie sieci wsparcia zamiast umniejszać drugą osobę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Bezpieczeństwo relacyjne",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Może rzeczywiście przesadzam z tym trzymaniem się innych. Może powinienem_am bardziej skupić się na nas.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Marek mięknie i mówi, że o to mu chodziło: żebyście wreszcie byli drużyną, a nie tłumem obcych wpływów.",
+                    "feedback": {
+                        "label": "Rezygnacja z sieci wsparcia",
+                        "psychology": "Izolacja często przychodzi pod hasłem wyjątkowej bliskości. Problem w tym, że zdrowa bliskość nie wymaga zawężania świata do jednej osoby.",
+                        "better_alternative_hint": "Nazwij, że związek i relacje z bliskimi nie są dla ciebie konkurencją, tylko równoległymi źródłami wsparcia."
+                    },
+                    "tags": [
+                        {
+                            "text": "Fuzja zamiast bliskości",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Sieć wsparcia",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "To ważne, bo każdy człowiek potrzebuje więcej niż jednej relacji. Związek jest ważny, ale nie może zastąpić całego świata.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Marek wzrusza ramionami i mówi, że rozumie teorię, tylko w praktyce nadal czuje się spychany na bok.",
+                    "feedback": {
+                        "label": "Dobra zasada, mało osobistego wymiaru",
+                        "psychology": "To trafny argument, ale nadal dość ogólny. Na poziomie relacyjnym druga strona może go odebrać jako wykład zamiast odsłonięcia twojej prawdy.",
+                        "better_alternative_hint": "Dodaj, jak wygląda to konkretnie u ciebie: do kogo dzwonisz, z kim odzyskujesz równowagę, czego nie może dać jedna osoba."
+                    },
+                    "tags": [
+                        {
+                            "text": "Normalizacja potrzeby wsparcia",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Potrzebuję partnera i potrzebuję ludzi, którzy byli w moim życiu zanim się poznaliśmy. Zdrowy związek nie odcina od wsparcia. Chcę bliskości z tobą, ale nie kosztem samotności.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -3,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Marek długo milczy. Po chwili mówi ciszej, że nigdy nie chciał usłyszeć tego jako oskarżenia, ale rozumie, że dla ciebie to zaczęło tak wyglądać.",
+                    "feedback": {
+                        "label": "Autonomia i więź w jednym zdaniu",
+                        "psychology": "Łączysz dwa pozornie sprzeczne komunikaty: chcę bliskości i chcę zachować własny świat. To zmniejsza fałszywy wybór między miłością a autonomią.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Integracja autonomii i więzi",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Sieć wsparcia",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_6",
+            "title": "Granica i następny krok",
+            "score_threshold": 5,
+            "scene_low": {
+                "description": "Jest późno. Oboje wyglądacie na zmęczonych. W powietrzu wisi poczucie, że ta rozmowa może skończyć się zamknięciem, a nie przełomem.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "No dobrze. To czego ty w ogóle ode mnie chcesz? Mam po prostu siedzieć cicho, kiedy widzę, że ludzie cię ode mnie oddalają?",
+            "scene_high": {
+                "description": "Deszcz za oknem cichnie. Zmęczenie nadal jest duże, ale pierwszy raz od początku rozmowy pojawia się przestrzeń na konkret. Marek patrzy na ciebie bez wcześniejszej przewagi.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Dobrze. Powiedz konkretnie, co według ciebie musi się zmienić, żebym cię nie odpychał od ludzi.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Masz przestać się wtrącać i tyle. To nie podlega dyskusji.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Marek zamyka się natychmiast i mówi, że skoro tak wygląda twoje rozwiązanie, to nie ma o czym gadać.",
+                    "feedback": {
+                        "label": "Rozkaz zamiast umowy",
+                        "psychology": "Granica bez opisu warunków i bez procesu naprawy łatwo zamienia się w siłowe cięcie. To skuteczne tylko jako wyjście awaryjne, nie jako rozmowa o zmianie.",
+                        "better_alternative_hint": "Powiedz, jakie zachowania mają się skończyć i co zrobisz, jeśli wrócą."
+                    },
+                    "tags": [
+                        {
+                            "text": "Rozkazujący ton",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak warunków zmiany",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nie wiem. Chyba po prostu sam_a już nie wiem, z kim mogę się spotykać, żeby było dobrze.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Marek od razu przejmuje ster i mówi, że w takim razie on pomoże ci lepiej dobierać ludzi, skoro to dla ciebie takie trudne.",
+                    "feedback": {
+                        "label": "Oddanie decyzyjności",
+                        "psychology": "W momencie kluczowej granicy sygnalizujesz bezradność, co otwiera drogę do dalszej kontroli. Przy przemocy psychicznej niejasność bywa wykorzystywana jako zaproszenie do jeszcze większego wpływu.",
+                        "better_alternative_hint": "Nawet jeśli jesteś zmęczony_a, nazwij minimum: nie chcę komentarzy, nacisku i testów lojalności wokół moich relacji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Bezradność",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Przejęcie steru",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Chcę, żebyś przestał komentować moje spotkania w sposób, który kończy się presją albo poczuciem winy. Jeśli masz obawę, mów o sobie, nie o tym, kogo mam widywać.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Marek kiwa głową niechętnie i przyznaje, że to brzmi uczciwiej, choć nie obiecuje, że będzie mu łatwo.",
+                    "feedback": {
+                        "label": "Czytelna granica operacyjna",
+                        "psychology": "To konkret, który da się wdrożyć: zmieniasz sposób komunikacji z kontroli na ujawnienie własnych uczuć. Dobra baza, choć bez mocniejszego zabezpieczenia na wypadek powrotu wzorca.",
+                        "better_alternative_hint": "Dodaj, co zrobisz, jeśli presja wróci, oraz że zaczniesz aktywnie odbudowywać kontakt z bliskimi."
+                    },
+                    "tags": [
+                        {
+                            "text": "Jasna prośba",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chcę trzech rzeczy: bez podważania moich bliskich przy każdym spotkaniu, bez stawiania mnie przed wyborem ty albo oni i z pełnym prawem do odbudowania kontaktu z ludźmi, od których się odsunąłem_am. Jeśli ten wzorzec wróci, potraktuję to bardzo poważnie.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Marek bierze długi oddech. Nie wygląda na zachwyconego, ale słyszy granicę wyraźnie. Pyta tylko, czy naprawdę chcesz wracać do tych relacji już teraz.",
+                    "feedback": {
+                        "label": "Granica plus plan odzyskiwania autonomii",
+                        "psychology": "To dojrzałe połączenie granicy, nazwania wzorca i konsekwencji. Nie błagasz o zgodę, tylko definiujesz warunki zdrowej relacji oraz odbudowę własnego wsparcia.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Konsekwencje bez szantażu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Odbudowa sieci wsparcia",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "ODCIĘCIE POD PRZYKRYWKĄ TROSKI",
+            "emoji": "🔴",
+            "subtitle": "Rozmowa kończy się większą mgłą niż jasnością.",
+            "narrative": "Po kłótni zostajecie osobno w tym samym mieszkaniu. Formalnie nic nie zostało zakazane, ale w praktyce czujesz jeszcze większy ciężar przy myśli o kontakcie z bliskimi. Marek nie musiał wygrać wprost. Wystarczyło, że rozmowa znów skończyła się twoim zwątpieniem, poczuciem winy albo walką bez efektu.",
+            "diagnosis": "Dominowały reakcje obronne, wycofanie lub atak. To nie zatrzymało wzorca izolacji, tylko go wzmocniło. Psychologicznie problem nie polegał na pojedynczym komentarzu, lecz na sekwencji: podważanie relacji, wzbudzanie winy, testy lojalności, oddawanie pola. Bez nazwania tego procesu druga strona zachowuje monopol na interpretację rzeczywistości.",
+            "post_game": {
+                "communication_style_summary": "W tej ścieżce rozmowa krążyła między walką o rację a oddawaniem steru drugiej stronie.",
+                "strongest_moment": "Pojawiły się przebłyski potrzeby postawienia granicy, ale nie zostały utrzymane konsekwentnie.",
+                "growth_tip": "Najpierw nazwij wzorzec, potem jego wpływ na ciebie. Nie dyskutuj głównie o tym, czy partner ma dobre intencje. Mów o tym, co realnie dzieje się z twoimi relacjami i autonomią.",
+                "replay_prompt": "Spróbuj jeszcze raz tak, by nie wybierać ani ataku, ani kapitulacji. Celem jest rozpoznanie izolacji i postawienie granicy spokojnie, ale twardo."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "GRANICA JEST, ALE WZORZEC JESZCZE ŻYJE",
+            "emoji": "🟡",
+            "subtitle": "Udało się coś nazwać, lecz nie wszystko zostało domknięte.",
+            "narrative": "Rozmowa nie kończy się wybuchem, ale też nie daje pełnego poczucia ulgi. Marek słyszy część twoich argumentów i chwilowo mięknie, jednak nadal trzyma się przekonania, że jego nacisk wynika z troski. Ty odzyskujesz trochę przestrzeni, lecz nie pada jeszcze wystarczająco wyraźny plan odbudowy kontaktów i ochrony przed powrotem starego schematu.",
+            "diagnosis": "Pojawiły się elementy asertywności i częściowej walidacji, co zatrzymało najgorszą eskalację. Nadal jednak rozmowa często pozostawała na poziomie obrony przed pojedynczymi zarzutami zamiast pełnego nazwania mechanizmu izolacji. To wynik przejściowy: lepszy niż uległość, ale jeszcze nie w pełni bezpieczny.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl asertywny z momentami empatii, ale bez pełnej transformacji rozmowy.",
+                "strongest_moment": "Najmocniejsze były chwile, gdy odróżniałeś_aś jego lęk od jego prawa do kontroli.",
+                "growth_tip": "Następnym razem doprecyzuj nie tylko czego nie chcesz, ale też co ma się wydarzyć zamiast tego. Nazwij odbudowę sieci wsparcia jako część zdrowego związku, nie jako zagrożenie dla niego.",
+                "replay_prompt": "Zagraj ponownie i postaraj się przejść od samej obrony granicy do spokojnego nazwania całego wzorca: komentarze, poczucie winy, testy lojalności, izolacja."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 9
+            },
+            "color": "green",
+            "title": "NAZWANIE WZORCA",
+            "emoji": "🟢",
+            "subtitle": "Kontrola przestaje być niewidzialna.",
+            "narrative": "Nie wszystko zostaje rozwiązane, ale dzieje się rzecz kluczowa: wzorzec zostaje nazwany bez histerii i bez kapitulacji. Marek nie może już tak łatwo ukryć nacisku pod słowem troska. Ty odzyskujesz język do opisu tego, co się działo, i zaznaczasz, że bliskość nie może oznaczać odcięcia od ludzi.",
+            "diagnosis": "To dobra ścieżka, bo przenosisz rozmowę z poziomu walki o interpretację na poziom faktów, wpływu i granic. Użycie komunikatu Ja oraz spokojnego wskazania izolacji ogranicza gaslighting i wzmacnia twoją sprawczość. Nadal jednak potrzebna będzie konsekwencja poza tą jedną rozmową.",
+            "post_game": {
+                "communication_style_summary": "Przeważały odpowiedzi asertywno-empathiczne, które utrzymały kontakt z sobą i z rozmową.",
+                "strongest_moment": "Najlepszy moment to ten, w którym nazwałeś_aś test lojalności oraz powiedziałeś_aś, że zdrowy związek nie odcina od wsparcia.",
+                "growth_tip": "To był właściwy kierunek. W realnym życiu kolejnym krokiem byłoby czynne odnowienie przynajmniej jednej ważnej relacji i obserwowanie, czy partner respektuje nową granicę.",
+                "replay_prompt": "Sprawdź, czy potrafisz doprowadzić rozmowę jeszcze dalej: do konkretnej umowy i jasnych konsekwencji bez szantażu."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 10,
+                "max": 12
+            },
+            "color": "blue",
+            "title": "BLISKOŚĆ BEZ IZOLACJI",
+            "emoji": "🔵",
+            "subtitle": "Udało się obronić więź z partnerem bez zdrady samego siebie.",
+            "narrative": "Rozmowa kończy się bez łatwego happy endu, ale z czymś cenniejszym: pełną jasnością. Nazwałeś_aś mechanizm izolacji, uznałeś_aś lęk partnera bez podporządkowania mu swojego życia i postawiłeś_aś granicę wraz z planem odbudowy kontaktów. Marek nie zyskuje już przewagi ukrytej w półsłówkach. To ty wracasz do centrum własnych decyzji.",
+            "diagnosis": "To ścieżka wysokiej dojrzałości komunikacyjnej. Łączysz NVC, asertywność i transformacyjne myślenie o relacji. Nie mylisz empatii z uległością i nie mylisz granicy z atakiem. Dzięki temu zatrzymujesz podstawowy mechanizm przemocy psychicznej na wczesnym etapie: zawężanie świata partnera do jednej kontrolującej osoby.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl transformacyjny: empatia bez utraty granic, konkret bez chłodu, konsekwencje bez przemocy.",
+                "strongest_moment": "Mistrzowskie było połączenie trzech elementów naraz: nazwania nacisku, obrony prawa do własnych relacji i wskazania, co stanie się, jeśli wzorzec wróci.",
+                "growth_tip": "Tak właśnie wygląda dojrzała obrona autonomii. W praktyce warto po takiej rozmowie od razu wykonać realny krok: odezwać się do bliskiej osoby i odbudować kontakt, zamiast czekać na idealny moment.",
+                "replay_prompt": "Przejdź scenariusz jeszcze raz i zobacz, w których miejscach najłatwiej byłoby ci wpaść w poczucie winy albo zacząć się tłumaczyć."
+            }
+        }
+    ]
+}

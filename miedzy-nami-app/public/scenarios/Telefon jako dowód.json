@@ -1,0 +1,1071 @@
+{
+    "scenario_id": "jealous_partner_demands_phone_access",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Telefon jako dowód",
+        "subtitle": "Oskarżenie o zdradę przeradza się w walkę o prywatność, zaufanie i granice.",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 9,
+        "interaction_count": 6
+    },
+    "tags": {
+        "relationship_type": "romantic_partner",
+        "theme": [
+            "trust",
+            "boundaries",
+            "control"
+        ],
+        "emotional_intensity": "critical",
+        "age_rating": "teen",
+        "session_type": "training",
+        "player_role_gender": "neutral",
+        "difficulty": "advanced"
+    },
+    "characters": {
+        "player": {
+            "name": "Alex",
+            "role_label": "Partner · Gracz",
+            "age_range": "28-35",
+            "context": "Od kilku tygodni czuje się stale testowany i zmęczony kolejnymi oskarżeniami. Chce ocalić relację, ale nie kosztem własnej prywatności i godności.",
+            "hidden_need": "autonomy",
+            "hidden_need_text": "Potrzebuje szacunku dla prywatności, bezpieczeństwa emocjonalnego i relacji opartej na zaufaniu, a nie kontroli.",
+            "traits": [
+                {
+                    "text": "Spokojny pod presją",
+                    "type": "positive"
+                },
+                {
+                    "text": "Ma skłonność do tłumaczenia się za długo",
+                    "type": "negative"
+                },
+                {
+                    "text": "Silnie ceni prywatność",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 4,
+                "patience": 7,
+                "defensiveness": 6,
+                "empathy": 7,
+                "need_for_control": 3,
+                "shame_sensitivity": 6,
+                "directness": 7,
+                "repair_ability": 8
+            }
+        },
+        "npc": {
+            "name": "Maja",
+            "role_label": "Partnerka · NPC",
+            "age_range": "27-34",
+            "context": "Ostatnio jest coraz bardziej napięta. Każde opóźnienie w odpowiedzi i każdy nieznany kontakt uruchamia w niej lęk przed odrzuceniem i zdradą.",
+            "hidden_need": "safety",
+            "hidden_need_text": "Potrzebuje poczucia bezpieczeństwa i potwierdzenia, że więź jest realna, ale szuka go przez kontrolę i testowanie.",
+            "traits": [
+                {
+                    "text": "Czuła w dobrych momentach",
+                    "type": "positive"
+                },
+                {
+                    "text": "Zazdrosna i podejrzliwa",
+                    "type": "negative"
+                },
+                {
+                    "text": "Źle znosi niepewność",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 7,
+                "patience": 3,
+                "defensiveness": 8,
+                "empathy": 5,
+                "need_for_control": 8,
+                "shame_sensitivity": 8,
+                "directness": 6,
+                "repair_ability": 4
+            },
+            "npc_reaction_logic": "Na agresję odpowiada kontratakiem lub groźbą odejścia. Na uległość chwilowo mięknie, ale szybko zwiększa kontrolę. Na suchą asertywność testuje dalej. Najlepiej reaguje na połączenie walidacji lęku z jasną granicą i propozycją rozmowy o źródle zazdrości."
+        }
+    },
+    "metrics_start": {
+        "tension": 40,
+        "trust": 60,
+        "openness": 50,
+        "feeling_heard": 50
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Pierwsze żądanie",
+            "scene": {
+                "description": "Wieczór w salonie. Maja siedzi sztywno na kanapie i patrzy na rozświetlony ekran twojego telefonu, który właśnie zawibrował na stoliku.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": "Znowu ktoś do ciebie pisze o tej porze. Pokaż telefon. Jeśli nie masz nic do ukrycia, nie powinno być problemu.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To ty masz obsesję. Może sama zdradzasz, skoro ciągle to wymyślasz.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maja prostuje się i zaciska szczękę. Dobra, czyli już nawet nie udajesz, że mnie rozumiesz.",
+                    "feedback": {
+                        "label": "Kontratak i projekcja",
+                        "psychology": "To klasyczne wejście w Poziom II, czyli walkę o rację. Zamiast odnieść się do granicy i emocji, przerzucasz podejrzenie na drugą stronę. W analizie transakcyjnej to ruch z pozycji Dziecko buntownicze do Dziecko buntownicze.",
+                        "better_alternative_hint": "Nazwij lęk Mai, ale nie broń się atakiem. Granica działa lepiej niż kontratak."
+                    },
+                    "tags": [
+                        {
+                            "text": "Kontratak",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Projekcja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, masz. Przejrzyj wszystko, żebyśmy mieli to z głowy.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maja wyciąga rękę po telefon szybciej, niż kończysz mówić. Wiedziałam, że coś jest nie tak, skoro tak łatwo oddajesz.",
+                    "feedback": {
+                        "label": "Uległość wzmacniająca kontrolę",
+                        "psychology": "Oddanie telefonu może chwilowo zmniejszyć napięcie na powierzchni, ale psychologicznie wzmacnia cykl zazdrości i testowania. To forma enabling wobec kontroli, a nie budowania zaufania.",
+                        "better_alternative_hint": "Nie udowadniaj niewinności przez rezygnację z prywatności. Lepiej oddzielić lęk partnerki od prawa do kontroli."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uległość",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Współpodtrzymywanie wzorca",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Brak granicy",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie zdradzam cię, ale nie będę teraz tego rozkręcać. Porozmawiajmy jutro, kiedy oboje ochłoniemy.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 0,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Maja marszczy brwi. Czyli znowu mam czekać i się domyślać.",
+                    "feedback": {
+                        "label": "Granica bez kontaktu z emocją",
+                        "psychology": "To jest lepsze niż oddanie telefonu albo atak, bo zatrzymujesz eskalację. Nadal jednak pomijasz emocjonalny komunikat ukryty pod żądaniem, więc druga strona może poczuć się odprawiona. W modelu von Thuna odpowiadasz głównie na warstwę rzeczową.",
+                        "better_alternative_hint": "Dodaj krótką walidację lęku i od razu nazwij, na co się nie zgadzasz."
+                    },
+                    "tags": [
+                        {
+                            "text": "Granica",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Asertywność częściowa",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Widzę, że bardzo się boisz i chcesz mieć pewność, ale nie oddam telefonu do sprawdzania. Mogę porozmawiać z tobą o tym, skąd bierze się ten lęk.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Maja cofa rękę o kilka centymetrów. To nie jest tylko lęk. Ja naprawdę czuję, że coś przede mną ukrywasz.",
+                    "feedback": {
+                        "label": "Walidacja połączona z granicą",
+                        "psychology": "Łączysz dwa kluczowe elementy NVC: rozpoznanie emocji i jasną prośbę lub granicę. Nie wchodzisz ani w uległość, ani w walkę. To otwiera drogę do Poziomu III, bo nie bronisz się dowodami, tylko zmieniasz ramę rozmowy.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granica",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Pułapka dowodu niewinności",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Powietrze gęstnieje. Maja wstaje z kanapy i robi krok w twoją stronę, jakby sama chciała sięgnąć po telefon.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Jak człowiek jest wierny, to nie robi tajemnicy z telefonu. Czemu mam ci wierzyć na słowo?",
+            "scene_high": {
+                "description": "Maja nadal jest spięta, ale już nie wyciąga ręki po telefon. Patrzy na ciebie bardziej z bólem niż z gniewem.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "cold"
+            },
+            "npc_line_high": "Ja naprawdę nie wiem, jak mam sobie poradzić z tym napięciem. Czemu mam ci wierzyć na słowo?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Bo normalni ludzie nie robią przesłuchań partnerowi. Zachowujesz się absurdalnie.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Absurdalnie? Świetnie. Czyli teraz jeszcze robisz ze mnie wariatkę.",
+                    "feedback": {
+                        "label": "Dewaluacja i zawstydzenie",
+                        "psychology": "Nazywanie drugiej osoby nienormalną podnosi wstyd i uruchamia obronę. Przy wysokiej shame sensitivity taka odpowiedź prawie zawsze nasila kontrolę. To błąd pogardy, który zamyka dialog.",
+                        "better_alternative_hint": "Mów o zachowaniu i granicy, nie o wartości czy normalności partnerki."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Zawstydzanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Shame sensitivity",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "To sobie zobacz, z kim piszę. Odblokuję ci wszystko, żebyś wreszcie przestała.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maja bierze głęboki oddech. Wreszcie mówisz poważnie. To pokaż też archiwum i usunięte wiadomości.",
+                    "feedback": {
+                        "label": "Karmienie spirali kontroli",
+                        "psychology": "Dowody rzadko gaszą chorobliwą zazdrość, bo problemem nie jest brak danych, tylko brak regulacji lęku. Każde kolejne ustępstwo podnosi próg następnego żądania.",
+                        "better_alternative_hint": "Zatrzymaj zachowanie kontrolujące zamiast wchodzić w rolę oskarżonego, który ma się oczyścić."
+                    },
+                    "tags": [
+                        {
+                            "text": "Spirala kontroli",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Uległość",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak granicy",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie dam ci telefonu. To jest moja prywatna rzecz i tyle.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": 0,
+                        "openness": 0,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Maja krzyżuje ręce. Słyszę tylko mur. Zero odpowiedzi na to, co ja czuję.",
+                    "feedback": {
+                        "label": "Twarda granica bez mostu",
+                        "psychology": "Granica jest potrzebna, ale w tej formie brzmi jak odcięcie. Komunikat jest rzeczowy i spójny, jednak nie odpowiada na relacyjny aspekt wypowiedzi. Zostajesz na Poziomie I, więc napięcie może zostać w systemie.",
+                        "better_alternative_hint": "Utrzymaj granicę, ale dopowiedz, co jesteś gotowy lub gotowa dać zamiast kontroli."
+                    },
+                    "tags": [
+                        {
+                            "text": "Granica",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Rzeczowość",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Mogę odpowiedzieć na konkretne pytania i powiedzieć ci, co teraz uruchamia twój lęk, ale przeszukiwanie mojego telefonu nie będzie częścią naszego związku.",
+                    "points": 2,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Maja spuszcza wzrok na chwilę. To uruchamia mnie to, że ostatnio jesteś częściej offline i od razu myślę najgorzej.",
+                    "feedback": {
+                        "label": "Zamiana testu na rozmowę",
+                        "psychology": "Nie wdajesz się w udowadnianie niewinności. Proponujesz inny kanał regulacji: pytania, nazwanie lęku i rozmowę o znaczeniu zachowań. To przesuwa komunikację z kontroli na współrozumienie.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Przerwanie wzorca",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Co kryje się pod zazdrością",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Maja chodzi nerwowo między stołem a oknem. Wspomina sytuacje z ostatnich dni tak, jakby układała akt oskarżenia.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Nie odpisałeś od razu wczoraj, a potem ukryłeś ekran, kiedy weszłam do pokoju. Jak mam tego nie łączyć?",
+            "scene_high": {
+                "description": "Maja siada z powrotem na kanapie. Jej głos drży, ale przestaje brzmieć jak przesłuchanie.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "cold"
+            },
+            "npc_line_high": "Kiedy nie odpisujesz albo odruchowo odwracasz ekran, ja od razu czuję, że zaraz zostanę oszukana.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Twoje lęki nie są moim problemem. Ogarnij się wreszcie.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maja blednie, a potem podnosi głos. Czyli mam radzić sobie sama z tym, co mi robisz?",
+                    "feedback": {
+                        "label": "Odrzucenie emocji",
+                        "psychology": "Masz rację, że cudzy lęk nie daje prawa do kontroli, ale tu komunikat brzmi jak odrzucenie osoby razem z jej uczuciem. To nasila defensywność i podkręca katastrofizację.",
+                        "better_alternative_hint": "Oddziel emocję od zachowania. Lęk możesz uznać, kontrolę możesz zatrzymać."
+                    },
+                    "tags": [
+                        {
+                            "text": "Invalidacja emocji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Katastrofizacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Defensywność",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Może mam ci jeszcze wysyłać screeny co godzinę, skoro zwykłe odpowiedzi ci nie wystarczają.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maja patrzy na ciebie z niedowierzaniem. Czyli kpisz sobie z tego, że mnie to naprawdę boli.",
+                    "feedback": {
+                        "label": "Sarkazm zamiast treści",
+                        "psychology": "Bierna agresja daje chwilowe poczucie przewagi, ale rozmówca słyszy głównie drwinę. W kwadracie von Thuna warstwa relacyjna staje się dominująca i niszczy sens warstwy rzeczowej.",
+                        "better_alternative_hint": "Powiedz wprost, czego nie zrobisz, i nazwij, czego chcesz zamiast tego."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Passive-aggressive",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Rozumiem, że się boisz. Postaram się częściej odpisywać i uprzedzać, gdzie jestem.",
+                    "points": 1,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Maja łapie się tej obietnicy. No właśnie. Gdybyś tak robił od początku, nie byłoby problemu.",
+                    "feedback": {
+                        "label": "Empatia bez ochrony granicy",
+                        "psychology": "Walidujesz emocję, co obniża napięcie, ale ryzykujesz wejście w rolę osoby odpowiedzialnej za regulowanie cudzego lęku przez meldowanie się. To częściowo wzmacnia kontrolę.",
+                        "better_alternative_hint": "Możesz zaproponować więcej przewidywalności, ale jasno odróżnij to od monitorowania i zdawania raportów."
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Nadmierna odpowiedzialność",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Enabling",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Słyszę, że te sytuacje uruchamiają w tobie lęk przed oszukaniem. Chcę rozmawiać o tym, co buduje zaufanie, ale nie o monitorowaniu mnie.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Maja bierze wolniejszy oddech. Ja chyba naprawdę nie odróżniam już sygnału od własnego strachu.",
+                    "feedback": {
+                        "label": "Nazwanie mechanizmu i wspólnego celu",
+                        "psychology": "To odpowiedź transformacyjna: uznajesz doświadczenie partnerki, ale przesuwasz fokus z dowodów na proces budowania zaufania. To wzmacnia refleksję zamiast kolejnego testu.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Transformacja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Budowanie zaufania",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Granica czy tajemnica",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Maja stoi przy stole z rękami opartymi o blat. W jej głosie pojawia się chłód i twarde ultimatum.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Między partnerami nie powinno być tajemnic. Jak bronisz telefonu, to bronisz czegoś więcej niż prywatności.",
+            "scene_high": {
+                "description": "Przenosicie rozmowę do kuchni, żeby trochę ochłonąć. Maja nadal jest poruszona, ale brzmi mniej oskarżycielsko.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Ja chyba naprawdę mieszam bliskość z prawem do wglądu. Nie wiem, gdzie tu jest zdrowa granica.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Skoro tego nie rozumiesz, to może po prostu nie nadajesz się do związku.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maja odsuwa się, jakby dostała policzek. Dobrze wiedzieć, co naprawdę o mnie myślisz.",
+                    "feedback": {
+                        "label": "Atak na tożsamość",
+                        "psychology": "Zamiast mówić o konkretnej granicy, oceniasz całą zdolność drugiej osoby do relacji. To globalna etykieta, która niemal zawsze niszczy gotowość do naprawy.",
+                        "better_alternative_hint": "Oceń zachowanie, nie człowieka. Granica ma dotyczyć dostępu do telefonu, nie wartości partnerki."
+                    },
+                    "tags": [
+                        {
+                            "text": "Etykietowanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Atak personalny",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Uogólnianie",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Masz rację. Mogę ci dać hasła do komunikatorów, skoro to ma cię uspokoić.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maja kiwa głową, ale nie wygląda na spokojniejszą. I do lokalizacji też. Wtedy będę wiedziała, że traktujesz mnie serio.",
+                    "feedback": {
+                        "label": "Rozszerzenie strefy kontroli",
+                        "psychology": "Zgoda na hasła i pełen wgląd nie tworzy bezpieczeństwa, tylko nowy standard nadzoru. Przy lęku opartym na kontroli granica przesuwa się dalej po każdym ustępstwie.",
+                        "better_alternative_hint": "Nie myl przejrzystości z inwigilacją. Możesz zaoferować rozmowę i przewidywalność, ale nie pełen dostęp."
+                    },
+                    "tags": [
+                        {
+                            "text": "Inwigilacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Uległość",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Przesuwanie granicy",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Prywatność to nie tajemnica. Mogę mówić ci o ważnych sprawach, ale nie będziemy sobie udostępniać haseł.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Maja wzdycha. To brzmi rozsądnie, ale dalej nie wiem, co mam zrobić z tym napięciem.",
+                    "feedback": {
+                        "label": "Dobra definicja bez planu",
+                        "psychology": "To ważne rozróżnienie: prywatność nie jest tożsama z tajemnicą. Brakuje jednak następnego kroku, który pokaże, jak para ma sobie radzić, gdy zazdrość wraca.",
+                        "better_alternative_hint": "Po definicji zaproponuj konkretną zasadę albo sposób reagowania na zazdrość bez kontroli."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Prywatność a tajemnica",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Reframing",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Bliskość dla mnie nie oznacza dostępu do wszystkiego. Mogę być transparentny lub transparentna co do ważnych spraw, a gdy wraca zazdrość, chcę o niej rozmawiać zamiast oddawać ci kontrolę.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Maja opiera się o blat i milknie na moment. Chyba pierwszy raz słyszę to rozdzielenie tak jasno.",
+                    "feedback": {
+                        "label": "Reframing relacji",
+                        "psychology": "To zmienia definicję bliskości z pełnego dostępu na świadomą transparentność i dialog. Dajesz alternatywę dla kontroli, więc granica nie brzmi jak mur, tylko jak zasada relacji.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Reframing",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Transparentność",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Test w praktyce",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Chwilę później telefon znów wibruje na blacie. Maja automatycznie przesuwa go do siebie, zanim jeszcze ekran zgaśnie.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "No właśnie. Kto to teraz? Jeśli to nic takiego, to pokaż wiadomość od razu.",
+            "scene_high": {
+                "description": "Telefon wibruje, a Maja wyraźnie się spina, ale zatrzymuje dłonie przy sobie. Patrzy na ciebie z mieszaniną ciekawości i niepokoju.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Widzę, że znowu ktoś pisze i od razu mnie ściska. Powiesz mi, kto to?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Jasne, tajemnicza kochanka z działu księgowości. Chcesz jeszcze dramatyczną muzykę w tle?",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maja odsuwa telefon od siebie, ale jej oczy twardnieją. Czyli dalej robisz sobie żarty z czegoś, co mnie rozwala.",
+                    "feedback": {
+                        "label": "Drwina z bólu",
+                        "psychology": "Ironiczny humor bywa próbą rozładowania napięcia, ale tu działa jak unieważnienie emocji. Rozmówca czuje się wyśmiany, więc wraca do kontroli albo ataku.",
+                        "better_alternative_hint": "Odpowiedz konkretnie i spokojnie. Transparentność nie wymaga oddawania telefonu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ironia",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Invalidacja emocji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Passive-aggressive",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, patrz. Przewinę ci cały wątek, żebyś się nie czepiała.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maja wpatruje się w ekran za długo. A ten wcześniejszy kontakt też pokaż. I czemu usunąłeś część powiadomień?",
+                    "feedback": {
+                        "label": "Dowód, który rodzi kolejne podejrzenie",
+                        "psychology": "Kiedy relacja wchodzi w logikę dochodzenia, każdy detal staje się nowym tropem. Pokazanie jednej wiadomości nie kończy śledztwa, tylko uczy system, że nacisk działa.",
+                        "better_alternative_hint": "Powiedz, od kogo jest wiadomość i czego dotyczy, ale zatrzymaj granicę wobec wglądu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Spirala podejrzeń",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Uległość",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak granicy",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "To wiadomość z pracy. Nie chcę teraz wchodzić w szczegóły, bo ten temat już mnie męczy.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 0,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Maja kiwa głową, ale widać, że napięcie zostaje. Dobrze, ale nadal czuję się odsunięta.",
+                    "feedback": {
+                        "label": "Rzeczowo, ale z dystansem",
+                        "psychology": "Dajesz minimum informacji i nie oddajesz telefonu, co jest zdrowe. Jednocześnie sygnalizujesz zmęczenie w sposób, który może zostać odczytany jako zamknięcie na relację.",
+                        "better_alternative_hint": "Dodaj krótkie uznanie jej napięcia i przypomnienie wspólnej zasady zamiast samego odcięcia."
+                    },
+                    "tags": [
+                        {
+                            "text": "Rzeczowość",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granica",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Emocjonalny dystans",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "To wiadomość od Magdy z pracy o jutrzejszym spotkaniu. Mogę powiedzieć, czego dotyczy, ale nie będę pokazywać prywatnych rozmów. Chcę być transparentny lub transparentna bez oddawania kontroli.",
+                    "points": 2,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Maja przytakuje niechętnie, ale nie sięga po telefon. Dobrze. To jest trudne, ale przynajmniej mówisz do mnie wprost.",
+                    "feedback": {
+                        "label": "Transparentność bez kapitulacji",
+                        "psychology": "To praktyczne zastosowanie zdrowej granicy. Dajesz informacje, które pomagają regulować niepewność, ale nie przechodzisz w reżim nadzoru. To wzmacnia zaufanie bardziej niż dowód.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Transparentność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granica",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Regulacja niepewności",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_6",
+            "title": "Warunek dalszej relacji",
+            "score_threshold": 5,
+            "scene_low": {
+                "description": "Rozmowa dociera do ściany. W kuchni zapada ciężka cisza, po której Maja wypowiada słowa jak ostateczny warunek.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Albo dajesz mi pełen dostęp i przestaję się domyślać, albo ja nie wiem, czy ten związek ma w ogóle sens.",
+            "scene_high": {
+                "description": "Jest późno. Oboje jesteście zmęczeni, ale Maja nie krzyczy. W jej głosie słychać raczej bezradność niż atak.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Ja nie chcę żyć w ciągłym sprawdzaniu. Tylko nie wiem, co mam zrobić z tą zazdrością, kiedy wraca.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To się wyprowadź. Mam dość twoich scen i twojej paranoi.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maja zamiera, po czym jej twarz twardnieje. Dobra. To właśnie usłyszałam.",
+                    "feedback": {
+                        "label": "Odrzucenie w afekcie",
+                        "psychology": "Nawet jeśli relacja rzeczywiście wymaga dystansu, wyrzucenie tego w formie ataku zamyka przestrzeń na świadomą decyzję. To reakcja afektywna, nie granica.",
+                        "better_alternative_hint": "Jeśli chcesz zrobić krok w tył, nazwij warunki i powód bez obrażania."
+                    },
+                    "tags": [
+                        {
+                            "text": "Impulsywność",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak naprawy",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobrze. Dam ci dostęp do wszystkiego, tylko nie mów, że to koniec.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maja wypuszcza powietrze, ale ulga jest krótka. To podaj mi hasła teraz, żebym wreszcie mogła być spokojna.",
+                    "feedback": {
+                        "label": "Granica oddana ze strachu",
+                        "psychology": "To odpowiedź napędzana lękiem przed utratą relacji. Problem w tym, że relacja ratowana kosztem wolności szybko zamienia się w system kontroli. Uległość nie leczy zazdrości.",
+                        "better_alternative_hint": "Nie płać prywatnością za chwilowe uspokojenie. Lepiej nazwać, na co się nie zgodzisz, i jakie widzisz dalsze kroki."
+                    },
+                    "tags": [
+                        {
+                            "text": "Lęk przed odrzuceniem",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Uległość",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Oddanie granicy",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie dam ci dostępu. Musisz sobie z tym poradzić sama, bo ja już nic więcej nie zrobię.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": 0,
+                        "openness": 0,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Maja zamyka się w sobie. Słyszę granicę, ale nie słyszę, czy jeszcze ci zależy.",
+                    "feedback": {
+                        "label": "Granica bez relacyjnego domknięcia",
+                        "psychology": "Asertywność jest słuszna, lecz sformułowanie brzmi jak całkowite wycofanie zaangażowania. To może być potrzebne, jeśli decydujesz się odejść, ale nie sprzyja odbudowie ani świadomemu zamknięciu.",
+                        "better_alternative_hint": "Powiedz nie kontroli, a jednocześnie nazwij warunek dalszej relacji albo potrzebę zrobienia kroku w tył."
+                    },
+                    "tags": [
+                        {
+                            "text": "Granica",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Asertywność częściowa",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie zgodzę się na kontrolę mojego telefonu. Jeśli mamy ratować ten związek, potrzebujemy zasad opartych na zaufaniu i realnej pracy nad zazdrością. Bez tego zrobię krok w tył, żeby chronić siebie.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -3,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Maja długo milczy. To boli, ale chyba pierwszy raz rozumiem, że ciągłe sprawdzanie nie daje mi bezpieczeństwa.",
+                    "feedback": {
+                        "label": "Twarda granica z jasnym warunkiem",
+                        "psychology": "To dojrzała odpowiedź: nie oddajesz kontroli, nie grozisz w afekcie i pokazujesz konsekwencję. W języku NVC bronisz potrzeby autonomii i bezpieczeństwa, a jednocześnie zostawiasz drogę do zmiany przez wspólne zasady lub pomoc.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Granica",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Konsekwencja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "PĘTLA KONTROLI",
+            "emoji": "🔴",
+            "subtitle": "Rozmowa kończy się eskalacją albo pełną kapitulacją granic.",
+            "narrative": "Noc kończy się chłodem i rozbiciem. Albo wybuchacie i każde z was zostaje w swojej wersji winy, albo oddajesz prywatność w zamian za chwilowy spokój. W obu wariantach podejrzenia nie znikają. Związek wchodzi głębiej w logikę kontroli i testowania.",
+            "diagnosis": "Dominował styl agresywny, bierny albo biernie agresywny. Rozmowa krążyła wokół dowodów, oskarżeń i reakcji obronnych. Z perspektywy psychologii komunikacji nie doszło do oddzielenia emocji od zachowania: lęk przed zdradą został potraktowany albo jak absurd, albo jak powód do nadzoru. To utrwaliło Poziom II i rozregulowało obie strony.",
+            "post_game": {
+                "communication_style_summary": "Ta ścieżka była zdominowana przez eskalację, zawstydzanie albo uległość, która wzmacnia kontrolę.",
+                "strongest_moment": "Najmocniejszym momentem było każde chwilowe zatrzymanie ataku, nawet jeśli nie zostało doprowadzone do końca.",
+                "growth_tip": "Nie próbuj wygrać przez dowód ani ocalić relacji przez oddanie prywatności. Następnym razem zacznij od krótkiej walidacji lęku i od razu nazwij granicę wobec sprawdzania telefonu.",
+                "replay_prompt": "Spróbuj przejść scenariusz tak, by ani razu nie udowadniać niewinności ekranem, tylko konsekwentnie wracać do zaufania i granic."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "CHWIEJNY ROZEJM",
+            "emoji": "🟡",
+            "subtitle": "Granica pada, ale rozmowa nie dotyka jeszcze sedna.",
+            "narrative": "Udaje się uniknąć najgorszej eskalacji, lecz w powietrzu zostaje nierozwiązane napięcie. Maja nie dostaje telefonu, ale nie ma też jasnego planu, co robić z nawracającą zazdrością. Ty chronisz swoją prywatność, jednak oboje wychodzicie z rozmowy zmęczeni i trochę osobno.",
+            "diagnosis": "Dominowała asertywność albo rzeczowość bez wystarczającej empatii. To lepsze niż kapitulacja czy atak, ale nadal pozostawia partnerkę samą z lękiem, a ciebie samego lub samą z ciężarem obrony. Relacja zatrzymała się między Poziomem I a Poziomem II, bez pełnego wejścia w transformację.",
+            "post_game": {
+                "communication_style_summary": "Ta ścieżka opierała się na granicach i rzeczowości, ale brakowało jej pełniejszego uznania emocji i wspólnego planu.",
+                "strongest_moment": "Najmocniejszy był moment, w którym prywatność została odróżniona od tajemnicy.",
+                "growth_tip": "Zachowaj granicę, ale dodawaj most: nazwij lęk partnerki, powiedz, co możesz zaoferować zamiast kontroli, i ustalcie zasady na momenty zazdrości.",
+                "replay_prompt": "Przy kolejnym podejściu spróbuj nie tylko odmawiać dostępu, ale też aktywnie przekierowywać rozmowę z dowodów na źródło lęku i warunki zaufania."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 9
+            },
+            "color": "green",
+            "title": "GRANICA Z SZANSĄ NA ODBUDOWĘ",
+            "emoji": "🟢",
+            "subtitle": "Prywatność zostaje obroniona, a rozmowa zaczyna dotykać prawdziwego problemu.",
+            "narrative": "Napięcie nie znika całkowicie, ale rozmowa przestaje być przesłuchaniem. Maja zaczyna widzieć, że sprawdzanie telefonu nie daje jej bezpieczeństwa, a ty nie musisz rezygnować z prywatności, by być uczciwym lub uczciwą. Pojawia się szansa na nowe zasady relacji.",
+            "diagnosis": "Przeważały odpowiedzi empatyczne i asertywne. Gracz lub graczka nie dał się wciągnąć w pułapkę udowadniania niewinności, tylko konsekwentnie oddzielał lęk od prawa do kontroli. To przesunęło rozmowę w stronę Poziomu III, choć proces odbudowy zaufania dopiero się zaczyna.",
+            "post_game": {
+                "communication_style_summary": "Ta ścieżka łączyła walidację emocji, jasne granice i pierwsze elementy wspólnego planu.",
+                "strongest_moment": "Najmocniejszy był moment, w którym transparentność została pokazana jako coś innego niż pełen dostęp i nadzór.",
+                "growth_tip": "To dobry kierunek. Utrzymuj konsekwencję: uznawaj lęk, ale nie karm kontroli. W realnym życiu warto po takiej rozmowie ustalić konkretne zasady i wrócić do tematu na spokojnie.",
+                "replay_prompt": "Spróbuj zagrać jeszcze raz i dojść do wersji, w której granica staje się nie tylko obroną, ale początkiem bardzo dojrzałej rozmowy o bezpieczeństwie i odpowiedzialności."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 10,
+                "max": 12
+            },
+            "color": "blue",
+            "title": "DOJRZAŁE PRZERWANIE WZORCA",
+            "emoji": "🔵",
+            "subtitle": "Udaje się zatrzymać kontrolę i nazwać warunki zdrowej relacji bez przemocy i bez kapitulacji.",
+            "narrative": "Rozmowa kończy się późno, ale inaczej niż zwykle. Telefon przestaje być centralnym obiektem walki. Maja słyszy, że jej zazdrość jest realna, lecz nie daje prawa do nadzoru. Ty zostajesz przy sobie, a jednocześnie pokazujesz drogę: zaufanie, transparentność, konsekwencja i realna praca nad wzorcem zazdrości.",
+            "diagnosis": "To ścieżka wysokiej dojrzałości komunikacyjnej. Pojawiła się walidacja, komunikat Ja, reframing i konsekwentna granica z warunkiem dalszej relacji. Z perspektywy NVC i Poziomu III rozmowa nie tylko unika eskalacji, ale zmienia samą ramę konfliktu: z dochodzenia na rozmowę o bezpieczeństwie, autonomii i odpowiedzialności.",
+            "post_game": {
+                "communication_style_summary": "Ta ścieżka była transformacyjna: empatia nie rozmyła granic, a granica nie zabiła kontaktu.",
+                "strongest_moment": "Najmocniejszy był finał, w którym odmowa kontroli została połączona z jasnym warunkiem dalszej relacji i ochroną siebie.",
+                "growth_tip": "To poziom mistrzowski. W życiu codziennym pamiętaj, że najlepsza granica nie tylko mówi nie, ale też wskazuje zdrową alternatywę i konsekwencję, jeśli wzorzec wróci.",
+                "replay_prompt": "Zagraj ponownie i sprawdź, jak wcześnie potrafisz przerwać pętlę dowodów, zanim zazdrość zamieni się w pełne śledztwo."
+            }
+        }
+    ]
+}

@@ -1,0 +1,1071 @@
+{
+    "scenario_id": "internalized_criticism_partner",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Za bardzo bierzesz do siebie",
+        "subtitle": "Gdy krytyka partnera zaczyna brzmieć jak twój własny głos",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 9,
+        "interaction_count": 6
+    },
+    "tags": {
+        "relationship_type": "romantic_partner",
+        "theme": [
+            "criticism",
+            "control",
+            "respect"
+        ],
+        "emotional_intensity": "moderate",
+        "age_rating": "teen",
+        "session_type": "training",
+        "player_role_gender": "neutral",
+        "difficulty": "advanced"
+    },
+    "characters": {
+        "player": {
+            "name": "Alex",
+            "role_label": "Partner/ka · Gracz",
+            "age_range": "27-34",
+            "context": "Od dłuższego czasu słyszysz, że przesadzasz, źle odbierasz ton i wszystko bierzesz do siebie. Coraz częściej zanim coś powiesz, sprawdzasz, czy może faktycznie problem jest w tobie.",
+            "hidden_need": "safety",
+            "hidden_need_text": "Potrzeba bezpieczeństwa emocjonalnego i prawa do własnej percepcji",
+            "traits": [
+                {
+                    "text": "uważny/a na sygnały emocjonalne",
+                    "type": "positive"
+                },
+                {
+                    "text": "łatwo zawstydzany/a",
+                    "type": "negative"
+                },
+                {
+                    "text": "skłonny/a do autorefleksji",
+                    "type": "positive"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 4,
+                "patience": 6,
+                "defensiveness": 7,
+                "empathy": 7,
+                "need_for_control": 3,
+                "shame_sensitivity": 8,
+                "directness": 4,
+                "repair_ability": 6
+            }
+        },
+        "npc": {
+            "name": "Marta",
+            "role_label": "Partner/ka · NPC",
+            "age_range": "28-36",
+            "context": "Marta uważa się za osobę szczerą i konkretną. Gdy ktoś reaguje bólem na jej słowa, interpretuje to jako słabość lub przesadę, a nie jako informację o przekroczonej granicy.",
+            "hidden_need": "control",
+            "hidden_need_text": "Potrzeba wpływu i uniknięcia własnego dyskomfortu związanego z krytyką zwrotną",
+            "traits": [
+                {
+                    "text": "bezpośrednia",
+                    "type": "neutral"
+                },
+                {
+                    "text": "krytyczna",
+                    "type": "negative"
+                },
+                {
+                    "text": "spostrzegawcza",
+                    "type": "positive"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 5,
+                "patience": 4,
+                "defensiveness": 8,
+                "empathy": 3,
+                "need_for_control": 7,
+                "shame_sensitivity": 6,
+                "directness": 8,
+                "repair_ability": 3
+            },
+            "npc_reaction_logic": "Na agresję odpowiada kontratakiem i utwardza swoją narrację. Na bierność wzmacnia pozycję eksperta od twoich emocji. Na styl assertive chwilowo hamuje, ale próbuje wracać do etykiet. Na styl empathic i transformative ma największą szansę usłyszeć różnicę między informacją zwrotną a deprecjacją, choć początkowo broni swojej intencji."
+        }
+    },
+    "metrics_start": {
+        "tension": 40,
+        "trust": 60,
+        "openness": 50,
+        "feeling_heard": 50
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Etykieta zamiast rozmowy",
+            "scene": {
+                "description": "Wieczór po spotkaniu ze znajomymi. W salonie stoją niedopite kubki. Marta opiera się o blat i patrzy na ciebie z irytacją, jakby kończyła rozmowę, która dla ciebie dopiero się zaczyna.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": "No i znowu. Powiedziałam ci jedną uwagę, a ty od razu się zamknąłeś/aś. Jesteś po prostu zbyt wrażliwy/a na krytykę.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To nie krytyka, tylko zwykłe poniżanie. Sam/a jesteś problemem.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "No jasne. Jak zawsze wszystko odwracasz i atakujesz mnie zamiast posłuchać.",
+                    "feedback": {
+                        "label": "Kontratak i walka o rację",
+                        "psychology": "Wchodzisz w Poziom II — pozycyjny. Z perspektywy kwadratu von Thuna odpowiadasz na warstwę relacyjną własnym atakiem, więc rozmowa zamienia się w pojedynek, a nie w rozróżnienie faktów od etykiet.",
+                        "better_alternative_hint": "Zatrzymaj etykietę i poproś o konkretne zachowanie zamiast odpowiadać kolejną oceną osoby."
+                    },
+                    "tags": [
+                        {
+                            "text": "Kontratak",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Uogólnienie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Może faktycznie przesadzam. Nieważne, zapomnij.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Właśnie o to chodzi. Z tobą nic nie można powiedzieć normalnie, bo od razu robisz z tego dramat.",
+                    "feedback": {
+                        "label": "Internalizacja etykiety",
+                        "psychology": "Przyjmujesz cudzą interpretację jako prawdę o sobie. To moment, w którym gaslighting zaczyna działać od środka: zewnętrzny osąd staje się twoim wewnętrznym głosem.",
+                        "better_alternative_hint": "Oddziel to, co czujesz, od tego, jak ktoś to nazywa. Nie zgadzaj się na diagnozę swojej osoby bez przykładów."
+                    },
+                    "tags": [
+                        {
+                            "text": "Internalizacja narracji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Gaslighting",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie podoba mi się ten ton. Powiedz konkretnie, co ci przeszkadza.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Chodzi mi o to, że od razu bierzesz wszystko do siebie. To właśnie mam na myśli.",
+                    "feedback": {
+                        "label": "Asertywne zatrzymanie bez odsłonięcia wpływu",
+                        "psychology": "Dobrze zatrzymujesz formę i wracasz do konkretu, ale nie pokazujesz jeszcze, jaki wpływ ma na ciebie etykietowanie. To utrzymuje rozmowę bardziej na poziomie transakcji niż transformacji.",
+                        "better_alternative_hint": "Nazwij wpływ etykiety na siebie i dopiero potem poproś o przykład zachowania."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Prośba o konkret",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chcę usłyszeć, co ci przeszkadza, ale kiedy słyszę, że jestem zbyt wrażliwy/a, zaczynam wątpić w siebie. Zostańmy przy konkretach.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Nie wiedziałam, że odbierasz to aż tak. Dobra, mogę powiedzieć, o jaką sytuację mi chodzi.",
+                    "feedback": {
+                        "label": "Nazwanie wpływu i powrót do faktów",
+                        "psychology": "To pełny komunikat Ja w duchu NVC: pokazujesz obserwację, wpływ i prośbę. Nie bronisz się przed wszystkim, tylko odróżniasz krytykę zachowania od etykietowania osoby.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC Rosenberga",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Odróżnienie osoby od zachowania",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Prośba o konkret",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Atmosfera gęstnieje. Marta mówi szybciej i ostrzej, jakby sama obecność twojego dyskomfortu była dla niej oskarżeniem.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Znowu robisz z siebie ofiarę. Ja tylko mówię prawdę.",
+            "scene_high": {
+                "description": "Marta bierze krótki oddech. Nadal jest spięta, ale w jej tonie pojawia się niechętna gotowość do doprecyzowania.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Dobra. Chodziło mi o to, że przy znajomych po mojej uwadze po prostu zamilkłeś/aś.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "A może po prostu lubisz mnie upokarzać przy ludziach i tyle.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Niesamowite. Znowu robisz ze mnie potwora, bo nie wytrzymujesz zwykłej uwagi.",
+                    "feedback": {
+                        "label": "Czytanie intencji jako faktu",
+                        "psychology": "Przeskakujesz z opisu zachowania do oskarżenia o motyw. To wzmacnia obronność NPC i odsuwa rozmowę od sprawdzalnych faktów. W analizie transakcyjnej uruchamiasz układ Rodzic krytyczny kontra Rodzic krytyczny.",
+                        "better_alternative_hint": "Zostań przy skutku i formie wypowiedzi, bez przypisywania złych intencji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Czytanie w myślach",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Atak na intencję",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Super. Czyli mam jeszcze udawać, że nic mnie nie boli. Brawo.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Właśnie o to chodzi. Nie da się z tobą rozmawiać bez tych uszczypliwości.",
+                    "feedback": {
+                        "label": "Sarkazm zamiast granicy",
+                        "psychology": "Ból jest prawdziwy, ale podajesz go w formie ukrytego ataku. Bierna agresja chwilowo daje ulgę, lecz nie buduje wspólnej mapy problemu i zwiększa dystans.",
+                        "better_alternative_hint": "Nazwij wprost, że uwaga cię zabolała, i wskaż czego potrzebujesz zamiast ironii."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak jawnej prośby",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Dobrze. Następnym razem powiedz to na osobności i bardziej konkretnie.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Może. Ale nadal uważam, że reagujesz za mocno.",
+                    "feedback": {
+                        "label": "Praktyczne ustalenie bez dotknięcia sedna",
+                        "psychology": "To sensowna korekta procedury rozmowy, ale nie zatrzymuje mechanizmu etykietowania. Rozwiązujesz gdzie i jak mówić, lecz nie rozbrajasz narracji o twojej rzekomej wadzie.",
+                        "better_alternative_hint": "Dodaj, że chcesz rozmawiać o zachowaniu, a nie o swojej rzekomej przewrażliwionej naturze."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ustalenie zasad",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Styl transakcyjny",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Prośba proceduralna",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Rozumiem, że moje zamknięcie mogło być dla ciebie trudne. Jednocześnie forma ma znaczenie. Jeśli chcesz dać mi informację zwrotną, mów o zachowaniu, nie o tym jaki/a jestem.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Okej. To fair. Bardziej chodziło mi o to, że się odciąłeś/aś, niż o to, jaki/a jesteś.",
+                    "feedback": {
+                        "label": "Zmiana ramy rozmowy",
+                        "psychology": "Walidujesz wpływ na drugą stronę, a równocześnie stawiasz granicę wobec etykiet. To przesuwa dialog z walki o rację w stronę wspólnego języka opisu zachowania.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji drugiej strony",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granica wobec etykiet",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Wszyscy tak uważają",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Marta zaczyna chodzić po pokoju. Jej słowa robią się coraz szersze i mniej uchwytne, jakby chciała oprzeć swoją wersję na niewidzialnym trybunale.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "I nie tylko ja to widzę. Każdy chodzi przy tobie na palcach, bo wszystko odbierasz osobiście.",
+            "scene_high": {
+                "description": "Marta siada z drugiej strony stołu. Nadal się broni, ale mówi wolniej, jakby pierwszy raz sama sprawdzała, co naprawdę chce powiedzieć.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Czasem mam wrażenie, że reagujesz bardzo mocno, ale nie chcę cię wrzucać do jednej szuflady.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nie wciągaj innych. Po prostu kłamiesz, żeby mnie docisnąć.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Widzę, że znowu jedyne co potrafisz, to oskarżenia.",
+                    "feedback": {
+                        "label": "Oskarżenie o manipulację bez rozbrojenia jej mechanizmu",
+                        "psychology": "Masz rację, że pojawia się triangulacja, ale samo nazwanie jej kłamstwem nie zatrzymuje chwytu. Dajesz rozmowie kolejną oś konfliktu zamiast zawęzić ją do jednej relacji i jednego przykładu.",
+                        "better_alternative_hint": "Odetnij anonimowych innych i poproś, by rozmówca mówił wyłącznie za siebie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Triangulacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Konfrontacja bez struktury",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Eskalacja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Skoro każdy tak uważa, to może naprawdę coś jest ze mną nie tak.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "No właśnie. Może po prostu warto to wreszcie zauważyć.",
+                    "feedback": {
+                        "label": "Oddanie własnej percepcji w ręce grupy",
+                        "psychology": "To klasyczny efekt społecznego potwierdzenia użytego przeciwko tobie. Zamiast sprawdzać fakty, uznajesz cudzą zbiorową narrację za dowód na swoją wadliwość.",
+                        "better_alternative_hint": "Nie spieraj się z rzekomą grupą. Zawęź rozmowę do tego, co naprawdę widziała i czuła konkretna osoba przed tobą."
+                    },
+                    "tags": [
+                        {
+                            "text": "Społeczne potwierdzenie",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Utrata zaufania do siebie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Gaslighting",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Mów za siebie. Jeśli masz przykład, podaj go.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Dobrze. Na przykład wtedy, gdy powiedziałam o twoim spóźnieniu i od razu zamilkłeś/aś na pół wieczoru.",
+                    "feedback": {
+                        "label": "Zawężenie pola manipulacji",
+                        "psychology": "Dobrze odcinasz triangulację i wracasz do danych. To skuteczna obrona przed rozmywaniem rozmowy przez anonimowych innych, choć nadal brakuje odsłonięcia, dlaczego ta rama jest dla ciebie krzywdząca.",
+                        "better_alternative_hint": "Dodaj, że rozmowa o przykładzie jest dla ciebie bezpieczniejsza niż rozmowa o tym, jaki/a jesteś rzekomo zawsze."
+                    },
+                    "tags": [
+                        {
+                            "text": "Demontaż triangulacji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Prośba o przykład",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie chcę rozmawiać o rzekomych wszystkich. Zostańmy przy twoim doświadczeniu i jednym konkretnym przykładzie. Tylko tak odróżnimy krytykę od etykiety.",
+                    "points": 2,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Okej. Mówię za siebie. Chodzi mi o momenty, kiedy po mojej uwadze zamykasz się i znikasz z rozmowy.",
+                    "feedback": {
+                        "label": "Powrót do sprawdzalnej rzeczywistości",
+                        "psychology": "Przerywasz technikę rozmywania odpowiedzialności i tworzysz warunki do rozmowy o jednym zachowaniu. To wzmacnia twoją własną percepcję, bo operujesz tym, co da się nazwać i zweryfikować.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Zakotwiczenie w faktach",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Odróżnienie krytyki od deprecjacji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Granica między krytyką a deprecjacją",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Przenosicie się do sypialni, ale napięcie idzie za wami. Marta mówi chłodno, jakby musiała tłumaczyć coś oczywistego komuś, kto nie nadąża.",
+                "location": "bedroom",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "To jest właśnie męczące. Przy każdym temacie muszę dobierać słowa jak do dziecka.",
+            "scene_high": {
+                "description": "W sypialni zapada krótsza cisza. Marta nie odpuszcza, ale w jej głosie pojawia się mniej pogardy, a więcej niepewności co do własnego sposobu mówienia.",
+                "location": "bedroom",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Widzę, że słowa mają dla ciebie duże znaczenie. Nie zawsze łapię tę różnicę.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Jasne, najlepiej nic do mnie nie mów, skoro jestem taki/a problematyczny/a.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "I znowu dramatyzujesz. Właśnie o tym mówię.",
+                    "feedback": {
+                        "label": "Obrona przez ironię",
+                        "psychology": "Ironia chwilowo odzyskuje poczucie siły, ale zostawia twoją potrzebę nienazwaną. W praktyce wzmacnia narrację, że reagujesz przesadnie, bo nie pokazujesz jasnej granicy ani prośby.",
+                        "better_alternative_hint": "Powiedz wprost, jaka jest różnica między krytyką zachowania a oceną twojej osoby."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ironia obronna",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak granicy wprost",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Traktujesz mnie jak śmiecia i jeszcze udajesz rozsądną osobę.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Skoro tak to widzisz, to naprawdę nie ma o czym rozmawiać.",
+                    "feedback": {
+                        "label": "Całościowe potępienie rozmówcy",
+                        "psychology": "Przechodzisz od krytyki konkretnego zachowania do pełnej dewaluacji drugiej osoby. To lustrzane odbicie problemu: zamiast bronić swojej percepcji, sam/a zaczynasz definiować drugą stronę etykietą.",
+                        "better_alternative_hint": "Zatrzymaj się na jednym komunikacie o granicy i pokaż, co robi z tobą forma tej wypowiedzi."
+                    },
+                    "tags": [
+                        {
+                            "text": "Dewaluacja osoby",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Lustrzane odbicie wzorca",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Różnica jest prosta. Mów o sytuacji, nie o mnie.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "No dobrze, tylko czasem naprawdę mam wrażenie, że reagujesz mocniej niż trzeba.",
+                    "feedback": {
+                        "label": "Dobra granica, mało kontaktu z emocją",
+                        "psychology": "To trafne rozróżnienie i ważna granica. Jednak bez pokazania wpływu na ciebie rozmowa może nadal zostać odebrana jako czysto techniczna korekta formy, nie jako realne naruszenie.",
+                        "better_alternative_hint": "Dodaj, że etykiety podkopują twoje zaufanie do własnej percepcji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Jasna granica",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Odróżnienie osoby od zachowania",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Mogę przyjąć trudną informację, ale nie zgodzę się na ocenianie mnie jako osoby. Krytyka zachowania daje szansę coś zmienić, etykieta tylko mnie podkopuje.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "To brzmi inaczej, kiedy tak to mówisz. Może faktycznie wrzucam cię od razu do jednej kategorii.",
+                    "feedback": {
+                        "label": "Precyzyjna granica z sensem zmiany",
+                        "psychology": "Nie bronisz się przed istnieniem problemu, tylko bronisz jakości rozmowy. To bardzo skuteczne, bo pokazuje różnicę między feedbackiem a deprecjacją bez odbierania drugiej stronie prawa do zgłaszania trudności.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Granica wobec deprecjacji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Zmiana ramy komunikacji",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Nie odwracaj znaczeń",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Po chwili ciszy Marta wraca z kubkiem herbaty, ale nie z miękkością. Jej ton sugeruje, że twoja granica jest dla niej kolejnym utrudnieniem.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Czyli teraz mam chodzić wokół ciebie na palcach i nic nie mówić, bo wszystko jest raniące.",
+            "scene_high": {
+                "description": "W kuchni jest ciszej. Marta opiera dłonie o blat i patrzy już nie tyle oskarżycielsko, ile sprawdzająco, jakby nie wiedziała, czy jeszcze można tę rozmowę uratować.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Nie chcę, żebyś czuł/a się podkopany/a. Po prostu czasem nie wiem, jak to powiedzieć inaczej.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Tak, najlepiej w ogóle się nie odzywaj, skoro nie umiesz normalnie.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Właśnie. O to ci chodziło od początku. Żebym siedziała cicho.",
+                    "feedback": {
+                        "label": "Ultimatum w przebraniu",
+                        "psychology": "W odpowiedzi na zniekształcenie twojej granicy sam/a budujesz kolejne zniekształcenie. To wzmacnia mechanizm DARVO, bo rozmówca łatwo pokaże cię jako stronę zakazującą dialogu.",
+                        "better_alternative_hint": "Doprecyzuj, że nie chodzi o ciszę, tylko o sposób przekazywania trudnych treści."
+                    },
+                    "tags": [
+                        {
+                            "text": "DARVO",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Ultimatum",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Agresja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, nieważne. Po prostu postaram się mniej reagować.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "No i widzisz. Da się normalnie, kiedy nie robisz z tego wielkiej sprawy.",
+                    "feedback": {
+                        "label": "Samowyciszenie zamiast granicy",
+                        "psychology": "To nie jest regulacja emocji, tylko samoporzu cenie. Przesuwasz odpowiedzialność za raniącą formę wyłącznie na siebie, więc wzorzec ma szansę powtarzać się bez korekty.",
+                        "better_alternative_hint": "Nie obiecuj, że przestaniesz czuć. Ustal, jak oboje macie rozmawiać o trudnych rzeczach."
+                    },
+                    "tags": [
+                        {
+                            "text": "Samopomniejszenie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Współudział w wzorcu",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Brak ochrony granicy",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie proszę o ciszę. Proszę tylko o bardziej rzeczowy ton.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "To brzmi rozsądnie, ale nadal nie wiem, gdzie dokładnie jest ta granica.",
+                    "feedback": {
+                        "label": "Korekta zniekształcenia",
+                        "psychology": "Dobrze prostujesz fałszywe ujęcie twojej granicy. Nadal jednak brakuje wspólnej definicji, co konkretnie jest dopuszczalną krytyką, a co już podważaniem wartości.",
+                        "better_alternative_hint": "Dopowiedz zasadę: opis zachowania i wpływu zamiast etykiet o czyimś charakterze."
+                    },
+                    "tags": [
+                        {
+                            "text": "Doprecyzowanie granicy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Styl transakcyjny",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Korekta zniekształcenia",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie chodzi o zakaz krytyki. Chodzi o zasadę, że opisujemy konkretne zachowanie i jego wpływ, zamiast wbijać etykiety. To chroni nas oboje.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "To akurat ma sens. Kiedy tak to ujmujesz, słyszę różnicę.",
+                    "feedback": {
+                        "label": "Wspólna zasada zamiast obrony siebie",
+                        "psychology": "Przestajesz dyskutować, czy jesteś za bardzo wrażliwy/a, a zaczynasz projektować bezpieczniejszy sposób rozmowy. To odwraca wektor z oceny osoby na budowanie reguł kontaktu.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Wspólna zasada",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Transformacja relacyjna",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Opis wpływu",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_6",
+            "title": "Nowa zasada rozmowy",
+            "score_threshold": 5,
+            "scene_low": {
+                "description": "Noc jest już późna. Zmęczenie miesza się z poczuciem, że rozmowa zaraz albo pęknie, albo znów zostanie przykryta pozornym spokojem bez żadnej realnej zmiany.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "No dobrze. To jakie ty w ogóle chcesz mieć zasady, skoro wszystko trzeba ważyć na aptecznej wadze?",
+            "scene_high": {
+                "description": "Powietrze trochę odpuszcza. Nadal jest trudno, ale pojawia się ten rzadki moment, kiedy obie strony mogą jeszcze ustalić coś, co zostanie z nimi po tej kłótni.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Okej. Spróbujmy to nazwać. Jak chcesz, żebyśmy rozmawiali, kiedy coś nas boli albo drażni?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Moja zasada jest prosta. Jeszcze raz mnie tak nazwiesz i koniec z nami.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Czyli jednak chodzi o groźby. Nie będę tak rozmawiać.",
+                    "feedback": {
+                        "label": "Granica zamieniona w groźbę",
+                        "psychology": "Granica jest potrzebna, ale tutaj przybiera formę kary i natychmiastowej eskalacji. Zamiast budować kryteria bezpiecznej rozmowy, ustawiasz relację na krawędzi i wzmacniasz defensywę.",
+                        "better_alternative_hint": "Nazwij zasadę komunikacji i konsekwencję spokojnie, bez używania relacji jako broni w tej chwili."
+                    },
+                    "tags": [
+                        {
+                            "text": "Groźba",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Agresywna granica",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Eskalacja końcowa",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nie potrzebuję żadnych zasad. To ja muszę być po prostu twardszy/a.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "No widzisz. Właśnie do tego próbowałam cię doprowadzić.",
+                    "feedback": {
+                        "label": "Pełne przyjęcie cudzej narracji",
+                        "psychology": "To końcowy etap internalizacji: problem zostaje zdefiniowany jako twoja zbyt duża czułość, a nie jako wadliwy wzorzec komunikacji. Tracisz kontakt z własną percepcją i oddajesz definicję rzeczywistości drugiej stronie.",
+                        "better_alternative_hint": "Nie buduj odporności kosztem siebie. Potrzebujesz zasad, które chronią dialog, a nie tłumią twoje reakcje."
+                    },
+                    "tags": [
+                        {
+                            "text": "Internalizacja narracji manipulatora",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Samozaprzeczenie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Gaslighting",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Po prostu mów konkretniej i bez takich słów.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Dobrze. Mogę spróbować, choć nie obiecuję, że od razu mi to wyjdzie.",
+                    "feedback": {
+                        "label": "Dobra zasada, ale zbyt ogólna",
+                        "psychology": "To sensowny kierunek i realny krok naprzód. Jednak zasada pozostaje ogólna, więc w przyszłości łatwo będzie się spierać o to, co znaczy konkretniej i które słowa już przekraczają granicę.",
+                        "better_alternative_hint": "Dodaj, że kiedy pojawia się zranienie, druga strona nie podważa go, tylko dopytuje o wpływ."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ustalenie granicy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Niedookreślona zasada",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chcę ustalić jasną granicę. Mówimy o jednym zachowaniu, bez ocen typu przewrażliwiony/a, a gdy któreś z nas czuje się zranione, nie podważamy tego tylko dopytujemy.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -3,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "To jest konkret. Mogę się tego trzymać i też chcę, żeby moje uwagi nie znikały, tylko były słyszane.",
+                    "feedback": {
+                        "label": "Reguła naprawy zamiast walki o definicję siebie",
+                        "psychology": "Odzyskujesz kontakt z własną percepcją i przekładasz go na wspólną zasadę. To najbardziej dojrzała odpowiedź, bo nie wymaga od nikogo bycia idealnym, tylko ustanawia sposób wracania do kontaktu bez deprecjacji.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Reguła naprawy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Walidacja bez zgody na etykietę",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "UTRACONY GRUNT",
+            "emoji": "🔴",
+            "subtitle": "Cudza narracja przejęła ster",
+            "narrative": "Rozmowa kończy się albo trzaskiem drzwi, albo pozornym spokojem, pod którym zostaje ta sama stara teza: problemem jesteś ty i twoja rzekoma przewrażliwioność. Niezależnie od tego, czy doszło do wybuchu, czy do wycofania, twoje poczucie rzeczywistości zostało osłabione.",
+            "diagnosis": "W tej ścieżce dominowały reakcje obronne lub samowycofanie. To sprzyjało gaslightingowi: zamiast sprawdzać fakty i rozróżniać zachowanie od oceny osoby, rozmowa krążyła wokół tego, kto jest problemem. Efekt to większe napięcie i mniejsze zaufanie do własnej percepcji.",
+            "post_game": {
+                "communication_style_summary": "Przeważały style aggressive, passive lub passive_aggressive, które albo eskalowały konflikt, albo oddawały definicję sytuacji drugiej stronie.",
+                "strongest_moment": "Najważniejsze było to, że poczułeś/aś dyskomfort. Samo zauważenie, że coś jest nie tak, to pierwszy punkt odzyskiwania gruntu.",
+                "growth_tip": "Nie dyskutuj z etykietą na poziomie tożsamości. Zawsze wracaj do jednego przykładu zachowania i do wpływu, jaki miały na ciebie konkretne słowa.",
+                "replay_prompt": "Spróbuj zagrać jeszcze raz tak, jakby twoim celem nie było wygrać spór, tylko odzyskać prawo do nazywania własnego doświadczenia."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "KRUCHY ROZEJM",
+            "emoji": "🟡",
+            "subtitle": "Nazwany problem, ale bez pełnej zmiany wzorca",
+            "narrative": "Rozmowa nie rozpada się całkiem. Pojawia się kilka rozsądnych ustaleń, ale pod spodem nadal żyje stara niepewność. Ty już trochę lepiej widzisz różnicę między krytyką a etykietą, jednak Marta jeszcze nie przestawiła się w pełni na nowy sposób mówienia.",
+            "diagnosis": "Ta ścieżka pokazuje częściową ochronę granic. Pojawiła się asertywność i prośba o konkret, ale za mało było odsłaniania wpływu i budowania wspólnej definicji bezpiecznej krytyki. Rozmowa została ustabilizowana, lecz nie do końca przetransformowana.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl assertive lub transactional, który ograniczył chaos, ale nie zawsze docierał do głębszego poziomu relacyjnego.",
+                "strongest_moment": "Najmocniejszy był moment zawężenia rozmowy do przykładów zamiast anonimowych osądów i rzekomej opinii wszystkich.",
+                "growth_tip": "Kiedy prosisz o konkret, dodaj jeszcze wpływ etykiety na siebie. To właśnie połączenie faktu i emocjonalnego skutku najskuteczniej zatrzymuje subtelne podważanie wartości.",
+                "replay_prompt": "W kolejnej próbie sprawdź, co się stanie, gdy oprócz granicy pokażesz też, dlaczego ta granica istnieje."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 9
+            },
+            "color": "green",
+            "title": "ODZYSKANA PERSPEKTYWA",
+            "emoji": "🟢",
+            "subtitle": "Nie zgadzasz się już na etykietę zamiast rozmowy",
+            "narrative": "Pod koniec rozmowy wyraźnie wraca do ciebie grunt. Nie musisz już udowadniać, że nie jesteś przewrażliwiony/a. Zamiast tego umiesz nazwać, że krytyka może być cenna, ale etykietowanie podkopuje relację. Marta nie staje się nagle idealna, ale po raz pierwszy słyszy tę różnicę naprawdę.",
+            "diagnosis": "Ta ścieżka opierała się na dobrym rozróżnieniu osoby i zachowania, na komunikatach Ja oraz na odcinaniu triangulacji i ogólników. Dzięki temu gaslighting nie zdołał przejąć twojego wewnętrznego głosu. Rozmowa nie tylko przetrwała, ale zaczęła zmieniać reguły kontaktu.",
+            "post_game": {
+                "communication_style_summary": "Dominowały style assertive, empathic i transformative. Były granice, ale bez utraty kontaktu z własnym uczuciem i bez ataku na drugą stronę.",
+                "strongest_moment": "Najsilniejszy był moment, kiedy nazwałeś/aś różnicę między krytyką zachowania a oceną twojej osoby.",
+                "growth_tip": "To podejście warto wzmacniać przez konsekwencję. Za każdym razem wracaj do faktów, wpływu i prośby, zamiast wchodzić w obronę własnego charakteru.",
+                "replay_prompt": "Zagraj ponownie i sprawdź, czy potrafisz od początku do końca prowadzić rozmowę z tej pozycji bez ani jednego kroku w samopomniejszenie."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 10,
+                "max": 12
+            },
+            "color": "blue",
+            "title": "NOWY JĘZYK BLISKOŚCI",
+            "emoji": "🔵",
+            "subtitle": "Krytyka przestaje być bronią, a staje się informacją",
+            "narrative": "Rozmowa kończy się nie tyle zwycięstwem jednej strony, ile zmianą struktury kontaktu. Ty nie oddajesz swojej percepcji, a Marta nie musi rezygnować z mówienia o trudnościach. Powstaje jasna zasada: mówimy o zachowaniu i wpływie, nie o rzekomej wadzie charakteru. To nie usuwa wszystkich problemów, ale tworzy realną ścieżkę naprawy.",
+            "diagnosis": "To mistrzowska ścieżka regulacji relacyjnej. Udało ci się jednocześnie ochronić granicę, zwalidować drugą stronę i przekształcić konflikt w wspólną umowę komunikacyjną. Zewnętrzny kontroler nie został zinternalizowany, bo konsekwentnie zakotwiczałeś/aś rozmowę w faktach, wpływie i wzajemnej odpowiedzialności za formę.",
+            "post_game": {
+                "communication_style_summary": "Przeważał styl transformative wsparty empatią i precyzyjną asertywnością. To najwyższa jakość rozmowy w sytuacji subtelnej manipulacji.",
+                "strongest_moment": "Najmocniejszy był finał, w którym zamiast spierać się o to, kto ma rację co do twojej wrażliwości, ustaliłeś/aś wspólną regułę naprawy.",
+                "growth_tip": "Ten poziom warto przenosić do życia codziennego. Nie czekaj na wielki konflikt. Ustalaj reguły mówienia o trudnych rzeczach wcześniej, zanim uruchomi się stary wzorzec etykietowania.",
+                "replay_prompt": "Spróbuj jeszcze raz i zobacz, czy potrafisz osiągnąć ten efekt szybciej, z mniejszym kosztem napięcia już od pierwszej odpowiedzi."
+            }
+        }
+    ]
+}

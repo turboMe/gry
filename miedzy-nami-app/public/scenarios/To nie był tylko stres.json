@@ -1,0 +1,999 @@
+{
+    "scenario_id": "first_raised_voice_fear_signal",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "To nie był tylko stres",
+        "subtitle": "Pierwsza rozmowa po incydencie, który naruszył poczucie bezpieczeństwa",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 9,
+        "interaction_count": 6
+    },
+    "tags": {
+        "relationship_type": "romantic_partner",
+        "theme": [
+            "boundaries",
+            "trust",
+            "respect"
+        ],
+        "emotional_intensity": "critical",
+        "age_rating": "adult",
+        "session_type": "training",
+        "player_role_gender": "female",
+        "difficulty": "intermediate"
+    },
+    "characters": {
+        "player": {
+            "name": "Alicja",
+            "role_label": "Partnerka · Gracz",
+            "age_range": "28-35",
+            "context": "Po wczorajszej kłótni Alicja nie może przestać wracać do momentu, w którym partner nagle podniósł głos. Nie wie, czy reaguje adekwatnie, czy już zaczyna usprawiedliwiać coś, co naruszyło jej poczucie bezpieczeństwa.",
+            "hidden_need": "safety",
+            "hidden_need_text": "Potrzebuje bezpieczeństwa emocjonalnego i pewności, że konflikt nie zamieni się w zastraszanie.",
+            "traits": [
+                {
+                    "text": "Uważna",
+                    "type": "positive"
+                },
+                {
+                    "text": "Skłonna do samokwestionowania",
+                    "type": "negative"
+                },
+                {
+                    "text": "Lojalna",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 4,
+                "patience": 7,
+                "defensiveness": 5,
+                "empathy": 8,
+                "need_for_control": 4,
+                "shame_sensitivity": 6,
+                "directness": 6,
+                "repair_ability": 7
+            }
+        },
+        "npc": {
+            "name": "Bartek",
+            "role_label": "Partner",
+            "age_range": "29-36",
+            "context": "Bartek po trudnym dniu wybuchł podczas sprzeczki o drobiazg. Dziś wstyd miesza mu się z odruchem bronienia swojego obrazu jako kogoś, kto nie przekracza granic.",
+            "hidden_need": "respect",
+            "hidden_need_text": "Potrzebuje nie czuć się od razu oceniony jako zły człowiek, ale jednocześnie trudno mu oddzielić krytykę zachowania od krytyki siebie.",
+            "traits": [
+                {
+                    "text": "Zaangażowany",
+                    "type": "positive"
+                },
+                {
+                    "text": "Reaktywny pod stresem",
+                    "type": "negative"
+                },
+                {
+                    "text": "Dumny",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 7,
+                "patience": 4,
+                "defensiveness": 7,
+                "empathy": 5,
+                "need_for_control": 6,
+                "shame_sensitivity": 7,
+                "directness": 6,
+                "repair_ability": 5
+            },
+            "npc_reaction_logic": "Na atak reaguje kontratakiem albo odcięciem. Na wycofanie reaguje ulgą i szybkim zamiataniem sprawy pod dywan. Najlepiej odpowiada na komunikaty, które jasno nazywają wpływ jego zachowania, ale nie przyklejają mu stałej etykiety."
+        }
+    },
+    "metrics_start": {
+        "tension": 40,
+        "trust": 60,
+        "openness": 50,
+        "feeling_heard": 50
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Powrót do wczoraj",
+            "scene": {
+                "description": "W kuchni jest cicho aż nienaturalnie. Kubki po kawie stoją nietknięte, a w ciele Alicji wciąż siedzi pamięć wczorajszego krzyku. Bartek unika jej wzroku, ale chce szybko zamknąć temat.",
+                "location": "kitchen",
+                "time_of_day": "morning",
+                "visual_mood": "cold"
+            },
+            "npc_line": "Wczoraj byłem na granicy. Naprawdę nie chcę robić z tego wielkiej sceny.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nie obchodzi mnie, na jakiej byłeś granicy. Zachowałeś się jak ktoś niebezpieczny.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Bartek prostuje się i twardnieje. Mówi, że skoro już zapadł wyrok, to nie ma o czym rozmawiać.",
+                    "feedback": {
+                        "label": "Atak i etykieta",
+                        "psychology": "To komunikat z poziomu pozycyjnego. W modelu analizy transakcyjnej uruchamia stan Rodzic krytyczny i zwiększa szansę na obronę zamiast refleksji.",
+                        "better_alternative_hint": "Nazwij konkretne zachowanie i jego wpływ, zamiast oceniać całą osobę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Etykietowanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, nieważne. Pewnie naprawdę przesadzam, zostawmy to.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Bartek wyraźnie rozluźnia ramiona i mówi, że właśnie o to mu chodziło, żeby nie rozdrapywać.",
+                    "feedback": {
+                        "label": "Wycofanie i samoumniejszenie",
+                        "psychology": "Unikanie chwilowo obniża napięcie, ale wzmacnia mechanizm minimalizacji. Twoja potrzeba bezpieczeństwa znika z rozmowy.",
+                        "better_alternative_hint": "Zostań przy temacie i powiedz, co konkretnie było dla ciebie trudne."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak walidacji siebie",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "To nie było w porządku. Nie chcę, żebyś mówił do mnie w ten sposób.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Bartek marszczy brwi, ale słucha. Odpowiada, że nie podoba mu się to, jak to brzmi, jednak może zostać w rozmowie.",
+                    "feedback": {
+                        "label": "Jasna granica",
+                        "psychology": "To asertywne nazwanie zachowania. Chroni granicę, ale jeszcze słabo odsłania twój stan emocjonalny, więc druga strona może nie zrozumieć pełnej wagi sytuacji.",
+                        "better_alternative_hint": "Dodaj komunikat o wpływie zdarzenia na twoje poczucie bezpieczeństwa."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granica",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chcę wrócić do wczoraj, bo kiedy podniosłeś głos, przestraszyłam się. Potrzebuję, żebyśmy potraktowali to serio i porozmawiali spokojnie.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Bartek bierze oddech i pierwszy raz patrzy na nią uważnie. Mówi ciszej, że nie wiedział, iż to aż tak w nią weszło.",
+                    "feedback": {
+                        "label": "Komunikat Ja i nazwanie wpływu",
+                        "psychology": "To ruch zgodny z NVC: obserwacja, uczucie i potrzeba. Nie umniejsza incydentu, ale też nie zamyka partnera w roli sprawcy bez szansy na odpowiedzialność.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Nazwanie wpływu",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Pierwsza minimalizacja",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Powietrze gęstnieje. Bartek opiera się o blat z zaciśniętą szczęką, jakby bardziej walczył o swoją wersję niż próbował zrozumieć, co się stało.",
+                "location": "kitchen",
+                "time_of_day": "morning",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "No super, czyli teraz jestem potworem, bo raz podniosłem głos.",
+            "scene_high": {
+                "description": "Bartek nie wygląda komfortowo, ale nie ucieka wzrokiem. W kuchni nadal czuć napięcie, jednak pojawia się cienka przestrzeń na prawdziwą rozmowę.",
+                "location": "kitchen",
+                "time_of_day": "morning",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Widzę, że to w tobie siedzi. Nie myślałem, że aż tak cię to ruszyło.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Przestań się wybielać. Dokładnie wiesz, co zrobiłeś.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Bartek odbija piłkę i mówi, że z tobą nie da się rozmawiać bez oskarżeń.",
+                    "feedback": {
+                        "label": "Kontratak na obronność",
+                        "psychology": "Kiedy rozmówca wpada w defensywę, mocniejsze dociśnięcie zwykle wzmacnia zaprzeczanie. Powstaje pętla atak-obrona.",
+                        "better_alternative_hint": "Oddziel osobę od zachowania i wróć do faktów oraz skutku."
+                    },
+                    "tags": [
+                        {
+                            "text": "Kontratak",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Eskalacja symetryczna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Jasne, wszystko ze mną. Jak zwykle ja robię problem z niczego.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Bartek przewraca oczami i mówi, że skoro masz już gotową ironię, to on nie będzie zgadywał, o co ci chodzi.",
+                    "feedback": {
+                        "label": "Ironia zamiast treści",
+                        "psychology": "Bierna agresja maskuje zranienie, ale nie przekazuje potrzeby. W kwadracie von Thuna warstwa relacyjna staje się dominująca i zagłusza rzeczowy komunikat.",
+                        "better_alternative_hint": "Powiedz wprost, czego nie chcesz minimalizować."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie mówię, kim jesteś. Mówię o jednym zachowaniu, które się wydarzyło.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Bartek kiwa głową niechętnie, ale nie przerywa. Słychać, że to rozróżnienie trochę go zatrzymuje.",
+                    "feedback": {
+                        "label": "Oddzielenie osoby od czynu",
+                        "psychology": "To porządkuje komunikat i zmniejsza wstyd obronny. Nadal jednak brakuje jasnego nazwania, dlaczego ten fakt jest tak ważny dla ciebie.",
+                        "better_alternative_hint": "Dodaj, jaki skutek miało to zachowanie i czego potrzebujesz dalej."
+                    },
+                    "tags": [
+                        {
+                            "text": "Oddzielenie osoby od zachowania",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Precyzja komunikatu",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie nazywam cię potworem. Mówię, że twój ton mnie przestraszył i chcę sprawdzić, czy potrafimy potraktować to poważnie, zanim stanie się wzorcem.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Bartek milknie na chwilę. Przyznaje, że słowo wzorzec go kłuje, ale rozumie, czemu to dla ciebie ważne.",
+                    "feedback": {
+                        "label": "Nazwanie ryzyka bez demonizowania",
+                        "psychology": "To komunikat jednocześnie empatyczny i stanowczy. Z perspektywy profilaktyki przemocy nazywasz sygnał wcześnie, bez przepowiadania całej przyszłości.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja własnego lęku",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Wczesne rozpoznanie wzorca",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Empatyczna konfrontacja",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Odpowiedzialność czy wymówka",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Bartek zaczyna chodzić po kuchni krótkimi nerwowymi krokami. W jego tonie pobrzmiewa ulga, gdy tylko może zrzucić ciężar na stres i okoliczności.",
+                "location": "kitchen",
+                "time_of_day": "morning",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Byłem po prostu wkurzony. Każdy czasem wybucha.",
+            "scene_high": {
+                "description": "Bartek opiera dłonie o stół i zostaje w miejscu. Nie wygląda dobrze, ale bardziej szuka słów niż wyjścia awaryjnego.",
+                "location": "kitchen",
+                "time_of_day": "morning",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Mogę uznać, że to było za mocne. Nie wiem tylko, co chcesz teraz ode mnie usłyszeć.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Chcę usłyszeć, że więcej mnie nie zastraszysz, bo inaczej to koniec.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Bartek momentalnie się zamyka i odpowiada, że nie będzie rozmawiał pod groźbą.",
+                    "feedback": {
+                        "label": "Ultimatum w szczycie napięcia",
+                        "psychology": "Silna granica jest ważna, ale postawiona w formie groźby często przerzuca rozmowę z odpowiedzialności na walkę o władzę.",
+                        "better_alternative_hint": "Najpierw dopytaj o uznanie faktu i wpływu, potem stawiaj konsekwencje spokojnie i konkretnie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Groźba",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Walka o kontrolę",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nic. Po prostu już tak nie rób i tyle.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": -1,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Bartek szybko przytakuje, wdzięczny za skrót. Temat zaczyna się rozmywać, zanim pojawiła się realna odpowiedzialność.",
+                    "feedback": {
+                        "label": "Zbyt szybkie zamknięcie tematu",
+                        "psychology": "To pozorny spokój. Bez nazwania odpowiedzialności rozmowa zostawia niedopowiedziany lęk i zwiększa ryzyko powtórki.",
+                        "better_alternative_hint": "Poproś o jasne uznanie przekroczenia granicy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Minimalizacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Zamiatanie pod dywan",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Chcę konkretu: czy uznajesz, że to przekroczyło granicę?",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Bartek odpowiada, że tak, choć mówi to sztywno i bez głębszego kontaktu z twoim doświadczeniem.",
+                    "feedback": {
+                        "label": "Pytanie o odpowiedzialność",
+                        "psychology": "To rzeczowe ustawienie rozmowy na poziomie faktów i odpowiedzialności. Działa, ale łatwo zatrzymać się na formalnym przyznaniu bez empatii.",
+                        "better_alternative_hint": "Dopytaj nie tylko o ocenę zdarzenia, ale też o zrozumienie jego wpływu na ciebie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Konkret zamiast chaosu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie chodzi o perfekcję. Chcę usłyszeć, że rozumiesz wpływ tego zachowania na mnie i bierzesz odpowiedzialność za zmianę.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Bartek przestaje się kręcić i słucha. Mówi, że rozumie różnicę między byciem złym a zrobieniem czegoś, co naruszyło bezpieczeństwo.",
+                    "feedback": {
+                        "label": "Odpowiedzialność plus kierunek zmiany",
+                        "psychology": "To wejście na poziom transformacyjny. Nie chodzi już tylko o ocenę wczoraj, ale o wspólny standard na przyszłość.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Branie odpowiedzialności",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Orientacja na zmianę",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Granica na przyszłość",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Rozmowa utknęła w pół kroku. Bartek mówi szybciej, a każde zdanie brzmi jak obrona przed czymś, czego nie chce o sobie usłyszeć.",
+                "location": "living_room",
+                "time_of_day": "afternoon",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Nie przesadzajmy z zasadami. To była zwykła kłótnia.",
+            "scene_high": {
+                "description": "Przenosicie się do salonu. Emocje nie zniknęły, ale pojawia się bardziej roboczy ton, jakby oboje próbowali zamienić trudny moment w konkretną naukę.",
+                "location": "living_room",
+                "time_of_day": "afternoon",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Masz rację, coś trzeba ustalić, bo nie chcę, żeby to wróciło.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Jeszcze raz podniesiesz głos i natychmiast się pakuję. Masz to przyjąć bez dyskusji.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Bartek reaguje buntem i mówi, że nie będzie podpisywał jednostronnych rozkazów.",
+                    "feedback": {
+                        "label": "Rozkaz zamiast granicy",
+                        "psychology": "Granica chroni ciebie, ale nie wymaga dominacji nad drugą osobą. Rozkaz uruchamia walkę o pozycję, nie współodpowiedzialność.",
+                        "better_alternative_hint": "Mów o tym, co ty zrobisz, gdy pojawi się sygnał eskalacji, i czego potrzebujesz od obojga."
+                    },
+                    "tags": [
+                        {
+                            "text": "Kontrola zamiast granicy",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Pozycjonowanie",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nieważne. Jakoś to wytrzymam, byle już nie wracać do tego tematu.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Bartek korzysta z wyjścia awaryjnego i natychmiast zgadza się przestać o tym mówić.",
+                    "feedback": {
+                        "label": "Rezygnacja z ochrony siebie",
+                        "psychology": "To poświęcenie własnej granicy dla chwilowego spokoju. W praktyce wzmacnia niejasność norm w relacji.",
+                        "better_alternative_hint": "Ustal choć jedną prostą zasadę bezpieczeństwa na przyszłość."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie granicy",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Samopoświęcenie",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Jeśli rozmowa znów zacznie iść w tę stronę, kończę ją i wracam, gdy oboje ochłoniemy.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Bartek przyjmuje to z oporem, ale rozumie regułę. Pyta, skąd będzie wiadomo, że to już ten moment.",
+                    "feedback": {
+                        "label": "Konsekwencja bez ataku",
+                        "psychology": "To dobra granica behawioralna. Brakuje jeszcze wspólnego języka rozpoznawania momentu eskalacji.",
+                        "better_alternative_hint": "Dodaj wspólny sygnał albo jasne kryterium przerwy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywna konsekwencja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Ochrona granic",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Potrzebuję jasnej zasady: gdy któreś z nas czuje, że zaraz wybuchnie, robimy przerwę i wracamy dopiero wtedy, gdy da się mówić bez strachu.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Bartek kiwa głową i mówi, że taka zasada jest konkretna i uczciwa, bo chroni was oboje, a nie tylko jego obraz albo twój lęk.",
+                    "feedback": {
+                        "label": "Wspólny protokół bezpieczeństwa",
+                        "psychology": "To przejście od reakcji na incydent do projektowania bezpieczniejszego procesu rozmowy. Wzmacnia poczucie wpływu i przewidywalności.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Reguła przerwy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Wspólna odpowiedzialność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Transformacja konfliktu",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Test reakcji na granicę",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Bartek siada ciężko na kanapie i pociera twarz. Z jego tonu przebija urażenie, jakby granica była oskarżeniem, a nie próbą ochrony relacji.",
+                "location": "living_room",
+                "time_of_day": "afternoon",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Czyli mam teraz chodzić na palcach we własnym domu?",
+            "scene_high": {
+                "description": "Napięcie wraca falami, ale rozmowa się nie rozpada. Bartek brzmi bardziej bezradnie niż bojowo, jakby naprawdę próbował zrozumieć, jak nie powtórzyć tego błędu.",
+                "location": "living_room",
+                "time_of_day": "afternoon",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "To brzmi fair, ale boję się, że w emocjach znowu polecę za wysoko.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To twój problem. Ogarnij się, bo nie będę cię niańczyć.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Bartek odbiera to jako upokorzenie i odpowiada twardo, że nie potrzebuje nauczycielki.",
+                    "feedback": {
+                        "label": "Pogarda i odcięcie",
+                        "psychology": "Pogardliwy ton niszczy kontakt. Nawet słuszna treść traci siłę, gdy niesie komunikat wyższości.",
+                        "better_alternative_hint": "Utrzymaj granicę bez poniżania rozmówcy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Degradacja relacyjna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Spokojnie, będę cię traktować jak dziecko i przypominać ci, kiedy masz oddychać.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Bartek natychmiast słyszy kpinę i odpowiada, że nie będzie uczestniczył w takiej rozmowie.",
+                    "feedback": {
+                        "label": "Kpina pod pozorem pomocy",
+                        "psychology": "To przykład biernej agresji. Sygnał relacyjny brzmi jak lekceważenie, więc treść o regulacji emocji nie ma szans zostać przyjęta.",
+                        "better_alternative_hint": "Mów o wspólnej procedurze, nie o wychowywaniu partnera."
+                    },
+                    "tags": [
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Ukryty atak",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie chodzi o chodzenie na palcach, tylko o zatrzymanie rozmowy, gdy robi się za ostro.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Bartek odpowiada, że to już brzmi sensowniej. Nadal jednak pyta, co dokładnie oznacza za ostro.",
+                    "feedback": {
+                        "label": "Doprecyzowanie celu",
+                        "psychology": "To dobre przywrócenie sensu granicy. Nadal jest dość techniczne, więc nie wzmacnia jeszcze poczucia wspólnoty w naprawie.",
+                        "better_alternative_hint": "Połącz konkret z językiem troski o relację i bezpieczeństwo."
+                    },
+                    "tags": [
+                        {
+                            "text": "Doprecyzowanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Ramy rozwiązania",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie oczekuję od ciebie chodzenia na palcach. Oczekuję, że oboje będziemy chronić granicę bezpieczeństwa, nawet kiedy jesteśmy źli.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Bartek wyraźnie mięknie. Mówi, że tak postawiona granica nie brzmi jak kara, tylko jak coś, co ma sens dla was dwojga.",
+                    "feedback": {
+                        "label": "Granica jako ochrona relacji",
+                        "psychology": "To zmienia ramę z ja kontra ty na wspólne dbanie o bezpieczeństwo. Właśnie tu konflikt może stać się miejscem budowania norm, a nie tylko gaszenia pożaru.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Język wspólnoty",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Bezpieczeństwo relacyjne",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Walidacja bez ustępstwa",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_6",
+            "title": "Co dalej po tej rozmowie",
+            "score_threshold": 5,
+            "scene_low": {
+                "description": "Dzień chyli się ku wieczorowi. Między wami zostaje zmęczenie i niedosyt, a Bartek wygląda tak, jakby chciał już tylko wyjść z niewygodnej rozmowy cało.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "cold"
+            },
+            "npc_line_low": "Nie wiem, czy mam coś więcej do dodania. Dla mnie to już było.",
+            "scene_high": {
+                "description": "W salonie robi się ciszej. To nie jest lekka atmosfera, ale pojawia się poczucie, że coś ważnego zostało nazwane bez rozbijania wszystkiego do końca.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Rozumiem. Nie chcę, żebyś obok mnie czuła strach. Mogę wziąć to serio.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To twoja ostatnia szansa. Jeszcze jedno takie zachowanie i wszyscy się dowiedzą, jaki jesteś.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Bartek natychmiast przechodzi do obrony i mówi, że ty też właśnie używasz strachu jako narzędzia.",
+                    "feedback": {
+                        "label": "Szantaż i publiczna groźba",
+                        "psychology": "To próba odzyskania kontroli przez zastraszenie. Niezależnie od intencji, wzmacnia logikę walki i odbiera rozmowie wiarygodność.",
+                        "better_alternative_hint": "Domknij rozmowę przez jasną obserwację i własne kryteria bezpieczeństwa, bez gróźb."
+                    },
+                    "tags": [
+                        {
+                            "text": "Szantaż",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Wtórna eskalacja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Okej. Zamknijmy temat i udawajmy, że wszystko jest normalnie.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Bartek chętnie przystaje, ale w tobie zostaje twardy supeł. Rozmowa kończy się pozornym spokojem.",
+                    "feedback": {
+                        "label": "Fałszywe domknięcie",
+                        "psychology": "Zamrożenie konfliktu nie jest jego rozwiązaniem. W twoim systemie nerwowym zagrożenie pozostaje nienazwane i nierozliczone.",
+                        "better_alternative_hint": "Nazwij, że będziesz oceniać bezpieczeństwo po zachowaniu, nie po samym uspokojeniu chwili."
+                    },
+                    "tags": [
+                        {
+                            "text": "Zaprzeczenie sobie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Pozorny spokój",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Potrzebuję teraz obserwować, czy za słowami pójdą czyny. Do tego wrócimy.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Bartek przyjmuje to bez entuzjazmu, ale nie protestuje. Wie, że rozmowa nie kończy sprawy samą deklaracją.",
+                    "feedback": {
+                        "label": "Ocena po zachowaniu",
+                        "psychology": "To zdrowe domknięcie: nie dajesz pustej ulgi, tylko zostajesz przy rzeczywistości. Brakuje jednak osobistego nazwania, co zrobisz przy kolejnym sygnale.",
+                        "better_alternative_hint": "Dodaj własny plan działania na wypadek ponownego przekroczenia granicy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Realizm relacyjny",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Spójność słów i czynów",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Doceniam, jeśli to traktujesz serio. Ja też potrzebuję czasu i będę patrzeć na zachowanie, nie tylko deklaracje. Jeśli znowu poczuję strach, przerwę rozmowę i zadbam o siebie.",
+                    "points": 2,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Bartek przytakuje i mówi, że to uczciwe. Po raz pierwszy w tej rozmowie nie próbuje zmniejszać tego, co się wydarzyło.",
+                    "feedback": {
+                        "label": "Empatia bez rezygnacji z granicy",
+                        "psychology": "To dojrzałe zamknięcie: uznajesz wysiłek rozmówcy, ale nie oddajesz własnego kompasu bezpieczeństwa. To najlepsza ochrona przed minimalizacją po chwilowej poprawie.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywne domknięcie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Bezpieczeństwo ponad deklaracje",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Samoochrona",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "PĘKNIĘCIE BEZ NAZWANIA",
+            "emoji": "🔴",
+            "subtitle": "Rozmowa rozpadła się między atakiem a wycofaniem",
+            "narrative": "Wieczór kończy się chłodnym rozejściem po mieszkaniu. Incydent został albo obrócony w walkę o rację, albo przykryty ciszą, ale lęk Alicji nie dostał bezpiecznego miejsca. W relacji zostaje niepewność i napięta czujność.",
+            "diagnosis": "Ta ścieżka pokazuje, jak łatwo pierwszy sygnał eskalacji zostaje zgubiony między agresją, ironią i unikaniem. Z perspektywy psychologii komunikacji zabrakło rozróżnienia między oceną osoby a nazwaniem zachowania, więc Bartek bronił tożsamości zamiast mierzyć się z wpływem swojego tonu. To zwiększa ryzyko utrwalenia wzorca minimalizacji.",
+            "post_game": {
+                "communication_style_summary": "Dominowały reakcje pozycyjne: atak, sarkazm albo wycofanie. Twoja potrzeba bezpieczeństwa nie została skutecznie zakomunikowana.",
+                "strongest_moment": "Nawet w tej ścieżce pojawiała się intuicja, że to nie był drobiazg, tylko coś, co należało nazwać.",
+                "growth_tip": "Przy pierwszym sygnale zastraszenia mów o fakcie, swoim odczuciu i potrzebie bezpieczeństwa. Nie diagnozuj całej osoby i nie wycofuj własnej rzeczywistości, by szybciej odzyskać spokój.",
+                "replay_prompt": "Spróbuj przejść rozmowę tak, by konsekwentnie oddzielać człowieka od zachowania i wracać do wpływu incydentu na ciebie."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "KRUCHE USTALENIA",
+            "emoji": "🟡",
+            "subtitle": "Granica została nazwana, ale odpowiedzialność wciąż jest częściowa",
+            "narrative": "Rozmowa nie wybucha, lecz nie przynosi pełnej ulgi. Alicja potrafi powiedzieć, że sytuacja była nie w porządku, a Bartek częściowo to przyjmuje, jednak nadal bardziej chce zamknąć temat niż naprawdę go zrozumieć. Zostaje ostrożny rozejm.",
+            "diagnosis": "To ścieżka poprawna, ale niepełna. Pojawiła się asertywność i próba ustalenia reguł, jednak kontakt emocjonalny oraz pełne uznanie wpływu incydentu były ograniczone. Relacja dostała ramę, lecz nie pełne przepracowanie znaczenia pierwszego sygnału eskalacji.",
+            "post_game": {
+                "communication_style_summary": "Przeważał styl asertywny i transakcyjny. Rozmowa była bardziej uporządkowana niż głęboka.",
+                "strongest_moment": "Najmocniejsze było zatrzymanie minimalizacji i nazwanie, że przekroczona została granica.",
+                "growth_tip": "Kolejny krok to połączenie asertywności z empatią. Sama zasada nie wystarczy, jeśli druga strona nie rozumie jeszcze, co dokładnie stało się w twoim poczuciu bezpieczeństwa.",
+                "replay_prompt": "Zagraj ponownie i sprawdź, co się zmienia, gdy obok granicy pojawia się także język wpływu, odpowiedzialności i wspólnego standardu bezpieczeństwa."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 9
+            },
+            "color": "green",
+            "title": "NAZWANY SYGNAŁ",
+            "emoji": "🟢",
+            "subtitle": "Rozmowa zatrzymała minimalizację i stworzyła realną granicę",
+            "narrative": "Między Alicją i Bartkiem nie robi się nagle lekko, ale robi się jaśniej. Incydent zostaje nazwany bez rozkręcania wojny, a Bartek zaczyna rozumieć, że nie chodzi o jedną głośniejszą chwilę, tylko o naruszone poczucie bezpieczeństwa. Pojawia się konkretna zasada na przyszłość.",
+            "diagnosis": "Ta ścieżka pokazuje skuteczność komunikatu, który łączy stanowczość z odniesieniem do realnego wpływu zachowania. Dzięki temu Bartek ma większą szansę wziąć odpowiedzialność bez natychmiastowego zaprzeczania. To nie gwarantuje zmiany, ale tworzy zdrowy punkt odniesienia do dalszej obserwacji.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl empatyczny i asertywny, z momentami transformacji konfliktu w rozmowę o wspólnych normach.",
+                "strongest_moment": "Najlepszy moment to nazwanie lęku bez umniejszania go i bez przyklejania partnerowi ostatecznej etykiety.",
+                "growth_tip": "To była dobra rozmowa. Zachowaj jednak realizm: o jakości relacji zdecyduje nie tylko deklaracja, ale powtarzalne zachowanie przy kolejnych konfliktach.",
+                "replay_prompt": "Sprawdź wersję mistrzowską i zobacz, jak brzmi rozmowa, gdy obie strony nie tylko zatrzymują incydent, ale współtworzą nowy standard bezpieczeństwa."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 10,
+                "max": 12
+            },
+            "color": "blue",
+            "title": "NOWY STANDARD BEZPIECZEŃSTWA",
+            "emoji": "🔵",
+            "subtitle": "Trudny moment został zamieniony w dojrzałe porozumienie",
+            "narrative": "Wieczór kończy się bez fałszywej ulgi, ale z prawdziwym poczuciem klarowności. Alicja nie zgubiła własnego lęku, a Bartek nie uciekł w minimalizację. Oboje nazwali incydent, jego wpływ oraz konkretny plan przerwania rozmowy, zanim napięcie znów przekroczy bezpieczną granicę.",
+            "diagnosis": "To ścieżka wysokiej dojrzałości komunikacyjnej. Gracz przeszedł z poziomu reakcji na poziom projektowania relacji: od pojedynczego krzyku do wspólnej architektury bezpieczeństwa. Taki wynik nie oznacza idealnej relacji, ale pokazuje, jak rozmawiać o pierwszym sygnale eskalacji bez zaprzeczania i bez przemocy zwrotnej.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl transformacyjny wsparty empatią i precyzyjną asertywnością. Rozmowa budowała normy, nie tylko gasiła objawy.",
+                "strongest_moment": "Kluczowy był moment, w którym granica została przedstawiona jako ochrona relacji i bezpieczeństwa, a nie kara.",
+                "growth_tip": "To poziom mistrzowski. Przenieś ten sam schemat do realnych rozmów: fakt, wpływ, odpowiedzialność, wspólna reguła i własny plan samoochrony.",
+                "replay_prompt": "Wróć do scenariusza i przetestuj słabsze wybory, żeby wyraźniej zobaczyć, gdzie zaczyna się minimalizacja i jak szybko może przejść w wzorzec."
+            }
+        }
+    ]
+}

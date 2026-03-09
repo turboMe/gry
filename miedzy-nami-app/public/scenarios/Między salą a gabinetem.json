@@ -1,0 +1,1079 @@
+{
+    "scenario_id": "boss_mobbing_public_humiliation_private_denial",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Między salą a gabinetem",
+        "subtitle": "Publiczne poniżanie, prywatne zaprzeczanie i walka o własną percepcję",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 10,
+        "interaction_count": 6
+    },
+    "tags": {
+        "relationship_type": "coworkers",
+        "theme": [
+            "respect",
+            "control",
+            "conflict_resolution"
+        ],
+        "emotional_intensity": "critical",
+        "age_rating": "adult",
+        "session_type": "training",
+        "player_role_gender": "neutral",
+        "difficulty": "advanced"
+    },
+    "characters": {
+        "player": {
+            "name": "Marek",
+            "role_label": "Specjalista ds. analiz · Gracz",
+            "age_range": "29-36",
+            "context": "Od kilku tygodni twój przełożony publicznie podważa twoją kompetencję, a potem w cztery oczy mówi, że przesadzasz. Zaczynasz wątpić, czy to naprawdę wzorzec, czy tylko twoja nadwrażliwość.",
+            "hidden_need": "safety",
+            "hidden_need_text": "Potrzebujesz psychologicznego bezpieczeństwa, przewidywalności i ochrony swojej reputacji w pracy.",
+            "traits": [
+                {
+                    "text": "Rzetelny",
+                    "type": "positive"
+                },
+                {
+                    "text": "Samokrytyczny",
+                    "type": "negative"
+                },
+                {
+                    "text": "Uważny obserwator",
+                    "type": "positive"
+                },
+                {
+                    "text": "Unika konfliktów z autorytetem",
+                    "type": "negative"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 4,
+                "patience": 7,
+                "defensiveness": 6,
+                "empathy": 6,
+                "need_for_control": 5,
+                "shame_sensitivity": 8,
+                "directness": 5,
+                "repair_ability": 7
+            }
+        },
+        "npc": {
+            "name": "Agnieszka",
+            "role_label": "Szefowa zespołu · NPC",
+            "age_range": "38-46",
+            "context": "Na forum zespołu bywa ostra, uszczypliwa i teatralna. W prywatnych rozmowach mówi spokojnie, bagatelizuje incydenty i przedstawia siebie jako wymagającą, ale fair liderkę.",
+            "hidden_need": "control",
+            "hidden_need_text": "Potrzebuje dominacji, utrzymania statusu i pełnej kontroli nad narracją w zespole.",
+            "traits": [
+                {
+                    "text": "Opanowana w cztery oczy",
+                    "type": "neutral"
+                },
+                {
+                    "text": "Dominująca",
+                    "type": "negative"
+                },
+                {
+                    "text": "Skuteczna w zarządzaniu wizerunkiem",
+                    "type": "negative"
+                },
+                {
+                    "text": "Czyta układ sił w grupie",
+                    "type": "positive"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 5,
+                "patience": 6,
+                "defensiveness": 8,
+                "empathy": 3,
+                "need_for_control": 9,
+                "shame_sensitivity": 4,
+                "directness": 7,
+                "repair_ability": 2
+            },
+            "npc_reaction_logic": "Agnieszka wzmacnia presję wobec stylu passive i passive_aggressive, bo odczytuje je jako brak ryzyka. Na aggressive odpowiada kontratakiem i budowaniem tezy o twojej niestabilności. Przy transactional bywa uprzejma, ale selektywnie omija odpowiedzialność. Największą ostrożność uruchamiają u niej wybory assertive lub empathic połączone z dokumentacją, konkretami i odwołaniem do procesu."
+        }
+    },
+    "metrics_start": {
+        "tension": 55,
+        "trust": 25,
+        "openness": 35,
+        "feeling_heard": 20
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Odprawa przy wszystkich",
+            "scene": {
+                "description": "Poranna odprawa. Zespół stoi przy ekranie z wynikami. Agnieszka przewija slajd, zatrzymuje się na twojej tabeli i wzdycha demonstracyjnie. Kilka osób spuszcza wzrok, ktoś nerwowo poprawia długopis.",
+                "location": "office",
+                "time_of_day": "morning",
+                "visual_mood": "tense"
+            },
+            "npc_line": "Marek, znowu mam tłumaczyć podstawy? To już robi się męczące dla całego zespołu.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Może gdybyś umiała zarządzać, nie robiłabyś teatru przy ludziach.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Agnieszka prostuje się i chłodno mówi, że porozmawiacie o twoim zachowaniu po spotkaniu. W pokoju zapada ciężka cisza.",
+                    "feedback": {
+                        "label": "Kontratak pod wpływem upokorzenia",
+                        "psychology": "To zrozumiała reakcja obronna, ale na poziomie II rozmowy zamienia problem nadużycia władzy w walkę o rację. Dajesz sprawcy materiał do odwrócenia ról i wejścia w schemat DARVO.",
+                        "better_alternative_hint": "Oddziel zachowanie od oceny osoby. Nazwij formę komunikatu i przenieś rozmowę na konkrety."
+                    },
+                    "tags": [
+                        {
+                            "text": "Kontratak",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Generalizacja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Przepraszam, poprawię to po spotkaniu.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Agnieszka kiwa głową z wyższością i przechodzi dalej, jakby publiczne zawstydzenie było normalnym narzędziem pracy.",
+                    "feedback": {
+                        "label": "Wycofanie pod presją",
+                        "psychology": "Na poziomie transakcyjnym brzmi to spokojnie, ale psychologicznie wzmacnia wzorzec dominacji. Brak granicy bywa przez sprawcę odczytany jako przyzwolenie.",
+                        "better_alternative_hint": "Nie musisz wdawać się w kłótnię. Wystarczy krótko zaznaczyć, że uwagi chcesz omawiać rzeczowo i poza forum grupy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak granicy",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Który konkretnie element tabeli wymaga korekty?",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Agnieszka wskazuje jeden wiersz, ale ton dalej pozostaje protekcjonalny. Część zespołu widzi, że wracasz do faktów.",
+                    "feedback": {
+                        "label": "Powrót do konkretu",
+                        "psychology": "To ogranicza chaos z kwadratu von Thuna, bo prosisz o warstwę rzeczową zamiast reagować na upokarzający ton. Nadal jednak nie nazywasz problemu formy komunikacji.",
+                        "better_alternative_hint": "Połącz prośbę o konkret z krótkim wyznaczeniem granicy wobec publicznego zawstydzania."
+                    },
+                    "tags": [
+                        {
+                            "text": "Dopytanie o fakty",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Regulacja emocji",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Jeśli widzisz błąd, omówmy konkretny punkt po spotkaniu. Nie chcę być korygowany w ten sposób przy całym zespole.",
+                    "points": 2,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Agnieszka na moment milknie. Mówi tylko, że wrócicie do tego później, i przechodzi do następnego slajdu.",
+                    "feedback": {
+                        "label": "Granica bez eskalacji",
+                        "psychology": "To asertywne zatrzymanie zachowania: nazywasz formę, prosisz o zmianę kanału i nie oceniasz osoby. W analizie transakcyjnej pozostajesz w stanie Dorosły zamiast wejść w Dziecko buntownicze.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywna granica",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Stan Dorosły",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Komunikat o zachowaniu",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Miła twarz w gabinecie",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Po odprawie wchodzisz do gabinetu z przyspieszonym oddechem. Agnieszka siedzi już spokojna, jakby przed chwilą nic się nie wydarzyło. Kontrast między salą a gabinetem tylko bardziej miesza ci w głowie.",
+                "location": "office",
+                "time_of_day": "morning",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Nie bierz tego do siebie. Po prostu muszę cisnąć zespół, a ty ostatnio jesteś trochę spięty.",
+            "scene_high": {
+                "description": "Wchodzisz do gabinetu bardziej zebrany. Agnieszka odkłada telefon i przybiera uprzejmy ton. Różnica między publiczną ostrością a prywatnym spokojem jest uderzająca, ale tym razem widzisz ją wyraźniej.",
+                "location": "office",
+                "time_of_day": "morning",
+                "visual_mood": "cold"
+            },
+            "npc_line_high": "Nie chciałam, żebyś to odebrał osobiście. Zależy mi tylko na jakości, nic więcej.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nie, to ty masz problem. Przy ludziach mnie poniżasz, a teraz udajesz niewiniątko.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Agnieszka chłodnieje i mówi, że jeśli nie panujesz nad emocjami, rozmowa nie ma sensu.",
+                    "feedback": {
+                        "label": "Celny opis podany jak oskarżenie",
+                        "psychology": "Treść dotyka sedna, ale forma uruchamia obronę. W NVC mieszasz obserwację z oceną, więc rozmówca łatwo odrzuca całość jako atak.",
+                        "better_alternative_hint": "Oddziel obserwowalne zachowanie od interpretacji intencji i nazwij swój skutek."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ocena zamiast obserwacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "NVC",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Eskalacja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Może faktycznie przesadzam. Dobra, zapomnijmy o tym.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Agnieszka uśmiecha się z ulgą i zamyka temat. Wzorzec zostaje bez nazwania.",
+                    "feedback": {
+                        "label": "Samopodważenie",
+                        "psychology": "To typowy skutek gaslightingowego kontekstu: zaczynasz wątpić we własną percepcję. Z psychologicznego punktu widzenia oddajesz definicję rzeczywistości osobie nadużywającej władzy.",
+                        "better_alternative_hint": "Możesz uznać, że rozmówca ma swoją perspektywę, nie rezygnując z własnej obserwacji faktów."
+                    },
+                    "tags": [
+                        {
+                            "text": "Podważenie własnej percepcji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Gaslighting",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Chcę po prostu, żebyśmy omawiali uwagi do mojej pracy na konkretnych przykładach i najlepiej poza forum zespołu.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Agnieszka odpowiada, że może się postarać, ale nie przyznaje, że dotychczasowa forma była niewłaściwa.",
+                    "feedback": {
+                        "label": "Jasna prośba bez nazwania skutku",
+                        "psychology": "To dobry ruch graniczny i pozostanie w stanie Dorosły. Brakuje jednak nazwania wpływu publicznych uwag na twoje funkcjonowanie, więc rozmowa może zostać spłaszczona do kwestii stylu, nie bezpieczeństwa.",
+                        "better_alternative_hint": "Dodaj krótko, jaki efekt wywołuje na tobie publiczne zawstydzanie i czego konkretnie oczekujesz dalej."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Stan Dorosły",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Prośba o zmianę formy",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Na odprawie usłyszałem komentarz o mnie przy całym zespole. To obniża moje poczucie bezpieczeństwa i utrudnia pracę. Potrzebuję, żeby uwagi były przekazywane rzeczowo i bez publicznego zawstydzania.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Agnieszka patrzy uważniej. Nie przeprasza, ale słyszalnie traci pewność siebie i mówi, że rozumie, o co prosisz.",
+                    "feedback": {
+                        "label": "Obserwacja, skutek, potrzeba",
+                        "psychology": "To rdzeń NVC: opisujesz fakt, wpływ i konkretną prośbę. Dzięki temu trudniej podważyć twoją percepcję, bo nie wchodzisz w czytanie intencji, tylko w nazwanie doświadczenia.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Nazwanie wpływu",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Ślad zamiast mgły",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Mija kilka dni. Agnieszka zachowuje się poprawnie na osobności, ale na kolejnym statusie rzuca dwa drobne przytyki. Siedzisz przy biurku po spotkaniu i czujesz, jak pamięć zaczyna rozmywać szczegóły.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Podeślij mi później finalną wersję. I bez kolejnych niespodzianek, dobrze?",
+            "scene_high": {
+                "description": "Mija kilka dni. Choć Agnieszka nieco się pilnuje, nadal wrzuca aluzje przy innych. Po spotkaniu siadasz przy biurku z jasną myślą, że sama rozmowa nie wystarczy i trzeba uporządkować fakty.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "cold"
+            },
+            "npc_line_high": "Podeślij mi proszę finalną wersję i listę zmian, żebym mogła to zatwierdzić.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Jasne. I może jeszcze napiszę pamiętnik twoich humorków.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Agnieszka mruży oczy i odpowiada, że jeśli masz problem z profesjonalizmem, możecie wrócić do oceny twojej postawy.",
+                    "feedback": {
+                        "label": "Sarkazm zamiast strategii",
+                        "psychology": "Bierna agresja daje chwilowe poczucie ulgi, ale nie tworzy materiału dowodowego ani granicy. W analizie transakcyjnej to ukryty bunt, który łatwo przedstawić jako twoją niedojrzałość.",
+                        "better_alternative_hint": "Zamiast odreagowywać, twórz ślad: notatkę, mail z ustaleniami, zapis dat i świadków."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Stan Dziecko buntownicze",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, nie będę już do tego wracał.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Agnieszka przyjmuje to bez komentarza. To dla niej sygnał, że temat znów można rozpuścić w niepamięci.",
+                    "feedback": {
+                        "label": "Ucieczka od wzorca",
+                        "psychology": "Przy mobbingu pojedynczy incydent często bywa zaprzeczany. Bez dokumentacji łatwo zacząć mylić fakty z nastrojem i tracić pewność własnej pamięci.",
+                        "better_alternative_hint": "Zabezpiecz konkrety: datę, cytat, kontekst, świadków i ustalenia po rozmowie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Brak dokumentacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Rozmycie faktów",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Pamięć kontekstowa",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Podeślę wersję finalną. Po swojej stronie zapiszę też uwagi i ustalenia, żeby nic nam nie uciekło.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Agnieszka odpowiada krótko, że okej. Nie jest zachwycona, ale nie ma też punktu zaczepienia.",
+                    "feedback": {
+                        "label": "Porządkowanie faktów",
+                        "psychology": "To dobry krok w stronę odzyskania kontroli poznawczej. Nadal jednak zostawiasz ślad tylko po swojej stronie, a nie zamykasz ustaleń w kanale zawodowym.",
+                        "better_alternative_hint": "Dodaj zwięzłe podsumowanie mailowe do rozmów służbowych, aby powstał obiektywny ślad."
+                    },
+                    "tags": [
+                        {
+                            "text": "Samoregulacja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Notatka faktów",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Podeślę finalną wersję. Dla jasności wyślę też krótkie podsumowanie ustaleń mailowo, razem z zakresem poprawek i terminem.",
+                    "points": 2,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Agnieszka odpowiada krótkim okej. Uprzejmość zostaje, ale widać, że świadomość śladu formalnego zmienia układ sił.",
+                    "feedback": {
+                        "label": "Tworzenie profesjonalnego śladu",
+                        "psychology": "To kluczowa umiejętność przy nadużyciu władzy: bez oskarżeń zamieniasz mglistą relację w sekwencję faktów. Z perspektywy psychologii organizacji dokumentacja obniża podatność na manipulację pamięcią i narracją.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Dokumentacja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Kotwiczenie w faktach",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Proces zamiast narracji",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Świadkowie widzą więcej niż ci się wydaje",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Na kolejnym spotkaniu Agnieszka znów wbija szpilę, tym razem przy omawianiu harmonogramu. Czujesz, że ludzie patrzą, ale nikt się nie odzywa. Po spotkaniu kolega Kuba zatrzymuje się na moment przy ekspresie.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "No i znowu musieliśmy czekać, aż Marek nadgoni. Naprawdę uwielbiam te niespodzianki.",
+            "scene_high": {
+                "description": "Na kolejnym spotkaniu Agnieszka znów zahacza o ciebie personalnie. Widzisz jednak, że tym razem kilka osób wymienia spojrzenia. Po spotkaniu Kuba zatrzymuje się przy tobie, jakby chciał coś powiedzieć.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "tense"
+            },
+            "npc_line_high": "Marek, postarajmy się następnym razem nie robić z prostych rzeczy projektu specjalnego znaczenia.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Widzisz, jaki to cyrk? Jak HR się za nią weźmie, wszyscy polecicie zeznawać.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kuba natychmiast się usztywnia i mówi, że nie chce być wciągany w wojny personalne.",
+                    "feedback": {
+                        "label": "Presja zamiast budowania sojuszu",
+                        "psychology": "Świadkowie mobbingu często sami boją się konsekwencji. Gdy próbujesz ich naciskać, uruchamiasz defensywę i tracisz potencjalne wsparcie.",
+                        "better_alternative_hint": "Proś o potwierdzenie faktów, nie o lojalność w konflikcie. Ludziom łatwiej wesprzeć proces niż wojnę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Przymuszanie sojusznika",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Lęk świadka",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Eskalacja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nieważne, pewnie i tak sobie to wszystko wkręcam.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kuba milknie i tylko wzrusza ramionami. Szansa na zewnętrzne potwierdzenie znika.",
+                    "feedback": {
+                        "label": "Wycofanie się z własnej wersji faktów",
+                        "psychology": "To kolejna forma oddawania definicji rzeczywistości. Przy przemocy psychicznej sojusznicy są ważni nie po to, by cię ratować, ale by potwierdzić obserwowalne zdarzenia.",
+                        "better_alternative_hint": "Poproś o prostą informację zwrotną: co świadek widział i jak to odebrał."
+                    },
+                    "tags": [
+                        {
+                            "text": "Samonegacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Świadek zdarzenia",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Brak prośby o wsparcie",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Chcę to spokojnie ocenić. Powiedz tylko, czy ty też odebrałeś ten komentarz jako osobisty.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kuba przyznaje, że to nie pierwszy raz, gdy brzmiało to bardziej jak przytyk niż feedback.",
+                    "feedback": {
+                        "label": "Weryfikacja percepcji",
+                        "psychology": "To dobry krok przeciw efektowi izolacji. Szukasz potwierdzenia obserwacji, a nie emocjonalnego ratunku. Nadal jednak nie prosisz o zgodę na późniejsze odwołanie się do faktów.",
+                        "better_alternative_hint": "Możesz dodać pytanie, czy w razie potrzeby świadek potwierdzi zdarzenie w neutralny sposób."
+                    },
+                    "tags": [
+                        {
+                            "text": "Test rzeczywistości",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja zewnętrzna",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Gaslighting",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chcę to uporządkować na faktach. Czy możesz powiedzieć, jak odebrałeś ten komentarz, i czy w razie potrzeby potwierdzisz to neutralnie HR albo w mailu?",
+                    "points": 2,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kuba kiwa głową. Mówi, że tak, bo to nie wyglądało profesjonalnie i sam to zauważył już wcześniej.",
+                    "feedback": {
+                        "label": "Sojusz oparty na faktach",
+                        "psychology": "To dojrzałe budowanie wsparcia: prosisz o neutralne potwierdzenie zdarzeń, nie o wejście po twojej stronie barykady. Taki język obniża ryzyko wycofania świadka.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Budowanie sojuszników",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Prośba o neutralne potwierdzenie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Bezpieczeństwo proceduralne",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Jak wejść do HR, żeby nie spalić sprawy",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Wieczorem siedzisz przy pustej wiadomości do HR. W głowie masz chaos, złość i lęk, że jeśli źle to nazwiesz, zaszkodzisz przede wszystkim sobie.",
+                "location": "office",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": null,
+            "scene_high": {
+                "description": "Wieczorem otwierasz szkic wiadomości do HR. Masz już notatki, daty i jeden neutralny głos świadka. Teraz liczy się forma: konkrety, wpływ i prośba o bezpieczny proces.",
+                "location": "office",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": null,
+            "npc_stage_direction": "Na ekranie miga kursor w polu Temat. Obok leżą notatki z datami, cytatami i nazwiskami świadków.",
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Piszę, że moja szefowa jest toksyczną manipulatorką i od miesięcy urządza mi piekło.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Wiadomość brzmi mocno, ale opiera się głównie na etykietach. Ryzyko, że dyskusja skupi się na twoim języku, rośnie.",
+                    "feedback": {
+                        "label": "Etykiety zamiast materiału",
+                        "psychology": "HR zwykle reaguje lepiej na wzorzec zachowań, wpływ i prośbę o procedurę niż na diagnozowanie osoby. Ostre etykiety osłabiają wiarygodność, nawet gdy opisują realny problem.",
+                        "better_alternative_hint": "Pisz jak świadek własnej sprawy: daty, cytaty, kontekst, wpływ na pracę i prośba o poufną konsultację."
+                    },
+                    "tags": [
+                        {
+                            "text": "Etykietowanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Uogólnienie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Procedura zamiast diagnozy",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Usuwam szkic. Lepiej przeczekać, bo i tak nic się nie zmieni.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Temat zostaje w tobie. Krótkoterminowo unikasz ryzyka, ale wzorzec pozostaje bez żadnego bezpiecznika.",
+                    "feedback": {
+                        "label": "Wycofanie z ochrony siebie",
+                        "psychology": "To typowa reakcja po długim przeciążeniu. Problem polega na tym, że brak zgłoszenia nie neutralizuje nadużycia, tylko zostawia cię sam na sam z nim.",
+                        "better_alternative_hint": "Nie musisz od razu żądać sankcji. Możesz poprosić HR o poufną konsultację i omówienie opcji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Bezradność wyuczona",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Brak działania ochronnego",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Unikanie",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Piszę krótko, że mam trudność we współpracy z przełożoną i chciałbym porozmawiać.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "To bezpieczny początek, ale bez wzorca zachowań HR może potraktować sprawę jako zwykły konflikt interpersonalny.",
+                    "feedback": {
+                        "label": "Ostrożne otwarcie",
+                        "psychology": "Dobrze, że uruchamiasz kanał formalny bez dramatyzowania. Brakuje jednak języka zachowań i wpływu, który odróżnia trudną współpracę od nadużycia.",
+                        "better_alternative_hint": "Dodaj kilka przykładów powtarzalnego publicznego poniżania, prywatnego zaprzeczania i prośbę o poufność."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uruchomienie kanału formalnego",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Zbyt ogólne sformułowanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Piszę, że chcę poufnej konsultacji w sprawie powtarzających się publicznych komentarzy osobistych ze strony przełożonej, prywatnego bagatelizowania tych sytuacji, wpływu na moje poczucie bezpieczeństwa i pracy oraz że mam daty, przykłady i świadka jednego zdarzenia.",
+                    "points": 2,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Wiadomość jest rzeczowa, procesowa i trudna do zredukowania do emocjonalnej skargi. To stawia sprawę na mocniejszym gruncie.",
+                    "feedback": {
+                        "label": "Zgłoszenie oparte na wzorcu i wpływie",
+                        "psychology": "To najlepsza forma wejścia do HR: zachowania, powtarzalność, wpływ, materiał i prośba o bezpieczny proces. Nie oskarżasz ponad dane, ale też nie rozwadniasz problemu.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Dokumentacja wzorca",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poufna konsultacja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Wpływ na bezpieczeństwo psychologiczne",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_6",
+            "title": "Po uruchomieniu procedury",
+            "score_threshold": 5,
+            "scene_low": {
+                "description": "Następnego dnia Agnieszka zatrzymuje cię przy drzwiach sali konferencyjnej. Uśmiecha się lekko, ale w oczach ma chłód. Widać, że już wie o kontakcie z HR.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Słyszałam, że poszedłeś do HR. Szkoda, że zamiast rozmawiać jak dorośli, robisz z tego formalny problem.",
+            "scene_high": {
+                "description": "Po wiadomości z HR Agnieszka prosi cię na krótką rozmowę przy pustej sali. Ton ma uprzejmy, ale ostrożny. Wie, że sprawa wyszła poza prywatną narrację.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "cold"
+            },
+            "npc_line_high": "Dowiedziałam się o kontakcie z HR. Wolałabym, żebyśmy wyjaśnili to między sobą, bez robienia z tego większej sprawy.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Teraz się boisz? Trzeba było myśleć wcześniej.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Agnieszka natychmiast zamyka twarz i mówi, że właśnie tym potwierdzasz jej obawy co do twojego podejścia.",
+                    "feedback": {
+                        "label": "Triumf zamiast granicy",
+                        "psychology": "Po uruchomieniu procedury pokusa odwetu jest silna, ale kosztowna. Przesuwasz rozmowę z powrotem na pole emocjonalnej walki, które sprzyja silniejszej stronie.",
+                        "better_alternative_hint": "Trzymaj się procesu, kanałów formalnych i krótkich komunikatów o granicach. Nie negocjuj faktów pod presją."
+                    },
+                    "tags": [
+                        {
+                            "text": "Odwet",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Eskalacja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Masz rację. Niepotrzebnie to zgłaszałem, zapomnijmy o tym.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Agnieszka mięknie natychmiast i mówi, że dobrze, iż doszedłeś do rozsądku. Kontrola wraca w pełni do niej.",
+                    "feedback": {
+                        "label": "Cofnięcie własnej ochrony",
+                        "psychology": "To typowy moment presji po zgłoszeniu. Wycofanie się wzmacnia sprawcę, bo pokazuje, że wystarczy wzbudzić w tobie winę, by rozmontować procedurę.",
+                        "better_alternative_hint": "Nie musisz wdawać się w spór. Wystarczy odesłać temat do ustalonego kanału i zachować spójność."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie zgłoszenia pod presją",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poczucie winy",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Brak granicy",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Wolałbym, żebyśmy po prostu od teraz rozmawiali bardziej profesjonalnie.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Agnieszka kiwa głową, ale próbuje zostawić sprawę na poziomie ogólnej deklaracji bez odniesienia do procesu.",
+                    "feedback": {
+                        "label": "Dobra intencja, zbyt mało procesu",
+                        "psychology": "To spokojne i dojrzałe, ale trochę za miękkie po wcześniejszym wzorcu. W sytuacji nierówności sił sama deklaracja profesjonalizmu może nie wystarczyć bez odniesienia do ustalonych kanałów.",
+                        "better_alternative_hint": "Dodaj, że dalsze kroki chcesz prowadzić w uzgodnionym procesie, a nie wyłącznie w prywatnej rozmowie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Niedookreślona granica",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Proces organizacyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Rozmawiałem wcześniej i dlatego uruchomiłem bezpieczny kanał. Chcę, żeby dalsze kroki szły zgodnie z procesem HR. W codziennej pracy oczekuję rzeczowych uwag bez komentarzy osobistych i bez publicznego zawstydzania.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Agnieszka przez chwilę nic nie mówi. Ostatecznie odpowiada, że rozumie i że będzie trzymać się ustalonej ścieżki.",
+                    "feedback": {
+                        "label": "Granica osadzona w procedurze",
+                        "psychology": "To połączenie ochrony siebie i języka zawodowego. Nie prosisz o łaskę, tylko odwołujesz się do wspólnego procesu i jasnego standardu zachowania. To najwyższy poziom skuteczności przy nierównej władzy.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Odwołanie do procesu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Transformacja przez standard",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Jasna granica",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "SPALONA ZIEMIA",
+            "emoji": "🔴",
+            "subtitle": "Emocje przejęły ster, a wzorzec nadużycia pozostał nienaruszony",
+            "narrative": "Sprawa rozmywa się między wybuchami, wycofaniem i chaotycznymi próbami obrony. Agnieszka skutecznie przesuwa uwagę z własnych zachowań na twój ton, rzekomą impulsywność albo brak odporności na feedback. Zespół widzi napięcie, ale nie widzi uporządkowanej historii, której mógłby zaufać.",
+            "diagnosis": "W tej ścieżce dominuje reakcja na upokorzenie, a nie strategia ochrony. To zrozumiałe, ale przy mobbingu bardzo kosztowne: bez faktów, świadków i procesu silniejsza strona łatwo przejmuje narrację. Z perspektywy psychologii komunikacji rozmowa ugrzęzła na poziomie II, gdzie liczy się kto wygra starcie, a nie co naprawdę się dzieje.",
+            "post_game": {
+                "communication_style_summary": "Dominowały odpowiedzi agresywne albo wycofane, które wzmacniały chaos i utrudniały zbudowanie wiarygodnego obrazu sytuacji.",
+                "strongest_moment": "Najmocniejszy potencjał pojawiał się zawsze wtedy, gdy choć na chwilę wracałeś do konkretów zamiast do oceny osoby.",
+                "growth_tip": "Przy nadużyciu władzy nie próbuj wygrać jednej sceny. Zbieraj daty, cytaty, świadków i mailowe podsumowania. To buduje ochronę skuteczniej niż najcelniejsza riposta.",
+                "replay_prompt": "Zagraj ponownie i sprawdź, jak zmienia się układ sił, gdy zamiast odreagowywać zaczynasz dokumentować i odwoływać się do procesu."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "KRUCHY ROZEJM",
+            "emoji": "🟡",
+            "subtitle": "Zatrzymałeś część szkód, ale sprawa nadal może zostać zredukowana do trudnej współpracy",
+            "narrative": "Udało ci się uniknąć pełnej eskalacji i kilka razy wrócić do faktów. Agnieszka zaczyna uważać na ton, lecz nie bierze odpowiedzialności za wzorzec. HR lub świadkowie dostają sygnał, że coś jest nie tak, ale materiał jest jeszcze zbyt fragmentaryczny, by dać ci pełną ochronę.",
+            "diagnosis": "To ścieżka częściowej asertywności bez pełnego domknięcia procesu. Odróżniasz już fakt od emocji, lecz czasem zbyt szybko odpuszczasz, rozmywasz język albo zostajesz przy ogólnikach. Psychologicznie to przejście z chaosu do struktury, ale jeszcze nie do stabilnego zabezpieczenia siebie.",
+            "post_game": {
+                "communication_style_summary": "Przeważała asertywność i transakcja, ale brakowało konsekwencji w dokumentacji, nazywaniu wpływu i domykaniu granic.",
+                "strongest_moment": "Najlepiej działały momenty, gdy prosiłeś o konkrety albo sprawdzałeś swoją percepcję na faktach, nie na domysłach.",
+                "growth_tip": "Następnym razem połącz trzy elementy w jednym ruchu: obserwacja zachowania, wpływ na twoją pracę i formalny ślad. To właśnie odróżnia trudną rozmowę od skutecznej samoobrony.",
+                "replay_prompt": "Zagraj jeszcze raz i zobacz, jak zmienia się wynik, gdy do asertywności dodasz świadka, mailowe podsumowanie i precyzyjny kontakt z HR."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 9
+            },
+            "color": "green",
+            "title": "ODZYSKANA MAPA",
+            "emoji": "🟢",
+            "subtitle": "Nie wygrałeś jednej kłótni, tylko odzyskałeś grunt pod nogami",
+            "narrative": "Agnieszka nie staje się nagle empatyczna, ale przestaje swobodnie sterować narracją. Masz uporządkowane przykłady, przynajmniej jednego świadka i kanał formalny, który nie opiera się już wyłącznie na słowie przeciw słowu. W pracy nadal jest napięcie, lecz nie jesteś już sam ani odcięty od własnej percepcji.",
+            "diagnosis": "Ta ścieżka pokazuje skuteczną samoobronę w nierównej relacji zawodowej. Używasz języka Dorosły, tworzysz ślad, budujesz neutralne wsparcie i nie dajesz wciągnąć się w prywatne rozmywanie problemu. To nie jest pełne porozumienie, tylko dobrze poprowadzona ochrona granic.",
+            "post_game": {
+                "communication_style_summary": "Dominowała asertywność i rzeczowość osadzona w faktach, z dobrym balansowaniem między granicą a profesjonalizmem.",
+                "strongest_moment": "Najmocniejszy był zwrot od obrony spontanicznej do strategii: zapis faktów, świadek i kontakt z HR opisany językiem zachowań oraz wpływu.",
+                "growth_tip": "To dobra ścieżka. W realnym życiu utrzymuj ten standard konsekwentnie: krótko, konkretnie, bez diagnozowania osoby, ale z pełnym szacunkiem dla własnego bezpieczeństwa.",
+                "replay_prompt": "Spróbuj jeszcze raz zagrać pod wynik mistrzowski i zobacz, jak brzmi odpowiedź, gdy każdą granicę osadzasz w procesie i wspólnym standardzie pracy."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 10,
+                "max": 12
+            },
+            "color": "blue",
+            "title": "STANDARD SILNIEJSZY NIŻ STRACH",
+            "emoji": "🔵",
+            "subtitle": "Zamieniłeś przemocową mgłę w czytelny proces ochrony siebie",
+            "narrative": "Nie dałeś się rozbroić ani publicznym zawstydzaniem, ani prywatnym udawaniem normalności. Każdy ważny moment przekuwałeś w fakt, granicę albo procedurę. Dzięki temu Agnieszka traci najważniejszą przewagę: możliwość definiowania całej historii za ciebie. Zespół i HR zaczynają widzieć nie twoją wrażliwość, lecz powtarzalny wzorzec zachowań.",
+            "diagnosis": "To mistrzowska ścieżka samoobrony organizacyjnej. Łączysz NVC, asertywność, analizę transakcyjną i myślenie procesowe. Nie mylisz wyrażenia emocji z utratą struktury, nie mylisz też dokumentacji z agresją. Właśnie tak ogranicza się szkody w relacji, w której jedna strona ma więcej formalnej władzy.",
+            "post_game": {
+                "communication_style_summary": "Komunikacja była konsekwentnie spokojna, precyzyjna i procesowa, z wysoką ochroną granic oraz dużą odpornością na gaslighting.",
+                "strongest_moment": "Najmocniej wybrzmiała umiejętność łączenia obserwacji, wpływu, świadka i formalnego kanału bez przechodzenia w odwet lub samonegację.",
+                "growth_tip": "To poziom mistrzowski. Przenoś ten wzorzec do życia: najpierw nazwij zachowanie, potem wpływ, następnie zabezpiecz fakt i wybierz właściwy kanał. Tak buduje się realne bezpieczeństwo.",
+                "replay_prompt": "Zagraj ponownie inną ścieżką tylko po to, by zobaczyć, jak łatwo sprawca odzyskuje przewagę, gdy zabraknie choć jednego z tych elementów."
+            }
+        }
+    ]
+}

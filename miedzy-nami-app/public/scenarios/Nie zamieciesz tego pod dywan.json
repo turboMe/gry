@@ -1,0 +1,983 @@
+{
+    "scenario_id": "parent_discovers_child_deals_drugs",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Nie zamieciesz tego pod dywan",
+        "subtitle": "Rodzic staje przed rozmową, w której strach o dziecko ściera się z koniecznością działania",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 10,
+        "interaction_count": 6
+    },
+    "tags": {
+        "relationship_type": "parent_child",
+        "theme": [
+            "trust",
+            "parenting",
+            "responsibility"
+        ],
+        "emotional_intensity": "critical",
+        "age_rating": "teen",
+        "session_type": "training",
+        "player_role_gender": "neutral",
+        "difficulty": "advanced"
+    },
+    "characters": {
+        "player": {
+            "name": "Alex",
+            "role_label": "Rodzic · Gracz",
+            "age_range": "40-48",
+            "context": "Kilka minut temu znalazłeś w plecaku dziecka porcje substancji, dużą gotówkę i wiadomości sugerujące handel. Jesteś rozdarty między paniką, gniewem i poczuciem, że coś przeoczyłeś.",
+            "hidden_need": "safety",
+            "hidden_need_text": "Chcesz natychmiast odzyskać poczucie bezpieczeństwa i zatrzymać sytuację, zanim wymknie się jeszcze bardziej spod kontroli.",
+            "traits": [
+                {
+                    "text": "Odpowiedzialny",
+                    "type": "positive"
+                },
+                {
+                    "text": "Impulsywny pod presją",
+                    "type": "negative"
+                },
+                {
+                    "text": "Chroniący rodzinę",
+                    "type": "positive"
+                },
+                {
+                    "text": "Wrażliwy na wstyd",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 7,
+                "patience": 4,
+                "defensiveness": 6,
+                "empathy": 7,
+                "need_for_control": 8,
+                "shame_sensitivity": 8,
+                "directness": 7,
+                "repair_ability": 6
+            }
+        },
+        "npc": {
+            "name": "Kuba",
+            "role_label": "Dziecko · NPC",
+            "age_range": "16-18",
+            "context": "Od kilku tygodni żyje w napięciu. Wplątał się w handel dla pieniędzy i statusu, ale teraz boi się ludzi, którym coś obiecał, i panicznie boi się reakcji domu.",
+            "hidden_need": "safety",
+            "hidden_need_text": "Potrzebuje ochrony i wyjścia z sytuacji bez całkowitej utraty twarzy i więzi z rodzicem.",
+            "traits": [
+                {
+                    "text": "Defensywny",
+                    "type": "negative"
+                },
+                {
+                    "text": "Zawstydzony",
+                    "type": "neutral"
+                },
+                {
+                    "text": "Błyskotliwy",
+                    "type": "positive"
+                },
+                {
+                    "text": "Reaktywny",
+                    "type": "negative"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 8,
+                "patience": 3,
+                "defensiveness": 9,
+                "empathy": 5,
+                "need_for_control": 6,
+                "shame_sensitivity": 9,
+                "directness": 4,
+                "repair_ability": 4
+            },
+            "npc_reaction_logic": "Kuba gwałtownie zamyka się na atak, zawstydzanie i groźby. Na rzeczowe pytania odpowiada tylko częściowo. Najbardziej otwiera się, gdy rodzic łączy jasną granicę z komunikatem o ochronie i nie myli odpowiedzialności z upokorzeniem."
+        }
+    },
+    "metrics_start": {
+        "tension": 55,
+        "trust": 40,
+        "openness": 35,
+        "feeling_heard": 30
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Co leży na stole",
+            "scene": {
+                "description": "Kuchenny stół jest oświetlony zimnym światłem. Leżą na nim woreczki, zwinięta gotówka i telefon z otwartą konwersacją. Kuba zamiera w drzwiach, gdy to widzi.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": null,
+            "npc_stage_direction": "Kuba zatrzymuje się w pół kroku, patrzy na stół, potem na ciebie. Jego barki sztywnieją, jakby szykował się do ucieczki.",
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Patrz na mnie. W co ty się wpakowałeś? Handlujesz jak kryminalista.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kuba zaciska szczękę. Rzuca tylko: To już sobie odpowiedziałeś i cofa się o krok.",
+                    "feedback": {
+                        "label": "Atak tożsamości",
+                        "psychology": "Uderzasz w osobę, nie w zachowanie. W kwadracie von Thuna najsilniej wybrzmiewa apel do obrony i relacyjny komunikat pogardy, więc rozmówca przechodzi w tryb walki albo ucieczki.",
+                        "better_alternative_hint": "Oddziel czyn od tożsamości i nazwij własny stan zamiast przypinać etykietę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Etykietowanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Brawo. Wychowałem sobie dilera. Czego jeszcze mam się o tobie dowiedzieć od obcych?",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kuba prycha bezradnie. Jasne, znowu chodzi tylko o to, jak ty przy tym wyglądasz.",
+                    "feedback": {
+                        "label": "Sarkazm i zawstydzanie",
+                        "psychology": "Bierna agresja miesza ból z atakiem. Z perspektywy analizy transakcyjnej uruchamiasz krytycznego Rodzica, więc Kuba odpowiada zbuntowanym Dzieckiem zamiast dorosłą rozmową.",
+                        "better_alternative_hint": "Nazwij wprost lęk i potrzebę prawdy bez ironii."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Znalazłem to w twoim plecaku. Potrzebuję teraz konkretów: co sprzedajesz i od kiedy.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": 0,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Kuba patrzy na stół i mówi cicho: To nie miało tak wyglądać.",
+                    "feedback": {
+                        "label": "Porządkowanie faktów",
+                        "psychology": "Zostajesz przy faktach, co obniża chaos poznawczy. To dobry ruch na Poziomie I, ale bez odsłonięcia emocji nadal brzmisz jak przesłuchanie.",
+                        "better_alternative_hint": "Dodaj komunikat Ja, żeby pokazać, że chodzi o bezpieczeństwo, nie tylko o kontrolę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Porządkowanie faktów",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Jestem w szoku i jestem przerażony, ale chcę usłyszeć prawdę zanim zaczniemy krzyczeć. Powiedz mi, co się dzieje.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kuba odwraca wzrok, ale nie ucieka. Mówi: To nie jest takie proste.",
+                    "feedback": {
+                        "label": "Komunikat Ja i zaproszenie do prawdy",
+                        "psychology": "NVC działa tu dobrze: nazywasz uczucia, nie rezygnujesz z granicy i prosisz o kontakt. To zmniejsza wstyd i daje szansę na przejście z obrony do ujawnienia faktów.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Pierwsza defensywa",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Powietrze w kuchni jest ciężkie. Kuba stoi bokiem do ciebie, jedną rękę ma już na klamce, jakby myślał tylko o wyjściu.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Nic ci nie powiem. I tak już mnie osądziłeś.",
+            "scene_high": {
+                "description": "Kuba siada przy stole, choć wciąż cały jest spięty. Nie patrzy ci w oczy, ale zostaje w rozmowie.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "cold"
+            },
+            "npc_line_high": "To nie miało być na długo. Myślałem, że ogarnę.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nie ruszysz się stąd, dopóki nie powiesz mi wszystkiego.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kuba prostuje się i rzuca: To spróbuj mnie zatrzymać.",
+                    "feedback": {
+                        "label": "Siłowa kontrola",
+                        "psychology": "W kryzysie pokusa pełnej kontroli jest silna, ale groźba zamyka dostęp do informacji. W analizie transakcyjnej wzmacniasz bunt i walkę o władzę.",
+                        "better_alternative_hint": "Zamiast blokować ruch, nazwij powagę sytuacji i powód, dla którego potrzebujesz rozmowy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Nadkontrola",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobrze, zapomnijmy o tym na razie. Tylko nie rób dziś scen.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kuba patrzy z niedowierzaniem. Serio? To po co w ogóle zaczynałeś?",
+                    "feedback": {
+                        "label": "Unikanie kryzysu",
+                        "psychology": "Pozornie obniżasz napięcie, ale uczysz, że o realnym zagrożeniu da się nie rozmawiać. To wzmacnia chaos i unieważnia wagę problemu.",
+                        "better_alternative_hint": "Nie musisz rozwiązać wszystkiego teraz, ale nie wycofuj się z nazwania zagrożenia."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Minimalizacja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie uciekaj od rozmowy. To jest poważne i wrócimy do niej, nawet jeśli oboje jesteśmy w rozsypce.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Kuba wypuszcza powietrze. Dobra. Ale nie obiecuję, że wszystko ci powiem.",
+                    "feedback": {
+                        "label": "Granica bez ciepła",
+                        "psychology": "To zdrowa asertywność: nie uciekasz od tematu i nie straszysz. Brakuje jednak walidacji, więc Kuba zostaje częściowo w obronie.",
+                        "better_alternative_hint": "Dodaj zdanie pokazujące, że twoim celem jest ochrona, nie tylko wymuszenie odpowiedzi."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywna granica",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Widzę, że chcesz się zamknąć. Nie musisz mi ufać w tej sekundzie, ale potrzebuję prawdy, żeby cię chronić, nie pogrążyć.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Kuba opuszcza rękę z klamki. Mówi półgłosem: To zaczęło się od długu.",
+                    "feedback": {
+                        "label": "Walidacja obrony i cel rozmowy",
+                        "psychology": "Rozpoznajesz mechanizm zamknięcia i nie walczysz z nim frontalnie. To obniża wstyd i ustawia rozmowę na osi bezpieczeństwo plus odpowiedzialność.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Co jest pod spodem",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Kuba chodzi po kuchni w krótkich nerwowych ruchach. Odpowiada urywkami, jakby każde słowo było stratą.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Potrzebowałem kasy. Koniec tematu.",
+            "scene_high": {
+                "description": "Kuba siedzi już ciężko na krześle. Wstyd wyraźnie przebija przez jego twardy ton, a tempo oddechu powoli zwalnia.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Najpierw to miało spłacić dług. Potem zrobiło się większe, niż myślałem.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Sam sobie to zrobiłeś. Mnie nie interesują twoje wymówki.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kuba patrzy twardo. To po co pytasz, skoro i tak już mnie skreśliłeś?",
+                    "feedback": {
+                        "label": "Moralny młot",
+                        "psychology": "Odcinasz dostęp do przyczyn, a bez nich nie da się ułożyć realnego planu bezpieczeństwa. Wstyd rośnie i wypiera odpowiedzialność.",
+                        "better_alternative_hint": "Można jasno nazwać powagę czynu, a jednocześnie badać mechanizm, który do niego doprowadził."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Katastrofizacja relacyjna",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Jasne, biedny ty. Pewnie wszyscy cię zmusili.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kuba przewraca oczami. Nieważne. Nie będę się przed tobą tłumaczył.",
+                    "feedback": {
+                        "label": "Ironia zamiast ciekawości",
+                        "psychology": "Sarkazm uniemożliwia niuans. Komunikujesz, że każda odpowiedź zostanie użyta przeciwko rozmówcy, więc on chroni się milczeniem.",
+                        "better_alternative_hint": "Pytaj o fakty i presję bez odbierania dziecku sprawczości."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Blokowanie ujawnienia",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Potrzebuję faktów: komu jesteś winien, kto wie, gdzie mieszkamy i czy w domu jest coś, o czym nie wiem.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Kuba zaciska dłonie. Dwóch chłopaków wie, gdzie mieszkamy. W domu nic więcej nie ma.",
+                    "feedback": {
+                        "label": "Mapowanie ryzyka",
+                        "psychology": "To dobry ruch kryzysowy: oddzielasz emocje od danych potrzebnych do ochrony domu. Nadal jednak nie dotykasz jego lęku, więc otwarcie jest ograniczone.",
+                        "better_alternative_hint": "Po pytaniach o fakty dodaj jedno zdanie pokazujące, że słyszysz też strach po drugiej stronie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Plan bezpieczeństwa",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "To, co zrobiłeś, jest poważne, ale chcę zrozumieć presję, pod którą jesteś. Im więcej prawdy teraz, tym większa szansa, że zatrzymamy to, zanim będzie gorzej.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kuba mówi szybciej, jakby wreszcie puścił zawór. Jest dług, są starsi chłopacy i boję się, że przyjdą.",
+                    "feedback": {
+                        "label": "Ciekawość bez rozgrzeszania",
+                        "psychology": "Łączysz odpowiedzialność z próbą zrozumienia kontekstu. To uruchamia stan Dorosły po obu stronach i zwiększa szansę na realne ujawnienie zagrożeń.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Aktywne słuchanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Analiza transakcyjna",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Granica tuszowania",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "W mieszkaniu robi się duszno. Kuba co chwilę zerka w stronę okna, jakby bał się, że ktoś zaraz zapuka.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Nikomu nic nie mów. Wyrzuć to i będzie po sprawie.",
+            "scene_high": {
+                "description": "Siedzicie już w salonie. Napięcie nie znika, ale rozmowa jest bardziej skupiona. Kuba mówi ciszej, jakby prosił o ratunek, a nie tylko o unik.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "cold"
+            },
+            "npc_line_high": "Jeśli to wyjdzie, będę skończony. Nie chcę, żebyś mnie oddał, ale nie chcę też dalej w tym siedzieć.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Dobrze. Posprzątamy to i nikt się nie dowie.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -1
+                    },
+                    "npc_reaction": "Kuba na moment odczuwa ulgę, ale zaraz znowu blednie. To nie rozwiązuje tego, że oni dalej będą chcieli swoje.",
+                    "feedback": {
+                        "label": "Współudział przez unikanie",
+                        "psychology": "Chronisz przed natychmiastowym wstydem, ale zostawiasz zagrożenie nietknięte. To klasyczne pomylenie ulgi z rozwiązaniem.",
+                        "better_alternative_hint": "Powiedz jasno, że nie będziesz tego krył, i przejdź do planu na najbliższe godziny."
+                    },
+                    "tags": [
+                        {
+                            "text": "Enabling",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Unikanie konsekwencji",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Masz rację, wszyscy się dowiedzą. Jutro powiem rodzinie i szkole, żebyś poczuł, do czego doprowadziłeś.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kuba zrywa się z kanapy. Super. Czyli bardziej chcesz mnie upokorzyć niż uratować.",
+                    "feedback": {
+                        "label": "Publiczny wstyd jako kara",
+                        "psychology": "Zawstydzenie może dać pozorne poczucie odzyskania kontroli, ale w kryzysie zwiększa ryzyko kłamstwa, ucieczki i desperackich ruchów.",
+                        "better_alternative_hint": "Oddziel potrzebę działania od chęci ukarania. Najpierw bezpieczeństwo, potem konsekwencje."
+                    },
+                    "tags": [
+                        {
+                            "text": "Zawstydzanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie będę tego ukrywać. Najpierw jednak ustalimy bezpieczny plan na najbliższe godziny.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kuba przełyka ślinę. Jaki plan?",
+                    "feedback": {
+                        "label": "Granica plus struktura",
+                        "psychology": "To zdrowe zatrzymanie chaosu. Nadal brzmisz twardo, ale dajesz kontener na kryzys i nie uciekasz w wstyd ani tuszowanie.",
+                        "better_alternative_hint": "Dodaj jedno zdanie, że działasz po to, by go chronić, a nie zniszczyć."
+                    },
+                    "tags": [
+                        {
+                            "text": "Granica",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Plan bezpieczeństwa",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie ochronię samego handlu, ale ochronię ciebie przed dalszym chaosem. Zrobimy plan bezpieczeństwa i włączymy dorosłych, którzy potrafią działać mądrze, nie histerycznie.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kuba przykrywa twarz dłońmi. Dobra. Tylko nie rób ze mnie potwora przed wszystkimi.",
+                    "feedback": {
+                        "label": "Ochrona bez zamiatania",
+                        "psychology": "To odpowiedź z Poziomu III: stawiasz nieprzekraczalną granicę wobec czynu, a jednocześnie budujesz sojusz wokół wyjścia z kryzysu.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Transformacja konfliktu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Odpowiedzialność bez upokarzania",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Noc robi się coraz cięższa. Kuba siedzi na skraju kanapy, gotów w każdej chwili eksplodować albo wyjść z domu.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Czyli chcesz mnie oddać. Wiedziałem, że tak się to skończy.",
+            "scene_high": {
+                "description": "Kuba jest wyraźnie zmęczony, ale przestał walczyć z każdym słowem. Po raz pierwszy brzmi bardziej jak przestraszony nastolatek niż ktoś, kto gra twardego.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Jaki plan? Boję się, ale nie chcę już w tym siedzieć.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Od dziś masz szlaban na wszystko, oddajesz telefon i robisz dokładnie to, co każę.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kuba zaciska pięści. To nie plan, tylko więzienie.",
+                    "feedback": {
+                        "label": "Sama kontrola bez relacji",
+                        "psychology": "Konsekwencje są potrzebne, ale jednostronne rozkazy bez rozmowy zwiększają opór. Dziecko słyszy dominację, nie ochronę ani wspólny plan.",
+                        "better_alternative_hint": "Nazwij konsekwencje, ale osadź je w celu bezpieczeństwa i naprawy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Autorytaryzm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Nadkontrola",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Rób co chcesz. Jak trafisz na dno, może wtedy zrozumiesz.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kuba patrzy na ciebie pustym wzrokiem. Czyli mam sobie radzić sam.",
+                    "feedback": {
+                        "label": "Porzucenie w przebraniu nauczki",
+                        "psychology": "To mieszanka bezsilności i ukrytej kary. Z perspektywy więzi brzmi jak wycofanie opieki, co w kryzysie podnosi ryzyko desperackich decyzji.",
+                        "better_alternative_hint": "Nie zdejmuj z dziecka odpowiedzialności, ale też nie zrzucaj go w samotność."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie wsparcia",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Bierna kara",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Dziś zostajesz w domu, blokujemy kontakt z tymi ludźmi i jutro organizujemy profesjonalną pomoc.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Kuba kiwa głową niechętnie. Nie wiem, czy dam radę, ale słyszę plan.",
+                    "feedback": {
+                        "label": "Konkret i struktura",
+                        "psychology": "Dajesz jasne kroki, co jest bardzo potrzebne w kryzysie. To nadal bardziej zarządzanie niż dialog, ale zatrzymuje chaos i buduje minimalne poczucie kierunku.",
+                        "better_alternative_hint": "Dodaj, że konsekwencje nie oznaczają odrzucenia, wtedy plan będzie łatwiej przyjąć."
+                    },
+                    "tags": [
+                        {
+                            "text": "Strukturyzowanie działania",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Będą konsekwencje i nie negocjuję tego, ale nie zostawię cię z tym samego. Zrobimy dwa tory naraz: bezpieczeństwo teraz i odpowiedzialność krok po kroku.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kuba pierwszy raz patrzy ci prosto w oczy. Okej. To brzmi fair, nawet jeśli się boję.",
+                    "feedback": {
+                        "label": "Konsekwencja bez upokarzania",
+                        "psychology": "Łączysz funkcję rodzica i sojusznika. To sprzyja odpowiedzialności, bo dziecko nie musi wybierać między prawdą a więzią.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Konsekwencja bez przemocy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_6",
+            "title": "Ostatnie słowo tej nocy",
+            "score_threshold": 5,
+            "scene_low": {
+                "description": "Jest późno. W salonie zostało tylko ostre światło lampy i zmęczenie po obu stronach. Jedno zdanie może jeszcze skleić rozmowę albo ją zerwać.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Nie chcę już gadać. I tak zdecydowałeś za mnie.",
+            "scene_high": {
+                "description": "Noc nadal jest ciężka, ale chaos trochę opadł. Na stole leży kartka z pierwszymi krokami na jutro. Kuba wygląda na wyczerpanego, lecz obecnego.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Nie wierzę, że to naprawię, ale chyba pierwszy raz nie czuję się tylko potworem.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Albo robisz wszystko po mojemu, albo wynosisz się z domu.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kuba wstaje gwałtownie. To już wolę zniknąć niż tu zostać.",
+                    "feedback": {
+                        "label": "Ultimatum z odrzuceniem",
+                        "psychology": "Ultimatum może dać chwilowe posłuszeństwo, ale często niszczy ostatni most. W kryzysie bezpieczeństwa groźba wyrzucenia zwiększa ryzyko ucieczki i dalszego uwikłania.",
+                        "better_alternative_hint": "Postaw granicę bez odbierania miejsca w relacji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ultimatum",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Odrzucenie",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobrze, idź spać. Zobaczymy kiedyś, co z tym zrobić.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -1
+                    },
+                    "npc_reaction": "Kuba zamyka się jeszcze bardziej. Jasne. Czyli znowu będziemy udawać, że nic się nie dzieje.",
+                    "feedback": {
+                        "label": "Odroczenie bez ramy",
+                        "psychology": "Przerwa może być dobra, ale tylko gdy ma strukturę. Tutaj brzmi jak rozpad decyzji i powrót do zaprzeczenia.",
+                        "better_alternative_hint": "Możesz zakończyć rozmowę na dziś, ale trzeba jasno nazwać ciąg dalszy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Odroczenie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Zaprzeczenie",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Ta rozmowa się nie kończy, ale na dziś stop. Rano wracamy do planu i nie udajemy, że nic się nie stało.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kuba kiwa głową. Dobra. Przynajmniej wiem, że jutro nie będzie gry w ciszę.",
+                    "feedback": {
+                        "label": "Domknięcie z kontynuacją",
+                        "psychology": "To dobra regulacja: zamykasz przeciążenie, ale nie rozpuszczasz odpowiedzialności. Nadal jednak mało w tym relacyjnego wsparcia.",
+                        "better_alternative_hint": "Dodaj zdanie o tym, że zostajesz przy nim nawet w trudnych konsekwencjach."
+                    },
+                    "tags": [
+                        {
+                            "text": "Regulacja napięcia",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywne domknięcie",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "To dopiero początek i będzie trudno, ale dziś wybieramy prawdę zamiast ukrywania. Jutro zrobimy pierwszy konkretny krok razem.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kuba ociera twarz i przytakuje. Dobra. Zostanę w tym, jeśli ty też zostaniesz.",
+                    "feedback": {
+                        "label": "Nadzieja osadzona w prawdzie",
+                        "psychology": "Nie sprzedajesz fałszywego spokoju. Budujesz wspólną ramę działania, w której jest miejsce i na konsekwencje, i na więź. To najsilniej wspiera trwałą zmianę.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Wspólna wizja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "PĘKNIĘCIE I UCIECZKA",
+            "emoji": "🔴",
+            "subtitle": "Rozmowa zamienia się w walkę o władzę albo w zaprzeczanie",
+            "narrative": "Noc kończy się trzaśnięciem drzwiami albo lodowatą ciszą. Problem nie znika, tylko schodzi pod powierzchnię. Kuba zostaje sam z lękiem, a ty z wrażeniem, że straciłeś do niego dostęp właśnie wtedy, gdy był najbardziej potrzebny.",
+            "diagnosis": "Dominował styl agresywny, bierny albo biernie agresywny. Wstyd i kontrola zepchnęły rozmowę na Poziom II, gdzie celem staje się wygranie starcia, a nie wydobycie prawdy i ochrona. W takiej ścieżce dziecko uczy się, że szczerość grozi upokorzeniem albo że kryzys można przeczekać bez realnej zmiany.",
+            "post_game": {
+                "communication_style_summary": "Przeważały atak, unikanie lub zawstydzanie. Granice albo były przemocowe, albo znikały całkiem.",
+                "strongest_moment": "Najmocniejszy moment pojawił się tylko wtedy, gdy choć raz padło pytanie o fakty zamiast etykiety.",
+                "growth_tip": "W kryzysie najpierw oddziel czyn od osoby. Nazwij swój strach, zbierz fakty i nie myl kary z bezpieczeństwem.",
+                "replay_prompt": "Zagraj ponownie tak, jakby celem było nie rozładowanie własnej paniki, lecz utrzymanie kontaktu i postawienie granicy jednocześnie."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "KRUCHY ROZEJM",
+            "emoji": "🟡",
+            "subtitle": "Jest plan minimum, ale więź nadal stoi na cienkim lodzie",
+            "narrative": "Ustalone zostają pierwsze kroki na jutro, lecz w powietrzu nadal wisi nieufność. Kuba współpracuje tylko częściowo, bardziej ze zmęczenia niż z prawdziwego przekonania. Udało się zatrzymać chaos, ale nie udało się jeszcze zbudować bezpiecznego mostu.",
+            "diagnosis": "Dominował styl rzeczowy i asertywny, który ograniczył część szkód. To wystarczyło do wejścia na Poziom I i chwilowego porządku, ale nie do pełniejszego otwarcia. Bez większej empatii rozmowa zostaje funkcjonalna, lecz emocjonalnie krucha.",
+            "post_game": {
+                "communication_style_summary": "Było sporo struktury i granic, ale za mało walidacji i komunikatów pokazujących, że odpowiedzialność nie oznacza odrzucenia.",
+                "strongest_moment": "Najlepiej działały momenty, gdy stawiałeś granicę wobec tuszowania i zamieniałeś chaos na konkretne kroki.",
+                "growth_tip": "Następnym razem po każdym ważnym fakcie dodaj krótkie zdanie o celu: chcę cię ochronić, nie zniszczyć. To otwiera bardziej niż same instrukcje.",
+                "replay_prompt": "Spróbuj przejść z trybu zarządzania kryzysem do trybu więź plus granica. Zobacz, jak zmienia to gotowość Kuby do prawdy."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 9
+            },
+            "color": "green",
+            "title": "PRAWDA ZOSTAJE W POKOJU",
+            "emoji": "🟢",
+            "subtitle": "Rozmowa nie naprawia wszystkiego, ale zatrzymuje najgroźniejszy rozpęd",
+            "narrative": "Tej nocy nie ma cudu ani szybkiego wybaczenia. Jest jednak coś ważniejszego: Kuba zostaje w kontakcie, zgadza się na pierwszy plan bezpieczeństwa i nie musi już udawać przed tobą twardziela. Ty też nie uciekasz ani w przemoc, ani w tuszowanie.",
+            "diagnosis": "Przeważał styl empatyczny i asertywny z elementami transformacji. Dzięki temu rozmowa przesunęła się z Poziomu II do Poziomu III: czyn został nazwany jasno, ale relacja nie została użyta jako broń. To tworzy warunki do realnej odpowiedzialności, a nie tylko wymuszonego posłuszeństwa.",
+            "post_game": {
+                "communication_style_summary": "Łączyłeś granice z kontaktem emocjonalnym. To zmniejszało wstyd i zwiększało gotowość do współpracy.",
+                "strongest_moment": "Najsilniejszy był moment, w którym odmówiłeś ukrywania sprawy, a jednocześnie jasno powiedziałeś, że nie zostawisz dziecka samego.",
+                "growth_tip": "To dobry kierunek. W realnym życiu utrzymuj tę samą zasadę także następnego dnia: konkret, spokój i zero upokarzania.",
+                "replay_prompt": "Przejdź scenariusz jeszcze raz i zobacz, jak wygląda ścieżka mistrzowska, gdy prawie każda odpowiedź buduje wspólną ramę działania."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 10,
+                "max": 12
+            },
+            "color": "blue",
+            "title": "GRANICA, KTÓRA RATUJE WIĘŹ",
+            "emoji": "🔵",
+            "subtitle": "Najtrudniejsza prawda zostaje wypowiedziana bez utraty człowieka po drugiej stronie",
+            "narrative": "Rozmowa kończy się ciężko, ale uczciwie. Kuba nie dostaje rozgrzeszenia, tylko coś cenniejszego: granice, plan i jasny sygnał, że nie musi wybierać między prawdą a byciem twoim dzieckiem. Ty odzyskujesz sprawczość bez przemieniania domu w pole karnej wojny.",
+            "diagnosis": "To ścieżka zdominowana przez styl transformacyjny i empatyczny. Udało się utrzymać jednocześnie cztery osie: nazwanie czynu, zebranie faktów, ochronę bezpieczeństwa i zachowanie więzi. Psychologicznie to najbardziej dojrzały wzorzec, bo obniża wstyd, a podnosi odpowiedzialność wewnętrzną.",
+            "post_game": {
+                "communication_style_summary": "Konsekwentnie łączyłeś komunikat Ja, walidację, granice i wspólną perspektywę działania.",
+                "strongest_moment": "Najmocniejsze było przeformułowanie rozmowy z kto jest winny na co robimy teraz, żeby zatrzymać zagrożenie i nie stracić kontaktu.",
+                "growth_tip": "To poziom mistrzowski. Pilnuj, by następne rozmowy były równie konkretne i równie wolne od upokorzenia, bo właśnie tak buduje się trwałą zmianę.",
+                "replay_prompt": "Wróć do scenariusza i sprawdź, które pojedyncze zdania najbardziej przesuwały rozmowę z walki o władzę do współpracy."
+            }
+        }
+    ]
+}

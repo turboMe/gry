@@ -1,0 +1,983 @@
+{
+    "scenario_id": "manipulative_helper_dependency_trap",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Tylko ja cię rozumiem",
+        "subtitle": "Relacja pomocowa zaczyna przypominać pułapkę zależności",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 11,
+        "interaction_count": 6
+    },
+    "tags": {
+        "relationship_type": "coworkers",
+        "theme": [
+            "trust",
+            "boundaries",
+            "control"
+        ],
+        "emotional_intensity": "critical",
+        "age_rating": "adult",
+        "session_type": "training",
+        "player_role_gender": "neutral",
+        "difficulty": "advanced"
+    },
+    "characters": {
+        "player": {
+            "name": "Alex",
+            "role_label": "Klient procesu rozwojowego · Gracz",
+            "age_range": "29-36",
+            "context": "Szukasz wsparcia, bo ostatnie miesiące były przeciążające. Część rozmów pomogła ci się otworzyć, ale coraz częściej czujesz, że zamiast odzyskiwać sprawczość, zaczynasz wątpić we własny osąd.",
+            "hidden_need": "autonomy",
+            "hidden_need_text": "Potrzebujesz pomocy, która wzmacnia twoją samodzielność i poczucie bezpieczeństwa, a nie uzależnia cię od jednej osoby.",
+            "traits": [
+                {
+                    "text": "Refleksyjny",
+                    "type": "positive"
+                },
+                {
+                    "text": "Lojalny",
+                    "type": "positive"
+                },
+                {
+                    "text": "Skłonny do zwątpienia w siebie przy silnym autorytecie",
+                    "type": "negative"
+                },
+                {
+                    "text": "Uważny na niespójności",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 4,
+                "patience": 7,
+                "defensiveness": 5,
+                "empathy": 7,
+                "need_for_control": 4,
+                "shame_sensitivity": 8,
+                "directness": 5,
+                "repair_ability": 6
+            }
+        },
+        "npc": {
+            "name": "Kacper",
+            "role_label": "Coach rozwojowy · NPC",
+            "age_range": "38-48",
+            "context": "Jest charyzmatyczny, uważny i mówi językiem troski, ale stopniowo przesuwa granice. Podsuwa interpretacje, które zwiększają twoją zależność od niego i osłabiają zaufanie do innych ludzi w twoim otoczeniu.",
+            "hidden_need": "control",
+            "hidden_need_text": "Potrzebuje wpływu, wyjątkowej pozycji i potwierdzania, że jest niezastąpiony.",
+            "traits": [
+                {
+                    "text": "Charyzmatyczny",
+                    "type": "positive"
+                },
+                {
+                    "text": "Przenikliwy",
+                    "type": "neutral"
+                },
+                {
+                    "text": "Kontrolujący",
+                    "type": "negative"
+                },
+                {
+                    "text": "Skłonny do zawłaszczania relacji",
+                    "type": "negative"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 3,
+                "patience": 8,
+                "defensiveness": 7,
+                "empathy": 4,
+                "need_for_control": 9,
+                "shame_sensitivity": 6,
+                "directness": 7,
+                "repair_ability": 3
+            },
+            "npc_reaction_logic": "Na bierność reaguje większym zawłaszczaniem i proponowaniem wyłączności. Na agresję przechodzi w obronę i odwracanie ról. Najbardziej mięknie przy spokojnej, precyzyjnej asertywności wspartej odwołaniem do granic, przejrzystości i prawa klienta do innych źródeł wsparcia."
+        }
+    },
+    "metrics_start": {
+        "tension": 35,
+        "trust": 55,
+        "openness": 50,
+        "feeling_heard": 45
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Pierwsza rysa w zaufaniu",
+            "scene": {
+                "description": "Końcówka sesji w <em>gabinecie</em>. Na stoliku stygnie herbata, notatnik Kacpra jest już zamknięty. Zamiast podsumowania procesu pojawia się uwaga o twoich bliskich.",
+                "location": "office",
+                "time_of_day": "evening",
+                "visual_mood": "neutral"
+            },
+            "npc_line": "Wiesz, mam wrażenie, że twoi bliscy kompletnie cię nie rozumieją. Tu chyba pierwszy raz ktoś naprawdę widzi, co się z tobą dzieje.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To obrzydliwe, że próbujesz nastawiać mnie przeciw ludziom, którzy są ze mną od lat.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kacper prostuje się i chłodnieje. Mówi, że atakujesz go zamiast przyjrzeć się własnemu oporowi.",
+                    "feedback": {
+                        "label": "Atak na intencje",
+                        "psychology": "Przechodzisz od opisu konkretnej czerwonej flagi do moralnego oskarżenia. W analizie transakcyjnej to szybki skok do starcia Rodzic kontra Rodzic, który odcina rozmowę od faktów.",
+                        "better_alternative_hint": "Nazwij konkretny komunikat i jego wpływ na twoje poczucie bezpieczeństwa."
+                    },
+                    "tags": [
+                        {
+                            "text": "Oskarżenie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Może masz rację. Może naprawdę nikt poza tobą mnie nie rozumie.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kacper łagodnie kiwa głową i wzmacnia ten trop. Sugeruje, że na razie lepiej mniej słuchać innych.",
+                    "feedback": {
+                        "label": "Oddanie własnego osądu",
+                        "psychology": "Bierność obniża napięcie tylko pozornie. W relacji z asymetrią władzy wzmacnia mechanizm zależności, bo rezygnujesz z własnej interpretacji na rzecz autorytetu.",
+                        "better_alternative_hint": "Zatrzymaj się przy tym, co słyszysz, i sprawdź, czy ta interpretacja wspiera twoją autonomię."
+                    },
+                    "tags": [
+                        {
+                            "text": "Utrata autonomii",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Fuzja z autorytetem",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie chcę oceniać moich relacji na podstawie jednego zdania. Co dokładnie sprawia, że tak to widzisz?",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Kacper podaje kilka ogólników o braku wsparcia i twojej samotności, ale musi zejść z poziomu sugestii na poziom konkretu.",
+                    "feedback": {
+                        "label": "Prośba o konkret",
+                        "psychology": "To dobry ruch, bo rozbrajasz mglistą sugestię i prosisz o obserwacje. Nadal jednak mówisz głównie o danych, a nie o swoim dyskomforcie i granicy.",
+                        "better_alternative_hint": "Połącz pytanie o konkret z nazwaniem, że nie chcesz, by pomoc była budowana na izolowaniu cię od innych."
+                    },
+                    "tags": [
+                        {
+                            "text": "Dopytywanie o fakty",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "To ważne, że czuję się tu wysłuchany, ale nie chcę budować pomocy na odcinaniu mnie od innych relacji. To budzi mój niepokój.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kacper na chwilę milknie. Widzi, że zauważasz i nazywasz mechanizm, a nie tylko reagujesz emocją.",
+                    "feedback": {
+                        "label": "Granica nazwana bez wojny",
+                        "psychology": "Łączysz komunikat Ja z precyzyjną granicą. W duchu NVC mówisz o swoim doświadczeniu i potrzebie bezpieczeństwa, nie oddając pola sugestii o wyłączności.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granice relacji pomocowej",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Oferta wyłączności",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Stoisz jeszcze przy drzwiach gabinetu. W głowie miesza ci się ulga z napięciem. Kacper mówi spokojnie, ale jego ton brzmi jak zamykanie cię w coraz węższym korytarzu.",
+                "location": "office",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Na razie nie mieszaj w to partnerki ani przyjaciół. Za dużo głosów tylko cię cofnie. Jak coś się uruchomi, pisz bezpośrednio do mnie o każdej porze.",
+            "scene_high": {
+                "description": "W gabinecie robi się cicho. Masz więcej dystansu do tego komunikatu. Kacper próbuje odzyskać prowadzenie, proponując bardziej intensywny kontakt poza sesjami.",
+                "location": "office",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Jeśli chcesz, możesz pisać do mnie między sesjami. Czasem zewnętrzne opinie tylko rozmywają proces, więc warto chwilowo uprościć otoczenie.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Świetnie, czyli mam jeszcze oddać ci telefon i klucze do mieszkania, skoro już chcesz zarządzać całym moim życiem.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kacper wzdycha i mówi, że reagujesz ironią, bo boisz się realnej pracy nad sobą.",
+                    "feedback": {
+                        "label": "Sarkazm zamiast granicy",
+                        "psychology": "Bierna agresja daje chwilowe poczucie przewagi, ale zostawia przestrzeń do odwrócenia ról. Treść granicy znika pod formą ataku.",
+                        "better_alternative_hint": "Powiedz wprost, które elementy propozycji są dla ciebie nie do przyjęcia i dlaczego."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Maskowanie granicy",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobrze. Nikomu na razie nic nie powiem i będę pisać tylko do ciebie.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kacper wyraźnie się rozluźnia. Mówi, że to oznaka zaufania i gotowości do głębszej pracy.",
+                    "feedback": {
+                        "label": "Zgoda na izolację",
+                        "psychology": "To klasyczna czerwona flaga w relacji pomocowej. Gdy autorytet próbuje monopolizować wsparcie, rośnie ryzyko zależności i spada twoja możliwość realnościowego sprawdzenia sytuacji.",
+                        "better_alternative_hint": "Oddziel wsparcie między sesjami od próby ograniczania twoich innych relacji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Izolowanie od wsparcia",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Budowanie zależności",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Wolę mieć jasne zasady kontaktu między sesjami. Napisz proszę, jakie są ramy i czego ten kontakt ma dotyczyć.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kacper przechodzi na bardziej formalny ton i zaczyna mówić o organizacji kontaktu zamiast o twoim domniemanym braku lojalności.",
+                    "feedback": {
+                        "label": "Porządkowanie zasad",
+                        "psychology": "To ruch w stronę bezpieczeństwa proceduralnego. Nadal jednak nie nazywasz wprost, że nie akceptujesz sugestii izolowania cię od innych ludzi.",
+                        "better_alternative_hint": "Dodaj, że twoje relacje i możliwość konsultacji z innymi nie podlegają jego kontroli."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ustalanie ram",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Rozumiem, że chcesz dać mi poczucie wsparcia, ale izolowanie mnie od innych i nieograniczony kontakt nie są dla mnie bezpieczne. Potrzebuję jasnych granic.",
+                    "points": 2,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kacper musi zmienić strategię. Trudniej mu sprzedać wyłączność jako troskę, gdy nazywasz ją językiem granic i bezpieczeństwa.",
+                    "feedback": {
+                        "label": "Rozdzielenie troski od kontroli",
+                        "psychology": "To dojrzała asertywność. Uznajesz możliwą intencję wsparcia, ale nie zgadzasz się na formę, która narusza autonomię i system wsparcia klienta.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywna granica",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Bezpieczeństwo relacji pomocowej",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Druga opinia jako zagrożenie",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Kilka dni później siedzisz na ławce przed budynkiem po krótkiej, napiętej rozmowie. Masz wrażenie, że każda próba sprawdzenia rzeczywistości jest przedstawiana jako zdrada procesu.",
+                "location": "street",
+                "time_of_day": "afternoon",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Widzisz? Gdy tylko ktoś z zewnątrz o tym słyszy, od razu próbuje nas rozbić. To dokładnie pokazuje, kto nie chce twojej zmiany.",
+            "scene_high": {
+                "description": "Siedzisz naprzeciw Kacpra przy biurku. Zbierasz myśli i wracasz do rozmowy z większym spokojem. On nadal testuje, jak dużo wpływu oddasz mu nad interpretacją całej sytuacji.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Jeżeli ktoś z zewnątrz podważa ten proces, warto sprawdzić, czy to nie jest lęk przed twoją zmianą. Różni ludzie będą to projektować na ciebie.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Może właśnie dlatego tyle osób uważa, że tacy jak ty manipulują ludźmi.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kacper natychmiast chwyta za uogólnienie i mówi, że uciekasz w etykietowanie, bo boisz się trudnej prawdy o sobie.",
+                    "feedback": {
+                        "label": "Kontratak etykietą",
+                        "psychology": "Uogólnienie może być zrozumiałe emocjonalnie, ale komunikacyjnie oddaje inicjatywę drugiej stronie. Zamiast czerwonej flagi opisujesz kategorię ludzi i wzmacniasz obronę NPC.",
+                        "better_alternative_hint": "Trzymaj się konkretnego zachowania i wpływu, jaki wywiera na twoje poczucie bezpieczeństwa."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uogólnianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nieważne. Nikomu więcej nic nie powiem, skoro to przeszkadza w procesie.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kacper mówi, że to dojrzała decyzja i że wreszcie zaczynasz naprawdę mu ufać.",
+                    "feedback": {
+                        "label": "Wycofanie z sieci wsparcia",
+                        "psychology": "Milknąc wobec niepokoju, oddajesz drugiej stronie prawo do definiowania normy. W relacji pomocowej to szczególnie ryzykowne, bo izolacja osłabia korektę z zewnątrz.",
+                        "better_alternative_hint": "Powiedz wprost, że możliwość konsultacji i rozmowy z bliskimi jest dla ciebie elementem bezpieczeństwa."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Monopol na interpretację",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Chcę wiedzieć wprost, czy akceptujesz, że konsultuję ten proces z innym specjalistą albo zaufaną osobą.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 0,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kacper na moment traci płynność. Musi odpowiedzieć na pytanie o zasadę, a nie tylko o twoje rzekome opory.",
+                    "feedback": {
+                        "label": "Test przejrzystości",
+                        "psychology": "Dobre pytanie diagnostyczne. Sprawdzasz, czy osoba pomocowa toleruje twoją autonomię i zewnętrzną perspektywę. Brakuje jeszcze nazwania, co dla ciebie oznacza reakcja obronna.",
+                        "better_alternative_hint": "Dodaj, że negowanie drugiej opinii obniża twoje zaufanie do tej relacji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pytanie o zasadę",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Przejrzystość procesu",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Kiedy reagujesz niechęcią na moje inne źródła wsparcia, tracę poczucie bezpieczeństwa. Dobra relacja pomocowa powinna wytrzymać drugą opinię i moje bliskie więzi.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kacper marszczy brwi, ale słyszy jasny standard. Nie może już tak łatwo przedstawiać swojej wyłączności jako profesjonalnej troski.",
+                    "feedback": {
+                        "label": "Standard zamiast wymówki",
+                        "psychology": "Nie dyskutujesz, czy on jest dobry czy zły. Nazywasz kryterium bezpiecznej relacji pomocowej i odnosisz je do własnego poczucia bezpieczeństwa. To ruch z poziomu racji na poziom standardów.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja własnego niepokoju",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Bezpieczna relacja pomocowa",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Presja kontynuacji",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Na biurku leży nowy pakiet spotkań. Kacper przesuwa go w twoją stronę, jakby decyzja była już podjęta. Czujesz ciężar winy, zanim jeszcze otworzysz usta.",
+                "location": "office",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Jeśli teraz przerwiesz, wrócisz do punktu wyjścia. Szkoda byłoby zmarnować to, co już udało się tu otworzyć.",
+            "scene_high": {
+                "description": "Siedzisz spokojniej niż wcześniej. Widzisz, że zamiast wspólnego podsumowania pojawia się nacisk na szybkie przedłużenie procesu. Tym razem łatwiej odróżniasz troskę od presji.",
+                "location": "office",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Zanim podejmiesz decyzję, warto byłoby zabezpieczyć ciągłość pracy. Czasem przerwa uruchamia stary schemat ucieczki.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nie jesteś żadnym specjalistą, tylko zwykłym naciągaczem.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kacper zamyka się i mówi, że twoja agresja potwierdza, jak bardzo nie jesteś gotowy na odpowiedzialność za własny rozwój.",
+                    "feedback": {
+                        "label": "Dewaluacja osoby",
+                        "psychology": "To może być trafne jako emocjonalny osąd, ale komunikacyjnie oddala cię od celu. Zamiast nazwać manipulacyjny mechanizm, uderzasz w wartość całej osoby.",
+                        "better_alternative_hint": "Nazwij presję i straszenie regresem jako zachowanie, na które się nie zgadzasz."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Atak personalny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobrze, wykupię kolejny pakiet. Nie chcę niczego zepsuć na ostatniej prostej.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kacper natychmiast przechodzi do formalności i mówi, że to rozsądna decyzja podjęta w trosce o siebie.",
+                    "feedback": {
+                        "label": "Decyzja pod naciskiem",
+                        "psychology": "Kiedy decyzję o kontynuacji podejmujesz z lęku i winy, tracisz kontakt z własnym kryterium korzyści. To wzmacnia zależność i utrudnia realną ocenę procesu.",
+                        "better_alternative_hint": "Oddziel wdzięczność za część pracy od prawa do przerwy albo zakończenia."
+                    },
+                    "tags": [
+                        {
+                            "text": "Lęk przed stratą",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Presja autorytetu",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Na ten moment wstrzymuję kolejne płatności i potrzebuję czasu do namysłu.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 0,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kacper zauważa, że nie dajesz się wciągnąć w natychmiastową decyzję. Próbuje jeszcze dopytać, czy to na pewno nie jest sabotaż.",
+                    "feedback": {
+                        "label": "Stop-klatka decyzyjna",
+                        "psychology": "To dobra granica proceduralna. Zatrzymujesz presję i odzyskujesz czas. Nadal jednak nie nazywasz problemu z samą formą nacisku.",
+                        "better_alternative_hint": "Powiedz też, że straszenie regresem wpływa na twoje zaufanie do procesu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Prawo do czasu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Decyzja bez presji",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Doceniam część tego procesu, ale decyzja o kontynuacji należy do mnie. Presja i straszenie regresem są dla mnie sygnałem, żeby postawić granicę.",
+                    "points": 2,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Kacper widzi, że nie da się już oprzeć rozmowy na długu wdzięczności. Musi odnieść się do twojej granicy, nie tylko do twojego lęku.",
+                    "feedback": {
+                        "label": "Wdzięczność bez długu",
+                        "psychology": "To silna odpowiedź, bo rozdzielasz uznanie dla części procesu od obowiązku dalszego trwania w relacji. Nie negujesz całego doświadczenia, ale nie pozwalasz zamienić pomocy w zobowiązanie.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Rozdzielenie wdzięczności od zależności",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Zakończenie współpracy",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "W korytarzu pachnie kawą z recepcji, ale to nie pomaga. Masz wrażenie, że kończenie współpracy zaraz zostanie przedstawione jako niewdzięczność i porażka.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Po wszystkim, co wniosłem w ten proces, naprawdę chcesz to tak po prostu zakończyć?",
+            "scene_high": {
+                "description": "Masz przygotowaną krótką notatkę z tym, co chcesz powiedzieć. Emocje są nadal obecne, ale pierwszy raz czujesz, że prowadzisz tę rozmowę we własnym imieniu.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Rozumiem, że rozważasz zakończenie procesu. Powiedz, czego potrzebujesz organizacyjnie, żeby domknąć ten etap.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Spokojnie, znajdę sobie kogoś mniej zakochanego w sobie niż ty.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kacper natychmiast łapie zaczepkę i przerzuca rozmowę na twój brak szacunku, a nie na istotę problemu.",
+                    "feedback": {
+                        "label": "Szpilka zamiast domknięcia",
+                        "psychology": "Bierna agresja rozładowuje napięcie, ale utrudnia czyste zakończenie relacji. Zamiast jasnej granicy powstaje kolejna walka o godność.",
+                        "better_alternative_hint": "Powiedz, że kończysz współpracę, oraz określ konkretne warunki administracyjne i granice kontaktu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Złośliwość",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak domknięcia",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Może masz rację. Może przesadzam. Zostańmy przy tym jak było.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kacper mięknie, ale tylko pozornie. Wraca do tonu opiekuna i proponuje, żebyś nie podejmował teraz żadnych dużych decyzji bez niego.",
+                    "feedback": {
+                        "label": "Cofnięcie granicy",
+                        "psychology": "Wstyd i dług wdzięczności często uruchamiają rezygnację z własnej decyzji. To właśnie moment, w którym relacja pomocowa może przejść w zależność.",
+                        "better_alternative_hint": "Utrzymaj prosty komunikat o zakończeniu bez tłumaczenia się ponad konieczność."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie granicy",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poczucie długu",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Kończę współpracę z końcem miesiąca. Proszę o rozliczenie i potwierdzenie mailowe.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 0,
+                        "openness": 0,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Kacper słyszy decyzję i musi wejść w formalności. Wciąż jednak zostaje pole na dalsze komentarze o twoich relacjach i wyborach.",
+                    "feedback": {
+                        "label": "Formalne zakończenie",
+                        "psychology": "To skutecznie zamyka sprawę organizacyjną. Jeszcze lepiej byłoby doprecyzować granice dalszego kontaktu i to, czego nie życzysz sobie komentować.",
+                        "better_alternative_hint": "Dodaj prośbę o brak kontaktu poza ustalonym kanałem i brak oceniania twoich innych relacji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Domknięcie formalne",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Kończę współpracę. Chcę zrobić to jasno i spokojnie: proszę o rozliczenie, zamknięcie kontaktu poza ustalonym kanałem i brak komentarzy o moich innych relacjach lub decyzjach.",
+                    "points": 2,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Kacper widzi, że oddzielasz porządek administracyjny od relacyjnej presji. Traci przestrzeń do dalszego rozmywania granic.",
+                    "feedback": {
+                        "label": "Spokojne wyjście z układu",
+                        "psychology": "To pełna granica: decyzja, warunki organizacyjne i ochrona przed dalszym wpływem. Nie wdajesz się w ocenę jego osoby, tylko zamykasz kanały nadużycia.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Jasne domknięcie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Ochrona granic",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_6",
+            "title": "Wiadomość po wszystkim",
+            "score_threshold": 5,
+            "scene_low": {
+                "description": "Wieczorem telefon rozświetla ciemny pokój. Po całym dniu czujesz się rozbity i łatwo znów wejść w stary układ, w którym to on interpretuje twoje emocje za ciebie.",
+                "location": "bedroom",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Nie odchodź teraz pod wpływem cudzych opinii. Tylko ja widzę, co naprawdę sabotujesz. Jeszcze jedna rozmowa i wszystko ci się poukłada.",
+            "scene_high": {
+                "description": "Siedzisz w domu z kubkiem herbaty i masz przy sobie notatkę z własnymi powodami zakończenia współpracy. Emocje nie zniknęły, ale nie są już jedynym kompasem.",
+                "location": "bedroom",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Jeśli chcesz wrócić i domknąć to po ludzku, znajdę dla ciebie termin. Dobrze byłoby nie kończyć tego w napięciu.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Jeszcze jedna wiadomość i zniszczę ci opinię wszędzie, gdzie się da.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kacper może teraz przedstawić siebie jako ofiarę twojej agresji, a meritum znów schodzi z pola widzenia.",
+                    "feedback": {
+                        "label": "Groźba zamiast zabezpieczenia",
+                        "psychology": "Groźba daje chwilowe poczucie siły, ale utrudnia czyste zabezpieczenie siebie. Z perspektywy komunikacji to eskalacja, nie granica.",
+                        "better_alternative_hint": "Krótko zakończ kontakt, zachowaj wiadomości i oprzyj się na zewnętrznym wsparciu zamiast na walce."
+                    },
+                    "tags": [
+                        {
+                            "text": "Groźba",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Eskalacja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Może masz rację. Jedna dodatkowa sesja chyba wszystko wyjaśni.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kacper od razu proponuje termin i wraca do pozycji osoby, bez której nie potrafisz podjąć decyzji o sobie.",
+                    "feedback": {
+                        "label": "Powrót do pętli",
+                        "psychology": "To typowy moment nawrotu zależności. Kiedy dyskomfort po wyjściu z układu interpretujesz jako dowód, że trzeba do niego wrócić, mechanizm sam się zamyka.",
+                        "better_alternative_hint": "Oddziel lęk po postawieniu granicy od realnej potrzeby wracania do osoby, która tę granicę naruszała."
+                    },
+                    "tags": [
+                        {
+                            "text": "Powrót do zależności",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Trauma bond",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie chcę dalszego kontaktu. Proszę nie pisać poza sprawami rozliczenia.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 0,
+                        "openness": 0,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Wiadomość jest krótka i czytelna. Odcina bieżący nacisk, choć jeszcze nie uruchamia dodatkowego zabezpieczenia poza samym komunikatem.",
+                    "feedback": {
+                        "label": "Krótka blokada kanału",
+                        "psychology": "To dobra, oszczędna odpowiedź. W sytuacji nadużycia nie musisz się tłumaczyć. Jeszcze lepiej jest dołożyć wsparcie z zewnątrz i zachować ślady kontaktu.",
+                        "better_alternative_hint": "Po wysłaniu takiej wiadomości wesprzyj się zaufaną osobą i innym specjalistą, zamiast zostawać z tym samemu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Minimalna asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Ograniczenie kontaktu",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie wracam do tej współpracy. Zachowuję te wiadomości, kończę kontakt i konsultuję tę sytuację z zaufaną osobą oraz innym specjalistą.",
+                    "points": 2,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "To zamyka pole do dalszego wciągania cię w prywatny układ. Oparcie w zewnętrznej sieci wsparcia osłabia jego wpływ na twoją narrację o sobie.",
+                    "feedback": {
+                        "label": "Granica plus zabezpieczenie",
+                        "psychology": "Najskuteczniejsze wyjście z manipulacyjnej relacji pomocowej łączy komunikat graniczny z realnym wsparciem z zewnątrz. Nie tylko mówisz nie, ale odbudowujesz własny system odniesienia.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Sieć wsparcia",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Odbudowa autonomii",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "WCIĄŻ W JEGO NARRACJI",
+            "emoji": "🔴",
+            "subtitle": "Granice się rozmyły, a zależność urosła",
+            "narrative": "Kończysz ten etap bardziej splątany niż na początku. Każda próba sprzeciwu mieszała się z wycofaniem albo eskalacją, więc Kacper wciąż miał miejsce, by przedstawiać siebie jako jedyne bezpieczne źródło prawdy o tobie.",
+            "diagnosis": "Przebieg rozmowy został zdominowany przez dwa nieskuteczne bieguny: atak i uległość. To utrzymało relację na poziomie II, gdzie liczy się racja i wina, a nie standardy bezpieczeństwa. W efekcie czerwone flagi nie zostały nazwane dość jasno, by odzyskać autonomię.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl agresywny lub pasywny, które naprzemiennie eskalowały konflikt albo wzmacniały zależność.",
+                "strongest_moment": "Pojawiały się krótkie chwile niepokoju, w których udało ci się wyczuć, że coś jest nie w porządku.",
+                "growth_tip": "Przy kolejnym podejściu nie oceniaj osoby i nie cofaj granicy. Nazywaj konkretne zachowania: izolowanie od bliskich, zniechęcanie do drugiej opinii, presję kontynuacji i prywatny kontakt bez ram.",
+                "replay_prompt": "Spróbuj przejść scenariusz tak, jakby twoim celem nie było przekonanie autorytetu, lecz ochrona własnej autonomii."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "WIDZISZ PROBLEM, ALE JESZCZE SIĘ WAHASZ",
+            "emoji": "🟡",
+            "subtitle": "Rozpoznajesz czerwone flagi, lecz nie zawsze utrzymujesz granicę",
+            "narrative": "Udaje ci się uchwycić, że coś w tej relacji pomocowej przestało być zdrowe. Nadal jednak momentami wchodzisz w tłumaczenie się, formalizm bez emocji albo cofanie granicy pod wpływem poczucia długu.",
+            "diagnosis": "To ścieżka częściowego odzyskiwania sprawczości. Przechodzisz z chaosu do rozpoznania wzorca, ale jeszcze nie zawsze łączysz faktów z własnym prawem do bezpieczeństwa. Relacja bywa zatrzymywana proceduralnie, ale nie zawsze domknięta psychologicznie.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl rzeczowy i miejscami asertywny, ale zbyt rzadko wsparty pełnym nazwaniem wpływu tej relacji na twoje bezpieczeństwo.",
+                "strongest_moment": "Najlepiej działały chwile, gdy prośby o jasne zasady testowały, czy druga strona toleruje twoją autonomię.",
+                "growth_tip": "Następnym razem połącz formalną granicę z komunikatem Ja. Sama procedura pomaga, ale dopiero nazwanie wpływu manipulacji odbiera jej moralną władzę nad tobą.",
+                "replay_prompt": "Zagraj ponownie i sprawdź, co się zmieni, gdy każdą czerwoną flagę nazwiesz spokojnie, bez ataku i bez przepraszania za własne granice."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 9
+            },
+            "color": "green",
+            "title": "ODZYSKANE GRANICE",
+            "emoji": "🟢",
+            "subtitle": "Kończysz relację bez wojny i bez poczucia zdrady",
+            "narrative": "Wychodzisz z tej relacji z coraz większą jasnością. Nie musisz udowadniać, że druga strona jest potworem, żeby uznać, że jej zachowania były dla ciebie niebezpieczne. Kończysz współpracę spokojnie, ale stanowczo.",
+            "diagnosis": "Rozmowa zaczęła przesuwać się na poziom standardów i granic. Dzięki temu przestajesz walczyć o ocenę osoby, a skupiasz się na zachowaniach: izolowaniu od wsparcia, podważaniu drugiej opinii, presji kontynuacji i rozmywaniu ram kontaktu.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl asertywny z elementami empatycznego nazywania własnych odczuć i potrzeb bezpieczeństwa.",
+                "strongest_moment": "Najmocniejszy był moment oddzielenia wdzięczności za część pracy od obowiązku dalszego pozostawania w tej relacji.",
+                "growth_tip": "To dobry model na życie poza grą: nie musisz unieważniać całej relacji, żeby postawić granicę wobec jej szkodliwego wzorca.",
+                "replay_prompt": "Sprawdź, czy potrafisz dojść jeszcze dalej i nie tylko zakończyć kontakt, ale też świadomie odbudować zewnętrzną sieć wsparcia."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 10,
+                "max": 12
+            },
+            "color": "blue",
+            "title": "AUTORYTET NIE ZASTĘPUJE TWOJEGO OSĄDU",
+            "emoji": "🔵",
+            "subtitle": "Rozpoznajesz mechanizm, wychodzisz i odbudowujesz własny punkt odniesienia",
+            "narrative": "Nie tylko wychodzisz z manipulacyjnej relacji pomocowej. Robisz to w sposób, który odbiera jej władzę nad twoją narracją o sobie. Zachowujesz spokój, nazywasz standardy bezpieczeństwa i wracasz do ludzi oraz specjalistów, którzy nie żądają wyłączności.",
+            "diagnosis": "To mistrzowska ścieżka. Zamiast utkwić w pytaniu, czy on miał dobre intencje, oceniasz relację po skutkach i granicach. Łączysz komunikat Ja, asertywność proceduralną i odbudowę sieci wsparcia, dzięki czemu asymetria władzy przestaje cię definiować.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl asertywny i empatyczny, osadzony w jasnych standardach bezpiecznej relacji pomocowej.",
+                "strongest_moment": "Najsilniejszy był finał, w którym odmowa dalszej współpracy połączyła się z zabezpieczeniem wiadomości i oparciem się na zewnętrznym wsparciu.",
+                "growth_tip": "To właśnie tak wygląda dojrzała ochrona granic przy autorytecie: bez wojny, bez uległości i bez oddawania komuś prawa do definiowania twojej rzeczywistości.",
+                "replay_prompt": "Zagraj jeszcze raz i zobacz, jak wcześnie jesteś w stanie rozpoznać czerwone flagi, zanim zależność zdąży się rozwinąć."
+            }
+        }
+    ]
+}

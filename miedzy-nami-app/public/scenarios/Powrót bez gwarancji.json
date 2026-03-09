@@ -1,0 +1,983 @@
+{
+    "scenario_id": "powrot_po_odwyku_odbudowa_zaufania",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Powrót bez gwarancji",
+        "subtitle": "Po odwyku wracasz do domu, w którym nadzieja i lęk siedzą przy jednym stole.",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 12,
+        "interaction_count": 6
+    },
+    "tags": {
+        "relationship_type": "parent_child",
+        "theme": [
+            "trust",
+            "health",
+            "change"
+        ],
+        "emotional_intensity": "critical",
+        "age_rating": "adult",
+        "session_type": "training",
+        "player_role_gender": "neutral",
+        "difficulty": "advanced"
+    },
+    "characters": {
+        "player": {
+            "name": "Kuba",
+            "role_label": "Dorosły syn po odwyku · Gracz",
+            "age_range": "29-34",
+            "context": "Po ośmiu tygodniach terapii wracasz do domu matki. Chcesz zacząć od nowa, ale wstyd i lęk przed ciągłym podejrzeniem siedzą tuż pod skórą.",
+            "hidden_need": "trust",
+            "hidden_need_text": "Potrzebujesz szansy, by być ocenianym przez pryzmat bieżących działań, a nie wyłącznie dawnych szkód.",
+            "traits": [
+                {
+                    "text": "Zdeterminowany",
+                    "type": "positive"
+                },
+                {
+                    "text": "Wstydliwy",
+                    "type": "neutral"
+                },
+                {
+                    "text": "Łatwo wchodzi w defensywę",
+                    "type": "negative"
+                },
+                {
+                    "text": "Uczy się mówić wprost",
+                    "type": "positive"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 5,
+                "patience": 6,
+                "defensiveness": 7,
+                "empathy": 7,
+                "need_for_control": 4,
+                "shame_sensitivity": 8,
+                "directness": 6,
+                "repair_ability": 7
+            }
+        },
+        "npc": {
+            "name": "Anna",
+            "role_label": "Matka · NPC",
+            "age_range": "52-58",
+            "context": "Przez ostatnie lata żyła między gaszeniem pożarów a pilnowaniem, czy znowu nie wydarzy się coś złego. Chce wierzyć, ale boi się zostać zraniona po raz kolejny.",
+            "hidden_need": "safety",
+            "hidden_need_text": "Potrzebuje poczucia bezpieczeństwa i przewidywalności, żeby przestać być stale w trybie alarmowym.",
+            "traits": [
+                {
+                    "text": "Opiekuńcza",
+                    "type": "positive"
+                },
+                {
+                    "text": "Czujna",
+                    "type": "neutral"
+                },
+                {
+                    "text": "Nadkontrolująca",
+                    "type": "negative"
+                },
+                {
+                    "text": "Zmęczona",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 4,
+                "patience": 6,
+                "defensiveness": 6,
+                "empathy": 7,
+                "need_for_control": 8,
+                "shame_sensitivity": 5,
+                "directness": 6,
+                "repair_ability": 6
+            },
+            "npc_reaction_logic": "Anna źle reaguje na żądanie natychmiastowego zaufania, sarkazm i unikanie odpowiedzi. Otwiera się, gdy Kuba nazywa jej lęk bez wyśmiewania go, daje konkretne formy odpowiedzialności i stawia granice bez ataku."
+        }
+    },
+    "metrics_start": {
+        "tension": 50,
+        "trust": 35,
+        "openness": 45,
+        "feeling_heard": 40
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Próg domu",
+            "scene": {
+                "description": "Przedpokój pachnie detergentem i zupą z kuchni. Twoja torba stoi jeszcze przy drzwiach, a Anna ściska w dłoniach ścierkę tak mocno, jakby od tego zależał cały wieczór.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": "Dobrze, że jesteś. Tylko nie umiem udawać, że wszystko jest już normalne.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To po co mnie w ogóle wpuszczałaś, skoro i tak zakładasz najgorsze.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Anna prostuje się i cofa o krok. Jej twarz twardnieje, jakby właśnie dostała potwierdzenie, że znowu musi się bronić.",
+                    "feedback": {
+                        "label": "Atak od progu",
+                        "psychology": "Ten ruch ustawia rozmowę na Poziomie II. Z perspektywy kwadratu von Thuna matka słyszy nie tylko treść, ale też relacyjny komunikat: jesteś przeciwko mnie. To zamyka przestrzeń na odbudowę zaufania.",
+                        "better_alternative_hint": "Zamiast kontrataku nazwij napięcie i powiedz, czego realnie oczekujesz na ten wieczór."
+                    },
+                    "tags": [
+                        {
+                            "text": "Obwinianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Jasne, super powitanie. Brakowało tylko transparentu z napisem podejrzany wrócił.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Anna spuszcza wzrok, ale po chwili odpowiada chłodno, że jeśli tak ma wyglądać każdy dialog, to będzie ciężko.",
+                    "feedback": {
+                        "label": "Sarkazm zamiast kontaktu",
+                        "psychology": "Bierna agresja maskuje zranienie, ale druga strona odbiera ją jako ukryty atak. W analizie transakcyjnej to przejście z Dorosły do Dziecko zbuntowane, które prowokuje kontrolującego Rodzica.",
+                        "better_alternative_hint": "Powiedz wprost, że to powitanie cię boli, zamiast wkładać złość w ironię."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna Berne'a",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Rozumiem, że nie będzie normalnie od razu. Dzisiaj chciałbym tylko spokojnie wejść do domu, a jutro możemy ustalić zasady.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Anna kiwa głową. Nadal jest spięta, ale nie odwraca się od rozmowy.",
+                    "feedback": {
+                        "label": "Asertywne zatrzymanie",
+                        "psychology": "To komunikat z poziomu Dorosły: stawia granicę i porządkuje czas rozmowy. Brakuje jednak pełnego uznania emocji matki, więc ulga jest ograniczona.",
+                        "better_alternative_hint": "Dodaj jedno zdanie o tym, że widzisz jej lęk, a nie tylko potrzebę zasad."
+                    },
+                    "tags": [
+                        {
+                            "text": "Stawianie granicy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Słyszę, że chcesz się cieszyć i jednocześnie boisz się uwierzyć za szybko. Ja też się boję tego powrotu. Nie proszę o ślepą wiarę, chcę ją odzyskiwać krok po kroku.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Anna wypuszcza powietrze i po raz pierwszy patrzy na ciebie bez osądu. Mówi ciszej, że dobrze to słyszeć.",
+                    "feedback": {
+                        "label": "Walidacja bez żądania",
+                        "psychology": "To ruch zgodny z NVC: nazywasz emocje obu stron i nie składasz nierealnej obietnicy natychmiastowej naprawy. Dzięki temu rozmowa zbliża się do Poziomu III.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Leki w kieszeni kurtki",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Późny wieczór. Na stole leży blister po lekach z twojej kurtki. Anna trzyma go w dwóch palcach, jakby sam widok mógł uruchomić dawny chaos.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Znalazłam to i od razu wrócił mi strach. Nie wiem już, co jest normalne, a co nie.",
+            "scene_high": {
+                "description": "W kuchni pali się mała lampka nad blatem. Anna odkłada blister obok kubka herbaty i czeka, zamiast od razu oskarżać.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Znalazłam to w kurtce. Możesz mi powiedzieć, co to jest, żebym nie dopowiadała sobie reszty?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nic ci do tego. Przestań grzebać w moich rzeczach.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Anna natychmiast usztywnia ramiona i odpowiada, że właśnie przez takie reakcje nie potrafi spać spokojnie.",
+                    "feedback": {
+                        "label": "Granica podana jak cios",
+                        "psychology": "Granica sama w sobie jest uzasadniona, ale forma ataku uruchamia obronność. W kwadracie von Thuna treść o prywatności znika, a zostaje komunikat relacyjny: nie masz prawa się bać.",
+                        "better_alternative_hint": "Oddziel prawo do prywatności od uznania jej lęku."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wrogość",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nieważne. Oddaj to i zamknijmy temat.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Anna marszczy czoło. Brak odpowiedzi tylko wzmacnia jej podejrzenia.",
+                    "feedback": {
+                        "label": "Unik zamiast wyjaśnienia",
+                        "psychology": "Wycofanie bywa próbą ochrony przed wstydem, ale przy odbudowie zaufania jest czytane jako ukrywanie. Rozmowa zostaje na poziomie domysłów i kontroli.",
+                        "better_alternative_hint": "Daj minimum konkretu, które obniży lęk, a dopiero potem mów o granicach."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Przejrzystość",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "To leki zalecone po terapii. Mogę ci pokazać wypis, ale nie chcę, żebyś sprawdzała moje rzeczy bez pytania.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Anna przytakuje, choć nadal wygląda na zawstydzoną i czujną.",
+                    "feedback": {
+                        "label": "Fakt i granica",
+                        "psychology": "To dojrzała odpowiedź: dajesz informację i chronisz prywatność. Nadal jednak mówisz głównie o procedurze, a mniej o tym, co dzieje się w niej emocjonalnie.",
+                        "better_alternative_hint": "Dodaj uznanie, że jej lęk nie wziął się znikąd."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Rozumiem, że to cię wystraszyło. To leki zalecone po terapii, mogę pokazać wypis. Chcę też, żebyśmy ustalili jedną zasadę: pytasz mnie wprost, a nie sprawdzasz po kryjomu.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Anna mięknie. Mówi, że zgadza się spróbować tak rozmawiać, bo sama nie chce żyć jak na patrolu.",
+                    "feedback": {
+                        "label": "Transparentność z granicą",
+                        "psychology": "To łączy walidację, konkretną informację i wspólne reguły. W NVC zamieniasz oskarżenie na obserwację i prośbę, przez co rozmowa przesuwa się ku współpracy.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat oparty na obserwacji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Spóźniony powrót",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Jest po dwudziestej drugiej. Anna chodzi po salonie z telefonem w dłoni. Gdy wchodzisz, w pokoju natychmiast gęstnieje powietrze.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Nie odbierałeś. Myślałam, że znowu zniknąłeś i wszystko wróciło.",
+            "scene_high": {
+                "description": "W salonie pali się tylko lampa stojąca. Anna jest spięta, ale siedzi, zamiast krążyć po pokoju. Kiedy wchodzisz, od razu odkłada telefon.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "cold"
+            },
+            "npc_line_high": "Kiedy nie odbierałeś, uruchomił mi się cały alarm. Co się stało?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Daj spokój, nie jestem dzieckiem i nie będę się spowiadał z każdej minuty.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Anna odpowiada ostro, że po tym, co przeszliście, każda znikająca minuta ma dla niej znaczenie.",
+                    "feedback": {
+                        "label": "Odrzucenie perspektywy drugiej strony",
+                        "psychology": "Bronisz autonomii, ale robisz to przez unieważnienie jej lęku. To klasyczne zderzenie potrzeb autonomia versus bezpieczeństwo, rozegrane bez mostu między nimi.",
+                        "better_alternative_hint": "Nazwij potrzebę autonomii bez deprecjonowania tego, że ona się bała."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unieważnianie emocji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Konflikt potrzeb",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "No tak, pewnie najlepiej od razu uznać, że leżałem pijany gdzieś pod sklepem.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Anna zaciska usta. Słyszy w twoim tonie kpinę i staje się jeszcze bardziej sztywna.",
+                    "feedback": {
+                        "label": "Kpina pod przykrywką bólu",
+                        "psychology": "Sarkazm pozwala wyrzucić wstyd na zewnątrz, ale nie daje drugiej stronie żadnej informacji, jak naprawić kontakt. W efekcie obie strony czują się oskarżone.",
+                        "better_alternative_hint": "Powiedz, że to podejrzenie cię boli, zamiast wkładać ból w ironię."
+                    },
+                    "tags": [
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Spotkanie się przedłużyło. Następnym razem wyślę wiadomość, jeśli będę miał opóźnienie.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Anna kiwa głową i mówi, że taki konkret jej pomaga, choć nadal jest roztrzęsiona.",
+                    "feedback": {
+                        "label": "Konkret zamiast wymówki",
+                        "psychology": "To dobra naprawa na poziomie faktów. Jest odpowiedzialność i plan, ale jeszcze bez pełnego uznania skali jej lęku.",
+                        "better_alternative_hint": "Dodaj jedno zdanie o tym, że rozumiesz, co uruchomił brak kontaktu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Odpowiedzialność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Widzę, że brak kontaktu uruchomił ci najgorsze skojarzenia. Spotkanie się przedłużyło. Nie obiecam, że nigdy cię nie wystraszę, ale mogę uprzedzać, kiedy będę się spóźniał.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Anna wyraźnie mięknie. Mówi, że właśnie o taki rodzaj uczciwości jej chodziło.",
+                    "feedback": {
+                        "label": "Realistyczna obietnica",
+                        "psychology": "To cenna odpowiedź, bo unikasz obietnic nie do dotrzymania i zamiast tego proponujesz zachowanie pod twoją kontrolą. Wzmacnia to wiarygodność bardziej niż wielkie deklaracje.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Realistyczna odpowiedzialność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Pieniądze na stole",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Następnego dnia rano Anna odruchowo chowa portfel do szafki, gdy wchodzisz do kuchni. Ruch jest szybki, ale zbyt czytelny, by go nie zauważyć.",
+                "location": "kitchen",
+                "time_of_day": "morning",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Wiem, jak to wygląda, ale przy pieniądzach wciąż mam ścisk w brzuchu.",
+            "scene_high": {
+                "description": "Na stole leży lista zakupów i kalkulator. Anna patrzy na ciebie niepewnie, jakby chciała poruszyć temat, którego sama się wstydzi.",
+                "location": "kitchen",
+                "time_of_day": "morning",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Chcę uczciwie powiedzieć, że temat pieniędzy nadal jest dla mnie trudny po tym, co było.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Czyli do końca życia będziesz mi to wypominać. Super, naprawdę motywujące.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Anna natychmiast zamyka się w sobie i odpowiada, że to nie jest rozmowa o motywacji, tylko o strachu.",
+                    "feedback": {
+                        "label": "Kontratak na wstyd",
+                        "psychology": "Gdy reagujesz oskarżeniem, temat szkody finansowej zamienia się w walkę o rację. To nie daje miejsca na odpowiedzialność ani na bezpieczeństwo drugiej strony.",
+                        "better_alternative_hint": "Nazwij, że to cię upokarza, ale nie uciekaj od skutków dawnych zachowań."
+                    },
+                    "tags": [
+                        {
+                            "text": "Licytacja cierpienia",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nieważne. Nie potrzebuję niczego od nikogo.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Anna patrzy na ciebie bezradnie. Cisza robi się cięższa niż sam temat pieniędzy.",
+                    "feedback": {
+                        "label": "Wycofanie z relacji",
+                        "psychology": "Pozorna rezygnacja chroni przed upokorzeniem, ale nie buduje nowej umowy. Druga strona zostaje z lękiem i bez punktu zaczepienia.",
+                        "better_alternative_hint": "Zamiast się wycofać, poproś o jasne zasady i termin ich przeglądu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Potrzeba godności",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Rozumiem, że to czuły temat. Na razie mogę nie mieć dostępu do większej gotówki, ale chcę wiedzieć, kiedy wrócimy do tej rozmowy.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Anna odpowiada, że to uczciwe i proponuje wrócić do tematu za miesiąc.",
+                    "feedback": {
+                        "label": "Twardy konkret",
+                        "psychology": "To dobry krok w odbudowie zaufania przez przewidywalność. Nadal jednak rozmowa jest bardziej kontraktowa niż relacyjna.",
+                        "better_alternative_hint": "Dodaj uznanie szkody, nie tylko warunków na przyszłość."
+                    },
+                    "tags": [
+                        {
+                            "text": "Kontraktowanie zasad",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Wiem, że finansowo też was zraniłem. Nie oczekuję natychmiastowego kredytu zaufania. Ustalmy jasne zasady pieniędzy i moment, w którym wspólnie ocenimy, czy coś się zmieniło.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Anna wyraźnie odpuszcza z barków. Mówi, że taki plan brzmi fair, bo nie udaje, że rana już zniknęła.",
+                    "feedback": {
+                        "label": "Odpowiedzialność bez samobiczowania",
+                        "psychology": "Uznajesz realną szkodę, ale nie przyjmujesz roli wiecznego winnego. To przesuwa relację z kary ku odbudowie opartej na mierzalnych krokach.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Naprawa relacyjna",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Kontrola po kryjomu",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Wracasz do pokoju i widzisz uchyloną szufladę, której rano domknąłeś. Anna stoi w progu, przyłapana między lękiem a wstydem.",
+                "location": "bedroom",
+                "time_of_day": "afternoon",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Szukałam dowodu, że wszystko jest w porządku. Wiem, że to źle brzmi.",
+            "scene_high": {
+                "description": "Anna zatrzymuje się przed progiem twojego pokoju i nie wchodzi. Widać, że walczy ze sobą, zanim wreszcie mówi.",
+                "location": "bedroom",
+                "time_of_day": "afternoon",
+                "visual_mood": "cold"
+            },
+            "npc_line_high": "Miałam ochotę wejść i sprawdzić twoje rzeczy, ale się zatrzymałam. Nie chcę znowu robić wszystkiego lękiem.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Jak jeszcze raz wejdziesz do mojego pokoju, to wychodzę stąd natychmiast.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Anna sztywnieje i mówi, że groźby tylko potwierdzają, jak kruche jest to wszystko.",
+                    "feedback": {
+                        "label": "Groźba zamiast granicy",
+                        "psychology": "Silna granica jest potrzebna, ale ultimatum uruchamia u drugiej strony tryb obronny. Zamiast regulacji pojawia się walka o władzę.",
+                        "better_alternative_hint": "Postaw granicę bez straszenia odejściem jako pierwszym ruchem."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ultimatum",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Granice",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Jasne, może od razu zamontuj kamerę i alkomat przy drzwiach.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Anna zaciska szczękę i odpowiada, że nie musi być wyśmiewana za to, że się boi.",
+                    "feedback": {
+                        "label": "Upokarzający sarkazm",
+                        "psychology": "Kiedy zawstydzasz lęk drugiej strony, ona trzyma się kontroli jeszcze mocniej. To błędne koło między wstydem a nadzorem.",
+                        "better_alternative_hint": "Powiedz wprost, że przeszukiwanie niszczy twoje poczucie bezpieczeństwa."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Błędne koło kontroli",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie zgadzam się na przeszukiwanie mojego pokoju. Jeśli masz obawy, powiedz mi o nich wprost.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Anna kiwa głową i przyznaje, że wie, iż to była zła droga.",
+                    "feedback": {
+                        "label": "Czytelna granica",
+                        "psychology": "To potrzebne ustawienie zasad kontaktu. Brakuje jednak języka wspólnego celu, więc łatwo wrócić do układu kontrola kontra bunt.",
+                        "better_alternative_hint": "Dopowiedz, jak możecie reagować na alarm bez tajnych kontroli."
+                    },
+                    "tags": [
+                        {
+                            "text": "Jasna granica",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Dorosły-Dorosły",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Rozumiem, że lęk pcha cię do kontroli, ale to niszczy zaufanie po obu stronach. Nie chcę być sprawdzany po kryjomu. Ustalmy, jakie sygnały alarmowe omawiamy wprost, a czego nie robimy.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Anna spuszcza ramiona. Przyznaje, że potrzebuje zasad także po to, by sama nie robić rzeczy, których potem żałuje.",
+                    "feedback": {
+                        "label": "Granica plus wspólny protokół",
+                        "psychology": "To odpowiedź transformacyjna: bronisz swojej godności i jednocześnie pomagasz drugiej stronie regulować lęk. Zamiast systemu podejrzeń tworzycie system rozmowy.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Wspólne ustalanie zasad",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_6",
+            "title": "Plan na najbliższe tygodnie",
+            "score_threshold": 5,
+            "scene_low": {
+                "description": "Wieczorem siedzicie naprzeciw siebie przy stole. Między talerzami leży kartka, ale nikt jeszcze nic na niej nie zapisał. Powietrze jest ciężkie od rzeczy niedopowiedzianych.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Nie wiem, czy potrafimy tak żyć bez ciągłego czuwania. Boję się kolejnego razu.",
+            "scene_high": {
+                "description": "Na stole leży czysta kartka i długopis. Anna przesuwa je w twoją stronę. W jej głosie nadal jest lęk, ale pierwszy raz od powrotu słychać też miejsce na wspólne ustalenia.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Nadal się boję, ale widzę, że próbujesz. Jak chcesz, żeby ten dom wyglądał teraz?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Macie albo mi zaufać od razu, albo dajcie mi spokój. Nie będę żył na próbę.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Anna odkłada długopis. Mówi, że z takim warunkiem nie ma o czym rozmawiać.",
+                    "feedback": {
+                        "label": "Fałszywy wybór",
+                        "psychology": "Żądanie natychmiastowego zaufania ignoruje naturę odbudowy po kryzysie. To próba rozwiązania złożonego procesu jednym ultimatum.",
+                        "better_alternative_hint": "Zaproponuj kroki, które budują wiarygodność, zamiast domagać się efektu końcowego od razu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Myślenie czarno-białe",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Proces odbudowy zaufania",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Róbcie, co chcecie. I tak nic ode mnie nie zależy.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Anna milknie. Rezygnacja brzmi jak odcięcie się od odpowiedzialności i od relacji.",
+                    "feedback": {
+                        "label": "Kapitulacja",
+                        "psychology": "Bierność obniża napięcie tylko pozornie. W praktyce odbiera obu stronom sprawczość i zostawia rodzinę bez planu.",
+                        "better_alternative_hint": "Nawet jeśli jesteś zmęczony, nazwij choć jeden konkretny krok, na który masz wpływ."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wyuczona bezradność",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Sprawczość",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Ustalmy godziny, moje obowiązki w domu i to, kiedy wracam z terapii. To powinno wystarczyć na początek.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Anna mówi, że taki plan jest potrzebny, choć nadal brakuje jej odpowiedzi na to, jak będziecie mówić o lęku.",
+                    "feedback": {
+                        "label": "Porządek bez głębi",
+                        "psychology": "To sensowny szkielet organizacyjny. Nadal jednak skupia się bardziej na logistyce niż na emocjonalnym protokole, który w tej rodzinie jest równie ważny.",
+                        "better_alternative_hint": "Dopisz, jak będziecie rozmawiać o nawrotowym głodzie, niepokoju i granicach kontroli."
+                    },
+                    "tags": [
+                        {
+                            "text": "Kontrakt domowy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Zaufanie nie wróci od jednej rozmowy. Proponuję plan na najbliższe tygodnie: moje obowiązki, otwarte mówienie o nawrotowym głodzie i wasze granice bez śledzenia mnie. Potem sprawdzimy razem, co działa, a co trzeba poprawić.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -3,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Anna bierze długopis i zaczyna notować. W jej oczach nadal jest ostrożność, ale po raz pierwszy wygląda ona bardziej jak współpraca niż patrol.",
+                    "feedback": {
+                        "label": "Wspólny plan zamiast testu",
+                        "psychology": "To modelowa odpowiedź: uznajesz, że zaufanie jest procesem, proponujesz konkret i zostawiasz miejsce na regularny przegląd. Taki układ zmniejsza chaos i presję udowadniania wszystkiego jednym gestem.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Wspólna wizja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "ROZMOWA ZAMKNIĘTA",
+            "emoji": "🔴",
+            "subtitle": "Dom wraca do trybu alarmowego",
+            "narrative": "Wieczór kończy się bez planu i bez poczucia ulgi. Anna wraca do czuwania, ty do poczucia osaczenia. Zamiast odbudowy pojawia się stary układ: kontrola po jednej stronie, bunt albo wycofanie po drugiej.",
+            "diagnosis": "W tej ścieżce dominowały atak, sarkazm albo rezygnacja. Rozmowa utknęła na Poziomie II lub rozpadła się całkiem, a obie strony komunikowały bardziej wstyd i lęk niż realne potrzeby. Bez uznania szkód i bez realistycznych zobowiązań zaufanie nie ma na czym się oprzeć.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl agresywny, bierny lub biernie agresywny. Zamiast kontaktu pojawiła się obrona tożsamości i walka o to, kto bardziej cierpi.",
+                "strongest_moment": "Nawet w trudnej ścieżce pojawiała się potrzeba autonomii i godności, ale została wyrażona w sposób, który ranił lub odcinał drugą stronę.",
+                "growth_tip": "Przy takiej dynamice zacznij od prostszego celu: nie przekonać, tylko obniżyć napięcie. Nazwij jedną emocję drugiej strony i zaproponuj jeden konkretny krok pod twoją kontrolą.",
+                "replay_prompt": "Spróbuj przejść scenariusz, unikając obrony przez sarkazm i żądania natychmiastowego zaufania."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "KRUCHY ROZEJM",
+            "emoji": "🟡",
+            "subtitle": "Jest plan minimum, ale mało oddechu",
+            "narrative": "Udajecie się ustalić kilka zasad, które porządkują codzienność, ale pod powierzchnią nadal pracuje napięcie. W domu jest mniej chaosu, lecz zaufanie wciąż przypomina szkło, po którym wszyscy chodzą ostrożnie.",
+            "diagnosis": "Ta ścieżka opierała się głównie na asertywności i transakcji. To już lepsze niż eskalacja, bo daje strukturę i przewidywalność, ale jeszcze nie dotyka dostatecznie głęboko lęku, wstydu i potrzeby bezpieczeństwa. Relacja działa, lecz nie oddycha pełną piersią.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl rzeczowy i asertywny. Pojawiły się granice oraz konkret, ale z ograniczoną walidacją emocji.",
+                "strongest_moment": "Najmocniejsze było stawianie jasnych zasad bez całkowitego uciekania z rozmowy.",
+                "growth_tip": "Masz już szkielet rozmowy. Kolejny krok to dopowiedzenie emocji i intencji: nie tylko co ustalacie, ale też po co i czego każde z was się boi.",
+                "replay_prompt": "W kolejnym podejściu spróbuj częściej łączyć fakt z uznaniem lęku drugiej strony."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 9
+            },
+            "color": "green",
+            "title": "OSTROŻNE ODBUDOWYWANIE",
+            "emoji": "🟢",
+            "subtitle": "Pojawia się współpraca zamiast testowania",
+            "narrative": "Nie wszystko jest naprawione, ale dom przestaje działać jak punkt kontrolny. Zaczynacie rozmawiać nie o tym, czy ktoś jest winny, lecz jak razem przejść najbliższe tygodnie bez iluzji i bez polowania na potknięcie.",
+            "diagnosis": "W tej ścieżce udało się połączyć odpowiedzialność z empatią. Zamiast wielkich deklaracji pojawiły się realistyczne kroki, granice i język wspólnego celu. To nie daje gwarancji braku nawrotu, ale daje znacznie lepszą bazę do reagowania bez chaosu i wzajemnego niszczenia.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl empatyczny i transformacyjny, wsparty asertywnością tam, gdzie potrzebne były granice.",
+                "strongest_moment": "Najlepsze było uznanie lęku rodziny bez oddawania własnej godności i bez obiecywania niemożliwego.",
+                "growth_tip": "To dobry kierunek. Utrzymuj go przez regularność: małe, przewidywalne działania budują zaufanie mocniej niż wielkie słowa.",
+                "replay_prompt": "Sprawdź, czy potrafisz dojść jeszcze dalej i zbudować plan, w którym obie strony wiedzą, jak reagować na lęk oraz sygnały alarmowe."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 10,
+                "max": 12
+            },
+            "color": "blue",
+            "title": "NOWA UMOWA DOMOWA",
+            "emoji": "🔵",
+            "subtitle": "Zaufanie nie wraca magicznie, ale wraca kierunek",
+            "narrative": "Przy stole powstaje konkretna, wspólna umowa. Jest w niej miejsce na twoją odpowiedzialność, na lęk Anny i na granice, które chronią was oboje przed powrotem do patrolu i buntu. To nie bajkowe pojednanie, tylko dojrzały początek nowego etapu.",
+            "diagnosis": "W tej ścieżce rozmowa weszła na Poziom III. Potrafiłeś nazywać emocje, uznawać szkody, proponować realistyczne działania i współtworzyć zasady zamiast walczyć o natychmiastowe uniewinnienie. Taki styl nie kasuje historii, ale realnie zmienia przyszły sposób funkcjonowania relacji.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl transformacyjny z wysoką empatią, przejrzystością i dojrzałym stawianiem granic.",
+                "strongest_moment": "Najmocniejsze było zamienianie lęku i kontroli na wspólny protokół rozmowy oraz odpowiedzialności.",
+                "growth_tip": "To mistrzowski poziom rozmowy po kryzysie: utrzymuj realizm, regularne przeglądy ustaleń i gotowość do mówienia o trudnościach zanim zamienią się w tajemnice.",
+                "replay_prompt": "Zagraj ponownie i zobacz, które konkretne wybory najmocniej budowały poczucie bezpieczeństwa bez odbierania autonomii."
+            }
+        }
+    ]
+}

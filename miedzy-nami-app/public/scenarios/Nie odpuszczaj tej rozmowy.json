@@ -1,0 +1,1071 @@
+{
+    "scenario_id": "first_suicidal_disclosure_in_family",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Nie odpuszczaj tej rozmowy",
+        "subtitle": "Pierwsze wyznanie kryzysu samobójczego w rodzinie",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 10,
+        "interaction_count": 6
+    },
+    "tags": {
+        "relationship_type": "siblings",
+        "theme": [
+            "support",
+            "health",
+            "trust"
+        ],
+        "emotional_intensity": "critical",
+        "age_rating": "teen",
+        "session_type": "training",
+        "player_role_gender": "neutral",
+        "difficulty": "advanced"
+    },
+    "characters": {
+        "player": {
+            "name": "Alex",
+            "role_label": "Starsze rodzeństwo · Gracz",
+            "age_range": "24-30",
+            "context": "Wracasz późnym wieczorem do kuchni i widzisz, że Maja czeka, spięta i nienaturalnie cicha. Czujesz strach i presję, żeby natychmiast coś naprawić.",
+            "hidden_need": "safety",
+            "hidden_need_text": "Potrzebujesz poczucia, że dasz radę ochronić bliską osobę bez utraty z nią kontaktu.",
+            "traits": [
+                {
+                    "text": "opiekuńczość",
+                    "type": "positive"
+                },
+                {
+                    "text": "skłonność do przejmowania kontroli",
+                    "type": "negative"
+                },
+                {
+                    "text": "wysoka odpowiedzialność",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 5,
+                "patience": 6,
+                "defensiveness": 3,
+                "empathy": 8,
+                "need_for_control": 7,
+                "shame_sensitivity": 4,
+                "directness": 6,
+                "repair_ability": 7
+            }
+        },
+        "npc": {
+            "name": "Maja",
+            "role_label": "Młodsza siostra · Rozmówczyni",
+            "age_range": "18-24",
+            "context": "Od kilku tygodni działa na autopilocie, źle śpi i ukrywa narastający kryzys. To pierwszy raz, kiedy mówi komuś wprost, że ma myśli samobójcze.",
+            "hidden_need": "safety",
+            "hidden_need_text": "Potrzebuje ulgi, bycia potraktowaną serio i kontaktu, który nie zamieni się w ocenę albo panikę.",
+            "traits": [
+                {
+                    "text": "przeciążenie",
+                    "type": "negative"
+                },
+                {
+                    "text": "ostrożna szczerość",
+                    "type": "positive"
+                },
+                {
+                    "text": "wycofanie",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 4,
+                "patience": 3,
+                "defensiveness": 7,
+                "empathy": 6,
+                "need_for_control": 2,
+                "shame_sensitivity": 9,
+                "directness": 4,
+                "repair_ability": 3
+            },
+            "npc_reaction_logic": "Maja zamyka się przy minimalizowaniu, moralizowaniu i gwałtownej panice. Najlepiej reaguje na spokojną obecność, krótkie walidujące komunikaty, pytania zadane wprost oraz konkretne kroki zwiększające bezpieczeństwo tu i teraz."
+        }
+    },
+    "metrics_start": {
+        "tension": 55,
+        "trust": 45,
+        "openness": 35,
+        "feeling_heard": 30
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Pierwsze wyznanie",
+            "scene": {
+                "description": "Późny wieczór. W kuchni pali się tylko mała lampka nad blatem. Maja siedzi w bluzie, z dłoniami schowanymi w rękawach i długo nie podnosi wzroku.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line": "Nie wiem, jak to powiedzieć... Ostatnio mam myśli, że może lepiej byłoby mnie nie było.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nie mów takich rzeczy. Przesadzasz i tylko mnie straszysz.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maja sztywnieje i odsuwa krzesło o kilka centymetrów. Dobra. To był błąd, że coś powiedziałam.",
+                    "feedback": {
+                        "label": "Minimalizowanie i zawstydzenie",
+                        "psychology": "Pierwsza odpowiedź ustawia ramę całej rozmowy. Zaprzeczanie i zawstydzanie wzmacniają izolację oraz uczą, że ujawnienie bólu było pomyłką.",
+                        "better_alternative_hint": "Najpierw potwierdź wagę wyznania i pokaż, że zostajesz w kontakcie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Minimalizowanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Super, czyli mam teraz pilnować cię całą noc, tak?",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maja opuszcza głowę jeszcze niżej. Nieważne. Zapomnij, że cokolwiek powiedziałam.",
+                    "feedback": {
+                        "label": "Ironiczne obciążanie winą",
+                        "psychology": "Bierna agresja przerzuca ciężar rozmowy na poczucie winy rozmówczyni. W kryzysie to zwiększa zamknięcie i wstyd.",
+                        "better_alternative_hint": "Oddziel własny lęk od odpowiedzi. Najpierw daj sygnał bezpieczeństwa i obecności."
+                    },
+                    "tags": [
+                        {
+                            "text": "Poczucie winy",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Aktywne słuchanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Analiza transakcyjna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Słyszę to. Usiądź ze mną i powiedz, od kiedy tak masz.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Maja bierze nierówny oddech. Od jakiegoś czasu... ale nikomu nie mówiłam.",
+                    "feedback": {
+                        "label": "Rzeczowe zatrzymanie rozmowy",
+                        "psychology": "To odpowiedź stabilniejsza niż panika, bo utrzymuje rozmowę. Brakuje jednak jasnego uznania, że wyznanie jest bardzo poważne i trudne.",
+                        "better_alternative_hint": "Dodaj wdzięczność za zaufanie i sygnał, że nie zostawisz jej samej z tym ciężarem."
+                    },
+                    "tags": [
+                        {
+                            "text": "Struktura rozmowy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Brak walidacji",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Dziękuję, że mi to mówisz. To ważne. Nie jesteś z tym sama i zostaję z tobą teraz.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Maja pierwszy raz podnosi wzrok. Bałam się, że spanikujesz albo powiesz, że przesadzam.",
+                    "feedback": {
+                        "label": "Walidacja i współobecność",
+                        "psychology": "Wdzięczność za ujawnienie kryzysu obniża wstyd. Komunikat obecności reguluje napięcie i zwiększa szansę, że rozmówczyni powie więcej.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Współregulacja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Utrzymać kontakt po szoku",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "W kuchni robi się jeszcze ciszej. Maja siedzi bokiem, jakby już żałowała, że zaczęła ten temat.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Może nie powinnam była nic mówić.",
+            "scene_high": {
+                "description": "Maja nadal drży, ale nie odwraca się od ciebie. Widać, że walczy ze wstydem, a jednocześnie sprawdza, czy naprawdę wytrzymasz tę rozmowę.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Bałam się, że spanikujesz. Nie wiedziałam, czy mam w ogóle to mówić.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To pogadamy jutro. Teraz i tak nic nie zrobimy.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maja kiwa głową bez przekonania. Jasne. Nieważne.",
+                    "feedback": {
+                        "label": "Odwlekanie kryzysu",
+                        "psychology": "Przy ujawnieniu myśli samobójczych odsuwanie rozmowy na później może zostać odebrane jako opuszczenie. Kryzys wymaga kontaktu tu i teraz.",
+                        "better_alternative_hint": "Zostań przy rozmowie i pokaż, że traktujesz sprawę serio już w tej chwili."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Utrzymanie kontaktu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Powiedz wreszcie konkretnie, co jest z tobą nie tak.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maja zaciska szczękę. Nie chcę już o tym mówić.",
+                    "feedback": {
+                        "label": "Atak i patologizowanie",
+                        "psychology": "Pytanie zadane z pozycji osądu zamienia rozmowę w przesłuchanie. Wysoki wstyd u osoby w kryzysie rośnie wtedy jeszcze bardziej.",
+                        "better_alternative_hint": "Pytaj wprost, ale bez oceny. Ton ma tu znaczenie równie duże jak treść."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ocena",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Pytanie wprost o ryzyko",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Analiza transakcyjna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Muszę wiedzieć, czy to było tak powiedziane, czy to jest poważne.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": 0,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Maja marszczy czoło. To jest poważne. Tylko nie umiem o tym mówić normalnie.",
+                    "feedback": {
+                        "label": "Ocena powagi bez kontenera emocjonalnego",
+                        "psychology": "To podejście porządkuje sytuację, ale może zabrzmieć chłodno. Samo zbieranie danych nie daje jeszcze poczucia bycia przyjętą z bólem.",
+                        "better_alternative_hint": "Dodaj krótką walidację i dopiero potem zadawaj konkretne pytanie o bieżące myśli."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ocena ryzyka",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Chłód relacyjny",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "To jest poważne i traktuję cię serio. Czy te myśli są z tobą także teraz, w tej chwili?",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Maja po chwili kiwa głową. Tak. Dzisiaj są bardzo głośne.",
+                    "feedback": {
+                        "label": "Walidacja połączona z pytaniem o teraz",
+                        "psychology": "Najpierw uznajesz wagę wyznania, a potem pytasz o aktualny stan. To pomaga utrzymać relację i jednocześnie przejść do realnej oceny zagrożenia.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Pytanie wprost o ryzyko",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Ocena bezpośredniego zagrożenia",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Maja siedzi skulona na końcu kanapy w salonie. Głos ma płaski, jakby próbowała wrócić za ścianę obojętności.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Nie powinnam była zaczynać. Teraz będzie tylko gorzej.",
+            "scene_high": {
+                "description": "Przenosicie się do salonu. Maja nadal jest napięta, ale odpowiada i nie ucieka wzrokiem tak jak wcześniej.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Są ze mną teraz. Nie chcę już tak się męczyć.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "No pięknie. Dopiero teraz o tym mówisz, kiedy wszystko się sypie.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maja odwraca twarz. To był zły pomysł.",
+                    "feedback": {
+                        "label": "Wyrzut zamiast pomocy",
+                        "psychology": "Wyrzut aktywuje wstyd i obronę. Osoba w kryzysie słyszy wtedy, że stała się problemem, a nie że jej cierpienie zostało zauważone.",
+                        "better_alternative_hint": "Zostań przy bezpieczeństwie i teraźniejszości zamiast rozliczać moment wyznania."
+                    },
+                    "tags": [
+                        {
+                            "text": "Zawstydzanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Skupienie na tu i teraz",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Przestań tak mówić i obiecaj natychmiast, że nic nie zrobisz.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maja kręci głową. Nie umiem ci tego obiecać tylko po to, żebyś się uspokoił_a.",
+                    "feedback": {
+                        "label": "Wymuszanie obietnicy",
+                        "psychology": "Wymuszona obietnica może dać chwilową ulgę bliskim, ale nie jest rzetelną oceną bezpieczeństwa. Często zamyka szczerość zamiast ją zwiększać.",
+                        "better_alternative_hint": "Zamiast wymuszać deklarację, pytaj konkretnie o plan, czas i dostęp do środków."
+                    },
+                    "tags": [
+                        {
+                            "text": "Fałszywe uspokojenie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Ocena ryzyka",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Muszę ocenić, czy to kryzys na teraz. Czy planowałaś coś zrobić dziś albo w nocy?",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Maja milknie na chwilę. Myślałam o tym dzisiaj. Nie wiem, co zrobię za godzinę.",
+                    "feedback": {
+                        "label": "Pytanie trafne, ale twarde",
+                        "psychology": "To ważne pytanie i zwiększa szansę na realną ocenę zagrożenia. Brakuje jednak zdania, które zmniejszałoby lęk przed oceną.",
+                        "better_alternative_hint": "Dodaj, po co pytasz i że pytanie nie służy ocenianiu, tylko bezpieczeństwu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pytanie wprost o ryzyko",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Brak kontenera emocjonalnego",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Zapytam wprost, bo chodzi o twoje bezpieczeństwo, nie o ocenianie: czy masz teraz plan albo dostęp do czegoś, czym mogłabyś zrobić sobie krzywdę?",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Maja ściska rękaw bluzy. Myślałam o tym. I mam kilka rzeczy pod ręką.",
+                    "feedback": {
+                        "label": "Bezpośrednie pytanie bez osądu",
+                        "psychology": "W kryzysie pytania o plan i dostęp do środków nie zwiększają ryzyka, tylko pomagają je nazwać. Sposób zadania pytania obniża wstyd i sprzyja szczerości.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Pytanie wprost o ryzyko",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Regulacja przez jasność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Tajemnica czy bezpieczeństwo",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Powietrze w salonie jest ciężkie. Maja siedzi na skraju kanapy i wygląda tak, jakby każda kolejna minuta rozmowy miała ją wypchnąć z powrotem w milczenie.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Tylko błagam, nie mów nikomu. Nie chcę, żeby wszyscy patrzyli na mnie jak na problem.",
+            "scene_high": {
+                "description": "Maja ociera twarz rękawem. Jest przerażona perspektywą pomocy, ale nadal słucha i czeka na twoją reakcję.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "cold"
+            },
+            "npc_line_high": "Nie chcę, żeby zaraz wszyscy się dowiedzieli. To mnie przeraża bardziej niż wszystko inne.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Dobrze. Nikomu nic nie powiem. Po prostu się uspokój.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -1,
+                        "openness": -2,
+                        "feeling_heard": -1
+                    },
+                    "npc_reaction": "Maja na moment mięknie, ale zaraz patrzy niepewnie. To niczego nie rozwiązuje.",
+                    "feedback": {
+                        "label": "Fałszywa tajemnica",
+                        "psychology": "Obietnica pełnej tajemnicy może odciąć drogę do realnej pomocy. W sprawach zagrożenia życia priorytetem nie jest komfort sekretu, tylko bezpieczeństwo.",
+                        "better_alternative_hint": "Powiedz jasno, że nie zostawisz jej samej z tym i wspólnie wybierzecie, kogo włączyć."
+                    },
+                    "tags": [
+                        {
+                            "text": "Fałszywe uspokojenie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Włączanie wsparcia",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Odpowiedzialność relacyjna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Powiem wszystkim, skoro sama nie umiesz nad sobą panować.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maja momentalnie zastyga. To właśnie dlatego nic nie mówiłam.",
+                    "feedback": {
+                        "label": "Upokorzenie i odebranie sprawczości",
+                        "psychology": "Publiczna groźba uruchamia lęk i może przerwać współpracę. Bezpieczeństwo rośnie, gdy osoba ma choć częściowy wpływ na sposób włączenia pomocy.",
+                        "better_alternative_hint": "Odróżnij stanowczość od przemocy. Nie strasz, tylko nazwij granicę tajemnicy i zaproś do wspólnej decyzji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Upokorzenie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Wspólne podejmowanie decyzji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie mogę wziąć tego całkiem na siebie. Ktoś jeszcze dorosły powinien o tym wiedzieć.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Maja wzdycha ciężko. Nienawidzę tego, ale wiem, że sama już tego nie dźwignę.",
+                    "feedback": {
+                        "label": "Granica odpowiedzialności",
+                        "psychology": "To ważne, bo zatrzymuje niebezpieczny układ sekretu we dwoje. Wypowiedź jest jednak dość sztywna i mało kojąca.",
+                        "better_alternative_hint": "Dodaj, że nie chodzi o zdradę, tylko ochronę życia, i że zrobicie to razem."
+                    },
+                    "tags": [
+                        {
+                            "text": "Granica odpowiedzialności",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Brak współdecydowania",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie obiecam pełnej tajemnicy w sprawie życia i bezpieczeństwa. Nie chcę cię zdradzić, więc zdecydujmy razem, kogo włączymy teraz do pomocy.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Maja zamyka oczy i po chwili kiwa głową. Dobrze. Tylko zostań przy mnie, kiedy to zrobimy.",
+                    "feedback": {
+                        "label": "Bezpieczna granica bez porzucenia",
+                        "psychology": "Łączysz dwa kluczowe elementy: nie obiecujesz sekretu ponad bezpieczeństwo i jednocześnie nie odbierasz rozmówczyni wpływu. To buduje współpracę.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Granica odpowiedzialności",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Włączanie wsparcia",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Krok do profesjonalnej pomocy",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Stoisz z Mają przy blacie. Telefon leży między wami, ale nikt go nie bierze. Każda sekunda zwłoki zagęszcza napięcie.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Nie dam rady nigdzie dzwonić. To za dużo.",
+            "scene_high": {
+                "description": "Maja oddycha szybko, ale słucha. Telefon jest już w twojej dłoni, a w powietrzu pojawia się pierwszy ślad konkretu zamiast chaosu.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Boję się tego telefonu albo wyjazdu, ale chyba bardziej boję się zostać z tym sama.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To posiedzimy i może ci przejdzie. Nie ma sensu robić zamieszania.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -1
+                    },
+                    "npc_reaction": "Maja patrzy tępo w blat. Nic mi samo nie przechodzi od tygodni.",
+                    "feedback": {
+                        "label": "Bezczynność ubrana w spokój",
+                        "psychology": "W ostrym kryzysie sama obecność bez przejścia do pomocy może być niewystarczająca. Odkładanie działania zwiększa ryzyko i bezradność obu stron.",
+                        "better_alternative_hint": "Przejdź do jednego prostego, konkretnego kroku już teraz."
+                    },
+                    "tags": [
+                        {
+                            "text": "Odwlekanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Plan działania",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Albo jedziesz po pomoc teraz, albo nie mam już siły.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maja cofa się o krok. Nie chcę być kolejnym ciężarem do noszenia.",
+                    "feedback": {
+                        "label": "Ultimatum z pozycji przeciążenia",
+                        "psychology": "Ultimatum może uruchomić posłuszeństwo albo bunt, ale rzadko buduje współpracę. W kryzysie lepiej działa wspólne prowadzenie niż groźba wycofania wsparcia.",
+                        "better_alternative_hint": "Nazwij krok jasno, ale bez stawiania relacji pod ścianą."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ultimatum",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Wspólne działanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Zadzwonię po pomoc i ustalę, co dalej.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Maja kiwa głową, ale wygląda na jeszcze bardziej małą. Dobrze... tylko mów mi, co robisz.",
+                    "feedback": {
+                        "label": "Skuteczność bez współudziału",
+                        "psychology": "To już ruch w dobrą stronę, bo uruchamia profesjonalne wsparcie. Nadal jednak łatwo odebrać rozmówczyni sprawczość, jeśli wszystko dzieje się ponad jej głową.",
+                        "better_alternative_hint": "Włącz ją w decyzję i powiedz, że będziesz przy niej podczas rozmowy lub dojazdu po pomoc."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uruchomienie pomocy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Odebranie sprawczości",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Zróbmy jeden krok teraz: zadzwonimy razem po pomoc kryzysową albo pojedziemy po pilną pomoc medyczną. Ja będę obok przez całą rozmowę i drogę.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Maja bierze drżący wdech. Dobrze. Sama bym tego nie zrobiła, ale z tobą mogę spróbować.",
+                    "feedback": {
+                        "label": "Wspólny, konkretny następny krok",
+                        "psychology": "Najbardziej pomocne w kryzysie są prostota i współobecność. Redukujesz chaos do jednego działania i nie zostawiasz jej samej z wykonaniem tego kroku.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Uruchomienie pomocy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Wspólne działanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_6",
+            "title": "Plan na najbliższą godzinę",
+            "score_threshold": 5,
+            "scene_low": {
+                "description": "Przy drzwiach salonu czuć zmęczenie i chaos. Maja jest wyczerpana, a każde niedopowiedzenie znowu grozi cofnięciem was o kilka kroków.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Nie wiem, czy dam radę wytrzymać jeszcze godzinę tak, jak jest teraz.",
+            "scene_high": {
+                "description": "Jesteście gotowi do wyjścia albo do wykonania telefonu. Maja wciąż jest krucha, ale bardziej osadzona w chwili obecnej niż na początku rozmowy.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Nadal jest mi bardzo ciężko, ale pierwszy raz dziś nie jestem z tym sama.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Spróbuj się po prostu położyć. Jutro pewnie będzie lepiej.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maja patrzy bez przekonania. Jutro mnie nie uspokaja.",
+                    "feedback": {
+                        "label": "Puste pocieszanie",
+                        "psychology": "Ogólne uspokajanie nie odpowiada na realne ryzyko. W kryzysie potrzebny jest plan na najbliższe minuty i godziny, nie mglista nadzieja.",
+                        "better_alternative_hint": "Zamień ogólnik na konkretny, wspólny plan bezpieczeństwa tu i teraz."
+                    },
+                    "tags": [
+                        {
+                            "text": "Fałszywe uspokojenie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Plan bezpieczeństwa",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Po tym wszystkim mam nadzieję, że już nic głupiego nie zrobisz.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maja zaciska usta. To nie pomaga. Czuję się jeszcze bardziej zepsuta.",
+                    "feedback": {
+                        "label": "Pogarda przykryta troską",
+                        "psychology": "Sformułowanie rani i stygmatyzuje. Gdy ból zostaje nazwany głupotą, rozmówczyni traci odwagę do dalszej szczerości.",
+                        "better_alternative_hint": "Mów o bezpieczeństwie bez etykietowania i upokarzania."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Destygmatyzacja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Zostanę z tobą jeszcze chwilę i odłożę rzeczy, które mogłyby być niebezpieczne.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Maja przytakuje. Dobrze. Tylko mów mi, co robisz, żebym nie czuła się jak przedmiot.",
+                    "feedback": {
+                        "label": "Działanie ochronne bez pełnej współpracy",
+                        "psychology": "To realnie zwiększa bezpieczeństwo, ale wciąż nie jest pełnym planem. Brakuje wspólnego ustalenia, co dokładnie dzieje się dalej i kto pozostaje w kontakcie.",
+                        "better_alternative_hint": "Połącz zabezpieczenie otoczenia z jasnym planem na najbliższą godzinę i kolejnym kontaktem z pomocą."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ograniczenie dostępu do zagrożeń",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Plan bezpieczeństwa",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Brak współdecydowania",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Ustalmy plan na najbliższą godzinę: nie zostajesz sama, odkładamy rzeczy mogące zrobić krzywdę, zostajemy przy telefonie lub wychodzimy po pomoc i przechodzimy ten czas razem krok po kroku.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Maja wypuszcza powietrze i lekko kiwa głową. Okej. Jedna godzina. Jeden krok naraz. To brzmi do zrobienia.",
+                    "feedback": {
+                        "label": "Wspólny plan bezpieczeństwa",
+                        "psychology": "Najbardziej stabilizujące jest przełożenie chaosu na serię małych, natychmiastowych działań. To obniża przeciążenie i buduje poczucie, że bezpieczeństwo jest wspólnym procesem, nie samotnym testem siły.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Plan bezpieczeństwa",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Wspólne działanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "PĘKNIĘTY KONTAKT",
+            "emoji": "🔴",
+            "subtitle": "Rozmowa nie udźwignęła ciężaru wyznania",
+            "narrative": "Noc kończy się w napięciu i chaosie. Maja wycofuje się emocjonalnie, a ty zostajesz z poczuciem, że każde kolejne słowo tylko oddalało was od siebie. Pomoc nie została uruchomiona w porę albo pojawiła się dopiero po gwałtownej eskalacji.",
+            "diagnosis": "Dominowały reakcje obronne: minimalizowanie, zawstydzanie, ultimata albo odwlekanie. W kryzysie samobójczym takie odpowiedzi zwiększają wstyd i izolację, przez co osoba zagrożona może przestać mówić prawdę o swoim stanie.",
+            "post_game": {
+                "communication_style_summary": "Przeważał styl agresywny, biernie agresywny albo unikowy. Rozmowa zatrzymała się na twoim lęku zamiast przejść do bezpiecznego kontaktu i oceny ryzyka.",
+                "strongest_moment": "Najmocniejszym punktem było samo pozostanie w scenie mimo szoku. To za mało, ale od tego zaczyna się możliwość korekty.",
+                "growth_tip": "Przy pierwszym wyznaniu nie zaprzeczaj i nie żądaj szybkich obietnic. Najpierw uznaj ciężar słów, potem pytaj wprost o aktualne zagrożenie i włącz pomoc ponad tajemnicę.",
+                "replay_prompt": "Spróbuj przejść tę rozmowę jeszcze raz, zaczynając od walidacji i spokojnego pytania o to, czy zagrożenie jest aktualne teraz."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "KRUCHY MOST",
+            "emoji": "🟡",
+            "subtitle": "Kontakt został utrzymany, ale z dużą chwiejnością",
+            "narrative": "Maja nie zamknęła się całkowicie, ale rozmowa kilka razy traciła kierunek. Udało się nazwać część ryzyka i pojawił się cień planu, jednak zbyt wiele zostało na twoich barkach albo w niedopowiedzeniach.",
+            "diagnosis": "Pojawiły się dobre elementy, takie jak rzeczowe pytania i częściowe stawianie granicy tajemnicy, lecz brakowało spójnego połączenia empatii, oceny ryzyka i wspólnego działania. To często daje połowiczny efekt: jest trochę ulgi, ale mało stabilności.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl rzeczowy i asertywny. Rozmowa była mniej szkodliwa niż na ścieżce czerwonej, ale miejscami zabrakło emocjonalnego kontenera i współdecydowania.",
+                "strongest_moment": "Najlepiej wypadł moment, gdy przestałeś_aś owijać temat i uznałeś_aś, że sprawa wymaga realnej oceny.",
+                "growth_tip": "Nie zatrzymuj się na samym zbieraniu faktów. Połącz jasne pytania z krótką walidacją oraz wspólnym wyborem następnego kroku do profesjonalnej pomocy.",
+                "replay_prompt": "Sprawdź, co się zmieni, gdy przy każdym trudnym pytaniu najpierw pokażesz, że pytasz po to, by chronić, a nie oceniać."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 9
+            },
+            "color": "green",
+            "title": "WSPÓLNY KROK DO BEZPIECZEŃSTWA",
+            "emoji": "🟢",
+            "subtitle": "Rozmowa stała się pomostem do pomocy",
+            "narrative": "Maja nie została sama z kryzysem. Udało się utrzymać kontakt, nazwać bezpośrednie zagrożenie i przejść do konkretnego działania. Noc nie staje się nagle lekka, ale przestaje być samotna i bezplanowa.",
+            "diagnosis": "Najlepiej zadziałało połączenie empatii z jasnością. Walidacja obniżyła wstyd, bezpośrednie pytania pozwoliły ocenić ryzyko, a wspólne uruchomienie pomocy zatrzymało niebezpieczny układ sekretu i bezradności.",
+            "post_game": {
+                "communication_style_summary": "Przeważał styl empatyczny i transformacyjny. Rozmowa przesuwała się z samego przeżywania szoku do wspólnego działania na rzecz bezpieczeństwa.",
+                "strongest_moment": "Najmocniejszy był moment, w którym nie obiecałeś_aś tajemnicy ponad życie, ale zrobiłeś_aś to bez porzucenia i bez przemocy.",
+                "growth_tip": "To dobra ścieżka. Pamiętaj, że skuteczna pomoc w takim momencie jest prosta: zostań, pytaj wprost, nie bierz sekretu na siebie i prowadź do profesjonalnego wsparcia krok po kroku.",
+                "replay_prompt": "Zagraj ponownie i sprawdź, czy potrafisz jeszcze szybciej przejść od walidacji do wspólnego planu bezpieczeństwa."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 10,
+                "max": 12
+            },
+            "color": "blue",
+            "title": "OBECNOŚĆ, KTÓRA RATUJE KONTAKT",
+            "emoji": "🔵",
+            "subtitle": "Mistrzowskie połączenie czułości, odwagi i konkretu",
+            "narrative": "Maja czuje się potraktowana serio, a nie jak problem do ukrycia albo naprawy. Razem przechodzicie od pierwszego wyznania do oceny bezpośredniego zagrożenia, uruchomienia profesjonalnej pomocy i planu na najbliższy czas. Kryzys nie znika, ale samotność wyraźnie maleje.",
+            "diagnosis": "To ścieżka, w której psychologiczna walidacja i interwencyjna jasność pracują razem. Nie uciekasz od trudnych pytań, nie panikujesz, nie obiecujesz niemożliwego i nie zostawiasz całego ciężaru ani sobie, ani osobie w kryzysie.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl empatyczny, asertywny i transformacyjny. Rozmowa miała wysoki poziom bezpieczeństwa relacyjnego i operacyjnego jednocześnie.",
+                "strongest_moment": "Najsilniejszy był sposób, w jaki zadawałeś_aś najtrudniejsze pytania: bez osądu, z jasnym celem ochrony życia i ze wspólnym przejściem do działania.",
+                "growth_tip": "To poziom mistrzowski. W realnym życiu utrzymuj tę samą kolejność: uznanie bólu, pytanie wprost o ryzyko, granica wobec tajemnicy i natychmiastowe włączenie profesjonalnego wsparcia.",
+                "replay_prompt": "Spróbuj jeszcze raz, obserwując, jak każda mała walidacja zmienia gotowość rozmówczyni do szczerości i współpracy."
+            }
+        }
+    ]
+}

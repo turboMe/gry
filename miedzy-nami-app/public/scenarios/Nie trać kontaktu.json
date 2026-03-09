@@ -1,0 +1,995 @@
+{
+    "scenario_id": "under_strong_group_influence",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Nie trać kontaktu",
+        "subtitle": "Rozmowa z córką, która weszła pod silny wpływ zamkniętej grupy",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 12,
+        "interaction_count": 6
+    },
+    "tags": {
+        "relationship_type": "parent_child",
+        "theme": [
+            "trust",
+            "support",
+            "control"
+        ],
+        "emotional_intensity": "critical",
+        "age_rating": "adult",
+        "session_type": "training",
+        "player_role_gender": "female",
+        "difficulty": "advanced"
+    },
+    "characters": {
+        "player": {
+            "name": "Marta",
+            "role_label": "Matka · Gracz",
+            "age_range": "45-52",
+            "context": "Od kilku tygodni widzisz, że twoja dorosła córka odcina się od dawnych znajomych, powtarza slogany grupy i reaguje gwałtownie na pytania. Chcesz ją chronić, ale wiesz, że frontalny atak może tylko wzmocnić wpływ liderów.",
+            "hidden_need": "safety",
+            "hidden_need_text": "Chcesz ochronić córkę i zachować z nią więź, która może stać się dla niej jedyną bezpieczną drogą wyjścia.",
+            "traits": [
+                {
+                    "text": "Opiekuńcza",
+                    "type": "positive"
+                },
+                {
+                    "text": "Czujna",
+                    "type": "positive"
+                },
+                {
+                    "text": "Skłonna do kontroli pod wpływem lęku",
+                    "type": "negative"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 5,
+                "patience": 6,
+                "defensiveness": 5,
+                "empathy": 8,
+                "need_for_control": 7,
+                "shame_sensitivity": 4,
+                "directness": 7,
+                "repair_ability": 8
+            }
+        },
+        "npc": {
+            "name": "Ola",
+            "role_label": "Córka · NPC",
+            "age_range": "19-24",
+            "context": "W ostatnich miesiącach przeżywała samotność i poczucie zagubienia. Nowa grupa dała jej rytuał, przynależność i poczucie wyjątkowości. Każdą krytykę odbiera jako dowód, że inni niczego nie rozumieją.",
+            "hidden_need": "belonging",
+            "hidden_need_text": "Chce czuć sens, przynależność i bycie ważną dla innych.",
+            "traits": [
+                {
+                    "text": "Wrażliwa",
+                    "type": "positive"
+                },
+                {
+                    "text": "Głodna uznania",
+                    "type": "neutral"
+                },
+                {
+                    "text": "Podatna na wpływ silnych autorytetów",
+                    "type": "negative"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 6,
+                "patience": 4,
+                "defensiveness": 8,
+                "empathy": 6,
+                "need_for_control": 3,
+                "shame_sensitivity": 8,
+                "directness": 5,
+                "repair_ability": 4
+            },
+            "npc_reaction_logic": "Na atak, etykietowanie grupy i próby zawstydzania reaguje natychmiastową obroną oraz większą lojalnością wobec wspólnoty. Na spokojną ciekawość, walidację emocji i pytania odsłaniające rozbieżności reaguje ostrożnym otwarciem. Na bierność odbiera komunikat, że relacja nie udźwignie prawdy."
+        }
+    },
+    "metrics_start": {
+        "tension": 50,
+        "trust": 45,
+        "openness": 35,
+        "feeling_heard": 30
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Pierwsze otwarcie",
+            "scene": {
+                "description": "Późny wieczór w kuchni. Na blacie leży notes z symbolem grupy i ulotka ze zdjęciem uśmiechniętych ludzi ustawionych w kręgu. Ola zamiera, gdy widzi, że zauważyłaś materiały.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": null,
+            "npc_stage_direction": "Ola wsuwa ulotkę do torby i patrzy na ciebie sztywno, jakby szykowała się do obrony.",
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To jest sekta. Kończysz z tym natychmiast.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Ola zaciska szczękę. Wiedziałam. Nawet nie próbujesz zrozumieć.",
+                    "feedback": {
+                        "label": "Etykieta zamiast kontaktu",
+                        "psychology": "Frontalne nazwanie grupy sektą uruchamia reaktancję psychiczną. Z perspektywy dialogu motywującego wzmacniasz opór, bo odbierasz rozmówcy autonomię, a z perspektywy NVC wchodzisz w osąd zamiast w obserwację i uczucie.",
+                        "better_alternative_hint": "Zacznij od troski i ciekawości, nie od wyroku."
+                    },
+                    "tags": [
+                        {
+                            "text": "Etykietowanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Reaktancja psychiczna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Jasne, rób co chcesz. Jak ci wypiorą mózg, to nie przychodź do mnie.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Ola prycha. Czyli mam wybierać między nimi a tobą. Super.",
+                    "feedback": {
+                        "label": "Sarkazm i ukryta groźba",
+                        "psychology": "Bierna agresja miesza pozorne wycofanie z karzącym przekazem. W kwadracie von Thuna warstwa relacyjna dominuje nad treścią: słyszalne jest pogardliwe odrzucenie, nie troska.",
+                        "better_alternative_hint": "Powiedz wprost, że się boisz i chcesz rozumieć, zamiast karać sarkazmem."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Martwię się, bo widzę, że ta grupa ma na ciebie duży wpływ. Chcę zrozumieć, co się dzieje.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Ola nieco opuszcza ramiona. To nie jest takie proste, jak myślisz.",
+                    "feedback": {
+                        "label": "Jasny komunikat bez ataku",
+                        "psychology": "To poprawny komunikat Ja: ujawniasz niepokój i nazywasz temat bez obelg. Nadal jednak mówisz głównie o wpływie grupy, a mniej o przeżyciu Oli, więc otwarcie jest ograniczone.",
+                        "better_alternative_hint": "Dopytaj, co dokładnie ta wspólnota jej daje."
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Widzę, że to dla ciebie ważne. Ja się boję i nie chcę cię atakować. Możesz mi powiedzieć, co ci daje ta grupa?",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Ola długo milczy. Przynajmniej tam ktoś nie patrzy na mnie jak na problem.",
+                    "feedback": {
+                        "label": "Empatia i pytanie otwarte",
+                        "psychology": "To ruch zgodny z dialogiem motywującym: obniżasz opór przez walidację i pytanie o znaczenie doświadczenia. Zamiast walczyć z narracją grupy, budujesz pomost do potrzeb rozmówczyni.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Pytanie otwarte",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Dialog motywujący",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Gdy pojawia się obrona",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Kuchnia wydaje się ciaśniejsza niż przed chwilą. Ola stoi przy drzwiach z torbą na ramieniu, jakby była gotowa wyjść w każdej sekundzie.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Wiedziałam, że zaraz wszystko sprowadzisz do tego, że jestem słaba albo głupia.",
+            "scene_high": {
+                "description": "Ola siada naprzeciwko i przestaje chować ulotkę. Nadal jest spięta, ale nie ucieka wzrokiem.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Nie lubię o tym mówić, bo wszyscy od razu oceniają. Tam przynajmniej ktoś mnie słucha.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Słucha? Oni po prostu wiedzą, jak wykorzystać naiwnych ludzi.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Ola cofa się o krok. Dokładnie dlatego nic ci nie mówię.",
+                    "feedback": {
+                        "label": "Atak na osąd rozmówcy",
+                        "psychology": "Gdy deprecjonujesz jej zdolność myślenia, uruchamiasz obronę tożsamości. Rozmowa przestaje dotyczyć wpływu grupy, a zaczyna dotyczyć tego, czy Ola ma prawo ufać własnemu doświadczeniu.",
+                        "better_alternative_hint": "Oddziel jej potrzebę bycia słuchaną od oceny samej grupy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Atak personalny",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Obrona tożsamości",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "To pokaż od razu ich zasady, listę wpłat i nazwiska wszystkich prowadzących.",
+                    "points": 0,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Ola marszczy brwi. Nie jestem na przesłuchaniu.",
+                    "feedback": {
+                        "label": "Przesłuchanie za wcześnie",
+                        "psychology": "Fakty są ważne, ale bez zbudowanego kontaktu pytania kontrolne brzmią jak śledztwo. W analizie transakcyjnej wchodzisz w surowego Rodzica, co zaprasza rozmówcę do buntu z pozycji Dziecka.",
+                        "better_alternative_hint": "Najpierw wydobądź motywację i znaczenie relacji z grupą, dopiero później przechodź do konkretów."
+                    },
+                    "tags": [
+                        {
+                            "text": "Przesłuchiwanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna Berne'a",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie muszę się z tym zgadzać, ale chcę wiedzieć, co tam znajdujesz, czego zabrakło ci tutaj.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Ola wzdycha. Spokój. Jakbym wreszcie nie musiała udawać, że wiem, co robię.",
+                    "feedback": {
+                        "label": "Kontakt z potrzebą",
+                        "psychology": "To dobry ruch, bo przenosisz rozmowę z pola ideologii na pole braków i potrzeb. Nadal jednak zostajesz nieco po stronie diagnozy, więc odpowiedź może być krótka i ostrożna.",
+                        "better_alternative_hint": "Odbij jej słowa i nazwij uczucie lub potrzebę, które słyszysz."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ujawnianie potrzeb",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom II do III",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Brzmi, jakbyś wreszcie poczuła się gdzieś zauważona. Co dokładnie sprawia, że tam jest ci lżej?",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Ola siada z powrotem. Mają zasady, ale też... mam wrażenie, że komuś zależy, czy w ogóle wstałam z łóżka.",
+                    "feedback": {
+                        "label": "Odbicie i pogłębienie",
+                        "psychology": "To klasyczna technika refleksyjnego słuchania. Zgodnie z dialogiem motywującym wzmacniasz eksplorację wewnętrznej motywacji, a nie wchodzisz w spór o rację.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Aktywne słuchanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Refleksja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Dialog motywujący",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Co ta wspólnota naprawdę daje",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Ola mówi szybciej i ostrzej. Na stole leży telefon z powiadomieniem od liderki grupy, które rozświetla ekran co kilka sekund.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Tam przynajmniej nikt mnie nie ocenia i nie próbuje naprawiać na siłę.",
+            "scene_high": {
+                "description": "W kuchni robi się ciszej. Ola obraca kubek w dłoniach i pierwszy raz brzmi bardziej szczerze niż bojowo.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Na spotkaniach mam poczucie, że wreszcie coś znaczę. Że nie jestem tylko czyimś problemem.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To klasyczny chwyt. Dają ci iluzję wyjątkowości, żeby tobą sterować.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Ola odwraca wzrok. Cokolwiek powiem, i tak zamienisz to w wykład.",
+                    "feedback": {
+                        "label": "Demaskowanie za wcześnie",
+                        "psychology": "Nawet trafna analiza może być nieskuteczna, jeśli przychodzi przed poczuciem bycia zrozumianą. W praktyce wzmacniasz narrację grupy, że tylko oni naprawdę słuchają.",
+                        "better_alternative_hint": "Najpierw uznaj, co dla niej jest w tym realnie cenne."
+                    },
+                    "tags": [
+                        {
+                            "text": "Przedwczesna konfrontacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Potrzeba przynależności",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Skoro ci tam dobrze, to nie będę się wtrącać.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Ola patrzy podejrzliwie. To brzmi tak, jakbyś już mnie skreśliła.",
+                    "feedback": {
+                        "label": "Wycofanie zamiast obecności",
+                        "psychology": "Bierność obniża otwarty konflikt, ale nie buduje bezpiecznej więzi. Przy osobie pod wpływem zamkniętej grupy brak zaangażowania może zostać odczytany jako porzucenie, co jeszcze silniej pcha ją do wspólnoty.",
+                        "better_alternative_hint": "Pozostań w kontakcie, ale bez przymusu i bez zgody na wszystko."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Bezpieczna więź",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Chcę zrozumieć konkrety. Jak wygląda zwykły tydzień z tą grupą i czego od ciebie oczekują?",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Ola kiwa głową. Spotkania, rozmowy codziennie, czasem pomaganie nowym. To daje porządek.",
+                    "feedback": {
+                        "label": "Wejście w fakty",
+                        "psychology": "To dobry etap przejścia do treści i struktury relacji z grupą. Jest rzeczowo, ale jeszcze bez pełnej eksploracji ambiwalencji, więc kontakt zostaje bardziej poznawczy niż emocjonalny.",
+                        "better_alternative_hint": "Po faktach wróć do pytania o koszt i cenę tej przynależności."
+                    },
+                    "tags": [
+                        {
+                            "text": "Dopytywanie o konkrety",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Słyszę, że daje ci to przynależność i sens. Nie chcę ci tego odbierać. Chcę tylko zobaczyć razem z tobą, czy cena za to nie jest za wysoka.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Ola nie protestuje od razu. Cena... nie wiem. Czasem mówią, że jeśli ktoś nas krytykuje, to znaczy, że boi się prawdy.",
+                    "feedback": {
+                        "label": "Walidacja plus wspólna perspektywa",
+                        "psychology": "To ruch z Poziomu III. Nie odbierasz jej sprawczości, tylko zapraszasz do wspólnego badania kosztów i zysków. Taki język osłabia logikę my kontra oni.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Budowanie wspólnej perspektywy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Gdy grupa ustawia bliskich jako wrogów",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Powiadomienia na telefonie Oli przyspieszają. Dziewczyna zerka na ekran, jakby czekała na zgodę z zewnątrz, jak ma tę rozmowę interpretować.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Mówili mi, że rodzina będzie próbowała mnie zatrzymać, bo boi się zmian. Chyba mieli rację.",
+            "scene_high": {
+                "description": "Ola nie patrzy już na telefon tak często. Mówi ciszej, jakby pierwszy raz słyszała swoje wątpliwości na głos.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Oni powtarzają, że bliscy zwykle nie rozumieją procesu przemiany. Czasem sama nie wiem, co z tym zrobić.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Bo cię odcinają od nas, dokładnie jak każda sekta.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Ola podnosi głos. Nie słyszysz mnie w ogóle, tylko własny strach.",
+                    "feedback": {
+                        "label": "Potwierdzenie czarno-białej ramy",
+                        "psychology": "Choć treść może być trafna, forma wzmacnia polaryzację. W efekcie przyjmujesz rolę przewidywanego prześladowcy, co potwierdza narrację grupy i zmniejsza gotowość do autorefleksji.",
+                        "better_alternative_hint": "Zadawaj pytania o zgodność między obietnicą wolności a realnym naciskiem na lojalność."
+                    },
+                    "tags": [
+                        {
+                            "text": "Polaryzacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "My kontra oni",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "No tak, pewnie my jesteśmy źli, a twój guru święty.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Ola przewraca oczami. Teraz już naprawdę brzmisz jak ktoś, kogo mam unikać.",
+                    "feedback": {
+                        "label": "Ironia zamiast ciekawości",
+                        "psychology": "Sarkazm obniża poczucie bezpieczeństwa i wstydzi rozmówcę. Osoba pod silnym wpływem grupy zwykle odpowiada wtedy większym przywiązaniem do jedynego środowiska, które obiecuje akceptację.",
+                        "better_alternative_hint": "Zamiast kpić z lidera, badaj skutki zaleceń grupy dla relacji i autonomii."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Zawstydzanie",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie podoba mi się, gdy ktoś ustawia rodzinę jako wroga. To dla mnie sygnał alarmowy.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": 1,
+                        "openness": 0,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Ola marszczy czoło. Też mnie to czasem męczy, ale oni mówią, że to test lojalności.",
+                    "feedback": {
+                        "label": "Granica nazwana wprost",
+                        "psychology": "To uczciwe i potrzebne nazwanie czerwonej flagi. Nadal jednak jest to bardziej komunikat o twojej ocenie niż zaproszenie Oli do samodzielnego zauważenia sprzeczności.",
+                        "better_alternative_hint": "Pomóż jej samej wypowiedzieć rozbieżność między wolnością a testowaniem lojalności."
+                    },
+                    "tags": [
+                        {
+                            "text": "Nazywanie czerwonych flag",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywna granica",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Rozumiem, że oni dają ci kierunek. Jednocześnie słyszę, że bliscy mają być dowodem twojej słabości. Jak to się ma do ich obietnicy wolności?",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Ola milknie. Właśnie tego nie umiem sobie poukładać. Miało chodzić o wolność, a czasem czuję tylko presję.",
+                    "feedback": {
+                        "label": "Wydobycie rozbieżności",
+                        "psychology": "To sedno dialogu motywującego: nie mówisz rozmówcy, co ma myśleć, tylko pomagasz jej usłyszeć własną ambiwalencję. Zmiana staje się wtedy bardziej autonomiczna i trwalsza.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Wydobywanie rozbieżności",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Ambiwalencja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Dialog motywujący",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Mały test rzeczywistości",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Atmosfera w salonie jest poszarpana. Ola stoi przy drzwiach wejściowych w kurtce, ale nadal nie wyszła. To ostatni moment, by nie zamknąć rozmowy całkowicie.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Nie muszę niczego testować. To ty jesteś zamknięta.",
+            "scene_high": {
+                "description": "Ola nie wychodzi od razu, tylko siada na skraju kanapy w salonie. Napięcie nie zniknęło, ale pojawiła się szczelina na refleksję.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Może mam czasem dysonans, ale nie chcę, żebyś zrobiła z tego awanturę albo śledztwo.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Albo przestajesz tam chodzić, albo odcinam ci pieniądze i koniec rozmowy.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Ola prostuje się natychmiast. Czyli chodzi ci tylko o kontrolę. Dzięki za potwierdzenie.",
+                    "feedback": {
+                        "label": "Ultimatum i kontrola",
+                        "psychology": "Ultimatum może chwilowo zwiększyć posłuszeństwo, ale zwykle niszczy zaufanie i wzmacnia tajenie. Dla osoby już podatnej na wpływ dominujących autorytetów to kolejny dowód, że relacje opierają się na przymusie.",
+                        "better_alternative_hint": "Zaproponuj mały, autonomiczny eksperyment zamiast żądać natychmiastowej deklaracji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ultimatum",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kontrola",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobrze, nie będę już o to pytać. Udawajmy, że tematu nie ma.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Ola spuszcza wzrok. To wcale nie brzmi jak ulga. Bardziej jak rezygnacja.",
+                    "feedback": {
+                        "label": "Fałszywy spokój",
+                        "psychology": "Wycofanie redukuje napięcie powierzchniowe, ale odcina jedyną linię kontaktu. W sytuacji wpływu grupowego bierne przyzwolenie może działać jak ciche opuszczenie pola.",
+                        "better_alternative_hint": "Zostań obecna, ale bez nacisku na natychmiastowe przyznanie ci racji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Podtrzymywanie kontaktu",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Zróbmy listę plusów i minusów tej grupy. Przynajmniej zobaczymy fakty na papierze.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Ola wzrusza ramionami. Może. To lepsze niż krzyk, ale nadal brzmi trochę jak analiza pod tezę.",
+                    "feedback": {
+                        "label": "Porządkowanie faktów",
+                        "psychology": "To pomocne, bo wprowadza strukturę i odsuwa rozmowę od chaosu. Jednak bez nazwania emocji i presji społecznej taka lista może pozostać intelektualna i nie dotknąć sedna uwikłania.",
+                        "better_alternative_hint": "Połącz fakty z pytaniem o to, po czym w ciele lub w relacji czuje presję albo ulgę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Analiza zysków i kosztów",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Porządkowanie rozmowy",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie musisz dziś niczego rozstrzygać. Czy zgodzisz się na mały eksperyment: przez tydzień zapiszesz, co daje ci siłę, a po czym czujesz presję albo winę? Bez oceniania.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Ola myśli chwilę. To mogę zrobić. Jeśli to będzie tylko dla mnie, a nie dowód przeciwko mnie.",
+                    "feedback": {
+                        "label": "Autonomiczny eksperyment",
+                        "psychology": "Zamiast walczyć o deklarację, proponujesz obserwację własnego doświadczenia. To wzmacnia sprawczość, obniża opór i pomaga wydobyć sygnały przemocy psychologicznej bez frontalnej konfrontacji.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Wzmacnianie autonomii",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Eksperyment behawioralny",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_6",
+            "title": "Linia ratunkowa",
+            "score_threshold": 5,
+            "scene_low": {
+                "description": "Salon jest już prawie ciemny. Ola trzyma dłoń na pasku torby i wygląda, jakby jednym ruchem mogła przeciąć tę więź na długi czas.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Nie obiecuję, że będę z tobą o tym rozmawiać. I nie chcę, żebyś komukolwiek o tym mówiła.",
+            "scene_high": {
+                "description": "W salonie jest cicho. Ola nadal jest napięta, ale nie stoi już przy drzwiach. W spojrzeniu pojawia się zmęczenie zamiast samej obrony.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Nie wiem, co z tym zrobię, ale dobrze, że nie próbowałaś mnie zniszczyć tą rozmową.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Powiem wszystkim. Może jak się zawstydzisz, to wreszcie oprzytomniejesz.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Ola blednie. To koniec. Nie masz prawa robić ze mnie publicznego problemu.",
+                    "feedback": {
+                        "label": "Zawstydzanie i groźba ujawnienia",
+                        "psychology": "Wstyd bardzo rzadko prowadzi do autorefleksji w sytuacji silnego wpływu grupowego. Częściej odcina kontakt i wzmacnia zależność od środowiska, które obiecuje bezwarunkowe przyjęcie.",
+                        "better_alternative_hint": "Zamiast grozić ujawnieniem, zostaw spokojną i konkretną drogę powrotu do rozmowy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Zawstydzanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Groźba ujawnienia",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Spokojnie, poczekam aż sama zobaczysz, jak cię wykorzystają.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Ola kręci głową. Czyli dalej myślisz, że wiesz lepiej i tylko czekasz, aż upadnę.",
+                    "feedback": {
+                        "label": "Wyższość ukryta pod spokojem",
+                        "psychology": "To nie jest prawdziwa cierpliwość, tylko zakamuflowane proroctwo porażki. Rozmówczyni słyszy brak szacunku i gotowość do towarzyszenia jej tylko wtedy, gdy się pomyli.",
+                        "better_alternative_hint": "Pokaż, że może wrócić bez wstydu, nawet jeśli teraz jeszcze nie widzi problemu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wyższość moralna",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Bierna agresja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie mogę udawać, że nic się nie dzieje. Będę stawiać granice przy pieniądzach i kłamstwach, ale drzwi do rozmowy są otwarte.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Ola kiwa głową powoli. Tego przynajmniej nie muszę zgadywać.",
+                    "feedback": {
+                        "label": "Granice bez odcięcia",
+                        "psychology": "To zdrowa równowaga między ochroną siebie a utrzymaniem kontaktu. Brakuje jeszcze wyraźnego zdjęcia wstydu i zaproszenia do powrotu, więc efekt jest dobry, ale nie maksymalny.",
+                        "better_alternative_hint": "Dodaj komunikat, że może wrócić do ciebie bez upokorzenia, nawet jeśli zmieni zdanie później."
+                    },
+                    "tags": [
+                        {
+                            "text": "Granice",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie musimy mieć dziś zgody. Chcę tylko, żebyś wiedziała, że możesz do mnie wrócić bez wstydu, nawet jeśli kiedyś będziesz chciała wyjść z tego krok po kroku.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Ola ma wilgotne oczy. Dobrze. Tego właśnie się bałam najbardziej, że jak zwątpię, to nie będę miała dokąd wrócić.",
+                    "feedback": {
+                        "label": "Bezpieczna droga powrotu",
+                        "psychology": "To najbardziej ochronny komunikat w tego typu rozmowach. Zdejmujesz warunek natychmiastowej zgody, obniżasz wstyd i utrzymujesz więź jako realną alternatywę wobec zamkniętej wspólnoty.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Redukcja wstydu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Bezpieczna baza",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Budowanie więzi",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "ZERWANA LINIA",
+            "emoji": "🔴",
+            "subtitle": "Rozmowa zamknęła drzwi zamiast zostawić wyjście awaryjne.",
+            "narrative": "Ola wychodzi, trzaskając drzwiami. Przez kolejne dni odpowiada zdawkowo albo wcale. Grupa zyskuje mocniejszy argument: rodzina nie chce zrozumieć, tylko kontrolować i zawstydzać.",
+            "diagnosis": "Dominowały atak, etykietowanie, sarkazm albo wycofanie. Z perspektywy psychologii wpływu potwierdziła się narracja wspólnoty o świecie wrogim i oceniającym. Zabrakło walidacji, pytań otwartych i pozostawienia bezpiecznej drogi powrotu.",
+            "post_game": {
+                "communication_style_summary": "Ścieżka była głównie agresywna lub biernie agresywna, z epizodami kontroli albo rezygnacji.",
+                "strongest_moment": "Najmocniejszym elementem była sama gotowość do podjęcia trudnego tematu, mimo lęku.",
+                "growth_tip": "W takiej rozmowie celem nie jest wygranie sporu o rację. Najpierw trzeba obniżyć opór przez ciekawość, walidację i pytania o potrzeby, które grupa zaspokaja.",
+                "replay_prompt": "Spróbuj przejść scenariusz tak, jakby twoim jedynym celem było nie stracić kontaktu przez pierwsze dziesięć minut."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "KRUCHY MOST",
+            "emoji": "🟡",
+            "subtitle": "Kontakt przetrwał, ale zaufanie nadal jest chwiejne.",
+            "narrative": "Ola nie zrywa rozmowy całkiem, lecz zostaje w silnej defensywie. Niektóre twoje słowa trafiają, ale nadal spodziewa się ataku. Drzwi nie są zamknięte, tylko uchylone na szerokość dłoni.",
+            "diagnosis": "Pojawiły się lepsze momenty: trochę asertywności, trochę pytań o konkrety, czasem uznanie dla jej przeżyć. Nadal jednak zabrakło konsekwentnego wydobywania ambiwalencji i wyraźnego zdjęcia wstydu z ewentualnego powrotu.",
+            "post_game": {
+                "communication_style_summary": "Przeważała mieszanka stylu rzeczowego i asertywnego, miejscami zbyt chłodna jak na poziom zagrożenia relacyjnego.",
+                "strongest_moment": "Najlepiej działały chwile, w których przestawałaś walczyć z poglądami, a zaczynałaś pytać o doświadczenie Oli.",
+                "growth_tip": "Przenieś rozmowę z pola faktów na pole ambiwalencji: co daje ta grupa, a jaka jest cena. To zwykle otwiera więcej niż sama analiza ryzyka.",
+                "replay_prompt": "W kolejnym podejściu szukaj momentów, w których możesz odbić jej słowa i pomóc jej samej usłyszeć sprzeczności."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 9
+            },
+            "color": "green",
+            "title": "OTWARTE DRZWI",
+            "emoji": "🟢",
+            "subtitle": "Relacja stała się miejscem, do którego można wrócić bez natychmiastowej wojny.",
+            "narrative": "Ola nie porzuca grupy od razu, ale po raz pierwszy mówi na głos o presji, lojalności i dysonansie. Nie widzi już w tobie wyłącznie przeciwnika. Między wami powstaje nić, która może z czasem osłabić wpływ wspólnoty.",
+            "diagnosis": "Udało się utrzymać rozmowę na poziomie potrzeb, ambiwalencji i autonomii. To nie jest spektakularne zwycięstwo, ale właśnie tak wygląda realna pomoc: mniej walki o deklaracje, więcej bezpiecznej obecności i pytań, które zostają w głowie.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl empatyczny i transformacyjny, wspierany asertywnym stawianiem granic bez odcięcia.",
+                "strongest_moment": "Najmocniej zadziałało wydobywanie rozbieżności między obietnicą wolności a realną presją lojalności.",
+                "growth_tip": "To dobry kierunek. W realnej rozmowie utrzymuj kontakt w małych porcjach i nie oczekuj natychmiastowych deklaracji. Zmiana dojrzewa w ambiwalencji.",
+                "replay_prompt": "Spróbuj teraz zagrać jeszcze subtelniej i zostawić Oli nie tylko zrozumienie, ale też konkretny bezpieczny plan powrotu."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 10,
+                "max": 12
+            },
+            "color": "blue",
+            "title": "BEZPIECZNA BAZA",
+            "emoji": "🔵",
+            "subtitle": "Nie wygrałaś sporu. Zrobiłaś coś trudniejszego: stworzyłaś warunki do wyjścia.",
+            "narrative": "Ola zostaje dłużej, niż planowała. Przyznaje, że pewne zasady grupy budzą w niej lęk i winę. Nie deklaruje nagłej zmiany, ale zgadza się obserwować presję, wracać do rozmowy i nie odcinać cię całkiem. To właśnie może okazać się punktem zwrotnym.",
+            "diagnosis": "Ścieżka była wzorcowa: dużo refleksyjnego słuchania, mało ego w rozmowie, zero potrzeby natychmiastowego triumfu. Z psychologicznego punktu widzenia zbudowałaś bezpieczną bazę, która osłabia monopol grupy na sens, akceptację i schronienie.",
+            "post_game": {
+                "communication_style_summary": "Styl był konsekwentnie empatyczny i transformacyjny, z bardzo dobrą regulacją napięcia oraz poszanowaniem autonomii.",
+                "strongest_moment": "Kluczowy był moment, w którym zostawiłaś Oli drogę powrotu bez wstydu i bez warunku natychmiastowej zgody.",
+                "growth_tip": "To poziom mistrzowski. W życiu utrzymuj ten sam kurs: ciekawość, granice, brak pośpiechu i regularne przypominanie, że więź nie znika wraz z błędem.",
+                "replay_prompt": "Możesz wrócić do scenariusza i sprawdzić, jak niewielkie odstępstwa od tej ścieżki szybko zamieniają kontakt w walkę."
+            }
+        }
+    ]
+}

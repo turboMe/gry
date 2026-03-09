@@ -1,0 +1,999 @@
+{
+    "scenario_id": "teen_drug_experiment_confession",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Pierwsze wyznanie",
+        "subtitle": "Nastolatek przyznaje się do eksperymentowania z narkotykami, a pierwsza reakcja rodzica zdecyduje o dalszym zaufaniu.",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 10,
+        "interaction_count": 6
+    },
+    "tags": {
+        "relationship_type": "parent_child",
+        "theme": [
+            "trust",
+            "parenting",
+            "health"
+        ],
+        "emotional_intensity": "critical",
+        "age_rating": "teen",
+        "session_type": "training",
+        "player_role_gender": "neutral",
+        "difficulty": "advanced"
+    },
+    "characters": {
+        "player": {
+            "name": "Rodzic",
+            "role_label": "Rodzic · Gracz",
+            "age_range": "38-45",
+            "context": "Dowiadujesz się o czymś, czego najbardziej się bałeś. Czujesz jednocześnie strach, złość i wdzięczność, że dziecko jednak przyszło do ciebie samo.",
+            "hidden_need": "safety",
+            "hidden_need_text": "Potrzebujesz poczucia, że twoje dziecko jest bezpieczne i że masz realny wpływ na ochronę go przed poważnym ryzykiem.",
+            "traits": [
+                {
+                    "text": "Odpowiedzialny",
+                    "type": "positive"
+                },
+                {
+                    "text": "Czujny",
+                    "type": "neutral"
+                },
+                {
+                    "text": "Skłonny do kontroli pod wpływem lęku",
+                    "type": "negative"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 6,
+                "patience": 5,
+                "defensiveness": 4,
+                "empathy": 7,
+                "need_for_control": 8,
+                "shame_sensitivity": 5,
+                "directness": 7,
+                "repair_ability": 6
+            }
+        },
+        "npc": {
+            "name": "Kuba",
+            "role_label": "Nastoletni syn",
+            "age_range": "15-17",
+            "context": "Przyszedłeś powiedzieć prawdę, bo jesteś rozdarty między lękiem przed reakcją rodzica a potrzebą, żeby ktoś dorosły wiedział, co się dzieje.",
+            "hidden_need": "autonomy",
+            "hidden_need_text": "Potrzebujesz zachować godność i sprawczość, nawet gdy przyznajesz się do czegoś ryzykownego i wstydliwego.",
+            "traits": [
+                {
+                    "text": "Wrażliwy na ocenę",
+                    "type": "negative"
+                },
+                {
+                    "text": "Lojalny wobec grupy rówieśniczej",
+                    "type": "neutral"
+                },
+                {
+                    "text": "Zdolny do szczerości, gdy czuje się bezpiecznie",
+                    "type": "positive"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 7,
+                "patience": 4,
+                "defensiveness": 8,
+                "empathy": 5,
+                "need_for_control": 6,
+                "shame_sensitivity": 8,
+                "directness": 5,
+                "repair_ability": 5
+            },
+            "npc_reaction_logic": "Kuba zamyka się przy oskarżeniach, moralizowaniu i zawstydzaniu. Na chłodny przesłuchujący ton odpowiada półprawdami. Najwięcej otwartości pokazuje wtedy, gdy rodzic łączy spokój, konkret i walidację bez rezygnacji z granic."
+        }
+    },
+    "metrics_start": {
+        "tension": 45,
+        "trust": 58,
+        "openness": 52,
+        "feeling_heard": 50
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Pierwsza sekunda po wyznaniu",
+            "scene": {
+                "description": "Wieczór w kuchni. Kuba stoi przy blacie, nie patrzy ci w oczy, ściska rękawy bluzy i mówi szybciej niż zwykle. W powietrzu czuć napięcie pierwszego wyznania, którego nie da się cofnąć.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": "Muszę ci coś powiedzieć. Próbowałem narkotyków.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Co ty zrobiłeś? Czy ty chcesz sobie zniszczyć życie?",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kuba odruchowo cofa się o krok. Twarz mu twardnieje. Wiedziałem, że tak zareagujesz.",
+                    "feedback": {
+                        "label": "Katastrofizacja i atak",
+                        "psychology": "To reakcja z Poziomu II — walka i ocena. Z perspektywy NVC na pierwszy plan wychodzi osąd, nie kontakt. Nastolatek słyszy nie troskę, tylko etykietę zagrożenia.",
+                        "better_alternative_hint": "Najpierw nazwij własny stan i doceń szczerość, zanim przejdziesz do pytań o fakty."
+                    },
+                    "tags": [
+                        {
+                            "text": "Katastrofizacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nie mogę tego teraz słuchać. Idź do pokoju, bo inaczej powiem za dużo.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kuba spuszcza głowę i odwraca wzrok. Jasne. Czyli lepiej było nic nie mówić.",
+                    "feedback": {
+                        "label": "Wycofanie pod wpływem szoku",
+                        "psychology": "Unik nie daje nastolatkowi regulacji ani bezpieczeństwa. W analizie transakcyjnej pojawia się wycofany stan Ja-Rodzic, który zostawia dziecko same z napięciem i wstydem.",
+                        "better_alternative_hint": "Nie musisz być spokojny, ale powiedz wprost, że chcesz zrozumieć i nie ucinasz rozmowy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie kontaktu",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Powiedz konkretnie co, kiedy i ile. Muszę znać fakty.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": 0,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Kuba bierze oddech. Okej... na imprezie. Nie dużo. Ale brzmisz jak policja.",
+                    "feedback": {
+                        "label": "Fakty bez walidacji",
+                        "psychology": "To ruch na Poziomie I — porządkuje dane i może zatrzymać chaos, ale pomija warstwę relacyjną z kwadratu von Thuna. Dziecko może współpracować, lecz nie poczuje się naprawdę bezpieczne.",
+                        "better_alternative_hint": "Połącz pytania o fakty z jednym zdaniem uznającym trudność tej chwili."
+                    },
+                    "tags": [
+                        {
+                            "text": "Zbieranie faktów",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Dziękuję, że mi to mówisz. Jestem przestraszony, ale chcę najpierw zrozumieć, co dokładnie się wydarzyło.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kuba przełyka ślinę i pierwszy raz podnosi wzrok. Na imprezie. Wziąłem raz. Nie chciałem już tego ukrywać.",
+                    "feedback": {
+                        "label": "Regulacja i kontakt",
+                        "psychology": "To komunikat Ja z elementem walidacji. W NVC najpierw ujawniasz własną emocję, ale nie robisz z niej broni. Dzięki temu nastolatek słyszy jednocześnie troskę i gotowość do rozmowy.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Nie rób ze mnie ćpuna",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Kuba stoi teraz bardziej bokiem niż przodem. Ramiona ma spięte, a w głosie słychać gotowość do obrony. Po pierwszej reakcji wyraźnie żałuje, że zaczął tę rozmowę.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "To nie jest tak, jak myślisz. Nie jestem żadnym ćpunem.",
+            "scene_high": {
+                "description": "Kuba nadal jest spięty, ale nie ucieka wzrokiem. Widać, że twoja reakcja nieco obniżyła temperaturę. To wciąż trudna rozmowa, ale kanał kontaktu jest otwarty.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "To nie było tak, że robię to cały czas. Nie chcę, żebyś od razu zrobił ze mnie kogoś straconego.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Po czymś takim to ja już nie wiem, kim ty w ogóle jesteś.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kuba zaciska szczękę. Super. Jedno wyznanie i już jestem dla ciebie kimś obcym.",
+                    "feedback": {
+                        "label": "Atak na tożsamość",
+                        "psychology": "Zamiast ocenić zachowanie, uderzasz w osobę. To wzmacnia wstyd, a wstyd u nastolatka najczęściej produkuje kłamstwo albo zamknięcie, nie odpowiedzialność.",
+                        "better_alternative_hint": "Oddziel czyn od tożsamości. Rozmawiaj o ryzyku i decyzji, nie o tym, kim dziecko jest."
+                    },
+                    "tags": [
+                        {
+                            "text": "Etykietowanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Wstyd obronny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "No tak, pewnie wszyscy biorą i tylko ja jestem staroświecki.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kuba przewraca oczami. Nieważne. Z tobą nie da się mówić normalnie.",
+                    "feedback": {
+                        "label": "Sarkazm zamiast ciekawości",
+                        "psychology": "Bierna agresja daje chwilowe ujście emocji rodzica, ale dla rozmówcy brzmi jak pogarda. W modelu Gottmana pogarda jest jednym z najsilniejszych predyktorów zerwania kontaktu.",
+                        "better_alternative_hint": "Zamiast ironii nazwij, czego się boisz, i poproś o konkrety."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "To i tak bardzo poważne. Chcę wiedzieć, czy to był jeden raz czy coś więcej.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Kuba wzdycha. Nie chcę cię okłamywać. To nie był codziennie, ale nie tylko raz.",
+                    "feedback": {
+                        "label": "Granica bez mostu",
+                        "psychology": "Jasno nazywasz wagę sprawy, co jest potrzebne. Brakuje jednak odzwierciedlenia jego lęku przed zaszufladkowaniem, więc kontakt jest funkcjonalny, ale nadal kruchy.",
+                        "better_alternative_hint": "Najpierw pokaż, że usłyszałeś jego obawę, a dopiero potem zadawaj pytania."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Oddzielenie faktów od oceny",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Słyszę, że boisz się, że od razu cię zaszufladkuję. Nie chcę tego robić. Chcę zrozumieć: co wziąłeś, z kim i jak się po tym czułeś?",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kuba lekko opuszcza ramiona. To było na dwóch imprezach. Raz tabletka, raz coś do palenia. Po wszystkim czułem się dziwnie i trochę spanikowałem.",
+                    "feedback": {
+                        "label": "Walidacja bez pobłażania",
+                        "psychology": "Najpierw odzwierciedlasz stan wewnętrzny rozmówcy, potem pytasz o konkrety. To klasyczne przejście z obrony do współpracy: kontakt emocjonalny otwiera dostęp do informacji.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Aktywne słuchanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Najpierw bezpieczeństwo",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Atmosfera gęstnieje. Kuba mówi szybciej, jakby chciał tę rozmowę zamknąć, zanim dotkniecie czegokolwiek ważniejszego. W jego postawie widać napięcie i gotowość do minimalizowania.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Ale teraz nic mi nie jest. Nie rób z tego dramy.",
+            "scene_high": {
+                "description": "Choć napięcie nie znika, Kuba zaczyna podawać więcej szczegółów bez ciągłego odwracania wzroku. To moment, w którym możesz przejść od emocji do ochrony bezpieczeństwa.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Nie chcę cię straszyć, ale wtedy trochę mieszałem to z alkoholem. Teraz jest okej.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Dawaj telefon. Sprawdzę wszystko i od dziś masz całkowity zakaz wychodzenia.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kuba natychmiast się usztywnia. Czyli jednak chodzi ci tylko o kontrolę.",
+                    "feedback": {
+                        "label": "Kontrola przed oceną ryzyka",
+                        "psychology": "Potrzeba kontroli rodzica jest zrozumiała, ale wyprzedza tu realne pytanie o bezpieczeństwo. Dla nastolatka to sygnał, że szczerość kończy się inwazją, więc następnym razem ukryje więcej.",
+                        "better_alternative_hint": "Zanim ustalisz konsekwencje, sprawdź stan zdrowia i poziom aktualnego ryzyka."
+                    },
+                    "tags": [
+                        {
+                            "text": "Nadmierna kontrola",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Bezpieczeństwo ponad karą",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Skoro już nic ci nie jest, to może po prostu zakończmy ten temat na dziś.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -1,
+                        "openness": -2,
+                        "feeling_heard": -1
+                    },
+                    "npc_reaction": "Kuba marszczy brwi. Sam nie wiem, czy to dobrze, czy źle, że ci powiedziałem.",
+                    "feedback": {
+                        "label": "Przedwczesne zamknięcie rozmowy",
+                        "psychology": "Ucieczka w pozorny spokój pomija dwa poziomy: ocenę stanu tu i teraz oraz dalszy plan. To może chwilowo obniżyć napięcie, ale wzmacnia chaos i niepewność.",
+                        "better_alternative_hint": "Najpierw upewnij się, czy nie ma ryzyka medycznego, a potem nazwij kolejny krok rozmowy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie trudnego tematu",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Regulacja rozmowy",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Dobrze. Dziś nigdzie nie wychodzisz, a jutro wrócimy do zasad i konsekwencji.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 0,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Kuba wzrusza ramionami. Okej. To i tak pewnie nie będzie przyjemna rozmowa.",
+                    "feedback": {
+                        "label": "Porządek bez eksploracji",
+                        "psychology": "To ruch organizujący i częściowo ochronny, ale nie sprawdza jeszcze, czy dziecko jest faktycznie bezpieczne. Brakuje pytania o objawy, substancje i mieszanie z alkoholem.",
+                        "better_alternative_hint": "Ustal doraźną granicę, ale dołóż kilka pytań o stan fizyczny i bieżące ryzyko."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ustalanie granic",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Najpierw sprawdźmy, czy jesteś teraz bezpieczny. Brałeś coś jeszcze, mieszałeś z alkoholem, masz jakieś objawy albo potrzebujesz pomocy lekarskiej?",
+                    "points": 2,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Kuba kręci głową, ale odpowiada konkretniej. Nic teraz nie biorę. Wtedy było z alkoholem, teraz nie mam objawów. Po prostu się boję, co będzie dalej.",
+                    "feedback": {
+                        "label": "Priorytet bezpieczeństwa",
+                        "psychology": "To dojrzała asertywność: najpierw ochrona, potem konsekwencje. Z punktu widzenia teorii przywiązania wysyłasz sygnał, że w kryzysie jesteś bazą bezpieczeństwa, nie tylko źródłem kary.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Ocena ryzyka",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Bezpieczeństwo",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Co ci to dawało",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Rozmowa utknęła między złością a obroną. Kuba stoi już przy drzwiach kuchni, jakby był gotów uciec do pokoju przy pierwszym mocniejszym słowie.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Wszyscy próbują różnych rzeczy. Tylko ty robisz z tego koniec świata.",
+            "scene_high": {
+                "description": "Po sprawdzeniu bezpieczeństwa rozmowa schodzi poziom głębiej. Kuba nie brzmi już wyłącznie buntowniczo. W jego głosie miesza się wstyd i ulga, że nie musiał wszystkiego dźwigać sam.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Nie chodziło tylko o ciekawość. Chciałem nie odstawać i na chwilę wyłączyć głowę.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Czyli jednak jesteś słaby i robisz wszystko, żeby przypodobać się innym.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kuba czerwienieje ze złości. Dobra, kończę tę rozmowę.",
+                    "feedback": {
+                        "label": "Zawstydzenie zamiast zrozumienia",
+                        "psychology": "Atakujesz motywację jako wadę charakteru. To uruchamia obronę tożsamości i zamyka dostęp do realnych przyczyn zachowania, takich jak presja grupy, lęk czy przeciążenie.",
+                        "better_alternative_hint": "Pytaj o funkcję zachowania. Coś zwykle daje ulgę albo przynależność, zanim zacznie szkodzić."
+                    },
+                    "tags": [
+                        {
+                            "text": "Zawstydzanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Atak na charakter",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Świetnie. To może od razu zapytam, kto jeszcze z twoich genialnych znajomych bierze.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kuba cofa się emocjonalnie. Nic ci nie powiem o innych. I o sobie też już niewiele.",
+                    "feedback": {
+                        "label": "Triangulacja i ironia",
+                        "psychology": "Wciągasz do rozmowy trzecią stronę i używasz sarkazmu. To odwraca uwagę od sedna i wzmacnia lojalność nastolatka wobec grupy przeciwko tobie.",
+                        "better_alternative_hint": "Zostań przy jego doświadczeniu. Pytaj, co działo się w nim, nie kto jest winny obok."
+                    },
+                    "tags": [
+                        {
+                            "text": "Triangulacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie zgadzam się na to. Od dziś po szkole wracasz prosto do domu i ograniczamy imprezy.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": 0,
+                        "openness": 0,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Kuba przewraca oczami, ale nie protestuje od razu. Jasne. Tylko to nie odpowiada na wszystko.",
+                    "feedback": {
+                        "label": "Granica bez rozpoznania potrzeby",
+                        "psychology": "Konsekwencja bywa konieczna, ale sama nie rozwiązuje funkcji, jaką pełniło używanie substancji. Bez zrozumienia motywu wrócicie do tego samego problemu inną drogą.",
+                        "better_alternative_hint": "Połącz granicę z pytaniem o to, co dziecko chciało uzyskać lub zagłuszyć."
+                    },
+                    "tags": [
+                        {
+                            "text": "Stawianie granic",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie zgadzam się na narkotyki, ale chcę zrozumieć, co ci to dawało: ulgę, ciekawość, przynależność, odcięcie od stresu? Bez tego nie trafimy w sedno.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kuba milknie na chwilę. Chyba najbardziej chodziło o to, żeby nie odstawać i nie myśleć. Ostatnio mam ciągle napięcie.",
+                    "feedback": {
+                        "label": "Docieranie do funkcji zachowania",
+                        "psychology": "To wejście na Poziom III — nie zatrzymujesz się na samym incydencie, tylko szukasz mechanizmu. W terapii motywującej właśnie to zwiększa szansę na realną zmianę, bo dziecko zaczyna rozumieć własny wzorzec.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Eksploracja potrzeb",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Motywacja zachowania",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Konsekwencje bez więzienia",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Rozmowa jest już wyraźnie zużyta. Kuba siedzi na krześle bokiem, patrzy w podłogę i odpowiada półsłówkami. Wisi nad wami pytanie, czy będą tylko kary, czy jeszcze jakaś relacja.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "cold"
+            },
+            "npc_line_low": "I tak mi już nie ufasz, więc po co mamy dalej gadać.",
+            "scene_high": {
+                "description": "Noc zapadła, ale rozmowa nie jest już pojedynkiem. Kuba wygląda na zmęczonego i zawstydzonego, jednak bardziej obecnego niż na początku. To moment na plan, który łączy odpowiedzialność ze wsparciem.",
+                "location": "kitchen",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Rozumiem, że będą konsekwencje. Tylko nie chcę być traktowany jak więzień.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Skoro zawiodłeś, to od dziś pełna kontrola: telefon, lokalizacja, zero wyjść, zero prywatności.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kuba odsuwa krzesło. To nie jest pomoc. To więzienie.",
+                    "feedback": {
+                        "label": "Totalna kontrola jako odpowiedź na lęk",
+                        "psychology": "Skrajna kontrola bywa kusząca, bo daje rodzicowi iluzję bezpieczeństwa. U nastolatka zwykle produkuje jednak walkę o autonomię i bardziej wyrafinowane ukrywanie.",
+                        "better_alternative_hint": "Szukaj konsekwencji, które zwiększają bezpieczeństwo i odpowiedzialność, ale nie niszczą całkowicie podmiotowości."
+                    },
+                    "tags": [
+                        {
+                            "text": "Nadmierna kontrola",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Autonomia",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Rób, co chcesz. Najwyżej sam sobie zmarnujesz przyszłość.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kuba patrzy na ciebie z niedowierzaniem. Czyli albo kontrola, albo odpuszczenie. Super wybór.",
+                    "feedback": {
+                        "label": "Fatalizm i emocjonalne porzucenie",
+                        "psychology": "To komunikat bezradności ubrany w złość. Dziecko słyszy: jesteś problemem, z którym nie chcę już być. Taki przekaz osłabia więź i nie buduje odpowiedzialności.",
+                        "better_alternative_hint": "Nie odpuszczaj granic, ale też nie wycofuj relacji. Potrzebne są oba elementy naraz."
+                    },
+                    "tags": [
+                        {
+                            "text": "Emocjonalne porzucenie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Przez miesiąc nie ma imprez. To moja decyzja i na razie tyle.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 0,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Kuba zaciska usta, ale kiwa głową. Dobra. Przynajmniej wiem, na czym stoję.",
+                    "feedback": {
+                        "label": "Jasna konsekwencja, mało współpracy",
+                        "psychology": "To przewidywalne i mniej chaotyczne niż impulsywne kary. Nadal jednak brakuje elementu wspólnego planu, więc dziecko może podporządkować się zewnętrznie bez wewnętrznej zmiany.",
+                        "better_alternative_hint": "Do konsekwencji dołóż pytanie o wsparcie i o to, co realnie pomoże mu nie wrócić do tego zachowania."
+                    },
+                    "tags": [
+                        {
+                            "text": "Konsekwencje",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Zaufanie jest naruszone, więc konsekwencje będą. Chcę jednak ustalić je tak, żeby zwiększały bezpieczeństwo, a nie tylko karały. Co realnie pomoże ci nie wrócić do tego?",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kuba długo milczy, potem mówi ciszej. Chyba mniej imprez, więcej sprawdzania ze mną, jak się trzymam... i może rozmowa z kimś z zewnątrz.",
+                    "feedback": {
+                        "label": "Wspólne projektowanie odpowiedzialności",
+                        "psychology": "Nie rezygnujesz z granic, ale włączasz nastolatka w budowanie planu. To zwiększa sprawczość i zmniejsza opór, bo konsekwencja przestaje być czystą karą, a staje się strukturą wsparcia.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Wspólne rozwiązywanie problemu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Transformacja relacyjna",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Sprawczość",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_6",
+            "title": "Co dalej po tej nocy",
+            "score_threshold": 5,
+            "scene_low": {
+                "description": "Następnego ranka kuchnia jest cicha i chłodna. Między kubkami z herbatą unosi się niedopowiedziana noc. Kuba zbiera plecak bez patrzenia na ciebie, jakby liczył, że temat sam umrze.",
+                "location": "kitchen",
+                "time_of_day": "morning",
+                "visual_mood": "cold"
+            },
+            "npc_line_low": "Mam iść już do szkoły? Czy będzie jeszcze jakiś kolejny sąd nade mną?",
+            "scene_high": {
+                "description": "Rano oboje wyglądacie na zmęczonych, ale nie odwracacie się od siebie. Na stole leży kartka z kilkoma punktami z wczorajszej rozmowy. To chwila, w której można zamienić trudną noc w początek nowego sposobu kontaktu.",
+                "location": "kitchen",
+                "time_of_day": "morning",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Nie chcę, żeby to wróciło. Tylko boję się, że teraz już zawsze będziesz patrzył na mnie jak na problem.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Dziś dzwonię do szkoły i do rodziców twoich znajomych. Może publiczny wstyd czegoś cię nauczy.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kuba blednie i zaciska pięści. To już nigdy nic ci nie powiem.",
+                    "feedback": {
+                        "label": "Upokorzenie jako narzędzie dyscypliny",
+                        "psychology": "Publiczne zawstydzenie może zwiększyć posłuszeństwo chwilowo, ale niszczy kanał zaufania. Nastolatek uczy się wtedy nie odpowiedzialności, tylko lepszego ukrywania.",
+                        "better_alternative_hint": "Chroń prywatność dziecka tam, gdzie to możliwe, i angażuj innych dorosłych strategicznie, nie odwetowo."
+                    },
+                    "tags": [
+                        {
+                            "text": "Publiczne zawstydzenie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Utrata zaufania",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nie mam siły już do tego wracać. Po prostu więcej mnie nie zawiedź.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -1
+                    },
+                    "npc_reaction": "Kuba patrzy niepewnie. Czyli temat niby zamknięty, ale dalej mam z tym zostać sam?",
+                    "feedback": {
+                        "label": "Bezradne zamknięcie",
+                        "psychology": "To brzmi jak prośba i wyrzut jednocześnie, ale bez struktury. Dziecko zostaje z ciężarem winy bez planu działania, co zwiększa ryzyko ponownego ukrywania problemu.",
+                        "better_alternative_hint": "Domknij rozmowę konkretnym kolejnym krokiem i nazwij, że nadal jesteś w kontakcie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Niedookreślona granica",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak planu naprawy",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Za tydzień sprawdzimy, jak idzie trzymanie się ustaleń. Liczę na konkrety i uczciwość.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Kuba kiwa głową. Okej. Przynajmniej wiem, że temat ma dalszy ciąg, a nie tylko wybuch.",
+                    "feedback": {
+                        "label": "Kontynuacja z jasnym terminem",
+                        "psychology": "To stabilizuje sytuację i daje strukturę. Nadal jednak brakuje wyraźnego sygnału relacyjnego: jestem po twojej stronie, nawet gdy pilnuję granic.",
+                        "better_alternative_hint": "Dodaj zdanie, które oddziela problem od relacji i pokazuje, że nie skreślasz dziecka."
+                    },
+                    "tags": [
+                        {
+                            "text": "Struktura follow-up",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Wracamy do tego razem. Ustalamy stały check-in, konkretne zasady i możliwość rozmowy ze specjalistą, jeśli będzie trzeba. Wolę trudną prawdę niż kolejne ukrywanie. Jestem po twojej stronie.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kuba wyraźnie mięknie. Dobra. Tego się boję, ale chyba właśnie tego potrzebuję. Żebyś pilnował, ale mnie nie skreślał.",
+                    "feedback": {
+                        "label": "Relacja plus plan",
+                        "psychology": "To najbardziej dojrzałe domknięcie: łączysz więź, odpowiedzialność i strukturę. W języku przywiązania mówisz jednocześnie: widzę problem, nie zostawiam cię z nim samego i nie oddaję steru chaosowi.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Plan wsparcia",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Naprawa relacji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "ROZMOWA ZATRZAŚNIĘTA",
+            "emoji": "🔴",
+            "subtitle": "Strach zamienił się w kontrolę albo odcięcie",
+            "narrative": "Po tej rozmowie Kuba przestaje wierzyć, że szczerość daje mu jakiekolwiek bezpieczeństwo. W domu zostają napięcie, monitoring albo chłód, a temat narkotyków nie znika — tylko schodzi do ukrycia.",
+            "diagnosis": "W tej ścieżce dominowały reakcje z Poziomu II albo wycofanie: ocena, wstyd, sarkazm, nagłe kary lub bezradne odpuszczenie. Rodzic próbował odzyskać kontrolę nad lękiem, ale stracił kanał wpływu. Nastolatek uczy się, że prawda kosztuje zbyt dużo.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl agresywny, biernie agresywny lub unikowy. Rozmowa stała się polem walki albo emocjonalnego wycofania.",
+                "strongest_moment": "Najmocniejszym momentem było samo to, że rozmowa w ogóle się zaczęła — to oznacza, że więź nie była jeszcze całkiem martwa.",
+                "growth_tip": "W krytycznych wyznaniach pierwsza odpowiedź nie powinna być ani wyrokiem, ani ucieczką. Najpierw regulacja, potem fakty, potem granice.",
+                "replay_prompt": "Spróbuj jeszcze raz zareagować tak, by dziecko usłyszało jednocześnie: to poważne i nadal mogę z tobą o tym rozmawiać."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "PORZĄDEK BEZ GŁĘBI",
+            "emoji": "🟡",
+            "subtitle": "Są zasady, ale zaufanie nadal jest kruche",
+            "narrative": "Udało się uniknąć pełnej katastrofy. Ustaliliście kilka reguł i temat nie został zamieciony pod dywan, ale Kuba nadal mówi ostrożnie i zachowuje część prawdy dla siebie. W domu jest mniej chaosu, lecz jeszcze mało prawdziwego kontaktu.",
+            "diagnosis": "Ta ścieżka opierała się głównie na transakcji: pytaniach o fakty, zasadach i konsekwencjach. To lepsze niż eskalacja, ale bez pełniejszej walidacji i eksploracji motywów dziecko współpracuje raczej z obowiązku niż z zaufania.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl rzeczowy i częściowo asertywny. Rozmowa miała strukturę, ale tylko miejscami dotykała emocji i potrzeb.",
+                "strongest_moment": "Najlepiej zadziałały chwile, w których oddzielałeś ocenę zachowania od oceny dziecka i nadawałeś rozmowie ramy.",
+                "growth_tip": "Kolejny krok to przejście z samego zarządzania problemem do rozumienia, po co to zachowanie w ogóle się pojawiło. Bez tego zasady będą kruche.",
+                "replay_prompt": "Zagraj ponownie i spróbuj częściej łączyć granice z walidacją oraz pytaniem o to, co stoi pod spodem."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 9
+            },
+            "color": "green",
+            "title": "TRUDNA PRAWDA UTRZYMANA",
+            "emoji": "🟢",
+            "subtitle": "Granice zostały postawione bez zerwania więzi",
+            "narrative": "Rozmowa nie była łatwa, ale przetrwała ciężar tematu. Kuba nie czuje się uniewinniony, tylko potraktowany poważnie. Wie, że sprawa jest poważna, a jednocześnie ma w tobie sojusznika, nie wyłącznie strażnika.",
+            "diagnosis": "W tej ścieżce pojawiło się połączenie asertywności i empatii. Rodzic potrafił uznać lęk, sprawdzić bezpieczeństwo, nazwać granice i nie zamienić rozmowy w przesłuchanie. To buduje realny wpływ zamiast pozoru kontroli.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl empatyczny i asertywny. Rozmowa była trudna, ale regulowana i osadzona w relacji.",
+                "strongest_moment": "Najmocniejszy był moment, w którym połączyłeś troskę o bezpieczeństwo z pytaniem o funkcję zachowania zamiast samych kar.",
+                "growth_tip": "To dobre podejście warto wzmacniać regularnością. Jedna dobra rozmowa otwiera drzwi, ale dopiero powtarzalny kontakt stabilizuje zmianę.",
+                "replay_prompt": "Spróbuj jeszcze raz i zobacz, czy dojdziesz do ścieżki, w której konsekwencje i plan wsparcia są współtworzone od początku do końca."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 10,
+                "max": 12
+            },
+            "color": "blue",
+            "title": "BEZPIECZEŃSTWO I ZAUFANIE NARAZ",
+            "emoji": "🔵",
+            "subtitle": "Powstał wspólny plan, a szczerość nie została ukarana zerwaniem relacji",
+            "narrative": "Po niezwykle trudnym wyznaniu udało się stworzyć coś rzadkiego: rozmowę, w której powaga problemu nie zniszczyła kontaktu. Kuba wie, że nie dostał zgody na ryzykowne zachowanie, ale też nie został zredukowany do błędu. Między wami powstaje plan oparty na szczerości, granicach i wsparciu.",
+            "diagnosis": "To ścieżka wysokiej dojrzałości komunikacyjnej. Rodzic regulował własny lęk, używał komunikatu Ja, odzwierciedlał stan dziecka, sprawdzał bezpieczeństwo, badał funkcję zachowania i współprojektował odpowiedzialność. To właśnie Poziom III — transformacja relacji pod presją kryzysu.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl transformacyjny: empatia, jasne granice, wspólne rozwiązywanie problemu i ochrona więzi.",
+                "strongest_moment": "Najlepszy był moment, gdy nie wybrałeś między kontrolą a pobłażaniem, tylko połączyłeś konsekwencje z zaproszeniem do współtworzenia planu.",
+                "growth_tip": "To poziom mistrzowski. W realnym życiu utrzymuj tę samą logikę także przy mniejszych kryzysach: mniej panicznej kontroli, więcej spokojnej struktury i kontaktu.",
+                "replay_prompt": "Sprawdź inne ścieżki, by zobaczyć, jak szybko nawet słuszna troska traci moc, gdy nie jest podana w formie, którą dziecko może usłyszeć."
+            }
+        }
+    ]
+}

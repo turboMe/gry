@@ -1,0 +1,999 @@
+{
+    "scenario_id": "child_is_hurting_a_peer",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "To moje dziecko skrzywdziło",
+        "subtitle": "Rodzic mierzy się z prawdą, której nie chce słyszeć, i musi połączyć miłość z odpowiedzialnością",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 9,
+        "interaction_count": 6
+    },
+    "tags": {
+        "relationship_type": "parent_child",
+        "theme": [
+            "parenting",
+            "responsibility",
+            "conflict_resolution"
+        ],
+        "emotional_intensity": "critical",
+        "age_rating": "teen",
+        "session_type": "training",
+        "player_role_gender": "neutral",
+        "difficulty": "advanced"
+    },
+    "characters": {
+        "player": {
+            "name": "Pat",
+            "role_label": "Rodzic · Gracz",
+            "age_range": "38-46",
+            "context": "Przed chwilą odebrałeś telefon ze szkoły. Dowiedziałeś się, że twoje dziecko od tygodni wyśmiewało i popychało rówieśnika. Czujesz szok, wstyd i silny impuls, by natychmiast zaprzeczyć albo ukarać.",
+            "hidden_need": "safety",
+            "hidden_need_text": "Chcesz przywrócić bezpieczeństwo, porządek moralny i poczucie, że nadal jesteś dobrym rodzicem mimo tego, co usłyszałeś.",
+            "traits": [
+                {
+                    "text": "Odpowiedzialny",
+                    "type": "positive"
+                },
+                {
+                    "text": "Impulsywny pod presją",
+                    "type": "negative"
+                },
+                {
+                    "text": "Wysokie standardy wychowawcze",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 6,
+                "patience": 5,
+                "defensiveness": 6,
+                "empathy": 7,
+                "need_for_control": 7,
+                "shame_sensitivity": 8,
+                "directness": 7,
+                "repair_ability": 6
+            }
+        },
+        "npc": {
+            "name": "Maks",
+            "role_label": "Dziecko · NPC",
+            "age_range": "13-15",
+            "context": "Wie, że coś wyszło na jaw. Jest napięty, zawstydzony i gotowy do obrony. Boi się kary, utraty twarzy i etykiety sprawcy.",
+            "hidden_need": "acceptance",
+            "hidden_need_text": "Potrzebuje usłyszeć, że zły czyn nie przekreśla go jako człowieka, ale jednocześnie musi skonfrontować się z odpowiedzialnością.",
+            "traits": [
+                {
+                    "text": "Bystry społecznie",
+                    "type": "positive"
+                },
+                {
+                    "text": "Defensywny",
+                    "type": "negative"
+                },
+                {
+                    "text": "Wrażliwy na wstyd",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 7,
+                "patience": 3,
+                "defensiveness": 8,
+                "empathy": 4,
+                "need_for_control": 5,
+                "shame_sensitivity": 9,
+                "directness": 4,
+                "repair_ability": 4
+            },
+            "npc_reaction_logic": "Na atak, zawstydzanie i etykietowanie reaguje zaprzeczaniem, buntem albo zamknięciem. Na spokojną stanowczość połączoną z ciekawością i nazwaniem krzywdy reaguje napięciem, ale stopniowo zaczyna mówić prawdę i przyjmować odpowiedzialność."
+        }
+    },
+    "metrics_start": {
+        "tension": 45,
+        "trust": 55,
+        "openness": 45,
+        "feeling_heard": 45
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Po telefonie ze szkoły",
+            "scene": {
+                "description": "Wieczór w kuchni. Telefon nadal leży na blacie, ekran już zgasł. Maks wchodzi, widzi twoją twarz i od razu sztywnieje.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": "Dzwonili ze szkoły, tak? To nie było tak, jak oni mówią.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nie obchodzi mnie twoja wersja. Jak mogłeś zrobić coś takiego.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maks zaciska szczękę i odwraca wzrok. No super. Czyli już mnie osądziłeś.",
+                    "feedback": {
+                        "label": "Oskarżenie przed wysłuchaniem",
+                        "psychology": "Wchodzisz w rolę Rodzica Krytycznego z analizy transakcyjnej. Wysoki wstyd zwykle nie prowadzi do odpowiedzialności, tylko do obrony i zniekształcania faktów.",
+                        "better_alternative_hint": "Najpierw nazwij powagę sytuacji i zaproś do opisania przebiegu zdarzeń bez zdejmowania odpowiedzialności."
+                    },
+                    "tags": [
+                        {
+                            "text": "Przedwczesny osąd",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna — Rodzic Krytyczny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nie mam siły teraz o tym gadać. Zobaczymy jutro.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maks wzrusza ramionami, ale jego twarz nie mięknie. Jasne. Czyli udajemy, że nic się nie stało.",
+                    "feedback": {
+                        "label": "Unik zamiast kontenera",
+                        "psychology": "Unikanie obniża chwilowe napięcie tylko pozornie. W modelu NVC pomijasz zarówno fakty, jak i emocje, więc rozmowa traci ramę bezpieczeństwa i odpowiedzialności.",
+                        "better_alternative_hint": "Zacznij rozmowę od prostego faktu i zaznacz, że chcesz usłyszeć, co się wydarzyło."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak ramy rozmowy",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Dostałem telefon ze szkoły. Powiedz po kolei, co się stało.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Maks bierze oddech. On też nie był święty. Wszyscy gadają tylko o tym, co zrobiłem ja.",
+                    "feedback": {
+                        "label": "Fakty bez emocjonalnej ramy",
+                        "psychology": "To dobry start na Poziomie I, bo oddzielasz fakty od interpretacji. Brakuje jednak walidacji napięcia dziecka, więc obrona może nadal szybko wzrosnąć.",
+                        "better_alternative_hint": "Połącz pytanie o fakty z zaznaczeniem, że sytuacja jest poważna, ale chcesz usłyszeć całość."
+                    },
+                    "tags": [
+                        {
+                            "text": "Zbieranie faktów",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "To brzmi poważnie. Chcę usłyszeć twoją wersję i zrozumieć, co się stało, ale nie będę udawać, że nic się nie wydarzyło.",
+                    "points": 2,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Maks nadal jest spięty, ale patrzy na ciebie dłużej. Dobra. Tylko oni też nie są bez winy.",
+                    "feedback": {
+                        "label": "Stanowczość z otwarciem",
+                        "psychology": "Łączysz granicę i ciekawość. To zmniejsza ryzyko przejścia w Poziom II i daje szansę na odpowiedzialność bez rozjechania relacji.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Jasna rama rozmowy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Pierwsza fala obrony",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Maks stoi bokiem do ciebie, ręce ma skrzyżowane. Napięcie po twojej pierwszej reakcji wisi w powietrzu i każde słowo brzmi jak początek kłótni.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Oni mnie prowokowali. Jak zawsze słuchacie innych, to po co w ogóle pytasz.",
+            "scene_high": {
+                "description": "Maks opiera się o blat, nadal spięty, ale nie odchodzi. Wygląda, jakby walczył między chęcią obrony a świadomością, że coś poszło za daleko.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_high": "Nie mówię, że nic nie zrobiłem. Ale to też nie zaczęło się dziś.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Z tobą zawsze są problemy. Ciągle ktoś przez ciebie cierpi.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maks wybucha. To po co pytasz, skoro już masz o mnie wyrok.",
+                    "feedback": {
+                        "label": "Uogólnienie i etykietowanie",
+                        "psychology": "Zamieniasz konkretny czyn w tożsamość dziecka. W kwadracie von Thuna warstwa relacyjna brzmi jak jesteś problemem, co uruchamia wstyd i kontratak.",
+                        "better_alternative_hint": "Oddziel czyn od osoby. Rozmawiaj o tym, co zrobił, nie o tym, kim jest."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uogólnianie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Etykietowanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, skoro cię prowokowali, to rozumiem. Nie wracajmy już do tego.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -1
+                    },
+                    "npc_reaction": "Maks milknie, ale bardziej z ulgi niż z refleksji. No to chyba tyle.",
+                    "feedback": {
+                        "label": "Zdjęcie odpowiedzialności",
+                        "psychology": "Próbujesz obniżyć napięcie kosztem prawdy. To forma enabling, która zatrzymuje rozwój empatii i nie chroni ofiary.",
+                        "better_alternative_hint": "Możesz uznać, że były emocje lub konflikt, ale bez usprawiedliwiania przemocy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Minimalizowanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Współuczestniczenie w zaprzeczaniu",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nawet jeśli cię prowokowali, popychanie i wyśmiewanie jest nie do przyjęcia. Powiedz po kolei, co zrobiłeś ty.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Maks marszczy czoło, ale odpowiada. Pchnąłem go. I wrzuciłem ten filmik na grupę.",
+                    "feedback": {
+                        "label": "Granica i konkret",
+                        "psychology": "To ruch w stronę odpowiedzialności. Nadal jesteś głównie na poziomie faktów, ale jasno wyznaczasz normę bez osobistego ataku.",
+                        "better_alternative_hint": "Dodaj krótkie uznanie emocji dziecka, żeby obrona nie przejęła całej rozmowy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Konfrontowanie zachowania",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Odpowiedzialność za czyn",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Mogłeś czuć złość albo upokorzenie, ale krzywdzenie kogoś nie jest rozwiązaniem. Chcę zrozumieć, co było przed tym i co zrobiłeś ty.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Maks spuszcza wzrok. Najpierw się z niego śmialiśmy. Potem go popchnąłem. A potem to już poszło.",
+                    "feedback": {
+                        "label": "Walidacja bez rozgrzeszenia",
+                        "psychology": "To klasyczne rozdzielenie emocji od czynu. NVC działa tu dobrze, bo uznajesz stan wewnętrzny, ale nie znosisz odpowiedzialności za działanie.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Rozdzielenie emocji od zachowania",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC Rosenberga",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Nazwanie krzywdy",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "W salonie robi się duszno. Maks siedzi na skraju kanapy, ale jego ciało jest gotowe do ucieczki. Każde słowo odbiera jak zagrożenie.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Wszyscy robią z tego wielką aferę. To był tylko filmik i jedno popchnięcie.",
+            "scene_high": {
+                "description": "Maks siedzi ciężko na kanapie. Jest blady i wyraźnie zaczyna docierać do niego skala sprawy. Napięcie nie znika, ale pojawia się miejsce na refleksję.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_high": "Nie chciałem, żeby to aż tak poszło. On potem naprawdę płakał.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Widocznie sobie zasłużył, skoro wszyscy na niego cisnęli.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maks patrzy na ciebie z ulgą, ale też z dziwnym napięciem. No właśnie. W końcu ktoś rozumie.",
+                    "feedback": {
+                        "label": "Normalizacja przemocy",
+                        "psychology": "Chronisz dziecko przed wstydem, ale kosztem empatii wobec ofiary. To wzmacnia mechanizm moralnego odcięcia i zwiększa ryzyko powtórki.",
+                        "better_alternative_hint": "Nazwij krzywdę jasno. Dziecko potrzebuje rodzica, który nie wybiela czynu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Minimalizowanie szkody",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Moralne odcięcie",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Jest mi za ciebie wstyd. Nie poznaję własnego dziecka.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maks zamyka się natychmiast. To może oddaj mnie komuś lepszemu.",
+                    "feedback": {
+                        "label": "Wstyd tożsamościowy",
+                        "psychology": "To uderzenie nie w czyn, lecz w więź i przynależność. Silny wstyd często rodzi bunt albo samoponiżenie, a nie realną naprawę.",
+                        "better_alternative_hint": "Powiedz wprost, że czyn był krzywdzący, ale nie odbieraj dziecku miejsca w relacji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Zawstydzanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Atak na tożsamość",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "To, co zrobiłeś, ma konsekwencje. Porozmawiamy ze szkołą i nie będę tego ukrywać.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": 0,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Maks krzywi się. Czyli już pozamiatane. Wszyscy się dowiedzą.",
+                    "feedback": {
+                        "label": "Konsekwencje bez perspektywy naprawy",
+                        "psychology": "Jasno stawiasz granice, co jest potrzebne. Brakuje jednak elementu sensu i empatii, więc dziecko może odebrać to wyłącznie jako karę i upokorzenie.",
+                        "better_alternative_hint": "Dodaj, że celem nie jest zniszczenie go, tylko zatrzymanie krzywdy i naprawa."
+                    },
+                    "tags": [
+                        {
+                            "text": "Stawianie granic",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Konsekwencje",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "To, co zrobiłeś, było krzywdzące. Będą konsekwencje, ale chcę też, żebyś spróbował zobaczyć, co mógł czuć ten chłopak.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Maks długo milczy. Pewnie myślał, że wszyscy się z niego śmieją. A ja dołożyłem.",
+                    "feedback": {
+                        "label": "Odpowiedzialność i mentalizacja",
+                        "psychology": "Przesuwasz rozmowę z pozycji kary do rozumienia skutku. To uruchamia empatię poznawczą i wspiera przejście na Poziom III.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Mentalizacja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Empatia wobec ofiary",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Konsekwencje bez upokarzania",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Maks podnosi głos i chodzi po pokoju. Rozmowa straciła stabilność, a temat konsekwencji brzmi dla niego jak publiczna egzekucja.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Chcecie zrujnować mi życie za jedną rzecz. Jakbyście w ogóle nie byli po mojej stronie.",
+            "scene_high": {
+                "description": "Maks siedzi zgarbiony, ale słucha. Widać lęk przed tym, co będzie dalej, lecz nie odcina już całkiem kontaktu.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "To co teraz? Kara, szkoła, przeprosiny? Nie wiem nawet, od czego zacząć.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Zabieram ci wszystko na miesiąc i koniec. Masz poczuć, jak to jest.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maks prycha. Super. Czyli ma boleć, a nie czegoś mnie nauczyć.",
+                    "feedback": {
+                        "label": "Kara odwetowa",
+                        "psychology": "Konsekwencja bez celu wychowawczego łatwo staje się zemstą. Dziecko skupia się wtedy na własnym cierpieniu, a nie na skutkach swojej przemocy.",
+                        "better_alternative_hint": "Nazwij, czemu służą konsekwencje i jak mają zatrzymać szkodę oraz uczyć naprawy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Odwet",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nikomu nic nie mówimy. Spróbuję to jakoś wyciszyć, żeby nie narobić ci większych problemów.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -1
+                    },
+                    "npc_reaction": "Maks patrzy z ulgą, ale też niepewnie. Czyli po prostu mamy przeczekać.",
+                    "feedback": {
+                        "label": "Zamiatanie pod dywan",
+                        "psychology": "Chronisz dziecko przed bólem krótkoterminowym, ale wzmacniasz unikanie i brak odpowiedzialności. To komunikat, że liczy się wizerunek, nie naprawa.",
+                        "better_alternative_hint": "Zaproponuj konsekwencje, które są jasne, proporcjonalne i powiązane z naprawą szkody."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie odpowiedzialności",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Ochrona wizerunku ponad relację",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Jutro przeprosisz, oddasz telefon na tydzień i pójdziesz ze mną na spotkanie do szkoły.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 0,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Maks wzdycha ciężko. Okej. Przynajmniej wiem, co będzie.",
+                    "feedback": {
+                        "label": "Plan bez wspólnego sensu",
+                        "psychology": "Konkret porządkuje chaos, co jest potrzebne. Nadal jednak mówisz głównie w trybie zarządzania, a nie uczenia odpowiedzialności przez refleksję.",
+                        "better_alternative_hint": "Dodaj, czemu służą te kroki i że twoim celem nie jest upokorzenie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Struktura działania",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Będą konsekwencje w domu i w szkole, ale nie po to, żeby cię upokorzyć. Chodzi o zatrzymanie krzywdy i naprawę. Ustalimy razem, jak to ma wyglądać.",
+                    "points": 2,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Maks bierze głębszy oddech. Nie chcę, żeby wszyscy myśleli, że jestem potworem. Ale dobra. Mogę to usłyszeć.",
+                    "feedback": {
+                        "label": "Konsekwencje z sensem",
+                        "psychology": "Stawiasz granice, ale chronisz godność. To wspiera wewnętrzną odpowiedzialność zamiast samego podporządkowania ze strachu.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Godność w konsekwencji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność bez przemocy",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Spotkanie i naprawa szkody",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Na stole leży wiadomość od wychowawcy z prośbą o pilne spotkanie. Maks patrzy na ekran z mieszaniną lęku i buntu. Atmosfera jest twarda i obronna.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Na tym spotkaniu i tak zrobią ze mnie winnego wszystkiego. Może lepiej powiedzieć, że oni przesadzają.",
+            "scene_high": {
+                "description": "W pokoju jest ciszej niż wcześniej. Wiadomość od wychowawcy nadal brzmi groźnie, ale rozmowa ma już więcej oparcia. Maks boi się tego, co usłyszy, ale nie ucieka wzrokiem.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "neutral"
+            },
+            "npc_line_high": "Nie wiem, co mam powiedzieć na spotkaniu. Jak powiem wszystko, to wyjdę na najgorszego.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Powiesz, że to był żart i że wszyscy przesadzają. Nie dam cię tak wystawić.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maks kiwa głową z ulgą. Dobra. To będziemy grać, że nic wielkiego się nie stało.",
+                    "feedback": {
+                        "label": "Uczenie uniku",
+                        "psychology": "Chronisz dziecko kosztem prawdy i procesu naprawy. W praktyce wzmacniasz manipulację wizerunkiem zamiast odpowiedzialności relacyjnej.",
+                        "better_alternative_hint": "Pomóż dziecku przygotować szczere, krótkie przyjęcie odpowiedzialności bez samo-upokarzania."
+                    },
+                    "tags": [
+                        {
+                            "text": "Manipulacja narracją",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Zaprzeczanie",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Powiem wychowawcy, że tamto dziecko też ma swoje za uszami. Nie będą z ciebie robić jedynego winnego.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maks ożywia się. No właśnie. W końcu ktoś powie, jaki on jest.",
+                    "feedback": {
+                        "label": "Triangulacja i rozmywanie odpowiedzialności",
+                        "psychology": "Przenosisz rozmowę z czynu dziecka na winę innych. To klasyczny ruch z Poziomu II, w którym ważniejsze staje się wygranie sporu niż zatrzymanie przemocy.",
+                        "better_alternative_hint": "Możesz opisać pełny kontekst, ale bez używania go jako wymówki dla przemocy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Triangulacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Na spotkaniu mów prawdę, odpowiadaj konkretnie i nie wdawaj się w kłótnie.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Maks przytakuje niechętnie. Czyli po prostu mam to przejść i nie pogorszyć.",
+                    "feedback": {
+                        "label": "Rzeczowe przygotowanie",
+                        "psychology": "To porządkuje zachowanie i zmniejsza ryzyko eskalacji. Wciąż jednak brakuje komunikatu, że prawda ma służyć naprawie, a nie tylko przetrwaniu spotkania.",
+                        "better_alternative_hint": "Dodaj, że będziesz obok i że celem jest wzięcie odpowiedzialności, nie publiczne rozbicie dziecka."
+                    },
+                    "tags": [
+                        {
+                            "text": "Przygotowanie do trudnej rozmowy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Samoregulacja",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Na spotkaniu nie będziemy cię wybielać ani rozjeżdżać. Weźmiesz odpowiedzialność za swój czyn, a ja będę obok, żeby pomóc ci wytrzymać wstyd i naprawić szkodę.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Maks patrzy na ciebie długo. Dobra. Nie chcę kłamać. Tylko nie zostawiaj mnie z tym samego.",
+                    "feedback": {
+                        "label": "Wsparcie bez krycia",
+                        "psychology": "To bardzo dojrzała pozycja rodzica. Utrzymujesz więź i jednocześnie nie zasłaniasz dziecka przed skutkami jego czynu, co sprzyja realnej zmianie.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Towarzyszenie w odpowiedzialności",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Regulacja wstydu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_6",
+            "title": "Co stoi za tym zachowaniem",
+            "score_threshold": 5,
+            "scene_low": {
+                "description": "Noc się przeciąga. Maks siedzi już prawie bez ruchu, ale jego twarz jest zamknięta. Rozmowa dotarła do ściany i grozi tym, że zostanie tylko kara i uraza.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "I tak mnie nie zrozumiesz. Po prostu mam przestać i tyle, tak?",
+            "scene_high": {
+                "description": "Powietrze nadal jest ciężkie, ale rozmowa nie przypomina już wojny. Maks wygląda na zmęczonego i zawstydzonego. Pierwszy raz od początku wieczoru mówi ciszej niż ty.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Nie wiem, czemu tak poszło. Jak zaczęli się śmiać, to wolałem dołączyć niż być następnym.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nie obchodzi mnie dlaczego. Masz po prostu przestać i koniec.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maks wzrusza ramionami i wycofuje się emocjonalnie. Okej. To już nic nie mówię.",
+                    "feedback": {
+                        "label": "Kontrola bez zrozumienia",
+                        "psychology": "Zatrzymujesz objaw, ale nie docierasz do mechanizmu. Bez rozpoznania presji grupy, lęku lub potrzeby statusu ryzyko powtórki pozostaje wysokie.",
+                        "better_alternative_hint": "Możesz podtrzymać granicę i jednocześnie zbadać, co dziecko próbowało tym zachowaniem osiągnąć lub przed czym się broniło."
+                    },
+                    "tags": [
+                        {
+                            "text": "Redukcja do posłuszeństwa",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak ciekawości",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Skoro bałeś się, że sam będziesz następny, to w sumie rozumiem, czemu to zrobiłeś.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": -1,
+                        "openness": -1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Maks łapie ulgę, ale też nie idzie dalej. No właśnie. Nie miałem wyjścia.",
+                    "feedback": {
+                        "label": "Empatia, która zwalnia z odpowiedzialności",
+                        "psychology": "Walidujesz lęk, ale nie domykasz granicy. To łatwo zamienia się w wymówkę i zatrzymuje proces zmiany.",
+                        "better_alternative_hint": "Uznaj trudność sytuacji i jednocześnie wróć do faktu, że krzywdzenie innych nie może być strategią przetrwania."
+                    },
+                    "tags": [
+                        {
+                            "text": "Rozgrzeszająca empatia",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Mylenie zrozumienia z usprawiedliwieniem",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Sprawa ma się skończyć teraz. Ustalimy zasady, będę to kontrolować i zobaczymy, czy coś się zmieni.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Maks kiwa głową. Dobra. Tylko nie wiem, czy to wystarczy.",
+                    "feedback": {
+                        "label": "Kontrola z ograniczonym wglądem",
+                        "psychology": "To odpowiedzialne i potrzebne, ale wciąż głównie zewnętrzne. Bez głębszej rozmowy o presji, wstydzie i statusie zmiana może być krucha.",
+                        "better_alternative_hint": "Dodaj pytanie o to, co działo się w nim i czego potrzebuje, żeby nie wracać do tego wzorca."
+                    },
+                    "tags": [
+                        {
+                            "text": "Monitorowanie zachowania",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granice",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "To, co zrobiłeś, musi się zatrzymać i zostać naprawione. Jednocześnie chcę zrozumieć, co się z tobą dzieje, żeby to się nie powtórzyło. Poszukamy planu i wsparcia.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Maks pierwszy raz brzmi naprawdę szczerze. Chcę to zatrzymać. Sam już nie wiem, kiedy zacząłem być taki wobec innych.",
+                    "feedback": {
+                        "label": "Naprawa i źródło wzorca",
+                        "psychology": "To połączenie odpowiedzialności, refleksji i planowania wsparcia. Przesuwasz rozmowę z jednorazowej kary do realnej zmiany zachowania i relacji.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Plan zmiany",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Naprawa relacyjna",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Transformacja wzorca",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "ROZMOWA ZAMKNIĘTA, KRZYWDA NIEDOTKNIĘTA",
+            "emoji": "🔴",
+            "subtitle": "Bronienie, zawstydzanie lub unikanie zablokowało odpowiedzialność",
+            "narrative": "Po spotkaniu ze szkołą zostaje głównie gniew i wzajemna uraza. Maks albo zaprzecza, albo czuje się tylko ukarany. Krzywda rówieśnika schodzi na dalszy plan, a w domu zostaje ciężkie milczenie.",
+            "diagnosis": "Dominował styl agresywny albo unikowy. Rozmowa ugrzęzła na Poziomie II lub rozpadła się jeszcze wcześniej. Wysoki wstyd dziecka nie został uregulowany, więc nie przekształcił się w odpowiedzialność, tylko w obronę, wyparcie albo bunt.",
+            "post_game": {
+                "communication_style_summary": "W tej ścieżce przeważał nacisk, etykietowanie lub zamiatanie sprawy pod dywan. To osłabiło zaufanie i otwartość.",
+                "strongest_moment": "Najmocniejszym punktem było samo zatrzymanie tematu zamiast całkowitego udawania, że nic się nie stało.",
+                "growth_tip": "Oddziel czyn od osoby. Jasno nazwij krzywdę, ale nie odbieraj dziecku miejsca w relacji. Odpowiedzialność rośnie szybciej, gdy granica nie jest upokorzeniem.",
+                "replay_prompt": "Spróbuj przejść rozmowę tak, by połączyć stanowczość z walidacją emocji i sensem konsekwencji."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "KONSEKWENCJE SĄ, ALE ZMIANA JEST PŁYTKA",
+            "emoji": "🟡",
+            "subtitle": "Udało się postawić granice, lecz rozmowa pozostała głównie zadaniowa",
+            "narrative": "Maks przyjmuje część konsekwencji i idzie na spotkanie do szkoły, ale robi to bardziej z presji niż ze zrozumienia. Wie, co ma zrobić, lecz nadal nie do końca rozumie, co zrobił drugiej osobie i co działo się w nim samym.",
+            "diagnosis": "Dominował styl transakcyjny i częściowo asertywny. To wystarczyło, by zatrzymać chaos i wprowadzić strukturę, ale nie całkiem otworzyło przestrzeń na empatię, refleksję i głębszą naprawę.",
+            "post_game": {
+                "communication_style_summary": "W tej ścieżce rozmowa była poprawna i odpowiedzialna, ale bardziej zarządcza niż transformująca.",
+                "strongest_moment": "Najlepszym ruchem było nazwanie, że sprawa będzie miała konsekwencje i nie zostanie ukryta.",
+                "growth_tip": "Przejdź o krok dalej: oprócz planu działań pytaj o wpływ na ofiarę i o to, co napędzało zachowanie dziecka. Sama kontrola rzadko zmienia wzorzec.",
+                "replay_prompt": "Zagraj ponownie i zobacz, jak zmienia się otwartość dziecka, gdy konsekwencje mają sens, a nie tylko formę kary."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 9
+            },
+            "color": "green",
+            "title": "TRUDNA PRAWDА, REALNA NAPRAWA",
+            "emoji": "🟢",
+            "subtitle": "Miłość do dziecka nie zagłuszyła odpowiedzialności, a odpowiedzialność nie zniszczyła więzi",
+            "narrative": "Po spotkaniu ze szkołą sytuacja nadal jest trudna, ale kierunek jest dobry. Maks przyznaje, że skrzywdził rówieśnika, i zaczyna rozumieć skutki swojego działania. W domu pojawia się plan konsekwencji, naprawy i dalszej rozmowy.",
+            "diagnosis": "Udało się utrzymać granicę bez moralnego zgniecenia dziecka. Styl asertywny i empatyczny obniżył defensywność, dzięki czemu wstyd częściowo zamienił się w odpowiedzialność i gotowość do zmiany.",
+            "post_game": {
+                "communication_style_summary": "Ta ścieżka opierała się na spokojnej stanowczości, uznaniu emocji i konsekwencjach połączonych z sensem.",
+                "strongest_moment": "Najmocniejszym momentem było połączenie zdania to było krzywdzące z zaproszeniem dziecka do zobaczenia perspektywy ofiary.",
+                "growth_tip": "To dobre podejście. Utrzymaj je także po kryzysie: wracaj do źródła zachowania, presji grupy, wstydu i sposobów regulacji emocji.",
+                "replay_prompt": "Spróbuj ścieżki mistrzowskiej, w której dziecko nie tylko bierze odpowiedzialność, ale też samo zaczyna nazywać potrzebę zmiany."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 10,
+                "max": 12
+            },
+            "color": "blue",
+            "title": "ODPOWIEDZIALNOŚĆ BEZ UTRATY WIĘZI",
+            "emoji": "🔵",
+            "subtitle": "Najtrudniejszy rodzicielski balans został utrzymany niemal idealnie",
+            "narrative": "Rozmowa nie usuwa szkody, ale staje się punktem zwrotnym. Maks nie tylko przyjmuje konsekwencje, lecz także zaczyna mówić prawdę o swoim lęku, presji i potrzebie przynależności. Ty pozostajesz obok niego bez krycia i bez upokarzania. Pojawia się realna szansa na zmianę wzorca, a nie tylko przeczekanie afery.",
+            "diagnosis": "Dominował styl transformacyjny. Udało się jednocześnie chronić granice, więź i godność. Wstyd został uregulowany na tyle, by nie zamienił się w wyparcie, lecz w refleksję, odpowiedzialność i gotowość do naprawy.",
+            "post_game": {
+                "communication_style_summary": "To ścieżka wysokiej dojrzałości komunikacyjnej: walidacja emocji, jasne granice, naprawa i wspólne szukanie źródła zachowania.",
+                "strongest_moment": "Najlepszym ruchem było zakomunikowanie dziecku, że nie zostanie ani wybielone, ani rozjechane, tylko poprowadzone przez odpowiedzialność.",
+                "growth_tip": "To poziom mistrzowski. W życiu utrzymuj tę samą zasadę: konfrontuj czyn, nie niszcz osoby. Wtedy wzrasta szansa na prawdziwą zmianę, a nie tylko posłuszeństwo.",
+                "replay_prompt": "Sprawdź inną ścieżkę i porównaj, jak szybko rozmowa wykoleja się, gdy zabraknie jednego z filarów: granicy, empatii albo sensu konsekwencji."
+            }
+        }
+    ]
+}

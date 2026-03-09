@@ -1,10 +1,11 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { PROFILE_QUIZ, calculateProfileFromQuiz, TRAIT_NAMES } from '@/lib/engine/profile-quiz';
 import { useProfileStore, useAuthStore } from '@/store/game-store';
 import { getIdToken } from '@/lib/firebase/auth';
+import { shuffleWithOriginalIndices } from '@/lib/utils/shuffle';
 
 /**
  * Profile Quiz — 8 questions to build player's psychological profile.
@@ -54,6 +55,13 @@ export default function QuizPage() {
     }, 350);
   }, [selectedIdx, answers, currentQ, router, setTraits, user]);
 
+  // Shuffle answers once per question (stable until player moves to next)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const shuffledAnswers = useMemo(
+    () => shuffleWithOriginalIndices(question.answers),
+    [currentQ]
+  );
+
   return (
     <div className="screen fade-in">
       <div className="scroll-area">
@@ -75,11 +83,11 @@ export default function QuizPage() {
         </div>
 
         <div className="flex-col gap-md">
-          {question.answers.map((answer, i) => (
+          {shuffledAnswers.map(({ item: answer, originalIndex }, visualIndex) => (
             <div
-              key={`${currentQ}-${i}`}
-              className={`quiz-answer ${selectedIdx === i ? 'quiz-answer-selected' : ''}`}
-              onClick={() => handleAnswer(i)}
+              key={`${currentQ}-${originalIndex}`}
+              className={`quiz-answer ${selectedIdx === originalIndex ? 'quiz-answer-selected' : ''}`}
+              onClick={() => handleAnswer(originalIndex)}
             >
               {answer.text}
             </div>

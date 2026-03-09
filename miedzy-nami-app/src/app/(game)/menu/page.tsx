@@ -15,6 +15,8 @@ export default function MenuPage() {
   const [stats, setStats] = useState<{ totalGames: number; avgScore: string } | null>(null);
   const [hasProfile, setHasProfile] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
+  const [showGuestBanner, setShowGuestBanner] = useState(false);
+  const [bannerVisible, setBannerVisible] = useState(false);
 
   useEffect(() => {
     // Check for saved profile
@@ -30,6 +32,31 @@ export default function MenuPage() {
       }
     } catch { /* ignore */ }
   }, []);
+
+  // Guest banner — show for non-logged-in users, auto-dismiss after 5s
+  useEffect(() => {
+    if (user) return;
+    const dismissed = sessionStorage.getItem('mn_guest_banner_dismissed');
+    if (dismissed) return;
+
+    setShowGuestBanner(true);
+    // Small delay so CSS transition can animate in
+    const enterTimer = setTimeout(() => setBannerVisible(true), 50);
+
+    const hideTimer = setTimeout(() => {
+      setBannerVisible(false);
+      // Wait for fade-out animation, then remove from DOM
+      setTimeout(() => {
+        setShowGuestBanner(false);
+        sessionStorage.setItem('mn_guest_banner_dismissed', '1');
+      }, 400);
+    }, 5000);
+
+    return () => {
+      clearTimeout(enterTimer);
+      clearTimeout(hideTimer);
+    };
+  }, [user]);
 
   // Check admin status silently
   useEffect(() => {
@@ -72,6 +99,37 @@ export default function MenuPage() {
       <div className="menu-bg" />
 
       <div style={{ position: 'relative', zIndex: 1, width: '100%', maxWidth: 420 }}>
+        {/* Guest banner */}
+        {showGuestBanner && (
+          <div
+            style={{
+              marginBottom: 20,
+              padding: '12px 16px',
+              borderRadius: 12,
+              background: 'linear-gradient(135deg, rgba(0,194,255,0.12), rgba(139,92,246,0.12))',
+              border: '1px solid rgba(0,194,255,0.2)',
+              opacity: bannerVisible ? 1 : 0,
+              transform: bannerVisible ? 'translateY(0)' : 'translateY(-8px)',
+              transition: 'opacity 0.4s ease, transform 0.4s ease',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 10,
+            }}
+          >
+            <span style={{ fontSize: '1.2rem', flexShrink: 0 }}>💾</span>
+            <p style={{
+              margin: 0,
+              fontSize: '0.76rem',
+              lineHeight: 1.5,
+              color: 'var(--text-secondary)',
+              textAlign: 'left',
+            }}>
+              <strong style={{ color: 'var(--accent-cyan)' }}>Załóż konto</strong>, aby zapisywać wyniki
+              i&nbsp;śledzić swoje postępy między sesjami.
+            </p>
+          </div>
+        )}
+
         <div className="game-logo">Między Nami</div>
         <div className="game-subtitle">Symulator Relacji</div>
         <div className="menu-divider" />

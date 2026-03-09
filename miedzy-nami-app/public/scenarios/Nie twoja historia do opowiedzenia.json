@@ -1,0 +1,1071 @@
+{
+    "scenario_id": "outed_by_sibling_before_family",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Nie twoja historia do opowiedzenia",
+        "subtitle": "Siostra wyoutowała cię przed rodziną, a ty próbujesz odzyskać granice w samym środku rodzinnego chaosu.",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 10,
+        "interaction_count": 6
+    },
+    "tags": {
+        "relationship_type": "siblings",
+        "theme": [
+            "trust",
+            "boundaries",
+            "respect"
+        ],
+        "emotional_intensity": "critical",
+        "age_rating": "teen",
+        "session_type": "training",
+        "player_role_gender": "neutral",
+        "difficulty": "advanced"
+    },
+    "characters": {
+        "player": {
+            "name": "Ty",
+            "role_label": "Osoba wyoutowana · Gracz",
+            "age_range": "19-28",
+            "context": "Kilka godzin temu twoja siostra powiedziała rodzinie o twojej orientacji bez twojej zgody. Od tamtej chwili dostajesz wiadomości, pytania i niezręczne telefony. Czujesz wściekłość, wstyd i utratę kontroli nad własną historią.",
+            "hidden_need": "safety",
+            "hidden_need_text": "Potrzebujesz odzyskać poczucie bezpieczeństwa, wpływu i prawa do decydowania, komu i kiedy mówisz o sobie.",
+            "traits": [
+                {
+                    "text": "Wrażliwość na zdradę zaufania",
+                    "type": "neutral"
+                },
+                {
+                    "text": "Silna potrzeba autonomii",
+                    "type": "positive"
+                },
+                {
+                    "text": "Skłonność do zamykania się pod presją",
+                    "type": "negative"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 7,
+                "patience": 4,
+                "defensiveness": 8,
+                "empathy": 6,
+                "need_for_control": 8,
+                "shame_sensitivity": 9,
+                "directness": 6,
+                "repair_ability": 5
+            }
+        },
+        "npc": {
+            "name": "Maja",
+            "role_label": "Starsza siostra · NPC",
+            "age_range": "24-32",
+            "context": "Maja uważa, że powiedziała rodzinie prawdę, bo miała dość napięcia i sekretów. Nie przewidziała skali skutków i teraz miesza poczucie winy z obronnością. Chce szybko ugasić kryzys, ale boi się przyznać, że złamała twoją granicę.",
+            "hidden_need": "recognition",
+            "hidden_need_text": "Potrzebuje zobaczyć siebie jako osobę troskliwą, nie jako sprawczynię krzywdy, więc łatwo wpada w usprawiedliwianie swoich intencji.",
+            "traits": [
+                {
+                    "text": "Impulsywna szczerość",
+                    "type": "negative"
+                },
+                {
+                    "text": "Poczucie odpowiedzialności za rodzinę",
+                    "type": "positive"
+                },
+                {
+                    "text": "Defensywność pod wpływem wstydu",
+                    "type": "negative"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 8,
+                "patience": 5,
+                "defensiveness": 7,
+                "empathy": 5,
+                "need_for_control": 6,
+                "shame_sensitivity": 7,
+                "directness": 8,
+                "repair_ability": 4
+            },
+            "npc_reaction_logic": "Na atak odpowiada kontratakiem albo minimalizowaniem. Na wycofanie reaguje pozorną ulgą, ale nie bierze odpowiedzialności. Na jasne komunikaty o granicy początkowo się broni, lecz przy połączeniu asertywności z nazwaniem skutków ma największą szansę wejść w refleksję i próbę naprawy."
+        }
+    },
+    "metrics_start": {
+        "tension": 55,
+        "trust": 35,
+        "openness": 40,
+        "feeling_heard": 30
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Pierwsze zatrzymanie szkody",
+            "scene": {
+                "description": "Korytarz przy kuchni w domu rodziców. W salonie wciąż słychać przyciszone głosy rodziny. Maja dogania cię, zanim wyjdziesz, i próbuje zatrzymać rozmowę, która już wymknęła się spod kontroli.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": "Wiem, że jesteś wściekła_y, ale to i tak kiedyś musiało wyjść. Nie chciałam, żeby to dalej wisiało w powietrzu.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Naprawdę? To może jeszcze opowiesz wszystkim resztę mojego życia, skoro tak lubisz decydować za mnie.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maja sztywnieje. Mówi ostrym tonem, że próbujesz zrobić z niej potwora i od razu przechodzi do obrony.",
+                    "feedback": {
+                        "label": "Atak i upokorzenie",
+                        "psychology": "To jest wejście na Poziom II według logiki konfliktu. Uderzasz w intencje i charakter rozmówczyni, więc jej system obronny aktywuje się szybciej niż refleksja nad skutkami.",
+                        "better_alternative_hint": "Nazwij konkretną granicę i konkretną krzywdę zamiast karać ironią."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Uogólnienie intencji",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nieważne. Już i tak wszystko zepsułaś. Po prostu zejdź mi z drogi.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maja odsuwa się, ale wzdycha z ulgą i mówi, że skoro nie chcesz rozmawiać, to ona też nie będzie się tłumaczyć.",
+                    "feedback": {
+                        "label": "Wycofanie bez granicy",
+                        "psychology": "Wycofanie chroni cię na chwilę, ale nie komunikuje, co dokładnie zostało naruszone. W analizie transakcyjnej to ruch odcinający kontakt, który zostawia drugiej stronie pole do własnej wygodnej narracji.",
+                        "better_alternative_hint": "Powiedz, co się stało z twojej perspektywy i czego teraz potrzebujesz."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Brak nazwania granicy",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "To, że rodzina mogła się kiedyś dowiedzieć, nie dawało ci prawa powiedzieć tego za mnie.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Maja marszczy czoło. Na moment milknie, po czym mówi ciszej, że nie myślała o tym w ten sposób.",
+                    "feedback": {
+                        "label": "Jasna granica",
+                        "psychology": "To jest asertywne nazwanie naruszenia. Zatrzymujesz chaos i wracasz do faktu, kto miał prawo decydować. Brakuje jednak odsłonięcia emocjonalnego kosztu, więc rozmowa może zostać na Poziomie I.",
+                        "better_alternative_hint": "Dodaj, co to z tobą zrobiło i dlaczego to tak boli."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granice",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Jestem w szoku i czuję się zdradzona_y. To była moja historia do opowiedzenia i odebrałaś mi kontrolę nad tym, komu i kiedy ją powierzam.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Maja spuszcza wzrok. Mówi już bez obronnego tonu, że słyszy, jak poważnie to przeżywasz, choć nadal nie wie, jak to naprawić.",
+                    "feedback": {
+                        "label": "Komunikat Ja i nazwanie szkody",
+                        "psychology": "Łączysz komunikat Ja z precyzyjnym opisem przekroczenia granicy. W modelu NVC oddzielasz obserwację od oceny i pokazujesz realny koszt emocjonalny, co zwiększa szansę na wejście w odpowiedzialność zamiast w spór o rację.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC Rosenberga",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Walidacja własnych emocji",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Kiedy pojawia się obrona",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Maja stoi z założonymi rękami i co chwilę zerka do salonu, jakby bardziej chciała wrócić do rodziny niż zostać z twoim bólem. Po poprzedniej wymianie między wami zrobił się twardy dystans.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Serio robisz z tego aż taki dramat? Nie powiedziałam nic złego, tylko prawdę.",
+            "scene_high": {
+                "description": "Maja opiera się o blat i pierwszy raz nie próbuje ci wejść w słowo. Widać, że nadal jest spięta, ale zaczyna rozumieć, że problemem nie była sama informacja, tylko odebranie ci wyboru.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "cold"
+            },
+            "npc_line_high": "Nie chciałam cię wystawić, ale widzę, że to nie o to chodziło. Chodzi o to, że zrobiłam to bez ciebie. Dobrze rozumiem?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nie udawaj teraz empatii. Zawsze musisz być najmądrzejsza i wszystko kontrolować.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maja natychmiast odbija piłkę. Mówi, że skoro tak ją widzisz, to nie ma sensu dalej rozmawiać.",
+                    "feedback": {
+                        "label": "Przypisanie stałej cechy",
+                        "psychology": "Zamiast zatrzymać minimalizowanie, przechodzisz do oceny osobowości. To uruchamia mechanizm obronny opisany przez von Thuna jako konflikt na poziomie relacji, gdzie treść przestaje być słyszana.",
+                        "better_alternative_hint": "Wróć do konkretu: co zrobiła i jaki miało to skutek."
+                    },
+                    "tags": [
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Atak na charakter",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Eskalacja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, może faktycznie przesadzam. I tak już się stało.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maja łapie ten ruch natychmiast. Mówi z ulgą, że właśnie o to jej chodziło i proponuje po prostu wrócić do stołu.",
+                    "feedback": {
+                        "label": "Unieważnienie siebie",
+                        "psychology": "To obniża jawne napięcie, ale kosztem twojej rzeczywistości. Uczysz drugą stronę, że wystarczy przeczekać twój ból, a granica rozmyje się sama.",
+                        "better_alternative_hint": "Nie wycofuj faktu naruszenia tylko po to, żeby szybciej zakończyć dyskomfort."
+                    },
+                    "tags": [
+                        {
+                            "text": "Minimalizowanie siebie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Fawning",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Brak samoobrony",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Tak. Problemem nie jest to, kim jestem, tylko to, że nie uszanowałaś mojego tempa i mojej decyzji.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Maja kiwa głową, choć nadal wygląda na zawstydzoną. Przyznaje, że pomyślała bardziej o własnym napięciu niż o twoim bezpieczeństwie.",
+                    "feedback": {
+                        "label": "Doprecyzowanie sedna",
+                        "psychology": "To dobre rozdzielenie treści od procesu. Zmniejszasz ryzyko wejścia w spór o orientację czy rodzinne wartości i przywracasz temat granicy oraz zgody.",
+                        "better_alternative_hint": "Możesz pójść krok dalej i nazwać, czego teraz potrzebujesz od niej."
+                    },
+                    "tags": [
+                        {
+                            "text": "Rozdzielenie faktu od interpretacji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granice",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Tak, dokładnie o to chodzi. Nie potrzebuję teraz obrony twoich intencji, tylko uznania, że zabrałaś mi prawo do własnego coming outu.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Maja bierze głębszy oddech. Mówi cicho, że to brzmi uczciwie i że pierwszy raz naprawdę słyszy, co ci odebrała.",
+                    "feedback": {
+                        "label": "Oddzielenie intencji od skutku",
+                        "psychology": "To bardzo mocny ruch naprawczy. W NVC i w pracy z konfliktem kluczowe jest oddzielenie intencji sprawcy od realnego skutku. Dzięki temu nie dajesz się wciągnąć w debatę o dobrych chęciach i zostajesz przy krzywdzie.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "NVC Rosenberga",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Oddzielenie intencji od skutku",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja własnej granicy",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Granica wobec rodzinnego zamieszania",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Telefony na stole wibrują niemal bez przerwy. W salonie ktoś pyta Maję szeptem, czy już z tobą rozmawiała. Masz poczucie, że wszyscy rozporządzają twoją historią jak wspólnym tematem.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Mama jest roztrzęsiona, ciocia też pyta, a ja nie wiem, co im mówić. Musisz mi powiedzieć, co mam teraz zrobić.",
+            "scene_high": {
+                "description": "Dochodzicie do salonu, ale Maja zatrzymuje się przy drzwiach i nie wchodzi pierwsza. Jakby pierwszy raz czekała na twoje tempo, zamiast narzucać własne.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "cold"
+            },
+            "npc_line_high": "Rodzina będzie naciskać, ale nie chcę znowu powiedzieć czegoś za ciebie. Jakiej granicy ode mnie teraz potrzebujesz?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Powiedz im, że mają się ode mnie wszyscy odczepić i że to przez ciebie ten cyrk wybuchł.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maja prostuje się i odpowiada, że nie będzie twoją tarczą, jeśli masz zamiar tylko ją publicznie obciążać.",
+                    "feedback": {
+                        "label": "Wyrzut przez pośrednika",
+                        "psychology": "Masz prawo do złości, ale to polecenie wrzuca Maję w rolę kozła ofiarnego wobec całej rodziny. Zwiększa chaos systemowy zamiast ustanowić czytelną granicę kontaktu.",
+                        "better_alternative_hint": "Określ, kto ma się z tobą nie kontaktować i co dokładnie Maja ma komunikować."
+                    },
+                    "tags": [
+                        {
+                            "text": "Triangulacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "System rodzinny",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Eskalacja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nieważne, niech każdy robi, co chce. I tak już nie mam nic do powiedzenia.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maja bezradnie rozkłada ręce. Po chwili mówi, że skoro nic nie ustalacie, to będzie improwizować.",
+                    "feedback": {
+                        "label": "Rezygnacja z wpływu",
+                        "psychology": "To jest moment, w którym oddajesz resztki sprawczości. Po naruszeniu granicy naturalne jest czuć bezsilność, ale milczenie zwiększa ryzyko kolejnych przekroczeń.",
+                        "better_alternative_hint": "Nawet jedno krótkie zdanie o twojej granicy odzyskuje część kontroli."
+                    },
+                    "tags": [
+                        {
+                            "text": "Bezradność wyuczona",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak granicy",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Na razie powiedz wszystkim tylko tyle, że potrzebuję przestrzeni i że nikt nie ma prawa wypytywać mnie dziś o szczegóły.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Maja przytakuje i mówi, że to potrafi powtórzyć słowo w słowo, choć brzmi to bardzo oficjalnie.",
+                    "feedback": {
+                        "label": "Instrukcja ochronna",
+                        "psychology": "To konkretny i użyteczny komunikat. Dobrze chroni granicę tu i teraz, ale nie dotyka jeszcze odpowiedzialności Mai za to, że ta ochrona stała się w ogóle potrzebna.",
+                        "better_alternative_hint": "Dodaj, że oczekujesz od niej aktywnego naprawiania szkody, nie tylko przekazania wiadomości."
+                    },
+                    "tags": [
+                        {
+                            "text": "Granica operacyjna",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Regulacja kryzysu",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Powiedz im, że to nie jest temat do rodzinnej debaty i że teraz potrzebuję ciszy oraz szacunku. Od ciebie potrzebuję, żebyś nie dopowiadała nic więcej i zatrzymała pytania, które sama uruchomiłaś.",
+                    "points": 2,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Maja zaciska usta, ale po chwili mówi, że to fair i że rzeczywiście to na niej spoczywa obowiązek zatrzymać dalsze plotkowanie.",
+                    "feedback": {
+                        "label": "Granica plus odpowiedzialność",
+                        "psychology": "To pełniejsze niż sama prośba o przestrzeń. Stawiasz granicę rodzinie i jednocześnie adresujesz odpowiedzialność do osoby, która otworzyła temat bez zgody. To wzmacnia twoją sprawczość bez wchodzenia w odwet.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Odpowiedzialność za naprawę",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Granice",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Kiedy pojawia się poczucie winy",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Maja odczytuje wiadomość od mamy i od razu napina szczękę. W pokoju robi się ciężko. Masz wrażenie, że za chwilę znów usłyszysz, że to ty masz uspokoić wszystkich dookoła.",
+                "location": "bedroom",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Mama płacze. Naprawdę nie możesz po prostu zejść na dół i jej powiedzieć czegoś normalnie? Wszyscy są rozwaleni.",
+            "scene_high": {
+                "description": "Maja odkłada telefon ekranem do dołu i siada dalej od drzwi, jakby świadomie wybierała rozmowę z tobą zamiast ratowania rodzinnej atmosfery za wszelką cenę.",
+                "location": "bedroom",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Mama pisze, że jest w emocjach, ale nie chcę cię znowu wystawiać. Boję się tylko, że wszyscy będą naciskać. Jak to zatrzymać, nie przerzucając ciężaru na ciebie?",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To nie mój problem, że mama płacze. Może wreszcie nauczycie się wszyscy nie wchodzić ludziom z butami w życie.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maja od razu mówi, że właśnie przez taki ton rodzina uzna, że miała rację się martwić. Rozmowa skręca w obronę rodziny.",
+                    "feedback": {
+                        "label": "Pogarda wobec systemu",
+                        "psychology": "Gniew jest uzasadniony, ale pogarda wobec całej rodziny rozszerza front konfliktu. Z konkretnego naruszenia robi się wojna z grupą, co osłabia twoją główną tezę o zgodzie i granicy.",
+                        "better_alternative_hint": "Nie bierz na siebie regulowania emocji rodziny, ale nazwij to bez dehumanizowania innych."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Rozszerzenie konfliktu",
+                            "type": "error"
+                        },
+                        {
+                            "text": "System rodzinny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, zejdę. Po prostu powiem cokolwiek, żeby wszyscy się uspokoili.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maja wygląda na ulżoną, ale nie mówi nic o tym, jak bardzo to dla ciebie za dużo. Kryzys rodziny zostaje ważniejszy niż twoje bezpieczeństwo.",
+                    "feedback": {
+                        "label": "Samopoświęcenie pod presją",
+                        "psychology": "To klasyczne przesunięcie z troski o siebie do regulowania cudzych emocji. Daje chwilowe rozładowanie napięcia, ale wzmacnia wzorzec, że twoje granice są drugorzędne wobec komfortu innych.",
+                        "better_alternative_hint": "Możesz odmówić natychmiastowego kontaktu i jednocześnie nie odrzucać uczuć mamy."
+                    },
+                    "tags": [
+                        {
+                            "text": "People pleasing",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak ochrony siebie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Regulacja cudzych emocji",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie jestem gotowa_y schodzić teraz na dół. Możesz napisać mamie, że porozmawiam z nią później, kiedy odzyskam trochę spokoju.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Maja mówi, że to rozsądne i że może to przekazać, chociaż brzmi w jej głosie napięcie, że bierze na siebie niewygodną rolę.",
+                    "feedback": {
+                        "label": "Odmowa bez ataku",
+                        "psychology": "To zdrowa odmowa i dobra regulacja czasu. Utrzymujesz granicę, ale jeszcze nie dotykasz wprost, że presja pojawiła się wskutek działania Mai, więc odpowiedzialność nadal może się rozmyć.",
+                        "better_alternative_hint": "Dodaj uznanie emocji mamy, ale nie rezygnuj z własnego tempa."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywna odmowa",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Samoregulacja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Wiem, że mama może być w emocjach, ale nie dam się teraz wypchnąć do rozmowy, na którą nie byłam_em gotowa_y. Napisz jej proszę, że to nie jest kara ani odrzucenie, tylko próba odzyskania oddechu po czymś, czego sama nie wybrałam_em.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Maja patrzy na ciebie dłużej i kiwa głową. Mówi, że to jest dojrzałe i że przekaże to dokładnie tak, bez dokładania swojej wersji.",
+                    "feedback": {
+                        "label": "Empatia bez oddania granicy",
+                        "psychology": "Walidujesz emocje mamy, ale nie oddajesz swojej autonomii. To ruch z Poziomu III, bo bierzesz pod uwagę system relacji, nie porzucając siebie. Taka odpowiedź obniża opór i nie wzmacnia szantażu emocjonalnego.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granica czasu",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Czego potrzebujesz, żeby to naprawiać",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "W domu jest ciszej, ale nie spokojniej. Maja wygląda na zmęczoną i coraz bardziej chce zamknąć temat jednym przepraszam, bez wchodzenia w konsekwencje. Czujesz, że jeśli teraz nie nazwiesz warunków naprawy, wszystko zostanie przykryte rodzinnym udawaniem normalności.",
+                "location": "bedroom",
+                "time_of_day": "night",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "No dobrze, przeprosiłam. Ile jeszcze mam za to płacić? Przecież tego nie cofnę.",
+            "scene_high": {
+                "description": "Napięcie nie znika, ale pojawia się więcej ciszy niż walki. Maja siada naprzeciw ciebie i nie odwraca wzroku. Wygląda, jakby pierwszy raz była gotowa usłyszeć, że przeprosiny to dopiero początek.",
+                "location": "bedroom",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Wiem, że samo przepraszam nie wystarczy. Powiedz mi konkretnie, co dla ciebie oznacza teraz naprawa.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Naprawa? Cofnij czas i przestań być sobą. Nic innego mnie nie obchodzi.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maja zamyka się od razu. Mówi, że to niemożliwe i że cokolwiek zrobi, i tak będzie źle.",
+                    "feedback": {
+                        "label": "Żądanie niemożliwego",
+                        "psychology": "To zrozumiała fantazja po naruszeniu, ale komunikacyjnie jest ślepa uliczka. Gdy stawiasz warunek nierealny, druga strona może wrócić do bezradnej defensywy zamiast wejść w realną odpowiedzialność.",
+                        "better_alternative_hint": "Sformułuj naprawę w zachowaniach, które są możliwe tu i teraz."
+                    },
+                    "tags": [
+                        {
+                            "text": "Katastrofizacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Żądanie niemożliwe",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Bezradność wtórna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nieważne. I tak ci nie uwierzę, więc rób co chcesz.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maja odpowiada chłodno, że skoro odrzucasz wszystko z góry, to nie ma punktu zaczepienia. Oboje zostajecie w martwym punkcie.",
+                    "feedback": {
+                        "label": "Zamknięcie przez cynizm",
+                        "psychology": "To bierna agresja ukryta pod rezygnacją. Zostajesz przy bólu, ale nie dajesz sobie szansy odzyskać wpływu. Druga strona słyszy tylko, że każda próba będzie bez sensu.",
+                        "better_alternative_hint": "Nie musisz od razu ufać. Wystarczy określić, jakie działania byłyby pierwszym krokiem."
+                    },
+                    "tags": [
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Cynizm obronny",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Blokada naprawy",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Chcę, żebyś przestała mówić o mnie z rodziną bez mojego udziału i żebyś, jeśli temat wróci, brała odpowiedzialność za to, że to ty go uruchomiłaś.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Maja potwierdza, że może to zrobić. Brzmi to konkretnie, ale emocjonalny ciężar między wami nadal wisi w powietrzu.",
+                    "feedback": {
+                        "label": "Warunki operacyjne",
+                        "psychology": "To są jasne warunki bezpieczeństwa i są potrzebne. Jednak naprawa relacyjna wymaga też uznania, jak ta sytuacja wpłynęła na zaufanie między wami, nie tylko na logistykę rozmów z rodziną.",
+                        "better_alternative_hint": "Dodaj, czego potrzebujesz między wami, nie tylko wobec reszty rodziny."
+                    },
+                    "tags": [
+                        {
+                            "text": "Kontrakt granic",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Odpowiedzialność",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Naprawa zaczyna się od tego, że nie przykrywasz sprawy szybkim przepraszam. Potrzebuję, żebyś nie mówiła za mnie więcej, zatrzymała rodzinne dopowiedzenia i uznała, że odbudowa mojego zaufania do ciebie zajmie czas.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Maja długo milczy, a potem mówi, że to trudne do usłyszenia, ale uczciwe. Przyznaje, że chciała wrócić do normalności szybciej, niż miała do tego prawo.",
+                    "feedback": {
+                        "label": "Naprawa jako proces",
+                        "psychology": "To odpowiedź transformacyjna. Nie żądasz natychmiastowego odkupienia ani nie uciekasz w rezygnację. Tworzysz realistyczną mapę naprawy: zatrzymanie szkody, uznanie skutku i czas potrzebny na odbudowę zaufania.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Realistyczna naprawa",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Odbudowa zaufania",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_6",
+            "title": "Jak kończy się ta noc",
+            "score_threshold": 5,
+            "scene_low": {
+                "description": "Jest późno. Z dołu dochodzą już tylko pojedyncze odgłosy sprzątania po kolacji. Między tobą a Mają nadal stoi ciężar niewypowiedzianych konsekwencji, a każde kolejne zdanie może albo domknąć granicę, albo całkiem zerwać kontakt.",
+                "location": "street",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Nie wiem już, co mam powiedzieć. Cokolwiek robię, jest źle. Może po prostu dajmy sobie spokój.",
+            "scene_high": {
+                "description": "Wychodzicie przed dom, żeby złapać zimne powietrze. Noc jest chłodna, ale nie wroga. To nie jest moment pojednania, tylko moment decyzji, czy ta relacja ma jeszcze uczciwy grunt pod nogami.",
+                "location": "street",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Nie oczekuję, że mi teraz zaufasz. Chcę tylko wiedzieć, czy jest coś, co możemy zrobić od jutra inaczej, żebym już nigdy nie przekroczyła tej granicy.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Od jutra? Nie ma żadnego od jutra. Dla mnie po prostu już nie istniejesz.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maja zamiera, po czym odwraca się i bez słowa wraca do domu. Kontakt urywa się gwałtownie, bez żadnych zasad na przyszłość.",
+                    "feedback": {
+                        "label": "Ostateczne odcięcie w afekcie",
+                        "psychology": "Masz prawo rozważać dystans, ale decyzja rzucona w afekcie kończy rozmowę w stanie maksymalnej eskalacji. To zamyka przestrzeń na bezpieczne warunki dalszego kontaktu i wzmacnia chaos po obu stronach.",
+                        "better_alternative_hint": "Jeśli potrzebujesz przerwy, nazwij ją jako granicę czasową zamiast wyroku rzuconego pod wpływem bólu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Eskalacja końcowa",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Impulsywne odcięcie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak planu bezpieczeństwa",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Rób, co chcesz. Ja i tak już nic nie mam do dodania.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maja przyjmuje to jako koniec rozmowy. Formalnie konflikt cichnie, ale bez żadnego nowego porozumienia ani ochrony na przyszłość.",
+                    "feedback": {
+                        "label": "Milczące zamrożenie",
+                        "psychology": "Pozorna cisza nie jest rozwiązaniem. W systemach relacyjnych nierozwiązany konflikt wraca zwykle w postaci uniku, dystansu albo kolejnego przekroczenia granicy.",
+                        "better_alternative_hint": "Domknij rozmowę choć jednym zdaniem o tym, czego teraz potrzebujesz dalej."
+                    },
+                    "tags": [
+                        {
+                            "text": "Zamrożenie relacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Unik",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Niedomknięcie konfliktu",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Na teraz potrzebuję dystansu. Odezwę się, kiedy będę gotowa_y, ale oczekuję, że do tego czasu nie będziesz omawiać mnie z rodziną.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Maja przyjmuje to skinieniem głowy. Nie jest to pojednanie, ale po raz pierwszy zasady dalszego kontaktu są nazwane jasno.",
+                    "feedback": {
+                        "label": "Granica na jutro",
+                        "psychology": "To dobre domknięcie kryzysu. Chronisz siebie i wyznaczasz zasady. Brakuje tylko krótkiego osadzenia relacji w czymś więcej niż dystans, więc finał pozostaje chłodny, ale stabilny.",
+                        "better_alternative_hint": "Możesz dodać, że przerwa służy ochronie relacji, nie tylko ucieczce od niej."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywne domknięcie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granica czasowa",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Regulacja kontaktu",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Od jutra możesz zacząć od jednej rzeczy: nic o mnie bez mojego udziału. Ja potrzebuję teraz przestrzeni, ale nie zamykam drzwi na zawsze. To, co zrobisz dalej, pokaże mi, czy tej relacji da się jeszcze zaufać.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Maja ma łzy w oczach, ale nie próbuje się wybielać. Mówi tylko, że rozumie warunek i że będzie go respektować, nawet jeśli na odbudowę przyjdzie jej długo czekać.",
+                    "feedback": {
+                        "label": "Granica z warunkiem odbudowy",
+                        "psychology": "To najmocniejsze domknięcie. Nie wybaczasz na skróty i nie odcinasz się dla efektu. Łączysz ochronę siebie z czytelnym kryterium przyszłej odbudowy zaufania, czyli przechodzisz z kryzysu do odpowiedzialnego procesu.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Warunkowa odbudowa zaufania",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granica i relacja jednocześnie",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "PĘKNIĘCIE BEZ RAMY",
+            "emoji": "🔴",
+            "subtitle": "Ból został usłyszany za słabo albo wyrażony tak, że rozmowa się rozsypała.",
+            "narrative": "Noc kończy się twardym rozejściem. Rodzina zostaje z własnymi projekcjami, Maja z defensywą, a ty z jeszcze większym poczuciem osamotnienia. Granica została naruszona i nie powstała żadna wspólna rama, która mogłaby zatrzymać dalsze szkody.",
+            "diagnosis": "W tej ścieżce dominowały atak, wycofanie albo szybkie gaszenie napięcia kosztem siebie. Rozmowa utknęła na Poziomie II lub rozpadła się jeszcze wcześniej. Z perspektywy NVC zabrakło stabilnego połączenia obserwacji, emocji i prośby, więc system rodzinny przejął stery nad twoją historią.",
+            "post_game": {
+                "communication_style_summary": "Dominowały reakcje obronne: agresja, zamrożenie albo samounieważnienie pod presją.",
+                "strongest_moment": "Najmocniejsze były te chwile, w których choć na moment próbowała_eś nazwać naruszenie jako problem zgody, a nie swojej tożsamości.",
+                "growth_tip": "W tak wysokim napięciu nie próbuj wygrać całej rozmowy naraz. Najpierw nazwij fakt naruszenia, potem swój stan, a dopiero potem granicę na tu i teraz.",
+                "replay_prompt": "Zagraj ponownie i sprawdź, co się zmieni, gdy oddzielisz intencję Mai od skutku i poprosisz o konkretną naprawę."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "CHŁODNY ROZEJM",
+            "emoji": "🟡",
+            "subtitle": "Udało się zatrzymać część szkody, ale zaufanie pozostało kruche.",
+            "narrative": "Rozmowa nie wybucha do końca, ale też nie przynosi prawdziwej ulgi. Maja zna już część twoich granic, jednak między wami zostaje chłód. Rodzina dostaje mniej paliwa do dalszego zamieszania, lecz relacja rodzeństwa przechodzi w tryb ostrożnego dystansu.",
+            "diagnosis": "Ta ścieżka opierała się głównie na asertywności i działaniach ochronnych. To wystarczyło, by ograniczyć chaos, ale nie zawsze wystarczyło, by dopuścić głębsze uznanie bólu i odpowiedzialności. Rozmowa często pozostawała na Poziomie I: rzeczowo, poprawnie, lecz bez pełnej transformacji relacji.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl rzeczowy i asertywny, który chronił granice, ale tylko częściowo otwierał przestrzeń na naprawę.",
+                "strongest_moment": "Najlepiej zadziałały momenty, w których jasno określała_eś, co Maja ma zrobić wobec rodziny i czego nie wolno jej już robić.",
+                "growth_tip": "Asertywność jest szkieletem rozmowy, ale przy zdradzie zaufania potrzebujesz też nazwać emocjonalny koszt. Bez tego druga strona łatwo widzi tylko zasady, nie ranę.",
+                "replay_prompt": "Sprawdź ścieżkę, w której oprócz granic mówisz też o utracie kontroli, wstydzie i czasie potrzebnym na odbudowę zaufania."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 9
+            },
+            "color": "green",
+            "title": "GRANICA, KTÓRA CHRONI",
+            "emoji": "🟢",
+            "subtitle": "Ból został nazwany jasno, a relacja dostała uczciwe warunki dalszego istnienia.",
+            "narrative": "Nie ma cudu ani szybkiego pojednania, ale pojawia się coś ważniejszego: uczciwość. Maja rozumie, że skrzywdziła cię nie tym, kim jesteś, tylko tym, że odebrała ci prawo wyboru. Rodzina dostaje wyraźny komunikat stop, a ty odzyskujesz część wpływu nad własną historią.",
+            "diagnosis": "W tej ścieżce łączyła_eś asertywność z empatią i myśleniem procesowym. Z perspektywy NVC oraz Poziomu III rozmowy nie chodziło o szybkie wybaczenie, tylko o uznanie skutku, ochronę granic i stworzenie warunków ewentualnej odbudowy. To najzdrowsza odpowiedź na zdradę zaufania w środku rodzinnego kryzysu.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl empatyczno-asertywny: jasne granice bez pomniejszania bólu i bez odwetowej eskalacji.",
+                "strongest_moment": "Najmocniejsze były chwile, w których mówiła_eś o odebraniu ci kontroli nad własną historią i zamieniała_eś to w konkretne warunki naprawy.",
+                "growth_tip": "To dobre tempo. Pamiętaj, że po takiej zdradzie nie musisz wybierać między odcięciem a natychmiastowym wybaczeniem. Możesz budować zaufanie warunkowo i powoli.",
+                "replay_prompt": "Zagraj raz jeszcze i zobacz, czy potrafisz dowieźć równie mocną granicę od pierwszej do ostatniej interakcji bez ani jednego ruchu w obronny skręt."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 10,
+                "max": 12
+            },
+            "color": "blue",
+            "title": "ODZYSKANA HISTORIA",
+            "emoji": "🔵",
+            "subtitle": "Nie tylko zatrzymała_eś szkodę, ale zamieniła_eś kryzys w początek dojrzałej odpowiedzialności.",
+            "narrative": "Ta noc nadal boli, ale nie jest już chaosem bez kształtu. Maja bierze odpowiedzialność bez wybielania się, rodzina dostaje wyraźne granice, a twoja historia wraca w twoje ręce. Między wami nie ma jeszcze pełnego zaufania, ale pojawia się coś bardzo rzadkiego po zdradzie: prawdziwa zgoda co do faktów, skutków i zasad naprawy.",
+            "diagnosis": "To ścieżka mistrzowska. Utrzymała_eś kontakt z własnym bólem bez wpadania ani w agresję, ani w samounieważnienie. Przesunęła_eś rozmowę z reaktywnego kryzysu na Poziom III: wspólne uznanie szkody, ochrona granic i proces odbudowy. W praktyce to właśnie taki styl daje największą szansę, by relacja nie została ani zalana przemocą, ani przykryta fałszywą normalnością.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl transformacyjny z mocnym rdzeniem komunikatu Ja, empatii i precyzyjnej odpowiedzialności.",
+                "strongest_moment": "Najlepsze było konsekwentne oddzielanie intencji Mai od skutku jej działania oraz zamiana bólu w konkretne warunki dalszego kontaktu.",
+                "growth_tip": "To poziom, który warto przenosić do życia: najpierw odzyskaj fakty i granice, potem dopiero decyduj o bliskości. Nie każda relacja po zdradzie przetrwa, ale każda może zostać domknięta godnie.",
+                "replay_prompt": "Przejdź scenariusz jeszcze raz i sprawdź, jak niewielkie odstępstwo od tej precyzji zmienia ton całej relacji."
+            }
+        }
+    ]
+}

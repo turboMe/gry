@@ -1,0 +1,999 @@
+{
+    "scenario_id": "abusive_relationship_disclosure_friend_support",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Nie naciskaj, nie znikaj",
+        "subtitle": "Bliska osoba ujawnia przemoc i prosi o radę, ale nie chce odejść",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 10,
+        "interaction_count": 6
+    },
+    "tags": {
+        "relationship_type": "friends",
+        "theme": [
+            "support",
+            "boundaries",
+            "control"
+        ],
+        "emotional_intensity": "critical",
+        "age_rating": "adult",
+        "session_type": "training",
+        "player_role_gender": "neutral",
+        "difficulty": "advanced"
+    },
+    "characters": {
+        "player": {
+            "name": "Ty",
+            "role_label": "Przyjaciel · Gracz",
+            "age_range": "27-35",
+            "context": "Dowiadujesz się, że twoja bliska przyjaciółka Lena jest w relacji, w której partner ją zastrasza, kontroluje i popycha. Chcesz pomóc, ale boisz się, że zbyt mocny nacisk zamknie ją jeszcze bardziej.",
+            "hidden_need": "safety",
+            "hidden_need_text": "Chcesz ochronić bliską osobę przed krzywdą, nie tracąc z nią kontaktu.",
+            "traits": [
+                {
+                    "text": "Lojalny",
+                    "type": "positive"
+                },
+                {
+                    "text": "Skłonny do przejmowania odpowiedzialności",
+                    "type": "negative"
+                },
+                {
+                    "text": "Uważny słuchacz",
+                    "type": "positive"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 6,
+                "patience": 6,
+                "defensiveness": 3,
+                "empathy": 8,
+                "need_for_control": 7,
+                "shame_sensitivity": 4,
+                "directness": 7,
+                "repair_ability": 7
+            }
+        },
+        "npc": {
+            "name": "Lena",
+            "role_label": "Przyjaciółka · NPC",
+            "age_range": "27-35",
+            "context": "Lena od miesięcy żyje w napięciu. Jej partner przeprasza po wybuchach, kontroluje kontakty i finanse, a ostatnio pchnął ją podczas kłótni. Lena pierwszy raz mówi o tym komuś wprost, ale boi się odejść.",
+            "hidden_need": "safety",
+            "hidden_need_text": "Potrzebuje bezpieczeństwa, sprawczości i kontaktu z kimś, kto nie odbierze jej decyzyjności.",
+            "traits": [
+                {
+                    "text": "Przestraszona",
+                    "type": "negative"
+                },
+                {
+                    "text": "Przywiązana do partnera",
+                    "type": "neutral"
+                },
+                {
+                    "text": "Wstydzi się swojej sytuacji",
+                    "type": "negative"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 3,
+                "patience": 4,
+                "defensiveness": 8,
+                "empathy": 7,
+                "need_for_control": 2,
+                "shame_sensitivity": 9,
+                "directness": 3,
+                "repair_ability": 5
+            },
+            "npc_reaction_logic": "Lena zamyka się, gdy słyszy nacisk, ocenę albo odebranie jej sprawczości. Otwiera się, gdy czuje wiarę, brak pośpiechu i konkretne pytania o bezpieczeństwo. Reaguje dobrze na walidację emocji, źle na ultimata i obietnice składane ponad jej głową."
+        }
+    },
+    "metrics_start": {
+        "tension": 45,
+        "trust": 55,
+        "openness": 45,
+        "feeling_heard": 40
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Pierwsze ujawnienie",
+            "scene": {
+                "description": "Siedzicie w prawie pustej kawiarni tuż przed zamknięciem. Lena długo miesza łyżeczką w zimnej herbacie, unika wzroku i w końcu bierze płytki oddech.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": "Muszę ci coś powiedzieć. On nie tylko krzyczy. Ostatnio mnie pchnął. Wiem, że to brzmi źle, ale nie chcę teraz od niego odchodzić. Powiedz mi tylko, co mam robić.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To proste. Albo od niego odchodzisz dzisiaj, albo nie mam jak ci pomóc.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Lena sztywnieje i odsuwa dłoń od twojej. Mówi ciszej, że nie powinna była nic mówić.",
+                    "feedback": {
+                        "label": "Ultimatum zamiast wsparcia",
+                        "psychology": "To komunikat z Poziomu II, w którym przejmujesz kontrolę i ustawiasz warunek. Dla osoby w przemocy utrata sprawczości jest już częścią problemu, więc kolejna presja zwiększa wstyd i zamknięcie.",
+                        "better_alternative_hint": "Najpierw uznaj wagę tego, co słyszysz, i sprawdź, czy Lena jest teraz bezpieczna."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ultimatum",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nie przesadzajmy. Każde pary mają kryzysy, może po prostu go sprowokowałaś.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Lena patrzy na ciebie z niedowierzaniem. Zamyka się i mówi, że nieważne, zapomnij.",
+                    "feedback": {
+                        "label": "Minimalizacja i obwinianie",
+                        "psychology": "To klasyczne unieważnienie doświadczenia. W kwadracie von Thuna na poziomie relacji Lena słyszy, że jej ból jest niewiarygodny, a odpowiedzialność zostaje przesunięta na nią.",
+                        "better_alternative_hint": "Zacznij od jasnego uznania, że przemoc jest realna i nie jest jej winą."
+                    },
+                    "tags": [
+                        {
+                            "text": "Obwinianie ofiary",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie wiem jeszcze, co ci doradzić, ale to, co mówisz, jest poważne. Chcę zrozumieć, co się dzieje i jak mogę ci pomóc bez naciskania.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Lena przytakuje ostrożnie. Nadal jest spięta, ale zostaje w rozmowie.",
+                    "feedback": {
+                        "label": "Poważne potraktowanie tematu",
+                        "psychology": "To asertywne zatrzymanie i nazwanie faktów. Dajesz ramę bezpieczeństwa, ale jeszcze nie oferujesz emocjonalnej walidacji ani konkretu, więc ulga Leny jest ograniczona.",
+                        "better_alternative_hint": "Dodaj walidację i pytanie o bieżące bezpieczeństwo."
+                    },
+                    "tags": [
+                        {
+                            "text": "Nazwanie faktów",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Dziękuję, że mi to mówisz. To nie brzmi jak zwykła kłótnia i nie jest twoją winą. Nie będę cię pchać do decyzji, ale chcę najpierw sprawdzić, czy jesteś teraz bezpieczna.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Lena pierwszy raz podnosi wzrok. Widać ulgę i napięcie jednocześnie. Mówi, że teraz tak, ale boi się, co będzie potem.",
+                    "feedback": {
+                        "label": "Walidacja i orientacja na bezpieczeństwo",
+                        "psychology": "To połączenie NVC, walidacji i przywracania sprawczości. Potwierdzasz rzeczywistość przemocy, zdejmujesz winę i nie odbierasz decyzji, dzięki czemu Lena może zostać w kontakcie.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Dlaczego nie odchodzi",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Lena siedzi skulona, zaciska ręce na kubku i rozgląda się, jakby chciała wycofać słowa. Twoja wcześniejsza reakcja zostawiła w powietrzu napięcie i wstyd.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Właśnie dlatego nikomu nie mówiłam. Wszyscy myślą, że wystarczy po prostu odejść.",
+            "scene_high": {
+                "description": "Lena nadal jest spięta, ale siedzi bliżej i mówi ciszej, bez zacinania się. Wyczuwa, że nie próbujesz przejąć kontroli nad jej decyzją.",
+                "location": "cafe",
+                "time_of_day": "evening",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "To nie jest takie proste. Boję się, ale też nie umiem po prostu tego przeciąć.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nie rozumiem, po co w ogóle z nim jesteś. Sama sobie to robisz.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Lena odwraca wzrok i mówi, że chyba to był błąd, że zaczęła ten temat.",
+                    "feedback": {
+                        "label": "Ocena zamiast ciekawości",
+                        "psychology": "Ocena uruchamia obronę i wstyd. Z perspektywy analizy transakcyjnej wchodzisz w krytycznego Rodzica, co spycha rozmowę w podporządkowanie albo bunt.",
+                        "better_alternative_hint": "Zamiast oceniać, zapytaj, co konkretnie sprawia, że odejście jest teraz takie trudne."
+                    },
+                    "tags": [
+                        {
+                            "text": "Krytyczny Rodzic",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Zawstydzanie",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Skoro nie chcesz odejść, to chyba nie jest aż tak źle.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Lena milknie. Jej twarz twardnieje, jakby właśnie potwierdził się jej najgorszy lęk, że nikt jej nie zrozumie.",
+                    "feedback": {
+                        "label": "Fałszywy wniosek",
+                        "psychology": "To błąd logiczny i relacyjny. Brak gotowości do odejścia nie oznacza braku przemocy; często oznacza silny lęk, zależność finansową albo traumatyczne przywiązanie.",
+                        "better_alternative_hint": "Oddziel fakt przemocy od gotowości do zmiany i zapytaj o bariery."
+                    },
+                    "tags": [
+                        {
+                            "text": "Uproszczenie problemu",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Traumatyczne przywiązanie",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Pomóż mi zrozumieć, co najbardziej cię zatrzymuje. Pieniądze, strach przed jego reakcją, coś jeszcze?",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Lena bierze oddech i zaczyna wymieniać powody. Mówi rzeczowo, jakby próbowała sama sobie to ułożyć.",
+                    "feedback": {
+                        "label": "Mapowanie barier",
+                        "psychology": "To dobry ruch poznawczy. Porządkujesz rzeczywistość i pomagasz nazwać przeszkody, ale ton jest bardziej zadaniowy niż wspierający, więc może zabraknąć poczucia bycia naprawdę zobaczoną.",
+                        "better_alternative_hint": "Dodaj zdanie, że jej ambiwalencja ma sens w tej sytuacji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Porządkowanie problemu",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Wierzę ci, że to nie jest proste. Co dziś najbardziej sprawia, że odejście wydaje się niemożliwe?",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Lena wyraźnie mięknie. Mówi o strachu, pieniądzach i o tym, że po każdym wybuchu partner obiecuje zmianę.",
+                    "feedback": {
+                        "label": "Empatyczna ciekawość",
+                        "psychology": "Walidujesz ambiwalencję bez wzmacniania przemocy. To obniża wstyd i pozwala przejść z walki o rację do eksplorowania realnych ograniczeń.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Aktywne słuchanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Czy grozi jej coś teraz",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Na zewnątrz jest już ciemno. Lena co chwilę zerka na ekran telefonu i kasuje podgląd nowych wiadomości, zanim zdążysz coś przeczytać. Atmosfera jest ciężka i poszarpana.",
+                "location": "street",
+                "time_of_day": "night",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "On się wścieka, gdy długo nie odpisuję. Lepiej, żeby nie wiedział, że z tobą o tym gadam.",
+            "scene_high": {
+                "description": "Wychodzicie z kawiarni i stajecie pod latarnią. Lena ściska telefon, ale zamiast go chować, pokazuje ci kilka wiadomości i mówi ciszej, bardziej konkretnie.",
+                "location": "street",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Napisał już sześć razy, gdzie jestem. Kiedyś rozwalił talerz o ścianę, jak nie odbierałam. Nie wiem, czy dziś będzie spokojny.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Dobra, to teraz dzwonię do niego i mu powiem, że ma się od ciebie odwalić.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Lena natychmiast protestuje i wpada w panikę. Mówi, że to tylko pogorszy sytuację, gdy wróci do domu.",
+                    "feedback": {
+                        "label": "Impulsywna interwencja",
+                        "psychology": "Konfrontowanie sprawcy bez planu i zgody osoby pokrzywdzonej często zwiększa ryzyko odwetu. Twoja potrzeba działania wyprzedza ocenę bezpieczeństwa.",
+                        "better_alternative_hint": "Najpierw oceń ryzyko na teraz i zapytaj, co zwiększa lub zmniejsza zagrożenie po powrocie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Impulsywność ratunkowa",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Bezpieczeństwo ponad konfrontację",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "To może po prostu mu odpisz coś miłego i nie prowokuj go dziś.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Lena zamiera. Przyjmuje to jak sugestię, że musi zarządzać jego przemocą jeszcze lepiej.",
+                    "feedback": {
+                        "label": "Normalizacja chodzenia na palcach",
+                        "psychology": "To wzmacnia logikę współodpowiedzialności za przemoc. Osoba doznająca przemocy i tak nadmiernie monitoruje sprawcę; dokładanie jej kolejnego zadania zwiększa obciążenie i wstyd.",
+                        "better_alternative_hint": "Skup się na jej bezpieczeństwie, nie na tym, jak ma lepiej uspokajać sprawcę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Przerzucenie odpowiedzialności",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Współuzależniające dostosowanie",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Musimy ocenić, czy dzisiaj jest ryzyko. Czy on ma klucze, broń, kontroluje twoje pieniądze albo wie, dokąd zwykle chodzisz?",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Lena odpowiada na pytania i zaczyna mówić konkretniej o tym, co może się wydarzyć po powrocie.",
+                    "feedback": {
+                        "label": "Rzeczowa ocena ryzyka",
+                        "psychology": "To trafne pytania bezpieczeństwa. Dają orientację sytuacyjną, ale sam ton może brzmieć technicznie i nieść mniej ukojenia niż połączenie konkretu z troską.",
+                        "better_alternative_hint": "Połącz pytania o ryzyko z zapewnieniem, że nie robi niczego źle, prosząc o pomoc."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ocena ryzyka",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chcę dobrze ocenić, co jest dziś najbezpieczniejsze. Czy boisz się wracać do domu, i czy jest ktoś albo jakieś miejsce, gdzie możesz przeczekać noc, jeśli zrobi się gorąco?",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Lena przyznaje, że naprawdę boi się powrotu. Mówi, że mogłaby nocować u kuzynki, ale wstydzi się zadzwonić.",
+                    "feedback": {
+                        "label": "Połączenie troski i planowania",
+                        "psychology": "Łączysz empatię z konkretem i nie przeskakujesz od razu do rozwiązań siłowych. To zwiększa poczucie wpływu i pozwala przejść do planu bezpieczeństwa zamiast samej paniki.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Plan bezpieczeństwa",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Jaką pomoc zaoferować",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Stoicie przy samochodzie. Lena jest rozedrgana i mówi krótkimi zdaniami, jakby spodziewała się, że zaraz zostanie oceniona albo pogoniona do decyzji.",
+                "location": "street",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Nie mogę po prostu zniknąć. Nie mam spakowanych rzeczy, a on sprawdza konto i historię połączeń.",
+            "scene_high": {
+                "description": "Idziecie wolno w stronę przystanku. Lena mówi bardziej rzeczowo. W jej tonie pojawia się ostrożna gotowość, żeby rozważyć małe kroki zamiast wielkiej deklaracji.",
+                "location": "street",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Może mogłabym coś przygotować wcześniej, tylko nie wiem od czego zacząć i jak zrobić to dyskretnie.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To ja za ciebie spakuję rzeczy jutro, kiedy go nie będzie, i po sprawie.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Lena cofa się o krok. Mówi, że to za dużo i że nie chce, żebyś robił coś bez niej.",
+                    "feedback": {
+                        "label": "Przejęcie steru",
+                        "psychology": "Nawet dobra intencja może odtworzyć dynamikę odebrania kontroli. Osoba po przemocy potrzebuje odzyskiwać wpływ, a nie być prowadzona za rękę wbrew sobie.",
+                        "better_alternative_hint": "Zaoferuj konkretne opcje i pozwól jej wybrać tempo oraz zakres pomocy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Odbieranie sprawczości",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Autonomia",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "No to nie róbmy nic. Jak będziesz naprawdę gotowa, sama ogarniesz.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Lena kiwa głową, ale widać rozczarowanie. Zostaje sama z ciężarem, którego właśnie nie umie unieść.",
+                    "feedback": {
+                        "label": "Wycofanie wsparcia",
+                        "psychology": "To pozorna neutralność. W praktyce przerzucasz cały ciężar planowania na osobę już przeciążoną lękiem, kontrolą i wstydem.",
+                        "better_alternative_hint": "Pomoc nie musi oznaczać nacisku. Możesz zaproponować mały, odwracalny krok."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak koregulacji",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Możemy zrobić listę rzeczy, które warto zabezpieczyć na wszelki wypadek, ale tylko jeśli chcesz.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Lena przytakuje. To brzmi dla niej wykonalnie, choć nadal trochę formalnie.",
+                    "feedback": {
+                        "label": "Mały krok bez presji",
+                        "psychology": "To dobra propozycja graniczna: konkret bez przymusu. Wciąż jednak bardziej organizujesz niż emocjonalnie towarzyszysz.",
+                        "better_alternative_hint": "Dodaj, że nie oczekujesz decyzji o odejściu teraz, tylko chcesz zwiększyć jej margines bezpieczeństwa."
+                    },
+                    "tags": [
+                        {
+                            "text": "Małe kroki",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie musisz decydować dziś o całym życiu. Możemy przygotować tylko plan awaryjny: kopie dokumentów, jedno bezpieczne miejsce, hasło do wiadomości i numer, pod który zadzwonisz, gdyby zrobiło się niebezpiecznie.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Lena wyraźnie odpuszcza napięcie w barkach. Mówi, że taki plan brzmi realnie i nie przeraża jej tak jak słowo ucieczka.",
+                    "feedback": {
+                        "label": "Plan awaryjny bez przymusu",
+                        "psychology": "Zmieniasz rozmowę z wszystko albo nic na serię małych zabezpieczeń. To wzmacnia poczucie wpływu i redukuje paraliż decyzyjny.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Plan bezpieczeństwa",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Redukcja przytłoczenia",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Granica tajemnicy i interwencji",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Lena staje przy drzwiach klatki i rozgląda się nerwowo. Jest rozdarta między potrzebą wsparcia a lękiem, że straci kontrolę nad tym, kto się dowie.",
+                "location": "street",
+                "time_of_day": "night",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Tylko błagam, nie mów nikomu. Jak to wyjdzie poza ciebie, on się dowie i będzie koszmar.",
+            "scene_high": {
+                "description": "Lena zatrzymuje się i mówi wolniej. Widać, że rozważa twoje wsparcie poważnie, ale temat ujawnienia czegokolwiek nadal budzi w niej silny strach.",
+                "location": "street",
+                "time_of_day": "night",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Nie chcę, żeby to poszło dalej bez mojej zgody. Muszę wiedzieć, że nie stracę nad tym kontroli.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nie mogę ci tego obiecać. Powiem twojej rodzinie wszystko jeszcze dziś, bo wiem lepiej.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Lena blednie i wycofuje się. Mówi, że w takim razie więcej ci nic nie powie.",
+                    "feedback": {
+                        "label": "Przymusowe ujawnienie",
+                        "psychology": "Całkowite odebranie kontroli nad informacją może zerwać jedyną nić zaufania. Wyjątkiem jest bezpośrednie zagrożenie życia, ale wtedy trzeba mówić jasno o kryterium interwencji, a nie o własnej władzy.",
+                        "better_alternative_hint": "Ustal przejrzystą granicę: szanujesz jej decyzje, chyba że grozi jej natychmiastowe niebezpieczeństwo."
+                    },
+                    "tags": [
+                        {
+                            "text": "Naruszenie autonomii",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Granice interwencji kryzysowej",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, nikomu nigdy nie powiem, cokolwiek by się działo.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -1,
+                        "openness": -1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Lena przez chwilę czuje ulgę, ale plan staje się kruchy. Zostajecie bez jasnej granicy na wypadek skrajnego ryzyka.",
+                    "feedback": {
+                        "label": "Fałszywa obietnica tajemnicy",
+                        "psychology": "Obietnica absolutnej tajemnicy brzmi kojąco, ale bywa nieodpowiedzialna. W sytuacji bezpośredniego zagrożenia życia lub ciężkiej przemocy możesz potrzebować działać, więc lepiej nie składać obietnicy, której nie da się etycznie utrzymać.",
+                        "better_alternative_hint": "Powiedz jasno, co zachowasz w poufności, a kiedy zareagujesz mimo oporu, jeśli będzie bezpośrednie zagrożenie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Fałszywa obietnica",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Etyczna przejrzystość",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Uszanuję twoją prywatność, ale jeśli uznam, że grozi ci natychmiastowe niebezpieczeństwo, będę szukać pomocy. Wolę powiedzieć to uczciwie teraz.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Lena marszczy czoło, ale przyjmuje to. Nie brzmi to miękko, jednak jest dla niej zrozumiałe.",
+                    "feedback": {
+                        "label": "Uczciwa granica",
+                        "psychology": "To dojrzała przejrzystość. Nie składasz nierealnej obietnicy i definiujesz moment interwencji, ale możesz jeszcze mocniej podkreślić, że celem nie jest przejęcie jej życia, tylko ochrona w sytuacji krytycznej.",
+                        "better_alternative_hint": "Dodaj, że poza bezpośrednim zagrożeniem to ona decyduje o tempie i zakresie dalszych kroków."
+                    },
+                    "tags": [
+                        {
+                            "text": "Jasna granica",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "To ma pozostać pod twoją kontrolą tak długo, jak to możliwe. Nie będę nikogo wtajemniczać za twoimi plecami. Powiem tylko uczciwie, że jeśli będziesz w bezpośrednim zagrożeniu życia albo ciężkiego pobicia, wezwę pomoc, bo wtedy bezpieczeństwo jest ważniejsze od tajemnicy.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Lena wypuszcza powietrze i kiwa głową. Mówi, że właśnie takiej jasności potrzebowała, bo nie brzmi to ani jak zdrada, ani jak zostawienie jej samej.",
+                    "feedback": {
+                        "label": "Poufność z jasnym wyjątkiem",
+                        "psychology": "Łączysz empatię, transparentność i odpowiedzialność kryzysową. To bardzo ważne w relacji pomocowej: brak ukrytych ruchów, ale też brak obietnic, które mogłyby zagrozić bezpieczeństwu.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Transparentność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granice interwencji kryzysowej",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Walidacja autonomii",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_6",
+            "title": "Co dalej, skoro nadal nie odchodzi",
+            "score_threshold": 5,
+            "scene_low": {
+                "description": "Mija kilka dni. Siedzisz u siebie w pokoju z telefonem w dłoni. Lena odpisuje skąpo, jakby każdy kontakt kosztował ją dużo. Wiesz już, że nadal jest z partnerem.",
+                "location": "bedroom",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Wróciłam do domu. Nie jestem gotowa nic kończyć. Może powinnam była ci nic nie mówić.",
+            "scene_high": {
+                "description": "Mija kilka dni. Rozmawiacie przez komunikator. Lena nadal jest w relacji, ale kontakt nie urwał się. W wiadomościach widać ostrożność, lecz także ślad zaufania.",
+                "location": "bedroom",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Na razie nie odchodzę. Ale schowałam kopie dokumentów i zapisałam numer do pomocy pod inną nazwą. Nie chcę, żebyś się ode mnie odwrócił.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nie dam rady tego słuchać. Skoro zostajesz, to sama wybrałaś i nie mogę cię już wspierać.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Lena znika z rozmowy. Zostaje z przekonaniem, że powiedzenie prawdy kosztuje utratę wsparcia.",
+                    "feedback": {
+                        "label": "Wycofanie z karą",
+                        "psychology": "To komunikat opuszczenia podszyty oceną. Dla osoby w przemocy izolacja jest jednym z głównych narzędzi kontroli sprawcy, więc odcięcie wsparcia zwykle pogarsza sytuację.",
+                        "better_alternative_hint": "Możesz postawić granice własnemu przeciążeniu, ale nie używaj ich jako kary za brak gotowości do odejścia."
+                    },
+                    "tags": [
+                        {
+                            "text": "Karzące wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Izolacja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "No to pisz, jak znowu coś ci zrobi. Chyba tylko wtedy do ciebie dociera.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Lena przestaje odpisywać. W twoich słowach słyszy pogardę i zniecierpliwienie.",
+                    "feedback": {
+                        "label": "Sarkazm wobec bezsilności",
+                        "psychology": "Bierna agresja maskuje lęk i frustrację, ale dla odbiorcy brzmi jak osąd. Zamyka kanał kontaktu, który mógł być kluczowy w przyszłym kryzysie.",
+                        "better_alternative_hint": "Nazwij własną troskę wprost i zapytaj, jak utrzymać bezpieczny kontakt."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Bierna agresja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie podoba mi się to, że tam jesteś, ale będę w kontakcie. Daj znać, gdybyś chciała wrócić do planu awaryjnego.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Lena odpisuje po chwili, że dobrze wiedzieć, iż drzwi nie są całkiem zamknięte.",
+                    "feedback": {
+                        "label": "Stałość bez presji",
+                        "psychology": "To stabilny komunikat wsparcia. Nadal jednak jest w nim trochę dystansu i mniej aktywnego towarzyszenia niż w opcji optymalnej.",
+                        "better_alternative_hint": "Dodaj pytanie o bezpieczną formę kontaktu i przypomnienie, że jej ambiwalencja nie odbiera ci gotowości do bycia obok."
+                    },
+                    "tags": [
+                        {
+                            "text": "Konsekwencja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie musisz być gotowa dziś. Cieszę się, że zrobiłaś te małe kroki. Chcę zostać w kontakcie tak, żeby było to dla ciebie bezpieczne. Ustalmy jedno słowo alarmowe i sposób, w jaki mam reagować, jeśli je wyślesz albo nagle znikniesz po wiadomości o zagrożeniu.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Lena pisze dłuższą wiadomość niż zwykle. Ustala z tobą słowo alarmowe i przyznaje, że sama myśl o kimś, kto nie naciska, ale nie znika, daje jej trochę siły.",
+                    "feedback": {
+                        "label": "Obecność plus procedura",
+                        "psychology": "To najbardziej wspierająca odpowiedź długoterminowa. Nie utożsamiasz pomocy z wymuszeniem decyzji, tylko budujesz bezpieczną nić kontaktu i jasny protokół działania na wypadek kryzysu.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Stała obecność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Plan bezpieczeństwa",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "KONTAKT PĘKA",
+            "emoji": "🔴",
+            "subtitle": "Presja i ocena odcinają jedyny bezpieczny kanał rozmowy",
+            "narrative": "Lena wycofuje się z kontaktu. Nie dlatego, że przemoc zniknęła, tylko dlatego, że rozmowa z tobą zaczęła brzmieć jak kolejny sąd nad jej decyzjami. Zostajesz z bezsilnością i poczuciem, że chciałeś ratować, ale stałeś się kolejnym źródłem nacisku.",
+            "diagnosis": "W tej ścieżce dominowały ocena, przejmowanie kontroli albo karzące wycofanie. Psychologicznie to wzmacnia wstyd i izolację, czyli dwa mechanizmy, które już utrzymują osobę w przemocy. Zamiast zwiększyć sprawczość Leny, rozmowa obniżyła jej gotowość do dalszego ujawniania czegokolwiek.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl agresywny, biernie agresywny albo wycofany. Było dużo nacisku, mało walidacji i mało ciekawości wobec realnych barier.",
+                "strongest_moment": "Najcenniejsze było to, że temat w ogóle został nazwany. To pokazuje, że nawet trudny start może stać się punktem nauki.",
+                "growth_tip": "Przestań pytać, czemu nie odchodzi, a zacznij pytać, co zwiększa ryzyko i co daje jej choć odrobinę bezpieczeństwa. Celem pierwszej rozmowy nie jest wygranie decyzji, tylko utrzymanie zaufanego kontaktu.",
+                "replay_prompt": "Zagraj ponownie i spróbuj zamienić nacisk na walidację, a wielkie rozwiązania na małe kroki bezpieczeństwa."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "DRZWI UCHYLONE",
+            "emoji": "🟡",
+            "subtitle": "Rozmowa nie rozpada się, ale wsparcie pozostaje częściowo powierzchowne",
+            "narrative": "Lena nie odchodzi, ale też nie znika całkiem. Wie, że może wrócić do rozmowy, choć nadal nie jest pewna, czy naprawdę zostanie zrozumiana, gdy sytuacja znowu się pogorszy. Między wami zostaje ostrożny kontakt, bardziej funkcjonalny niż kojący.",
+            "diagnosis": "W tej ścieżce pojawiła się pewna asertywność i konkret, ale za mało było empatii oraz walidacji ambiwalencji. To wystarczyło, by nie zerwać kontaktu, jednak nie zbudowało pełnego poczucia bycia widzianą i bezpieczną w relacji pomocowej.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl asertywny i transakcyjny. Były sensowne pytania i ramy, ale mniej emocjonalnego towarzyszenia.",
+                "strongest_moment": "Najmocniejszy element to próby uporządkowania ryzyka i zaproponowania małych kroków bez jawnego przymusu.",
+                "growth_tip": "Następnym razem dołóż więcej prostych zdań walidujących, takich jak to ma sens, że się boisz albo wierzę ci. Sam konkret działa lepiej, gdy ktoś najpierw poczuje się przyjęty, a nie analizowany.",
+                "replay_prompt": "W kolejnym podejściu spróbuj utrzymać jasne granice, ale połącz je z większą czułością na wstyd i ambiwalencję Leny."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 9
+            },
+            "color": "green",
+            "title": "BEZPIECZNA NIĆ",
+            "emoji": "🟢",
+            "subtitle": "Lena nadal nie odchodzi, ale nie jest już z tym sama",
+            "narrative": "Nie dochodzi do wielkiego zwrotu ani natychmiastowego odejścia. Dochodzi do czegoś ważniejszego na tym etapie: Lena ma przy sobie kogoś, kto wierzy, nie naciska i pomaga budować plan bezpieczeństwa. Między wami powstaje nić zaufania, która może stać się drogą wyjścia, gdy będzie gotowa lub gdy zagrożenie wzrośnie.",
+            "diagnosis": "Ta ścieżka wzmacniała sprawczość, obniżała wstyd i utrzymywała kontakt bez ultimatów. To zgodne z wiedzą o wspieraniu osób w przemocy: trwała obecność, walidacja i plan awaryjny często są skuteczniejsze niż presja na natychmiastowe odejście.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl empatyczny i transformacyjny. Rozmowa łączyła troskę, respekt dla autonomii i praktyczne myślenie o bezpieczeństwie.",
+                "strongest_moment": "Najsilniejszy był moment, w którym pomoc została przełożona z natychmiastowego odejdź na małe, realne kroki bezpieczeństwa.",
+                "growth_tip": "To dobre podejście. W realnym życiu warto jeszcze pamiętać o własnych granicach i o tym, by w sytuacji bezpośredniego zagrożenia działać jasno, nie po cichu.",
+                "replay_prompt": "Zagraj jeszcze raz i spróbuj dojść do ścieżki, w której oprócz zaufania powstaje też wyraźny protokół alarmowy."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 10,
+                "max": 12
+            },
+            "color": "blue",
+            "title": "OBECNOŚĆ BEZ PRZYMUSU",
+            "emoji": "🔵",
+            "subtitle": "Powstaje relacja wsparcia, która realnie zwiększa bezpieczeństwo",
+            "narrative": "Lena nadal może nie być gotowa odejść dziś ani jutro, ale nie jest już sama ani bez planu. Ma kopie dokumentów, bezpieczny kontakt, słowo alarmowe i jasność, że nie zostanie zdradzona za plecami, ale też nie zostanie sama, jeśli zagrożenie stanie się bezpośrednie. To nie jest cudowne rozwiązanie. To dojrzała, skuteczna pomoc.",
+            "diagnosis": "W tej ścieżce udało się połączyć cztery kluczowe elementy: walidację, ochronę sprawczości, plan bezpieczeństwa i uczciwe granice interwencji kryzysowej. Psychologicznie to najlepszy sposób wspierania osoby w przemocy bez odtwarzania wobec niej kolejnej relacji kontroli.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl transformacyjny wsparty empatią i konkretem. Rozmowa pozostała ludzka, ale nie rozmyta; troskliwa, ale nie naiwna.",
+                "strongest_moment": "Najmocniejszym momentem było wspólne ustalenie bezpiecznego sposobu kontaktu i warunków interwencji bez łamania zaufania.",
+                "growth_tip": "To poziom bardzo dojrzały. W życiu warto pamiętać, że obecność, cierpliwość i przejrzyste granice potrafią ochronić skuteczniej niż heroiczny impuls ratowania za wszelką cenę.",
+                "replay_prompt": "Możesz rozegrać scenariusz ponownie i sprawdzić, jak szybko rozmowa zamyka się, gdy empatię zastępuje presja."
+            }
+        }
+    ]
+}

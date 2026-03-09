@@ -1,0 +1,1071 @@
+{
+    "scenario_id": "cult_call_money_or_join",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Telefon z grupy",
+        "subtitle": "Bliska osoba pod silnym wpływem prosi o pieniądze albo lojalność",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 10,
+        "interaction_count": 6
+    },
+    "tags": {
+        "relationship_type": "siblings",
+        "theme": [
+            "boundaries",
+            "support",
+            "trust"
+        ],
+        "emotional_intensity": "critical",
+        "age_rating": "teen",
+        "session_type": "training",
+        "player_role_gender": "neutral",
+        "difficulty": "advanced"
+    },
+    "characters": {
+        "player": {
+            "name": "Marta",
+            "role_label": "Starsza siostra · Gracz",
+            "age_range": "29-36",
+            "context": "Od miesięcy widzisz, jak twój brat oddala się od dawnych relacji. Dzwoni rzadko, a gdy to robi, brzmi jakby mówił cudzym językiem. Wiesz, że zbyt mocny atak może zerwać ostatni kontakt.",
+            "hidden_need": "safety",
+            "hidden_need_text": "Chcesz ochronić brata, nie tracąc z nim więzi.",
+            "traits": [
+                {
+                    "text": "Opiekuńcza",
+                    "type": "positive"
+                },
+                {
+                    "text": "Czujna",
+                    "type": "neutral"
+                },
+                {
+                    "text": "Bywa impulsywna pod presją",
+                    "type": "negative"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 5,
+                "patience": 7,
+                "defensiveness": 4,
+                "empathy": 8,
+                "need_for_control": 6,
+                "shame_sensitivity": 5,
+                "directness": 7,
+                "repair_ability": 8
+            }
+        },
+        "npc": {
+            "name": "Kuba",
+            "role_label": "Młodszy brat · NPC",
+            "age_range": "22-28",
+            "context": "Odnalazł poczucie sensu i wspólnoty w zamkniętej grupie. Coraz częściej powtarza jej język, unika dawnych znajomych i interpretuje sprzeciw jako dowód niezrozumienia albo wrogości.",
+            "hidden_need": "belonging",
+            "hidden_need_text": "Potrzebuje przynależności, pewności i prostych odpowiedzi na trudne emocje.",
+            "traits": [
+                {
+                    "text": "Wrażliwy na odrzucenie",
+                    "type": "negative"
+                },
+                {
+                    "text": "Lojalny wobec grupy",
+                    "type": "neutral"
+                },
+                {
+                    "text": "Spragniony akceptacji",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 4,
+                "patience": 3,
+                "defensiveness": 8,
+                "empathy": 5,
+                "need_for_control": 7,
+                "shame_sensitivity": 8,
+                "directness": 5,
+                "repair_ability": 3
+            },
+            "npc_reaction_logic": "Na atak, kpiny i logiczne rozbrajanie doktryny reaguje jak na zagrożenie tożsamości i jeszcze mocniej trzyma się grupy. Na chłodną zgodę reaguje rosnącymi żądaniami. Najlepiej odpowiada na spokojne granice, pytania o jego doświadczenie i sygnały, że relacja nie zależy od posłuszeństwa."
+        }
+    },
+    "metrics_start": {
+        "tension": 45,
+        "trust": 50,
+        "openness": 40,
+        "feeling_heard": 35
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Nieoczekiwany telefon",
+            "scene": {
+                "description": "Wieczór. Telefon wibruje na stole w kuchni. Na ekranie pojawia się imię Kuba, choć od tygodni prawie się nie odzywał.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": "Marta, potrzebuję, żebyś mi zaufała. Wspólnota organizuje wyjazd oczyszczenia. Brakuje mi pieniędzy na składkę. Albo przyjedź ze mną i sama zobaczysz, że to jedyne miejsce, gdzie ludzie naprawdę żyją.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Kuba, brzmisz jak człowiek po praniu mózgu. Nie dam ani grosza tej sekcie.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Jasne. Wiedziałem, że mnie wyśmiejesz. Ty nic nie rozumiesz.",
+                    "feedback": {
+                        "label": "Atak na tożsamość",
+                        "psychology": "Uderzasz w jego obraz siebie i grupy. W modelu analizy transakcyjnej to ruch z pozycji Rodzic krytyczny do Dziecko buntownicze, co wzmacnia obronę zamiast refleksji.",
+                        "better_alternative_hint": "Oddziel relację z Kubą od oceny grupy i zacznij od pytania o jego sytuację."
+                    },
+                    "tags": [
+                        {
+                            "text": "Etykietowanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Rodzic krytyczny",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobrze, prześlę ci pieniądze. Byleś tylko się nie odciął.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Wiedziałem, że w głębi serca chcesz dobrze. To znak, że jesteś gotowa zrobić kolejny krok.",
+                    "feedback": {
+                        "label": "Uległość z lęku",
+                        "psychology": "Unikasz konfliktu kosztem granic. To obniża napięcie chwilowo, ale wzmacnia schemat nacisku i uczy NPC, że presja działa.",
+                        "better_alternative_hint": "Możesz chronić kontakt bez finansowania grupy. Nazwij troskę i postaw spokojną granicę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Granice",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie podejmę teraz decyzji o pieniądzach ani o przyjeździe. Powiedz konkretnie, na co ta składka ma pójść.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 0,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "To na miejsce, transport i wsparcie misji. Czemu od razu robisz z tego przesłuchanie?",
+                    "feedback": {
+                        "label": "Rzeczowe zatrzymanie",
+                        "psychology": "Dobrze, że nie zgadzasz się automatycznie i prosisz o fakty. To poziom transakcyjny, który zatrzymuje presję, ale jeszcze nie buduje mostu emocjonalnego.",
+                        "better_alternative_hint": "Dodaj sygnał relacyjny, żeby pytanie nie brzmiało jak kontrola."
+                    },
+                    "tags": [
+                        {
+                            "text": "Odroczenie decyzji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Pytania doprecyzowujące",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Słyszę, że to jest dla ciebie ważne i że liczysz teraz na mnie. Nie wyślę pieniędzy ani nie dołączę dzisiaj, ale chcę zrozumieć, co się dzieje po twojej stronie.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "To... przynajmniej brzmi inaczej niż zwykle. Po prostu tam pierwszy raz od dawna czuję, że mam sens.",
+                    "feedback": {
+                        "label": "Empatia z granicą",
+                        "psychology": "Łączysz walidację z jasnym nie. W NVC uznajesz uczucie i potrzebę rozmówcy, nie rezygnując z własnych granic. To zmniejsza ryzyko zerwania kontaktu.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC Rosenberg",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Język wspólnoty",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Marta zaciska dłoń na telefonie. Z głośnika płynie przyspieszony oddech Kuby. Po słabym początku rozmowy jego ton jest już napięty i szorstki.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Właśnie dlatego trzymam się z nimi. Wy tylko wszystko oceniacie. Oni przynajmniej mnie słuchają, a nie próbują naprawiać albo ośmieszać.",
+            "scene_high": {
+                "description": "Marta odsuwa krzesło i siada spokojniej. Po drugiej stronie zapada krótka cisza. Kuba brzmi nadal spięcie, ale pierwszy raz nie mówi z pełnym atakiem.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Tam pierwszy raz poczułem, że ktoś mnie nie ocenia. Jak jestem z nimi, nie czuję się już taki pusty.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Bo oni cię tresują. Rodzina cię kocha, a oni robią z ciebie narzędzie.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Czyli znowu mówisz mi, co mam myśleć. Dokładnie przed tym mnie ostrzegali.",
+                    "feedback": {
+                        "label": "Kontratak na przekonania",
+                        "psychology": "Próbujesz wygrać spór o rację. Gdy grupa stała się częścią tożsamości NPC, frontalny atak jest odbierany jak atak na jego autonomię i uruchamia obronę doktrynalną.",
+                        "better_alternative_hint": "Nie spieraj się jeszcze o prawdę grupy. Zapytaj, co dokładnie daje mu ta relacja."
+                    },
+                    "tags": [
+                        {
+                            "text": "Reaktancja psychologiczna",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Atak",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "No tak, my wszyscy źli, a twoja wspólnota święta. Rób, co chcesz.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Wiedziałem. Nie obchodzi cię, co naprawdę czuję. Chcesz tylko postawić swoją rację.",
+                    "feedback": {
+                        "label": "Sarkazm i wycofanie",
+                        "psychology": "Bierna agresja jednocześnie rani i zrywa kontakt. W kwadracie von Thuna warstwa relacyjna brzmi jak pogarda, więc treść przestaje mieć znaczenie.",
+                        "better_alternative_hint": "Zostań w kontakcie i nazwij to, co słyszysz po jego stronie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Rozumiem, że tam czujesz się zauważony. Nie podejmę dziś żadnej decyzji, ale chcę lepiej zrozumieć, co konkretnie tam dostajesz.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "To nie jest łatwe do wyjaśnienia, ale... przynajmniej nikt tam nie patrzy na mnie jak na problem.",
+                    "feedback": {
+                        "label": "Uznanie bez uległości",
+                        "psychology": "Dobrze łączysz uznanie z odroczeniem decyzji. To ruch ku dorosłej, stabilnej pozycji Ja, choć nadal pytasz głównie o treść, nie o presję i koszty.",
+                        "better_alternative_hint": "Pójdź krok dalej i zapytaj o jego doświadczenie wolności oraz ceny, jaką płaci za przynależność."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Dorosły-Dorosły",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Brzmi, jakbyś bardzo potrzebował miejsca, gdzie nie jesteś ciągle oceniany. Co oni robią takiego, że czujesz tam ulgę, a czego brakowało ci wcześniej?",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Oni mają zasady, ale przynajmniej od razu wiesz, kim jesteś. Nie muszę tam zgadywać, czy jestem wystarczający.",
+                    "feedback": {
+                        "label": "Ciekawość zamiast sporu",
+                        "psychology": "Zamiast walczyć z narracją grupy, schodzisz pod nią do potrzeb: ulgi, tożsamości i przynależności. To zwiększa szansę, że NPC zacznie mówić własnym językiem, a nie samą doktryną.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Aktywne słuchanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Potrzeby pod stanowiskiem",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Doktryna jako tarcza",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Deszcz uderza o szybę. Rozmowa staje się bardziej rwąca. Kuba odpowiada szybciej, jakby recytował gotowe zdania, które mają zamknąć temat.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Ty tego nie zrozumiesz. Lider mówił, że rodzina będzie próbowała mnie zatrzymać, bo boi się zmiany. Właśnie to robisz.",
+            "scene_high": {
+                "description": "Marta przechodzi do salonu i ścisza telewizor. Głos Kuby nadal nosi ślady wyuczonej frazy, ale między zdaniami pojawiają się prawdziwe wahania.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "cold"
+            },
+            "npc_line_high": "Czasem mam wrażenie, że wy wszyscy widzicie tylko zagrożenie. A oni mówią, że opór bliskich jest testem.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Twój lider to manipulator. Daj mi z nim numer, zaraz go ustawię.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Nie waż się. Właśnie pokazujesz, że nie chodzi ci o mnie, tylko o kontrolę.",
+                    "feedback": {
+                        "label": "Wejście do wojny",
+                        "psychology": "Przechodzisz z rozmowy relacyjnej do walki z autorytetem grupy. To wzmacnia logikę my kontra oni, która jest paliwem zamkniętych systemów wpływu.",
+                        "better_alternative_hint": "Nie ścigaj lidera w tej chwili. Skieruj uwagę na doświadczenie Kuby i jego pole wyboru."
+                    },
+                    "tags": [
+                        {
+                            "text": "Polaryzacja my kontra oni",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Eskalacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kontrola",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Skoro już wszystko za ciebie wymyślili, to nie mam po co dalej gadać.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Właśnie. Ty chcesz rozmowy tylko wtedy, kiedy powiem to, co ci pasuje.",
+                    "feedback": {
+                        "label": "Wycofanie z pogardą",
+                        "psychology": "Wycofanie połączone z umniejszeniem odbiera NPC resztki bezpieczeństwa w kontakcie. W analizie transakcyjnej to zerwanie kanału Dorosły-Dorosły.",
+                        "better_alternative_hint": "Zostań w rozmowie i zadaj pytanie, które omija gotową doktrynę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Dorosły-Dorosły",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie będę się spierać z tym, co mówi lider. Chcę tylko wiedzieć, czy masz przestrzeń, żeby się z czymś tam nie zgodzić.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "To zależy... Nie wszystko trzeba od razu kwestionować. Ale czasem lepiej po prostu zaufać procesowi.",
+                    "feedback": {
+                        "label": "Pytanie o autonomię",
+                        "psychology": "To dobre przesunięcie z debaty o ideach na pytanie o wolność wewnątrz systemu. Nadal jednak pytanie jest dość poznawcze i może brzmieć testująco.",
+                        "better_alternative_hint": "Dodaj ciekawość wobec jego odczuć, gdy próbuje powiedzieć nie lub ma wątpliwość."
+                    },
+                    "tags": [
+                        {
+                            "text": "Testowanie autonomii",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granice",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie chcę teraz oceniać lidera. Bardziej interesuje mnie to, co dzieje się z tobą. Co się dzieje, kiedy masz wątpliwość albo chcesz powiedzieć nie?",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Wtedy... mówią, że to opór ego. Że trzeba go przełamać. Nie wiem, czasem po tych rozmowach czuję się mniejszy.",
+                    "feedback": {
+                        "label": "Ominięcie tarczy doktryny",
+                        "psychology": "Pytasz o konsekwencje niezgody, czyli o realny koszt przynależności. To pomaga odzyskać perspektywę doświadczenia zamiast powtarzania haseł grupy.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Pytania otwarte",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Autonomia",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Granica wobec pieniędzy",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "W mieszkaniu robi się duszno. Kuba mówi teraz szybciej i ostrzej, jakby kończył cierpliwość. Prośba zaczyna brzmieć jak test lojalności.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Do północy muszę wpłacić składkę. Jeśli mi odmówisz, pokażesz, po której jesteś stronie. Potrzebuję konkretu, nie pytań.",
+            "scene_high": {
+                "description": "Marta patrzy przez okno na pustą ulicę. Głos Kuby drży bardziej niż wcześniej. Za naciskiem słychać nie tylko doktrynę, ale też panikę.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "tense"
+            },
+            "npc_line_high": "Mówią, że jeśli nie zrobię tego teraz, przegapię swoją szansę. Nie wiem, co robić, ale naciskają, żebym załatwił pieniądze jeszcze dziś.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To jest szantaż. Jak jeszcze raz spróbujesz mnie tak ustawiać, rozłączę się.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Czyli jednak. Dla ciebie ważniejsze jest postawienie się niż to, że proszę o pomoc.",
+                    "feedback": {
+                        "label": "Słuszna treść, zły ton",
+                        "psychology": "Rozpoznajesz presję, ale mówisz z pozycji groźby. Przy wysokiej defensywności taka forma zamienia granicę w pojedynek o dominację.",
+                        "better_alternative_hint": "Postaw granicę spokojnie i od razu pokaż, jaka forma pomocy jest możliwa."
+                    },
+                    "tags": [
+                        {
+                            "text": "Groźba",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Granica bez walidacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Wyślę połowę, żebyś się odczepił. Resztę jakoś sobie załatw.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Czyli jednak da się. Wiedziałem, że wystarczy cię mocniej poprosić.",
+                    "feedback": {
+                        "label": "Podtrzymanie schematu nacisku",
+                        "psychology": "Częściowa zgoda nie chroni więzi, tylko wzmacnia mechanizm wymuszania. Pomoc staje się nagrodą za presję, nie wsparciem dla osoby.",
+                        "better_alternative_hint": "Odmów finansowania grupy i zaproponuj wsparcie, które omija jej kontrolę."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wspieranie schematu",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Granice",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie przeleję pieniędzy grupie. Mogę jutro z tobą jeszcze porozmawiać, ale moja odpowiedź w sprawie składki jest nie.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 0,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Czyli stawiasz warunek. Przynajmniej mówisz wprost, ale to nadal brzmi jak odmowa pomocy.",
+                    "feedback": {
+                        "label": "Jasna odmowa",
+                        "psychology": "Asertywność porządkuje sytuację i zatrzymuje presję. Brakuje jednak alternatywy, która pokaże, że odrzucasz żądanie, a nie jego samego.",
+                        "better_alternative_hint": "Dodaj konkretną formę wsparcia niezależną od grupy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywna odmowa",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granice",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie dam pieniędzy grupie. Jeśli potrzebujesz jedzenia, noclegu, biletu albo spotkania ze mną w neutralnym miejscu, pomogę ci bezpośrednio.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Nie o to prosiłem... ale słyszę, że nie zamykasz przede mną drzwi. To nie jest bez znaczenia.",
+                    "feedback": {
+                        "label": "Granica plus bezpieczna alternatywa",
+                        "psychology": "Oddzielasz człowieka od struktury. Nie karmisz systemu, ale zostawiasz realną ścieżkę wsparcia. To jedna z najważniejszych strategii w relacji z osobą pod silnym wpływem grupy.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Bezpieczna alternatywa",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granice",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Nie stracić nici kontaktu",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Jest już późno. Ekran telefonu przygasa i rozświetla się znowu. Rozmowa balansuje na granicy rozłączenia, a każde słowo waży więcej niż wcześniej.",
+                "location": "bedroom",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Może najlepiej, żebym po prostu przestał dzwonić. Za każdym razem kończy się tym samym. Tutaj przynajmniej wiedzą, kim jestem.",
+            "scene_high": {
+                "description": "Marta siada na brzegu łóżka i oddycha wolniej. W słuchawce słychać dłuższą ciszę. Kuba nie brzmi już bojowo, raczej jak ktoś rozdarty między lojalnością a potrzebą kontaktu.",
+                "location": "bedroom",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Nie chcę się z tobą kłócić. Po prostu mam dość bycia ciągniętym w dwie strony. Nie wiem, jak ten kontakt ma teraz wyglądać.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Masz natychmiast powiedzieć, gdzie jesteś, albo zgłoszę sprawę gdzie trzeba.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Właśnie to chciałem usłyszeć. Kontrola i groźby. Nie jesteś po mojej stronie.",
+                    "feedback": {
+                        "label": "Przymus zamiast kontaktu",
+                        "psychology": "Presja może dawać iluzję działania, ale przy osobie pod wpływem grupy często przyspiesza odcięcie. Lęk rozmówcy zamienia się w potrzebę ucieczki.",
+                        "better_alternative_hint": "Zamiast wymuszać, zaproponuj prosty, minimalny kanał bezpieczeństwa."
+                    },
+                    "tags": [
+                        {
+                            "text": "Groźba",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kontrola",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Reaktancja psychologiczna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobrze, nie będę już nic mówić. Dzwoń tylko wtedy, kiedy będziesz chciał pieniędzy albo pomocy.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Czyli mamy udawać, że wszystko jest normalne albo nie ma nas dla siebie wcale.",
+                    "feedback": {
+                        "label": "Rezygnacja z relacji",
+                        "psychology": "To pozornie spokojne, ale komunikat niesie bezradność i dystans. Nie budujesz mostu, tylko zostawiasz kontakt bez struktury i bez bezpieczeństwa.",
+                        "better_alternative_hint": "Ustal mały, realistyczny sposób kontaktu, który nie wymaga zgody co do poglądów."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Bezradność",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie musimy dziś rozstrzygać wszystkiego. Chcę tylko, żebyśmy mieli prostą zasadę kontaktu, na przykład jedną wiadomość w tygodniu, że żyjesz.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "To brzmi mniej dusząco niż ciągłe pytania. Jedna wiadomość... może to bym dał radę.",
+                    "feedback": {
+                        "label": "Minimalna umowa",
+                        "psychology": "Dajesz relacji strukturę i obniżasz chaos. To dobre posunięcie praktyczne, choć jeszcze bez mocniejszego zakotwiczenia emocjonalnego.",
+                        "better_alternative_hint": "Dodaj komunikat, że kontakt nie jest nagrodą za zgodę, tylko wyrazem więzi."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ustalanie zasad",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Redukcja chaosu",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie musisz dziś wybierać między mną a nimi. Chcę tylko jednego prostego sygnału, że jesteś bezpieczny. Nawet jeśli się nie zgadzamy, nie przestaję być twoją siostrą.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "To... brzmi inaczej niż ultimatum. Gdybym napisał tylko jedno słowo, wystarczy?",
+                    "feedback": {
+                        "label": "Więź bez przymusu",
+                        "psychology": "Usuwasz fałszywy wybór my albo oni i tworzysz kanał bezpieczeństwa. To obniża obronę i zostawia rozmówcy poczucie sprawczości.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Redukcja fałszywego wyboru",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Walidacja więzi",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_6",
+            "title": "Ostatnie słowa przed ciszą",
+            "score_threshold": 5,
+            "scene_low": {
+                "description": "Noc jest już głęboka. Cisza po obu stronach robi się ciężka. Czujesz, że następne zdanie może zamknąć albo uchylić drzwi na dłużej.",
+                "location": "bedroom",
+                "time_of_day": "night",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Powiedz wprost. Jesteś ze mną czy przeciwko mnie? Bo jeśli dalej będziesz podważać to, co wybrałem, lepiej zakończmy tę rozmowę.",
+            "scene_high": {
+                "description": "Na zewnątrz miasto już ucichło. W słuchawce słychać zmęczenie. Kuba nie brzmi pewnie, raczej jak ktoś, kto szuka ostatniego testu, czy może zachować więź bez zdrady grupy.",
+                "location": "bedroom",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Nie wiem, co z tym wszystkim zrobię. Ale muszę wiedzieć, czy będziesz ze mną rozmawiać, jeśli nie zrobię tego po twojemu.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Jeśli zostaniesz z nimi, to nie licz, że będę cię dalej traktować jak rodzinę.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Rozumiem. Czyli jednak mam rację, że wasza miłość działa tylko na warunkach.",
+                    "feedback": {
+                        "label": "Ultimatum relacyjne",
+                        "psychology": "Odcinasz więź, by wymusić zmianę. W sytuacji silnego wpływu grupowego taki ruch często potwierdza narrację sekty, że tylko ona oferuje bezwarunkową przynależność.",
+                        "better_alternative_hint": "Odrzuć zachowanie lub żądanie, ale nie zamykaj człowieka definitywnie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ultimatum",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Warunkowa więź",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra. Przyjadę i zobaczę to wszystko, skoro inaczej mam cię stracić.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Wiedziałem, że w końcu zrozumiesz. To tylko potwierdza, że powinnaś otworzyć się bardziej.",
+                    "feedback": {
+                        "label": "Uległość ze strachu przed stratą",
+                        "psychology": "Decyzja wypływa z paniki, nie z rozeznania. Taka zgoda nie stabilizuje relacji, tylko przesuwa środek ciężkości na warunki grupy.",
+                        "better_alternative_hint": "Możesz nie dołączyć i jednocześnie jasno powiedzieć, że nie zrywasz kontaktu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Lęk przed utratą",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Uległość",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Granice",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie przyjadę i nie zapłacę. Ale jeśli będziesz chciał porozmawiać albo spotkać się ze mną poza tą grupą, odezwij się.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Nie brzmi to jak poparcie, ale przynajmniej wiem, że nie zamykasz telefonu na zawsze.",
+                    "feedback": {
+                        "label": "Otwarte drzwi",
+                        "psychology": "To dobra, klarowna końcówka. Zachowujesz granice i nie dokładasz presji. Brakuje tylko cieplejszego potwierdzenia więzi, które mogłoby zostać w nim po rozmowie.",
+                        "better_alternative_hint": "Dodaj jedno zdanie o relacji, nie tylko o zasadach kontaktu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Otwarte drzwi",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie dołączę i nie dam pieniędzy. To się nie zmienia. Ale ty nadal jesteś moim bratem. Jeśli kiedyś będziesz chciał pogadać bez presji, spotkać się w kawiarni albo po prostu wysłać jedno słowo, odbiorę.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Dobrze... Nie obiecuję niczego. Ale zapamiętam to. Może napiszę.",
+                    "feedback": {
+                        "label": "Twarda granica, miękka więź",
+                        "psychology": "To najbardziej dojrzała odpowiedź w tej sytuacji. Nie współpracujesz z grupą, a równocześnie zostawiasz rozmówcy godność, wybór i bezpieczny most powrotu.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Bezwarunkowy szacunek",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granice",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "PĘKNIĘCIE LINII",
+            "emoji": "🔴",
+            "subtitle": "Rozmowa zamienia się w test lojalności i kończy odcięciem",
+            "narrative": "Po rozłączeniu zostaje ciężka cisza. Kuba przestaje odpisywać. Ostatnie słowa, które zapamiętuje, brzmią jak potwierdzenie tego, co grupa mówiła mu od początku: poza nią czeka tylko osąd, kontrola albo warunkowa miłość.",
+            "diagnosis": "Dominował styl agresywny, bierny albo biernie agresywny. Rozmowa ugrzęzła na poziomie pozycyjnym, gdzie stawką było zwycięstwo w sporze albo ucieczka od napięcia. Przy osobie głęboko pod wpływem grupy taki przebieg wzmacnia izolację i narrację my kontra oni.",
+            "post_game": {
+                "communication_style_summary": "Przeważyły atak, presja lub bezradna uległość. Granice były albo chaotyczne, albo spóźnione.",
+                "strongest_moment": "Najbardziej wartościowy był każdy moment, w którym próbowałeś zatrzymać automatyczną zgodę i nie finansować grupy.",
+                "growth_tip": "W tym typie rozmowy nie zaczynaj od obalania doktryny. Najpierw chroń kanał kontaktu, pytaj o doświadczenie presji i oddzielaj człowieka od żądań grupy.",
+                "replay_prompt": "Spróbuj przejść scenę jeszcze raz, mówiąc mniej o sekcie, a więcej o tym, co Kuba czuje, czego potrzebuje i jak może utrzymać z tobą bezpieczny kontakt."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "KONTAKT NA KRAWĘDZI",
+            "emoji": "🟡",
+            "subtitle": "Nie zrywasz więzi, ale rozmowa pozostaje krucha i ostrożna",
+            "narrative": "Telefon kończy się bez wybuchu, lecz także bez wyraźnego przełomu. Kuba nie dostaje pieniędzy albo dostaje niepełną odpowiedź, ale nadal nie jest pewne, czy odezwie się znowu z własnej woli. Zostaje cienka nitka kontaktu, bardziej praktyczna niż emocjonalna.",
+            "diagnosis": "Pojawiły się elementy asertywności i pojedyncze dobre pytania, ale zabrakło konsekwentnej empatii oraz mocnego zakotwiczenia relacji. Rozmowa weszła momentami na poziom transakcyjny i dzięki temu nie eskalowała całkowicie, jednak nie otworzyła jeszcze przestrzeni na głębszą refleksję NPC.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl rzeczowy i częściowo asertywny. Chroniłeś granice, ale nie zawsze pokazywałeś więź.",
+                "strongest_moment": "Najlepiej działały chwile, gdy odmawiałeś finansowania grupy bez dodatkowego ataku.",
+                "growth_tip": "Następnym razem dodawaj do granicy jedno zdanie walidacji albo przynależności. Sama poprawna odmowa to za mało, gdy druga osoba boi się odrzucenia.",
+                "replay_prompt": "Zagraj ponownie i zobacz, co się zmieni, gdy do każdego nie dołożysz pytanie o przeżycie Kuby albo sygnał, że nie musi wybierać między grupą a relacją."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 9
+            },
+            "color": "green",
+            "title": "MOST POD NAPIĘCIEM",
+            "emoji": "🟢",
+            "subtitle": "Nie wspierasz grupy, ale zostawiasz realną drogę powrotu",
+            "narrative": "Rozmowa nie kończy problemu, ale zmienia jej sens. Kuba nadal jest pod wpływem grupy, jednak po raz pierwszy w tej rozmowie wypowiada własne wahanie, a nie tylko cudze hasła. Nie dostaje pieniędzy ani zgody na dołączenie, za to dostaje coś rzadszego: granicę bez odrzucenia.",
+            "diagnosis": "Przeważały odpowiedzi empatyczne i transformacyjne. Udało się ominąć pułapkę debaty o doktrynie i przenieść rozmowę na teren potrzeb, autonomii i bezpieczeństwa. To nie daje natychmiastowego wyjścia z sekty, ale zwiększa szansę utrzymania relacji jako przyszłej linii ratunkowej.",
+            "post_game": {
+                "communication_style_summary": "Twoja ścieżka była stabilna, empatyczna i oparta na granicach. Relacja pozostała ważniejsza niż wygranie sporu.",
+                "strongest_moment": "Najmocniejszy był moment, gdy odrzuciłeś finansowanie grupy, a jednocześnie zaproponowałeś bezpośrednie wsparcie dla Kuby.",
+                "growth_tip": "To dobre podejście. W realnym życiu warto je uzupełnić o stały, prosty rytm kontaktu i pytania o to, co dzieje się, gdy Kuba próbuje stawiać własne granice wewnątrz grupy.",
+                "replay_prompt": "Spróbuj jeszcze raz zagrać tak, by jeszcze częściej nazywać więź wprost i budować minimum bezpieczeństwa na przyszłość."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 10,
+                "max": 12
+            },
+            "color": "blue",
+            "title": "OTWARTE DRZWI",
+            "emoji": "🔵",
+            "subtitle": "Tworzysz warunki, w których relacja może przetrwać wpływ grupy",
+            "narrative": "Po rozmowie nie ma cudu ani natychmiastowego przebudzenia. Jest coś bardziej wiarygodnego: Kuba kończy połączenie bez pieniędzy, bez twojej zgody na dołączenie, ale z pamięcią, że istnieje miejsce poza grupą, gdzie nie musi udowadniać lojalności, żeby zostać wysłuchanym. To może być pierwszy prawdziwy pęknięty punkt w szczelnej narracji sekty.",
+            "diagnosis": "Najlepsza ścieżka opiera się na dojrzałej kombinacji trzech elementów: walidacji doświadczenia, testowania autonomii oraz twardych granic wobec pieniędzy i rekrutacji. Rozmowa osiąga poziom transformacji, bo nie próbuje wygrać z człowiekiem, tylko odzyskać człowieka spod wpływu systemu.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl transformacyjny i empatyczny. Byłeś spokojny, precyzyjny i konsekwentny.",
+                "strongest_moment": "Najsilniejszy był finał, w którym postawiłeś nieprzekraczalną granicę wobec grupy i jednocześnie zostawiłeś Kubie godną, konkretną drogę kontaktu.",
+                "growth_tip": "To mistrzowski kierunek. W życiu warto pamiętać, że takie rozmowy rzadko dają szybki efekt. Siłą jest konsekwentne powtarzanie tej samej postawy: zero współudziału, maksimum relacyjnej dostępności.",
+                "replay_prompt": "Przejdź scenariusz jeszcze raz i zobacz, jak niewielka zmiana tonu potrafi przesunąć rozmowę z pola walki na pole odzyskiwania kontaktu."
+            }
+        }
+    ]
+}

@@ -1,0 +1,964 @@
+{
+    "scenario_id": "ex_partner_calls_stalking_love",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "To nie jest miłość",
+        "subtitle": "Były partner przekracza granice po rozstaniu i nazywa to uczuciem.",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 10,
+        "interaction_count": 6
+    },
+    "tags": {
+        "relationship_type": "romantic_partner",
+        "theme": [
+            "boundaries",
+            "control",
+            "technology"
+        ],
+        "emotional_intensity": "critical",
+        "age_rating": "adult",
+        "session_type": "training",
+        "player_role_gender": "neutral",
+        "difficulty": "advanced"
+    },
+    "characters": {
+        "player": {
+            "name": "Alex",
+            "role_label": "Była osoba partnerska · Gracz",
+            "age_range": "29-36",
+            "context": "Kilka tygodni temu zakończyłeś lub zakończyłaś związek. Od tamtej pory były partner nie akceptuje rozstania, pojawia się bez zapowiedzi i próbuje utrzymać kontakt przez wiadomości oraz rodzinę.",
+            "hidden_need": "safety",
+            "hidden_need_text": "Potrzebujesz bezpieczeństwa, przewidywalności i odzyskania wpływu na własną przestrzeń.",
+            "traits": [
+                {
+                    "text": "Uważność na sygnały zagrożenia",
+                    "type": "positive"
+                },
+                {
+                    "text": "Skłonność do tłumaczenia się",
+                    "type": "negative"
+                },
+                {
+                    "text": "Silne poczucie odpowiedzialności",
+                    "type": "neutral"
+                },
+                {
+                    "text": "Rosnące zmęczenie emocjonalne",
+                    "type": "negative"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 4,
+                "patience": 6,
+                "defensiveness": 6,
+                "empathy": 7,
+                "need_for_control": 5,
+                "shame_sensitivity": 7,
+                "directness": 5,
+                "repair_ability": 6
+            }
+        },
+        "npc": {
+            "name": "Maks",
+            "role_label": "Były partner · NPC",
+            "age_range": "30-38",
+            "context": "Po rozstaniu nie przyjmuje decyzji o końcu relacji. Mówi o wielkiej miłości, ale zachowuje się obsesyjnie: pisze seriami, pojawia się pod domem i szuka dostępu przez bliskich.",
+            "hidden_need": "control",
+            "hidden_need_text": "Pod warstwą deklarowanej tęsknoty kryje się potrzeba odzyskania wpływu i uniknięcia odrzucenia.",
+            "traits": [
+                {
+                    "text": "Intensywny",
+                    "type": "neutral"
+                },
+                {
+                    "text": "Natarczywy",
+                    "type": "negative"
+                },
+                {
+                    "text": "Skłonny do idealizowania relacji",
+                    "type": "negative"
+                },
+                {
+                    "text": "Sprawny w wywoływaniu poczucia winy",
+                    "type": "negative"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 7,
+                "patience": 2,
+                "defensiveness": 8,
+                "empathy": 3,
+                "need_for_control": 9,
+                "shame_sensitivity": 8,
+                "directness": 6,
+                "repair_ability": 2
+            },
+            "npc_reaction_logic": "Maks interpretuje długie wyjaśnienia jako zaproszenie do dalszej rozmowy i próbuje negocjować samo rozstanie. Na atak odpowiada eskalacją albo rolą skrzywdzonej ofiary. Najbardziej hamuje go krótki komunikat graniczny połączony z konsekwencją i brakiem emocjonalnych negocjacji."
+        }
+    },
+    "metrics_start": {
+        "tension": 45,
+        "trust": 20,
+        "openness": 30,
+        "feeling_heard": 25
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Pod drzwiami po zmroku",
+            "scene": {
+                "description": "Jest późny wieczór. Na klatce słychać szybkie pukanie, chociaż nikogo się nie spodziewasz. Telefon od godziny wibruje od kolejnych wiadomości. Gdy zaglądasz przez wizjer, widzisz Maksa z bukietem w dłoni.",
+                "location": "street",
+                "time_of_day": "night",
+                "visual_mood": "tense"
+            },
+            "npc_line": "Wiem, że nie powinniśmy tak kończyć. Otwórz tylko na chwilę. Musisz mnie wysłuchać.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To jest chore. Wynoś się, bo zaraz zobaczysz, jak kończy się nachodzenie mnie.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maks prostuje się i podnosi głos. Zaczyna walić pięścią w drzwi, przekonując, że robisz z niego potwora.",
+                    "feedback": {
+                        "label": "Atak i groźba",
+                        "psychology": "Agresja przenosi rozmowę na Poziom II i uruchamia u rozmówcy obronę albo kontratak. W analizie transakcyjnej Berne'a to starcie Dziecko buntownicze kontra Dziecko buntownicze.",
+                        "better_alternative_hint": "Nazwij granicę krótko i bez emocjonalnego pojedynku. W tej sytuacji liczy się bezpieczeństwo, nie wygranie kłótni."
+                    },
+                    "tags": [
+                        {
+                            "text": "Groźba",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobrze, tylko na chwilę. Może jak pogadamy, to się uspokoi.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maks natychmiast korzysta z otwarcia. Wchodzi krok dalej, niż chcesz, i zaczyna mówić tak, jakby decyzja o rozstaniu była jeszcze do odwrócenia.",
+                    "feedback": {
+                        "label": "Ustąpienie pod presją",
+                        "psychology": "Uległość obniża twoje poczucie sprawczości i wzmacnia u drugiej strony przekonanie, że nacisk działa. Z perspektywy warunkowania to nagroda za przekraczanie granicy.",
+                        "better_alternative_hint": "Nie otwieraj przestrzeni do negocjacji, gdy problemem jest właśnie naruszanie twojej przestrzeni."
+                    },
+                    "tags": [
+                        {
+                            "text": "Rozmycie granicy",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Autonomia",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie chcę tej rozmowy teraz. Opuść proszę to miejsce.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 0,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Maks robi pauzę, ale dalej naciska. Mówi, że skoro nie odrzucasz go całkiem, to będzie czekał, aż zmienisz zdanie.",
+                    "feedback": {
+                        "label": "Granica bez konsekwencji",
+                        "psychology": "To asertywny początek, ale komunikat nie zawiera następnego kroku. Przy uporczywym zachowaniu sama prośba bywa odczytywana jako coś do dalszego testowania.",
+                        "better_alternative_hint": "Połącz granicę z jasną zasadą kontaktu i zapowiedzią dokumentowania."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Komunikat graniczny",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie chcę kontaktu poza sprawami formalnymi. Opuść teraz to miejsce. Każde dalsze nachodzenie będę dokumentować.",
+                    "points": 2,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Maks zamiera na moment. Próbuje jeszcze powiedzieć, że robi to z miłości, ale słyszy w twoim tonie brak pola do negocjacji i powoli odchodzi.",
+                    "feedback": {
+                        "label": "Jasna granica z konsekwencją",
+                        "psychology": "W sytuacji natarczywości najlepiej działa krótki komunikat na Poziomie I: fakt, granica, konsekwencja. To nie jest chłód emocjonalny, tylko regulacja kontaktu w imię bezpieczeństwa.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Granica",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Seria wiadomości o świcie",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Nad ranem budzi cię kolejne wibrowanie telefonu. Masz kilkanaście nieodebranych połączeń i serię wiadomości od Maksa. W ostatniej pisze, że będzie pisał, dopóki nie okażesz serca.",
+                "location": "bedroom",
+                "time_of_day": "morning",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Nie możesz mnie tak odciąć. Po tym wszystkim należy mi się rozmowa.",
+            "scene_high": {
+                "description": "Rano widzisz kilka nowych wiadomości, ale po wczorajszym jasnym komunikacie jesteś bardziej skupiony lub skupiona. Otwierasz notatki i widzisz, że możesz zacząć układać wzorzec kontaktu, zamiast reagować impulsywnie.",
+                "location": "bedroom",
+                "time_of_day": "morning",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Nie rób ze mnie obcego. Napisz tylko jedno zdanie, żebym wiedział, że ci zależało.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Jak bardzo trzeba nie rozumieć słowa koniec, żeby robić takie sceny.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maks odpisuje natychmiast dłuższą tyradą. Twierdzi, że twoja pogarda dowodzi, że nadal jesteś emocjonalnie zaangażowany lub zaangażowana.",
+                    "feedback": {
+                        "label": "Sarkazm jako paliwo",
+                        "psychology": "Bierna agresja rozładowuje twoje napięcie tylko na chwilę. Po stronie drugiej działa jak emocjonalny haczyk i przedłuża wymianę.",
+                        "better_alternative_hint": "Nie karm pętli emocją. Odpowiedź ma zamykać kanał, nie produkować nowy materiał do dyskusji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Sarkazm",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Eskalacja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Wiem, że cierpisz, ale może za jakiś czas pogadamy spokojniej.",
+                    "points": 0,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maks chwyta się słowa może. Zaczyna proponować terminy i przekonuje, że właśnie dostał szansę na powrót.",
+                    "feedback": {
+                        "label": "Empatia z niebezpiecznym uchyleniem drzwi",
+                        "psychology": "Walidacja bez jednoznacznej granicy bywa odczytana przez natarczywą osobę jako zaproszenie. W modelu von Thuna ujawnia się warstwa relacyjna: słyszy nadzieję zamiast granicy.",
+                        "better_alternative_hint": "Możesz uznać cudze emocje, ale nie zostawiaj furtki tam, gdzie potrzebny jest komunikat zamykający."
+                    },
+                    "tags": [
+                        {
+                            "text": "Mieszany komunikat",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Przestań do mnie pisać. To narusza moją granicę.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 0,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Maks odpisuje, że granica to tylko słowo, kiedy chodzi o prawdziwe uczucia. Na chwilę milknie, ale nie znika.",
+                    "feedback": {
+                        "label": "Dobra granica, za mało struktury",
+                        "psychology": "To właściwy kierunek, bo komunikat jest jasny i osobisty. Brakuje jednak warunku kontaktu oraz konsekwencji, które ograniczają dalsze testowanie granicy.",
+                        "better_alternative_hint": "Skróć jeszcze bardziej i doprecyzuj, co zrobisz z kolejnymi wiadomościami."
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie wyrażam zgody na dalszy kontakt prywatny. Odpowiem wyłącznie na jedną wiadomość dotyczącą spraw formalnych. Pozostałe wiadomości zachowuję.",
+                    "points": 2,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Po kilku minutach przychodzi już tylko jedna krótka wiadomość pełna pretensji. Potem zapada cisza, ale bardziej przypomina zmianę taktyki niż zrozumienie.",
+                    "feedback": {
+                        "label": "No contact z ramą",
+                        "psychology": "Tu komunikat ma trzy elementy: brak zgody, wąski wyjątek formalny i dokumentowanie. To ogranicza pole do negocjacji i wzmacnia twoją pozycję dowodową.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Dokumentowanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Kontakt przez rodzinę",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Po południu dzwoni twoja siostra. Mówi, że Maks pisał do niej całą noc, pytał, czy kogoś masz, i prosił, żeby przekazała ci, że nie pozwoli tak po prostu zniknąć tej relacji.",
+                "location": "street",
+                "time_of_day": "afternoon",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Skoro ty milczysz, to ktoś z twoich bliskich powinien przemówić ci do rozsądku.",
+            "scene_high": {
+                "description": "W drodze z pracy odbierasz telefon od mamy. Spokojnie mówi, że Maks próbował z nią rozmawiać o waszym rozstaniu. Czujesz ukłucie stresu, ale masz już większą jasność, że to kolejna próba wejścia do twojego życia bocznymi drzwiami.",
+                "location": "street",
+                "time_of_day": "afternoon",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Nie wciągam nikogo przeciwko tobie. Oni po prostu widzą, że to nie powinno się tak skończyć.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Powiedz mu, że jest żałosny i że wszyscy mamy go dość.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maks dostaje nowy materiał do grania ofiary. Jeszcze tego samego dnia pisze, że nastawiłeś lub nastawiłaś rodzinę przeciwko niemu.",
+                    "feedback": {
+                        "label": "Rozszerzenie frontu konfliktu",
+                        "psychology": "Włączenie bliskich do walki zwiększa polaryzację i dokłada nowy kanał napięcia. To klasyczne wejście w trójkąt dramatyczny i wzmacnianie triangulacji.",
+                        "better_alternative_hint": "Chroń bliskich przed rolą posłańca. Im mniej emocjonalnych pośredników, tym mniej paliwa dla natarczywości."
+                    },
+                    "tags": [
+                        {
+                            "text": "Triangulacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Polaryzacja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Może porozmawiaj z nim i spróbuj go uspokoić, bo ja już nie mam siły.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Rodzina nieświadomie wchodzi w rolę mediatora. Maks wykorzystuje to, żeby przesyłać kolejne wiadomości i sprawdzać, co o nim mówisz.",
+                    "feedback": {
+                        "label": "Oddanie steru innym",
+                        "psychology": "Delegowanie granicy bywa kuszące przy zmęczeniu, ale zostawia cię bez kontroli nad przekazem. Osoba natarczywa zyskuje wtedy dodatkowy kanał wpływu.",
+                        "better_alternative_hint": "Daj bliskim prostą instrukcję: nie odpowiadać merytorycznie, nie przekazywać wiadomości, zachowywać ślad kontaktu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Rozmycie odpowiedzialności",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie przekazuj mu nic ode mnie. Nie chcę, żebyś była lub był w to wciągany.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Bliska osoba rozumie twoją prośbę, ale nie wie jeszcze, co konkretnie zrobić z wiadomościami od Maksa.",
+                    "feedback": {
+                        "label": "Zatrzymanie pośrednictwa",
+                        "psychology": "To ważne, bo odcinasz triangulację i chronisz relacje rodzinne. Brakuje jednak instrukcji praktycznej, która zmienia stres bliskich w uporządkowane działanie.",
+                        "better_alternative_hint": "Dodaj prośbę o nieodpisywanie i o zachowanie zrzutów lub wiadomości."
+                    },
+                    "tags": [
+                        {
+                            "text": "Ochrona granic",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Triangulacja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie pośrednicz między nami. Jeśli znowu się odezwie, nie wdawaj się w rozmowę, tylko zachowaj wiadomości i prześlij mi zrzuty.",
+                    "points": 2,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Bliska osoba wyraźnie oddycha z ulgą. Wie, co robić. Maks traci kolejną drogę nacisku i nie dostaje od rodziny emocjonalnej odpowiedzi.",
+                    "feedback": {
+                        "label": "De-triangulacja i procedura",
+                        "psychology": "To ruch ochronny: odcinasz pośrednictwo, chronisz bliskich i tworzysz ślad zdarzeń. W konflikcie z przekraczaniem granic struktura działa lepiej niż tłumaczenie intencji.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Dokumentowanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Triangulacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Prezent pod drzwiami",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Wieczorem wracasz do domu i widzisz torbę z prezentem oraz list wsunięty pod wycieraczkę. Serce przyspiesza, bo to znaczy, że Maks znowu był pod twoimi drzwiami, mimo że nie dostał zgody.",
+                "location": "street",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Zostawiłem tylko coś, co przypomni ci, że mieliśmy prawdziwe rzeczy. Nie możesz tego tak wyrzucić z życia.",
+            "scene_high": {
+                "description": "Przed drzwiami leży reklamówka z drobnym prezentem i listem. Robisz wdech, zauważasz kamerę sąsiada nad wejściem i czujesz, że tym razem możesz zareagować według planu, a nie według impulsu.",
+                "location": "street",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "To nie nacisk. Chciałem tylko zostawić ci coś od serca.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Czytam list od razu i odpisuję, że jest okrutny, skoro robi mi to po wszystkim.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maks dostaje dokładnie to, po co przyszedł: pewność, że znów wywołał reakcję. Odpowiada długą wiadomością o waszej historii i o tym, że nadal do ciebie dociera.",
+                    "feedback": {
+                        "label": "Reakcja nagradzająca zachowanie",
+                        "psychology": "Natychmiastowa emocjonalna odpowiedź wzmacnia schemat natarczywego kontaktu. Z punktu widzenia uczenia społecznego reakcja sama w sobie staje się nagrodą.",
+                        "better_alternative_hint": "Najpierw zabezpiecz ślad zdarzenia. Emocja może poczekać, dowód nie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wzmocnienie zachowania",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Impulsywność",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Wyrzucam wszystko i udaję, że nic się nie stało. Może sam odpuści.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Na zewnątrz zapada cisza, ale ty tracisz materiał potwierdzający wzorzec. Maks nie dostaje sprzeciwu proceduralnego, więc może próbować dalej innym kanałem.",
+                    "feedback": {
+                        "label": "Brak reakcji operacyjnej",
+                        "psychology": "Ignorowanie zdarzenia bywa mylone z stawianiem granicy. Tu jednak tracisz dane o incydencie, a to osłabia twoją możliwość późniejszego działania.",
+                        "better_alternative_hint": "Nie musisz odpisywać, ale warto zabezpieczyć ślady i poinformować otoczenie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wyparcie problemu",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Dokumentowanie",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Odsyłam prezent przez znajomego i piszę, żeby więcej nic nie zostawiał.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 0,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Maks otrzymuje sygnał, że prezent nie działa, ale nadal dostaje kontakt zwrotny i nowego pośrednika w sprawie.",
+                    "feedback": {
+                        "label": "Granica z niepotrzebnym kanałem zwrotnym",
+                        "psychology": "To lepsze niż emocjonalna odpowiedź, ale wciąż zostawia komunikacyjną nitkę. Przy uporczywym zachowaniu mniej kanałów zwykle oznacza większe bezpieczeństwo.",
+                        "better_alternative_hint": "Zamiast odsyłać i tłumaczyć, zabezpiecz dowód i ogranicz kontakt do minimum."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Minimalizacja kontaktu",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie odpowiadam. Robię zdjęcia, zapisuję datę, zabezpieczam list i informuję zaufaną osobę oraz administrację budynku.",
+                    "points": 2,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Maks nie dostaje bezpośredniej reakcji. Za to ty wzmacniasz sieć bezpieczeństwa i tworzysz spójny zapis tego, co się dzieje.",
+                    "feedback": {
+                        "label": "Dowód i sieć wsparcia",
+                        "psychology": "Najbardziej ochronne działanie to ograniczyć kontakt i zwiększyć przewidywalność otoczenia. Z psychologicznego punktu widzenia odzyskujesz sprawczość przez procedurę, nie przez debatę o uczuciach.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Dokumentowanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Wsparcie społeczne",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "To jest miłość",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Późnym wieczorem odsłuchujesz nagranie z poczty głosowej. Głos Maksa jest napięty i rozedrgany. Mówi szybko, jakby sam chciał uwierzyć w to, co powtarza.",
+                "location": "bedroom",
+                "time_of_day": "night",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Ja tego nie robię, żeby cię straszyć. Robię to, bo kocham cię za mocno, żeby odpuścić.",
+            "scene_high": {
+                "description": "Na nagraniu z poczty głosowej słychać zmęczenie i pretensję. Słowa o miłości mieszają się z próbą wzbudzenia winy. Masz już jednak w głowie wyraźne rozróżnienie: uczucie nie unieważnia granicy.",
+                "location": "bedroom",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Nazywasz to nękaniem, a ja po prostu walczę o nas. To chyba coś znaczy.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "To nie miłość, tylko obsesja. Brzydzę się tym, co robisz.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maks skupia się na oburzeniu. Zamiast słyszeć granicę, zaczyna udowadniać, że jest raniony twoim okrucieństwem.",
+                    "feedback": {
+                        "label": "Ocena zamiast granicy",
+                        "psychology": "Nazwanie zachowania może być trafne, ale obelga przesuwa ciężar z twojego bezpieczeństwa na jego urażenie. To znów gra na Poziomie II, a nie komunikat ochronny.",
+                        "better_alternative_hint": "Mów o skutku dla ciebie i o konsekwencji, nie o jego wartości jako człowieka."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Wiem, że kochasz, ale musisz dać mi trochę czasu, bo ja już nie wytrzymuję.",
+                    "points": 0,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maks słyszy tylko to, że potrzebujesz czasu. Uzna to za etap, po którym można wrócić do rozmów o związku.",
+                    "feedback": {
+                        "label": "Uznanie uczuć bez zamknięcia sprawy",
+                        "psychology": "Empatia jest cenna, ale tutaj rozmiękcza przekaz. Dla osoby nieakceptującej końca relacji słowo czas staje się obietnicą przyszłego dostępu.",
+                        "better_alternative_hint": "Oddziel jego uczucia od twojej decyzji. To, co on czuje, nie znosi twojego nie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Furtka nadziei",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Rozdzielenie uczuć i granic",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "To nie jest dla mnie w porządku. Przestań się ze mną kontaktować.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 0,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Maks słyszy granicę, ale jeszcze testuje, czy za tym pójdzie realne działanie. Odpisuje krótkim pytaniem, czy to ostateczne.",
+                    "feedback": {
+                        "label": "Dobra granica bez nazwania ryzyka",
+                        "psychology": "To zdanie chroni twoją pozycję i nie wchodzi w debatę o definicji miłości. W tej fazie warto jednak nazwać, że zachowanie narusza twoje bezpieczeństwo i będzie miało konsekwencję.",
+                        "better_alternative_hint": "Dodaj jedno zdanie o tym, jak odbierasz jego działania i co zrobisz, jeśli będą trwały."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "To, co nazywasz miłością, odbieram jako naruszanie mojego bezpieczeństwa. Nie kontaktuj się ze mną. Jeśli to się powtórzy, zgłoszę sprawę.",
+                    "points": 2,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Po raz pierwszy w jego wiadomościach pojawia się chwila zawahania. Nie przyjmuje tego chętnie, ale słyszy, że nie dyskutujesz już o uczuciach, tylko o granicy i konsekwencji.",
+                    "feedback": {
+                        "label": "Rozdzielenie narracji od faktów",
+                        "psychology": "To bardzo mocny komunikat, bo nie spierasz się o to, co on czuje. Mówisz, jaki skutek ma to dla ciebie i jaka będzie dalsza odpowiedź. To zgodne z NVC: obserwacja, wpływ, granica.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Komunikat Ja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_6",
+            "title": "Przestać tłumaczyć, zacząć działać",
+            "score_threshold": 5,
+            "scene_low": {
+                "description": "Dwa dni później ochroniarz w twojej pracy mówi, że ktoś kręcił się przy wejściu i pytał, o której kończysz. Czujesz zmęczenie, złość i ten znajomy impuls, żeby jeszcze raz wszystko Maksowi wytłumaczyć, może tym razem skutecznie.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Nie śledzę cię. Po prostu musiałem wiedzieć, czy jesteś bezpieczna lub bezpieczny. To chyba normalne po tym, co nas łączyło.",
+            "scene_high": {
+                "description": "W pracy dowiadujesz się, że Maks znów próbował zdobyć informacje o tobie przy wejściu. Masz już zapis wiadomości, zdjęcia incydentów i wsparcie kilku osób. Czujesz lęk, ale widzisz też, że to moment na decyzję proceduralną, nie kolejną debatę.",
+                "location": "office",
+                "time_of_day": "afternoon",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Nie chciałem problemów. Chciałem tylko sprawdzić, czy wszystko u ciebie dobrze.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Spotkajmy się dziś raz na zawsze i zamknijmy to twarzą w twarz.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Maks natychmiast traktuje to jako przełom. Dostaje bezpośredni dostęp i nową okazję do nacisku.",
+                    "feedback": {
+                        "label": "Fałszywe domknięcie",
+                        "psychology": "Pragnienie domknięcia jest zrozumiałe, ale osoba naruszająca granice często używa spotkania do odzyskania wpływu. Domknięcie nie rodzi się z jednej rozmowy, jeśli druga strona nie uznaje granicy.",
+                        "better_alternative_hint": "Zamiast szukać ostatecznego wyjaśnienia, przejdź do ochrony siebie i otoczenia."
+                    },
+                    "tags": [
+                        {
+                            "text": "Złudzenie domknięcia",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Granice",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Piszę długą wiadomość, opisuję cały ból i proszę, żeby w końcu zrozumiał, co mi robi.",
+                    "points": 0,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Maks analizuje każde zdanie jak zaproszenie do dalszej wymiany. Odpowiada punkt po punkcie, jakby właśnie dostał kolejną rundę rozmowy o związku.",
+                    "feedback": {
+                        "label": "Nadzieja, że wyjaśnienie zatrzyma nękanie",
+                        "psychology": "Przy zdrowej komunikacji odsłonięcie bólu może budować zrozumienie. Przy stalkingowych zachowaniach często staje się paliwem do dalszego kontaktu i reinterpretacji.",
+                        "better_alternative_hint": "Nie musisz być bardziej zrozumiały lub zrozumiała, żeby twoje nie zaczęło obowiązywać."
+                    },
+                    "tags": [
+                        {
+                            "text": "Nadmierne tłumaczenie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Granica bez negocjacji",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Blokuję wszystkie kanały i nikomu nic nie mówię. Po prostu chcę mieć to z głowy.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 0,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Cyfrowe kanały się zamykają, ale osoby w pracy i bliscy nadal nie wiedzą, czego się spodziewać. Ochrona jest częściowa.",
+                    "feedback": {
+                        "label": "Dobra decyzja, za mało wsparcia",
+                        "psychology": "Blokada kanałów ogranicza dostęp, ale sama nie buduje otoczenia bezpieczeństwa. W sytuacjach uporczywego kontaktu samotne radzenie sobie zwiększa obciążenie psychiczne.",
+                        "better_alternative_hint": "Połącz blokadę z poinformowaniem zaufanych osób i dalszym zabezpieczaniem śladów."
+                    },
+                    "tags": [
+                        {
+                            "text": "Minimalizacja kontaktu",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Samodzielne radzenie sobie",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Blokuję kanały, porządkuję dowody, informuję bliskich i pracę, a jeśli zachowanie trwa dalej lub eskaluje, składam formalne zgłoszenie.",
+                    "points": 2,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -3,
+                        "trust": 3,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Maks traci kolejne drogi wejścia w twoje życie. Najważniejsze jednak, że ty przestajesz nieść tego ciężaru samotnie i zamieniasz chaos w plan działania.",
+                    "feedback": {
+                        "label": "Przejście od tłumaczenia do ochrony",
+                        "psychology": "To moment kluczowy: rezygnujesz z iluzji, że właściwe słowa naprawią brak szacunku do granic. Regulujesz system wokół siebie, a nie emocje sprawcy.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Dokumentowanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Sieć bezpieczeństwa",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "WCIĄŻ W JEGO GRZE",
+            "emoji": "🔴",
+            "subtitle": "Granice zostały rozmyte, a kontakt dalej kręci się wokół jego potrzeb.",
+            "narrative": "Maks nadal znajduje drogę, żeby wejść do twojej codzienności: przez wiadomości, przez bliskich, przez miejsca, w których bywasz. Każda kolejna odpowiedź miała zatrzymać chaos, ale w praktyce przedłużała więź opartą na nacisku. Zamiast poczucia ulgi zostaje przeciążenie i wrażenie, że to on dyktuje rytm twojego życia.",
+            "diagnosis": "W tej ścieżce dominował styl reaktywny: atak, tłumaczenie lub ustępowanie. Psychologicznie problem polegał nie na braku mocniejszych słów, ale na tym, że rozmowa była stale prowadzona na jego warunkach. Przy uporczywym naruszaniu granic emocjonalna wymiana często wzmacnia wzorzec zamiast go wygaszać.",
+            "post_game": {
+                "communication_style_summary": "Dominuje mieszanka agresji, uległości i nadmiernego tłumaczenia. Granica była komunikowana niespójnie lub bez konsekwencji.",
+                "strongest_moment": "Pojawiała się intuicja, że sytuacja jest nie w porządku i że potrzebujesz ochrony swojej przestrzeni.",
+                "growth_tip": "Przestań walczyć o to, żeby sprawca zrozumiał. Zacznij od krótkiego komunikatu, ograniczenia kanałów kontaktu, dokumentowania i włączenia zaufanych osób.",
+                "replay_prompt": "Przejdź scenariusz jeszcze raz i sprawdź, jak zmienia się dynamika, gdy nie tłumaczysz się, tylko wprowadzasz procedurę."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 7
+            },
+            "color": "yellow",
+            "title": "GRANICA POWIEDZIANA, ALE JESZCZE NIE ZABEZPIECZONA",
+            "emoji": "🟡",
+            "subtitle": "Część komunikatów była dobra, ale działania ochronne nie były jeszcze pełne.",
+            "narrative": "Udało ci się nazwać, że to zachowanie nie jest w porządku, i ograniczyć część kontaktu. Maks nie dostał już tyle emocjonalnego paliwa co wcześniej, ale wciąż pojawiały się luki: pojedyncze odpowiedzi, brak pełnej sieci wsparcia albo zbyt późne dokumentowanie. Sytuacja nie wymknęła się całkiem spod kontroli, lecz nadal obciąża twoją codzienność.",
+            "diagnosis": "To ścieżka częściowej asertywności. Komunikaty były coraz lepsze, jednak w kilku miejscach zabrakło przejścia z poziomu słów do poziomu procedury. W realnych sytuacjach stalkingowych sama świadomość granicy pomaga, ale bezpieczeństwo rośnie dopiero wtedy, gdy granica ma strukturę i świadków.",
+            "post_game": {
+                "communication_style_summary": "Przeważa asertywność i rzeczowość, ale momentami wraca potrzeba dopowiadania, uspokajania albo radzenia sobie samemu.",
+                "strongest_moment": "Najmocniejsze były te chwile, gdy odcinałeś lub odcinałaś pośredników i przestawałeś lub przestawałaś debatować o uczuciach.",
+                "growth_tip": "Następny krok to spójność: jeden komunikat, mniej kanałów, więcej dokumentów i wcześniejsze poinformowanie bliskich lub pracy.",
+                "replay_prompt": "Spróbuj zagrać tak, jakby każda odpowiedź miała nie przekonać Maksa, lecz zwiększyć twoje bezpieczeństwo o jeden konkretny krok."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 8,
+                "max": 12
+            },
+            "color": "green",
+            "title": "ODZYSKANA KONTROLA",
+            "emoji": "🟢",
+            "subtitle": "Nie przekonałeś lub nie przekonałaś eksa, ale skutecznie przeniosłeś lub przeniosłaś ciężar z tłumaczenia na ochronę.",
+            "narrative": "Maks może nadal nie zgadzać się z końcem relacji, ale przestaje to wyznaczać twoje ruchy. Masz zapis incydentów, ograniczone kanały kontaktu i ludzi, którzy wiedzą, co się dzieje. Najważniejsza zmiana zaszła nie w jego sercu, tylko w twojej strategii: twoje nie przestało być prośbą, a stało się granicą wspartą działaniem.",
+            "diagnosis": "Ta ścieżka pokazuje dojrzałą regulację sytuacji wysokiego napięcia. Zamiast wchodzić w spór o definicję miłości, oddzielasz cudze uczucia od swoich praw. To psychologicznie kluczowe: nie negocjujesz własnego bezpieczeństwa, nawet gdy druga strona opakowuje nacisk w romantyczny język.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl asertywny i transakcyjny, użyty nie do chłodu, lecz do ochrony granic i odzyskania sprawczości.",
+                "strongest_moment": "Najmocniejszy był moment, w którym przestałeś lub przestałaś udowadniać i zacząłeś lub zaczęłaś dokumentować oraz angażować sieć wsparcia.",
+                "growth_tip": "To dobry wzorzec na życie: przy uporczywym naruszaniu granic mniej tłumaczenia i więcej struktury zwykle działa lepiej niż idealne słowa.",
+                "replay_prompt": "Wróć do scenariusza i zobacz, jak wcześnie da się zauważyć moment, w którym rozmowa przestaje być dialogiem, a staje się testowaniem granicy."
+            }
+        }
+    ]
+}

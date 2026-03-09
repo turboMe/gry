@@ -1,0 +1,983 @@
+{
+    "scenario_id": "child_used_as_leverage_after_breakup",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Dziecko jako narzędzie odwetu",
+        "subtitle": "Po rozstaniu każda zmiana planu staje się testem granic i polem walki o kontrolę.",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 12,
+        "interaction_count": 6
+    },
+    "tags": {
+        "relationship_type": "romantic_partner",
+        "theme": [
+            "parenting",
+            "boundaries",
+            "control"
+        ],
+        "emotional_intensity": "critical",
+        "age_rating": "teen",
+        "session_type": "training",
+        "player_role_gender": "female",
+        "difficulty": "advanced"
+    },
+    "characters": {
+        "player": {
+            "name": "Natalia",
+            "role_label": "Mama po rozstaniu · Gracz",
+            "age_range": "30-38",
+            "context": "Od miesięcy próbuje utrzymać przewidywalny grafik dla córki. Jest zmęczona ciągłymi prowokacjami byłego partnera i boi się, że każda reakcja odbije się na dziecku.",
+            "hidden_need": "safety",
+            "hidden_need_text": "Potrzebuje stabilności, przewidywalności i ochrony dziecka przed konfliktem dorosłych.",
+            "traits": [
+                {
+                    "text": "opiekuńcza",
+                    "type": "positive"
+                },
+                {
+                    "text": "przeciążona",
+                    "type": "negative"
+                },
+                {
+                    "text": "konkretna",
+                    "type": "positive"
+                },
+                {
+                    "text": "czujna",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 5,
+                "patience": 6,
+                "defensiveness": 7,
+                "empathy": 7,
+                "need_for_control": 6,
+                "shame_sensitivity": 7,
+                "directness": 8,
+                "repair_ability": 6
+            }
+        },
+        "npc": {
+            "name": "Adam",
+            "role_label": "Ojciec po rozstaniu · NPC",
+            "age_range": "31-40",
+            "context": "Po rozstaniu często miesza sprawy rodzicielskie z dawnymi urazami. Gdy czuje utratę wpływu, odzyskuje kontrolę przez grafik opieki i dostęp do córki.",
+            "hidden_need": "control",
+            "hidden_need_text": "Potrzebuje wpływu i potwierdzenia, że nadal może narzucać warunki kontaktu.",
+            "traits": [
+                {
+                    "text": "reaktywny",
+                    "type": "negative"
+                },
+                {
+                    "text": "uparty",
+                    "type": "negative"
+                },
+                {
+                    "text": "zaradny",
+                    "type": "positive"
+                },
+                {
+                    "text": "drażliwy na krytykę",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 7,
+                "patience": 3,
+                "defensiveness": 9,
+                "empathy": 4,
+                "need_for_control": 9,
+                "shame_sensitivity": 8,
+                "directness": 7,
+                "repair_ability": 3
+            },
+            "npc_reaction_logic": "Na atak odpowiada kontratakiem i rozszerza konflikt na historię związku. Na bierność wchodzi mocniej w kontrolę. Na komunikaty rzeczowe i ograniczone do dobra dziecka może chwilowo zmięknąć, ale nadal testuje granice i szuka szczelin w ustaleniach."
+        }
+    },
+    "metrics_start": {
+        "tension": 45,
+        "trust": 35,
+        "openness": 30,
+        "feeling_heard": 25
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Nagła zmiana planu",
+            "scene": {
+                "description": "Wieczór. Telefon wibruje na stole obok plecaka Mai przygotowanego na jutrzejszą zmianę domu. Na ekranie pojawia się wiadomość od Adama z kolejną jednostronną zmianą grafiku.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": "Nie oddam jutro Mai o 18. Zostaje u mnie do rana. I tak u ciebie ostatnio wszystko jest ważniejsze niż ona.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Przestań robić z dziecka zakładnika. Jesteś żałosny i dokładnie o to ci chodzi.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Adam oddzwania natychmiast i podniesionym głosem zaczyna wyliczać twoje rzekome winy.",
+                    "feedback": {
+                        "label": "Atak i etykietowanie",
+                        "psychology": "To trafia w poziom II rozmowy, czyli walkę o rację i przewagę. W kwadracie von Thuna Adam usłyszy głównie atak na siebie, nie troskę o dziecko.",
+                        "better_alternative_hint": "Nazwij problem operacyjnie i wróć do konkretu: godziny, dziecko, potwierdzenie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Etykietowanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobra, jak chcesz. Już nie mam siły się z tobą szarpać.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Adam odpisuje tylko okej i traktuje zmianę jak nowy standard.",
+                    "feedback": {
+                        "label": "Wycofanie bez granicy",
+                        "psychology": "Unik chwilowo obniża przeciążenie, ale wzmacnia wzorzec kontroli. W analizie transakcyjnej wchodzisz w pozycję podporządkowaną, a nie dorosłą.",
+                        "better_alternative_hint": "Nawet krótka odpowiedź może zawierać granicę i prośbę o potwierdzenie zgodne z ustaleniami."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie zgadzam się na zmianę w ostatniej chwili. Potwierdź proszę odbiór Mai jutro o 18 zgodnie z planem.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 0,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Adam długo nie odpisuje, ale przestaje rozwijać temat twoich rzekomych zaniedbań.",
+                    "feedback": {
+                        "label": "Jasna granica operacyjna",
+                        "psychology": "To ruch z poziomu I: krótko, konkretnie, bez paliwa dla konfliktu. Daje strukturę, ale nie reguluje emocji drugiej strony.",
+                        "better_alternative_hint": "Dodaj odniesienie do stabilności Mai, żeby zakotwiczyć rozmowę we wspólnym celu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Granica",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Dla Mai ważna jest przewidywalność. Jeśli chcesz zmianę, potrzebuję jej z wyprzedzeniem. Na jutro podtrzymuję odbiór o 18 zgodnie z planem.",
+                    "points": 2,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Adam czyta wiadomość kilka razy. W odpowiedzi jest nadal chłodny, ale przechodzi na temat grafiku zamiast atakować ciebie.",
+                    "feedback": {
+                        "label": "Granica osadzona w dobru dziecka",
+                        "psychology": "Łączysz komunikat dorosły-dorosły z odniesieniem do potrzeby bezpieczeństwa dziecka. To ogranicza pole do personalnej wojny i wzmacnia ramę równoległego rodzicielstwa.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Dobro dziecka jako wspólny cel",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Prowokacja przy przekazaniu dziecka",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Następnego dnia przed blokiem atmosfera jest ciężka. Maja stoi między wami z plecakiem, a Adam podchodzi szybkim krokiem, wyraźnie gotowy do zaczepki.",
+                "location": "street",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Wiesz co, z tobą nie da się nic ustalić. Maja już widzi, kto tu robi problemy.",
+            "scene_high": {
+                "description": "Następnego dnia przed blokiem napięcie wisi w powietrzu, ale twoja wcześniejsza wiadomość ustawiła ramy. Maja stoi obok ciebie, a Adam podchodzi z widoczną irytacją, choć mówi ciszej.",
+                "location": "street",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_high": "Nie rób scen. Po prostu mogła zostać u mnie dłużej i byłoby łatwiej dla wszystkich.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nie wciągaj Mai w swoje gierki i przestań robić teatr pod blokiem.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Adam odpowiada jeszcze głośniej, a Maja spuszcza wzrok i ściska pasek plecaka.",
+                    "feedback": {
+                        "label": "Kontratak przy dziecku",
+                        "psychology": "Masz rację co do problemu, ale forma eskaluje i obciąża dziecko lojalnościowo. To klasyczne przejście z dorosły-dorosły do rodzic-krytyczny kontra rodzic-krytyczny.",
+                        "better_alternative_hint": "Oddziel dziecko od rozmowy i przenieś komunikację do neutralnego, krótkiego kanału."
+                    },
+                    "tags": [
+                        {
+                            "text": "Eskalacja przy świadku",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Maja, chodź, jedziemy. Nie będę z nim rozmawiać.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Adam rzuca za tobą kolejne uwagi i czuje, że może dalej używać momentów przekazania do nacisku.",
+                    "feedback": {
+                        "label": "Ucieczka bez ramy",
+                        "psychology": "Chronisz siebie przed zalaniem, ale nie stawiasz jasnej granicy proceduralnej. Druga strona nie dostaje sygnału, jak kontakt ma wyglądać dalej.",
+                        "better_alternative_hint": "Nazwij, że nie rozmawiasz o sporach przy dziecku, i wskaż właściwy kanał kontaktu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Ochrona dziecka",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie będę tego omawiać przy Mai. Napisz proszę wieczorem, jeśli chcesz zgłosić zmianę grafiku.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Adam prycha, ale przestaje ciągnąć temat przy dziecku.",
+                    "feedback": {
+                        "label": "Przeniesienie rozmowy do właściwego kanału",
+                        "psychology": "To dobra ochrona granic sytuacyjnych. Odcinasz scenę od dziecka, choć jeszcze nie odwołujesz się do wspólnej odpowiedzialności rodzicielskiej.",
+                        "better_alternative_hint": "Dodaj krótkie odniesienie do spokoju Mai, by wzmocnić sens granicy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Przeniesienie rozmowy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Przy Mai rozmawiamy tylko o tym, co jej teraz potrzebne. Spory o grafik ustalajmy później na piśmie, żeby miała spokój.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Adam zaciska szczękę, ale milknie. Maja wyraźnie się rozluźnia, bo rozmowa przestaje dotyczyć winy i kary.",
+                    "feedback": {
+                        "label": "Ochrona dziecka i ram rozmowy",
+                        "psychology": "To wejście na poziom III w miniaturowej formie: nie walczysz o rację, tylko ustawiasz regułę służącą dziecku. Taki komunikat redukuje triangulację.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Triangulacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Asertywna ochrona dziecka",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Odmowa kontaktu telefonicznego",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Dwa dni później wieczorem Maja jest u Adama. Zgodnie z ustaleniem miała do ciebie zadzwonić przed snem, ale telefon milczy. Po twojej wiadomości Adam odpisuje dopiero po czasie.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Nie będzie dzwonić, bo się rozpłakała po twoich wiadomościach. Może następnym razem nie będziesz jej mieszać w głowie.",
+            "scene_high": {
+                "description": "Dwa dni później czekasz na wieczorny telefon od Mai. Po kilku minutach opóźnienia Adam odpisuje, wyraźnie testując granicę, ale nie zaczyna od otwartego ataku.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line_high": "Jeszcze nie zadzwoniła. Była zmęczona po kąpieli. Nie przesadzaj z kontrolą, oddzwoni jak będzie chciała.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Oddaj mi ją do telefonu natychmiast albo zapisuję wszystko dla sądu.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Adam odpisuje, że przy takim tonie nie będzie z tobą rozmawiał, i dalej wstrzymuje kontakt.",
+                    "feedback": {
+                        "label": "Groźba zamiast regulacji",
+                        "psychology": "Groźba może być czasem narzędziem ochronnym, ale użyta od razu staje się paliwem dla walki statusowej. Zamiast zwiększyć wpływ, często daje drugiej stronie pretekst do dalszego oporu.",
+                        "better_alternative_hint": "Opisz ustalenie i poproś o wykonanie go bez oceniania intencji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Groźba",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Walka o kontrolę",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nieważne. Niech już będzie po twojemu.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Adam nic już nie odpisuje, a ustalenie o telefonie praktycznie przestaje istnieć.",
+                    "feedback": {
+                        "label": "Rezygnacja z ważnego kontaktu",
+                        "psychology": "Wycofanie chroni przed konfliktem tu i teraz, ale dziecko traci przewidywalny rytuał, a ty tracisz wpływ na dalsze granice.",
+                        "better_alternative_hint": "Krótko wróć do ustalenia i poproś o konkretną godzinę połączenia."
+                    },
+                    "tags": [
+                        {
+                            "text": "Kapitulacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Przewidywalność",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Mieliśmy ustalone połączenie przed snem. Napisz proszę, o której Maja może oddzwonić dziś.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Adam odpowiada niechętnie i podaje godzinę późniejszą niż zwykle, ale jednak konkretną.",
+                    "feedback": {
+                        "label": "Powrót do ustalenia",
+                        "psychology": "To dobry ruch dorosły-dorosły: bez diagnoz i bez wejścia w prowokację. Nadal jednak pozostajesz wyłącznie w warstwie proceduralnej.",
+                        "better_alternative_hint": "Dodaj, czemu ten rytuał jest ważny dla Mai, nie tylko dla ciebie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Konkret",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Wieczorny telefon pomaga Mai spokojnie zamknąć dzień w obu domach. Potrzebuję dziś konkretnej godziny połączenia zgodnie z naszym ustaleniem.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Adam odpisuje sucho, ale podaje godzinę i tym razem dotrzymuje jej, bo trudniej mu zaatakować komunikat osadzony w potrzebach dziecka.",
+                    "feedback": {
+                        "label": "Ustalenie plus sens emocjonalny",
+                        "psychology": "To połączenie NVC z jasną prośbą. Mówisz o potrzebie bezpieczeństwa i rytmu, zamiast o winie, co zmniejsza defensywność i wzmacnia legitymizację granicy.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "NVC",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Komunikat oparty na potrzebie",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Spóźniony odbiór i presja na zamianę weekendu",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Sobota po południu. Adam spóźnia się ponad czterdzieści minut na odbiór Mai i wchodzi bez przeprosin, jakby to było oczywiste. Maja stoi gotowa w kurtce i pyta szeptem, czy znowu będzie kłótnia.",
+                "location": "street",
+                "time_of_day": "afternoon",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Zmiana planu. Biorę ją dopiero jutro, ale za to oddasz mi następny weekend. Nie rób problemu, tylko podpisz się pod tym w wiadomości.",
+            "scene_high": {
+                "description": "Sobota po południu. Adam spóźnia się, ale po twoich wcześniejszych granicach nie wchodzi od razu na najwyższy poziom agresji. Maja czeka w kurtce przy drzwiach i obserwuje was uważnie.",
+                "location": "street",
+                "time_of_day": "afternoon",
+                "visual_mood": "tense"
+            },
+            "npc_line_high": "Utknąłem. Dziś nie dam rady jak było w planie. Zamieńmy to po prostu na następny weekend i załatwione.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Masz tupet. Spóźniasz się, rozwalasz dziecku dzień i jeszcze stawiasz warunki.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Adam momentalnie przechodzi do obrony i ataku, a rozmowa przestaje dotyczyć planu na weekend.",
+                    "feedback": {
+                        "label": "Słuszny opis, ale w formie ataku",
+                        "psychology": "Masz kontakt z realną szkodą, jednak personalizacja uruchamia wstyd i kontratak. Wysoka emocja bez struktury rzadko prowadzi do wykonania ustaleń.",
+                        "better_alternative_hint": "Oddziel ocenę osoby od skutku dla dziecka i od decyzji proceduralnej."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Oddzielanie osoby od zachowania",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Dobrze, nieważne. Weź ją kiedy chcesz, byle tylko nie robić sceny przy niej.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Adam dostaje sygnał, że presja czasowa działa, i coraz częściej używa chaosu jako narzędzia.",
+                    "feedback": {
+                        "label": "Spokój kupiony kosztem granicy",
+                        "psychology": "Unikasz awantury przy dziecku, ale ceną jest wzrost nieprzewidywalności. To typowy moment, gdy ochrona przed jedną szkodą wzmacnia inną.",
+                        "better_alternative_hint": "Możesz chronić dziecko i jednocześnie odmówić natychmiastowej zamiany bez konsultacji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Fawning",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Brak konsekwencji granicy",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Nie potwierdzę zamiany od ręki. Napisz propozycję godzin i dat, a odpowiem po sprawdzeniu planu Mai.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Adam jest niezadowolony, ale traci możliwość wymuszenia decyzji tu i teraz.",
+                    "feedback": {
+                        "label": "Odsunięcie presji czasu",
+                        "psychology": "To dobre przerwanie techniki faktu dokonanego. Dajesz sobie czas i wracasz do procesu, choć jeszcze bez nazwania wpływu chaosu na dziecko.",
+                        "better_alternative_hint": "Dodaj, że spontaniczne zmiany destabilizują Maję, aby wzmocnić kryterium decyzji."
+                    },
+                    "tags": [
+                        {
+                            "text": "Przerwanie presji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Fakt dokonany",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie podejmę tej decyzji w drzwiach. Maja potrzebuje przewidywalności, więc zmiany ustalamy wcześniej i na piśmie. Wyślij propozycję, a odpowiem po sprawdzeniu jej planu.",
+                    "points": 2,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 2,
+                        "openness": 2,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Adam wzdycha z irytacją, ale nie dostaje szybkiej nagrody za chaos. Maja słyszy spokojny, uporządkowany komunikat zamiast wojny.",
+                    "feedback": {
+                        "label": "Granica bez odwetowej energii",
+                        "psychology": "Stawiasz granicę proceduralną i nie negocjujesz pod presją. To rdzeń równoległego rodzicielstwa: minimum emocjonalnego kontaktu, maksimum przewidywalności dla dziecka.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Równoległe rodzicielstwo",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Asertywna procedura",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Triangulacja przez dziecko",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Kilka dni później Adam odsyła nagranie głosowe, na którym słychać, jak Maja powtarza jego słowa o tym, że u niego jest spokojniej. Wiadomość jest ewidentnie wysłana po to, by cię zranić i wciągnąć córkę w konflikt.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Słyszałaś? Sama mówi, że nie chce wracać do twoich zasad i nerwów. Może czas się zastanowić, z kim jej naprawdę lepiej.",
+            "scene_high": {
+                "description": "Kilka dni później Adam wysyła wiadomość, w której powołuje się na rzekome słowa Mai. Ton jest chłodny, ale nie tak otwarcie napastliwy jak wcześniej.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "tense"
+            },
+            "npc_line_high": "Maja mówiła, że u mnie jest jej lżej. Może powinna częściej zostawać, skoro sama tak czuje.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Obrzydliwe. Manipulujesz własnym dzieckiem, żeby mnie ukarać.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Adam zaprzecza i odwraca role, twierdząc, że to ty nie umiesz przyjąć prawdy.",
+                    "feedback": {
+                        "label": "Demaskowanie bez strategii",
+                        "psychology": "Opisujesz realny mechanizm, ale robisz to w formie oskarżenia o intencję. Przy wysokiej defensywności uruchamia to DARVO i odsuwa rozmowę od ochrony dziecka.",
+                        "better_alternative_hint": "Nie dyskutuj przez dziecko. Nazwij zasadę: nie prowadzimy sporów komunikatami rzekomo od Mai."
+                    },
+                    "tags": [
+                        {
+                            "text": "DARVO",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Oskarżanie intencji",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nie chcę tego słuchać. Kasuję tę wiadomość.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Adam nie dostaje oporu, więc podobne wiadomości zaczynają pojawiać się częściej.",
+                    "feedback": {
+                        "label": "Odruch odcięcia",
+                        "psychology": "To zrozumiała samoobrona, ale bez odpowiedzi proceduralnej wzorzec triangulacji zostaje nienaruszony. Cisza nie ustanawia zasady.",
+                        "better_alternative_hint": "Krótko zaznacz, że sprawy między dorosłymi omawiacie bez udziału Mai."
+                    },
+                    "tags": [
+                        {
+                            "text": "Triangulacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Brak interwencji",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Jeśli chcesz omówić grafik albo trudności Mai, pisz bezpośrednio do mnie i bez cytowania jej w naszych sporach.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Adam nie przeprasza, ale zmienia temat na logistykę i przestaje rozwijać wątek nagrania.",
+                    "feedback": {
+                        "label": "Wyjęcie dziecka z pola walki",
+                        "psychology": "To dobra interwencja graniczna. Zatrzymujesz mechanizm bez analizy motywów i bez wchodzenia w obronę własnego rodzicielstwa.",
+                        "better_alternative_hint": "Możesz dodać, że kiedy Maja ma trudność, warto omówić ją wspólnie w sposób spokojny i konkretny."
+                    },
+                    "tags": [
+                        {
+                            "text": "Demontaż triangulacji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Granica komunikacyjna",
+                            "type": "skill"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie będę prowadzić naszych sporów przez słowa Mai. Gdy widzisz jej trudność, opisz konkretną sytuację, a ustalmy spokojnie, co jej pomoże w obu domach.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 2,
+                        "openness": 3,
+                        "feeling_heard": 2
+                    },
+                    "npc_reaction": "Adam nie dostaje pola do porównywania was jako rodziców. Po chwili odpisuje konkretem o wieczornych trudnościach przy zasypianiu zamiast dalszej prowokacji.",
+                    "feedback": {
+                        "label": "Przekierowanie z lojalności na problem dziecka",
+                        "psychology": "To mocne przejście z poziomu II do III. Odbierasz paliwo rywalizacji i kierujesz energię na wspólne obserwacje oraz rozwiązania, co chroni dziecko przed konfliktem lojalności.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Wspólne rozwiązywanie problemu",
+                            "type": "skill"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_6",
+            "title": "Ustalenie stałych zasad kontaktu",
+            "score_threshold": 5,
+            "scene_low": {
+                "description": "Po kolejnych tygodniach chaosu otwierasz okno wiadomości, żeby odpowiedzieć na następny zaczepny tekst. Czujesz zmęczenie i wiesz, że bez nowych zasad ten wzorzec będzie trwał dalej.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Nie będziesz mi mówić, jak mam się z tobą kontaktować. Jak coś się dzieje, to dzwonię, piszę albo przyjeżdżam i już.",
+            "scene_high": {
+                "description": "Po kilku trudnych wymianach widzisz, że ograniczanie rozmów do konkretów daje odrobinę przestrzeni. To dobry moment, by zaproponować stałe zasady kontaktu wokół Mai.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Możemy to jakoś uprościć, ale nie chcę, żebyś potem mówiła, że wszystko robię źle.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Od dziś kontakt tylko przez prawnika. Z tobą nie da się być normalnym człowiekiem.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Adam odbiera to jako policzek i natychmiast odpowiada kolejnym personalnym atakiem.",
+                    "feedback": {
+                        "label": "Granica z dodatkiem pogardy",
+                        "psychology": "Sama potrzeba ograniczenia kontaktu może być uzasadniona, ale dopisek o jego osobie zamienia procedurę w odwet. To ponownie aktywuje wstyd i walkę.",
+                        "better_alternative_hint": "Zaprezentuj zasady jako narzędzie stabilności dla dziecka, nie jako karę dla drugiego rodzica."
+                    },
+                    "tags": [
+                        {
+                            "text": "Pogarda",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Procedura jako kara",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Rób jak uważasz. Ja już po prostu będę się dostosowywać, żeby Maja miała spokój.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Adam zyskuje pełną przewagę proceduralną, a nieprzewidywalność staje się normą.",
+                    "feedback": {
+                        "label": "Oddanie steru chaosowi",
+                        "psychology": "To częsty odruch osoby przeciążonej konfliktem, ale w praktyce przerzuca koszt niestabilności na ciebie i dziecko. Spokój bez struktury nie utrzymuje się długo.",
+                        "better_alternative_hint": "Zaproponuj minimalny, prosty protokół kontaktu i trzymaj się go konsekwentnie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Bezradność wyuczona",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Rezygnacja z wpływu",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Proponuję, żeby sprawy Mai ustalać wyłącznie wiadomościami i z minimum dwudziestoczterogodzinnym wyprzedzeniem, poza nagłymi sytuacjami.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 1
+                    },
+                    "npc_reaction": "Adam szuka słabych punktów, ale sama propozycja jest na tyle konkretna, że musi odnieść się do zasad zamiast do dawnych pretensji.",
+                    "feedback": {
+                        "label": "Dobry protokół roboczy",
+                        "psychology": "To solidna baza równoległego rodzicielstwa. Jest klarowna i mierzalna, choć jeszcze mało w niej wspólnego sensu i troski o doświadczenie Mai.",
+                        "better_alternative_hint": "Dodaj, po co to robicie: mniej napięcia dla dziecka i mniej chaosu między domami."
+                    },
+                    "tags": [
+                        {
+                            "text": "Protokół komunikacji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Równoległe rodzicielstwo",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Chcę ograniczyć napięcie wokół Mai. Proponuję stałą zasadę: sprawy organizacyjne tylko wiadomościami, zmiany z wyprzedzeniem, a przy nagłych sytuacjach sama informacja i nowa konkretna propozycja.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Adam nie staje się nagle łatwy, ale dostaje czytelną, trudną do podważenia ramę. Rozmowa po raz pierwszy brzmi jak ustalanie zasad między rodzicami, a nie ciąg dalszy rozstania.",
+                    "feedback": {
+                        "label": "Stałe zasady zamiast ciągłych bitew",
+                        "psychology": "To najbardziej dojrzały ruch w tym scenariuszu. Łączysz jasny protokół, dobro dziecka i minimalizację bodźców konfliktowych. Wysoki konflikt nie znika, ale przestaje dyktować formę każdej rozmowy.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Transformacja ramy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Dobro dziecka ponad konfliktem",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 3
+            },
+            "color": "red",
+            "title": "WOJNA PRZEZ DZIECKO",
+            "emoji": "🔴",
+            "subtitle": "Rozmowa całkiem zeszła z toru rodzicielskiego.",
+            "narrative": "Kolejne wymiany z Adamem stają się coraz bardziej osobiste i coraz mniej przewidywalne. Grafik Mai zaczyna zależeć od impulsu, złości i doraźnej przewagi, a każde przekazanie dziecka niesie napięcie. Zamiast chronić córkę przed konfliktem, oboje coraz częściej komunikujecie się jej kosztem.",
+            "diagnosis": "Dominował styl agresywny albo wycofany, co naprzemiennie pompowało eskalację i wzmacniało chaos. Rozmowa pozostawała głównie na poziomie II, gdzie liczy się wygranie starcia lub uniknięcie bólu, a nie stworzenie bezpiecznych reguł dla dziecka. Wysokokonfliktowy współrodzic zwykle korzysta właśnie z takich luk.",
+            "post_game": {
+                "communication_style_summary": "W tej ścieżce komunikacja była reaktywna: albo kontratak, albo bezradne ustępowanie.",
+                "strongest_moment": "Najmocniejszym momentem była każda próba wrócenia do konkretu, nawet jeśli szybko rozpadała się pod presją prowokacji.",
+                "growth_tip": "Przestań odpowiadać na zaczepki o charakterze osobistym. Buduj jedną prostą zasadę: tylko dziecko, tylko konkrety, tylko sprawdzalne ustalenia.",
+                "replay_prompt": "Zagraj jeszcze raz i zobacz, jak zmienia się dynamika, gdy nie bronisz swojego wizerunku, tylko konsekwentnie chronisz ramy kontaktu."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 4,
+                "max": 6
+            },
+            "color": "yellow",
+            "title": "KRUCHY ROZEJM",
+            "emoji": "🟡",
+            "subtitle": "Udało się ograniczyć część chaosu, ale konflikt nadal łatwo wraca.",
+            "narrative": "Nie każda rozmowa kończy się awanturą, a część ustaleń zaczyna być bardziej czytelna. Nadal jednak Adam potrafi przeciągnąć cię na stare pole minowe, zwłaszcza gdy chodzi o winę i przewagę. Maja ma trochę więcej przewidywalności, lecz wasz system nadal opiera się bardziej na gaszeniu pożarów niż na stałych zasadach.",
+            "diagnosis": "Dominował styl rzeczowy z momentami asertywności, ale brakowało konsekwentnego przejścia z samej transakcji do szerszej ramy ochrony dziecka. To zmniejsza szkody, lecz nie zawsze zatrzymuje wzorzec manipulacji. Rozmowa balansowała między poziomem I i II.",
+            "post_game": {
+                "communication_style_summary": "W tej ścieżce komunikacja była częściowo uporządkowana, ale wciąż zbyt łatwo wciągała cię w reagowanie na prowokacje.",
+                "strongest_moment": "Najsilniejsze były te wybory, w których odsuwałaś decyzję spod presji i przenosiłaś rozmowę do pisemnego kanału.",
+                "growth_tip": "Sam konkret to za mało. Dodawaj krótkie odniesienie do potrzeb Mai i konsekwentnie nie rozmawiaj o relacji, tylko o zasadach współrodzicielstwa.",
+                "replay_prompt": "Sprawdź, co się stanie, gdy nie tylko stawiasz granice, ale też za każdym razem osadzasz je w stabilności dziecka."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 7,
+                "max": 9
+            },
+            "color": "green",
+            "title": "RÓWNOLEGŁE RODZICIELSTWO",
+            "emoji": "🟢",
+            "subtitle": "Konflikt nie znika, ale przestaje rządzić każdą rozmową.",
+            "narrative": "Adam nadal bywa trudny, lecz coraz częściej odbija się od tych samych spokojnych zasad. Zamiast rozmawiać o dawnych ranach, zaczynacie poruszać się po prostych procedurach dotyczących Mai: wyprzedzenie, pisemne potwierdzenia, brak sporów przy dziecku. To nie jest bliskość ani zgoda, ale jest w tym realna ochrona córki.",
+            "diagnosis": "Dominował styl asertywny i momentami transformacyjny. Utrzymałaś rozmowę głównie na poziomie I z pojedynczymi wejściami na poziom III, gdzie wspólnym punktem odniesienia stało się dobro dziecka. To najbardziej użyteczna strategia przy współrodzicu, który manipuluje kontaktem dla kontroli.",
+            "post_game": {
+                "communication_style_summary": "W tej ścieżce komunikacja była spokojna, konsekwentna i celowo odpersonalizowana.",
+                "strongest_moment": "Najmocniejsze było odmawianie rozmów przy Mai i przekierowywanie wszystkiego do jasnych zasad oraz konkretnych propozycji.",
+                "growth_tip": "To dobry kierunek. W realnym życiu wzmacniaj go dokumentowaniem ustaleń i powtarzalnością tonu, nawet gdy druga strona próbuje cię sprowokować.",
+                "replay_prompt": "Zagraj ponownie i zobacz, czy dasz radę utrzymać jeszcze więcej transformacyjnych odpowiedzi bez tracenia twardych granic."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 10,
+                "max": 12
+            },
+            "color": "blue",
+            "title": "MISTRZOWSKA RAMA",
+            "emoji": "🔵",
+            "subtitle": "Ustalasz system, który chroni dziecko nawet wtedy, gdy druga strona testuje granice.",
+            "narrative": "Nie naprawiłaś Adama i nie musiałaś. Zamiast tego zbudowałaś ramę kontaktu tak klarowną, że większość prowokacji traci siłę: brak sporów przy Mai, minimum emocjonalnego paliwa, maksimum konkretu i przewidywalności. Córka doświadcza mniej chaosu, bo dorośli przestają robić z każdej wymiany ciąg dalszy rozstania.",
+            "diagnosis": "To ścieżka wysokiej dojrzałości komunikacyjnej. Połączyłaś NVC, asertywność i logikę równoległego rodzicielstwa, utrzymując kontakt w trybie dorosły-dorosły nawet przy silnej prowokacji. Nie szukałaś wygranej nad byłym partnerem, tylko stabilnego systemu dla dziecka.",
+            "post_game": {
+                "communication_style_summary": "W tej ścieżce komunikacja była precyzyjna, spokojna i strategicznie zorientowana na ochronę dziecka.",
+                "strongest_moment": "Najlepszym momentem było konsekwentne odbieranie konfliktowi paliwa i przekuwanie każdej prowokacji w zasadę lub procedurę.",
+                "growth_tip": "To poziom mistrzowski: nie myl skuteczności z miękkością. Najsilniejsza odpowiedź często brzmi najspokojniej i jest najbardziej przewidywalna.",
+                "replay_prompt": "Przejdź scenariusz jeszcze raz i zobacz, w których miejscach jedna gorsza reakcja mogłaby rozszczelnić nawet dobrze zbudowany system."
+            }
+        }
+    ]
+}

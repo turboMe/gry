@@ -1,0 +1,921 @@
+{
+    "scenario_id": "siostra_ujawnia_molestowanie_w_rodzinie",
+    "version": "1.0.0",
+    "language": "pl",
+    "metadata": {
+        "title": "Prawda po latach",
+        "subtitle": "Dorastająca siostra ujawnia tajemnicę, która rozsadza obraz rodziny.",
+        "author": "NARRATOR",
+        "created_at": "2026-03-08",
+        "estimated_duration_minutes": 10,
+        "interaction_count": 5
+    },
+    "tags": {
+        "relationship_type": "siblings",
+        "theme": [
+            "trust",
+            "support",
+            "boundaries"
+        ],
+        "emotional_intensity": "critical",
+        "age_rating": "adult",
+        "session_type": "training",
+        "player_role_gender": "female",
+        "difficulty": "advanced"
+    },
+    "characters": {
+        "player": {
+            "name": "Anna",
+            "role_label": "Starsza siostra · Gracz",
+            "age_range": "32-39",
+            "context": "Anna zawsze była tą odpowiedzialną. W kryzysie chce działać szybko i naprawiać sytuację, nawet gdy emocje innych potrzebują najpierw miejsca.",
+            "hidden_need": "safety",
+            "hidden_need_text": "Chce ochronić siostrę i odzyskać poczucie, że rzeczywistość nadal da się opanować.",
+            "traits": [
+                {
+                    "text": "odpowiedzialna",
+                    "type": "positive"
+                },
+                {
+                    "text": "lojalna wobec rodziny",
+                    "type": "neutral"
+                },
+                {
+                    "text": "reaktywna pod presją",
+                    "type": "negative"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 6,
+                "patience": 5,
+                "defensiveness": 7,
+                "empathy": 7,
+                "need_for_control": 8,
+                "shame_sensitivity": 6,
+                "directness": 7,
+                "repair_ability": 6
+            }
+        },
+        "npc": {
+            "name": "Kasia",
+            "role_label": "Młodsza siostra · NPC",
+            "age_range": "28-35",
+            "context": "Kasia nosi tajemnicę od dzieciństwa. Boi się niedowierzania, obwiniania i tego, że ktoś odbierze jej kontrolę nad własną historią.",
+            "hidden_need": "support",
+            "hidden_need_text": "Potrzebuje uwierzenia, walidacji i prawa do decydowania o tempie dalszych kroków.",
+            "traits": [
+                {
+                    "text": "ostrożna",
+                    "type": "neutral"
+                },
+                {
+                    "text": "przeciążona wstydem",
+                    "type": "negative"
+                },
+                {
+                    "text": "uważna na odrzucenie",
+                    "type": "neutral"
+                }
+            ],
+            "profile": {
+                "impulsiveness": 3,
+                "patience": 6,
+                "defensiveness": 8,
+                "empathy": 8,
+                "need_for_control": 6,
+                "shame_sensitivity": 9,
+                "directness": 4,
+                "repair_ability": 5
+            },
+            "npc_reaction_logic": "Kasia zamyka się przy nacisku, niedowierzaniu i ochronie reputacji rodziny. Otwiera się, gdy słyszy jasne uwierzenie, brak obwiniania, pytanie o potrzeby i wspólne planowanie bez przejmowania steru."
+        }
+    },
+    "metrics_start": {
+        "tension": 60,
+        "trust": 40,
+        "openness": 35,
+        "feeling_heard": 20
+    },
+    "interactions": [
+        {
+            "interaction_id": "INT_1",
+            "title": "Pęknięcie ciszy",
+            "scene": {
+                "description": "Późny wieczór w kuchni. Herbata Kasi stygnie na blacie, a ona od kilku minut zbiera się do jednego zdania.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "tense"
+            },
+            "npc_line": "Muszę ci coś powiedzieć. Ktoś z rodziny molestował mnie, kiedy byłyśmy dziećmi. Niosę to sama od lat.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nie mów takich rzeczy bez pewności. Może źle to zrozumiałaś.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kasia sztywnieje i od razu odsuwa się wzrokiem.",
+                    "feedback": {
+                        "label": "Podważenie rzeczywistości",
+                        "psychology": "To inwalidacja. Relacyjny komunikat brzmi nie wierzę ci, co natychmiast uruchamia wstyd i zamknięcie.",
+                        "better_alternative_hint": "Najpierw uwierz i nazwij odwagę potrzebną do ujawnienia."
+                    },
+                    "tags": [
+                        {
+                            "text": "Inwalidacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Gaslighting przez podważenie pamięci",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Kwadrat von Thuna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nie wiem, co z tym zrobić. Chyba lepiej teraz o tym nie rozmawiajmy.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kasia milknie, jakby właśnie potwierdził się jej najgorszy lęk.",
+                    "feedback": {
+                        "label": "Wycofanie",
+                        "psychology": "Unik zrywa kontakt w chwili, gdy rozmówczyni najbardziej potrzebuje obecności. To zostawia ją samą z ciężarem wyznania.",
+                        "better_alternative_hint": "Możesz przyznać, że jesteś w szoku, i nadal zostać przy niej."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Unikanie konfrontacji",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Analiza transakcyjna",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "To bardzo poważne. Musimy od razu powiedzieć mamie i ustalić, co dalej.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": 0,
+                        "openness": 0,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Kasia słyszy troskę, ale też lęka się, że straci kontrolę nad własną historią.",
+                    "feedback": {
+                        "label": "Za szybkie przejście do działania",
+                        "psychology": "Intencja ochronna jest cenna, ale przeskok do strategii pomija emocje i potrzeby. To może odebrać sprawczość.",
+                        "better_alternative_hint": "Najpierw zaznacz, że wierzysz, i zapytaj, czego potrzebuje teraz."
+                    },
+                    "tags": [
+                        {
+                            "text": "Przedwczesne rozwiązywanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Orientacja na zadanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "NVC Rosenberga",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Wierzę ci. Dziękuję, że mi to mówisz. Nie musisz niczego udowadniać. Czego ode mnie teraz potrzebujesz?",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kasia pierwszy raz od wejścia wypuszcza powietrze i patrzy na ciebie pewniej.",
+                    "feedback": {
+                        "label": "Walidacja i oddanie głosu",
+                        "psychology": "To bezpieczne przyjęcie ujawnienia. Łączysz uwierzenie, brak presji i pytanie o potrzebę.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Aktywne słuchanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_2",
+            "title": "Szczegóły czy bezpieczeństwo",
+            "score_threshold": 1,
+            "scene_low": {
+                "description": "Między wami robi się chłodno. Kasia siedzi spięta, jakby już żałowała, że zaczęła.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Wiedziałam, że to będzie za dużo. Może nie powinnam była w ogóle mówić.",
+            "scene_high": {
+                "description": "Napięcie nie znika, ale Kasia nie odwraca wzroku. W kuchni pojawia się cienka nić zaufania.",
+                "location": "kitchen",
+                "time_of_day": "evening",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Bałam się tego latami. Prawie nikomu nie powiedziałam, bo myślałam, że nikt tego nie uniesie.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Jeśli mam ci wierzyć, to powiedz dokładnie, co zrobił i kiedy.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kasia zamiera, jakby znów znalazła się w trybie przetrwania.",
+                    "feedback": {
+                        "label": "Presja na szczegóły",
+                        "psychology": "Ton przesłuchania uruchamia defensywność i zamrożenie. Osoba po traumie potrzebuje najpierw bezpieczeństwa relacyjnego.",
+                        "better_alternative_hint": "Nie wymagaj szczegółów, jeśli nie są potrzebne do oceny bieżącego bezpieczeństwa."
+                    },
+                    "tags": [
+                        {
+                            "text": "Przesłuchiwanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Brak poczucia bezpieczeństwa",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Reakcja zamrożenia",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Świetnie. Jeszcze tego nam brakowało. Rodzina się przez to rozsypie.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kasia zaciska usta. Słyszy, że problemem staje się jej ujawnienie, nie krzywda.",
+                    "feedback": {
+                        "label": "Obrona systemu zamiast osoby",
+                        "psychology": "To odruch lojalności wobec rodziny. Chroni porządek systemu, a nie rozmówczynię.",
+                        "better_alternative_hint": "Wróć do tego, co czuje i czego potrzebuje Kasia tu i teraz."
+                    },
+                    "tags": [
+                        {
+                            "text": "Lojalność systemowa",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Minimalizowanie krzywdy",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Powiedz mi tylko tyle, ile potrzebuję, żeby ocenić, czy jesteś teraz bezpieczna.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 0,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Kasia kiwa głową, ale nadal waży każde słowo.",
+                    "feedback": {
+                        "label": "Lepsze ramy, mało ciepła",
+                        "psychology": "Ograniczasz zakres pytań do celu, co jest rozsądne. Nadal jednak dominują kontrola i procedura, a nie emocjonalne przyjęcie.",
+                        "better_alternative_hint": "Dodaj jedno zdanie uwierzenia i troski, zanim zadasz pytanie."
+                    },
+                    "tags": [
+                        {
+                            "text": "Stawianie ram rozmowy",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Nie potrzebuję szczegółów, żeby ci uwierzyć. Chcę tylko wiedzieć, czy jesteś teraz bezpieczna i co byłoby pomocne.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kasia mięknie i zaczyna mówić pełniejszymi zdaniami.",
+                    "feedback": {
+                        "label": "Bezpieczeństwo przed śledztwem",
+                        "psychology": "Najpierw regulujesz relację, potem treść. To zmniejsza ryzyko wtórnego zranienia przez przesłuchanie.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Ocena bieżącego bezpieczeństwa",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Trauma informed communication",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_3",
+            "title": "Milczenie po latach",
+            "score_threshold": 2,
+            "scene_low": {
+                "description": "Przechodzicie do salonu, ale dystans między wami rośnie. Każde kolejne zdanie Kasi brzmi jak test, czy zostanie odrzucona.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "dark"
+            },
+            "npc_line_low": "Najbardziej bałam się tego pytania, czemu nie powiedziałam wcześniej. Jakbym to ja miała odpowiadać za to, co się stało.",
+            "scene_high": {
+                "description": "W salonie jest cicho. Kasia ściska kubek w obu dłoniach, ale nie wycofuje się z rozmowy.",
+                "location": "living_room",
+                "time_of_day": "evening",
+                "visual_mood": "warm"
+            },
+            "npc_line_high": "Nie mówiłam, bo byłam dzieckiem i myślałam, że to moja wina albo że nikt mi nie uwierzy.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Ale dlaczego nic nie powiedziałaś wcześniej, skoro to trwało tak długo?",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kasia cofa głowę i od razu milknie.",
+                    "feedback": {
+                        "label": "Obwinianie ofiary",
+                        "psychology": "To pytanie wzmacnia fałszywe poczucie winy. W praktyce brzmi jak przerzucenie odpowiedzialności ze sprawcy na dziecko.",
+                        "better_alternative_hint": "Nazwij, że milczenie po traumie jest częste i nie czyni jej winną."
+                    },
+                    "tags": [
+                        {
+                            "text": "Victim blaming",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Wtórna wiktymizacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Mechanizm wstydu",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Nie dam rady tego słuchać. To dla mnie za dużo.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kasia zamyka się w sobie i spuszcza wzrok.",
+                    "feedback": {
+                        "label": "Ucieczka od ciężaru rozmowy",
+                        "psychology": "Twój szok jest realny, ale w tej formie przesuwa centrum rozmowy na twój dyskomfort. To osłabia poczucie przyjęcia.",
+                        "better_alternative_hint": "Możesz nazwać trudność, nie porzucając kontaktu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Wycofanie emocjonalne",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Samokoncentracja w kryzysie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Regulacja emocji",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "To nie twoja wina, ale jeśli idziemy dalej, będziesz musiała to samo powiedzieć rodzicom.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": 1,
+                        "openness": 0,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Pierwsze słowa ją wspierają, drugie od razu znów ją spinają.",
+                    "feedback": {
+                        "label": "Walidacja z warunkiem",
+                        "psychology": "Mówisz coś ważnego, ale natychmiast doklejasz wymaganie. To osłabia siłę wsparcia.",
+                        "better_alternative_hint": "Oddziel walidację od planowania dalszych kroków."
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja częściowa",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Przedwczesny nacisk",
+                            "type": "error"
+                        },
+                        {
+                            "text": "NVC Rosenberga",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "To nie była twoja odpowiedzialność. Dzieci często milczą ze strachu, wstydu albo dezorientacji. Nie obwiniam cię.",
+                    "points": 2,
+                    "communication_style": "empathic",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Z twarzy Kasi schodzi część czujności. Nie musi już bronić się przed tobą.",
+                    "feedback": {
+                        "label": "Zdjęcie fałszywej winy",
+                        "psychology": "To naprawia jeden z najcięższych elementów ujawnienia: wstyd. Oddzielasz odpowiedzialność dziecka od odpowiedzialności sprawcy.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Walidacja emocji",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Normalizacja reakcji traumatycznej",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_4",
+            "title": "Kto decyduje o następnym kroku",
+            "score_threshold": 3,
+            "scene_low": {
+                "description": "Noc gęstnieje, a rozmowa robi się coraz bardziej napięta. Kasia boi się, że za chwilę ktoś odbierze jej kontrolę tak samo, jak odebrano ją kiedyś.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "Nie chcę, żebyś teraz dzwoniła do mamy. Boję się, że wszystko znowu zacznie dziać się beze mnie.",
+            "scene_high": {
+                "description": "Mimo ciężaru rozmowy Kasia siedzi bliżej ciebie niż wcześniej. Sprawdza, czy może ci powierzyć nie tylko prawdę, ale też decyzje o tym, co dalej.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "hopeful"
+            },
+            "npc_line_high": "Chcę odzyskać choć trochę kontroli nad tym, co będzie dalej. Nie chcę, żeby ktoś znowu decydował za mnie.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nie obchodzi mnie, czego chcesz. Powiem wszystkim jeszcze dziś.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -3,
+                        "openness": -3,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kasia odsuwa się od ciebie natychmiast. To brzmi jak kolejne odebranie jej głosu.",
+                    "feedback": {
+                        "label": "Odebranie sprawczości",
+                        "psychology": "Nawet dobra intencja staje się przemocowa, gdy całkowicie odbiera wybór. Po traumie kontrola nad tempem ujawnienia jest kluczowa.",
+                        "better_alternative_hint": "Uszanuj jej tempo, chyba że istnieje bieżące zagrożenie dla innych."
+                    },
+                    "tags": [
+                        {
+                            "text": "Odbieranie sprawczości",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Naruszenie granic",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Autonomia",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Jasne, najlepiej dalej udawajmy, że w naszej rodzinie wszystko było normalne.",
+                    "points": 0,
+                    "communication_style": "passive_aggressive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -3
+                    },
+                    "npc_reaction": "Kasia zaciska szczękę. W ironii słyszy nacisk, nie wsparcie.",
+                    "feedback": {
+                        "label": "Zawstydzanie przez ironię",
+                        "psychology": "Bierna agresja karze rozmówczynię za jej granice. To zwykle podnosi defensywność i obniża zaufanie.",
+                        "better_alternative_hint": "Powiedz wprost, czego się boisz, bez kąśliwego tonu."
+                    },
+                    "tags": [
+                        {
+                            "text": "Bierna agresja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Zawstydzanie",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Defensywność",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Dobrze. Ustalmy plan i listę osób, z którymi ewentualnie będziemy rozmawiać później.",
+                    "points": 1,
+                    "communication_style": "assertive",
+                    "metric_effects": {
+                        "tension": 0,
+                        "trust": 1,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Kasia trochę się rozluźnia, choć nadal wyczuwa pośpiech.",
+                    "feedback": {
+                        "label": "Szacunek dla procesu, ale nadal szybko",
+                        "psychology": "Nie narzucasz decyzji, co jest lepsze. Nadal jednak szybciej budujesz plan niż poczucie współautorstwa.",
+                        "better_alternative_hint": "Dodaj wyraźnie, że tempo i wybór mają należeć również do niej."
+                    },
+                    "tags": [
+                        {
+                            "text": "Asertywność",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Wspólne planowanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom II — pozycyjny",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "Uszanuję twoje tempo, chyba że ktoś jest teraz w bezpośrednim niebezpieczeństwie. Możemy wspólnie zdecydować, jaki ma być następny krok.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -2,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kasia kiwa głową z ulgą. Po raz pierwszy brzmicie jak jedna drużyna.",
+                    "feedback": {
+                        "label": "Autonomia połączona z odpowiedzialnością",
+                        "psychology": "Łączysz szacunek dla jej sprawczości z jasnym wyjątkiem dotyczącym bezpieczeństwa innych. To dojrzała równowaga.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Szacunek dla autonomii",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Wspólna decyzja",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interaction_id": "INT_5",
+            "title": "Bezpieczeństwo dziś",
+            "score_threshold": 4,
+            "scene_low": {
+                "description": "Jest już późna noc. Rozmowa jest poszarpana, ale pada jedno zdanie, które natychmiast zmienia stawkę całej sytuacji.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "tense"
+            },
+            "npc_line_low": "On nadal pojawia się przy dzieciach na rodzinnych spotkaniach. Od tego właśnie od lat nie mogę spać.",
+            "scene_high": {
+                "description": "Między wami jest więcej kontaktu, ale pojawia się nowy ciężar. Temat dotyczy już nie tylko przeszłości, lecz także bieżącego bezpieczeństwa.",
+                "location": "living_room",
+                "time_of_day": "night",
+                "visual_mood": "cold"
+            },
+            "npc_line_high": "Martwię się, że on nadal ma dostęp do młodszych dzieci w rodzinie. Chyba najbardziej boję się właśnie tego.",
+            "npc_stage_direction": null,
+            "choices": [
+                {
+                    "choice_id": "A",
+                    "text": "Nie mieszajmy w to innych. Lepiej nie rozszerzać tej historii.",
+                    "points": 0,
+                    "communication_style": "passive",
+                    "metric_effects": {
+                        "tension": 2,
+                        "trust": -2,
+                        "openness": -2,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kasia patrzy na ciebie z niedowierzaniem. Brzmi to jak ochrona spokoju dorosłych kosztem dzieci.",
+                    "feedback": {
+                        "label": "Unik wobec ryzyka",
+                        "psychology": "Gdy pojawia się możliwe bieżące zagrożenie, całkowite wycofanie nie jest neutralne. Może nieświadomie chronić sprawcę.",
+                        "better_alternative_hint": "Nazwij wagę bezpieczeństwa i zaproponuj działanie razem z nią."
+                    },
+                    "tags": [
+                        {
+                            "text": "Unikanie odpowiedzialności",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Minimalizowanie ryzyka",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Bezpieczeństwo systemowe",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "B",
+                    "text": "Pojadę do niego i zniszczę mu życie. Tylko to zadziała.",
+                    "points": 0,
+                    "communication_style": "aggressive",
+                    "metric_effects": {
+                        "tension": 3,
+                        "trust": -2,
+                        "openness": -3,
+                        "feeling_heard": -2
+                    },
+                    "npc_reaction": "Kasia gwałtownie protestuje. W twojej furii słyszy chaos, nie ochronę.",
+                    "feedback": {
+                        "label": "Odwet zamiast planu",
+                        "psychology": "Gniew jest zrozumiały, ale przemocowy odwet odbiera kontrolę i zwiększa ryzyko chaosu. Skuteczność wymaga regulacji.",
+                        "better_alternative_hint": "Oddziel własną złość od planu ochrony dzieci i wsparcia dla Kasi."
+                    },
+                    "tags": [
+                        {
+                            "text": "Eskalacja",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Impulsywność",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Regulacja afektu",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "C",
+                    "text": "Trzeba ostrzec rodzinę natychmiast, nawet jeśli nie jesteś jeszcze gotowa.",
+                    "points": 1,
+                    "communication_style": "transactional",
+                    "metric_effects": {
+                        "tension": 1,
+                        "trust": 0,
+                        "openness": 1,
+                        "feeling_heard": 0
+                    },
+                    "npc_reaction": "Kasia rozumie wagę sytuacji, ale boi się, że znów zostanie odsunięta od własnej historii.",
+                    "feedback": {
+                        "label": "Ochrona ważna, sposób zbyt twardy",
+                        "psychology": "Rozpoznajesz realne ryzyko, ale decydujesz jednostronnie. To może ponownie odebrać jej poczucie wpływu.",
+                        "better_alternative_hint": "Połącz konieczność ochrony dzieci z minimalnie obciążającym wspólnym działaniem już tej nocy."
+                    },
+                    "tags": [
+                        {
+                            "text": "Rozpoznanie zagrożenia",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Odebranie współdecydowania",
+                            "type": "error"
+                        },
+                        {
+                            "text": "Poziom I — transakcja",
+                            "type": "concept"
+                        }
+                    ]
+                },
+                {
+                    "choice_id": "D",
+                    "text": "To zmienia sprawę, bo chodzi też o bezpieczeństwo dzieci. Ustalmy razem, kogo trzeba dziś powiadomić i jak zrobić to tak, żebyś nie została z tym sama.",
+                    "points": 2,
+                    "communication_style": "transformative",
+                    "metric_effects": {
+                        "tension": -1,
+                        "trust": 3,
+                        "openness": 3,
+                        "feeling_heard": 3
+                    },
+                    "npc_reaction": "Kasia nadal jest przestraszona, ale już nie samotna. Po raz pierwszy pojawia się konkret zamiast paniki.",
+                    "feedback": {
+                        "label": "Ochrona bez wywłaszczenia",
+                        "psychology": "Łączysz dwa cele naraz: bezpieczeństwo potencjalnie zagrożonych dzieci i podmiotowość osoby ujawniającej. To odpowiedzialne wsparcie.",
+                        "better_alternative_hint": null
+                    },
+                    "tags": [
+                        {
+                            "text": "Wspólne działanie",
+                            "type": "skill"
+                        },
+                        {
+                            "text": "Bezpieczeństwo dzieci",
+                            "type": "concept"
+                        },
+                        {
+                            "text": "Poziom III — transformacja",
+                            "type": "concept"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endings": [
+        {
+            "ending_id": "END_RED",
+            "score_range": {
+                "min": 0,
+                "max": 2
+            },
+            "color": "red",
+            "title": "RODZINNY MUR",
+            "emoji": "🔴",
+            "subtitle": "Prawda została wypowiedziana, ale nie została przyjęta.",
+            "narrative": "Po rozmowie Kasia wychodzi szybciej, niż przyszła. Zostaje po niej ciężar kolejnego potwierdzenia, że rodzinna lojalność może być silniejsza niż gotowość usłyszenia krzywdy.",
+            "diagnosis": "Dominowały inwalidacja, wycofanie albo przejęcie kontroli. Zabrakło uwierzenia, walidacji i oddania sprawczości osobie ujawniającej.",
+            "post_game": {
+                "communication_style_summary": "Przeważały reakcje obronne, unikowe lub agresywne. Rozmowa kręciła się wokół szoku, reputacji rodziny albo potrzeby szybkiego zamknięcia tematu.",
+                "strongest_moment": "Najmocniejsze były pojedyncze próby zatrzymania eskalacji, nawet jeśli jeszcze nie tworzyły bezpiecznego kontaktu.",
+                "growth_tip": "Przy takim wyznaniu pierwszy krok nie polega na ocenie ani śledztwie. Najpierw trzeba powiedzieć wierzę ci i jestem obok.",
+                "replay_prompt": "Zagraj ponownie i zobacz, jak szybko zmienia się ton rozmowy, gdy od razu pojawia się walidacja."
+            }
+        },
+        {
+            "ending_id": "END_YELLOW",
+            "score_range": {
+                "min": 3,
+                "max": 5
+            },
+            "color": "yellow",
+            "title": "PRAWDA ZOSTAJE, ALE WIĘŹ JEST KRUCHA",
+            "emoji": "🟡",
+            "subtitle": "Rozmowa nie pęka całkiem, ale zaufanie nadal jest chwiejne.",
+            "narrative": "Kasia nie wycofuje swojego wyznania, ale wychodzi z napięciem i ostrożnością. Wie, że chcesz pomóc, jednak nie ma pewności, czy w decydującym momencie nie wrócisz do pośpiechu albo kontroli.",
+            "diagnosis": "Pojawiły się elementy wsparcia, lecz często mieszały się z procedurą, naciskiem lub samokoncentracją. Prawda została dopuszczona, ale nie została jeszcze w pełni pomieszczona.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl rzeczowy i częściowo asertywny. Rozmowa trwała, ale zbyt często przeskakiwała z kontaktu do rozwiązań.",
+                "strongest_moment": "Najmocniejsze było uznanie, że temat jest realny i wymaga odpowiedzi, zamiast jego wyparcia.",
+                "growth_tip": "Aby wejść poziom wyżej, dodaj do każdego praktycznego kroku jedno zdanie walidacji i jedno pytanie o zgodę lub potrzebę.",
+                "replay_prompt": "Spróbuj jeszcze raz i sprawdź, co daje oddzielenie wsparcia emocjonalnego od planowania."
+            }
+        },
+        {
+            "ending_id": "END_GREEN",
+            "score_range": {
+                "min": 6,
+                "max": 8
+            },
+            "color": "green",
+            "title": "WIERZĘ CI I JESTEM OBOK",
+            "emoji": "🟢",
+            "subtitle": "Przeszłość nie znika, ale powstaje bezpieczny punkt oparcia.",
+            "narrative": "Kasia zostaje jeszcze chwilę. Przed wami nadal trudne decyzje, lecz między wami pojawia się coś bardzo konkretnego: wiara, że ten ciężar nie musi już być niesiony samotnie.",
+            "diagnosis": "Udało się połączyć walidację z odpowiedzialnością. Rozmowa weszła na poziom transformacji, gdzie emocje, sprawczość i plan mogą istnieć jednocześnie.",
+            "post_game": {
+                "communication_style_summary": "Przeważały reakcje empatyczne i transformacyjne. Uwierzenie, brak obwiniania i szacunek dla tempa Kasi zwiększyły zaufanie.",
+                "strongest_moment": "Najmocniejsze było uznanie, że bezpieczeństwo innych jest ważne, ale nie może oznaczać odebrania Kasi głosu.",
+                "growth_tip": "To dobra ścieżka. W realnej rozmowie utrzymuj ten sam balans: najpierw regulacja i wiara, potem wspólne decyzje.",
+                "replay_prompt": "Zagraj jeszcze raz i sprawdź, czy potrafisz utrzymać ten poziom wsparcia od początku do końca."
+            }
+        },
+        {
+            "ending_id": "END_BLUE",
+            "score_range": {
+                "min": 9,
+                "max": 10
+            },
+            "color": "blue",
+            "title": "PRAWDA BEZ ODWROTU, WSPARCIE BEZ WARUNKÓW",
+            "emoji": "🔵",
+            "subtitle": "W skrajnie trudnej rozmowie udało się stworzyć bezpieczeństwo, sprawczość i wspólny kierunek.",
+            "narrative": "Noc nadal jest ciężka, ale już nie pusta. Kasia nie musi cię przekonywać ani bronić swojej pamięci. Wspólnie ustalacie pierwszy bezpieczny plan na najbliższe godziny oraz sposób ochrony dzieci bez odbierania jej podmiotowości.",
+            "diagnosis": "Ta ścieżka pokazuje mistrzowskie połączenie regulacji emocji, walidacji traumy i odpowiedzialnego działania. Nie weszłaś ani w niedowierzanie, ani w ratownicze przejęcie steru.",
+            "post_game": {
+                "communication_style_summary": "Dominował styl transformacyjny wsparty empatią i spokojną asertywnością. Rozmowa stała się wspólnym procesem, a nie przesłuchaniem lub walką o kontrolę.",
+                "strongest_moment": "Najmocniejsze było utrzymanie dwóch prawd naraz: Kasia ma prawo do swojego tempa, a bezpieczeństwo dzieci wymaga odpowiedzialnego działania.",
+                "growth_tip": "To poziom bardzo dojrzały. Pamiętaj tylko, że taka rozmowa rzadko kończy temat w jeden wieczór, ale może trwale zmienić jakość więzi.",
+                "replay_prompt": "Spróbuj innych wariantów i zobacz, jak małe przesunięcie z walidacji w kontrolę zmienia cały przebieg rozmowy."
+            }
+        }
+    ]
+}

@@ -1,12 +1,13 @@
 'use client';
 
-import { useEffect, useState, useCallback, useRef } from 'react';
+import { useEffect, useState, useCallback, useRef, useMemo } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import type { Scenario, Interaction, Scene, Choice, Metrics, CommunicationStyle } from '@/lib/types';
 import { applyMetricEffects } from '@/lib/engine/metrics-engine';
 import { findEnding, STYLE_LABELS } from '@/lib/engine/game-engine';
 import { useAuthStore } from '@/store/game-store';
 import { getIdToken } from '@/lib/firebase/auth';
+import { shuffleWithOriginalIndices } from '@/lib/utils/shuffle';
 
 // ═══════════════════════════════════════════════════════════
 //  PLAY PAGE — Main gameplay loop
@@ -218,6 +219,13 @@ export default function PlayPage() {
   // Resolve scene variants based on accumulated score
   const interaction = resolveInteraction(rawInteraction, game.currentInteraction, game.totalScore);
 
+  // Shuffle choices once per interaction (stable until player moves to next question)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const shuffledChoices = useMemo(
+    () => shuffleWithOriginalIndices(interaction.choices),
+    [game.currentInteraction]
+  );
+
   return (
     <div className="screen">
       {/* Top bar */}
@@ -276,14 +284,14 @@ export default function PlayPage() {
             ) : null}
           </div>
 
-          {/* Choices */}
+          {/* Choices — shuffled to prevent pattern memorization */}
           <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--text-dim)', marginBottom: 10 }}>
             CO ODPOWIADASZ?
           </div>
           <div>
-            {interaction.choices.map((choice, i) => {
+            {shuffledChoices.map(({ item: choice, originalIndex }, visualIndex) => {
               let cardClass = 'choice-card';
-              if (selectedChoice === i) cardClass += ' choice-card-selected';
+              if (selectedChoice === originalIndex) cardClass += ' choice-card-selected';
               if (choiceRevealed) {
                 cardClass += ' choice-card-disabled';
                 if (choice.points === 2) cardClass += ' choice-card-best';
@@ -291,13 +299,14 @@ export default function PlayPage() {
                 else cardClass += ' choice-card-bad';
               }
 
+              const letters = ['A', 'B', 'C', 'D'];
               return (
                 <div
                   key={choice.choice_id}
                   className={cardClass}
-                  onClick={() => handleChoice(i)}
+                  onClick={() => handleChoice(originalIndex)}
                 >
-                  <div className="choice-letter">{choice.choice_id}</div>
+                  <div className="choice-letter">{letters[visualIndex]}</div>
                   <div className="choice-text">{choice.text}</div>
                 </div>
               );
