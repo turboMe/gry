@@ -4,6 +4,64 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { signInWithEmail, registerWithEmail, signInWithGoogle, resetPassword } from '@/lib/firebase/auth';
 
+// ─── Firebase error → Polish message map ───────────────────
+function getFirebaseErrorMessage(err: unknown, context: 'login' | 'register' | 'reset' | 'google' = 'login'): string {
+  const firebaseErr = err as { code?: string; message?: string };
+  const code = firebaseErr.code ?? '';
+
+  switch (code) {
+    // ── credentials ──
+    case 'auth/invalid-credential':
+    case 'auth/wrong-password':
+    case 'auth/user-not-found':
+      return context === 'reset'
+        ? 'Nie znaleziono konta z tym adresem email'
+        : 'Nieprawidłowy email lub hasło';
+    case 'auth/invalid-email':
+      return 'Podany adres email jest nieprawidłowy';
+    case 'auth/user-disabled':
+      return 'To konto zostało zablokowane. Skontaktuj się z administratorem';
+
+    // ── registration ──
+    case 'auth/email-already-in-use':
+      return 'Ten adres email jest już zajęty. Spróbuj się zalogować';
+
+    // ── password policy ──
+    case 'auth/weak-password':
+      return 'Hasło jest za słabe — musi mieć min. 6 znaków';
+    case 'auth/password-does-not-meet-requirements':
+      return 'Hasło musi zawierać min. 6 znaków, w tym: wielką literę, małą literę i cyfrę';
+
+    // ── rate limiting ──
+    case 'auth/too-many-requests':
+      return 'Zbyt wiele prób logowania. Odczekaj chwilę i spróbuj ponownie';
+
+    // ── network ──
+    case 'auth/network-request-failed':
+      return 'Brak połączenia z internetem. Sprawdź sieć i spróbuj ponownie';
+
+    // ── Google popup ──
+    case 'auth/popup-closed-by-user':
+    case 'auth/cancelled-popup-request':
+      return 'Logowanie zostało anulowane';
+    case 'auth/popup-blocked':
+      return 'Przeglądarka zablokowała wyskakujące okno. Zezwól na pop-upy i spróbuj ponownie';
+    case 'auth/account-exists-with-different-credential':
+      return 'Konto z tym emailem już istnieje — zaloguj się inną metodą';
+
+    // ── generic ──
+    case 'auth/operation-not-allowed':
+      return 'Ta metoda logowania jest wyłączona';
+    case 'auth/requires-recent-login':
+      return 'Ze względów bezpieczeństwa zaloguj się ponownie';
+
+    default:
+      return context === 'google'
+        ? 'Logowanie przez Google nie powiodło się. Spróbuj ponownie'
+        : 'Wystąpił nieoczekiwany błąd. Spróbuj ponownie';
+  }
+}
+
 /**
  * Login / Register page — Firebase Auth (email + Google).
  */
@@ -34,14 +92,7 @@ export default function LoginPage() {
       }
       router.push('/menu');
     } catch (err: unknown) {
-      const firebaseErr = err as { code?: string; message?: string };
-      const msg = firebaseErr.code === 'auth/wrong-password' ? 'Nieprawidłowe hasło'
-        : firebaseErr.code === 'auth/user-not-found' ? 'Nie znaleziono użytkownika'
-        : firebaseErr.code === 'auth/email-already-in-use' ? 'Ten email jest już zajęty'
-        : firebaseErr.code === 'auth/weak-password' ? 'Hasło musi mieć min. 6 znaków'
-        : firebaseErr.code === 'auth/invalid-email' ? 'Nieprawidłowy email'
-        : firebaseErr.message || 'Wystąpił błąd';
-      setError(msg);
+      setError(getFirebaseErrorMessage(err, mode));
     }
     setLoading(false);
   };
@@ -53,8 +104,7 @@ export default function LoginPage() {
       await signInWithGoogle();
       router.push('/menu');
     } catch (err: unknown) {
-      const firebaseErr = err as { message?: string };
-      setError(firebaseErr.message || 'Logowanie przez Google nie powiodło się');
+      setError(getFirebaseErrorMessage(err, 'google'));
     }
     setLoading(false);
   };
@@ -67,11 +117,7 @@ export default function LoginPage() {
       await resetPassword(resetEmail);
       setResetSent(true);
     } catch (err: unknown) {
-      const firebaseErr = err as { code?: string; message?: string };
-      const msg = firebaseErr.code === 'auth/user-not-found' ? 'Nie znaleziono konta z tym emailem'
-        : firebaseErr.code === 'auth/invalid-email' ? 'Nieprawidłowy email'
-        : firebaseErr.message || 'Wystąpił błąd';
-      setResetError(msg);
+      setResetError(getFirebaseErrorMessage(err, 'reset'));
     }
     setResetLoading(false);
   };
@@ -149,7 +195,7 @@ export default function LoginPage() {
             <div style={{ marginBottom: 16 }}>
               <input
                 type="password"
-                placeholder="Hasło (min. 6 znaków)"
+                placeholder={mode === 'register' ? 'Hasło (duża, mała litera, cyfra, min. 6 zn.)' : 'Hasło'}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required

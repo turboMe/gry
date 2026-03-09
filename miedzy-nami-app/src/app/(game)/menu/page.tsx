@@ -156,11 +156,24 @@ export default function MenuPage() {
       await changeEmail(newEmail);
       setEmailChangeResult('success');
     } catch (err: unknown) {
-      const firebaseErr = err as { code?: string; message?: string };
-      const msg = firebaseErr.code === 'auth/invalid-email' ? 'Nieprawidłowy adres email'
-        : firebaseErr.code === 'auth/email-already-in-use' ? 'Ten email jest już zajęty'
-        : firebaseErr.code === 'auth/requires-recent-login' ? 'Wyloguj się i zaloguj ponownie, a następnie spróbuj zmienić email'
-        : firebaseErr.message || 'Wystąpił błąd';
+      const firebaseErr = err as { code?: string };
+      let msg: string;
+      switch (firebaseErr.code) {
+        case 'auth/invalid-email':
+          msg = 'Podany adres email jest nieprawidłowy';
+          break;
+        case 'auth/email-already-in-use':
+          msg = 'Ten adres email jest już zajęty';
+          break;
+        case 'auth/requires-recent-login':
+          msg = 'Sesja wygasła — wyloguj się, zaloguj ponownie i spróbuj jeszcze raz';
+          break;
+        case 'auth/network-request-failed':
+          msg = 'Brak połączenia z internetem. Sprawdź sieć i spróbuj ponownie';
+          break;
+        default:
+          msg = 'Nie udało się zmienić emaila. Spróbuj ponownie';
+      }
       setEmailChangeError(msg);
       setEmailChangeResult('error');
     }
